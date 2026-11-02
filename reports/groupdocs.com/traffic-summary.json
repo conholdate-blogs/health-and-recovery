@@ -1,0 +1,37 @@
+{
+ "windows": {
+  "current": [
+   "2026-10-03",
+   "2026-10-30"
+  ],
+  "previous": [
+   "2026-09-05",
+   "2026-10-02"
+  ],
+  "six_months_ago": [
+   "2026-04-04",
+   "2026-05-01"
+  ]
+ },
+ "hosts": {},
+ "host_totals": {
+  "blog.groupdocs.com": {
+   "source": "gsc",
+   "current": {
+    "clicks": 8333,
+    "impressions": 449552,
+    "pages": 6682
+   },
+   "previous": {
+    "clicks": 8728,
+    "impressions": 508792,
+    "pages": 5879
+   },
+   "six_months_ago": {
+    "clicks": 17216,
+    "impressions": 704461,
+    "pages": 7234
+   }
+  }
+ }
+}

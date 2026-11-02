@@ -1,0 +1,237 @@
+{
+  "tenant": "groupdocs.com",
+  "run_date": "2026-11-02",
+  "identity": "sk-serv-acc@health-and-recovery.iam.gserviceaccount.com",
+  "gsc": {
+    "window": [
+      "2026-10-03",
+      "2026-10-30"
+    ],
+    "properties": {
+      "https://blog.groupdocs.com/": {
+        "permission": "siteRestrictedUser",
+        "clicks": 8324,
+        "impressions": 439160,
+        "top_pages": [
+          {
+            "page": "https://blog.groupdocs.com/id/merger/merge-word-files-online/",
+            "clicks": 2050,
+            "impressions": 43473
+          },
+          {
+            "page": "https://blog.groupdocs.com/es/viewer/xml-viewer-online/",
+            "clicks": 290,
+            "impressions": 5588
+          },
+          {
+            "page": "https://blog.groupdocs.com/id/merger/merge-powerpoint-ppt-pptx-files-online/",
+            "clicks": 259,
+            "impressions": 10171
+          },
+          {
+            "page": "https://blog.groupdocs.com/ko/viewer/json-viewer-online/",
+            "clicks": 258,
+            "impressions": 1912
+          },
+          {
+            "page": "https://blog.groupdocs.com/ko/merger/merge-powerpoint-ppt-pptx-files-online/",
+            "clicks": 188,
+            "impressions": 3570
+          }
+        ],
+        "sitemaps": {
+          "count": 1,
+          "with_errors": [],
+          "pending": []
+        }
+      }
+    },
+    "ok": true,
+    "visible_to_identity": {
+      "https://blog.groupdocs.cloud/": "siteRestrictedUser",
+      "https://about.aspose.app/": "siteRestrictedUser",
+      "https://blog.aspose.cloud/": "siteRestrictedUser",
+      "https://blog.groupdocs.com/": "siteRestrictedUser",
+      "https://blog.aspose.com/": "siteRestrictedUser",
+      "https://blog.conholdate.cloud/": "siteRestrictedUser",
+      "https://blog.conholdate.com/": "siteRestrictedUser",
+      "https://blog.aspose.app/": "siteRestrictedUser",
+      "https://products.aspose.app/": "siteRestrictedUser",
+      "https://websites.aspose.app/": "siteRestrictedUser",
+      "https://releases.aspose.app/": "siteRestrictedUser"
+    }
+  },
+  "ga4": {
+    "ok": true,
+    "property_id": "252384535",
+    "window": [
+      "28daysAgo",
+      "yesterday"
+    ],
+    "hosts": {
+      "products.groupdocs.com": {
+        "sessions": 70334.0,
+        "organic_sessions": 2158.0
+      },
+      "blog.groupdocs.com": {
+        "sessions": 37999.0,
+        "organic_sessions": 6243.0
+      },
+      "reference.groupdocs.com": {
+        "sessions": 30251.0,
+        "organic_sessions": 82.0
+      },
+      "www.groupdocs.com": {
+        "sessions": 26941.0,
+        "organic_sessions": 2342.0
+      },
+      "(not set)": {
+        "sessions": 26305.0,
+        "organic_sessions": 1213.0
+      },
+      "docs.groupdocs.com": {
+        "sessions": 13605.0,
+        "organic_sessions": 1587.0
+      },
+      "releases.groupdocs.com": {
+        "sessions": 13005.0,
+        "organic_sessions": 811.0
+      },
+      "purchase.groupdocs.com": {
+        "sessions": 9616.0,
+        "organic_sessions": 187.0
+      },
+      "search.groupdocs.com": {
+        "sessions": 9215.0,
+        "organic_sessions": 108.0
+      },
+      "forum.groupdocs.com": {
+        "sessions": 8216.0,
+        "organic_sessions": 146.0
+      },
+      "": {
+        "sessions": 8112.0,
+        "organic_sessions": 164.0
+      },
+      "blog-qa.groupdocs.com": {
+        "sessions": 7830.0,
+        "organic_sessions": 0.0
+      },
+      "kb.groupdocs.com": {
+        "sessions": 7111.0,
+        "organic_sessions": 131.0
+      },
+      "about.groupdocs.com": {
+        "sessions": 5393.0,
+        "organic_sessions": 13.0
+      },
+      "websites.groupdocs.com": {
+        "sessions": 4630.0,
+        "organic_sessions": 198.0
+      },
+      "docs-qa.groupdocs.com": {
+        "sessions": 1735.0,
+        "organic_sessions": 3.0
+      },
+      "helpdesk.groupdocs.com": {
+        "sessions": 671.0,
+        "organic_sessions": 12.0
+      },
+      "metrics.groupdocs.com": {
+        "sessions": 651.0,
+        "organic_sessions": 17.0
+      },
+      "tutorials.groupdocs.com": {
+        "sessions": 538.0,
+        "organic_sessions": 0.0
+      },
+      "blog2.groupdocs.com": {
+        "sessions": 383.0,
+        "organic_sessions": 0.0
+      },
+      "consulting.groupdocs.com": {
+        "sessions": 205.0,
+        "organic_sessions": 4.0
+      },
+      "status.groupdocs.com": {
+        "sessions": 107.0,
+        "organic_sessions": 3.0
+      },
+      "apps.groupdocs.com": {
+        "sessions": 27.0,
+        "organic_sessions": 0.0
+      },
+      "groupdocs-free-consulting.github.io": {
+        "sessions": 27.0,
+        "organic_sessions": 0.0
+      },
+      "kb-qa.groupdocs.com": {
+        "sessions": 21.0,
+        "organic_sessions": 0.0
+      },
+      "releases-qa.groupdocs.com": {
+        "sessions": 21.0,
+        "organic_sessions": 2.0
+      },
+      "groupdocsapp.github.io": {
+        "sessions": 19.0,
+        "organic_sessions": 7.0
+      },
+      "groupdocs.com": {
+        "sessions": 8.0,
+        "organic_sessions": 0.0
+      },
+      "127.0.0.1": {
+        "sessions": 6.0,
+        "organic_sessions": 0.0
+      },
+      "localhost": {
+        "sessions": 4.0,
+        "organic_sessions": 0.0
+      },
+      "www-groupdocs-com.b-cdn.net": {
+        "sessions": 3.0,
+        "organic_sessions": 2.0
+      },
+      "downloads.groupdocs.com": {
+        "sessions": 2.0,
+        "organic_sessions": 0.0
+      },
+      "kb-groupdocs-com.b-cdn.net": {
+        "sessions": 2.0,
+        "organic_sessions": 2.0
+      },
+      "products-groupdocs-com.b-cdn.net": {
+        "sessions": 2.0,
+        "organic_sessions": 2.0
+      },
+      "products-groupdocs-com.translate.goog": {
+        "sessions": 2.0,
+        "organic_sessions": 0.0
+      },
+      "docs-groupdocs-com.translate.goog": {
+        "sessions": 1.0,
+        "organic_sessions": 1.0
+      },
+      "www-groupdocs-com.translate.goog": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      },
+      "www.getallsoft.com": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      },
+      "www.whatech.com": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      }
+    },
+    "tenant_hosts_not_seen": [],
+    "excluded_hosts_seen": [
+      "kb-qa.groupdocs.com",
+      "docs-qa.groupdocs.com",
+      "blog-qa.groupdocs.com",
+      "releases-qa.groupdocs.com"
+    ]
+  }
+}

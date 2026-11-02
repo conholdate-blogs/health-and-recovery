@@ -1,0 +1,89 @@
+{
+  "tenant": "groupdocs.com",
+  "auditor": "ai-audit",
+  "run_id": 2,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.com"
+    ]
+  },
+  "requests": 12,
+  "duration_s": 12.1,
+  "stopped_early": false,
+  "summary": {
+    "blog.groupdocs.com": {
+      "robots": 200,
+      "answer_blocked": [],
+      "training_blocked": [],
+      "firewall_blocked": {},
+      "firewall_training": {},
+      "llms": {
+        "state": "missing",
+        "note": "HTTP 404",
+        "url": "https://blog.groupdocs.com/llms.txt"
+      },
+      "sections": 0,
+      "sections_covered": 0,
+      "section_files": []
+    }
+  },
+  "findings": [
+    {
+      "id": "ai-0001",
+      "tenant": "groupdocs.com",
+      "subdomain": "blog.groupdocs.com",
+      "template": "llms.txt",
+      "dimension": "ai",
+      "check": "llms_txt_missing",
+      "type": "improvable",
+      "title": "No llms.txt for AI assistants",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.com/llms.txt"
+        ],
+        "observed": "https://blog.groupdocs.com/llms.txt: HTTP 404",
+        "expected": "/llms.txt as plain text or Markdown: an H1 with the site name, a short summary and links to the key pages",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/llms.txt",
+            "note": "HTTP 404"
+          }
+        ]
+      },
+      "affected_pages": 0,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "none",
+      "status": "open",
+      "detected_at": "2026-11-02"
+    }
+  ],
+  "hosts": {
+    "blog.groupdocs.com": {
+      "robots": {
+        "status": 200,
+        "error": null,
+        "answer_blocked": {},
+        "training_blocked": {}
+      },
+      "firewall": {
+        "url": "https://blog.groupdocs.com/",
+        "baseline": 200,
+        "bytes": 30382,
+        "blocked": {}
+      },
+      "llms": {
+        "url": "https://blog.groupdocs.com/llms.txt",
+        "state": "missing",
+        "note": "HTTP 404",
+        "links": []
+      }
+    }
+  }
+}

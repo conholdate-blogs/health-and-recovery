@@ -1,0 +1,988 @@
+{
+  "tenant": "groupdocs.com",
+  "run_id": 1,
+  "hosts": {
+    "blog.groupdocs.com": {
+      "robots": {
+        "status": 200,
+        "error": null,
+        "is_html": false,
+        "sitemaps": [
+          "https://blog.groupdocs.com/sitemap.xml"
+        ],
+        "disallow_rules": 10,
+        "ai_bots_named": []
+      },
+      "sitemaps_fetched": 23,
+      "sitemaps_ok": 23,
+      "sitemaps_failed": [],
+      "urls": 12503
+    }
+  },
+  "sections": {
+    "blog.groupdocs.com": {
+      "": {
+        "urls": 22,
+        "hreflang_urls": 22,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "nl": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "home": 22
+        }
+      },
+      "annotation": {
+        "urls": 512,
+        "hreflang_urls": 440,
+        "langs": {
+          "default": 92,
+          "ar": 20,
+          "cs": 20,
+          "de": 20,
+          "es": 20,
+          "fa": 20,
+          "fr": 20,
+          "he": 20,
+          "id": 20,
+          "it": 20,
+          "ja": 20,
+          "ko": 20,
+          "nl": 20,
+          "pl": 20,
+          "pt": 20,
+          "ru": 20,
+          "th": 20,
+          "tr": 20,
+          "uk": 20,
+          "vi": 20,
+          "zh": 20,
+          "zh-hant": 20
+        },
+        "templates": {
+          "post": 512
+        }
+      },
+      "archives": {
+        "urls": 22,
+        "hreflang_urls": 22,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "nl": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "listing": 22
+        }
+      },
+      "assembly": {
+        "urls": 244,
+        "hreflang_urls": 198,
+        "langs": {
+          "default": 55,
+          "ar": 9,
+          "cs": 9,
+          "de": 9,
+          "es": 9,
+          "fa": 9,
+          "fr": 9,
+          "he": 9,
+          "id": 9,
+          "it": 9,
+          "ja": 9,
+          "ko": 9,
+          "nl": 9,
+          "pl": 9,
+          "pt": 9,
+          "ru": 9,
+          "th": 9,
+          "tr": 9,
+          "uk": 9,
+          "vi": 9,
+          "zh": 9,
+          "zh-hant": 9
+        },
+        "templates": {
+          "post": 244
+        }
+      },
+      "classification": {
+        "urls": 67,
+        "hreflang_urls": 66,
+        "langs": {
+          "default": 4,
+          "ar": 3,
+          "cs": 3,
+          "de": 3,
+          "es": 3,
+          "fa": 3,
+          "fr": 3,
+          "he": 3,
+          "id": 3,
+          "it": 3,
+          "ja": 3,
+          "ko": 3,
+          "nl": 3,
+          "pl": 3,
+          "pt": 3,
+          "ru": 3,
+          "th": 3,
+          "tr": 3,
+          "uk": 3,
+          "vi": 3,
+          "zh": 3,
+          "zh-hant": 3
+        },
+        "templates": {
+          "post": 67
+        }
+      },
+      "comparison": {
+        "urls": 1185,
+        "hreflang_urls": 1122,
+        "langs": {
+          "default": 114,
+          "ar": 51,
+          "cs": 51,
+          "de": 51,
+          "es": 51,
+          "fa": 51,
+          "fr": 51,
+          "he": 51,
+          "id": 51,
+          "it": 51,
+          "ja": 51,
+          "ko": 51,
+          "nl": 51,
+          "pl": 51,
+          "pt": 51,
+          "ru": 51,
+          "th": 51,
+          "tr": 51,
+          "uk": 51,
+          "vi": 51,
+          "zh": 51,
+          "zh-hant": 51
+        },
+        "templates": {
+          "post": 1185
+        }
+      },
+      "conversion": {
+        "urls": 1494,
+        "hreflang_urls": 1432,
+        "langs": {
+          "default": 128,
+          "ar": 65,
+          "cs": 65,
+          "de": 65,
+          "es": 65,
+          "fa": 65,
+          "fr": 65,
+          "he": 65,
+          "id": 65,
+          "it": 65,
+          "ja": 65,
+          "ko": 64,
+          "nl": 65,
+          "pl": 65,
+          "pt": 65,
+          "ru": 65,
+          "th": 65,
+          "tr": 65,
+          "uk": 65,
+          "vi": 65,
+          "zh": 66,
+          "zh-hant": 66
+        },
+        "templates": {
+          "post": 1494
+        }
+      },
+      "editor": {
+        "urls": 452,
+        "hreflang_urls": 440,
+        "langs": {
+          "default": 32,
+          "ar": 20,
+          "cs": 20,
+          "de": 20,
+          "es": 20,
+          "fa": 20,
+          "fr": 20,
+          "he": 20,
+          "id": 20,
+          "it": 20,
+          "ja": 20,
+          "ko": 20,
+          "nl": 20,
+          "pl": 20,
+          "pt": 20,
+          "ru": 20,
+          "th": 20,
+          "tr": 20,
+          "uk": 20,
+          "vi": 20,
+          "zh": 20,
+          "zh-hant": 20
+        },
+        "templates": {
+          "post": 452
+        }
+      },
+      "groupdocs-merger": {
+        "urls": 22,
+        "hreflang_urls": 22,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "nl": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "post": 22
+        }
+      },
+      "groupdocs.blog": {
+        "urls": 22,
+        "hreflang_urls": 21,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "nl": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "category": 22
+        }
+      },
+      "groupdocs.merger": {
+        "urls": 44,
+        "hreflang_urls": 44,
+        "langs": {
+          "default": 2,
+          "ar": 2,
+          "cs": 2,
+          "de": 2,
+          "es": 2,
+          "fa": 2,
+          "fr": 2,
+          "he": 2,
+          "id": 2,
+          "it": 2,
+          "ja": 2,
+          "ko": 2,
+          "nl": 2,
+          "pl": 2,
+          "pt": 2,
+          "ru": 2,
+          "th": 2,
+          "tr": 2,
+          "uk": 2,
+          "vi": 2,
+          "zh": 2,
+          "zh-hant": 2
+        },
+        "templates": {
+          "post": 44
+        }
+      },
+      "markdown": {
+        "urls": 173,
+        "hreflang_urls": 173,
+        "langs": {
+          "default": 8,
+          "ar": 8,
+          "cs": 8,
+          "de": 8,
+          "es": 7,
+          "fa": 7,
+          "fr": 7,
+          "he": 8,
+          "id": 8,
+          "it": 8,
+          "ja": 8,
+          "ko": 8,
+          "nl": 8,
+          "pl": 8,
+          "pt": 8,
+          "ru": 8,
+          "th": 8,
+          "tr": 8,
+          "uk": 8,
+          "vi": 8,
+          "zh": 8,
+          "zh-hant": 8
+        },
+        "templates": {
+          "post": 173
+        }
+      },
+      "merger": {
+        "urls": 1359,
+        "hreflang_urls": 1342,
+        "langs": {
+          "default": 79,
+          "ar": 61,
+          "cs": 61,
+          "de": 61,
+          "es": 61,
+          "fa": 62,
+          "fr": 62,
+          "he": 61,
+          "id": 61,
+          "it": 61,
+          "ja": 60,
+          "ko": 61,
+          "nl": 61,
+          "pl": 61,
+          "pt": 61,
+          "ru": 61,
+          "th": 60,
+          "tr": 60,
+          "uk": 61,
+          "vi": 61,
+          "zh": 61,
+          "zh-hant": 61
+        },
+        "templates": {
+          "post": 1359
+        }
+      },
+      "metadata": {
+        "urls": 1068,
+        "hreflang_urls": 1011,
+        "langs": {
+          "default": 103,
+          "ar": 46,
+          "cs": 46,
+          "de": 46,
+          "es": 46,
+          "fa": 46,
+          "fr": 46,
+          "he": 46,
+          "id": 46,
+          "it": 46,
+          "ja": 46,
+          "ko": 45,
+          "nl": 46,
+          "pl": 46,
+          "pt": 46,
+          "ru": 46,
+          "th": 46,
+          "tr": 46,
+          "uk": 46,
+          "vi": 46,
+          "zh": 46,
+          "zh-hant": 46
+        },
+        "templates": {
+          "post": 1068
+        }
+      },
+      "parser": {
+        "urls": 924,
+        "hreflang_urls": 894,
+        "langs": {
+          "default": 72,
+          "ar": 39,
+          "cs": 40,
+          "de": 41,
+          "es": 41,
+          "fa": 41,
+          "fr": 41,
+          "he": 41,
+          "id": 41,
+          "it": 40,
+          "ja": 39,
+          "ko": 40,
+          "nl": 40,
+          "pl": 40,
+          "pt": 42,
+          "ru": 41,
+          "th": 40,
+          "tr": 40,
+          "uk": 40,
+          "vi": 41,
+          "zh": 42,
+          "zh-hant": 42
+        },
+        "templates": {
+          "post": 924
+        }
+      },
+      "redaction": {
+        "urls": 507,
+        "hreflang_urls": 499,
+        "langs": {
+          "default": 31,
+          "ar": 23,
+          "cs": 22,
+          "de": 23,
+          "es": 23,
+          "fa": 23,
+          "fr": 23,
+          "he": 22,
+          "id": 23,
+          "it": 23,
+          "ja": 20,
+          "ko": 22,
+          "nl": 23,
+          "pl": 23,
+          "pt": 23,
+          "ru": 23,
+          "th": 23,
+          "tr": 22,
+          "uk": 23,
+          "vi": 23,
+          "zh": 23,
+          "zh-hant": 23
+        },
+        "templates": {
+          "post": 507
+        }
+      },
+      "search": {
+        "urls": 771,
+        "hreflang_urls": 736,
+        "langs": {
+          "default": 69,
+          "ar": 34,
+          "cs": 33,
+          "de": 34,
+          "es": 34,
+          "fa": 33,
+          "fr": 33,
+          "he": 33,
+          "id": 34,
+          "it": 34,
+          "ja": 34,
+          "ko": 33,
+          "nl": 34,
+          "pl": 34,
+          "pt": 34,
+          "ru": 34,
+          "th": 32,
+          "tr": 32,
+          "uk": 34,
+          "vi": 32,
+          "zh": 33,
+          "zh-hant": 34
+        },
+        "templates": {
+          "listing": 22,
+          "post": 749
+        }
+      },
+      "signature": {
+        "urls": 933,
+        "hreflang_urls": 874,
+        "langs": {
+          "default": 99,
+          "ar": 40,
+          "cs": 39,
+          "de": 40,
+          "es": 39,
+          "fa": 40,
+          "fr": 39,
+          "he": 40,
+          "id": 40,
+          "it": 40,
+          "ja": 39,
+          "ko": 40,
+          "nl": 40,
+          "pl": 40,
+          "pt": 40,
+          "ru": 40,
+          "th": 39,
+          "tr": 40,
+          "uk": 40,
+          "vi": 40,
+          "zh": 39,
+          "zh-hant": 40
+        },
+        "templates": {
+          "post": 933
+        }
+      },
+      "total": {
+        "urls": 481,
+        "hreflang_urls": 407,
+        "langs": {
+          "default": 93,
+          "ar": 18,
+          "cs": 18,
+          "de": 19,
+          "es": 18,
+          "fa": 19,
+          "fr": 19,
+          "he": 19,
+          "id": 18,
+          "it": 19,
+          "ja": 18,
+          "ko": 18,
+          "nl": 19,
+          "pl": 18,
+          "pt": 19,
+          "ru": 18,
+          "th": 18,
+          "tr": 18,
+          "uk": 18,
+          "vi": 19,
+          "zh": 19,
+          "zh-hant": 19
+        },
+        "templates": {
+          "post": 481
+        }
+      },
+      "viewer": {
+        "urls": 1270,
+        "hreflang_urls": 1128,
+        "langs": {
+          "default": 195,
+          "ar": 51,
+          "cs": 52,
+          "de": 52,
+          "es": 52,
+          "fa": 51,
+          "fr": 51,
+          "he": 51,
+          "id": 51,
+          "it": 51,
+          "ja": 50,
+          "ko": 50,
+          "nl": 51,
+          "pl": 52,
+          "pt": 51,
+          "ru": 51,
+          "th": 51,
+          "tr": 52,
+          "uk": 52,
+          "vi": 51,
+          "zh": 51,
+          "zh-hant": 51
+        },
+        "templates": {
+          "post": 1270
+        }
+      },
+      "watermark": {
+        "urls": 931,
+        "hreflang_urls": 909,
+        "langs": {
+          "default": 64,
+          "ar": 42,
+          "cs": 41,
+          "de": 41,
+          "es": 41,
+          "fa": 40,
+          "fr": 42,
+          "he": 42,
+          "id": 40,
+          "it": 42,
+          "ja": 41,
+          "ko": 42,
+          "nl": 42,
+          "pl": 42,
+          "pt": 42,
+          "ru": 41,
+          "th": 41,
+          "tr": 40,
+          "uk": 42,
+          "vi": 41,
+          "zh": 41,
+          "zh-hant": 41
+        },
+        "templates": {
+          "generic:/{section}/*/*": 22,
+          "post": 909
+        }
+      }
+    }
+  },
+  "gsc_comparison": [
+    {
+      "path": "/sitemap.xml",
+      "url": "https://blog.groupdocs.com/sitemap.xml",
+      "gsc_status": "Success",
+      "gsc_discovered": 12337,
+      "live_status": 200,
+      "live_kind": "index",
+      "live_urls": 12503
+    }
+  ],
+  "sitemaps": {
+    "blog.groupdocs.com": {
+      "": [
+        {
+          "url": "https://blog.groupdocs.com/sitemap.xml",
+          "parent": null,
+          "depth": 0,
+          "status": 200,
+          "kind": "index",
+          "urls": 12503,
+          "children": 22,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/ar/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 536,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/cs/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 534,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/de/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 539,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/en/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 1244,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/es/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 536,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/fa/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 536,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/fr/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 537,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/he/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 537,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/id/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 536,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/it/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 538,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/ja/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 529,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/ko/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 532,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/nl/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 538,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/pl/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 538,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/pt/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 540,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/ru/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 537,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/th/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 532,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/tr/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 532,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/uk/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 538,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/vi/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 536,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/zh-hant/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 540,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.com/zh/sitemap.xml",
+          "parent": "https://blog.groupdocs.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 538,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        }
+      ]
+    }
+  },
+  "new_hosts": {},
+  "sitemaps_fetched": 23,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.com"
+    ],
+    "sections": null,
+    "max_sitemaps": null
+  },
+  "requests": 24,
+  "duration_s": 24.5,
+  "not_fetched": [],
+  "findings": [],
+  "items": {
+    "blog.groupdocs.com": []
+  }
+}

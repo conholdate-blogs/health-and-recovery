@@ -1,0 +1,111 @@
+{
+  "tenant": "conholdate.com",
+  "auditor": "text-audit",
+  "run_id": 4,
+  "params": {
+    "hosts": [
+      "blog.conholdate.com"
+    ],
+    "crawl_runs": [
+      1
+    ],
+    "model": "gpt-oss",
+    "prompt_version": 2
+  },
+  "duration_s": 23.2,
+  "stopped_early": false,
+  "pages_checked": 36,
+  "unchecked": [],
+  "incomplete": false,
+  "llm": {
+    "calls": 2,
+    "prompt_tokens": 4525,
+    "completion_tokens": 2741,
+    "cache_hits": 0
+  },
+  "ignored": 0,
+  "summary": {
+    "blog.conholdate.com": {
+      "checked": 36,
+      "pages_with_issues": 2,
+      "issues": {
+        "text_topic_mismatch": 2
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "onpage-0001",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "text_topic_mismatch",
+      "type": "incorrect",
+      "title": "Title or description is about a different product",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/ru/conholdate.total/",
+          "https://blog.conholdate.com/de/conholdate.total/"
+        ],
+        "observed": "2 of 36 checked pages: /ru/conholdate.total/ H1: 'Conholdate.Totals' → 'Conholdate.Total'; /de/conholdate.total/ H1: 'Conholdate.Totals' → 'Conholdate.Total'",
+        "expected": "Title and meta description describe the page's own product, like its H1",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ru/conholdate.total/",
+            "note": "H1: 'Conholdate.Totals' → 'Conholdate.Total'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/de/conholdate.total/",
+            "note": "H1: 'Conholdate.Totals' → 'Conholdate.Total'"
+          }
+        ]
+      },
+      "affected_pages": 2,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-02"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://blog.conholdate.com/de/conholdate.total/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "de",
+      "issues": [
+        {
+          "field": "h1",
+          "kind": "topic_mismatch",
+          "wrong": "Conholdate.Totals",
+          "fix": "Conholdate.Total",
+          "why": "H1 uses plural product name not matching page path"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/ru/conholdate.total/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "ru",
+      "issues": [
+        {
+          "field": "h1",
+          "kind": "topic_mismatch",
+          "wrong": "Conholdate.Totals",
+          "fix": "Conholdate.Total",
+          "why": "H1 uses plural product name not matching page path"
+        }
+      ]
+    }
+  ]
+}

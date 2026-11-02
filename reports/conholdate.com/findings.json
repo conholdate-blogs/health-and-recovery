@@ -1,0 +1,3078 @@
+[
+  {
+    "id": "ai-0001",
+    "key": "ai/content_needs_js/blog.conholdate.com/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "ai",
+    "type": "incorrect",
+    "title": "Pages show almost no text without JavaScript",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/search/",
+        "https://blog.conholdate.com/ar/search/",
+        "https://blog.conholdate.com/ja/search/"
+      ],
+      "observed": "4 of 57 sampled pages (by template: generic:/{section}/*/* 1/3, listing 3/4). e.g. https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: 199 characters of main text in the HTML; https://blog.conholdate.com/search/: 114 characters of main text in the HTML; https://blog.conholdate.com/ar/search/: 114 characters of main text in the HTML; https://blog.conholdate.com/ja/search/: 114 characters of main text in the HTML",
+      "expected": "the main text in the HTML itself (at least 250 characters); AI crawlers do not run JavaScript",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+          "note": "199 characters of main text in the HTML"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/search/",
+          "note": "114 characters of main text in the HTML"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ar/search/",
+          "note": "114 characters of main text in the HTML"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ja/search/",
+          "note": "114 characters of main text in the HTML"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ko/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.com/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/en/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ar/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ja/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "generic:/{section}/*/*": [
+          1,
+          3
+        ],
+        "listing": [
+          3,
+          4
+        ]
+      }
+    },
+    "affected_pages": 33,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 17,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 13,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 1,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "M",
+    "fix_tier": 2,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run1",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "content_needs_js",
+    "notes": []
+  },
+  {
+    "id": "ai-0002",
+    "key": "ai/no_structured_data/blog.conholdate.com/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "ai",
+    "type": "improvable",
+    "title": "Pages have no structured data (JSON-LD)",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/",
+        "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/"
+      ],
+      "observed": "4 of 57 sampled pages (by template: generic:/{section}/*/* 2/3, tag 2/22). e.g. https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: no JSON-LD; https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/: no JSON-LD; https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/: no JSON-LD; https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/: no JSON-LD",
+      "expected": "JSON-LD naming what the page is (e.g. WebApplication, Article, FAQPage) and who publishes it",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+          "note": "no JSON-LD"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+          "note": "no JSON-LD"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/",
+          "note": "no JSON-LD"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/",
+          "note": "no JSON-LD"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ko/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.com/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/pl/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/it/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/nl/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "generic:/{section}/*/*": [
+          2,
+          3
+        ],
+        "tag": [
+          2,
+          22
+        ]
+      }
+    },
+    "affected_pages": 3969,
+    "impact": {
+      "clicks_28d": 4,
+      "impressions_28d": 389,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 16,
+      "past_impressions": 750,
+      "lost_clicks": 12,
+      "lost_impressions": 361,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 4,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 2,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run1",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "no_structured_data",
+    "notes": []
+  },
+  {
+    "id": "ai-0003",
+    "key": "ai/llms_txt_missing/blog.conholdate.com/llms.txt",
+    "source": "ai-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "llms.txt",
+    "dimension": "ai",
+    "type": "improvable",
+    "title": "No llms.txt for AI assistants",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/llms.txt"
+      ],
+      "observed": "https://blog.conholdate.com/llms.txt: HTTP 404",
+      "expected": "/llms.txt as plain text or Markdown: an H1 with the site name, a short summary and links to the key pages",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/llms.txt",
+          "note": "HTTP 404"
+        }
+      ]
+    },
+    "affected_pages": 0,
+    "impact": {
+      "clicks_28d": 2747,
+      "impressions_28d": 134668,
+      "source": "gsc-host",
+      "share": 1.0,
+      "past_clicks": 5253,
+      "past_impressions": 159335,
+      "lost_clicks": 2506,
+      "lost_impressions": 24667,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 14,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "ai-audit-run2",
+    "last_seen_run": "ai-audit-run2",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "llms_txt_missing",
+    "notes": []
+  },
+  {
+    "id": "crawl-0001",
+    "key": "crawl/dup_in_file/blog.conholdate.com/sitemap",
+    "source": "discovery",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "sitemap",
+    "dimension": "crawl",
+    "type": "not_optimized",
+    "title": "Sitemap lists the same URL more than once",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/en/sitemap.xml",
+        "https://blog.conholdate.com/ja/sitemap.xml",
+        "https://blog.conholdate.com/ko/sitemap.xml",
+        "https://blog.conholdate.com/es/sitemap.xml",
+        "https://blog.conholdate.com/de/sitemap.xml",
+        "https://blog.conholdate.com/ru/sitemap.xml",
+        "https://blog.conholdate.com/fr/sitemap.xml",
+        "https://blog.conholdate.com/zh/sitemap.xml",
+        "https://blog.conholdate.com/it/sitemap.xml",
+        "https://blog.conholdate.com/pt/sitemap.xml"
+      ],
+      "observed": "https://blog.conholdate.com/en/sitemap.xml: 2 URLs, e.g. https://blog.conholdate.com/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/total/convert-html-to-image-java/; https://blog.conholdate.com/ja/sitemap.xml: 2 URLs, e.g. https://blog.conholdate.com/ja/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/ja/total/convert-html-to-image-java/; https://blog.conholdate.com/ko/sitemap.xml: 2 URLs, e.g. https://blog.conholdate.com/ko/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/ko/total/convert-html-to-image-java/; https://blog.conholdate.com/es/sitemap.xml: 2 URLs, e.g. https://blog.conholdate.com/es/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/es/total/convert-html-to-image-java/; https://blog.conholdate.com/de/sitemap.xml: 2 URLs, e.g. https://blog.conholdate.com/de/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/de/total/convert-html-to-image-java/; and 13 more sitemaps",
+      "expected": "each URL listed once",
+      "locations": [
+        {
+          "role": "sitemap",
+          "url": "https://blog.conholdate.com/en/sitemap.xml",
+          "note": "2 URLs, e.g. https://blog.conholdate.com/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/total/convert-html-to-image-java/"
+        },
+        {
+          "role": "sitemap",
+          "url": "https://blog.conholdate.com/ja/sitemap.xml",
+          "note": "2 URLs, e.g. https://blog.conholdate.com/ja/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/ja/total/convert-html-to-image-java/"
+        },
+        {
+          "role": "sitemap",
+          "url": "https://blog.conholdate.com/ko/sitemap.xml",
+          "note": "2 URLs, e.g. https://blog.conholdate.com/ko/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/ko/total/convert-html-to-image-java/"
+        },
+        {
+          "role": "sitemap",
+          "url": "https://blog.conholdate.com/es/sitemap.xml",
+          "note": "2 URLs, e.g. https://blog.conholdate.com/es/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/es/total/convert-html-to-image-java/"
+        },
+        {
+          "role": "sitemap",
+          "url": "https://blog.conholdate.com/de/sitemap.xml",
+          "note": "2 URLs, e.g. https://blog.conholdate.com/de/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/de/total/convert-html-to-image-java/"
+        }
+      ]
+    },
+    "affected_pages": 36,
+    "impact": {
+      "clicks_28d": 2,
+      "impressions_28d": 90,
+      "source": "gsc-host",
+      "share": 0.001,
+      "past_clicks": 4,
+      "past_impressions": 107,
+      "lost_clicks": 2,
+      "lost_impressions": 17,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 5,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "discovery-run1",
+    "last_seen_run": "discovery-run1",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "dup_in_file",
+    "notes": []
+  },
+  {
+    "id": "crawl-0002",
+    "key": "crawl/robots_blocked/blog.conholdate.com/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "crawl",
+    "type": "incorrect",
+    "title": "Sitemaps list pages that robots.txt blocks",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/tag/slides-to-word/",
+        "https://blog.conholdate.com/tag/pdf-to-jpg/",
+        "https://blog.conholdate.com/tag/fuzzy-search-in-c/",
+        "https://blog.conholdate.com/tag/clear-image-background/",
+        "https://blog.conholdate.com/tag/convert-word-to-tiff-in-java/",
+        "https://blog.conholdate.com/tag/excel-to-svg/",
+        "https://blog.conholdate.com/tag/md-to-doc/",
+        "https://blog.conholdate.com/tag/add-text-watermark-using-csharp/",
+        "https://blog.conholdate.com/tag/convert-html-to-pdf/"
+      ],
+      "observed": "21 of 57 sampled pages (by template: generic:/{section}/*/* 1/3, tag 20/22). e.g. https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/: disallowed by robots.txt; https://blog.conholdate.com/tag/slides-to-word/: disallowed by robots.txt; https://blog.conholdate.com/tag/pdf-to-jpg/: disallowed by robots.txt; https://blog.conholdate.com/tag/fuzzy-search-in-c/: disallowed by robots.txt; https://blog.conholdate.com/tag/clear-image-background/: disallowed by robots.txt",
+      "expected": "sitemaps list only crawlable pages",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/",
+          "note": "disallowed by robots.txt"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/tag/slides-to-word/",
+          "note": "disallowed by robots.txt"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/tag/pdf-to-jpg/",
+          "note": "disallowed by robots.txt"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/tag/fuzzy-search-in-c/",
+          "note": "disallowed by robots.txt"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/tag/clear-image-background/",
+          "note": "disallowed by robots.txt"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/en/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.com/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "generic:/{section}/*/*": [
+          1,
+          3
+        ],
+        "tag": [
+          20,
+          22
+        ]
+      }
+    },
+    "affected_pages": 39579,
+    "impact": {
+      "clicks_28d": 38,
+      "impressions_28d": 3848,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 155,
+      "past_impressions": 7485,
+      "lost_clicks": 117,
+      "lost_impressions": 3637,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "lost",
+      "score": 26,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 3,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run1",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "robots_blocked",
+    "notes": []
+  },
+  {
+    "id": "crawl-0003",
+    "key": "crawl/link_broken/blog.conholdate.com/post",
+    "source": "link-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "crawl",
+    "type": "broken",
+    "title": "Posts link to blog pages that do not exist",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ar/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/ar/total/convert-html-to-pdf-online/",
+        "https://blog.conholdate.com/ar/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/ar/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/ar/total/view-stl-files-online/",
+        "https://blog.conholdate.com/de/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/de/total/convert-html-to-pdf-online/",
+        "https://blog.conholdate.com/de/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/de/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/de/total/view-stl-files-online/",
+        "https://blog.conholdate.com/es/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/es/total/convert-html-to-pdf-online/",
+        "https://blog.conholdate.com/es/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/es/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/es/total/view-stl-files-online/",
+        "https://blog.conholdate.com/fa/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/fa/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/fa/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/fa/total/view-stl-files-online/",
+        "https://blog.conholdate.com/fr/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/fr/total/convert-html-to-pdf-online/",
+        "https://blog.conholdate.com/fr/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/fr/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/fr/total/view-stl-files-online/",
+        "https://blog.conholdate.com/id/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/id/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/id/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/id/total/view-stl-files-online/",
+        "https://blog.conholdate.com/it/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/it/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/it/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/it/total/view-stl-files-online/",
+        "https://blog.conholdate.com/ja/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/ja/total/convert-html-to-pdf-online/",
+        "https://blog.conholdate.com/ja/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/ja/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/ja/total/view-stl-files-online/",
+        "https://blog.conholdate.com/ko/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/ko/total/convert-html-to-pdf-online/",
+        "https://blog.conholdate.com/ko/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/ko/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/ko/total/view-stl-files-online/",
+        "https://blog.conholdate.com/nl/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/nl/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/nl/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/nl/total/view-stl-files-online/",
+        "https://blog.conholdate.com/pl/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/pl/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/pl/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/pl/total/view-stl-files-online/",
+        "https://blog.conholdate.com/pt/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/pt/total/convert-html-to-pdf-online/",
+        "https://blog.conholdate.com/pt/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/pt/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/pt/total/view-stl-files-online/",
+        "https://blog.conholdate.com/ru/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/ru/total/convert-html-to-pdf-online/",
+        "https://blog.conholdate.com/ru/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/ru/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/ru/total/view-stl-files-online/",
+        "https://blog.conholdate.com/th/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/th/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/th/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/th/total/view-stl-files-online/",
+        "https://blog.conholdate.com/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/total/view-stl-files-online/",
+        "https://blog.conholdate.com/tr/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/tr/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/tr/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/tr/total/view-stl-files-online/",
+        "https://blog.conholdate.com/vi/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/vi/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/vi/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/vi/total/view-stl-files-online/",
+        "https://blog.conholdate.com/zh/total/add-table-of-contents-to-word-document-in-java/",
+        "https://blog.conholdate.com/zh/total/convert-html-to-pdf-online/",
+        "https://blog.conholdate.com/zh/total/convert-html-to-xps-in-csharp/",
+        "https://blog.conholdate.com/zh/total/convert-word-to-image-in-java/",
+        "https://blog.conholdate.com/zh/total/view-stl-files-online/"
+      ],
+      "observed": "81 links on 81 pages (81 distinct targets); by language: ar 5, de 5, es 5, fr 5, ja 5, ko 5, pt 5, ru 5, ...; 51 written by translation commits; 68 copied from the original post",
+      "expected": "Every internal link points at a live page",
+      "locations": [
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ar/total/add-a-table-of-contents-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/add-table-of-contents-to-word-document-in-java/",
+          "file": "content/Conholdate.Total/total/2026-07-28-add-table-of-contents-to-word-document-in-java/index.ar.md",
+          "line": 209,
+          "fix": null,
+          "commit": "3be784d6 2026-08-13: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ar/total/create-ms-PDF-documents-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-html-to-pdf-online/",
+          "file": "content/Conholdate.Total/total/2023-03-03-convert-html-to-pdf-online/index.ar.md",
+          "line": 119,
+          "fix": null,
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ar/total/convert-excel-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-html-to-xps-in-csharp/",
+          "file": "content/Conholdate.Total/total/2026-03-02-convert-html-to-xps-csharp/index.ar.md",
+          "line": 91,
+          "fix": null,
+          "commit": "e634538a 2026-03-15: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ar/total/convert-word-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-word-to-image-in-java/",
+          "file": "content/Conholdate.Total/total/2026-08-19-convert-word-to-image-in-java/index.ar.md",
+          "line": 226,
+          "fix": null,
+          "commit": "343ecf7f 2026-08-20: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ar/total/find-synonym-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/view-stl-files-online/",
+          "file": "content/Conholdate.Total/total/2025-07-02-view-stl-files-online/index.ar.md",
+          "line": 83,
+          "fix": null,
+          "commit": "167991f0 2025-07-07: view stl files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/de/total/add-a-table-of-contents-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/de/total/add-table-of-contents-to-word-document-in-java/",
+          "file": "content/Conholdate.Total/total/2026-07-28-add-table-of-contents-to-word-document-in-java/index.de.md",
+          "line": 221,
+          "fix": null,
+          "commit": "3be784d6 2026-08-13: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/de/total/create-ms-PDF-documents-in-csharp/",
+          "page": "https://blog.conholdate.com/de/total/convert-html-to-pdf-online/",
+          "file": "content/Conholdate.Total/total/2023-03-03-convert-html-to-pdf-online/index.de.md",
+          "line": 119,
+          "fix": null,
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/de/total/convert-excel-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/de/total/convert-html-to-xps-in-csharp/",
+          "file": "content/Conholdate.Total/total/2026-03-02-convert-html-to-xps-csharp/index.de.md",
+          "line": 98,
+          "fix": null,
+          "commit": "e634538a 2026-03-15: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/de/total/convert-word-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/de/total/convert-word-to-image-in-java/",
+          "file": "content/Conholdate.Total/total/2026-08-19-convert-word-to-image-in-java/index.de.md",
+          "line": 228,
+          "fix": null,
+          "commit": "343ecf7f 2026-08-20: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/de/total/find-synonym-in-java/",
+          "page": "https://blog.conholdate.com/de/total/view-stl-files-online/",
+          "file": "content/Conholdate.Total/total/2025-07-02-view-stl-files-online/index.de.md",
+          "line": 83,
+          "fix": null,
+          "commit": "167991f0 2025-07-07: view stl files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/es/total/add-a-table-of-contents-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/es/total/add-table-of-contents-to-word-document-in-java/",
+          "file": "content/Conholdate.Total/total/2026-07-28-add-table-of-contents-to-word-document-in-java/index.es.md",
+          "line": 213,
+          "fix": null,
+          "commit": "3be784d6 2026-08-13: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/es/total/create-ms-PDF-documents-in-csharp/",
+          "page": "https://blog.conholdate.com/es/total/convert-html-to-pdf-online/",
+          "file": "content/Conholdate.Total/total/2023-03-03-convert-html-to-pdf-online/index.es.md",
+          "line": 119,
+          "fix": null,
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/es/total/convert-excel-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/es/total/convert-html-to-xps-in-csharp/",
+          "file": "content/Conholdate.Total/total/2026-03-02-convert-html-to-xps-csharp/index.es.md",
+          "line": 98,
+          "fix": null,
+          "commit": "e634538a 2026-03-15: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/es/total/convert-word-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/es/total/convert-word-to-image-in-java/",
+          "file": "content/Conholdate.Total/total/2026-08-19-convert-word-to-image-in-java/index.es.md",
+          "line": 226,
+          "fix": null,
+          "commit": "343ecf7f 2026-08-20: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/es/total/find-synonym-in-java/",
+          "page": "https://blog.conholdate.com/es/total/view-stl-files-online/",
+          "file": "content/Conholdate.Total/total/2025-07-02-view-stl-files-online/index.es.md",
+          "line": 83,
+          "fix": null,
+          "commit": "167991f0 2025-07-07: view stl files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fa/total/add-a-table-of-contents-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/fa/total/add-table-of-contents-to-word-document-in-java/",
+          "file": "content/Conholdate.Total/total/2026-07-28-add-table-of-contents-to-word-document-in-java/index.fa.md",
+          "line": 214,
+          "fix": null,
+          "commit": "3be784d6 2026-08-13: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fa/total/convert-excel-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/fa/total/convert-html-to-xps-in-csharp/",
+          "file": "content/Conholdate.Total/total/2026-03-02-convert-html-to-xps-csharp/index.fa.md",
+          "line": 97,
+          "fix": null,
+          "commit": "e634538a 2026-03-15: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fa/total/convert-word-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/fa/total/convert-word-to-image-in-java/",
+          "file": "content/Conholdate.Total/total/2026-08-19-convert-word-to-image-in-java/index.fa.md",
+          "line": 226,
+          "fix": null,
+          "commit": "343ecf7f 2026-08-20: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fa/total/find-synonym-in-java/",
+          "page": "https://blog.conholdate.com/fa/total/view-stl-files-online/",
+          "file": "content/Conholdate.Total/total/2025-07-02-view-stl-files-online/index.fa.md",
+          "line": 83,
+          "fix": null,
+          "commit": "167991f0 2025-07-07: view stl files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/add-a-table-of-contents-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/add-table-of-contents-to-word-document-in-java/",
+          "file": "content/Conholdate.Total/total/2026-07-28-add-table-of-contents-to-word-document-in-java/index.fr.md",
+          "line": 217,
+          "fix": null,
+          "commit": "3be784d6 2026-08-13: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/create-ms-PDF-documents-in-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/convert-html-to-pdf-online/",
+          "file": "content/Conholdate.Total/total/2023-03-03-convert-html-to-pdf-online/index.fr.md",
+          "line": 119,
+          "fix": null,
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/convert-excel-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/fr/total/convert-html-to-xps-in-csharp/",
+          "file": "content/Conholdate.Total/total/2026-03-02-convert-html-to-xps-csharp/index.fr.md",
+          "line": 99,
+          "fix": null,
+          "commit": "e634538a 2026-03-15: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/convert-word-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/fr/total/convert-word-to-image-in-java/",
+          "file": "content/Conholdate.Total/total/2026-08-19-convert-word-to-image-in-java/index.fr.md",
+          "line": 229,
+          "fix": null,
+          "commit": "343ecf7f 2026-08-20: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/find-synonym-in-java/",
+          "page": "https://blog.conholdate.com/fr/total/view-stl-files-online/",
+          "file": "content/Conholdate.Total/total/2025-07-02-view-stl-files-online/index.fr.md",
+          "line": 83,
+          "fix": null,
+          "commit": "167991f0 2025-07-07: view stl files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/id/total/add-a-table-of-contents-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/id/total/add-table-of-contents-to-word-document-in-java/",
+          "file": "content/Conholdate.Total/total/2026-07-28-add-table-of-contents-to-word-document-in-java/index.id.md",
+          "line": 212,
+          "fix": null,
+          "commit": "3be784d6 2026-08-13: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/id/total/convert-excel-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/id/total/convert-html-to-xps-in-csharp/",
+          "file": "content/Conholdate.Total/total/2026-03-02-convert-html-to-xps-csharp/index.id.md",
+          "line": 97,
+          "fix": null,
+          "commit": "e634538a 2026-03-15: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/id/total/convert-word-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/id/total/convert-word-to-image-in-java/",
+          "file": "content/Conholdate.Total/total/2026-08-19-convert-word-to-image-in-java/index.id.md",
+          "line": 232,
+          "fix": null,
+          "commit": "343ecf7f 2026-08-20: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/id/total/find-synonym-in-java/",
+          "page": "https://blog.conholdate.com/id/total/view-stl-files-online/",
+          "file": "content/Conholdate.Total/total/2025-07-02-view-stl-files-online/index.id.md",
+          "line": 83,
+          "fix": null,
+          "commit": "167991f0 2025-07-07: view stl files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/it/total/add-a-table-of-contents-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/it/total/add-table-of-contents-to-word-document-in-java/",
+          "file": "content/Conholdate.Total/total/2026-07-28-add-table-of-contents-to-word-document-in-java/index.it.md",
+          "line": 212,
+          "fix": null,
+          "commit": "3be784d6 2026-08-13: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/it/total/convert-excel-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/it/total/convert-html-to-xps-in-csharp/",
+          "file": "content/Conholdate.Total/total/2026-03-02-convert-html-to-xps-csharp/index.it.md",
+          "line": 99,
+          "fix": null,
+          "commit": "e634538a 2026-03-15: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/it/total/convert-word-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/it/total/convert-word-to-image-in-java/",
+          "file": "content/Conholdate.Total/total/2026-08-19-convert-word-to-image-in-java/index.it.md",
+          "line": 230,
+          "fix": null,
+          "commit": "343ecf7f 2026-08-20: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/it/total/find-synonym-in-java/",
+          "page": "https://blog.conholdate.com/it/total/view-stl-files-online/",
+          "file": "content/Conholdate.Total/total/2025-07-02-view-stl-files-online/index.it.md",
+          "line": 83,
+          "fix": null,
+          "commit": "167991f0 2025-07-07: view stl files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ja/total/add-a-table-of-contents-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/ja/total/add-table-of-contents-to-word-document-in-java/",
+          "file": "content/Conholdate.Total/total/2026-07-28-add-table-of-contents-to-word-document-in-java/index.ja.md",
+          "line": 204,
+          "fix": null,
+          "commit": "3be784d6 2026-08-13: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ja/total/create-ms-PDF-documents-in-csharp/",
+          "page": "https://blog.conholdate.com/ja/total/convert-html-to-pdf-online/",
+          "file": "content/Conholdate.Total/total/2023-03-03-convert-html-to-pdf-online/index.ja.md",
+          "line": 119,
+          "fix": null,
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ja/total/convert-excel-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/ja/total/convert-html-to-xps-in-csharp/",
+          "file": "content/Conholdate.Total/total/2026-03-02-convert-html-to-xps-csharp/index.ja.md",
+          "line": 87,
+          "fix": null,
+          "commit": "e634538a 2026-03-15: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ja/total/convert-word-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/ja/total/convert-word-to-image-in-java/",
+          "file": "content/Conholdate.Total/total/2026-08-19-convert-word-to-image-in-java/index.ja.md",
+          "line": 216,
+          "fix": null,
+          "commit": "343ecf7f 2026-08-20: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ja/total/find-synonym-in-java/",
+          "page": "https://blog.conholdate.com/ja/total/view-stl-files-online/",
+          "file": "content/Conholdate.Total/total/2025-07-02-view-stl-files-online/index.ja.md",
+          "line": 83,
+          "fix": null,
+          "commit": "167991f0 2025-07-07: view stl files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ko/total/add-a-table-of-contents-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/ko/total/add-table-of-contents-to-word-document-in-java/",
+          "file": "content/Conholdate.Total/total/2026-07-28-add-table-of-contents-to-word-document-in-java/index.ko.md",
+          "line": 210,
+          "fix": null,
+          "commit": "3be784d6 2026-08-13: Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ko/total/create-ms-PDF-documents-in-csharp/",
+          "page": "https://blog.conholdate.com/ko/total/convert-html-to-pdf-online/",
+          "file": "content/Conholdate.Total/total/2023-03-03-convert-html-to-pdf-online/index.ko.md",
+          "line": 119,
+          "fix": null,
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ko/total/convert-excel-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/ko/total/convert-html-to-xps-in-csharp/",
+          "file": "content/Conholdate.Total/total/2026-03-02-convert-html-to-xps-csharp/index.ko.md",
+          "line": 87,
+          "fix": null,
+          "commit": "e634538a 2026-03-15: Daily Blogs Translation: blog.conholdate.com"
+        }
+      ]
+    },
+    "affected_pages": 81,
+    "impact": {
+      "clicks_28d": 2,
+      "impressions_28d": 556,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 6,
+      "past_impressions": 470,
+      "lost_clicks": 4,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 12,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "M",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "link-audit-run5",
+    "last_seen_run": "link-audit-run5",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "link_broken",
+    "notes": []
+  },
+  {
+    "id": "intl-0001",
+    "key": "intl/hreflang_no_xdefault/blog.conholdate.com/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "intl",
+    "type": "improvable",
+    "title": "hreflang set has no x-default",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/conholdate.total/",
+        "https://blog.conholdate.com/",
+        "https://blog.conholdate.com/archives/",
+        "https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/",
+        "https://blog.conholdate.com/ru/conholdate.total/",
+        "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/ar/",
+        "https://blog.conholdate.com/search/",
+        "https://blog.conholdate.com/total/merge-jpg-images-into-pdf-using-csharp/",
+        "https://blog.conholdate.com/de/conholdate.total/"
+      ],
+      "observed": "36 of 57 sampled pages (by template: category 3/3, generic:/{section}/*/* 2/3, home 3/3, listing 4/4, post 22/22, tag 2/22). e.g. https://blog.conholdate.com/conholdate.total/: 1 entries: en; https://blog.conholdate.com/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/archives/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/ru/conholdate.total/: 17 entries: ja, ko, es, de, ru, fr",
+      "expected": "an x-default entry",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/conholdate.total/",
+          "note": "1 entries: en"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/",
+          "note": "18 entries: en, ja, ko, es, de, ru"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/archives/",
+          "note": "18 entries: en, ja, ko, es, de, ru"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/",
+          "note": "18 entries: en, ja, ko, es, de, ru"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ru/conholdate.total/",
+          "note": "17 entries: ja, ko, es, de, ru, fr"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/en/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.com/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ru/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "category": [
+          3,
+          3
+        ],
+        "generic:/{section}/*/*": [
+          2,
+          3
+        ],
+        "home": [
+          3,
+          3
+        ],
+        "listing": [
+          4,
+          4
+        ],
+        "post": [
+          22,
+          22
+        ],
+        "tag": [
+          2,
+          22
+        ]
+      }
+    },
+    "affected_pages": 14031,
+    "impact": {
+      "clicks_28d": 2709,
+      "impressions_28d": 130819,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 5098,
+      "past_impressions": 151835,
+      "lost_clicks": 2389,
+      "lost_impressions": 21016,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 14,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 2,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run1",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "hreflang_no_xdefault",
+    "notes": []
+  },
+  {
+    "id": "intl-0002",
+    "key": "intl/link_missing_translation/blog.conholdate.com/post",
+    "source": "link-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "intl",
+    "type": "broken",
+    "title": "Translated posts link to translations that do not exist",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/fr/total/add-hyperlinks-and-bookmarks-dynamically-using-csharp/",
+        "https://blog.conholdate.com/fr/total/compare-two-images-and-highlight-differences-csharp/",
+        "https://blog.conholdate.com/fr/total/convert-jpeg-to-jpg-online/",
+        "https://blog.conholdate.com/fr/total/convert-your-ms-office-documents-to-pdf/",
+        "https://blog.conholdate.com/fr/total/create-asp.net-pdf-editor-with-barcode-features/",
+        "https://blog.conholdate.com/fr/total/create-ms-word-documents-in-csharp/",
+        "https://blog.conholdate.com/fr/total/créez-votre-propre-application-google-docs-like-part-two/",
+        "https://blog.conholdate.com/fr/total/créez-votre-propre-application-google-docs-like/",
+        "https://blog.conholdate.com/fr/total/csharp-guide-to-add-image-watermarks-to-pdfs/",
+        "https://blog.conholdate.com/fr/total/extract-table-from-pdf-in-java/",
+        "https://blog.conholdate.com/fr/total/how-to-convert-pdf-to-ppt-in-csharp/",
+        "https://blog.conholdate.com/fr/total/how-to-put-password-on-excel-file-online/",
+        "https://blog.conholdate.com/fr/total/insert-or-delete-rows-and-columns-in-excel-using-csharp/",
+        "https://blog.conholdate.com/fr/total/insert-the-current-date-and-time-in-cell-a1/",
+        "https://blog.conholdate.com/fr/total/merge-jpg-images-into-pdf-using-csharp/",
+        "https://blog.conholdate.com/fr/total/ms-word-automation-create-edit-or-convert-word-documents-using-java/",
+        "https://blog.conholdate.com/fr/total/working-with-fonts-of-powerpoint-ppt-using-python/",
+        "https://blog.conholdate.com/th/total/extract-text-and-images-from-pdf-documents-using-java/",
+        "https://blog.conholdate.com/tr/total/extract-text-and-images-from-pdf-documents-using-java/",
+        "https://blog.conholdate.com/vi/total/extract-text-and-images-from-pdf-documents-using-java/"
+      ],
+      "observed": "20 links on 20 pages (16 distinct targets); by language: fr 17, th 1, tr 1, vi 1; 0 written by translation commits",
+      "expected": "Links to the default-language post when the target has no translation",
+      "locations": [
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/generate-reports-from-excel-data-in-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/add-hyperlinks-and-bookmarks-dynamically-using-csharp/",
+          "file": "content/Conholdate.Total/total/2022-03-11-add-hyperlinks-and-bookmarks-dynamically-using-csharp/index.fr.md",
+          "line": 187,
+          "fix": "https://blog.conholdate.com/total/generate-reports-from-excel-data-in-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/compare-two-or-more-word-documents-using-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/compare-two-images-and-highlight-differences-csharp/",
+          "file": "content/Conholdate.Total/total/2023-04-03-compare-two-images-and-highlight-differences-csharp/index.fr.md",
+          "line": 110,
+          "fix": "https://blog.conholdate.com/total/compare-two-or-more-word-documents-using-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/annotate-jpg-images-using-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/convert-jpeg-to-jpg-online/",
+          "file": "content/Conholdate.Total/total/2023-03-20-convert-jpeg-to-jpg-online/index.fr.md",
+          "line": 84,
+          "fix": "https://blog.conholdate.com/total/annotate-jpg-images-using-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/convert-jpg-to-png-or-pdf-in-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/convert-your-ms-office-documents-to-pdf/",
+          "file": "content/Conholdate.Total/total/2023-04-18-convert-your-ms-office-documents-to-pdf/index.fr.md",
+          "line": 116,
+          "fix": "https://blog.conholdate.com/total/convert-jpg-to-png-or-pdf-in-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/build-your-own-google-docs-like-app/",
+          "page": "https://blog.conholdate.com/fr/total/create-asp.net-pdf-editor-with-barcode-features/",
+          "file": "content/Conholdate.Total/total/2020-07-10-create-asp.net-pdf-editor-with-barcode-features/index.fr.md",
+          "line": 85,
+          "fix": "https://blog.conholdate.com/total/build-your-own-google-docs-like-app/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/compare-two-or-more-word-documents-using-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/create-ms-word-documents-in-csharp/",
+          "file": "content/Conholdate.Total/total/2022-06-21-create-ms-word-documents-in-csharp/index.fr.md",
+          "line": 239,
+          "fix": "https://blog.conholdate.com/total/compare-two-or-more-word-documents-using-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/build-your-own-google-docs-like-app/",
+          "page": "https://blog.conholdate.com/fr/total/créez-votre-propre-application-google-docs-like-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.fr.md",
+          "line": 225,
+          "fix": "https://blog.conholdate.com/total/build-your-own-google-docs-like-app/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/build-your-own-google-docs-like-app-part-two/",
+          "page": "https://blog.conholdate.com/fr/total/créez-votre-propre-application-google-docs-like/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.fr.md",
+          "line": 278,
+          "fix": "https://blog.conholdate.com/total/build-your-own-google-docs-like-app-part-two/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/csharp-guide-to-add-image-watermarks-to-pdfs/",
+          "file": "content/Conholdate.Total/total/2023-02-09-csharp-guide-to-add-image-watermarks-to-pdfs/index.fr.md",
+          "line": 99,
+          "fix": "https://blog.conholdate.com/total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/extract-text-and-images-from-pdf-documents-using-java/",
+          "page": "https://blog.conholdate.com/fr/total/extract-table-from-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2022-09-22-extract-table-from-pdf-in-java/index.fr.md",
+          "line": 139,
+          "fix": "https://blog.conholdate.com/total/extract-text-and-images-from-pdf-documents-using-java/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/render-powerpoint-presentation-using-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/how-to-convert-pdf-to-ppt-in-csharp/",
+          "file": "content/Conholdate.Total/total/2022-06-29-how-to-convert-pdf-to-ppt-in-csharp/index.fr.md",
+          "line": 104,
+          "fix": "https://blog.conholdate.com/total/render-powerpoint-presentation-using-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/apply-the-most-used-formulas-in-excel-using-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/how-to-put-password-on-excel-file-online/",
+          "file": "content/Conholdate.Total/total/2023-02-20-how-to-put-password-on-excel-file-online/index.fr.md",
+          "line": 120,
+          "fix": "https://blog.conholdate.com/total/apply-the-most-used-formulas-in-excel-using-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/hide-and-show-rows-or-columns-in-excel-using-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/insert-or-delete-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-10-06-insert-or-delete-rows-and-columns-in-excel-using-csharp/index.fr.md",
+          "line": 294,
+          "fix": "https://blog.conholdate.com/total/hide-and-show-rows-or-columns-in-excel-using-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/apply-the-most-used-formulas-in-excel-using-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/insert-the-current-date-and-time-in-cell-a1/",
+          "file": "content/Conholdate.Total/total/2023-05-02-insert-the-current-date-and-time-in-cell-a1/index.fr.md",
+          "line": 163,
+          "fix": "https://blog.conholdate.com/total/apply-the-most-used-formulas-in-excel-using-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/crop-and-resize-jpeg-images-using-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/merge-jpg-images-into-pdf-using-csharp/",
+          "file": "content/Conholdate.Total/total/2022-03-21-merge-jpg-images-into-pdf-using-csharp/index.fr.md",
+          "line": 166,
+          "fix": "https://blog.conholdate.com/total/crop-and-resize-jpeg-images-using-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/extract-text-from-word-documents-using-java/",
+          "page": "https://blog.conholdate.com/fr/total/ms-word-automation-create-edit-or-convert-word-documents-using-java/",
+          "file": "content/Conholdate.Total/total/2021-12-01-ms-word-automation-create-edit-or-convert-word-documents-using-java/index.fr.md",
+          "line": 252,
+          "fix": "https://blog.conholdate.com/total/extract-text-from-word-documents-using-java/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr/total/render-powerpoint-presentation-using-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/working-with-fonts-of-powerpoint-ppt-using-python/",
+          "file": "content/Conholdate.Total/total/2023-03-21-working-with-fonts-of-powerpoint-ppt-using-python/index.fr.md",
+          "line": 127,
+          "fix": "https://blog.conholdate.com/total/render-powerpoint-presentation-using-csharp/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/th/total/jpg-to-readable-text-ocr-full-form/",
+          "page": "https://blog.conholdate.com/th/total/extract-text-and-images-from-pdf-documents-using-java/",
+          "file": "content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.th.md",
+          "line": 271,
+          "fix": "https://blog.conholdate.com/total/jpg-to-readable-text-ocr-full-form/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/tr/total/jpg-to-readable-text-ocr-full-form/",
+          "page": "https://blog.conholdate.com/tr/total/extract-text-and-images-from-pdf-documents-using-java/",
+          "file": "content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.tr.md",
+          "line": 271,
+          "fix": "https://blog.conholdate.com/total/jpg-to-readable-text-ocr-full-form/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/vi/total/jpg-to-readable-text-ocr-full-form/",
+          "page": "https://blog.conholdate.com/vi/total/extract-text-and-images-from-pdf-documents-using-java/",
+          "file": "content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.vi.md",
+          "line": 271,
+          "fix": "https://blog.conholdate.com/total/jpg-to-readable-text-ocr-full-form/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated"
+        }
+      ]
+    },
+    "affected_pages": 20,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 547,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 37,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 16,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "link-audit-run5",
+    "last_seen_run": "link-audit-run5",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "link_missing_translation",
+    "notes": []
+  },
+  {
+    "id": "intl-0003",
+    "key": "intl/link_damaged/blog.conholdate.com/post",
+    "source": "link-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "intl",
+    "type": "broken",
+    "title": "Translated posts contain damaged internal links",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ar/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/ar/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/ar/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/de/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/de/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/de/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/es/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/es/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/es/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/fa/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/fa/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/fa/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/fr/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/fr/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/fr/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/id/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/id/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/id/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/it/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/it/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/it/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/ja/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/ja/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/ja/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/ko/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/ko/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/ko/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/nl/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/nl/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/nl/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/pl/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/pl/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/pl/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/pt/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/pt/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/pt/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/ru/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/ru/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/ru/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/th/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/th/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/th/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/tr/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/tr/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/tr/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/vi/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/vi/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/vi/total/redact-excel-xlsx-in-java/",
+        "https://blog.conholdate.com/zh/total/convert-mpp-to-csv-in-java/",
+        "https://blog.conholdate.com/zh/total/fuzzy-search-in-csharp/",
+        "https://blog.conholdate.com/zh/total/redact-excel-xlsx-in-java/"
+      ],
+      "observed": "54 links on 54 pages (54 distinct targets); by language: ar 3, de 3, es 3, fa 3, fr 3, id 3, it 3, ja 3, ...; 0 written by translation commits",
+      "expected": "Each internal link exactly as in the original post, in the page's language when that translation exists",
+      "locations": [
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ar//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.ar.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/ar/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ar//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/ar/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.ar.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/ar/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ar//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.ar.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/ar/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/de//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/de/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.de.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/de/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/de//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/de/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.de.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/de/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/de//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/de/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.de.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/de/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/es//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/es/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.es.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/es/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/es//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/es/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.es.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/es/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/es//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/es/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.es.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/es/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fa//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/fa/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.fa.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/fa/total/convert-mpp-to-excel-in-java/",
+          "commit": "6e86db78 2025-02-10: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fa//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/fa/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.fa.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/fa/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fa//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/fa/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.fa.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/fa/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/fr/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.fr.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/fr/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/fr/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.fr.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/fr/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/fr//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/fr/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.fr.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/fr/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/id//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/id/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.id.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/id/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/id//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/id/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.id.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/id/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/id//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/id/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.id.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/id/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/it//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/it/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.it.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/it/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/it//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/it/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.it.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/it/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/it//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/it/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.it.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/it/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ja//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/ja/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.ja.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/ja/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ja//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/ja/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.ja.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/ja/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ja//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/ja/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.ja.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/ja/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ko//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/ko/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.ko.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/ko/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ko//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/ko/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.ko.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/ko/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ko//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/ko/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.ko.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/ko/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/nl//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/nl/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.nl.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/nl/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/nl//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/nl/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.nl.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/nl/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/nl//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/nl/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.nl.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/nl/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/pl//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/pl/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.pl.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/pl/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/pl//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/pl/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.pl.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/pl/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/pl//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/pl/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.pl.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/pl/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/pt//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/pt/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.pt.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/pt/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/pt//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/pt/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.pt.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/pt/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/pt//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/pt/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.pt.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/pt/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ru//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/ru/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.ru.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/ru/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ru//total/edit-image-metadata-online/",
+          "page": "https://blog.conholdate.com/ru/total/fuzzy-search-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-06-12-fuzzy-search-in-csharp/index.ru.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/ru/total/edit-image-metadata-online/",
+          "commit": "7abbf1c7 2025-06-23: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/ru//total/convert-pptx-to-xml-csharp/",
+          "page": "https://blog.conholdate.com/ru/total/redact-excel-xlsx-in-java/",
+          "file": "content/Conholdate.Total/total/2025-03-06-redact-excel-in-java/index.ru.md",
+          "line": 113,
+          "fix": "https://blog.conholdate.com/ru/total/convert-pptx-to-xml-csharp/",
+          "commit": "a2c2efe1 2025-03-26: Translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/th//total/convert-mpp-to-excel-in-java/",
+          "page": "https://blog.conholdate.com/th/total/convert-mpp-to-csv-in-java/",
+          "file": "content/Conholdate.Total/total/2024-12-11-convert-mpp-to-csv-in-java/index.th.md",
+          "line": 108,
+          "fix": "https://blog.conholdate.com/th/total/convert-mpp-to-excel-in-java/",
+          "commit": "7251c0ec 2025-02-14: Translations"
+        }
+      ]
+    },
+    "affected_pages": 54,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 27,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 73,
+      "lost_clicks": 0,
+      "lost_impressions": 46,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 2,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "link-audit-run5",
+    "last_seen_run": "link-audit-run5",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "link_damaged",
+    "notes": []
+  },
+  {
+    "id": "intl-0004",
+    "key": "intl/link_wrong_language/blog.conholdate.com/post",
+    "source": "link-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "intl",
+    "type": "incorrect",
+    "title": "Posts link to another language although a translation exists",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ar/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/ar/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/ar/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/ar/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/ar/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/ar/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/ar/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/ar/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/ar/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/ar/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/ar/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/ar/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/ar/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/ar/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/ar/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/ar/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/ar/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/ar/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/ar/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/ar/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/ar/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/de/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/de/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/de/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/de/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/de/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/de/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/de/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/de/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/de/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/de/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/de/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/de/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/de/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/de/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/de/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/de/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/de/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/de/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/de/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/de/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/de/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/de/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/es/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/es/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/es/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/es/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/es/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/es/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/es/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/es/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/es/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/es/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/es/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/es/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/es/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/es/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/es/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/es/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/es/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/es/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/es/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/es/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/es/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/es/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/fa/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/fa/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/fa/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/fa/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/fa/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/fa/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/fa/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/fa/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/fa/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/fa/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/fa/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/fa/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/fa/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/fa/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/fa/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/fa/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/fa/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/fa/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/fa/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/fa/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/fa/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/fa/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/fr/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/fr/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/fr/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/fr/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/fr/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/fr/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/fr/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/fr/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/fr/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/fr/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/fr/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/fr/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/fr/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/fr/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/fr/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/fr/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/fr/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/fr/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/fr/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/fr/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/fr/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/fr/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/id/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/id/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/id/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/id/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/id/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/id/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/id/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/id/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/id/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/id/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/id/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/id/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/id/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/id/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/id/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/id/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/id/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/id/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/id/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/id/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/id/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/id/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/it/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/it/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/it/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/it/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/it/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/it/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/it/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/it/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/it/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/it/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/it/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/it/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/it/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/it/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/it/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/it/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/it/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/it/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/it/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/it/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/it/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/it/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/ja/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/ja/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/ja/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/ja/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/ja/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/ja/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/ja/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/ja/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/ja/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/ja/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/ja/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/ja/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/ja/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/ja/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/ja/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/ja/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/ja/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/ja/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/ja/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/ja/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/ja/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/ja/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/ko/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/ko/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/ko/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/ko/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/ko/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/ko/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/ko/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/ko/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/ko/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/ko/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/ko/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/ko/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/ko/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/ko/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/ko/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/ko/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/ko/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/ko/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/ko/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/ko/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/ko/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/ko/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/nl/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/nl/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/nl/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/nl/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/nl/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/nl/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/nl/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/nl/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/nl/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/nl/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/nl/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/nl/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/nl/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/nl/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/nl/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/nl/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/nl/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/nl/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/nl/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/nl/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/nl/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/nl/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/pl/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/pl/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/pl/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/pl/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/pl/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/pl/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/pl/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/pl/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/pl/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/pl/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/pl/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/pl/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/pl/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/pl/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/pl/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/pl/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/pl/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/pl/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/pl/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/pl/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/pl/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/pl/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/pt/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/pt/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/pt/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/pt/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/pt/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/pt/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/pt/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/pt/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/pt/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/pt/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/pt/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/pt/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/pt/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/pt/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/pt/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/pt/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/pt/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/pt/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/pt/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/pt/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/pt/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/pt/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/ru/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/ru/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/ru/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/ru/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/ru/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/ru/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/ru/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/ru/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/ru/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/ru/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/ru/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/ru/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/ru/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/ru/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/ru/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/ru/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/ru/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/ru/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/ru/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/ru/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/ru/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/ru/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/th/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/th/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/th/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/th/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/th/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/th/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/th/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/th/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/th/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/th/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/th/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/th/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/th/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/th/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/th/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/th/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/th/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/th/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/th/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/th/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/th/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/th/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/tr/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/tr/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/tr/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/tr/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/tr/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/tr/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/tr/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/tr/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/tr/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/tr/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/tr/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/tr/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/tr/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/tr/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/tr/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/tr/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/tr/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/tr/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/tr/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/tr/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/tr/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/tr/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/vi/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/vi/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/vi/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/vi/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/vi/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/vi/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/vi/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/vi/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/vi/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/vi/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/vi/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/vi/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/vi/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/vi/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/vi/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/vi/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/vi/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/vi/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/vi/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/vi/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/vi/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/vi/total/text-to-qr-code-generator-in-csharp/",
+        "https://blog.conholdate.com/zh/total/autofit-rows-or-columns-in-excel-using-java/",
+        "https://blog.conholdate.com/zh/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/zh/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/zh/total/convert-html-to-bmp-in-java/",
+        "https://blog.conholdate.com/zh/total/convert-latex-to-pdf-in-java/",
+        "https://blog.conholdate.com/zh/total/convert-markdown-to-word-in-csharp/",
+        "https://blog.conholdate.com/zh/total/convert-mpp-to-mpx-in-csharp/",
+        "https://blog.conholdate.com/zh/total/convert-pdf-to-grayscale-in-csharp/",
+        "https://blog.conholdate.com/zh/total/convert-pptx-to-docx-java/",
+        "https://blog.conholdate.com/zh/total/convert-pptx-to-emf-in-java/",
+        "https://blog.conholdate.com/zh/total/convert-psd-to-jpg-in-csharp/",
+        "https://blog.conholdate.com/zh/total/convert-pub-to-pptx-in-csharp/",
+        "https://blog.conholdate.com/zh/total/convert-txt-to-json-in-java/",
+        "https://blog.conholdate.com/zh/total/convert-webp-to-pdf-in-java/",
+        "https://blog.conholdate.com/zh/total/convert-xbrl-to-excel-in-csharp/",
+        "https://blog.conholdate.com/zh/total/convert-xbrl-to-pdf-online/",
+        "https://blog.conholdate.com/zh/total/convert-xps-to-bmp-in-csharp/",
+        "https://blog.conholdate.com/zh/total/create-visio-diagram-in-csharp/",
+        "https://blog.conholdate.com/zh/total/flip-image-in-csharp/",
+        "https://blog.conholdate.com/zh/total/merge-docx-to-pdf-java/",
+        "https://blog.conholdate.com/zh/total/merge-excel-files-in-csharp/",
+        "https://blog.conholdate.com/zh/total/text-to-qr-code-generator-in-csharp/"
+      ],
+      "observed": "731 links on 374 pages (27 distinct targets); by language: ar 43, de 43, es 43, fa 43, fr 43, id 43, it 43, ja 43, ...; 0 written by translation commits",
+      "expected": "Internal links point at the post in the page's own language",
+      "locations": [
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/create-visio-diagram-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/autofit-rows-or-columns-in-excel-using-java/",
+          "file": "content/Conholdate.Total/total/2025-10-01-autofit-rows-or-columns-in-excel-using-java/index.ar.md",
+          "line": 68,
+          "fix": "https://blog.conholdate.com/ar/total/create-visio-diagram-in-csharp/",
+          "commit": "5fe36086 2025-10-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-psd-to-jpg-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/autofit-rows-or-columns-in-excel-using-java/",
+          "file": "content/Conholdate.Total/total/2025-10-01-autofit-rows-or-columns-in-excel-using-java/index.ar.md",
+          "line": 69,
+          "fix": "https://blog.conholdate.com/ar/total/convert-psd-to-jpg-in-csharp/",
+          "commit": "5fe36086 2025-10-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/merge-docx-to-pdf-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-cad-to-pdf-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-08-11-convert-cad-to-pdf-in-csharp/index.ar.md",
+          "line": 67,
+          "fix": "https://blog.conholdate.com/ar/total/merge-docx-to-pdf-java/",
+          "commit": "e0bd70aa 2025-08-29: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-pdf-to-grayscale-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-cad-to-pdf-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-08-11-convert-cad-to-pdf-in-csharp/index.ar.md",
+          "line": 68,
+          "fix": "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
+          "commit": "e0bd70aa 2025-08-29: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-pdf-to-grayscale-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-csv-to-xml-online/",
+          "file": "content/Conholdate.Total/total/2025-08-15-convert-csv-to-xml-online/index.ar.md",
+          "line": 88,
+          "fix": "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
+          "commit": "e0bd70aa 2025-08-29: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-cad-to-pdf-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-csv-to-xml-online/",
+          "file": "content/Conholdate.Total/total/2025-08-15-convert-csv-to-xml-online/index.ar.md",
+          "line": 89,
+          "fix": "https://blog.conholdate.com/ar/total/convert-cad-to-pdf-in-csharp/",
+          "commit": "e0bd70aa 2025-08-29: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/delete-blank-pages-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-html-to-bmp-in-java/",
+          "file": "content/Conholdate.Total/total/2025-10-17-convert-html-to-bmp-in-java/index.ar.md",
+          "line": 79,
+          "fix": "https://blog.conholdate.com/ar/total/delete-blank-pages-in-word-using-csharp/",
+          "commit": "82840e71 2025-12-01: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-html-to-bmp-in-java/",
+          "file": "content/Conholdate.Total/total/2025-10-17-convert-html-to-bmp-in-java/index.ar.md",
+          "line": 80,
+          "fix": "https://blog.conholdate.com/ar/total/convert-mpp-to-mpx-in-csharp/",
+          "commit": "82840e71 2025-12-01: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/merge-excel-files-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-latex-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2025-09-22-convert-latex-to-pdf-in-java/index.ar.md",
+          "line": 65,
+          "fix": "https://blog.conholdate.com/ar/total/merge-excel-files-in-csharp/",
+          "commit": "d32e64a2 2025-10-15: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-pub-to-pptx-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-latex-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2025-09-22-convert-latex-to-pdf-in-java/index.ar.md",
+          "line": 66,
+          "fix": "https://blog.conholdate.com/ar/total/convert-pub-to-pptx-in-csharp/",
+          "commit": "d32e64a2 2025-10-15: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-xbrl-to-excel-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-markdown-to-word-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-09-01-convert-markdown-to-word-in-csharp/index.ar.md",
+          "line": 70,
+          "fix": "https://blog.conholdate.com/ar/total/convert-xbrl-to-excel-in-csharp/",
+          "commit": "d32e64a2 2025-10-15: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-txt-to-json-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-markdown-to-word-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-09-01-convert-markdown-to-word-in-csharp/index.ar.md",
+          "line": 71,
+          "fix": "https://blog.conholdate.com/ar/total/convert-txt-to-json-in-java/",
+          "commit": "d32e64a2 2025-10-15: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/delete-blank-pages-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-mpp-to-mpx-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-10-10-convert-mpp-to-mpx-in-csharp/index.ar.md",
+          "line": 72,
+          "fix": "https://blog.conholdate.com/ar/total/delete-blank-pages-in-word-using-csharp/",
+          "commit": "5fe36086 2025-10-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-pptx-to-emf-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-mpp-to-mpx-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-10-10-convert-mpp-to-mpx-in-csharp/index.ar.md",
+          "line": 73,
+          "fix": "https://blog.conholdate.com/ar/total/convert-pptx-to-emf-in-java/",
+          "commit": "5fe36086 2025-10-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/merge-docx-to-pdf-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-08-13-convert-pdf-to-grayscale-in-csharp/index.ar.md",
+          "line": 76,
+          "fix": "https://blog.conholdate.com/ar/total/merge-docx-to-pdf-java/",
+          "commit": "7e00da7a 2025-08-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-webp-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-08-13-convert-pdf-to-grayscale-in-csharp/index.ar.md",
+          "line": 77,
+          "fix": "https://blog.conholdate.com/ar/total/convert-webp-to-pdf-in-java/",
+          "commit": "7e00da7a 2025-08-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-pptx-to-xlsx-java",
+          "page": "https://blog.conholdate.com/ar/total/convert-pptx-to-docx-java/",
+          "file": "content/Conholdate.Total/total/2023-12-05-convert-pptx-to-docx-java/index.ar.md",
+          "line": 92,
+          "fix": "https://blog.conholdate.com/ar/total/convert-pptx-to-xlsx-java/",
+          "commit": "6246b5fd 2023-12-07: PPTX to DOCX"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/create-organizational-chart-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-pptx-to-emf-in-java/",
+          "file": "content/Conholdate.Total/total/2025-10-07-convert-pptx-to-emf-in-java/index.ar.md",
+          "line": 83,
+          "fix": "https://blog.conholdate.com/ar/total/create-organizational-chart-in-csharp/",
+          "commit": "5fe36086 2025-10-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/autofit-rows-or-columns-in-excel-using-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-pptx-to-emf-in-java/",
+          "file": "content/Conholdate.Total/total/2025-10-07-convert-pptx-to-emf-in-java/index.ar.md",
+          "line": 84,
+          "fix": "https://blog.conholdate.com/ar/total/autofit-rows-or-columns-in-excel-using-java/",
+          "commit": "5fe36086 2025-10-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/compare-csv-files-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-psd-to-jpg-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-09-24-convert-psd-to-jpg-in-csharp/index.ar.md",
+          "line": 61,
+          "fix": "https://blog.conholdate.com/ar/total/compare-csv-files-in-java/",
+          "commit": "0ce48c7e 2025-09-30: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-pub-to-docx-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-psd-to-jpg-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-09-24-convert-psd-to-jpg-in-csharp/index.ar.md",
+          "line": 62,
+          "fix": "https://blog.conholdate.com/ar/total/convert-pub-to-docx-in-java/",
+          "commit": "0ce48c7e 2025-09-30: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/merge-excel-files-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-pub-to-pptx-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-09-15-convert-pub-to-pptx-in-csharp/index.ar.md",
+          "line": 71,
+          "fix": "https://blog.conholdate.com/ar/total/merge-excel-files-in-csharp/",
+          "commit": "0ce48c7e 2025-09-30: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/scan-barcodes-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-pub-to-pptx-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-09-15-convert-pub-to-pptx-in-csharp/index.ar.md",
+          "line": 72,
+          "fix": "https://blog.conholdate.com/ar/total/scan-barcodes-in-java/",
+          "commit": "0ce48c7e 2025-09-30: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/flip-image-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-txt-to-json-in-java/",
+          "file": "content/Conholdate.Total/total/2025-08-27-convert-txt-to-json-in-java/index.ar.md",
+          "line": 66,
+          "fix": "https://blog.conholdate.com/ar/total/flip-image-in-csharp/",
+          "commit": "f16d57e8 2025-09-24: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/text-to-qr-code-generator-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-txt-to-json-in-java/",
+          "file": "content/Conholdate.Total/total/2025-08-27-convert-txt-to-json-in-java/index.ar.md",
+          "line": 67,
+          "fix": "https://blog.conholdate.com/ar/total/text-to-qr-code-generator-in-csharp/",
+          "commit": "f16d57e8 2025-09-24: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-msg-to-pdf-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-webp-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2025-08-04-convert-webp-to-pdf-in-java/index.ar.md",
+          "line": 73,
+          "fix": "https://blog.conholdate.com/ar/total/convert-msg-to-pdf-java/",
+          "commit": "7e00da7a 2025-08-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/find-and-replace-text-in-pdf-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-webp-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2025-08-04-convert-webp-to-pdf-in-java/index.ar.md",
+          "line": 74,
+          "fix": "https://blog.conholdate.com/ar/total/find-and-replace-text-in-pdf-java/",
+          "commit": "7e00da7a 2025-08-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/text-to-qr-code-generator-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-xbrl-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-08-29-convert-xbrl-to-excel-in-csharp/index.ar.md",
+          "line": 72,
+          "fix": "https://blog.conholdate.com/ar/total/text-to-qr-code-generator-in-csharp/",
+          "commit": "f16d57e8 2025-09-24: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-txt-to-json-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-xbrl-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-08-29-convert-xbrl-to-excel-in-csharp/index.ar.md",
+          "line": 73,
+          "fix": "https://blog.conholdate.com/ar/total/convert-txt-to-json-in-java/",
+          "commit": "f16d57e8 2025-09-24: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/flip-image-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-xbrl-to-pdf-online/",
+          "file": "content/Conholdate.Total/total/2025-08-18-convert-xbrl-to-pdf-online/index.ar.md",
+          "line": 79,
+          "fix": "https://blog.conholdate.com/ar/total/flip-image-in-csharp/",
+          "commit": "e0bd70aa 2025-08-29: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-pdf-to-grayscale-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-xbrl-to-pdf-online/",
+          "file": "content/Conholdate.Total/total/2025-08-18-convert-xbrl-to-pdf-online/index.ar.md",
+          "line": 80,
+          "fix": "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
+          "commit": "e0bd70aa 2025-08-29: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/delete-blank-pages-in-word-using-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/convert-xps-to-bmp-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-10-15-convert-xps-to-bmp-in-csharp/index.ar.md",
+          "line": 98,
+          "fix": "https://blog.conholdate.com/ar/total/delete-blank-pages-in-word-using-csharp/",
+          "commit": "82840e71 2025-12-01: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-html-to-bmp-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/convert-xps-to-bmp-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-10-15-convert-xps-to-bmp-in-csharp/index.ar.md",
+          "line": 99,
+          "fix": "https://blog.conholdate.com/ar/total/convert-html-to-bmp-in-java/",
+          "commit": "82840e71 2025-12-01: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/compare-csv-files-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/create-visio-diagram-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-09-26-create-visio-diagram-in-csharp/index.ar.md",
+          "line": 89,
+          "fix": "https://blog.conholdate.com/ar/total/compare-csv-files-in-java/",
+          "commit": "0ce48c7e 2025-09-30: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-psd-to-jpg-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/create-visio-diagram-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-09-26-create-visio-diagram-in-csharp/index.ar.md",
+          "line": 90,
+          "fix": "https://blog.conholdate.com/ar/total/convert-psd-to-jpg-in-csharp/",
+          "commit": "0ce48c7e 2025-09-30: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-csv-to-xml-online/",
+          "page": "https://blog.conholdate.com/ar/total/flip-image-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-08-20-flip-image-in-csharp/index.ar.md",
+          "line": 72,
+          "fix": "https://blog.conholdate.com/ar/total/convert-csv-to-xml-online/",
+          "commit": "e0bd70aa 2025-08-29: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-pdf-to-grayscale-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/flip-image-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-08-20-flip-image-in-csharp/index.ar.md",
+          "line": 73,
+          "fix": "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
+          "commit": "e0bd70aa 2025-08-29: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-msg-to-pdf-java/",
+          "page": "https://blog.conholdate.com/ar/total/merge-docx-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-08-06-merge-docx-to-pdf-java/index.ar.md",
+          "line": 71,
+          "fix": "https://blog.conholdate.com/ar/total/convert-msg-to-pdf-java/",
+          "commit": "7e00da7a 2025-08-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/convert-webp-to-pdf-in-java/",
+          "page": "https://blog.conholdate.com/ar/total/merge-docx-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-08-06-merge-docx-to-pdf-java/index.ar.md",
+          "line": 72,
+          "fix": "https://blog.conholdate.com/ar/total/convert-webp-to-pdf-in-java/",
+          "commit": "7e00da7a 2025-08-22: translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/total/split-excel-files-in-csharp/",
+          "page": "https://blog.conholdate.com/ar/total/merge-excel-files-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-09-12-merge-excel-files-in-csharp/index.ar.md",
+          "line": 68,
+          "fix": "https://blog.conholdate.com/ar/total/split-excel-files-in-csharp/",
+          "commit": "d32e64a2 2025-10-15: translations"
+        }
+      ]
+    },
+    "affected_pages": 374,
+    "impact": {
+      "clicks_28d": 13,
+      "impressions_28d": 948,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 11,
+      "past_impressions": 490,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 19,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "link-audit-run5",
+    "last_seen_run": "link-audit-run5",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "link_wrong_language",
+    "notes": []
+  },
+  {
+    "id": "onpage-0001",
+    "key": "onpage/description_length/blog.conholdate.com/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "onpage",
+    "type": "improvable",
+    "title": "Meta descriptions are too long or too short",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/conholdate.total/",
+        "https://blog.conholdate.com/",
+        "https://blog.conholdate.com/archives/",
+        "https://blog.conholdate.com/ru/conholdate.total/",
+        "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/ar/",
+        "https://blog.conholdate.com/search/",
+        "https://blog.conholdate.com/de/conholdate.total/",
+        "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/id/"
+      ],
+      "observed": "19 of 57 sampled pages (by template: category 3/3, generic:/{section}/*/* 2/3, home 3/3, listing 4/4, post 5/22, tag 2/22). e.g. https://blog.conholdate.com/conholdate.total/: width 33: 'Conholdate Blog - Conholdate Blog'; https://blog.conholdate.com/: width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'; https://blog.conholdate.com/archives/: width 8: 'archives'; https://blog.conholdate.com/ru/conholdate.total/: width 35: 'Conholdate.Totals - Conholdate Blog'; https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'",
+      "expected": "50-170 characters (CJK count double)",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/conholdate.total/",
+          "note": "width 33: 'Conholdate Blog - Conholdate Blog'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/",
+          "note": "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/archives/",
+          "note": "width 8: 'archives'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ru/conholdate.total/",
+          "note": "width 35: 'Conholdate.Totals - Conholdate Blog'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+          "note": "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/en/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.com/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ru/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ko/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "category": [
+          3,
+          3
+        ],
+        "generic:/{section}/*/*": [
+          2,
+          3
+        ],
+        "home": [
+          3,
+          3
+        ],
+        "listing": [
+          4,
+          4
+        ],
+        "post": [
+          5,
+          22
+        ],
+        "tag": [
+          2,
+          22
+        ]
+      }
+    },
+    "affected_pages": 6311,
+    "impact": {
+      "clicks_28d": 619,
+      "impressions_28d": 30058,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 1171,
+      "past_impressions": 35119,
+      "lost_clicks": 552,
+      "lost_impressions": 5061,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 12,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run1",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "description_length",
+    "notes": []
+  },
+  {
+    "id": "onpage-0002",
+    "key": "onpage/h1_missing/blog.conholdate.com/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "onpage",
+    "type": "improvable",
+    "title": "Pages have no H1",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/",
+        "https://blog.conholdate.com/ar/",
+        "https://blog.conholdate.com/id/"
+      ],
+      "observed": "3 of 57 sampled pages (by template: home 3/3). e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/id/: no non-empty <h1>",
+      "expected": "one H1 that states the page topic",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/",
+          "note": "no non-empty <h1>"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ar/",
+          "note": "no non-empty <h1>"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/id/",
+          "note": "no non-empty <h1>"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/en/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.com/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ar/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/id/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "home": [
+          3,
+          3
+        ]
+      }
+    },
+    "affected_pages": 18,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 14,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 1,
+      "past_impressions": 24,
+      "lost_clicks": 1,
+      "lost_impressions": 10,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "lost",
+      "score": 1,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run1",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "h1_missing",
+    "notes": []
+  },
+  {
+    "id": "onpage-0003",
+    "key": "onpage/title_duplicate/blog.conholdate.com/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "onpage",
+    "type": "not_optimized",
+    "title": "Different pages share the same title",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/conholdate.total/",
+        "https://blog.conholdate.com/"
+      ],
+      "observed": "2 of 57 sampled pages (by template: category 1/3, home 1/3). e.g. https://blog.conholdate.com/conholdate.total/: 'Conholdate Blog' also on https://blog.conholdate.com/; https://blog.conholdate.com/: 'Conholdate Blog' also on https://blog.conholdate.com/conholdate.total/",
+      "expected": "a unique title per page and language",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/conholdate.total/",
+          "note": "'Conholdate Blog' also on https://blog.conholdate.com/"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/",
+          "note": "'Conholdate Blog' also on https://blog.conholdate.com/conholdate.total/"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/en/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.com/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "category": [
+          1,
+          3
+        ],
+        "home": [
+          1,
+          3
+        ]
+      }
+    },
+    "affected_pages": 12,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 5,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 8,
+      "lost_clicks": 0,
+      "lost_impressions": 3,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "M",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run1",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "title_duplicate",
+    "notes": []
+  },
+  {
+    "id": "onpage-0004",
+    "key": "onpage/title_length/blog.conholdate.com/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "onpage",
+    "type": "improvable",
+    "title": "Titles are too long or too short",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/archives/",
+        "https://blog.conholdate.com/search/",
+        "https://blog.conholdate.com/ar/search/",
+        "https://blog.conholdate.com/ja/search/",
+        "https://blog.conholdate.com/total/free-psd-viewer-online/",
+        "https://blog.conholdate.com/total/create-and-obtain-form-fields-from-word-documents-with-java/",
+        "https://blog.conholdate.com/es/total/scrub-metadata-online/"
+      ],
+      "observed": "7 of 57 sampled pages (by template: listing 4/4, post 3/22). e.g. https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/search/: width 6: 'Search'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/ja/search/: width 4: '探す'; https://blog.conholdate.com/total/free-psd-viewer-online/: width 82: 'Free Adobe PSD Image Viewer Online | View Photoshop PSD File in C# .NET | Open PSD'",
+      "expected": "10-70 characters (CJK count double)",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/archives/",
+          "note": "width 7: 'Archive'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/search/",
+          "note": "width 6: 'Search'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ar/search/",
+          "note": "width 4: 'يبحث'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ja/search/",
+          "note": "width 4: '探す'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/total/free-psd-viewer-online/",
+          "note": "width 82: 'Free Adobe PSD Image Viewer Online | View Photoshop PSD File in C# .NET | Open PSD'"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/en/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.com/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ar/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ja/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "listing": [
+          4,
+          4
+        ],
+        "post": [
+          3,
+          22
+        ]
+      }
+    },
+    "affected_pages": 1398,
+    "impact": {
+      "clicks_28d": 369,
+      "impressions_28d": 17801,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 693,
+      "past_impressions": 20614,
+      "lost_clicks": 324,
+      "lost_impressions": 2813,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 11,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run1",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "title_length",
+    "notes": []
+  },
+  {
+    "id": "onpage-0005",
+    "key": "onpage/text_topic_mismatch/blog.conholdate.com/page",
+    "source": "text-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "onpage",
+    "type": "incorrect",
+    "title": "Title or description is about a different product",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ru/conholdate.total/",
+        "https://blog.conholdate.com/de/conholdate.total/"
+      ],
+      "observed": "2 of 36 checked pages: /ru/conholdate.total/ H1: 'Conholdate.Totals' → 'Conholdate.Total'; /de/conholdate.total/ H1: 'Conholdate.Totals' → 'Conholdate.Total'",
+      "expected": "Title and meta description describe the page's own product, like its H1",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ru/conholdate.total/",
+          "note": "H1: 'Conholdate.Totals' → 'Conholdate.Total'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/de/conholdate.total/",
+          "note": "H1: 'Conholdate.Totals' → 'Conholdate.Total'"
+        }
+      ]
+    },
+    "affected_pages": 2,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 0,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-04",
+        "2026-05-01"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-03",
+        "2026-10-30"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-02",
+    "first_seen_run": "text-audit-run4",
+    "last_seen_run": "text-audit-run4",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "text_topic_mismatch",
+    "notes": []
+  }
+]

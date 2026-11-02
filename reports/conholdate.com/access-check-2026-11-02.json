@@ -1,0 +1,219 @@
+{
+  "tenant": "conholdate.com",
+  "run_date": "2026-11-02",
+  "identity": "sk-serv-acc@health-and-recovery.iam.gserviceaccount.com",
+  "gsc": {
+    "window": [
+      "2026-10-03",
+      "2026-10-30"
+    ],
+    "properties": {
+      "https://blog.conholdate.com/": {
+        "permission": "siteRestrictedUser",
+        "clicks": 2740,
+        "impressions": 129800,
+        "top_pages": [
+          {
+            "page": "https://blog.conholdate.com/id/total/unlock-zip-online/",
+            "clicks": 223,
+            "impressions": 1984
+          },
+          {
+            "page": "https://blog.conholdate.com/ko/total/unlock-zip-online/",
+            "clicks": 167,
+            "impressions": 1915
+          },
+          {
+            "page": "https://blog.conholdate.com/total/unlock-zip-online/",
+            "clicks": 89,
+            "impressions": 761
+          },
+          {
+            "page": "https://blog.conholdate.com/total/convert-zip-to-jpg-online/",
+            "clicks": 85,
+            "impressions": 6788
+          },
+          {
+            "page": "https://blog.conholdate.com/ru/total/online-visio-viewer/",
+            "clicks": 74,
+            "impressions": 2457
+          }
+        ],
+        "sitemaps": {
+          "count": 1,
+          "with_errors": [],
+          "pending": []
+        }
+      }
+    },
+    "ok": true,
+    "visible_to_identity": {
+      "https://blog.aspose.app/": "siteRestrictedUser",
+      "https://blog.aspose.cloud/": "siteRestrictedUser",
+      "https://blog.aspose.com/": "siteRestrictedUser",
+      "https://about.aspose.app/": "siteRestrictedUser",
+      "https://blog.conholdate.cloud/": "siteRestrictedUser",
+      "https://blog.conholdate.com/": "siteRestrictedUser",
+      "https://blog.groupdocs.cloud/": "siteRestrictedUser",
+      "https://products.aspose.app/": "siteRestrictedUser",
+      "https://blog.groupdocs.com/": "siteRestrictedUser",
+      "https://releases.aspose.app/": "siteRestrictedUser",
+      "https://websites.aspose.app/": "siteRestrictedUser"
+    }
+  },
+  "ga4": {
+    "ok": true,
+    "property_id": "252867297",
+    "window": [
+      "28daysAgo",
+      "yesterday"
+    ],
+    "hosts": {
+      "products.conholdate.com": {
+        "sessions": 139907.0,
+        "organic_sessions": 3390.0
+      },
+      "blog.conholdate.com": {
+        "sessions": 12226.0,
+        "organic_sessions": 2235.0
+      },
+      "(not set)": {
+        "sessions": 11180.0,
+        "organic_sessions": 1544.0
+      },
+      "releases.conholdate.com": {
+        "sessions": 6187.0,
+        "organic_sessions": 762.0
+      },
+      "reference.conholdate.com": {
+        "sessions": 5323.0,
+        "organic_sessions": 6.0
+      },
+      "blog-qa.conholdate.com": {
+        "sessions": 4098.0,
+        "organic_sessions": 4.0
+      },
+      "www.conholdate.com": {
+        "sessions": 2390.0,
+        "organic_sessions": 173.0
+      },
+      "kb.conholdate.com": {
+        "sessions": 2356.0,
+        "organic_sessions": 85.0
+      },
+      "purchase.conholdate.com": {
+        "sessions": 1737.0,
+        "organic_sessions": 18.0
+      },
+      "docs.conholdate.com": {
+        "sessions": 1251.0,
+        "organic_sessions": 22.0
+      },
+      "tutorials.conholdate.com": {
+        "sessions": 1128.0,
+        "organic_sessions": 16.0
+      },
+      "search.conholdate.com": {
+        "sessions": 849.0,
+        "organic_sessions": 21.0
+      },
+      "websites.conholdate.com": {
+        "sessions": 795.0,
+        "organic_sessions": 20.0
+      },
+      "about.conholdate.com": {
+        "sessions": 546.0,
+        "organic_sessions": 4.0
+      },
+      "": {
+        "sessions": 302.0,
+        "organic_sessions": 41.0
+      },
+      "forum.conholdate.com": {
+        "sessions": 290.0,
+        "organic_sessions": 4.0
+      },
+      "helpdesk.conholdate.com": {
+        "sessions": 249.0,
+        "organic_sessions": 0.0
+      },
+      "metrics.conholdate.com": {
+        "sessions": 245.0,
+        "organic_sessions": 0.0
+      },
+      "consulting.conholdate.com": {
+        "sessions": 104.0,
+        "organic_sessions": 0.0
+      },
+      "status.conholdate.com": {
+        "sessions": 87.0,
+        "organic_sessions": 0.0
+      },
+      "www-conholdate-com.b-cdn.net": {
+        "sessions": 18.0,
+        "organic_sessions": 0.0
+      },
+      "qa.releases.conholdate.com": {
+        "sessions": 13.0,
+        "organic_sessions": 0.0
+      },
+      "aspose.conholdate.com": {
+        "sessions": 7.0,
+        "organic_sessions": 0.0
+      },
+      "blog2.conholdate.com": {
+        "sessions": 7.0,
+        "organic_sessions": 0.0
+      },
+      "products.total.conholdate.com": {
+        "sessions": 4.0,
+        "organic_sessions": 0.0
+      },
+      "groupdocs.conholdate.com": {
+        "sessions": 4.0,
+        "organic_sessions": 1.0
+      },
+      "localhost": {
+        "sessions": 3.0,
+        "organic_sessions": 0.0
+      },
+      "kb-conholdate-com.b-cdn.net": {
+        "sessions": 2.0,
+        "organic_sessions": 2.0
+      },
+      "kb-qa.conholdate.com": {
+        "sessions": 2.0,
+        "organic_sessions": 0.0
+      },
+      "reference-conholdate-com.s3-website.dynabic.com": {
+        "sessions": 2.0,
+        "organic_sessions": 0.0
+      },
+      "about-conholdate-com.b-cdn.net": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      },
+      "products-conholdate-com.b-cdn.net": {
+        "sessions": 1.0,
+        "organic_sessions": 1.0
+      },
+      "products-conholdate-com.translate.goog": {
+        "sessions": 1.0,
+        "organic_sessions": 1.0
+      },
+      "reference.conholdate.com.s3-website-us-west-2.amazonaws.com": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      },
+      "total.conholdate.com": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      }
+    },
+    "tenant_hosts_not_seen": [],
+    "excluded_hosts_seen": [
+      "kb-qa.conholdate.com",
+      "blog-qa.conholdate.com"
+    ]
+  }
+}

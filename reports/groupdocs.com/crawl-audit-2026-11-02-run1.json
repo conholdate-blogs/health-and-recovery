@@ -1,0 +1,4684 @@
+{
+  "tenant": "groupdocs.com",
+  "auditor": "crawl-audit",
+  "run_id": 1,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.com"
+    ],
+    "sections": null,
+    "inventory_run": 1,
+    "per_template": 2,
+    "other_langs": 2,
+    "max_per_host": null,
+    "max_pages": null
+  },
+  "canonical_targets": {},
+  "requests": 36,
+  "duration_s": 35.9,
+  "pages_planned": 35,
+  "stopped_early": false,
+  "summary": {
+    "blog.groupdocs.com": {
+      "pages": 35,
+      "ok_html": 35,
+      "errors": 0,
+      "redirected": 1,
+      "blocked": 0,
+      "ignored": 0,
+      "issues": {
+        "content_needs_js": 2,
+        "description_length": 25,
+        "h1_missing": 4,
+        "h1_multiple": 4,
+        "hreflang_no_xdefault": 35,
+        "redirected": 1,
+        "title_length": 16
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "ai-0001",
+      "tenant": "groupdocs.com",
+      "subdomain": "blog.groupdocs.com",
+      "template": "page",
+      "dimension": "ai",
+      "check": "content_needs_js",
+      "type": "incorrect",
+      "title": "Pages show almost no text without JavaScript",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.com/search/",
+          "https://blog.groupdocs.com/zh/search/"
+        ],
+        "observed": "2 of 35 sampled pages (by template: listing 2/4). e.g. https://blog.groupdocs.com/search/: 138 characters of main text in the HTML; https://blog.groupdocs.com/zh/search/: 138 characters of main text in the HTML",
+        "expected": "the main text in the HTML itself (at least 250 characters); AI crawlers do not run JavaScript",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/search/",
+            "note": "138 characters of main text in the HTML"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/zh/search/",
+            "note": "138 characters of main text in the HTML"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/zh/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "listing": [
+            2,
+            4
+          ]
+        }
+      },
+      "affected_pages": 22,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "M",
+      "fix_tier": 2,
+      "fix_channel": "none",
+      "status": "open",
+      "detected_at": "2026-11-02"
+    },
+    {
+      "id": "onpage-0001",
+      "tenant": "groupdocs.com",
+      "subdomain": "blog.groupdocs.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "description_length",
+      "type": "improvable",
+      "title": "Meta descriptions are too long or too short",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.com/groupdocs.blog/",
+          "https://blog.groupdocs.com/",
+          "https://blog.groupdocs.com/search/",
+          "https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/",
+          "https://blog.groupdocs.com/cs/",
+          "https://blog.groupdocs.com/archives/",
+          "https://blog.groupdocs.com/ar/watermark/audit-automation/net/",
+          "https://blog.groupdocs.com/vi/",
+          "https://blog.groupdocs.com/zh-hant/archives/",
+          "https://blog.groupdocs.com/signature/what-you-expect-from-online-signature-service/"
+        ],
+        "observed": "25 of 35 sampled pages (by template: category 1/3, generic:/{section}/*/* 1/3, home 3/3, listing 4/4, post 16/22). e.g. https://blog.groupdocs.com/groupdocs.blog/: width 203: 'Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, con'; https://blog.groupdocs.com/: width 203: 'Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, con'; https://blog.groupdocs.com/search/: width 6: 'search'; https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/: width 461: 'GroupDocs team is introducing two new features and three enhancements in the monthly relea'; https://blog.groupdocs.com/cs/: width 203: 'Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, con'",
+        "expected": "50-170 characters (CJK count double)",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/groupdocs.blog/",
+            "note": "width 203: 'Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, con'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/",
+            "note": "width 203: 'Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, con'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/search/",
+            "note": "width 6: 'search'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/",
+            "note": "width 461: 'GroupDocs team is introducing two new features and three enhancements in the monthly relea'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/cs/",
+            "note": "width 203: 'Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, con'"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/cs/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "category": [
+            1,
+            3
+          ],
+          "generic:/{section}/*/*": [
+            1,
+            3
+          ],
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            4,
+            4
+          ],
+          "post": [
+            16,
+            22
+          ]
+        }
+      },
+      "affected_pages": 9093,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "none",
+      "status": "open",
+      "detected_at": "2026-11-02"
+    },
+    {
+      "id": "onpage-0002",
+      "tenant": "groupdocs.com",
+      "subdomain": "blog.groupdocs.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "h1_missing",
+      "type": "improvable",
+      "title": "Pages have no H1",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.com/groupdocs.blog/",
+          "https://blog.groupdocs.com/",
+          "https://blog.groupdocs.com/cs/",
+          "https://blog.groupdocs.com/vi/"
+        ],
+        "observed": "4 of 35 sampled pages (by template: category 1/3, home 3/3). e.g. https://blog.groupdocs.com/groupdocs.blog/: no non-empty <h1>; https://blog.groupdocs.com/: no non-empty <h1>; https://blog.groupdocs.com/cs/: no non-empty <h1>; https://blog.groupdocs.com/vi/: no non-empty <h1>",
+        "expected": "one H1 that states the page topic",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/groupdocs.blog/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/cs/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/vi/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/cs/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/vi/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "category": [
+            1,
+            3
+          ],
+          "home": [
+            3,
+            3
+          ]
+        }
+      },
+      "affected_pages": 29,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "none",
+      "status": "open",
+      "detected_at": "2026-11-02"
+    },
+    {
+      "id": "onpage-0003",
+      "tenant": "groupdocs.com",
+      "subdomain": "blog.groupdocs.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "h1_multiple",
+      "type": "improvable",
+      "title": "Pages have more than one H1",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.com/annotation/groupdocs.annotation-.net-api-v17.8.0/",
+          "https://blog.groupdocs.com/search/highlighted-results-of-exact-phrase-search-in-text-groupdocs.search-for-.net-17.12/",
+          "https://blog.groupdocs.com/search/search-for-morphological-word-forms-using-groupdocs.search-for-.net-18.7/",
+          "https://blog.groupdocs.com/signature/groupdocs.signature-for-.net-18.9/"
+        ],
+        "observed": "4 of 35 sampled pages (by template: post 4/22). e.g. https://blog.groupdocs.com/annotation/groupdocs.annotation-.net-api-v17.8.0/: 2 H1s: Import Annotations from Slides using Gro | New Features and Changes in .NET Annotat; https://blog.groupdocs.com/search/highlighted-results-of-exact-phrase-search-in-text-groupdocs.search-for-.net-17.12/: 4 H1s: Highlighted Results of Exact Phrase Sear | .NET Search API - Enhancements# | Available Channels and Resources#; https://blog.groupdocs.com/search/search-for-morphological-word-forms-using-groupdocs.search-for-.net-18.7/: 4 H1s: Search for Morphological Word Forms usin | Enhancements# | Available Channels and Resources#; https://blog.groupdocs.com/signature/groupdocs.signature-for-.net-18.9/: 5 H1s: Introducing Metadata Signatures in Group | Features# | Bug Fixes#",
+        "expected": "one H1 per page",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/annotation/groupdocs.annotation-.net-api-v17.8.0/",
+            "note": "2 H1s: Import Annotations from Slides using Gro | New Features and Changes in .NET Annotat"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/search/highlighted-results-of-exact-phrase-search-in-text-groupdocs.search-for-.net-17.12/",
+            "note": "4 H1s: Highlighted Results of Exact Phrase Sear | .NET Search API - Enhancements# | Available Channels and Resources#"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/search/search-for-morphological-word-forms-using-groupdocs.search-for-.net-18.7/",
+            "note": "4 H1s: Search for Morphological Word Forms usin | Enhancements# | Available Channels and Resources#"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/signature/groupdocs.signature-for-.net-18.9/",
+            "note": "5 H1s: Introducing Metadata Signatures in Group | Features# | Bug Fixes#"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.com/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "post": [
+            4,
+            22
+          ]
+        }
+      },
+      "affected_pages": 2253,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "none",
+      "status": "open",
+      "detected_at": "2026-11-02"
+    },
+    {
+      "id": "intl-0001",
+      "tenant": "groupdocs.com",
+      "subdomain": "blog.groupdocs.com",
+      "template": "page",
+      "dimension": "intl",
+      "check": "hreflang_no_xdefault",
+      "type": "improvable",
+      "title": "hreflang set has no x-default",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.com/groupdocs.blog/",
+          "https://blog.groupdocs.com/watermark/audit-automation/net/",
+          "https://blog.groupdocs.com/",
+          "https://blog.groupdocs.com/search/",
+          "https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/",
+          "https://blog.groupdocs.com/ar/groupdocs.blog/",
+          "https://blog.groupdocs.com/ja/watermark/audit-automation/net/",
+          "https://blog.groupdocs.com/cs/",
+          "https://blog.groupdocs.com/archives/",
+          "https://blog.groupdocs.com/conversion/convert-images-to-pdf-in-csharp/"
+        ],
+        "observed": "35 of 35 sampled pages (by template: category 3/3, generic:/{section}/*/* 3/3, home 3/3, listing 4/4, post 22/22). e.g. https://blog.groupdocs.com/groupdocs.blog/: 22 entries: en, ar, cs, de, es, fa; https://blog.groupdocs.com/watermark/audit-automation/net/: 22 entries: en, ar, cs, de, es, fa; https://blog.groupdocs.com/: 22 entries: en, ar, cs, de, es, fa; https://blog.groupdocs.com/search/: 22 entries: en, ar, cs, de, es, fa; https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/: 1 entries: en",
+        "expected": "an x-default entry",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/groupdocs.blog/",
+            "note": "22 entries: en, ar, cs, de, es, fa"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/watermark/audit-automation/net/",
+            "note": "22 entries: en, ar, cs, de, es, fa"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/",
+            "note": "22 entries: en, ar, cs, de, es, fa"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/search/",
+            "note": "22 entries: en, ar, cs, de, es, fa"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/",
+            "note": "1 entries: en"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.com/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "category": [
+            3,
+            3
+          ],
+          "generic:/{section}/*/*": [
+            3,
+            3
+          ],
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            4,
+            4
+          ],
+          "post": [
+            22,
+            22
+          ]
+        }
+      },
+      "affected_pages": 12503,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 2,
+      "fix_channel": "none",
+      "status": "open",
+      "detected_at": "2026-11-02"
+    },
+    {
+      "id": "crawl-0001",
+      "tenant": "groupdocs.com",
+      "subdomain": "blog.groupdocs.com",
+      "template": "page",
+      "dimension": "crawl",
+      "check": "redirected",
+      "type": "not_optimized",
+      "title": "Sitemaps list URLs that redirect",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.com/groupdocs.blog/"
+        ],
+        "observed": "1 of 35 sampled pages (by template: category 1/3). e.g. https://blog.groupdocs.com/groupdocs.blog/: redirects 301 -> https://blog.groupdocs.com/",
+        "expected": "sitemaps list final URLs that answer HTTP 200",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/groupdocs.blog/",
+            "note": "redirects 301 -> https://blog.groupdocs.com/"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.com/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "category": [
+            1,
+            3
+          ]
+        }
+      },
+      "affected_pages": 7,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "none",
+      "status": "open",
+      "detected_at": "2026-11-02"
+    },
+    {
+      "id": "onpage-0004",
+      "tenant": "groupdocs.com",
+      "subdomain": "blog.groupdocs.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "title_length",
+      "type": "improvable",
+      "title": "Titles are too long or too short",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.com/groupdocs.blog/",
+          "https://blog.groupdocs.com/",
+          "https://blog.groupdocs.com/search/",
+          "https://blog.groupdocs.com/cs/",
+          "https://blog.groupdocs.com/archives/",
+          "https://blog.groupdocs.com/vi/",
+          "https://blog.groupdocs.com/zh-hant/archives/",
+          "https://blog.groupdocs.com/zh/search/",
+          "https://blog.groupdocs.com/metadata/groupdocs-metadata-for-net-26-8/",
+          "https://blog.groupdocs.com/annotation/groupdocs.annotation-.net-api-v17.8.0/"
+        ],
+        "observed": "16 of 35 sampled pages (by template: category 1/3, home 3/3, listing 4/4, post 8/22). e.g. https://blog.groupdocs.com/groupdocs.blog/: width 73: 'GroupDocs Blog | Document Automation Solutions for .NET & Java Developers'; https://blog.groupdocs.com/: width 73: 'GroupDocs Blog | Document Automation Solutions for .NET & Java Developers'; https://blog.groupdocs.com/search/: width 6: 'Search'; https://blog.groupdocs.com/cs/: width 73: 'GroupDocs Blog | Document Automation Solutions for .NET & Java Developers'; https://blog.groupdocs.com/archives/: width 7: 'Archive'",
+        "expected": "10-70 characters (CJK count double)",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/groupdocs.blog/",
+            "note": "width 73: 'GroupDocs Blog | Document Automation Solutions for .NET & Java Developers'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/",
+            "note": "width 73: 'GroupDocs Blog | Document Automation Solutions for .NET & Java Developers'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/search/",
+            "note": "width 6: 'Search'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/cs/",
+            "note": "width 73: 'GroupDocs Blog | Document Automation Solutions for .NET & Java Developers'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/archives/",
+            "note": "width 7: 'Archive'"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.com/cs/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "category": [
+            1,
+            3
+          ],
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            4,
+            4
+          ],
+          "post": [
+            8,
+            22
+          ]
+        }
+      },
+      "affected_pages": 4580,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "none",
+      "status": "open",
+      "detected_at": "2026-11-02"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://blog.groupdocs.com/groupdocs.blog/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/",
+      "redirects": [
+        "https://blog.groupdocs.com/groupdocs.blog/"
+      ],
+      "redirect_statuses": [
+        301
+      ],
+      "content_type": "text/html",
+      "bytes": 30382,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 652,
+      "facts": {
+        "titles": [
+          "GroupDocs Blog | Document Automation Solutions for .NET & Java Developers"
+        ],
+        "descriptions": [
+          "Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, convert, compare, e-sign, parse, split, merge, redact, or classify documents of almost all the popular file formats."
+        ],
+        "h1": [],
+        "canonicals": [
+          "https://blog.groupdocs.com/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1659,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "redirected",
+          "redirects 301 -> https://blog.groupdocs.com/"
+        ],
+        [
+          "title_length",
+          "width 73: 'GroupDocs Blog | Document Automation Solutions for .NET & Java Developers'"
+        ],
+        [
+          "description_length",
+          "width 203: 'Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, con'"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/watermark/audit-automation/net/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/watermark/audit-automation/net/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 68858,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 823,
+      "facts": {
+        "titles": [
+          "Automate Watermark Audits in .NET with GroupDocs.Watermark"
+        ],
+        "descriptions": [
+          "Learn how to replace error‑prone manual watermark reviews with a short .NET script that scans, validates and reports watermarks using GroupDocs.Watermark."
+        ],
+        "h1": [
+          "Stop Manual Watermark Audits — Automate Compliance Checks in .NET with GroupDocs.Watermark"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/watermark/audit-automation/net/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/watermark/audit-automation/net/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/watermark/audit-automation/net/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/watermark/audit-automation/net/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/watermark/audit-automation/net/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/watermark/audit-automation/net/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/watermark/audit-automation/net/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/watermark/audit-automation/net/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/watermark/audit-automation/net/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/watermark/audit-automation/net/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/watermark/audit-automation/net/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/watermark/audit-automation/net/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/watermark/audit-automation/net/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/watermark/audit-automation/net/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/watermark/audit-automation/net/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/watermark/audit-automation/net/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/watermark/audit-automation/net/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/watermark/audit-automation/net/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/watermark/audit-automation/net/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/watermark/audit-automation/net/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/watermark/audit-automation/net/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/watermark/audit-automation/net/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/watermark/audit-automation/net/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 7553,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 30382,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 48,
+      "facts": {
+        "titles": [
+          "GroupDocs Blog | Document Automation Solutions for .NET & Java Developers"
+        ],
+        "descriptions": [
+          "Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, convert, compare, e-sign, parse, split, merge, redact, or classify documents of almost all the popular file formats."
+        ],
+        "h1": [],
+        "canonicals": [
+          "https://blog.groupdocs.com/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1659,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 73: 'GroupDocs Blog | Document Automation Solutions for .NET & Java Developers'"
+        ],
+        [
+          "description_length",
+          "width 203: 'Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, con'"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/search/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/search/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 21628,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 692,
+      "facts": {
+        "titles": [
+          "Search"
+        ],
+        "descriptions": [
+          "search"
+        ],
+        "h1": [
+          "Search"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/search/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/search/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/search/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/search/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/search/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/search/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/search/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/search/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/search/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/search/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/search/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/search/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/search/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/search/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/search/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/search/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/search/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/search/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/search/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/search/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/search/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/search/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/search/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 138,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 6: 'Search'"
+        ],
+        [
+          "description_length",
+          "width 6: 'search'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "138 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 33776,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 736,
+      "facts": {
+        "titles": [
+          "Update metadata of MPP format using GroupDocs.Metadata for Java 18.6"
+        ],
+        "descriptions": [
+          "GroupDocs team is introducing two new features and three enhancements in the monthly releaseof GroupDocs.Metadata for Java 18.6. The latest version allows you to edit XMP metadata of WAV file format and update metadata properties of MPP file format. Furthermore, memory consumption for loading and saving metadata is now reduced for MPP, WAV and AVI file formats. A bug related to removing XMP metadata in TIF file format is also resolved in the latest version."
+        ],
+        "h1": [
+          "Update metadata of MPP format using GroupDocs.Metadata for Java 18.6"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1451,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 461: 'GroupDocs team is introducing two new features and three enhancements in the monthly relea'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/ar/groupdocs.blog/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": "ar",
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.groupdocs.com/ar/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/ar/groupdocs.blog/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 31749,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 938,
+      "facts": {
+        "titles": [
+          "Groupdocs.Blogs"
+        ],
+        "descriptions": [
+          "Groupdocs.Blogs - GroupDocs Blog | Document Automation Solutions for .NET & Java Developers"
+        ],
+        "h1": [
+          "Groupdocs.Blogs"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/ar/groupdocs.blog/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/groupdocs.blog/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/groupdocs.blog/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/groupdocs.blog/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/groupdocs.blog/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/groupdocs.blog/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/groupdocs.blog/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/groupdocs.blog/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/groupdocs.blog/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/groupdocs.blog/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/groupdocs.blog/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/groupdocs.blog/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/groupdocs.blog/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/groupdocs.blog/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/groupdocs.blog/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/groupdocs.blog/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/groupdocs.blog/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/groupdocs.blog/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/groupdocs.blog/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/groupdocs.blog/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/groupdocs.blog/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/groupdocs.blog/"
+          ]
+        ],
+        "html_lang": "ar",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1643,
+        "jsonld_types": [
+          "BreadcrumbList"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "21 entries: ar, cs, de, es, fa, fr"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/ja/watermark/audit-automation/net/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": "ja",
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.groupdocs.com/ja/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/ja/watermark/audit-automation/net/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 76490,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 742,
+      "facts": {
+        "titles": [
+          ".NET と GroupDocs.Watermark で透かし監査を自動化"
+        ],
+        "descriptions": [
+          "エラーが起きやすい手動の透かしレビューを、GroupDocs.Watermark を使用した短い .NET スクリプトでスキャン、検証、レポートする方法を学びましょう。"
+        ],
+        "h1": [
+          "手動の透かし監査をやめよう — .NET と GroupDocs.Watermark でコンプライアンスチェックを自動化"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/ja/watermark/audit-automation/net/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/watermark/audit-automation/net/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/watermark/audit-automation/net/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/watermark/audit-automation/net/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/watermark/audit-automation/net/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/watermark/audit-automation/net/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/watermark/audit-automation/net/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/watermark/audit-automation/net/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/watermark/audit-automation/net/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/watermark/audit-automation/net/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/watermark/audit-automation/net/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/watermark/audit-automation/net/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/watermark/audit-automation/net/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/watermark/audit-automation/net/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/watermark/audit-automation/net/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/watermark/audit-automation/net/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/watermark/audit-automation/net/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/watermark/audit-automation/net/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/watermark/audit-automation/net/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/watermark/audit-automation/net/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/watermark/audit-automation/net/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/watermark/audit-automation/net/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/watermark/audit-automation/net/"
+          ]
+        ],
+        "html_lang": "ja",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 5713,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/cs/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": "cs",
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.groupdocs.com/cs/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/cs/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 31342,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 717,
+      "facts": {
+        "titles": [
+          "GroupDocs Blog | Document Automation Solutions for .NET & Java Developers"
+        ],
+        "descriptions": [
+          "Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, convert, compare, e-sign, parse, split, merge, redact, or classify documents of almost all the popular file formats."
+        ],
+        "h1": [],
+        "canonicals": [
+          "https://blog.groupdocs.com/cs/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/"
+          ]
+        ],
+        "html_lang": "cs",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1960,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 73: 'GroupDocs Blog | Document Automation Solutions for .NET & Java Developers'"
+        ],
+        [
+          "description_length",
+          "width 203: 'Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, con'"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/archives/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/archives/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 723698,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 857,
+      "facts": {
+        "titles": [
+          "Archive"
+        ],
+        "descriptions": [
+          "archives"
+        ],
+        "h1": [
+          "Archive"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/archives/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/archives/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/archives/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/archives/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/archives/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/archives/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/archives/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/archives/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/archives/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/archives/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/archives/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/archives/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/archives/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/archives/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/archives/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/archives/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/archives/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/archives/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/archives/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/archives/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/archives/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/archives/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/archives/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 107191,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 7: 'Archive'"
+        ],
+        [
+          "description_length",
+          "width 8: 'archives'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/conversion/convert-images-to-pdf-in-csharp/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/conversion/convert-images-to-pdf-in-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 47071,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 869,
+      "facts": {
+        "titles": [
+          "C# Convert JPG, PNG, GIF, TIFF Images to PDF | .NET Image Converter"
+        ],
+        "descriptions": [
+          "Convert images to PDF in C#. Convert JPG, TIFF, PNG, JPEG, GIF, BMP, and more files with rotation, resize, margins options using conversion API for .NET."
+        ],
+        "h1": [
+          "Convert Images to PDF in C#"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/conversion/convert-images-to-pdf-in-csharp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/conversion/convert-images-to-pdf-in-csharp/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/conversion/convert-images-to-pdf-in-csharp/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3241,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/fa/groupdocs.blog/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": "fa",
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.groupdocs.com/fa/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/fa/groupdocs.blog/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 32371,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 750,
+      "facts": {
+        "titles": [
+          "Groupdocs.Blogs"
+        ],
+        "descriptions": [
+          "Groupdocs.Blogs - GroupDocs Blog | Document Automation Solutions for .NET & Java Developers"
+        ],
+        "h1": [
+          "Groupdocs.Blogs"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/fa/groupdocs.blog/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/groupdocs.blog/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/groupdocs.blog/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/groupdocs.blog/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/groupdocs.blog/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/groupdocs.blog/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/groupdocs.blog/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/groupdocs.blog/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/groupdocs.blog/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/groupdocs.blog/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/groupdocs.blog/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/groupdocs.blog/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/groupdocs.blog/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/groupdocs.blog/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/groupdocs.blog/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/groupdocs.blog/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/groupdocs.blog/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/groupdocs.blog/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/groupdocs.blog/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/groupdocs.blog/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/groupdocs.blog/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/groupdocs.blog/"
+          ]
+        ],
+        "html_lang": "fa",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1893,
+        "jsonld_types": [
+          "BreadcrumbList"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "21 entries: ar, cs, de, es, fa, fr"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/ar/watermark/audit-automation/net/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": "ar",
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.groupdocs.com/ar/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/ar/watermark/audit-automation/net/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 80675,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 780,
+      "facts": {
+        "titles": [
+          "أتمتة تدقيق العلامات المائية في .NET باستخدام GroupDocs.Watermark"
+        ],
+        "descriptions": [
+          "تعلم كيفية استبدال مراجعات العلامات المائية اليدوية المعرضة للأخطاء ببرنامج نصي قصير بلغة .NET يقوم بمسح العلامات المائية والتحقق منها وتوليد تقارير عنها باستخدام GroupDocs.Watermark."
+        ],
+        "h1": [
+          "إيقاف تدقيق العلامات المائية يدويًا — أتمتة فحوصات الامتثال في .NET باستخدام GroupDocs.Watermark"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/ar/watermark/audit-automation/net/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/watermark/audit-automation/net/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/watermark/audit-automation/net/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/watermark/audit-automation/net/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/watermark/audit-automation/net/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/watermark/audit-automation/net/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/watermark/audit-automation/net/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/watermark/audit-automation/net/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/watermark/audit-automation/net/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/watermark/audit-automation/net/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/watermark/audit-automation/net/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/watermark/audit-automation/net/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/watermark/audit-automation/net/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/watermark/audit-automation/net/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/watermark/audit-automation/net/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/watermark/audit-automation/net/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/watermark/audit-automation/net/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/watermark/audit-automation/net/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/watermark/audit-automation/net/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/watermark/audit-automation/net/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/watermark/audit-automation/net/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/watermark/audit-automation/net/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/watermark/audit-automation/net/"
+          ]
+        ],
+        "html_lang": "ar",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 7019,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 183: 'تعلم كيفية استبدال مراجعات العلامات المائية اليدوية المعرضة للأخطاء ببرنامج نصي قصير بلغة '"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/vi/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": "vi",
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.groupdocs.com/vi/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/vi/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 32706,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 778,
+      "facts": {
+        "titles": [
+          "GroupDocs Blog | Document Automation Solutions for .NET & Java Developers"
+        ],
+        "descriptions": [
+          "Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, convert, compare, e-sign, parse, split, merge, redact, or classify documents of almost all the popular file formats."
+        ],
+        "h1": [],
+        "canonicals": [
+          "https://blog.groupdocs.com/vi/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/"
+          ]
+        ],
+        "html_lang": "vi",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1940,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 73: 'GroupDocs Blog | Document Automation Solutions for .NET & Java Developers'"
+        ],
+        [
+          "description_length",
+          "width 203: 'Document Automation APIs to enrich .NET and Java applications to view, edit, annotate, con'"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/zh-hant/archives/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": "zh-hant",
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.groupdocs.com/zh-hant/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/zh-hant/archives/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 309562,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 898,
+      "facts": {
+        "titles": [
+          "檔案"
+        ],
+        "descriptions": [
+          "檔案"
+        ],
+        "h1": [
+          "檔案"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/zh-hant/archives/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/archives/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/archives/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/archives/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/archives/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/archives/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/archives/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/archives/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/archives/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/archives/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/archives/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/archives/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/archives/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/archives/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/archives/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/archives/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/archives/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/archives/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/archives/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/archives/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/archives/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/archives/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/archives/"
+          ]
+        ],
+        "html_lang": "zh-hant",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 29472,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 4: '檔案'"
+        ],
+        [
+          "description_length",
+          "width 4: '檔案'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/signature/what-you-expect-from-online-signature-service/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/signature/what-you-expect-from-online-signature-service/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 33345,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 693,
+      "facts": {
+        "titles": [
+          "What You Expect from an Online Signature Service"
+        ],
+        "descriptions": [
+          "We’ve already talked about the benefits of an online signature application. Now we know that a reliable online signature service provides a legal and secure method of signing documents online and helps users increase their productivity in terms of time and money. With this in mind, let’s have a closer look at the online document signing process and find out more about GroupDocs’ online signature app. A Typical Process of Signing a Document with an Online Signature AppA basic online signature workflow includes the following steps: Select or upload a document you want signed."
+        ],
+        "h1": [
+          "What You Expect from an Online Signature Service"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/signature/what-you-expect-from-online-signature-service/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/signature/what-you-expect-from-online-signature-service/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1880,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 580: 'We’ve already talked about the benefits of an online signature application. Now we know th'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/zh/search/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": "zh",
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.groupdocs.com/zh/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/zh/search/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 21637,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 764,
+      "facts": {
+        "titles": [
+          "搜索"
+        ],
+        "descriptions": [
+          "搜索"
+        ],
+        "h1": [
+          "搜索"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/zh/search/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/search/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/search/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/search/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/search/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/search/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/search/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/search/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/search/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/search/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/search/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/search/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/search/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/search/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/search/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/search/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/search/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/search/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/search/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/search/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/search/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/search/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/search/"
+          ]
+        ],
+        "html_lang": "zh",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 138,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 4: '搜索'"
+        ],
+        [
+          "description_length",
+          "width 4: '搜索'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "138 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/redaction/redact-text-linux-docker/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/redaction/redact-text-linux-docker/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 62084,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 888,
+      "facts": {
+        "titles": [
+          "Redact PDF Text on Linux with Docker and GroupDocs.Redaction for .NET"
+        ],
+        "descriptions": [
+          "Learn how to redact text in a PDF on Linux with Docker using GroupDocs.Redaction for .NET 26.9 and .NET 10. The example covers an exact phrase with a black box."
+        ],
+        "h1": [
+          "How to Redact Text in a PDF on Linux with Docker"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/redaction/redact-text-linux-docker/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/redaction/redact-text-linux-docker/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/redaction/redact-text-linux-docker/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 5983,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/comparison/servlets-frontend-groupdocs-comparison-for-java/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/comparison/servlets-frontend-groupdocs-comparison-for-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 35059,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 693,
+      "facts": {
+        "titles": [
+          "Servlets Front-end for GroupDocs.Comparison for Java"
+        ],
+        "descriptions": [
+          "Document comparison is a process of finding differences in two documents of same format. It can be a content difference or can be any contextual differences. GroupDocs.Comparison for Java compares a source document with a target document and produces a result document which highlights the differences in a suitable way i.e. colored highlighting or by differing font information that has either been added to or removed from the reference document to produce the target document."
+        ],
+        "h1": [
+          "Servlets Front-end for GroupDocs.Comparison for Java"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/comparison/servlets-frontend-groupdocs-comparison-for-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/comparison/servlets-frontend-groupdocs-comparison-for-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1986,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 479: 'Document comparison is a process of finding differences in two documents of same format. I'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/metadata/groupdocs-metadata-for-net-26-8/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/metadata/groupdocs-metadata-for-net-26-8/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 47406,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 746,
+      "facts": {
+        "titles": [
+          "GroupDocs.Metadata for .NET 26.8 – AAR, GZIP, BZ2, XZ, ZSTD Support Added"
+        ],
+        "descriptions": [
+          "GroupDocs.Metadata for .NET 26.8 adds support for Apple Archive (AAR), GZIP, BZ2, XZ, and ZSTD archive formats."
+        ],
+        "h1": [
+          "GroupDocs.Metadata for .NET 26.8 – August 2026 Release Highlights"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/metadata/groupdocs-metadata-for-net-26-8/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/metadata/groupdocs-metadata-for-net-26-8/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/metadata/groupdocs-metadata-for-net-26-8/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2315,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 73: 'GroupDocs.Metadata for .NET 26.8 – AAR, GZIP, BZ2, XZ, ZSTD Support Added'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/merger/lock-unlock-excel-files-with-password-using-java/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/merger/lock-unlock-excel-files-with-password-using-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 49316,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 762,
+      "facts": {
+        "titles": [
+          "Password Protect Excel Files in Java | Lock Unlock Spreadsheets"
+        ],
+        "descriptions": [
+          "Let's learn how to password protect Excel spreadsheet files using Java. Change the existing password or remove it to unlock the XLS/XLSX files using Java API."
+        ],
+        "h1": [
+          "Lock and Unlock Excel Files with Password using Java"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/merger/lock-unlock-excel-files-with-password-using-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/merger/lock-unlock-excel-files-with-password-using-java/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/merger/lock-unlock-excel-files-with-password-using-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 4055,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/annotation/groupdocs.annotation-.net-api-v17.8.0/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/annotation/groupdocs.annotation-.net-api-v17.8.0/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 36592,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 935,
+      "facts": {
+        "titles": [
+          "Import Annotations from Slides using GroupDocs.Annotation for .NET v17.8.0 API"
+        ],
+        "descriptions": [
+          "We are at GroupDocs glad to publish another monthly release of dot net document annotation API, where new features are introduced, major features are related to import annotations from slides document format, these includes Import distance annotation, text annotation, strikeout annotation and almost all major annotation types. The latest GroupDocs.Annotation for .NET 17.8.0 API now provides support to set Opacity for Words file also. This release is also including Improvements and Fixes."
+        ],
+        "h1": [
+          "Import Annotations from Slides using GroupDocs.Annotation for .NET v17.8.0 API",
+          "New Features and Changes in .NET Annotation API#"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/annotation/groupdocs.annotation-.net-api-v17.8.0/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/annotation/groupdocs.annotation-.net-api-v17.8.0/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2213,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 78: 'Import Annotations from Slides using GroupDocs.Annotation for .NET v17.8.0 API'"
+        ],
+        [
+          "description_length",
+          "width 492: 'We are at GroupDocs glad to publish another monthly release of dot net document annotation'"
+        ],
+        [
+          "h1_multiple",
+          "2 H1s: Import Annotations from Slides using Gro | New Features and Changes in .NET Annotat"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/viewer/groupdocs.viewer-supports-partial-rendering-of-excel-sheets/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/viewer/groupdocs.viewer-supports-partial-rendering-of-excel-sheets/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 35156,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 770,
+      "facts": {
+        "titles": [
+          "Partially Render Large Excel Sheets with GroupDocs.Viewer for .NET 17.1.0"
+        ],
+        "descriptions": [
+          "We are delighted to announce that the first monthly release of GroupDocs.Viewer for .NET for the year 2017 is out and available. Using GroupDocs.Viewer for .NET 17.1.0 users will be able to partially render the large Excel sheets. The latest version also supports the configuration of ViewerConfig class via app.config or web.config file. Furthermore, 9 issues have been fixed in this release. Continue to read more about v17.1.0. GroupDocs.Viewer for ."
+        ],
+        "h1": [
+          "Partially Render Large Excel Sheets with GroupDocs.Viewer for .NET 17.1.0"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/viewer/groupdocs.viewer-supports-partial-rendering-of-excel-sheets/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/viewer/groupdocs.viewer-supports-partial-rendering-of-excel-sheets/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1805,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 73: 'Partially Render Large Excel Sheets with GroupDocs.Viewer for .NET 17.1.0'"
+        ],
+        [
+          "description_length",
+          "width 453: 'We are delighted to announce that the first monthly release of GroupDocs.Viewer for .NET f'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/merger/merge-to-pdf-online/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/merger/merge-to-pdf-online/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 42737,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 890,
+      "facts": {
+        "titles": [
+          "Merge Files to PDF Online | Combine Word, PDF, Excel, PPT to PDF"
+        ],
+        "descriptions": [
+          "Merge two or more PowerPoint presentation files online into one. Combine all the slides or join only the specific slides of multiple PPT/PPTX files online & programmatically."
+        ],
+        "h1": [
+          "Merge to PDF Online"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/merger/merge-to-pdf-online/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/merger/merge-to-pdf-online/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/merger/merge-to-pdf-online/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/merger/merge-to-pdf-online/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/merger/merge-to-pdf-online/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/merger/merge-to-pdf-online/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/merger/merge-to-pdf-online/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/merger/merge-to-pdf-online/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/merger/merge-to-pdf-online/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/merger/merge-to-pdf-online/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/merger/merge-to-pdf-online/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/merger/merge-to-pdf-online/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/merger/merge-to-pdf-online/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/merger/merge-to-pdf-online/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/merger/merge-to-pdf-online/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/merger/merge-to-pdf-online/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/merger/merge-to-pdf-online/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/merger/merge-to-pdf-online/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/merger/merge-to-pdf-online/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/merger/merge-to-pdf-online/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/merger/merge-to-pdf-online/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/merger/merge-to-pdf-online/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/merger/merge-to-pdf-online/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2594,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 174: 'Merge two or more PowerPoint presentation files online into one. Combine all the slides or'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/parser/groupdocs-parser-for-net-25-12-1/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/parser/groupdocs-parser-for-net-25-12-1/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 44503,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 912,
+      "facts": {
+        "titles": [
+          "GroupDocs.Parser for .NET 25.12.1 – Latest Updates and Fixes (December 2025)"
+        ],
+        "descriptions": [
+          "Explore what’s new in GroupDocs.Parser for .NET 25.12.1. Available now on NuGet and GroupDocs website."
+        ],
+        "h1": [
+          "GroupDocs.Parser for .NET 25.12.1 – December 2025 Release Highlights"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/parser/groupdocs-parser-for-net-25-12-1/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/parser/groupdocs-parser-for-net-25-12-1/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/parser/groupdocs-parser-for-net-25-12-1/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2271,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 76: 'GroupDocs.Parser for .NET 25.12.1 – Latest Updates and Fixes (December 2025)'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/search/highlighted-results-of-exact-phrase-search-in-text-groupdocs.search-for-.net-17.12/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/search/highlighted-results-of-exact-phrase-search-in-text-groupdocs.search-for-.net-17.12/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 51764,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 796,
+      "facts": {
+        "titles": [
+          "Highlighted Results of Exact Phrase Search in Text - GroupDocs.Search for .NET 17.12"
+        ],
+        "descriptions": [
+          "We are pleased to announce the release of version 17.12 of GroupDocs.Search for .NET. GroupDocs.Search for .NET 17.12 has come with 4 enhancements. We have introduced the feature of getting highlighted results of exact phrase search in text. Furthermore, we have improved the calculation of relevance of search results as well as redesigned the syntax of the search query. We would recommend you to enhance your applications using this latest version."
+        ],
+        "h1": [
+          "Highlighted Results of Exact Phrase Search in Text - GroupDocs.Search for .NET 17.12",
+          ".NET Search API - Enhancements#",
+          "Available Channels and Resources#",
+          "Feedback#"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/search/highlighted-results-of-exact-phrase-search-in-text-groupdocs.search-for-.net-17.12/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/search/highlighted-results-of-exact-phrase-search-in-text-groupdocs.search-for-.net-17.12/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 5634,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 84: 'Highlighted Results of Exact Phrase Search in Text - GroupDocs.Search for .NET 17.12'"
+        ],
+        [
+          "description_length",
+          "width 451: 'We are pleased to announce the release of version 17.12 of GroupDocs.Search for .NET. Grou'"
+        ],
+        [
+          "h1_multiple",
+          "4 H1s: Highlighted Results of Exact Phrase Sear | .NET Search API - Enhancements# | Available Channels and Resources#"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/search/search-for-morphological-word-forms-using-groupdocs.search-for-.net-18.7/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/search/search-for-morphological-word-forms-using-groupdocs.search-for-.net-18.7/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 49143,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 849,
+      "facts": {
+        "titles": [
+          "Search for Morphological Word Forms using GroupDocs.Search for .NET 18.7"
+        ],
+        "descriptions": [
+          "We are proudly announcing the monthly release of GroupDocs.Search for .NET 18.7. Using the latest version, you can search for morphological word forms. Furthermore, you can now break updating, merging and indexing operations manually. We would recommend you to install and use the latest version of API. Note: the code examples in this article have been updated to the API of GroupDocs.Search for .NET 26.10. The features described here were introduced in version 18."
+        ],
+        "h1": [
+          "Search for Morphological Word Forms using GroupDocs.Search for .NET 18.7",
+          "Enhancements#",
+          "Available Channels and Resources#",
+          "Feedback#"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/search/search-for-morphological-word-forms-using-groupdocs.search-for-.net-18.7/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/search/search-for-morphological-word-forms-using-groupdocs.search-for-.net-18.7/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 5060,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 72: 'Search for Morphological Word Forms using GroupDocs.Search for .NET 18.7'"
+        ],
+        [
+          "description_length",
+          "width 467: 'We are proudly announcing the monthly release of GroupDocs.Search for .NET 18.7. Using the'"
+        ],
+        [
+          "h1_multiple",
+          "4 H1s: Search for Morphological Word Forms usin | Enhancements# | Available Channels and Resources#"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/viewer/instanceid-using-multiple-simultaneous-instances-groupdocs-viewer-net/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/viewer/instanceid-using-multiple-simultaneous-instances-groupdocs-viewer-net/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 32196,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 744,
+      "facts": {
+        "titles": [
+          "InstanceID: using multiple simultaneous instances in GroupDocs.Viewer for .NET"
+        ],
+        "descriptions": [
+          "Two months ago we presented a new feature called InstanceID in GroupDocs.Viewer for .NET for the first time. In short, InstanceID allows you to configure several simultaneous instances of GroupDocs.Viewer associated with different independent root storage paths. Since that time, we’ve received a lot of feedback on the feature and this time would like to clarify how you can benefit from InstqanceID and how to configure it correctly in more details."
+        ],
+        "h1": [
+          "InstanceID: using multiple simultaneous instances in GroupDocs.Viewer for .NET"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/viewer/instanceid-using-multiple-simultaneous-instances-groupdocs-viewer-net/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/viewer/instanceid-using-multiple-simultaneous-instances-groupdocs-viewer-net/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1735,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 78: 'InstanceID: using multiple simultaneous instances in GroupDocs.Viewer for .NET'"
+        ],
+        [
+          "description_length",
+          "width 451: 'Two months ago we presented a new feature called InstanceID in GroupDocs.Viewer for .NET f'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/signature/embed-custom-objects-in-metadata-signature-for-images/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/signature/embed-custom-objects-in-metadata-signature-for-images/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 34947,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 890,
+      "facts": {
+        "titles": [
+          "Embed Custom Objects in Metadata Signature for Images"
+        ],
+        "descriptions": [
+          "Yes, GroupDocs.Signature for .NET now supports embedding custom objects as metadata signature in the images. So you can now sign the images with your desired metadata properties. We have introduced this feature in version 19.6 by adding a new public method AddSignature to the ImageMetadataSignOptions class. Not only this, but you can also apply the data encryption to the custom objects. So let’s check out how easy it is to sign an image with custom metadata signature."
+        ],
+        "h1": [
+          "Embed Custom Objects in Metadata Signature for Images"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/signature/embed-custom-objects-in-metadata-signature-for-images/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/signature/embed-custom-objects-in-metadata-signature-for-images/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2233,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 472: 'Yes, GroupDocs.Signature for .NET now supports embedding custom objects as metadata signat'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/signature/groupdocs.signature-for-.net-18.9/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/signature/groupdocs.signature-for-.net-18.9/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 40484,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 721,
+      "facts": {
+        "titles": [
+          "Introducing Metadata Signatures in GroupDocs.Signature for .NET 18.9"
+        ],
+        "descriptions": [
+          "We are delighted to announce another monthly release of GroupDocs.Signature for .NET 18.9 with multitude of new features like ability to save Image documents as PDF and signing of PDF with Metadata Signatures. Furthermore, this monthly release also comes up with few fixes, we therefore, recommend you to download the new version of API and evaluate the exciting features to enhance document e-signing experience. Features Metadata Signatures for PDFThe Metadata Signature is the additional document property that contains special attributes/tags to keep non visual information inside the document."
+        ],
+        "h1": [
+          "Introducing Metadata Signatures in GroupDocs.Signature for .NET 18.9",
+          "Features#",
+          "Bug Fixes#",
+          "Available Channels and Resources#",
+          "Feedback#"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/signature/groupdocs.signature-for-.net-18.9/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/signature/groupdocs.signature-for-.net-18.9/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 4080,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 598: 'We are delighted to announce another monthly release of GroupDocs.Signature for .NET 18.9 '"
+        ],
+        [
+          "h1_multiple",
+          "5 H1s: Introducing Metadata Signatures in Group | Features# | Bug Fixes#"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/annotation/announcing-new-features-of-the-groupdocs-annotation-app/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/annotation/announcing-new-features-of-the-groupdocs-annotation-app/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 32393,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 797,
+      "facts": {
+        "titles": [
+          "Announcing New Features of the GroupDocs' Annotation App"
+        ],
+        "descriptions": [
+          "GroupDocs Annotation is a web-based app that allows users to annotate PDF, Word, Excel and PowerPoint documents online, from a web-browser. With this app, you and your colleagues and partners can review and annotate a document simultaneously, in real time. We’re constantly working to improve the app’s interface and would like to introduce a new set of features we’ve recently designed and implemented. Add and Manage Notes GroupDocs Annotation lets you add notes throughout a document which show up as numbered markers."
+        ],
+        "h1": [
+          "Announcing New Features of the GroupDocs' Annotation App"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/annotation/announcing-new-features-of-the-groupdocs-annotation-app/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/annotation/announcing-new-features-of-the-groupdocs-annotation-app/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1531,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 521: 'GroupDocs Annotation is a web-based app that allows users to annotate PDF, Word, Excel and'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/total/how-to-upload-php-project-to-heroku-advanced-steps/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/total/how-to-upload-php-project-to-heroku-advanced-steps/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 34517,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 848,
+      "facts": {
+        "titles": [
+          "How to Upload PHP Project to Heroku? - Advanced Steps"
+        ],
+        "descriptions": [
+          "In the previous article, we learned how to create a new PHP project on Heroku. But sometimes our project requires additional extensions that do not exist in the Heroku PHP configuration. So we need to find out how to create and install extensions for PHP on Heroku. In this post, I’ll show you these advanced steps, and create a PHP project on Heroku with the GroupDocs PHP SDK Api Samples application."
+        ],
+        "h1": [
+          "How to Upload PHP Project to Heroku? - Advanced Steps"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/total/how-to-upload-php-project-to-heroku-advanced-steps/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/total/how-to-upload-php-project-to-heroku-advanced-steps/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2300,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 402: 'In the previous article, we learned how to create a new PHP project on Heroku. But sometim'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/signature/sign-documents-with-encrypted-custom-objects/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/signature/sign-documents-with-encrypted-custom-objects/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 35448,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 829,
+      "facts": {
+        "titles": [
+          "Sign Documents with Encrypted Custom Objects"
+        ],
+        "descriptions": [
+          "Hello guys! It’s been a while since my last post about GroupDocs.Signature for Java. So, our Java community might have been waiting for something new regarding our e-signature API. Well, we have recently released version 19.7 of GroupDocs.Signature for Java and today, I shall give you an overview of something interesting that we have introduced in our latest release. In the last couple of months, we introduced a quite valuable feature in the ."
+        ],
+        "h1": [
+          "Sign Documents with Encrypted Custom Objects"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/signature/sign-documents-with-encrypted-custom-objects/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/signature/sign-documents-with-encrypted-custom-objects/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2766,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 447: 'Hello guys! It’s been a while since my last post about GroupDocs.Signature for Java. So, o'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/signature/groupdocs-online-signature-app-dashboard-new-look-and-feel/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/signature/groupdocs-online-signature-app-dashboard-new-look-and-feel/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 38867,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 865,
+      "facts": {
+        "titles": [
+          "GroupDocs' Online Signature App Dashboard: The New Look and Feel"
+        ],
+        "descriptions": [
+          "We’re constantly working to improve the functionality and user interface of our online document management apps. Today we introduce our online signature app’s new user interface. The changes we are about to discuss are coming within the next weeks. An Overview of the New Online Signature App Interface The new GroupDocs Signature dashboard will look a lot like the main GroupDocs dashboard so it will feel familiar to GroupDocs users. [caption id=“attachment_216” align=“aligncenter” width=“650” caption=“GroupDocs’ online signature app - the new dashboard”] [/caption] We developed a completely new workflow which leads you through the signing process step by step:"
+        ],
+        "h1": [
+          "GroupDocs' Online Signature App Dashboard: The New Look and Feel"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/signature/groupdocs-online-signature-app-dashboard-new-look-and-feel/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/signature/groupdocs-online-signature-app-dashboard-new-look-and-feel/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2643,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 667: 'We’re constantly working to improve the functionality and user interface of our online doc'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/uk/merger/password-protect-pdf-files-online/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": "uk",
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/uk/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/uk/merger/password-protect-pdf-files-online/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 49115,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 819,
+      "facts": {
+        "titles": [
+          "Захист PDF-файлів | Додати пароль для блокування"
+        ],
+        "descriptions": [
+          "Додайте пароль до файлів PDF. Блокуйте PDF-документи за допомогою захисту паролем за допомогою безкоштовного онлайн-додатку та програмно за допомогою GroupDocs."
+        ],
+        "h1": [
+          "Захист PDF онлайн паролем"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/uk/merger/password-protect-pdf-files-online/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/merger/password-protect-pdf-files-online/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/merger/password-protect-pdf-files-online/"
+          ]
+        ],
+        "html_lang": "uk",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2904,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/ja/editor/groupdocs-editor-for-java-26-7/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": "ja",
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 12393,
+      "listed_in": "https://blog.groupdocs.com/ja/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.com/ja/editor/groupdocs-editor-for-java-26-7/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 48873,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 727,
+      "facts": {
+        "titles": [
+          "GroupDocs.Editor for Java 26.7 – TTC フォント、PPT と PDF 編集（2026年7月）"
+        ],
+        "descriptions": [
+          "GroupDocs.Editor for Java 26.7 は TrueType Collection フォントのサポート、テキストベースの PPT/PPS 編集、PDF 編集、CSS/XML の強化、バグ修正を追加しました。Maven または直接ダウンロードで利用可能です。"
+        ],
+        "h1": [
+          "GroupDocs.Editor for Java 26.7 – 2026年7月 リリースハイライト"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.com/ja/editor/groupdocs-editor-for-java-26-7/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.com/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.com/ar/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "cs",
+            "https://blog.groupdocs.com/cs/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.com/de/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.com/es/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.com/fa/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.com/fr/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "he",
+            "https://blog.groupdocs.com/he/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.com/id/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.com/it/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.com/ja/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.com/ko/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "nl",
+            "https://blog.groupdocs.com/nl/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.com/pl/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.com/pt/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.com/ru/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.com/th/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.com/tr/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.com/uk/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.com/vi/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.com/zh/editor/groupdocs-editor-for-java-26-7/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.com/zh-hant/editor/groupdocs-editor-for-java-26-7/"
+          ]
+        ],
+        "html_lang": "ja",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2336,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 75: 'GroupDocs.Editor for Java 26.7 – TTC フォント、PPT と PDF 編集（2026年7月）'"
+        ],
+        [
+          "description_length",
+          "width 199: 'GroupDocs.Editor for Java 26.7 は TrueType Collection フォントのサポート、テキストベースの PPT/PPS 編集、PDF 編集、'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ]
+      ]
+    }
+  ]
+}
