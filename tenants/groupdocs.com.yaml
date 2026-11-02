@@ -1,0 +1,66 @@
+# Tenant config: everything specific to groupdocs.com lives here, nothing in core/ or agents/.
+# Tenant 7 (SK, 2026-11-02): only blog.groupdocs.com for now; other groupdocs.com hosts may be added later.
+# Monitor-only (SK, 2026-10-30): its issues are identified and tracked like the others, but SK's team does not fix
+# them and does not translate its posts.
+property: groupdocs.com
+
+# Hosts matching these patterns are never crawled or checked (blog-qa.groupdocs.com is the staging blog).
+excluded_host_patterns:
+  - "*-qa.*"
+
+# Service account sk-serv-acc@health-and-recovery (same key as the .cloud tenants).
+google_credentials_env: GOOGLE_CREDENTIALS_HEALTH_AND_RECOVERY
+
+gsc_properties:              # URL-prefix properties the service account can read (Restricted, seen 2026-11-02)
+  - https://blog.groupdocs.com/
+ga4_property_id: "252384535"   # SK, 2026-10-22
+
+hosts:
+  - host: blog.groupdocs.com
+    platform: hugo            # PaperMod theme; S3 + CloudFront (2026-11-02)
+    repo: github.com/groupdocs/groupdocs-blog
+    local_path: /Users/Apple/Work/Aspose/GitHub/blog.groupdocs.com-PROD/groupdocs-blog
+    sitemap: https://blog.groupdocs.com/sitemap.xml       # index of 22 language sitemaps
+    robots: https://blog.groupdocs.com/robots.txt
+    fix_channel: none         # monitor-only
+
+# Language prefixes from the sitemap index (English URLs have no prefix, its sitemap is /en/sitemap.xml).
+languages: [en, ar, cs, de, es, fa, fr, he, id, it, ja, ko, nl, pl, pt, ru, th, tr, uk, vi, zh, zh-hant]
+
+# Supported translations (SK, 2026-10-22). Repo count 2026-10-22: 1,174 posts, 477 complete, 696 English only, 1 partial.
+translation_languages: [ar, cs, de, es, fa, fr, he, id, it, ja, ko, nl, pl, pt, ru, th, tr, uk, vi, zh, zh-hant]
+
+audit:
+  default_lang: en
+  per_template_by_host:      # same sample as the .cloud blogs (SK's option A, 2026-10-22); 12.3k sitemap URLs
+    blog.groupdocs.com: 20
+  links:                     # link audit (scripts/audit_links.py): commits that count as translation work
+    # SK's agent only (earlier work here). Current translations are another team's ("chore: translate blog posts (automated)").
+    translation_commits: '^(Translate articles for|Daily Blogs Translation)'
+
+# URL templates per host, matched in order against the path with the language segment removed.
+# /search/ is the listing; /search/<slug>/ are posts of GroupDocs.Search.
+url_templates:
+  blog.groupdocs.com:
+    - {name: home, pattern: '^/$'}
+    - {name: listing, pattern: '^/(?P<listing>archives|search|categories|tags)/?$'}
+    - {name: tag, pattern: '^/tag/(?P<tag>[^/]+)/?$'}
+    - {name: post, pattern: '^/(?P<category>[^/]+)/(?P<slug>[^/]+)/?$'}
+    - {name: category, pattern: '^/(?P<category>[^/]+)/?$'}
+
+# Snapshot of GSC -> Sitemaps for https://blog.groupdocs.com/ (read with the gsc MCP server list_sitemaps, 2026-11-02).
+# Discovery re-reads live sitemaps; this is the baseline to compare against. "Success" = no errors; the index has 1 warning.
+gsc_sitemaps_snapshot:
+  property: https://blog.groupdocs.com/
+  taken: "2026-11-02"
+  sitemaps:
+    - {path: "/sitemap.xml", type: "Sitemap index", submitted: "2020-04-15", last_read: "2026-10-31", status: "Success", discovered: 12337}
+
+# Report options: the Overview layout, as on every tenant.
+report:
+  area_scores: true
+  manager_view: true
+
+# Cross-domain pages this tenant's hosts appear on (SK, 2026-10-27: /blogs/ lists every blog).
+collections:
+  blogs: [blog.groupdocs.com]

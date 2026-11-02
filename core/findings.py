@@ -17,8 +17,8 @@ from pathlib import Path
 FINDING_TYPES = ("broken", "not_optimized", "incorrect", "improvable")
 EFFORTS = ("S", "M", "L")
 STATUSES = ("open", "unverified", "resolved", "superseded")
-# How a fix would ship (Phase 2). None = unknown.
-FIX_CHANNELS = ("git-pr", "wordpress-api", "wordpress-admin", "discourse-admin", "routing-cdn", "hosting")
+# How a fix would ship (Phase 2). None = unknown; "none" = monitor-only, SK's team does not fix this host.
+FIX_CHANNELS = ("git-pr", "wordpress-api", "wordpress-admin", "discourse-admin", "routing-cdn", "hosting", "none")
 
 
 class FindingIds:
