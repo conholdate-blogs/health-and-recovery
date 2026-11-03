@@ -467,6 +467,47 @@ _ROWS = [
      "Search engines index thin pages; readers who pick the language find nothing.",
      "Remove the language from the site's language list (and so from the sitemaps), or start supporting it.",
      "The sitemap index no longer lists the language; next link audit has no finding."),
+    # --- repo files (repo file check: source repo + a live sample of redirects) ---
+    ("redirect_file_invalid", "Repo files", "Redirects.json invalid",
+     "Redirects.json does not parse as JSON, usually a missing comma after new lines were added. The finding names "
+     "the commit that broke it.",
+     "Whatever reads the file cannot load the redirect rules. Old URLs may return 404 for readers and search engines.",
+     "Fix or revert the commit, and add a JSON check to CI so an invalid file cannot merge.",
+     "The file parses; next repo check has no finding."),
+    ("redirect_not_working", "Repo files", "Redirects not working live",
+     "Sampled sources from Redirects.json return 404 on the live site instead of redirecting to their target.",
+     "Old URLs in backlinks, bookmarks and search results hit a dead end, and the value of those links is lost.",
+     "Make the file valid first, then check how the edge function loads it (a parse failure, a failed deploy).",
+     "Sampled sources answer with a redirect; next repo check has no finding."),
+    ("redirect_key_malformed", "Repo files", "Malformed redirect source",
+     "A key that a request can never match: a host or scheme in the key, unencoded {{ template text }}, or a double "
+     "slash. Keys are paths starting with /; text with spaces or braces must be percent-encoded.",
+     "The redirect silently does nothing, and it hides that the broken URL is still broken.",
+     "Rewrite the key as a path, or remove it. {{ revealButtonHref }} is GitHub's gist placeholder that crawlers "
+     "harvest: remove `.gist template` from the page instead of adding redirects.",
+     "No listed key remains; next repo check has no finding."),
+    ("redirect_self_loop", "Repo files", "Self-redirect",
+     "A redirect's target is its own source.",
+     "Browsers and crawlers can loop until they give up, on a page that may otherwise work.",
+     "Remove the entry, or point it at the right page.",
+     "The URL answers without looping; next repo check has no finding."),
+    ("redirect_target_bad", "Repo files", "Bad redirect target",
+     "A target that is empty or not a full https URL.",
+     "Readers get an extra http redirect hop, or a broken one when the target is empty.",
+     "Use the page's full https URL.",
+     "Every target starts with https://; next repo check has no finding."),
+    ("post_front_matter_broken", "Repo files", "Broken front matter",
+     "A post file whose front matter is missing or does not parse, for example a translation wrapped in a code fence.",
+     "The title and url are not read as metadata, so the page can publish without them or at the wrong address.",
+     "Restore the block at the top of the file (three dashes, YAML, three dashes); check translation output for "
+     "stray code fences.",
+     "The file parses; next repo check has no finding."),
+    ("post_url_relative", "Repo files", "Post url without leading slash",
+     "A post's url has no leading /, so Hugo publishes it under the language again: /th/th/cad/post/ instead of "
+     "/th/cad/post/.",
+     "The expected URL returns 404, so links to the post break, and the page lives at a wrong address.",
+     "Add the leading / to the url, and redirect the doubled path to the correct one.",
+     "The post is live at the expected URL; next repo check has no finding."),
 ]
 
 # Severity per check, as the auditors assign it (checks only discovery's run.py names inline are listed here).
@@ -483,6 +524,7 @@ def _severities() -> dict[str, str]:
     from core.audit.crawl import CHECKS
     from core.audit.links import CHECKS as LINK_CHECKS
     from core.audit.perf import CHECKS as PERF_CHECKS
+    from core.audit.repo import CHECKS as REPO_CHECKS
     from core.audit.text import CHECKS as TEXT_CHECKS
     from core.discovery.run import SITEMAP_CHECKS
 
@@ -494,6 +536,7 @@ def _severities() -> dict[str, str]:
     out.update({k: v[1] for k, v in AI_CHECKS.items()})
     out.update({k: v[1] for k, v in TEXT_CHECKS.items()})
     out.update({k: v[1] for k, v in LINK_CHECKS.items()})
+    out.update({k: v[1] for k, v in REPO_CHECKS.items()})
     return out
 
 

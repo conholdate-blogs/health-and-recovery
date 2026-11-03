@@ -40,22 +40,22 @@
     "affected_pages": 11,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 19,
+      "impressions_28d": 17,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 167,
+      "past_impressions": 261,
       "lost_clicks": 0,
-      "lost_impressions": 148,
+      "lost_impressions": 244,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "lost",
-      "score": 2,
+      "score": 3,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "M",
@@ -98,23 +98,23 @@
     },
     "affected_pages": 0,
     "impact": {
-      "clicks_28d": 613,
-      "impressions_28d": 56793,
+      "clicks_28d": 601,
+      "impressions_28d": 58085,
       "source": "gsc-host",
       "share": 1.0,
-      "past_clicks": 1242,
-      "past_impressions": 78473,
-      "lost_clicks": 629,
-      "lost_impressions": 21680,
+      "past_clicks": 1280,
+      "past_impressions": 79080,
+      "lost_clicks": 679,
+      "lost_impressions": 20995,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 12,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -187,22 +187,22 @@
     "affected_pages": 132,
     "impact": {
       "clicks_28d": 6,
-      "impressions_28d": 557,
+      "impressions_28d": 570,
       "source": "gsc-host",
       "share": 0.01,
-      "past_clicks": 12,
-      "past_impressions": 770,
-      "lost_clicks": 6,
-      "lost_impressions": 213,
+      "past_clicks": 13,
+      "past_impressions": 776,
+      "lost_clicks": 7,
+      "lost_impressions": 206,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 9,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -252,22 +252,22 @@
     "affected_pages": 2,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 8,
+      "impressions_28d": 9,
       "source": "gsc-host",
       "share": 0.0,
       "past_clicks": 0,
       "past_impressions": 12,
       "lost_clicks": 0,
-      "lost_impressions": 4,
+      "lost_impressions": 3,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -312,14 +312,14 @@
       "lost_clicks": 0,
       "lost_impressions": 2,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -788,22 +788,22 @@
     "affected_pages": 71,
     "impact": {
       "clicks_28d": 4,
-      "impressions_28d": 365,
+      "impressions_28d": 357,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 9,
-      "past_impressions": 1203,
-      "lost_clicks": 5,
-      "lost_impressions": 838,
+      "past_clicks": 8,
+      "past_impressions": 1316,
+      "lost_clicks": 4,
+      "lost_impressions": 959,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 12,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "M",
@@ -818,6 +818,364 @@
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
+    "notes": []
+  },
+  {
+    "id": "crawl-0005",
+    "key": "crawl/redirect_self_loop/blog.aspose.cloud/Redirects.json",
+    "source": "repo-audit",
+    "tenant": "aspose.cloud",
+    "subdomain": "blog.aspose.cloud",
+    "template": "Redirects.json",
+    "dimension": "crawl",
+    "type": "incorrect",
+    "title": "Redirects that point at themselves",
+    "evidence": {
+      "urls": [
+        "https://blog.aspose.cloud/bg/archives/",
+        "https://blog.aspose.cloud/zh-tw/search/",
+        "https://blog.aspose.cloud/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+        "https://blog.aspose.cloud/hu/cells/convert-excel-to-powerpoint-in-csharp/"
+      ],
+      "observed": "4 entries or files; target is the source: 4",
+      "expected": "A redirect's target differs from its source",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud/bg/archives/",
+          "file": "Redirects.json",
+          "line": 889,
+          "note": "target is the source",
+          "fix": null,
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud/zh-tw/search/",
+          "file": "Redirects.json",
+          "line": 899,
+          "note": "target is the source",
+          "fix": null,
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+          "file": "Redirects.json",
+          "line": 1069,
+          "note": "target is the source",
+          "fix": null,
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud/hu/cells/convert-excel-to-powerpoint-in-csharp/",
+          "file": "Redirects.json",
+          "line": 1076,
+          "note": "target is the source",
+          "fix": null,
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        }
+      ]
+    },
+    "affected_pages": 4,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 0,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-05",
+        "2026-05-02"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-04",
+        "2026-10-31"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-03",
+    "first_seen_run": "repo-audit-run12",
+    "last_seen_run": "repo-audit-run12",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "redirect_self_loop",
+    "notes": []
+  },
+  {
+    "id": "crawl-0006",
+    "key": "crawl/redirect_key_malformed/blog.aspose.cloud/Redirects.json",
+    "source": "repo-audit",
+    "tenant": "aspose.cloud",
+    "subdomain": "blog.aspose.cloud",
+    "template": "Redirects.json",
+    "dimension": "crawl",
+    "type": "incorrect",
+    "title": "Redirect sources that can never match a request",
+    "evidence": {
+      "urls": [
+        "https://blog.aspose.cloud/imaging/what%E2%80%99s-new-in-aspose.imaging-cloud-19.7/https://blog.aspose.cloud/slides/convert-odp-to-pptx-with-dotnet-rest-api/",
+        "https://blog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+        "https://blog.aspose.cloud/http://daveandethan.life/exp.html",
+        "https://blog.aspose.cloud/th/imaging/convert-dcm-to-jpg-in-java/images/skull2.dcmblog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+        "https://blog.aspose.cloud/whttps://www.youtube.com/watch",
+        "https://blog.aspose.cloud/whttps://youtu.be/UcqE22BcjOEords/split-word-documents-with-dotnet-rest-api/",
+        "https://blog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/",
+        "https://blog.aspose.cloud/words/impblog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/roved-aspose-words-cloud-v4-is-here/",
+        "https://blog.aspose.cloud//omr/aspose.omr-for-cloud-is-available-now/"
+      ],
+      "observed": "9 entries or files; double slash: 9",
+      "expected": "Every source is a path starting with /, percent-encoded",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud/imaging/what%E2%80%99s-new-in-aspose.imaging-cloud-19.7/https://blog.aspose.cloud/slides/convert-odp-to-pptx-with-dotnet-rest-api/",
+          "file": "Redirects.json",
+          "line": 1017,
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/imaging/what%e2%80%99s-new-in-aspose.imaging-cloud-19.7/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+          "file": "Redirects.json",
+          "line": 1022,
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/words/combine-word-documents-in-java/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud/http://daveandethan.life/exp.html",
+          "file": "Redirects.json",
+          "line": 1029,
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud/th/imaging/convert-dcm-to-jpg-in-java/images/skull2.dcmblog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+          "file": "Redirects.json",
+          "line": 1032,
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/imaging/convert-dcm-to-jpg-in-java/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud/whttps://www.youtube.com/watch",
+          "file": "Redirects.json",
+          "line": 1044,
+          "note": "double slash",
+          "fix": "https://www.youtube.com/@AsposeCloud",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud/whttps://youtu.be/UcqE22BcjOEords/split-word-documents-with-dotnet-rest-api/",
+          "file": "Redirects.json",
+          "line": 1045,
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/words/split-word-documents-with-dotnet-rest-api/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/",
+          "file": "Redirects.json",
+          "line": 1055,
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/words/convert-word-to-jpg-in-java/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud/words/impblog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/roved-aspose-words-cloud-v4-is-here/",
+          "file": "Redirects.json",
+          "line": 1063,
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/words/convert-word-to-jpg-in-java/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud//omr/aspose.omr-for-cloud-is-available-now/",
+          "file": "Redirects.json",
+          "line": 1073,
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/omr/aspose.omr-for-cloud-is-available-now/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        }
+      ]
+    },
+    "affected_pages": 9,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 0,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-05",
+        "2026-05-02"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-04",
+        "2026-10-31"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-03",
+    "first_seen_run": "repo-audit-run12",
+    "last_seen_run": "repo-audit-run12",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "redirect_key_malformed",
+    "notes": []
+  },
+  {
+    "id": "crawl-0007",
+    "key": "crawl/post_front_matter_broken/blog.aspose.cloud/post",
+    "source": "repo-audit",
+    "tenant": "aspose.cloud",
+    "subdomain": "blog.aspose.cloud",
+    "template": "post",
+    "dimension": "crawl",
+    "type": "broken",
+    "title": "Post files whose front matter does not parse",
+    "evidence": {
+      "urls": [
+        "https://blog.aspose.cloud/"
+      ],
+      "observed": "1 entries or files; while parsing a quoted scalar: 1",
+      "expected": "Every post file starts with a valid front matter block",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.aspose.cloud/",
+          "file": "content/Aspose.Cloud/cells/2025-07-15-spreadsheet-cleaning-api-excel-spaces-line-breaks-fix/index.tr.md",
+          "line": 1,
+          "note": "while parsing a quoted scalar",
+          "fix": null,
+          "commit": "5a1fd5463e 2025-07-18 fix tr error:spreadsheet-cleaning-api-excel-spaces-line-breaks-fix"
+        }
+      ]
+    },
+    "affected_pages": 1,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 13,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 87,
+      "lost_clicks": 0,
+      "lost_impressions": 74,
+      "past_window": [
+        "2026-04-05",
+        "2026-05-02"
+      ],
+      "scored_on": "lost",
+      "score": 3,
+      "window": [
+        "2026-10-04",
+        "2026-10-31"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-03",
+    "first_seen_run": "repo-audit-run12",
+    "last_seen_run": "repo-audit-run12",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "post_front_matter_broken",
+    "notes": []
+  },
+  {
+    "id": "crawl-0008",
+    "key": "crawl/redirect_not_working/blog.aspose.cloud/Redirects.json",
+    "source": "repo-audit",
+    "tenant": "aspose.cloud",
+    "subdomain": "blog.aspose.cloud",
+    "template": "Redirects.json",
+    "dimension": "crawl",
+    "type": "broken",
+    "title": "Redirects in Redirects.json do not work on the live site",
+    "evidence": {
+      "urls": [
+        "https://blog.aspose.cloud/2016/06/01/aspose.email-の紹介とその他のニュース-2016年-6月/"
+      ],
+      "observed": "1 of 40 sampled sources return 404 without a redirect (36 redirect, 3 other); 1,174 well-formed entries",
+      "expected": "Every well-formed source answers with a redirect to its target",
+      "locations": [
+        {
+          "role": "redirect",
+          "url": "https://blog.aspose.cloud/2016/06/01/aspose.email-の紹介とその他のニュース-2016年-6月/",
+          "note": "404, no redirect"
+        }
+      ]
+    },
+    "affected_pages": 29,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 0,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-05",
+        "2026-05-02"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-04",
+        "2026-10-31"
+      ]
+    },
+    "effort": "M",
+    "fix_tier": 3,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-03",
+    "first_seen_run": "repo-audit-run12",
+    "last_seen_run": "repo-audit-run12",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "redirect_not_working",
     "notes": []
   },
   {
@@ -2191,22 +2549,22 @@
     "affected_pages": 990,
     "impact": {
       "clicks_28d": 8,
-      "impressions_28d": 1171,
+      "impressions_28d": 1061,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 21,
-      "past_impressions": 1280,
+      "past_impressions": 1253,
       "lost_clicks": 13,
-      "lost_impressions": 109,
+      "lost_impressions": 192,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 26,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -2494,22 +2852,22 @@
     "affected_pages": 16,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 78,
+      "impressions_28d": 73,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 0,
-      "past_impressions": 105,
-      "lost_clicks": 0,
-      "lost_impressions": 27,
+      "past_clicks": 1,
+      "past_impressions": 107,
+      "lost_clicks": 1,
+      "lost_impressions": 34,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 5,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -2939,22 +3297,22 @@
     "affected_pages": 32,
     "impact": {
       "clicks_28d": 1,
-      "impressions_28d": 33,
+      "impressions_28d": 43,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 2,
-      "past_impressions": 64,
+      "past_impressions": 65,
       "lost_clicks": 1,
-      "lost_impressions": 31,
+      "lost_impressions": 22,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 5,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3012,14 +3370,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3077,14 +3435,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3190,23 +3548,23 @@
     },
     "affected_pages": 13394,
     "impact": {
-      "clicks_28d": 554,
-      "impressions_28d": 51682,
+      "clicks_28d": 544,
+      "impressions_28d": 53079,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 1027,
-      "past_impressions": 69217,
-      "lost_clicks": 473,
-      "lost_impressions": 17535,
+      "past_clicks": 1056,
+      "past_impressions": 69864,
+      "lost_clicks": 512,
+      "lost_impressions": 16785,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 12,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3279,23 +3637,23 @@
     },
     "affected_pages": 1206,
     "impact": {
-      "clicks_28d": 50,
-      "impressions_28d": 4683,
+      "clicks_28d": 49,
+      "impressions_28d": 4814,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 93,
-      "past_impressions": 6227,
-      "lost_clicks": 43,
-      "lost_impressions": 1544,
+      "past_clicks": 96,
+      "past_impressions": 6250,
+      "lost_clicks": 47,
+      "lost_impressions": 1436,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 11,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "M",
@@ -3397,23 +3755,23 @@
     },
     "affected_pages": 1317,
     "impact": {
-      "clicks_28d": 50,
-      "impressions_28d": 4859,
+      "clicks_28d": 49,
+      "impressions_28d": 4952,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 93,
-      "past_impressions": 7003,
-      "lost_clicks": 43,
-      "lost_impressions": 2144,
+      "past_clicks": 96,
+      "past_impressions": 7417,
+      "lost_clicks": 47,
+      "lost_impressions": 2465,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 8,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3495,18 +3853,18 @@
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 104,
+      "past_impressions": 120,
       "lost_clicks": 0,
-      "lost_impressions": 88,
+      "lost_impressions": 104,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3585,23 +3943,23 @@
     },
     "affected_pages": 1207,
     "impact": {
-      "clicks_28d": 50,
-      "impressions_28d": 4685,
+      "clicks_28d": 49,
+      "impressions_28d": 4817,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 93,
-      "past_impressions": 6236,
-      "lost_clicks": 43,
-      "lost_impressions": 1551,
+      "past_clicks": 96,
+      "past_impressions": 6258,
+      "lost_clicks": 47,
+      "lost_impressions": 1441,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 11,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "M",
@@ -3699,23 +4057,23 @@
     },
     "affected_pages": 1293,
     "impact": {
-      "clicks_28d": 50,
-      "impressions_28d": 4843,
+      "clicks_28d": 49,
+      "impressions_28d": 4936,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 93,
-      "past_impressions": 6899,
-      "lost_clicks": 43,
-      "lost_impressions": 2056,
+      "past_clicks": 96,
+      "past_impressions": 7297,
+      "lost_clicks": 47,
+      "lost_impressions": 2361,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 8,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3837,18 +4195,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 2,
-      "past_impressions": 41,
+      "past_impressions": 35,
       "lost_clicks": 2,
-      "lost_impressions": 28,
+      "lost_impressions": 22,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "lost",
       "score": 5,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",

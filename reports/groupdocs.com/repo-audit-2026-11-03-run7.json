@@ -1,0 +1,49 @@
+{
+  "tenant": "groupdocs.com",
+  "auditor": "repo-audit",
+  "run_id": 7,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.com"
+    ],
+    "sample": 40
+  },
+  "requests": 41,
+  "duration_s": 68.7,
+  "stopped_early": false,
+  "summary": {
+    "blog.groupdocs.com": {
+      "commit": "7d352118 2026-11-03 updates",
+      "posts": 12632,
+      "entries": 6554,
+      "invalid": null,
+      "broke_it": null,
+      "live": {
+        "eligible": 6554,
+        "sampled": 40,
+        "redirected": 40
+      },
+      "by_check": {}
+    }
+  },
+  "findings": [],
+  "hosts": {
+    "blog.groupdocs.com": {
+      "commit": "7d352118 2026-11-03 updates",
+      "posts": 12632,
+      "redirects": {
+        "present": true,
+        "entries": 6554,
+        "invalid": null,
+        "broke_it": null,
+        "live": {
+          "eligible": 6554,
+          "sampled": 40,
+          "redirected": 40,
+          "failed": []
+        }
+      },
+      "issues": []
+    }
+  }
+}

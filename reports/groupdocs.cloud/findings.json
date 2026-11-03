@@ -44,18 +44,18 @@
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 14,
+      "past_impressions": 28,
       "lost_clicks": 0,
-      "lost_impressions": 8,
+      "lost_impressions": 22,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
-      "scored_on": "at stake",
+      "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "M",
@@ -98,23 +98,23 @@
     },
     "affected_pages": 0,
     "impact": {
-      "clicks_28d": 585,
-      "impressions_28d": 59193,
+      "clicks_28d": 591,
+      "impressions_28d": 60754,
       "source": "gsc-host",
       "share": 1.0,
-      "past_clicks": 1932,
-      "past_impressions": 101255,
-      "lost_clicks": 1347,
-      "lost_impressions": 42062,
+      "past_clicks": 2003,
+      "past_impressions": 102849,
+      "lost_clicks": 1412,
+      "lost_impressions": 42095,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 12,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -187,22 +187,22 @@
     "affected_pages": 38,
     "impact": {
       "clicks_28d": 2,
-      "impressions_28d": 203,
+      "impressions_28d": 209,
       "source": "gsc-host",
       "share": 0.003,
       "past_clicks": 7,
-      "past_impressions": 348,
+      "past_impressions": 353,
       "lost_clicks": 5,
-      "lost_impressions": 145,
+      "lost_impressions": 144,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 6,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -1108,23 +1108,23 @@
     },
     "affected_pages": 509,
     "impact": {
-      "clicks_28d": 21,
-      "impressions_28d": 3275,
+      "clicks_28d": 20,
+      "impressions_28d": 3964,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 59,
-      "past_impressions": 4776,
-      "lost_clicks": 38,
-      "lost_impressions": 1501,
+      "past_clicks": 60,
+      "past_impressions": 4796,
+      "lost_clicks": 40,
+      "lost_impressions": 832,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
-      "score": 23,
+      "score": 24,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "M",
@@ -1139,6 +1139,488 @@
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
+    "notes": []
+  },
+  {
+    "id": "crawl-0003",
+    "key": "crawl/redirect_key_malformed/blog.groupdocs.cloud/Redirects.json",
+    "source": "repo-audit",
+    "tenant": "groupdocs.cloud",
+    "subdomain": "blog.groupdocs.cloud",
+    "template": "Redirects.json",
+    "dimension": "crawl",
+    "type": "incorrect",
+    "title": "Redirect sources that can never match a request",
+    "evidence": {
+      "urls": [
+        "https://blog.groupdocs.cloud//merger/password-protect-excel-using-password-protection-service/",
+        "https://blog.groupdocs.cloud//web792/",
+        "https://blog.groupdocs.cloud/http://daveandethan.life/exp.html",
+        "https://blog.groupdocs.cloud/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
+        "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
+        "https://blog.groupdocs.cloud/ru//render-excel-data-to-html-using-python/images/Render-Excel-To-HTML.jpg"
+      ],
+      "observed": "51 entries or files; host or scheme in the key: 45, double slash: 6",
+      "expected": "Every source is a path starting with /, percent-encoded",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 330,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c0f1c170 2023-11-06: fixed broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud//merger/password-protect-excel-using-password-protection-service/",
+          "file": "Redirects.json",
+          "line": 335,
+          "note": "double slash",
+          "fix": "https://blog.groupdocs.cloud/merger/password-protect-excel-using-password-protection-service/",
+          "commit": "15e7b36d 2023-09-27: fixed broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud//web792/",
+          "file": "Redirects.json",
+          "line": 353,
+          "note": "double slash",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "7f5e70c8 2023-10-13: convert-svg-to-png-using-svg-to-png-converter translations added"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 358,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c0f1c170 2023-11-06: fixed broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/http://daveandethan.life/exp.html",
+          "file": "Redirects.json",
+          "line": 359,
+          "note": "double slash",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "accb9feb 2023-10-20: fixed broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
+          "file": "Redirects.json",
+          "line": 382,
+          "note": "double slash",
+          "fix": "https://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family/",
+          "commit": "404c9c33 2023-11-13: Fixed broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
+          "file": "Redirects.json",
+          "line": 388,
+          "note": "double slash",
+          "fix": "https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
+          "commit": "f14098cd 2023-12-19: fixed broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 400,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "974d216d 2024-01-22: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 401,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/tags/",
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 404,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 405,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/2/",
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 406,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/2/",
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 407,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/2/",
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 408,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 409,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/1/",
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 411,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 412,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/2/",
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 413,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 414,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/43/",
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 415,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 416,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 420,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 421,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 422,
+          "note": "host or scheme in the key",
+          "fix": "blog.groupdocs.cloud/page/34",
+          "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 423,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/43/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 424,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/categories/groupdocs.merger-cloud-product-family/",
+          "commit": "98cdc8f7 2024-02-20: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 425,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "98cdc8f7 2024-02-20: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 426,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 432,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/categories/groupdocs.signature-cloud-product-family/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 433,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 434,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 435,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 436,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 437,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 438,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 439,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 440,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "dd25459d 2024-02-28: Redirects.json format fix"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 441,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 442,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 443,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "dd25459d 2024-02-28: Redirects.json format fix"
+        }
+      ]
+    },
+    "affected_pages": 51,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 0,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-05",
+        "2026-05-02"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-04",
+        "2026-10-31"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-03",
+    "first_seen_run": "repo-audit-run11",
+    "last_seen_run": "repo-audit-run11",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "redirect_key_malformed",
+    "notes": []
+  },
+  {
+    "id": "crawl-0004",
+    "key": "crawl/redirect_target_bad/blog.groupdocs.cloud/Redirects.json",
+    "source": "repo-audit",
+    "tenant": "groupdocs.cloud",
+    "subdomain": "blog.groupdocs.cloud",
+    "template": "Redirects.json",
+    "dimension": "crawl",
+    "type": "improvable",
+    "title": "Redirect targets that are empty or not https",
+    "evidence": {
+      "urls": [
+        "https://blog.groupdocs.cloud/"
+      ],
+      "observed": "1 entries or files; target: blog.groupdocs.cloud/page/34: 1",
+      "expected": "Every target is a full https URL",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 422,
+          "note": "target: blog.groupdocs.cloud/page/34",
+          "fix": null,
+          "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+        }
+      ]
+    },
+    "affected_pages": 1,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 6,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 36,
+      "lost_clicks": 0,
+      "lost_impressions": 30,
+      "past_window": [
+        "2026-04-05",
+        "2026-05-02"
+      ],
+      "scored_on": "lost",
+      "score": 0,
+      "window": [
+        "2026-10-04",
+        "2026-10-31"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-03",
+    "first_seen_run": "repo-audit-run11",
+    "last_seen_run": "repo-audit-run11",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "redirect_target_bad",
     "notes": []
   },
   {
@@ -1643,23 +2125,23 @@
     },
     "affected_pages": 122,
     "impact": {
-      "clicks_28d": 4,
-      "impressions_28d": 867,
+      "clicks_28d": 2,
+      "impressions_28d": 901,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 11,
-      "past_impressions": 960,
-      "lost_clicks": 7,
-      "lost_impressions": 93,
+      "past_clicks": 13,
+      "past_impressions": 959,
+      "lost_clicks": 11,
+      "lost_impressions": 58,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
-      "score": 23,
+      "score": 22,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -1791,14 +2273,14 @@
       "lost_clicks": 0,
       "lost_impressions": 3,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -2214,22 +2696,22 @@
     "affected_pages": 18,
     "impact": {
       "clicks_28d": 1,
-      "impressions_28d": 69,
+      "impressions_28d": 68,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 1,
-      "past_impressions": 69,
+      "past_impressions": 81,
       "lost_clicks": 0,
-      "lost_impressions": 0,
+      "lost_impressions": 13,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 6,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -2331,23 +2813,23 @@
     },
     "affected_pages": 11039,
     "impact": {
-      "clicks_28d": 562,
-      "impressions_28d": 56505,
+      "clicks_28d": 569,
+      "impressions_28d": 58103,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 1857,
-      "past_impressions": 97106,
-      "lost_clicks": 1295,
-      "lost_impressions": 40601,
+      "past_clicks": 1927,
+      "past_impressions": 98786,
+      "lost_clicks": 1358,
+      "lost_impressions": 40683,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 12,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -2448,22 +2930,22 @@
     "affected_pages": 555,
     "impact": {
       "clicks_28d": 26,
-      "impressions_28d": 2609,
+      "impressions_28d": 2682,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 84,
-      "past_impressions": 4526,
-      "lost_clicks": 58,
-      "lost_impressions": 1917,
+      "past_clicks": 88,
+      "past_impressions": 4664,
+      "lost_clicks": 62,
+      "lost_impressions": 1982,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 7,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -2541,22 +3023,22 @@
     "affected_pages": 19,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 20,
+      "impressions_28d": 21,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 60,
+      "past_impressions": 70,
       "lost_clicks": 0,
-      "lost_impressions": 40,
+      "lost_impressions": 49,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
-      "scored_on": "at stake",
+      "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -2650,22 +3132,22 @@
     "affected_pages": 536,
     "impact": {
       "clicks_28d": 26,
-      "impressions_28d": 2589,
+      "impressions_28d": 2661,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 84,
-      "past_impressions": 4466,
-      "lost_clicks": 58,
-      "lost_impressions": 1877,
+      "past_clicks": 88,
+      "past_impressions": 4594,
+      "lost_clicks": 62,
+      "lost_impressions": 1933,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 7,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -2721,22 +3203,22 @@
     "affected_pages": 3,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 8,
+      "impressions_28d": 19,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 16,
+      "past_impressions": 13,
       "lost_clicks": 0,
-      "lost_impressions": 8,
+      "lost_impressions": 0,
       "past_window": [
-        "2026-04-02",
-        "2026-04-29"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
-      "score": 0,
+      "score": 1,
       "window": [
-        "2026-10-01",
-        "2026-10-28"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",

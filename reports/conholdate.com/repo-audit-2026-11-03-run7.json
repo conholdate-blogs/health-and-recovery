@@ -1,0 +1,204 @@
+{
+  "tenant": "conholdate.com",
+  "auditor": "repo-audit",
+  "run_id": 7,
+  "params": {
+    "hosts": [
+      "blog.conholdate.com"
+    ],
+    "sample": 40
+  },
+  "requests": 40,
+  "duration_s": 56.2,
+  "stopped_early": false,
+  "summary": {
+    "blog.conholdate.com": {
+      "commit": "034f7db5 2026-11-02 Optimized Blog Posts",
+      "posts": 10026,
+      "entries": 1465,
+      "invalid": null,
+      "broke_it": null,
+      "live": {
+        "eligible": 1459,
+        "sampled": 40,
+        "redirected": 39,
+        "other": 1
+      },
+      "by_check": {
+        "redirect_key_malformed": 6
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "crawl-0001",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_key_malformed",
+      "type": "incorrect",
+      "title": "Redirect sources that can never match a request",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/2021/10/29/save-attachments-from-emails-using-csharp/{{ revealButtonHref }}",
+          "https://blog.conholdate.com/2021/09/18/create-encrypted-zip-files-using-csharp/{{ revealButtonHref }}",
+          "https://blog.conholdate.com/2021/12/01/ms-word-automation-create-edit-or-convert-word-documents-using-java/{{ revealButtonHref }}",
+          "https://blog.conholdate.com/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
+          "https://blog.conholdate.com//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+          "https://blog.conholdate.com/categorieses//conholdate.total-product-family/"
+        ],
+        "observed": "6 entries or files; unencoded template text: 3, double slash: 3",
+        "expected": "Every source is a path starting with /, percent-encoded",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.com/2021/10/29/save-attachments-from-emails-using-csharp/{{ revealButtonHref }}",
+            "file": "Redirects.json",
+            "line": 1300,
+            "note": "unencoded template text",
+            "fix": "https://blog.conholdate.com/total/save-attachments-from-emails-using-csharp/",
+            "commit": "106b21ce 2023-01-12: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.com/2021/09/18/create-encrypted-zip-files-using-csharp/{{ revealButtonHref }}",
+            "file": "Redirects.json",
+            "line": 1335,
+            "note": "unencoded template text",
+            "fix": "https://blog.conholdate.com/",
+            "commit": "fddb141c 2023-09-14: Fixed Broken Links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.com/2021/12/01/ms-word-automation-create-edit-or-convert-word-documents-using-java/{{ revealButtonHref }}",
+            "file": "Redirects.json",
+            "line": 1337,
+            "note": "unencoded template text",
+            "fix": "https://blog.conholdate.com/",
+            "commit": "fddb141c 2023-09-14: Fixed Broken Links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.com/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
+            "file": "Redirects.json",
+            "line": 1353,
+            "note": "double slash",
+            "fix": "https://blog.conholdate.com/total/convert-jpg-to-word/images/JPG-Image-to-Word.jpg",
+            "commit": "59bee26e 2023-10-02: Fixed Broken Links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.com//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+            "file": "Redirects.json",
+            "line": 1365,
+            "note": "double slash",
+            "fix": "https://blog.conholdate.com/total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+            "commit": "bbd9b4bf 2023-11-21: Broken Links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.com/categorieses//conholdate.total-product-family/",
+            "file": "Redirects.json",
+            "line": 1379,
+            "note": "double slash",
+            "fix": "https://blog.conholdate.com/es/categories/conholdate.total-product-family/",
+            "commit": "80a80101 2023-12-05: Optimization and Broken Links Fixes"
+          }
+        ]
+      },
+      "affected_pages": 6,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-03"
+    }
+  ],
+  "hosts": {
+    "blog.conholdate.com": {
+      "commit": "034f7db5 2026-11-02 Optimized Blog Posts",
+      "posts": 10026,
+      "redirects": {
+        "present": true,
+        "entries": 1465,
+        "invalid": null,
+        "broke_it": null,
+        "live": {
+          "eligible": 1459,
+          "sampled": 40,
+          "redirected": 39,
+          "other": 1,
+          "failed": []
+        }
+      },
+      "issues": [
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1300,
+          "link": "/2021/10/29/save-attachments-from-emails-using-csharp/{{ revealButtonHref }}",
+          "note": "unencoded template text",
+          "fix": "https://blog.conholdate.com/total/save-attachments-from-emails-using-csharp/",
+          "page": "https://blog.conholdate.com/2021/10/29/save-attachments-from-emails-using-csharp/{{ revealButtonHref }}",
+          "commit": "106b21ce 2023-01-12: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1335,
+          "link": "/2021/09/18/create-encrypted-zip-files-using-csharp/{{ revealButtonHref }}",
+          "note": "unencoded template text",
+          "fix": "https://blog.conholdate.com/",
+          "page": "https://blog.conholdate.com/2021/09/18/create-encrypted-zip-files-using-csharp/{{ revealButtonHref }}",
+          "commit": "fddb141c 2023-09-14: Fixed Broken Links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1337,
+          "link": "/2021/12/01/ms-word-automation-create-edit-or-convert-word-documents-using-java/{{ revealButtonHref }}",
+          "note": "unencoded template text",
+          "fix": "https://blog.conholdate.com/",
+          "page": "https://blog.conholdate.com/2021/12/01/ms-word-automation-create-edit-or-convert-word-documents-using-java/{{ revealButtonHref }}",
+          "commit": "fddb141c 2023-09-14: Fixed Broken Links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1353,
+          "link": "/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
+          "note": "double slash",
+          "fix": "https://blog.conholdate.com/total/convert-jpg-to-word/images/JPG-Image-to-Word.jpg",
+          "page": "https://blog.conholdate.com/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
+          "commit": "59bee26e 2023-10-02: Fixed Broken Links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1365,
+          "link": "//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+          "note": "double slash",
+          "fix": "https://blog.conholdate.com/total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+          "page": "https://blog.conholdate.com//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+          "commit": "bbd9b4bf 2023-11-21: Broken Links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1379,
+          "link": "/categorieses//conholdate.total-product-family/",
+          "note": "double slash",
+          "fix": "https://blog.conholdate.com/es/categories/conholdate.total-product-family/",
+          "page": "https://blog.conholdate.com/categorieses//conholdate.total-product-family/",
+          "commit": "80a80101 2023-12-05: Optimization and Broken Links Fixes"
+        }
+      ]
+    }
+  }
+}

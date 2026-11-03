@@ -458,7 +458,7 @@ class CrawlAudit:
 
     def blocked_in_inventory(self, host: str, section: str) -> int:
         """Sitemap URLs robots.txt blocks, counted exactly: the sample favours the default language, so scaling it
-        up misleads when a rule hits one language (blog.conholdate.com /tag/: 2,523 URLs, not the sample's 39,579)."""
+        up misleads when a rule hits one language (one blog's /tag/: 2,523 URLs, not the sample's 39,579)."""
         sql, args = "SELECT url FROM urls WHERE run_id = ? AND host = ?", [self.inventory_run, host]
         if section:
             sql, args = sql + " AND section = ?", args + [section]

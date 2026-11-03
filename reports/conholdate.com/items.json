@@ -10183,10 +10183,83 @@
    "link": "https://blog.conholdate.com/total/delete-blank-pages-in-word-using-csharp/",
    "page": "https://blog.conholdate.com/zh/total/convert-html-to-bmp-in-java/",
    "removed": null
+  },
+  "redirect_key_malformed|blog.conholdate.com|Redirects.json|//total/add-text-or-image-watermarks-in-word-documents-using-csharp/|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.conholdate.com",
+   "last_seen": "2026-11-03",
+   "link": "//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+   "page": "https://blog.conholdate.com//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.conholdate.com|Redirects.json|/2021/09/18/create-encrypted-zip-files-using-csharp/{{ revealButtonHref }}|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.conholdate.com",
+   "last_seen": "2026-11-03",
+   "link": "/2021/09/18/create-encrypted-zip-files-using-csharp/{{ revealButtonHref }}",
+   "page": "https://blog.conholdate.com/2021/09/18/create-encrypted-zip-files-using-csharp/{{ revealButtonHref }}",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.conholdate.com|Redirects.json|/2021/10/29/save-attachments-from-emails-using-csharp/{{ revealButtonHref }}|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.conholdate.com",
+   "last_seen": "2026-11-03",
+   "link": "/2021/10/29/save-attachments-from-emails-using-csharp/{{ revealButtonHref }}",
+   "page": "https://blog.conholdate.com/2021/10/29/save-attachments-from-emails-using-csharp/{{ revealButtonHref }}",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.conholdate.com|Redirects.json|/2021/12/01/ms-word-automation-create-edit-or-convert-word-documents-using-java/{{ revealButtonHref }}|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.conholdate.com",
+   "last_seen": "2026-11-03",
+   "link": "/2021/12/01/ms-word-automation-create-edit-or-convert-word-documents-using-java/{{ revealButtonHref }}",
+   "page": "https://blog.conholdate.com/2021/12/01/ms-word-automation-create-edit-or-convert-word-documents-using-java/{{ revealButtonHref }}",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.conholdate.com|Redirects.json|/categorieses//conholdate.total-product-family/|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.conholdate.com",
+   "last_seen": "2026-11-03",
+   "link": "/categorieses//conholdate.total-product-family/",
+   "page": "https://blog.conholdate.com/categorieses//conholdate.total-product-family/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.conholdate.com|Redirects.json|/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.conholdate.com",
+   "last_seen": "2026-11-03",
+   "link": "/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
+   "page": "https://blog.conholdate.com/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
+   "removed": null,
+   "source": "repo-audit"
   }
  },
  "runs": [
   "link-audit-run5",
-  "discovery-run1"
+  "discovery-run1",
+  "repo-audit-run7"
  ]
 }

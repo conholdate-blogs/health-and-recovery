@@ -36,7 +36,7 @@ WHOLE_SCOPE_CHECKS = {"robots_missing", "robots_html", "robots_no_sitemap", "rob
                       "host_no_sitemap", "section_no_sitemap", "origin_cwv_poor", "origin_cwv_needs_work",
                       "ai_bot_blocked", "ai_bot_firewalled", "llms_txt_missing", "llms_txt_invalid"}
 # Sources whose findings name every affected page: traffic of exactly those pages.
-EXACT_PAGE_SOURCES = {"seed", "text-audit", "link-audit"}
+EXACT_PAGE_SOURCES = {"seed", "text-audit", "link-audit", "repo-audit"}
 IMPRESSION_WEIGHT = 0.01  # ~1% CTR: 100 impressions count like one click
 TRAFFIC_SCALE = 20  # score points per decade of click-equivalents
 LOST_WEIGHT = 0.5

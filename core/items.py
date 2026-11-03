@@ -58,6 +58,19 @@ def discovery_items(discovery_run: dict) -> dict[str, dict]:
     return items
 
 
+def repo_items(repo_run: dict) -> dict[str, dict]:
+    """key -> item for one repo file run (core/audit/repo.py): one entry or post file. An invalid file is one item."""
+    items: dict[str, dict] = {}
+    for host, h in (repo_run.get("hosts") or {}).items():
+        seen: Counter = Counter()
+        for i in h.get("issues") or []:
+            base = f"{i['check']}|{host}|{i['file']}|{i['link'] or ''}"
+            seen[base] += 1
+            items[f"{base}|{seen[base]}"] = {"source": "repo-audit", "check": i["check"], "host": host,
+                                             "page": i.get("page"), "file": i["file"], "link": i["link"]}
+    return items
+
+
 def in_repo(repos: dict[str, str]) -> dict:
     """Link check: host -> does a gone item's post still exist in the host's clone (pulled to the run's commit)."""
     return {host: lambda rec, root=Path(path): not rec["file"] or (root / rec["file"]).exists()

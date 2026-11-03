@@ -18698,6 +18698,174 @@
    "page": "https://blog.aspose.cloud/zh/cells/convert-excel-file-to-word-in-java/",
    "removed": null
   },
+  "post_front_matter_broken|blog.aspose.cloud|content/Aspose.Cloud/cells/2025-07-15-spreadsheet-cleaning-api-excel-spaces-line-breaks-fix/index.tr.md||1": {
+   "check": "post_front_matter_broken",
+   "file": "content/Aspose.Cloud/cells/2025-07-15-spreadsheet-cleaning-api-excel-spaces-line-breaks-fix/index.tr.md",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": null,
+   "page": null,
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.aspose.cloud|Redirects.json|//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/",
+   "page": "https://blog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.aspose.cloud|Redirects.json|//omr/aspose.omr-for-cloud-is-available-now/|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "//omr/aspose.omr-for-cloud-is-available-now/",
+   "page": "https://blog.aspose.cloud//omr/aspose.omr-for-cloud-is-available-now/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.aspose.cloud|Redirects.json|//words/free-java-api-to-merge-ms-word-docx-files/|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "//words/free-java-api-to-merge-ms-word-docx-files/",
+   "page": "https://blog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.aspose.cloud|Redirects.json|/http://daveandethan.life/exp.html|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "/http://daveandethan.life/exp.html",
+   "page": "https://blog.aspose.cloud/http://daveandethan.life/exp.html",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.aspose.cloud|Redirects.json|/imaging/what%E2%80%99s-new-in-aspose.imaging-cloud-19.7/https://blog.aspose.cloud/slides/convert-odp-to-pptx-with-dotnet-rest-api/|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "/imaging/what%E2%80%99s-new-in-aspose.imaging-cloud-19.7/https://blog.aspose.cloud/slides/convert-odp-to-pptx-with-dotnet-rest-api/",
+   "page": "https://blog.aspose.cloud/imaging/what%E2%80%99s-new-in-aspose.imaging-cloud-19.7/https://blog.aspose.cloud/slides/convert-odp-to-pptx-with-dotnet-rest-api/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.aspose.cloud|Redirects.json|/th/imaging/convert-dcm-to-jpg-in-java/images/skull2.dcmblog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "/th/imaging/convert-dcm-to-jpg-in-java/images/skull2.dcmblog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+   "page": "https://blog.aspose.cloud/th/imaging/convert-dcm-to-jpg-in-java/images/skull2.dcmblog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.aspose.cloud|Redirects.json|/whttps://www.youtube.com/watch|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "/whttps://www.youtube.com/watch",
+   "page": "https://blog.aspose.cloud/whttps://www.youtube.com/watch",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.aspose.cloud|Redirects.json|/whttps://youtu.be/UcqE22BcjOEords/split-word-documents-with-dotnet-rest-api/|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "/whttps://youtu.be/UcqE22BcjOEords/split-word-documents-with-dotnet-rest-api/",
+   "page": "https://blog.aspose.cloud/whttps://youtu.be/UcqE22BcjOEords/split-word-documents-with-dotnet-rest-api/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_key_malformed|blog.aspose.cloud|Redirects.json|/words/impblog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/roved-aspose-words-cloud-v4-is-here/|1": {
+   "check": "redirect_key_malformed",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "/words/impblog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/roved-aspose-words-cloud-v4-is-here/",
+   "page": "https://blog.aspose.cloud/words/impblog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/roved-aspose-words-cloud-v4-is-here/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_self_loop|blog.aspose.cloud|Redirects.json|/bg/archives/|1": {
+   "check": "redirect_self_loop",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "/bg/archives/",
+   "page": "https://blog.aspose.cloud/bg/archives/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_self_loop|blog.aspose.cloud|Redirects.json|/hu/cells/convert-excel-to-powerpoint-in-csharp/|1": {
+   "check": "redirect_self_loop",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "/hu/cells/convert-excel-to-powerpoint-in-csharp/",
+   "page": "https://blog.aspose.cloud/hu/cells/convert-excel-to-powerpoint-in-csharp/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_self_loop|blog.aspose.cloud|Redirects.json|/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/|1": {
+   "check": "redirect_self_loop",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+   "page": "https://blog.aspose.cloud/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "redirect_self_loop|blog.aspose.cloud|Redirects.json|/zh-tw/search/|1": {
+   "check": "redirect_self_loop",
+   "file": "Redirects.json",
+   "first_seen": "2026-11-03",
+   "fixed": null,
+   "host": "blog.aspose.cloud",
+   "last_seen": "2026-11-03",
+   "link": "/zh-tw/search/",
+   "page": "https://blog.aspose.cloud/zh-tw/search/",
+   "removed": null,
+   "source": "repo-audit"
+  },
   "translation_partial|blog.aspose.cloud|content/Aspose.Cloud/tasks/2016-02-16-new-node.js-sdk-for-integrating-microsoft-and-primavera-project-document-using-powerful-aspose.tasks-cloud-apis|th": {
    "check": "translation_partial",
    "file": "content/Aspose.Cloud/tasks/2016-02-16-new-node.js-sdk-for-integrating-microsoft-and-primavera-project-document-using-powerful-aspose.tasks-cloud-apis",
@@ -18748,6 +18916,7 @@
   "link-audit-run9",
   "link-audit-run10",
   "discovery-run3",
-  "link-audit-run11"
+  "link-audit-run11",
+  "repo-audit-run12"
  ]
 }

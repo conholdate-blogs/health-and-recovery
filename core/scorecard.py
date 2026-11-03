@@ -51,6 +51,9 @@ GROUPS = {
     **dict.fromkeys(("link_missing_translation", "link_damaged", "link_wrong_language", "link_broken"),
                     "internal links"),
     **dict.fromkeys(("translation_partial", "language_unsupported"), "translations"),
+    **dict.fromkeys(("redirect_file_invalid", "redirect_not_working", "redirect_key_malformed", "redirect_self_loop",
+                     "redirect_target_bad"), "redirect file"),
+    **dict.fromkeys(("post_front_matter_broken", "post_url_relative"), "post files"),
 }
 # the one-glance status line on a card: label -> groups it summarizes
 STATUS = {"Sitemap": ("sitemap",), "Pages": ("page errors",), "Canonical": ("canonical",), "hreflang": ("hreflang",)}

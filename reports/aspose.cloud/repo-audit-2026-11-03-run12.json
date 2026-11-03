@@ -1,0 +1,463 @@
+{
+  "tenant": "aspose.cloud",
+  "auditor": "repo-audit",
+  "run_id": 12,
+  "params": {
+    "hosts": [
+      "blog.aspose.cloud"
+    ],
+    "sample": 40
+  },
+  "requests": 41,
+  "duration_s": 63.9,
+  "stopped_early": false,
+  "summary": {
+    "blog.aspose.cloud": {
+      "commit": "f10b44edc2 2026-11-03 Translate articles for: \"Convert PDF to TXT Conversion in Python\" - (21 files)",
+      "posts": 13636,
+      "entries": 1183,
+      "invalid": null,
+      "broke_it": null,
+      "live": {
+        "eligible": 1174,
+        "sampled": 40,
+        "redirected": 36,
+        "not_working": 1,
+        "other": 3
+      },
+      "by_check": {
+        "redirect_self_loop": 4,
+        "redirect_key_malformed": 9,
+        "post_front_matter_broken": 1
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "crawl-0001",
+      "tenant": "aspose.cloud",
+      "subdomain": "blog.aspose.cloud",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_self_loop",
+      "type": "incorrect",
+      "title": "Redirects that point at themselves",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.cloud/bg/archives/",
+          "https://blog.aspose.cloud/zh-tw/search/",
+          "https://blog.aspose.cloud/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+          "https://blog.aspose.cloud/hu/cells/convert-excel-to-powerpoint-in-csharp/"
+        ],
+        "observed": "4 entries or files; target is the source: 4",
+        "expected": "A redirect's target differs from its source",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/bg/archives/",
+            "file": "Redirects.json",
+            "line": 889,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/zh-tw/search/",
+            "file": "Redirects.json",
+            "line": 899,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+            "file": "Redirects.json",
+            "line": 1069,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/hu/cells/convert-excel-to-powerpoint-in-csharp/",
+            "file": "Redirects.json",
+            "line": 1076,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          }
+        ]
+      },
+      "affected_pages": 4,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-03"
+    },
+    {
+      "id": "crawl-0002",
+      "tenant": "aspose.cloud",
+      "subdomain": "blog.aspose.cloud",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_key_malformed",
+      "type": "incorrect",
+      "title": "Redirect sources that can never match a request",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.cloud/imaging/what%E2%80%99s-new-in-aspose.imaging-cloud-19.7/https://blog.aspose.cloud/slides/convert-odp-to-pptx-with-dotnet-rest-api/",
+          "https://blog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+          "https://blog.aspose.cloud/http://daveandethan.life/exp.html",
+          "https://blog.aspose.cloud/th/imaging/convert-dcm-to-jpg-in-java/images/skull2.dcmblog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+          "https://blog.aspose.cloud/whttps://www.youtube.com/watch",
+          "https://blog.aspose.cloud/whttps://youtu.be/UcqE22BcjOEords/split-word-documents-with-dotnet-rest-api/",
+          "https://blog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/",
+          "https://blog.aspose.cloud/words/impblog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/roved-aspose-words-cloud-v4-is-here/",
+          "https://blog.aspose.cloud//omr/aspose.omr-for-cloud-is-available-now/"
+        ],
+        "observed": "9 entries or files; double slash: 9",
+        "expected": "Every source is a path starting with /, percent-encoded",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/imaging/what%E2%80%99s-new-in-aspose.imaging-cloud-19.7/https://blog.aspose.cloud/slides/convert-odp-to-pptx-with-dotnet-rest-api/",
+            "file": "Redirects.json",
+            "line": 1017,
+            "note": "double slash",
+            "fix": "https://blog.aspose.cloud/imaging/what%e2%80%99s-new-in-aspose.imaging-cloud-19.7/",
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+            "file": "Redirects.json",
+            "line": 1022,
+            "note": "double slash",
+            "fix": "https://blog.aspose.cloud/words/combine-word-documents-in-java/",
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/http://daveandethan.life/exp.html",
+            "file": "Redirects.json",
+            "line": 1029,
+            "note": "double slash",
+            "fix": "https://blog.aspose.cloud/",
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/th/imaging/convert-dcm-to-jpg-in-java/images/skull2.dcmblog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+            "file": "Redirects.json",
+            "line": 1032,
+            "note": "double slash",
+            "fix": "https://blog.aspose.cloud/imaging/convert-dcm-to-jpg-in-java/",
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/whttps://www.youtube.com/watch",
+            "file": "Redirects.json",
+            "line": 1044,
+            "note": "double slash",
+            "fix": "https://www.youtube.com/@AsposeCloud",
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/whttps://youtu.be/UcqE22BcjOEords/split-word-documents-with-dotnet-rest-api/",
+            "file": "Redirects.json",
+            "line": 1045,
+            "note": "double slash",
+            "fix": "https://blog.aspose.cloud/words/split-word-documents-with-dotnet-rest-api/",
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/",
+            "file": "Redirects.json",
+            "line": 1055,
+            "note": "double slash",
+            "fix": "https://blog.aspose.cloud/words/convert-word-to-jpg-in-java/",
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/words/impblog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/roved-aspose-words-cloud-v4-is-here/",
+            "file": "Redirects.json",
+            "line": 1063,
+            "note": "double slash",
+            "fix": "https://blog.aspose.cloud/words/convert-word-to-jpg-in-java/",
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud//omr/aspose.omr-for-cloud-is-available-now/",
+            "file": "Redirects.json",
+            "line": 1073,
+            "note": "double slash",
+            "fix": "https://blog.aspose.cloud/omr/aspose.omr-for-cloud-is-available-now/",
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          }
+        ]
+      },
+      "affected_pages": 9,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-03"
+    },
+    {
+      "id": "crawl-0003",
+      "tenant": "aspose.cloud",
+      "subdomain": "blog.aspose.cloud",
+      "template": "post",
+      "dimension": "crawl",
+      "check": "post_front_matter_broken",
+      "type": "broken",
+      "title": "Post files whose front matter does not parse",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.cloud/"
+        ],
+        "observed": "1 entries or files; while parsing a quoted scalar: 1",
+        "expected": "Every post file starts with a valid front matter block",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/",
+            "file": "content/Aspose.Cloud/cells/2025-07-15-spreadsheet-cleaning-api-excel-spaces-line-breaks-fix/index.tr.md",
+            "line": 1,
+            "note": "while parsing a quoted scalar",
+            "fix": null,
+            "commit": "5a1fd5463e 2025-07-18 fix tr error:spreadsheet-cleaning-api-excel-spaces-line-breaks-fix"
+          }
+        ]
+      },
+      "affected_pages": 1,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-03"
+    },
+    {
+      "id": "crawl-0004",
+      "tenant": "aspose.cloud",
+      "subdomain": "blog.aspose.cloud",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_not_working",
+      "type": "broken",
+      "title": "Redirects in Redirects.json do not work on the live site",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.cloud/2016/06/01/aspose.email-の紹介とその他のニュース-2016年-6月/"
+        ],
+        "observed": "1 of 40 sampled sources return 404 without a redirect (36 redirect, 3 other); 1,174 well-formed entries",
+        "expected": "Every well-formed source answers with a redirect to its target",
+        "locations": [
+          {
+            "role": "redirect",
+            "url": "https://blog.aspose.cloud/2016/06/01/aspose.email-の紹介とその他のニュース-2016年-6月/",
+            "note": "404, no redirect"
+          }
+        ]
+      },
+      "affected_pages": 29,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "M",
+      "fix_tier": 3,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-03"
+    }
+  ],
+  "hosts": {
+    "blog.aspose.cloud": {
+      "commit": "f10b44edc2 2026-11-03 Translate articles for: \"Convert PDF to TXT Conversion in Python\" - (21 files)",
+      "posts": 13636,
+      "redirects": {
+        "present": true,
+        "entries": 1183,
+        "invalid": null,
+        "broke_it": null,
+        "live": {
+          "eligible": 1174,
+          "sampled": 40,
+          "redirected": 36,
+          "not_working": 1,
+          "other": 3,
+          "failed": [
+            "/2016/06/01/aspose.email-の紹介とその他のニュース-2016年-6月/"
+          ]
+        }
+      },
+      "issues": [
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 889,
+          "link": "/bg/archives/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.cloud/bg/archives/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 899,
+          "link": "/zh-tw/search/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.cloud/zh-tw/search/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1017,
+          "link": "/imaging/what%E2%80%99s-new-in-aspose.imaging-cloud-19.7/https://blog.aspose.cloud/slides/convert-odp-to-pptx-with-dotnet-rest-api/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/imaging/what%e2%80%99s-new-in-aspose.imaging-cloud-19.7/",
+          "page": "https://blog.aspose.cloud/imaging/what%E2%80%99s-new-in-aspose.imaging-cloud-19.7/https://blog.aspose.cloud/slides/convert-odp-to-pptx-with-dotnet-rest-api/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1022,
+          "link": "//words/free-java-api-to-merge-ms-word-docx-files/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/words/combine-word-documents-in-java/",
+          "page": "https://blog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1029,
+          "link": "/http://daveandethan.life/exp.html",
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/",
+          "page": "https://blog.aspose.cloud/http://daveandethan.life/exp.html",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1032,
+          "link": "/th/imaging/convert-dcm-to-jpg-in-java/images/skull2.dcmblog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/imaging/convert-dcm-to-jpg-in-java/",
+          "page": "https://blog.aspose.cloud/th/imaging/convert-dcm-to-jpg-in-java/images/skull2.dcmblog.aspose.cloud//words/free-java-api-to-merge-ms-word-docx-files/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1044,
+          "link": "/whttps://www.youtube.com/watch",
+          "note": "double slash",
+          "fix": "https://www.youtube.com/@AsposeCloud",
+          "page": "https://blog.aspose.cloud/whttps://www.youtube.com/watch",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1045,
+          "link": "/whttps://youtu.be/UcqE22BcjOEords/split-word-documents-with-dotnet-rest-api/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/words/split-word-documents-with-dotnet-rest-api/",
+          "page": "https://blog.aspose.cloud/whttps://youtu.be/UcqE22BcjOEords/split-word-documents-with-dotnet-rest-api/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1055,
+          "link": "//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/words/convert-word-to-jpg-in-java/",
+          "page": "https://blog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1063,
+          "link": "/words/impblog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/roved-aspose-words-cloud-v4-is-here/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/words/convert-word-to-jpg-in-java/",
+          "page": "https://blog.aspose.cloud/words/impblog.aspose.cloud//0.0.7.230/11/24/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/roved-aspose-words-cloud-v4-is-here/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 1069,
+          "link": "/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.cloud/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1073,
+          "link": "//omr/aspose.omr-for-cloud-is-available-now/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.cloud/omr/aspose.omr-for-cloud-is-available-now/",
+          "page": "https://blog.aspose.cloud//omr/aspose.omr-for-cloud-is-available-now/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 1076,
+          "link": "/hu/cells/convert-excel-to-powerpoint-in-csharp/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.cloud/hu/cells/convert-excel-to-powerpoint-in-csharp/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Cloud/cells/2025-07-15-spreadsheet-cleaning-api-excel-spaces-line-breaks-fix/index.tr.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "while parsing a quoted scalar",
+          "commit": "5a1fd5463e 2025-07-18 fix tr error:spreadsheet-cleaning-api-excel-spaces-line-breaks-fix"
+        }
+      ]
+    }
+  }
+}

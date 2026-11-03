@@ -20,7 +20,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
 from core.discovery.store import InventoryStore  # noqa: E402
-from core.items import counts, discovery_items, in_repo, in_sitemaps, run_items, update  # noqa: E402
+from core.items import counts, discovery_items, in_repo, in_sitemaps, repo_items, run_items, update  # noqa: E402
 from core.paths import tenant_paths  # noqa: E402
 from core.tenant import load_tenant  # noqa: E402
 from scripts.build_report import run_date_of, runs_by_name  # noqa: E402
@@ -45,6 +45,14 @@ def main(argv: list[str] | None = None) -> int:
             continue
         update(ledger, ref, run_date_of(run, "link-audit-"), run_items(data),
                in_repo({h: p for h, p in repos.items() if h in (data.get("hosts") or {})}))
+        added += 1
+    for run in runs_by_name("repo-audit-*-run*.json", folder):
+        data = json.loads(run.read_text(encoding="utf-8"))
+        ref = f"repo-audit-run{data['run_id']}"
+        if ref in (ledger.get("runs") or []):
+            continue
+        update(ledger, ref, run_date_of(run, "repo-audit-"), repo_items(data),
+               in_repo({h: p for h, p in repos.items() if h in (data.get("hosts") or {})}), source="repo-audit")
         added += 1
     store = InventoryStore(paths.inventory) if paths.inventory.is_file() else None
     for run in runs_by_name("discovery-*-run*.json", folder):

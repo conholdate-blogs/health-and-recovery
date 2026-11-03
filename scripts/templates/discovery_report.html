@@ -486,7 +486,7 @@ __METHOD__
   const R = JSON.parse(document.getElementById("data").textContent);
   const ORDER = ["broken", "incorrect", "not_optimized", "improvable"];
   const LABEL = { broken: "Broken", incorrect: "Incorrect", not_optimized: "Not optimized", improvable: "Improvable",
-    discovery: "Discovery", seed: "Manual review", "crawl-audit": "Crawl audit", "perf-audit": "Speed audit", "ai-audit": "AI audit", "text-audit": "Text check", "link-audit": "Link check" };
+    discovery: "Discovery", seed: "Manual review", "crawl-audit": "Crawl audit", "perf-audit": "Speed audit", "ai-audit": "AI audit", "text-audit": "Text check", "link-audit": "Link check", "repo-audit": "Repo files" };
   const A = R._audit || null;
   const CH = R._run_changes || { new: [], resolved: [], runs: [] };
   const NEW = new Set(CH.new || []);
