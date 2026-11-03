@@ -1,0 +1,2572 @@
+{
+  "tenant": "aspose.com",
+  "auditor": "repo-audit",
+  "run_id": 9,
+  "params": {
+    "hosts": [
+      "blog.aspose.com"
+    ],
+    "sample": 40
+  },
+  "requests": 41,
+  "duration_s": 135.2,
+  "stopped_early": false,
+  "summary": {
+    "blog.aspose.com": {
+      "commit": "11ea88fe46 2026-11-03 Redirects.json: add the old fr URL of the Aspose.Cells for Go post",
+      "posts": 57800,
+      "entries": 16771,
+      "invalid": null,
+      "broke_it": null,
+      "live": {
+        "eligible": 16728,
+        "sampled": 40,
+        "redirected": 40
+      },
+      "by_check": {
+        "redirect_key_malformed": 43,
+        "redirect_target_bad": 2,
+        "redirect_self_loop": 4,
+        "post_url_relative": 48,
+        "post_front_matter_broken": 32
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "crawl-0001",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_key_malformed",
+      "type": "incorrect",
+      "title": "Redirect sources that can never match a request",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com//0.0.7.229/01/15/Split-PDF-Files-using-Java/",
+          "https://blog.aspose.com/gis/id//convert-gpx-to-csv-in-csharp/",
+          "https://blog.aspose.com/gis//convert-gpx-to-csv-in-csharp/",
+          "https://blog.aspose.com//3d/fbx-to-glb-java/",
+          "https://blog.aspose.com/barcode/wpf-barcode-generator-in-csharp//",
+          "https://blog.aspose.com/ja/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
+          "https://blog.aspose.com/zh/3d/3d-in-python/https://home.firefoxchina.cn",
+          "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
+          "https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/](https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/)",
+          "https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/"
+        ],
+        "observed": "43 entries or files; double slash: 28, host or scheme in the key: 9, unencoded template text: 6",
+        "expected": "Every source is a path starting with /, percent-encoded",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//0.0.7.229/01/15/Split-PDF-Files-using-Java/",
+            "file": "Redirects.json",
+            "line": 406,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/ja/pdf/split-pdf-files-using-java/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "Redirects.json",
+            "line": 8460,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.aspose.com/total/convert-rdl-or-rdlc-files-to-image-formats-or-display-gaps-in-a-line-chart/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/gis/id//convert-gpx-to-csv-in-csharp/",
+            "file": "Redirects.json",
+            "line": 16074,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/gis/convert-gpx-to-csv-in-csharp/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/gis//convert-gpx-to-csv-in-csharp/",
+            "file": "Redirects.json",
+            "line": 16095,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/gis/convert-gpx-to-csv-in-csharp/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//3d/fbx-to-glb-java/",
+            "file": "Redirects.json",
+            "line": 16102,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/3d/fbx-to-glb-java/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/barcode/wpf-barcode-generator-in-csharp//",
+            "file": "Redirects.json",
+            "line": 16122,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/barcode/wpf-barcode-generator-in-csharp/",
+            "commit": "0b193840 2024-02-07: fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/ja/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
+            "file": "Redirects.json",
+            "line": 16178,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/ja/cad/convert-dwg-and-dxf-to-pdf-in-java/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/zh/3d/3d-in-python/https://home.firefoxchina.cn",
+            "file": "Redirects.json",
+            "line": 16185,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/zh/3d/3d-in-python/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
+            "file": "Redirects.json",
+            "line": 16196,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/](https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/)",
+            "file": "Redirects.json",
+            "line": 16198,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/",
+            "file": "Redirects.json",
+            "line": 16199,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "Redirects.json",
+            "line": 16208,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.aspose.com/ko/categories/aspose.barcode-product-family/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com",
+            "file": "Redirects.json",
+            "line": 16209,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//email/merge-multiple-mbox-files-in-csharp/",
+            "file": "Redirects.json",
+            "line": 16228,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/email/merge-multiple-mbox-files-in-csharp/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "Redirects.json",
+            "line": 16246,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.aspose.com/words/convert-word-to-excel-using-csharp/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//html/extract-text-from-webpage-in-csharp-text-extraction-api/",
+            "file": "Redirects.json",
+            "line": 16257,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/html/extract-text-from-webpage-in-csharp-text-extraction-api/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//email/5ways-to-retrieve-emails-using-csharp/",
+            "file": "Redirects.json",
+            "line": 16272,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/email/5ways-to-retrieve-emails-using-csharp/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/zh-hant//email/5ways-to-retrieve-emails-using-csharp/",
+            "file": "Redirects.json",
+            "line": 16280,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/email/5ways-to-retrieve-emails-using-csharp/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "Redirects.json",
+            "line": 16286,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.aspose.com/zip/convert-rar-to-zip-in-java/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//psd/the-ultimate-guide-to-compress-psd-file/",
+            "file": "Redirects.json",
+            "line": 16292,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/psd/compress-psd-file-online/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//ru/",
+            "file": "Redirects.json",
+            "line": 16355,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//es/",
+            "file": "Redirects.json",
+            "line": 16415,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/es/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//ko/",
+            "file": "Redirects.json",
+            "line": 16416,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/ko/",
+            "commit": "4d4f96bb 2026-01-06: fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "Redirects.json",
+            "line": 16424,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.aspose.com/ru/tex/convert-latex-to-word-online-latex-to-docx/",
+            "commit": "4d4f96bb 2026-01-06: fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//cs/",
+            "file": "Redirects.json",
+            "line": 16432,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/cs/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//de/",
+            "file": "Redirects.json",
+            "line": 16433,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/de/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//fa/",
+            "file": "Redirects.json",
+            "line": 16434,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/fa/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//it/",
+            "file": "Redirects.json",
+            "line": 16435,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/it/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//ja/",
+            "file": "Redirects.json",
+            "line": 16436,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/ja/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//pl/",
+            "file": "Redirects.json",
+            "line": 16437,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/pl/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com//uk/",
+            "file": "Redirects.json",
+            "line": 16438,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/uk/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "Redirects.json",
+            "line": 16504,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.aspose.com/cad/convert-plt-pdf-image-jpg-png-java/",
+            "commit": "9fe87c8c 2026-01-11: fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "Redirects.json",
+            "line": 16517,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.aspose.com/fr/slides/apply-animation-to-text-in-powerpoint-using-cpp/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "Redirects.json",
+            "line": 16540,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.aspose.com/id/omr/create-omr-question-answer-sheet-csharp/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/pt//imaging/convert-gif-to-png-in-python-image-manipulation-service/",
+            "file": "Redirects.json",
+            "line": 16577,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/pt/imaging/convert-gif-to-png-in-python-image-manipulation-service/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "Redirects.json",
+            "line": 16667,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.aspose.com/zh-hant/cad/convert-svg-to-gif-in-python-programmatically/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/zh//imaging/convert-gif-to-png-in-python-image-manipulation-service/",
+            "file": "Redirects.json",
+            "line": 16697,
+            "note": "double slash",
+            "fix": "https://blog.aspose.com/zh-tw/imaging/convert-gif-to-png-in-python-image-manipulation-service/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/cells/create-cylinder-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+            "file": "Redirects.json",
+            "line": 16713,
+            "note": "unencoded template text",
+            "fix": "https://blog.aspose.com/cells/create-cylinder-chart-in-excel-using-csharp/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/cells/create-cylinder100percentstacked-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+            "file": "Redirects.json",
+            "line": 16714,
+            "note": "unencoded template text",
+            "fix": "https://blog.aspose.com/cells/create-cylinder100percentstacked-chart-in-excel-using-csharp/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/cells/create-funnel-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+            "file": "Redirects.json",
+            "line": 16715,
+            "note": "unencoded template text",
+            "fix": "https://blog.aspose.com/cells/create-funnel-chart-in-excel-using-csharp/",
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          }
+        ]
+      },
+      "affected_pages": 43,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-03"
+    },
+    {
+      "id": "crawl-0002",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_target_bad",
+      "type": "improvable",
+      "title": "Redirect targets that are empty or not https",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/email/parse-outlook-pst-files-in-python/2",
+          "https://blog.aspose.com/es/3d/ed-in-python/"
+        ],
+        "observed": "2 entries or files; target: email/parse-outlook-pst-files-in-python/2: 1, target: /es/categories/aspose.3d-product-family/: 1",
+        "expected": "Every target is a full https URL",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/email/parse-outlook-pst-files-in-python/2",
+            "file": "Redirects.json",
+            "line": 16352,
+            "note": "target: email/parse-outlook-pst-files-in-python/2",
+            "fix": null,
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/es/3d/ed-in-python/",
+            "file": "Redirects.json",
+            "line": 16353,
+            "note": "target: /es/categories/aspose.3d-product-family/",
+            "fix": null,
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          }
+        ]
+      },
+      "affected_pages": 2,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-03"
+    },
+    {
+      "id": "crawl-0003",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_self_loop",
+      "type": "incorrect",
+      "title": "Redirects that point at themselves",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/ja/categories/aspose.words-product-family/",
+          "https://blog.aspose.com/fa/omr/perform-omr-operations-using-aspose.omr-for-java/",
+          "https://blog.aspose.com/pt/barcode/generate-data-matrix-code-in-csharp/",
+          "https://blog.aspose.com/sv/barcode/read-barcode-from-pdf-in-csharp/"
+        ],
+        "observed": "4 entries or files; target is the source: 4",
+        "expected": "A redirect's target differs from its source",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/ja/categories/aspose.words-product-family/",
+            "file": "Redirects.json",
+            "line": 16420,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "4d4f96bb 2026-01-06: fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/fa/omr/perform-omr-operations-using-aspose.omr-for-java/",
+            "file": "Redirects.json",
+            "line": 16508,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/pt/barcode/generate-data-matrix-code-in-csharp/",
+            "file": "Redirects.json",
+            "line": 16587,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/sv/barcode/read-barcode-from-pdf-in-csharp/",
+            "file": "Redirects.json",
+            "line": 16618,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+          }
+        ]
+      },
+      "affected_pages": 4,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-03"
+    },
+    {
+      "id": "crawl-0004",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "post",
+      "dimension": "crawl",
+      "check": "post_url_relative",
+      "type": "incorrect",
+      "title": "Post urls without a leading slash",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/"
+        ],
+        "observed": "48 entries or files; published under a doubled language: 48",
+        "expected": "A post's url starts with /",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/3d/2024-03-29-convert-ply-to-obj-in-csharp-using-3d-graphics-api/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/3d/convert-ply-to-obj-in-csharp-using-3d-graphics-api/",
+            "commit": "11868f8c75 2025-05-09 language code fix in 3d cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/3d/2024-03-29-convert-ply-to-obj-in-csharp-using-3d-graphics-api/index.tr.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/tr/3d/convert-ply-to-obj-in-csharp-using-3d-graphics-api/",
+            "commit": "11868f8c75 2025-05-09 language code fix in 3d cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/3d/2024-05-14-convert-ply-to-usdz-in-csharp/index.id.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/id/3d/convert-ply-to-usdz-in-csharp/",
+            "commit": "f1cd6d0a99 2026-01-07 fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-04-02-convert-dwg-to-jpg-in-java-using-autocad-library/index.ja.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/ja/cad/convert-dwg-to-jpg-in-java-using-autocad-library/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-06-11-convert-dgn-to-jpg-in-java/index.fa.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/fa/cad/convert-dgn-to-jpg-in-java/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-11-07-convert-svg-to-bmp-in-python/index.fa.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/fa/cad/convert-svg-to-bmp-in-python/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-11-07-convert-svg-to-bmp-in-python/index.pl.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/pl/cad/convert-svg-to-bmp-in-python/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-11-12-convert-svg-to-gif-in-python-programmatically/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/cad/convert-svg-to-gif-in-python-programmatically/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-11-12-convert-svg-to-gif-in-python-programmatically/index.tr.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/tr/cad/convert-svg-to-gif-in-python-programmatically/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-11-14-convert-stl-to-svg-in-python/index.fa.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/fa/cad/convert-stl-to-svg-in-python/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-11-14-convert-stl-to-svg-in-python/index.it.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/it/cad/convert-stl-to-svg-in-python/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-11-14-convert-stl-to-svg-in-python/index.sv.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/sv/cad/convert-stl-to-svg-in-python/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-11-14-convert-stl-to-svg-in-python/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/cad/convert-stl-to-svg-in-python/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-11-15-programmatically-convert-stl-to-pdf-in-python/index.sv.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/sv/cad/programmatically-convert-stl-to-pdf-in-python/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-11-15-programmatically-convert-stl-to-pdf-in-python/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/cad/programmatically-convert-stl-to-pdf-in-python/",
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2025-06-24-convert-dxf-file-to-svg-in-csharp/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/cad/convert-dxf-file-to-svg-in-csharp/",
+            "commit": "aa8a563e00 2025-07-02 updated localized internal links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2025-10-02-change-svg-to-png-in-python/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/cad/change-svg-to-png-in-python/",
+            "commit": "bd43ff23e5 2026-04-07 Fixed parsing errors."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/email/2024-10-03-convert-msg-to-eml-in-nodejs/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/email/convert-msg-to-eml-in-nodejs/",
+            "commit": "da9ef07d7e 2025-05-09 language code fix in email cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/html/2022-11-02-use-css-selector-java/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/html/css-selectors-in-html-using-java",
+            "commit": "862c7e7b2e 2025-05-09 language code fix in html cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/html/2025-05-07-free-url-to-pdf-converter/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/html/free-url-to-pdf-converter/",
+            "commit": "b280e943a3 2025-05-16 published translations"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/note/2024-12-13-convert-onenote-to-png-in-java/index.he.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/he/note/convert-onenote-to-png-in-java/",
+            "commit": "aa8a563e00 2025-07-02 updated localized internal links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/note/2024-12-13-convert-onenote-to-png-in-java/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/note/convert-onenote-to-png-in-java/",
+            "commit": "aa8a563e00 2025-07-02 updated localized internal links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/page/2025-03-12-convert-bmp-to-eps-online-free-tool/index.id.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/id/page/convert-bmp-to-eps-online-free-tool/",
+            "commit": "de365a638f 2025-05-09 language code fix in page cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/page/2025-05-26-convert-svg-to-eps-online/index.fa.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/fa/page/convert-svg-to-eps-online/",
+            "commit": "aa8a563e00 2025-07-02 updated localized internal links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/page/2025-10-23-xps-to-pdf-converter-in-java/index.tr.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/tr/page/xps-to-pdf-converter-in-java/",
+            "commit": "928c7ee968 2025-10-24 published develop a jpg to eps converter and translations"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/page/2025-10-30-draw-an-ellipse-in-a-postscript-file-using-java/index.it.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/it/page/draw-an-ellipse-in-a-postscript-file-using-java/",
+            "commit": "bd43ff23e5 2026-04-07 Fixed parsing errors."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/page/2025-10-30-draw-an-ellipse-in-a-postscript-file-using-java/index.sv.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/sv/page/draw-an-ellipse-in-a-postscript-file-using-java/",
+            "commit": "bd43ff23e5 2026-04-07 Fixed parsing errors."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/psd/2025-05-19-convert-ai-to-bmp-in-python/index.cs.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/cz/psd/convert-ai-to-bmp-in-python/",
+            "commit": "65239808e7 2025-05-26 fix in translation files"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/psd/2025-08-05-make-a-psb-file-in-python/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/psd/create-a-psb-file-in-python/",
+            "commit": "ba2888c547 2025-08-07 published crop-psd-layers-in-python and translations"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2023-09-28-convert-ppt-to-jpg-php/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/slides/convert-ppt-to-jpg-php/",
+            "commit": "9a6c248c29 2025-01-30 published translations"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2024-06-10-create-a-pie-chart-in-java-programmatically/index.it.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/it/slides/create-a-pie-chart-in-java-programmatically/",
+            "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2024-06-10-create-a-pie-chart-in-java-programmatically/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/slides/create-a-pie-chart-in-java-programmatically/",
+            "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2024-10-10-create-a-box-and-whisker-chart-in-java-programmatically/index.he.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/he/slides/create-a-box-and-whisker-chart-in-java-programmatically/",
+            "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2024-10-10-create-a-box-and-whisker-chart-in-java-programmatically/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/slides/create-a-box-and-whisker-chart-in-java-programmatically/",
+            "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2025-04-08-powerpoint-presentation-ai-generator/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/slides/powerpoint-presentation-ai-generator/",
+            "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2025-05-14-translate-powerpoint-slides-online/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/slides/translate-powerpoint-slides-online/",
+            "commit": "b280e943a3 2025-05-16 published translations"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2025-07-08-convert-odp-to-pptx-in-csharp/index.cs.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/cz/slides/convert-odp-to-pptx-in-csharp/",
+            "commit": "2ce58a90f9 2025-07-11 published translations"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2025-07-08-convert-odp-to-pptx-in-csharp/index.th.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/th/slides/convert-odp-to-pptx-in-csharp/",
+            "commit": "2ce58a90f9 2025-07-11 published translations"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2025-07-09-convert-ppt-to-swf-in-csharp/index.fa.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/fa/slides/convert-ppt-to-swf-in-csharp/",
+            "commit": "2ce58a90f9 2025-07-11 published translations"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2025-07-09-convert-ppt-to-swf-in-csharp/index.sv.md",
+            "line": 1,
+            "note": "published under a doubled language",
+            "fix": "/sv/slides/convert-ppt-to-swf-in-csharp/",
+            "commit": "2ce58a90f9 2025-07-11 published translations"
+          }
+        ]
+      },
+      "affected_pages": 48,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-03"
+    },
+    {
+      "id": "crawl-0005",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "post",
+      "dimension": "crawl",
+      "check": "post_front_matter_broken",
+      "type": "broken",
+      "title": "Post files whose front matter does not parse",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/"
+        ],
+        "observed": "32 entries or files; no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000': 18, no front matter block; line 1: '```md': 11, no front matter block; line 1: '```': 2, no front matter block; line 1: '': 1",
+        "expected": "Every post file starts with a valid front matter block",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-05-13-convert-dwg-to-pdf-in-csharp/index.he.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```md'",
+            "fix": null,
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-05-13-convert-dwg-to-pdf-in-csharp/index.it.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```md'",
+            "fix": null,
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-05-13-convert-dwg-to-pdf-in-csharp/index.vi.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```md'",
+            "fix": null,
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cad/2024-06-11-convert-dgn-to-jpg-in-java/index.ru.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```md'",
+            "fix": null,
+            "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.ar.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.cs.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.de.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.es.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.fa.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.he.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.id.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.ja.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.ko.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.pl.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.pt.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.ru.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.sv.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.th.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.uk.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.vi.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.zh-hant.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "a394926be8 2026-01-01 Added zh-hant tranlsations with small h"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.zh.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+            "fix": null,
+            "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/email/2024-10-03-convert-msg-to-eml-in-nodejs/index.zh-hant.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```md'",
+            "fix": null,
+            "commit": "da9ef07d7e 2025-05-09 language code fix in email cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/email/2024-10-04-automated-appointment-scheduling-in-nodejs/index.ja.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```'",
+            "fix": null,
+            "commit": "da9ef07d7e 2025-05-09 language code fix in email cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/email/2024-10-04-automated-appointment-scheduling-in-nodejs/index.th.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```'",
+            "fix": null,
+            "commit": "da9ef07d7e 2025-05-09 language code fix in email cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/html/2024-11-07-convert-svg-to-xps-in-java/index.de.md",
+            "line": 1,
+            "note": "no front matter block; line 1: ''",
+            "fix": null,
+            "commit": "862c7e7b2e 2025-05-09 language code fix in html cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2024-10-07-convert-powerpoint-to-html5-in-java-programmatically-/index.ja.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```md'",
+            "fix": null,
+            "commit": "161d2a8faf 2024-10-15 published translations"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2024-10-07-convert-powerpoint-to-html5-in-java-programmatically-/index.sv.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```md'",
+            "fix": null,
+            "commit": "161d2a8faf 2024-10-15 published translations"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2024-10-07-convert-powerpoint-to-html5-in-java-programmatically-/index.uk.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```md'",
+            "fix": null,
+            "commit": "161d2a8faf 2024-10-15 published translations"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2024-10-08-lets-convert-pptx-to-odp-openoffice-in-java/index.ar.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```md'",
+            "fix": null,
+            "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2024-10-08-lets-convert-pptx-to-odp-openoffice-in-java/index.ja.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```md'",
+            "fix": null,
+            "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.com/",
+            "file": "content/Aspose.Blog/slides/2024-10-09-convert-odp-to-pptx-in-java---powerpoint-slides-library/index.de.md",
+            "line": 1,
+            "note": "no front matter block; line 1: '```md'",
+            "fix": null,
+            "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+          }
+        ]
+      },
+      "affected_pages": 32,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-03"
+    }
+  ],
+  "hosts": {
+    "blog.aspose.com": {
+      "commit": "11ea88fe46 2026-11-03 Redirects.json: add the old fr URL of the Aspose.Cells for Go post",
+      "posts": 57800,
+      "redirects": {
+        "present": true,
+        "entries": 16771,
+        "invalid": null,
+        "broke_it": null,
+        "live": {
+          "eligible": 16728,
+          "sampled": 40,
+          "redirected": 40,
+          "failed": []
+        }
+      },
+      "issues": [
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 406,
+          "link": "//0.0.7.229/01/15/Split-PDF-Files-using-Java/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/ja/pdf/split-pdf-files-using-java/",
+          "page": "https://blog.aspose.com//0.0.7.229/01/15/Split-PDF-Files-using-Java/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 8460,
+          "link": "2009/11/03/convert-rdl-or-rdlc-files-to-image-formats-or-display-gaps-in-a-line-chart",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.aspose.com/total/convert-rdl-or-rdlc-files-to-image-formats-or-display-gaps-in-a-line-chart/",
+          "page": null,
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16074,
+          "link": "/gis/id//convert-gpx-to-csv-in-csharp/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/gis/convert-gpx-to-csv-in-csharp/",
+          "page": "https://blog.aspose.com/gis/id//convert-gpx-to-csv-in-csharp/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16095,
+          "link": "/gis//convert-gpx-to-csv-in-csharp/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/gis/convert-gpx-to-csv-in-csharp/",
+          "page": "https://blog.aspose.com/gis//convert-gpx-to-csv-in-csharp/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16102,
+          "link": "//3d/fbx-to-glb-java/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/3d/fbx-to-glb-java/",
+          "page": "https://blog.aspose.com//3d/fbx-to-glb-java/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16122,
+          "link": "/barcode/wpf-barcode-generator-in-csharp//",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/barcode/wpf-barcode-generator-in-csharp/",
+          "page": "https://blog.aspose.com/barcode/wpf-barcode-generator-in-csharp//",
+          "commit": "0b193840 2024-02-07: fixed broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16178,
+          "link": "/ja/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/ja/cad/convert-dwg-and-dxf-to-pdf-in-java/",
+          "page": "https://blog.aspose.com/ja/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16185,
+          "link": "/zh/3d/3d-in-python/https://home.firefoxchina.cn",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/zh/3d/3d-in-python/",
+          "page": "https://blog.aspose.com/zh/3d/3d-in-python/https://home.firefoxchina.cn",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16196,
+          "link": "/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/",
+          "page": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16198,
+          "link": "/fa/email/read-emails-using-imap-in-python/](https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/)",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/",
+          "page": "https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/](https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/)",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16199,
+          "link": "/he/cad/convert-dwf-to-pdf-online/https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/",
+          "page": "https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16208,
+          "link": "barcode/read-barcode-from-image-using-python/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.aspose.com/ko/categories/aspose.barcode-product-family/",
+          "page": null,
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16209,
+          "link": "/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/",
+          "page": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16228,
+          "link": "//email/merge-multiple-mbox-files-in-csharp/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/email/merge-multiple-mbox-files-in-csharp/",
+          "page": "https://blog.aspose.com//email/merge-multiple-mbox-files-in-csharp/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16246,
+          "link": "bg/words/convert-word-to-excel-using-csharp/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.aspose.com/words/convert-word-to-excel-using-csharp/",
+          "page": null,
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16257,
+          "link": "//html/extract-text-from-webpage-in-csharp-text-extraction-api/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/html/extract-text-from-webpage-in-csharp-text-extraction-api/",
+          "page": "https://blog.aspose.com//html/extract-text-from-webpage-in-csharp-text-extraction-api/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16272,
+          "link": "//email/5ways-to-retrieve-emails-using-csharp/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/email/5ways-to-retrieve-emails-using-csharp/",
+          "page": "https://blog.aspose.com//email/5ways-to-retrieve-emails-using-csharp/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16280,
+          "link": "/zh-hant//email/5ways-to-retrieve-emails-using-csharp/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/email/5ways-to-retrieve-emails-using-csharp/",
+          "page": "https://blog.aspose.com/zh-hant//email/5ways-to-retrieve-emails-using-csharp/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16286,
+          "link": "https://blog.aspose.com/zip/cconvert-rar-to-zip-in-java/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.aspose.com/zip/convert-rar-to-zip-in-java/",
+          "page": null,
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16292,
+          "link": "//psd/the-ultimate-guide-to-compress-psd-file/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/psd/compress-psd-file-online/",
+          "page": "https://blog.aspose.com//psd/the-ultimate-guide-to-compress-psd-file/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_target_bad",
+          "file": "Redirects.json",
+          "line": 16352,
+          "link": "/email/parse-outlook-pst-files-in-python/2",
+          "note": "target: email/parse-outlook-pst-files-in-python/2",
+          "fix": null,
+          "page": "https://blog.aspose.com/email/parse-outlook-pst-files-in-python/2",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_target_bad",
+          "file": "Redirects.json",
+          "line": 16353,
+          "link": "/es/3d/ed-in-python/",
+          "note": "target: /es/categories/aspose.3d-product-family/",
+          "fix": null,
+          "page": "https://blog.aspose.com/es/3d/ed-in-python/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16355,
+          "link": "//ru/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/",
+          "page": "https://blog.aspose.com//ru/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16415,
+          "link": "//es/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/es/",
+          "page": "https://blog.aspose.com//es/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16416,
+          "link": "//ko/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/ko/",
+          "page": "https://blog.aspose.com//ko/",
+          "commit": "4d4f96bb 2026-01-06: fixed broken links"
+        },
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 16420,
+          "link": "/ja/categories/aspose.words-product-family/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.com/ja/categories/aspose.words-product-family/",
+          "commit": "4d4f96bb 2026-01-06: fixed broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16424,
+          "link": "ru/tex/convert-latex-to-word-online/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.aspose.com/ru/tex/convert-latex-to-word-online-latex-to-docx/",
+          "page": null,
+          "commit": "4d4f96bb 2026-01-06: fixed broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16432,
+          "link": "//cs/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/cs/",
+          "page": "https://blog.aspose.com//cs/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16433,
+          "link": "//de/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/de/",
+          "page": "https://blog.aspose.com//de/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16434,
+          "link": "//fa/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/fa/",
+          "page": "https://blog.aspose.com//fa/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16435,
+          "link": "//it/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/it/",
+          "page": "https://blog.aspose.com//it/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16436,
+          "link": "//ja/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/ja/",
+          "page": "https://blog.aspose.com//ja/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16437,
+          "link": "//pl/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/pl/",
+          "page": "https://blog.aspose.com//pl/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16438,
+          "link": "//uk/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/uk/",
+          "page": "https://blog.aspose.com//uk/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16504,
+          "link": "fa/cad/convert-plt-pdf-image-jp",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.aspose.com/cad/convert-plt-pdf-image-jpg-png-java/",
+          "page": null,
+          "commit": "9fe87c8c 2026-01-11: fixed broken links"
+        },
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 16508,
+          "link": "/fa/omr/perform-omr-operations-using-aspose.omr-for-java/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.com/fa/omr/perform-omr-operations-using-aspose.omr-for-java/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16517,
+          "link": "fr/slides/apply-animation-to-te",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.aspose.com/fr/slides/apply-animation-to-text-in-powerpoint-using-cpp/",
+          "page": null,
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16540,
+          "link": "id/omr/create-omr-question-answ",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.aspose.com/id/omr/create-omr-question-answer-sheet-csharp/",
+          "page": null,
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16577,
+          "link": "/pt//imaging/convert-gif-to-png-in-python-image-manipulation-service/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/pt/imaging/convert-gif-to-png-in-python-image-manipulation-service/",
+          "page": "https://blog.aspose.com/pt//imaging/convert-gif-to-png-in-python-image-manipulation-service/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 16587,
+          "link": "/pt/barcode/generate-data-matrix-code-in-csharp/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.com/pt/barcode/generate-data-matrix-code-in-csharp/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 16618,
+          "link": "/sv/barcode/read-barcode-from-pdf-in-csharp/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.com/sv/barcode/read-barcode-from-pdf-in-csharp/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16667,
+          "link": "zh-tw/cad/convert-svg-to-gif-in-python-programmatically/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.aspose.com/zh-hant/cad/convert-svg-to-gif-in-python-programmatically/",
+          "page": null,
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16697,
+          "link": "/zh//imaging/convert-gif-to-png-in-python-image-manipulation-service/",
+          "note": "double slash",
+          "fix": "https://blog.aspose.com/zh-tw/imaging/convert-gif-to-png-in-python-image-manipulation-service/",
+          "page": "https://blog.aspose.com/zh//imaging/convert-gif-to-png-in-python-image-manipulation-service/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16713,
+          "link": "/cells/create-cylinder-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+          "note": "unencoded template text",
+          "fix": "https://blog.aspose.com/cells/create-cylinder-chart-in-excel-using-csharp/",
+          "page": "https://blog.aspose.com/cells/create-cylinder-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16714,
+          "link": "/cells/create-cylinder100percentstacked-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+          "note": "unencoded template text",
+          "fix": "https://blog.aspose.com/cells/create-cylinder100percentstacked-chart-in-excel-using-csharp/",
+          "page": "https://blog.aspose.com/cells/create-cylinder100percentstacked-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16715,
+          "link": "/cells/create-funnel-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+          "note": "unencoded template text",
+          "fix": "https://blog.aspose.com/cells/create-funnel-chart-in-excel-using-csharp/",
+          "page": "https://blog.aspose.com/cells/create-funnel-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16716,
+          "link": "/cells/export-excel-to-stream-csharp/{{ revealButtonHref }}",
+          "note": "unencoded template text",
+          "fix": "https://blog.aspose.com/cells/export-excel-to-stream-csharp/",
+          "page": "https://blog.aspose.com/cells/export-excel-to-stream-csharp/{{ revealButtonHref }}",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16717,
+          "link": "/cs/cells/add-picture-to-excel-in-csharp/{{ revealButtonHref }}",
+          "note": "unencoded template text",
+          "fix": "https://blog.aspose.com/cs/cells/add-picture-to-excel-in-csharp/",
+          "page": "https://blog.aspose.com/cs/cells/add-picture-to-excel-in-csharp/{{ revealButtonHref }}",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 16719,
+          "link": "/pl/cells/open-excel-file-online/{{ revealButtonHref }}",
+          "note": "unencoded template text",
+          "fix": "https://blog.aspose.com/pl/cells/open-excel-file-online/",
+          "page": "https://blog.aspose.com/pl/cells/open-excel-file-online/{{ revealButtonHref }}",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/3d/2024-03-29-convert-ply-to-obj-in-csharp-using-3d-graphics-api/index.th.md",
+          "line": 1,
+          "link": "th/3d/convert-ply-to-obj-in-csharp-using-3d-graphics-api/",
+          "fix": "/th/3d/convert-ply-to-obj-in-csharp-using-3d-graphics-api/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "11868f8c75 2025-05-09 language code fix in 3d cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/3d/2024-03-29-convert-ply-to-obj-in-csharp-using-3d-graphics-api/index.tr.md",
+          "line": 1,
+          "link": "tr/3d/convert-ply-to-obj-in-csharp-using-3d-graphics-api/",
+          "fix": "/tr/3d/convert-ply-to-obj-in-csharp-using-3d-graphics-api/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "11868f8c75 2025-05-09 language code fix in 3d cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/3d/2024-05-14-convert-ply-to-usdz-in-csharp/index.id.md",
+          "line": 1,
+          "link": "id/3d/convert-ply-to-usdz-in-csharp/",
+          "fix": "/id/3d/convert-ply-to-usdz-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "f1cd6d0a99 2026-01-07 fixed broken links"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-04-02-convert-dwg-to-jpg-in-java-using-autocad-library/index.ja.md",
+          "line": 1,
+          "link": "ja/cad/convert-dwg-to-jpg-in-java-using-autocad-library/",
+          "fix": "/ja/cad/convert-dwg-to-jpg-in-java-using-autocad-library/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cad/2024-05-13-convert-dwg-to-pdf-in-csharp/index.he.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```md'",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cad/2024-05-13-convert-dwg-to-pdf-in-csharp/index.it.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```md'",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cad/2024-05-13-convert-dwg-to-pdf-in-csharp/index.vi.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```md'",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-06-11-convert-dgn-to-jpg-in-java/index.fa.md",
+          "line": 1,
+          "link": "fa/cad/convert-dgn-to-jpg-in-java/",
+          "fix": "/fa/cad/convert-dgn-to-jpg-in-java/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cad/2024-06-11-convert-dgn-to-jpg-in-java/index.ru.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```md'",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-11-07-convert-svg-to-bmp-in-python/index.fa.md",
+          "line": 1,
+          "link": "fa/cad/convert-svg-to-bmp-in-python/",
+          "fix": "/fa/cad/convert-svg-to-bmp-in-python/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-11-07-convert-svg-to-bmp-in-python/index.pl.md",
+          "line": 1,
+          "link": "pl/cad/convert-svg-to-bmp-in-python/",
+          "fix": "/pl/cad/convert-svg-to-bmp-in-python/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-11-12-convert-svg-to-gif-in-python-programmatically/index.th.md",
+          "line": 1,
+          "link": "th/cad/convert-svg-to-gif-in-python-programmatically/",
+          "fix": "/th/cad/convert-svg-to-gif-in-python-programmatically/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-11-12-convert-svg-to-gif-in-python-programmatically/index.tr.md",
+          "line": 1,
+          "link": "tr/cad/convert-svg-to-gif-in-python-programmatically/",
+          "fix": "/tr/cad/convert-svg-to-gif-in-python-programmatically/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-11-14-convert-stl-to-svg-in-python/index.fa.md",
+          "line": 1,
+          "link": "fa/cad/convert-stl-to-svg-in-python/",
+          "fix": "/fa/cad/convert-stl-to-svg-in-python/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-11-14-convert-stl-to-svg-in-python/index.it.md",
+          "line": 1,
+          "link": "it/cad/convert-stl-to-svg-in-python/",
+          "fix": "/it/cad/convert-stl-to-svg-in-python/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-11-14-convert-stl-to-svg-in-python/index.sv.md",
+          "line": 1,
+          "link": "sv/cad/convert-stl-to-svg-in-python/",
+          "fix": "/sv/cad/convert-stl-to-svg-in-python/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-11-14-convert-stl-to-svg-in-python/index.th.md",
+          "line": 1,
+          "link": "th/cad/convert-stl-to-svg-in-python/",
+          "fix": "/th/cad/convert-stl-to-svg-in-python/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-11-15-programmatically-convert-stl-to-pdf-in-python/index.sv.md",
+          "line": 1,
+          "link": "sv/cad/programmatically-convert-stl-to-pdf-in-python/",
+          "fix": "/sv/cad/programmatically-convert-stl-to-pdf-in-python/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2024-11-15-programmatically-convert-stl-to-pdf-in-python/index.th.md",
+          "line": 1,
+          "link": "th/cad/programmatically-convert-stl-to-pdf-in-python/",
+          "fix": "/th/cad/programmatically-convert-stl-to-pdf-in-python/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "db65d729df 2025-05-09 language code fix in cad cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2025-06-24-convert-dxf-file-to-svg-in-csharp/index.th.md",
+          "line": 1,
+          "link": "th/cad/convert-dxf-file-to-svg-in-csharp/",
+          "fix": "/th/cad/convert-dxf-file-to-svg-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "aa8a563e00 2025-07-02 updated localized internal links"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/cad/2025-10-02-change-svg-to-png-in-python/index.th.md",
+          "line": 1,
+          "link": "th/cad/change-svg-to-png-in-python/",
+          "fix": "/th/cad/change-svg-to-png-in-python/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "bd43ff23e5 2026-04-07 Fixed parsing errors."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.ar.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.cs.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.de.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.es.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.fa.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.he.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.id.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.ja.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.ko.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.pl.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.pt.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.ru.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.sv.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.th.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.uk.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.vi.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.zh-hant.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "a394926be8 2026-01-01 Added zh-hant tranlsations with small h"
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/cells/2025-10-15-aspose.cells-for-go-via-c++---data-analysis-and-report-generation-guide/index.zh.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '---date: Thu, 16 Oct 2025 01:09:08 +0000'",
+          "commit": "c27dcdc16b 2025-10-16 ISSUE-CELLSGO-206: fix date issue, and change folder name about AI Translation's Multi-National."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/email/2024-10-03-convert-msg-to-eml-in-nodejs/index.th.md",
+          "line": 1,
+          "link": "th/email/convert-msg-to-eml-in-nodejs/",
+          "fix": "/th/email/convert-msg-to-eml-in-nodejs/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "da9ef07d7e 2025-05-09 language code fix in email cat."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/email/2024-10-03-convert-msg-to-eml-in-nodejs/index.zh-hant.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```md'",
+          "commit": "da9ef07d7e 2025-05-09 language code fix in email cat."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/email/2024-10-04-automated-appointment-scheduling-in-nodejs/index.ja.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```'",
+          "commit": "da9ef07d7e 2025-05-09 language code fix in email cat."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/email/2024-10-04-automated-appointment-scheduling-in-nodejs/index.th.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```'",
+          "commit": "da9ef07d7e 2025-05-09 language code fix in email cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/html/2022-11-02-use-css-selector-java/index.th.md",
+          "line": 1,
+          "link": "th/html/css-selectors-in-html-using-java",
+          "fix": "/th/html/css-selectors-in-html-using-java",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "862c7e7b2e 2025-05-09 language code fix in html cat."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/html/2024-11-07-convert-svg-to-xps-in-java/index.de.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: ''",
+          "commit": "862c7e7b2e 2025-05-09 language code fix in html cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/html/2025-05-07-free-url-to-pdf-converter/index.th.md",
+          "line": 1,
+          "link": "th/html/free-url-to-pdf-converter/",
+          "fix": "/th/html/free-url-to-pdf-converter/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "b280e943a3 2025-05-16 published translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/note/2024-12-13-convert-onenote-to-png-in-java/index.he.md",
+          "line": 1,
+          "link": "he/note/convert-onenote-to-png-in-java/",
+          "fix": "/he/note/convert-onenote-to-png-in-java/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "aa8a563e00 2025-07-02 updated localized internal links"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/note/2024-12-13-convert-onenote-to-png-in-java/index.th.md",
+          "line": 1,
+          "link": "th/note/convert-onenote-to-png-in-java/",
+          "fix": "/th/note/convert-onenote-to-png-in-java/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "aa8a563e00 2025-07-02 updated localized internal links"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/page/2025-03-12-convert-bmp-to-eps-online-free-tool/index.id.md",
+          "line": 1,
+          "link": "id/page/convert-bmp-to-eps-online-free-tool/",
+          "fix": "/id/page/convert-bmp-to-eps-online-free-tool/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "de365a638f 2025-05-09 language code fix in page cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/page/2025-05-26-convert-svg-to-eps-online/index.fa.md",
+          "line": 1,
+          "link": "fa/page/convert-svg-to-eps-online/",
+          "fix": "/fa/page/convert-svg-to-eps-online/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "aa8a563e00 2025-07-02 updated localized internal links"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/page/2025-10-23-xps-to-pdf-converter-in-java/index.tr.md",
+          "line": 1,
+          "link": "tr/page/xps-to-pdf-converter-in-java/",
+          "fix": "/tr/page/xps-to-pdf-converter-in-java/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "928c7ee968 2025-10-24 published develop a jpg to eps converter and translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/page/2025-10-30-draw-an-ellipse-in-a-postscript-file-using-java/index.it.md",
+          "line": 1,
+          "link": "it/page/draw-an-ellipse-in-a-postscript-file-using-java/",
+          "fix": "/it/page/draw-an-ellipse-in-a-postscript-file-using-java/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "bd43ff23e5 2026-04-07 Fixed parsing errors."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/page/2025-10-30-draw-an-ellipse-in-a-postscript-file-using-java/index.sv.md",
+          "line": 1,
+          "link": "sv/page/draw-an-ellipse-in-a-postscript-file-using-java/",
+          "fix": "/sv/page/draw-an-ellipse-in-a-postscript-file-using-java/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "bd43ff23e5 2026-04-07 Fixed parsing errors."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/psd/2025-05-19-convert-ai-to-bmp-in-python/index.cs.md",
+          "line": 1,
+          "link": "cz/psd/convert-ai-to-bmp-in-python/",
+          "fix": "/cz/psd/convert-ai-to-bmp-in-python/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "65239808e7 2025-05-26 fix in translation files"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/psd/2025-08-05-make-a-psb-file-in-python/index.th.md",
+          "line": 1,
+          "link": "th/psd/create-a-psb-file-in-python/",
+          "fix": "/th/psd/create-a-psb-file-in-python/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "ba2888c547 2025-08-07 published crop-psd-layers-in-python and translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2023-09-28-convert-ppt-to-jpg-php/index.th.md",
+          "line": 1,
+          "link": "th/slides/convert-ppt-to-jpg-php/",
+          "fix": "/th/slides/convert-ppt-to-jpg-php/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "9a6c248c29 2025-01-30 published translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2024-06-10-create-a-pie-chart-in-java-programmatically/index.it.md",
+          "line": 1,
+          "link": "it/slides/create-a-pie-chart-in-java-programmatically/",
+          "fix": "/it/slides/create-a-pie-chart-in-java-programmatically/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2024-06-10-create-a-pie-chart-in-java-programmatically/index.th.md",
+          "line": 1,
+          "link": "th/slides/create-a-pie-chart-in-java-programmatically/",
+          "fix": "/th/slides/create-a-pie-chart-in-java-programmatically/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/slides/2024-10-07-convert-powerpoint-to-html5-in-java-programmatically-/index.ja.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```md'",
+          "commit": "161d2a8faf 2024-10-15 published translations"
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/slides/2024-10-07-convert-powerpoint-to-html5-in-java-programmatically-/index.sv.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```md'",
+          "commit": "161d2a8faf 2024-10-15 published translations"
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/slides/2024-10-07-convert-powerpoint-to-html5-in-java-programmatically-/index.uk.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```md'",
+          "commit": "161d2a8faf 2024-10-15 published translations"
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/slides/2024-10-08-lets-convert-pptx-to-odp-openoffice-in-java/index.ar.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```md'",
+          "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/slides/2024-10-08-lets-convert-pptx-to-odp-openoffice-in-java/index.ja.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```md'",
+          "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Blog/slides/2024-10-09-convert-odp-to-pptx-in-java---powerpoint-slides-library/index.de.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "no front matter block; line 1: '```md'",
+          "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2024-10-10-create-a-box-and-whisker-chart-in-java-programmatically/index.he.md",
+          "line": 1,
+          "link": "he/slides/create-a-box-and-whisker-chart-in-java-programmatically/",
+          "fix": "/he/slides/create-a-box-and-whisker-chart-in-java-programmatically/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2024-10-10-create-a-box-and-whisker-chart-in-java-programmatically/index.th.md",
+          "line": 1,
+          "link": "th/slides/create-a-box-and-whisker-chart-in-java-programmatically/",
+          "fix": "/th/slides/create-a-box-and-whisker-chart-in-java-programmatically/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-04-08-powerpoint-presentation-ai-generator/index.th.md",
+          "line": 1,
+          "link": "th/slides/powerpoint-presentation-ai-generator/",
+          "fix": "/th/slides/powerpoint-presentation-ai-generator/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "168ce33c66 2025-05-09 language code fix in slides cat."
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-05-14-translate-powerpoint-slides-online/index.th.md",
+          "line": 1,
+          "link": "th/slides/translate-powerpoint-slides-online/",
+          "fix": "/th/slides/translate-powerpoint-slides-online/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "b280e943a3 2025-05-16 published translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-07-08-convert-odp-to-pptx-in-csharp/index.cs.md",
+          "line": 1,
+          "link": "cz/slides/convert-odp-to-pptx-in-csharp/",
+          "fix": "/cz/slides/convert-odp-to-pptx-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "2ce58a90f9 2025-07-11 published translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-07-08-convert-odp-to-pptx-in-csharp/index.th.md",
+          "line": 1,
+          "link": "th/slides/convert-odp-to-pptx-in-csharp/",
+          "fix": "/th/slides/convert-odp-to-pptx-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "2ce58a90f9 2025-07-11 published translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-07-09-convert-ppt-to-swf-in-csharp/index.fa.md",
+          "line": 1,
+          "link": "fa/slides/convert-ppt-to-swf-in-csharp/",
+          "fix": "/fa/slides/convert-ppt-to-swf-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "2ce58a90f9 2025-07-11 published translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-07-09-convert-ppt-to-swf-in-csharp/index.sv.md",
+          "line": 1,
+          "link": "sv/slides/convert-ppt-to-swf-in-csharp/",
+          "fix": "/sv/slides/convert-ppt-to-swf-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "2ce58a90f9 2025-07-11 published translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-07-09-convert-ppt-to-swf-in-csharp/index.th.md",
+          "line": 1,
+          "link": "th/slides/convert-ppt-to-swf-in-csharp/",
+          "fix": "/th/slides/convert-ppt-to-swf-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "2ce58a90f9 2025-07-11 published translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-07-09-convert-ppt-to-swf-in-csharp/index.tr.md",
+          "line": 1,
+          "link": "tr/slides/convert-ppt-to-swf-in-csharp/",
+          "fix": "/tr/slides/convert-ppt-to-swf-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "2ce58a90f9 2025-07-11 published translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-08-26-develop-an-svg-to-emf-converter-in-net/index.th.md",
+          "line": 1,
+          "link": "th/slides/develop-an-svg-to-emf-converter-in-net/",
+          "fix": "/th/slides/develop-an-svg-to-emf-converter-in-net/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "1b5046c72f 2025-08-28 published convert-pptx-to-xml-in-csharp and translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-08-27-pptx-to-markdown-in-csharp/index.fa.md",
+          "line": 1,
+          "link": "fa/slides/pptx-to-markdown-in-csharp/",
+          "fix": "/fa/slides/pptx-to-markdown-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "1b5046c72f 2025-08-28 published convert-pptx-to-xml-in-csharp and translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-08-27-pptx-to-markdown-in-csharp/index.ko.md",
+          "line": 1,
+          "link": "ko/slides/pptx-to-markdown-in-csharp/",
+          "fix": "/ko/slides/pptx-to-markdown-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "1b5046c72f 2025-08-28 published convert-pptx-to-xml-in-csharp and translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-08-27-pptx-to-markdown-in-csharp/index.sv.md",
+          "line": 1,
+          "link": "sv/slides/pptx-to-markdown-in-csharp/",
+          "fix": "/sv/slides/pptx-to-markdown-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "1b5046c72f 2025-08-28 published convert-pptx-to-xml-in-csharp and translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/slides/2025-08-27-pptx-to-markdown-in-csharp/index.th.md",
+          "line": 1,
+          "link": "th/slides/pptx-to-markdown-in-csharp/",
+          "fix": "/th/slides/pptx-to-markdown-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "1b5046c72f 2025-08-28 published convert-pptx-to-xml-in-csharp and translations"
+        },
+        {
+          "check": "post_url_relative",
+          "file": "content/Aspose.Blog/zip/2025-09-03-xz-compression-and-extraction-in-csharp/index.fa.md",
+          "line": 1,
+          "link": "fa/zip/xz-compression-and-extraction-in-csharp/",
+          "fix": "/fa/zip/xz-compression-and-extraction-in-csharp/",
+          "page": null,
+          "note": "published under a doubled language",
+          "commit": "72dd1a7aa2 2025-09-04 published cab-file-extraction-in-java and translations"
+        }
+      ]
+    }
+  }
+}

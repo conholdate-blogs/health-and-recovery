@@ -12205,14 +12205,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
     "last_seen_run": "repo-audit-run7",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run8",
+    "resolved_at": "2026-11-03T17:23:21+00:00",
     "check": "redirect_file_invalid",
     "notes": []
   },
@@ -12239,7 +12239,7 @@
         "https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/](https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/)",
         "https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/"
       ],
-      "observed": "68 entries or files; unencoded template text: 30, double slash: 28, host or scheme in the key: 10",
+      "observed": "43 entries or files; double slash: 28, host or scheme in the key: 9, unencoded template text: 6",
       "expected": "Every source is a path starting with /, percent-encoded",
       "locations": [
         {
@@ -12604,7 +12604,7 @@
         }
       ]
     },
-    "affected_pages": 68,
+    "affected_pages": 43,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 233,
@@ -12633,7 +12633,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run7",
+    "last_seen_run": "repo-audit-run9",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",
@@ -12654,7 +12654,7 @@
         "https://blog.aspose.com/email/parse-outlook-pst-files-in-python/2",
         "https://blog.aspose.com/es/3d/ed-in-python/"
       ],
-      "observed": "11 entries or files; target: email/parse-outlook-pst-files-in-python/2: 1, target: /es/categories/aspose.3d-product-family/: 1, target: http://blog.aspose.com/cells/convert-json-to-excel-in-nodejs/: 1, target: http://blog.aspose.com/cells/create-sunburst-chart-in-excel-using-csharp/: 1",
+      "observed": "2 entries or files; target: email/parse-outlook-pst-files-in-python/2: 1, target: /es/categories/aspose.3d-product-family/: 1",
       "expected": "Every target is a full https URL",
       "locations": [
         {
@@ -12674,91 +12674,10 @@
           "note": "target: /es/categories/aspose.3d-product-family/",
           "fix": null,
           "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/",
-          "file": "Redirects.json",
-          "line": 16778,
-          "note": "target: http://blog.aspose.com/cells/convert-json-to-excel-in-nodejs/",
-          "fix": null,
-          "commit": "c099f6e5 2026-11-02: update Redirects.json"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/",
-          "file": "Redirects.json",
-          "line": 16783,
-          "note": "target: http://blog.aspose.com/cells/create-sunburst-chart-in-excel-using-csharp/",
-          "fix": null,
-          "commit": "c099f6e5 2026-11-02: update Redirects.json"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/",
-          "file": "Redirects.json",
-          "line": 16787,
-          "note": "target: http://blog.aspose.com/es/cells/customize-globalization-settings-in-excel-using-csharp/",
-          "fix": null,
-          "commit": "c099f6e5 2026-11-02: update Redirects.json"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/",
-          "file": "Redirects.json",
-          "line": 16789,
-          "note": "target: http://blog.aspose.com/fa/cells/combine-excel-files-in-python/",
-          "fix": null,
-          "commit": "c099f6e5 2026-11-02: update Redirects.json"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/",
-          "file": "Redirects.json",
-          "line": 16791,
-          "note": "target: http://blog.aspose.com/it/cells/copy-range-in-excel-using-csharp/",
-          "fix": null,
-          "commit": "c099f6e5 2026-11-02: update Redirects.json"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/",
-          "file": "Redirects.json",
-          "line": 16792,
-          "note": "target: http://blog.aspose.com/ja/cells/convert-xlsx-to-csv-using-python/",
-          "fix": null,
-          "commit": "c099f6e5 2026-11-02: update Redirects.json"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/",
-          "file": "Redirects.json",
-          "line": 16793,
-          "note": "target: http://blog.aspose.com/pl/cells/combine-excel-files-in-python/",
-          "fix": null,
-          "commit": "c099f6e5 2026-11-02: update Redirects.json"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/",
-          "file": "Redirects.json",
-          "line": 16794,
-          "note": "target: http://blog.aspose.com/pl/cells/convert-excel-to-json-in-nodejs/",
-          "fix": null,
-          "commit": "c099f6e5 2026-11-02: update Redirects.json"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/",
-          "file": "Redirects.json",
-          "line": 16796,
-          "note": "target: http://blog.aspose.com/pt/cells/convert-excel-to-json-in-nodejs/",
-          "fix": null,
-          "commit": "c099f6e5 2026-11-02: update Redirects.json"
         }
       ]
     },
-    "affected_pages": 11,
+    "affected_pages": 2,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -12787,7 +12706,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run7",
+    "last_seen_run": "repo-audit-run9",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_target_bad",
@@ -12880,7 +12799,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run7",
+    "last_seen_run": "repo-audit-run9",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_self_loop",
@@ -13294,7 +13213,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run7",
+    "last_seen_run": "repo-audit-run9",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_url_relative",
@@ -13636,7 +13555,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run7",
+    "last_seen_run": "repo-audit-run9",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_broken",
@@ -13655,17 +13574,17 @@
     "evidence": {
       "urls": [
         "https://blog.aspose.com/de/2022/06/15/convert-xls-to-txt-in-java/",
-        "https://blog.aspose.com/zh-hant/2022/01/03/create-zoom-video-downloader-csharp/",
+        "https://blog.aspose.com/zh-hant/2021/12/30/create-youtube-downloader-in-csharp/",
         "https://blog.aspose.com/de/tag/image-downloader/",
-        "https://blog.aspose.com/zh/2021/02/24/protect-powerpoint-presentations-using-java/",
+        "https://blog.aspose.com/zh/2021/02/23/merge-ms-word-documents-using-cpp/",
         "https://blog.aspose.com/2022/01/19/import-contacts-from-gmail-in-csharp-net/",
-        "https://blog.aspose.com/it/2022/02/14/convert-dwg-to-fbx-java/",
-        "https://blog.aspose.com/zh/tag/image-downloader/",
+        "https://blog.aspose.com/it/2022/02/14/add-video-frame-to-ppt-in-python/",
+        "https://blog.aspose.com/zh/tag/download-html-website/",
         "https://blog.aspose.com/es/2021/05/22/convert-json-to-pdf-using-java/",
-        "https://blog.aspose.com/it/2020/03/31/acroforms-vs-xfa-forms-convert-xfa-to-acroforms-in-pdf/",
-        "https://blog.aspose.com/ja/2022/07/28/convert-png-to-word-in-csharp/"
+        "https://blog.aspose.com/it/2020/03/27/convert-psd-to-pdf-jpg-png-tiff-gif-bmp-jp2-in-csharp-net/",
+        "https://blog.aspose.com/ja/2022/07/28/convert-jpg-to-word-in-csharp/"
       ],
-      "observed": "40 of 40 sampled sources return 404 without a redirect (0 redirect, 0 other); 16,727 well-formed entries",
+      "observed": "40 of 40 sampled sources return 404 without a redirect (0 redirect, 0 other); 16,728 well-formed entries",
       "expected": "Every well-formed source answers with a redirect to its target",
       "locations": [
         {
@@ -13675,7 +13594,7 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/zh-hant/2022/01/03/create-zoom-video-downloader-csharp/",
+          "url": "https://blog.aspose.com/zh-hant/2021/12/30/create-youtube-downloader-in-csharp/",
           "note": "404, no redirect"
         },
         {
@@ -13685,7 +13604,7 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/zh/2021/02/24/protect-powerpoint-presentations-using-java/",
+          "url": "https://blog.aspose.com/zh/2021/02/23/merge-ms-word-documents-using-cpp/",
           "note": "404, no redirect"
         },
         {
@@ -13695,12 +13614,12 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/it/2022/02/14/convert-dwg-to-fbx-java/",
+          "url": "https://blog.aspose.com/it/2022/02/14/add-video-frame-to-ppt-in-python/",
           "note": "404, no redirect"
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/zh/tag/image-downloader/",
+          "url": "https://blog.aspose.com/zh/tag/download-html-website/",
           "note": "404, no redirect"
         },
         {
@@ -13710,17 +13629,17 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/it/2020/03/31/acroforms-vs-xfa-forms-convert-xfa-to-acroforms-in-pdf/",
+          "url": "https://blog.aspose.com/it/2020/03/27/convert-psd-to-pdf-jpg-png-tiff-gif-bmp-jp2-in-csharp-net/",
           "note": "404, no redirect"
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/ja/2022/07/28/convert-png-to-word-in-csharp/",
+          "url": "https://blog.aspose.com/ja/2022/07/28/convert-jpg-to-word-in-csharp/",
           "note": "404, no redirect"
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/ja/2021/03/17/find-replace-text-onenote-csharp/",
+          "url": "https://blog.aspose.com/ja/2021/03/17/convert-excel-xlsx-to-word-docx-in-java/",
           "note": "404, no redirect"
         },
         {
@@ -13735,7 +13654,7 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/ko/2021/12/08/convert-obj-to-fbx-gltf-glb-java/",
+          "url": "https://blog.aspose.com/ko/2021/12/06/extract-text-from-word-in-csharp/",
           "note": "404, no redirect"
         },
         {
@@ -13750,7 +13669,7 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/ko/2021/01/18/Create-PowerPoint-Presentations-using-Java/",
+          "url": "https://blog.aspose.com/ko/2021/01/15/split-pdf-files-using-java/",
           "note": "404, no redirect"
         },
         {
@@ -13760,22 +13679,22 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/ru/2022/02/28/convert-visio-to-xaml-java/",
+          "url": "https://blog.aspose.com/ru/2022/02/26/create-survey-form-from-json-markup-using-csharp/",
           "note": "404, no redirect"
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/pt/2022/06/10/convert-pdf-to-txt-in-python/",
+          "url": "https://blog.aspose.com/pt/2022/06/09/print-save-webpage-pdf-csharp/",
           "note": "404, no redirect"
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/it/2021/04/24/split-text-to-columns-in-excel-using-csharp/",
+          "url": "https://blog.aspose.com/it/2021/04/23/inserting-and-deleting-rows-and-columns-in-excel-using-cpp/",
           "note": "404, no redirect"
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/it/2021/10/08/create-excel-files-on-linux/",
+          "url": "https://blog.aspose.com/it/2021/10/08/apply-theme-in-powerpoint-presentations-using-cpp/",
           "note": "404, no redirect"
         },
         {
@@ -13785,7 +13704,7 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/zh/2022/01/09/todolist-onenote-java/",
+          "url": "https://blog.aspose.com/zh/2022/01/08/create-three-d-effects-in-ppt-python/",
           "note": "404, no redirect"
         },
         {
@@ -13800,12 +13719,12 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/zh/2021/07/28/extract-text-from-powerpoint-files-using-java/",
+          "url": "https://blog.aspose.com/zh/2021/07/28/convert-pub-to-word-document-doc-docx-using-cpp/",
           "note": "404, no redirect"
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/zh/2021/06/28/convert-latex-to-word-using-java/",
+          "url": "https://blog.aspose.com/zh/2021/06/28/convert-docx-to-doc-or-doc-to-docx-using-cpp/",
           "note": "404, no redirect"
         },
         {
@@ -13820,7 +13739,7 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/ko/2021/11/09/flatten-merge-layers-in-psd-using-java/",
+          "url": "https://blog.aspose.com/ko/2021/11/09/find-and-replace-text-in-word-using-python/",
           "note": "404, no redirect"
         },
         {
@@ -13830,7 +13749,7 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/it/2021/08/25/convert-xml-to-mpp-or-mpp-to-xml-programmatically-using-csharp/",
+          "url": "https://blog.aspose.com/it/2021/08/23/read-features-from-open-street-map-osm-files-using-csharp/",
           "note": "404, no redirect"
         },
         {
@@ -13845,12 +13764,12 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/ja/2021/06/08/convert-postscript-ps-eps-to-pdf-java/",
+          "url": "https://blog.aspose.com/ja/2021/06/08/convert-pdf-to-html-in-java/",
           "note": "404, no redirect"
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/pt/2021/05/04/connect-to-smtp-servers-using-java/",
+          "url": "https://blog.aspose.com/pt/2021/05/03/convert-images-to-grayscale-in-csharp/",
           "note": "404, no redirect"
         },
         {
@@ -13860,7 +13779,7 @@
         },
         {
           "role": "redirect",
-          "url": "https://blog.aspose.com/ru/2021/02/24/protect-powerpoint-presentations-using-java/",
+          "url": "https://blog.aspose.com/ru/2021/02/23/merge-ms-word-documents-using-cpp/",
           "note": "404, no redirect"
         },
         {
@@ -13870,7 +13789,7 @@
         }
       ]
     },
-    "affected_pages": 16727,
+    "affected_pages": 16728,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -13894,14 +13813,14 @@
     "effort": "M",
     "fix_tier": 3,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run7",
-    "resolved_run": null,
-    "resolved_at": null,
+    "last_seen_run": "repo-audit-run8",
+    "resolved_run": "repo-audit-run9",
+    "resolved_at": "2026-11-03T17:27:28+00:00",
     "check": "redirect_not_working",
     "notes": []
   },
