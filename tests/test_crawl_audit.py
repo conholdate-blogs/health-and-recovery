@@ -167,6 +167,27 @@ def make_tenant(extra_urls=()):
                   excluded_host_patterns=raw["excluded_host_patterns"], raw=raw)
 
 
+class BlockingFetcher(FakeFetcher):
+    """robots.txt blocks the default-language tool pages only, as `Disallow: /tag/` does on the .com blogs."""
+
+    def allowed(self, url):
+        return "/pdf/tool" not in url
+
+    def get(self, url):
+        if not self.allowed(url):
+            return FetchResult(url, None, error="disallowed by robots.txt", blocked_by_robots=True)
+        return super().get(url)
+
+
+def test_robots_blocked_counts_the_inventory_not_the_sample():
+    inv, run = make_inventory()
+    report = audit(make_tenant(), BlockingFetcher({}), inv.db, run, AuditStore(":memory:"), log=None)
+    found = [f for f in report["findings"] if f["check"] == "robots_blocked"]
+    exact = inv.db.execute("SELECT count(*) FROM urls WHERE run_id = ? AND url LIKE '%/pdf/tool%'", (run,)).fetchone()[0]
+    assert len(found) == 1 and found[0]["affected_pages"] == exact
+    assert f"Exact count from the sitemaps: {exact}" in found[0]["evidence"]["observed"]
+
+
 def test_audit_run_findings_and_resolution():
     inv, run = make_inventory()
     pages = {}

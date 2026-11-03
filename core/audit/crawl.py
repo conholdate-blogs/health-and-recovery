@@ -456,6 +456,14 @@ class CrawlAudit:
     def summary(self) -> dict:
         return summarize_pages(self.pages)
 
+    def blocked_in_inventory(self, host: str, section: str) -> int:
+        """Sitemap URLs robots.txt blocks, counted exactly: the sample favours the default language, so scaling it
+        up misleads when a rule hits one language (blog.conholdate.com /tag/: 2,523 URLs, not the sample's 39,579)."""
+        sql, args = "SELECT url FROM urls WHERE run_id = ? AND host = ?", [self.inventory_run, host]
+        if section:
+            sql, args = sql + " AND section = ?", args + [section]
+        return sum(not self.fetcher.allowed(u) for (u,) in self.inventory_db.execute(sql, args))
+
     def findings(self) -> list[dict]:
         ids = FindingIds()
         sampled: dict = defaultdict(int)  # (host, section, template) -> sampled pages
@@ -484,6 +492,9 @@ class CrawlAudit:
             tmpl = ", ".join(f"{t} {n}/{sampled[(host, section, t)]}" for t, n in sorted(per_template.items()))
             examples = "; ".join(f"{p['url']}: {note}" for p, note in items[:EXAMPLES])
             observed = (f"{len(items)} of {in_scope} sampled pages (by template: {tmpl}). e.g. {examples}")
+            if check == "robots_blocked":
+                estimate = self.blocked_in_inventory(host, section)
+                observed += f". Exact count from the sitemaps: {estimate}"
             where = f" (/{section}/)" if section else ""
             finding = make_finding(
                 ids=ids, tenant=self.tenant.property, subdomain=host, template=f"page:{section}" if section else "page",

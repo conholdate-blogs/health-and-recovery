@@ -62,7 +62,8 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--tenant", default=os.environ.get("TENANT", "aspose.app"))
     ap.add_argument("--hosts", help="comma-separated hosts (default: all tenant hosts with a local_path)")
-    ap.add_argument("--max-live", type=int, default=5000, help="most targets fetched live per run")
+    ap.add_argument("--max-live", type=int, help="most targets fetched live per run (default: tenant "
+                    "audit.links.max_live, else 5000)")
     ap.add_argument("--no-blame", action="store_true", help="skip git blame (no commit per issue)")
     ap.add_argument("--interval", type=float, default=1.0, help="seconds between requests to one host")
     ap.add_argument("--user-agent", default=os.environ.get("AUDIT_USER_AGENT", DEFAULT_USER_AGENT))
@@ -93,9 +94,10 @@ def main(argv: list[str] | None = None) -> int:
         print("No tenant host has a local_path (source repo); nothing to audit", file=sys.stderr)
         return 2
 
+    max_live = args.max_live or ((tenant.raw.get("audit") or {}).get("links") or {}).get("max_live", 5000)
     fetcher = PoliteFetcher(user_agent=args.user_agent, min_interval=args.interval)
     report = audit(tenant, fetcher, AuditStore(args.db), sqlite3.connect(str(inventory)), hosts=hosts,
-                   max_live=args.max_live, blame=not args.no_blame, log=None if args.quiet else print)
+                   max_live=max_live, blame=not args.no_blame, log=None if args.quiet else print)
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)

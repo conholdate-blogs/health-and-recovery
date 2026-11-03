@@ -112,6 +112,20 @@ def test_links_skip_code_files_and_other_hosts():
     assert links == ["/x/", "/html-link/", "/ref-link/", "/c/run-in-node.js/", "/d/words-for-.net/"]
 
 
+def test_static_html_file_and_relative_post_url(tmp_path):
+    repo = make_repo(tmp_path)
+    c = repo / "content" / "Blog" / "pdf/2025-static"
+    post(c, "index.md", "/pdf/static/", "[demo](/viewer/demo.html) [gone](/viewer/gone.html)")
+    post(c, "index.ru.md", "ru/pdf/static/", "[gone](/ru/pdf/removed-post/)")
+    fetcher = FakeFetcher({f"https://{HOST}/viewer/demo.html": 200})
+    a = LinkAudit(make_tenant(repo), fetcher, AuditStore(":memory:"), inventory(SITEMAP), blame=False, log=None)
+    issues = a.run()["hosts"][HOST]["issues"]
+    assert [i["link"] for i in issues if i["file"].endswith("2025-static/index.md")] == ["/viewer/gone.html"]
+    # Hugo publishes a url without a leading slash under the language
+    assert {i["page"] for i in issues if i["file"].endswith("2025-static/index.ru.md")} == {
+        f"https://{HOST}/ru/ru/pdf/static/"}
+
+
 def test_classifies_every_kind(tmp_path):
     a, report, fetcher = run_audit(tmp_path)
     issues = {(i["lang"], i["link"]): i for i in report["hosts"][HOST]["issues"]}

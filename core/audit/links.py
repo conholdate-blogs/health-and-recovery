@@ -179,6 +179,9 @@ class LinkAudit:
             else:
                 res = self.fetcher.get(url)
                 self.live_requests += 1
+                if res.status == 404 and path.endswith((".html/", ".htm/")):
+                    res = self.fetcher.get(url[:-1])  # a static file: norm_path's trailing slash hides it
+                    self.live_requests += 1
                 self.live[url] = res.status if res.status is not None else (res.error or "no response")
         return self.live[url]
 
@@ -199,6 +202,8 @@ class LinkAudit:
                 skipped.append(rel)
                 continue
             lang = m.group(1) or self.default_lang
+            if not url.startswith("/"):  # Hugo publishes a relative url under the language: th/x/ -> /th/th/x/
+                url = f"/{url}" if lang == self.default_lang else f"/{lang}/{url}"
             posts.append(Post(f, rel, str(f.parent.relative_to(repo)), lang, norm_path(url), text, start))
         return posts, skipped
 
