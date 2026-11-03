@@ -1,0 +1,14 @@
+[
+  {
+    "file": "2026-11-03.html",
+    "date": "2026-11-03",
+    "label": "First run, before the repo file check (downloaded from Pages)",
+    "runs": "see the page"
+  },
+  {
+    "file": "2026-11-03-2.html",
+    "date": "2026-11-03 (2)",
+    "label": "Repo file check added",
+    "runs": "discovery run 1, crawl audit run 6, speed audit run 3, AI audit run 2, text check run 4, link check run 5, repo file check run 7"
+  }
+]

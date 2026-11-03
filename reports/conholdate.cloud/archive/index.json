@@ -124,5 +124,11 @@
     "date": "2026-10-31 (5)",
     "label": "Contents bar in page order, shared pages on the right",
     "runs": "discovery run 3, crawl audit run 1, speed audit run 3, AI audit run 2, text check run 4, link check run 8"
+  },
+  {
+    "file": "2026-11-03.html",
+    "date": "2026-11-03",
+    "label": "Repo file check added",
+    "runs": "discovery run 3, crawl audit run 1, speed audit run 3, AI audit run 2, text check run 4, link check run 8, repo file check run 9"
   }
 ]

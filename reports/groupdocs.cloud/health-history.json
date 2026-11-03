@@ -76,5 +76,21 @@
     }
    }
   }
+ },
+ {
+  "date": "2026-11-03",
+  "runs": "discovery run 3, crawl audit run 2, speed audit run 5, AI audit run 3, text check run 6, link check run 10, repo file check run 11",
+  "method": 2,
+  "hosts": {
+   "blog.groupdocs.cloud": {
+    "health": 70,
+    "areas": {
+     "crawl": 84,
+     "onpage": 94,
+     "intl": 88,
+     "ai": 95
+    }
+   }
+  }
  }
 ]

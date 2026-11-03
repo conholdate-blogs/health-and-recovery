@@ -1,0 +1,19 @@
+[
+ {
+  "date": "2026-11-03",
+  "runs": "discovery run 1, crawl audit run 1, speed audit run 3, AI audit run 2, text check run 4, link check run 6, repo file check run 7",
+  "method": 2,
+  "hosts": {
+   "blog.groupdocs.com": {
+    "health": 69,
+    "areas": {
+     "crawl": 89,
+     "onpage": 92,
+     "intl": 83,
+     "ai": 95,
+     "perf": 100
+    }
+   }
+  }
+ }
+]

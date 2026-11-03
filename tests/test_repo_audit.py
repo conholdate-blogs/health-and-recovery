@@ -68,6 +68,16 @@ def run(repo, fetcher=None):
     return RepoAudit(make_tenant(repo), fetcher or FakeFetcher(), AuditStore(":memory:"), log=None).run()
 
 
+def test_report_counts_every_repo_run_of_the_latest_day(tmp_path):
+    from scripts.build_report import repo_summary
+    assert repo_summary(tmp_path) is None
+    for name, run_id in (("2026-11-01-run3", 3), ("2026-11-03-run7", 7), ("2026-11-03-run9", 9)):
+        (tmp_path / f"repo-audit-{name}.json").write_text(f'{{"run_id": {run_id}, "summary": {{}}}}', encoding="utf-8")
+    (tmp_path / "repo-audit-2026-11-03-run9-issues.csv").write_text("check\n", encoding="utf-8")
+    s = repo_summary(tmp_path)
+    assert (s["run_id"], s["run_ids"], s["date"]) == (9, [7, 9], "2026-11-03")
+
+
 def test_key_problem():
     assert key_problem("/ok/%7B%7B%20t%20%7D%7D") is None and key_problem("/ok/") is None
     assert key_problem("/a/{{ t }}") == "unencoded template text"

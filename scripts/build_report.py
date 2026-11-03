@@ -318,6 +318,8 @@ def runs_label(report: dict) -> str:
         runs += f", text check run {report['_text']['run_id']}"
     if report.get("_links"):
         runs += f", link check run {report['_links']['run_id']}"
+    if report.get("_repo"):
+        runs += f", repo file check run {report['_repo']['run_id']}"
     return runs
 
 
@@ -348,6 +350,18 @@ def link_summary(path: Path) -> dict:
     return {"run_id": a["run_id"], "date": run_date_of(path, "link-audit-"), "summary": a["summary"]}
 
 
+def repo_summary(folder: Path) -> dict | None:
+    """What the page uses of the repo file runs: the newest, and every run of its day, so a fix and the re-checks
+    after it on one day all show as resolved."""
+    runs = runs_by_name("repo-audit-*-run*.json", folder)
+    if not runs:
+        return None
+    a = json.loads(runs[-1].read_text(encoding="utf-8"))
+    day = run_date_of(runs[-1], "repo-audit-")
+    ids = [int(p.stem.rpartition("run")[2]) for p in runs if run_date_of(p, "repo-audit-") == day]
+    return {"run_id": a["run_id"], "run_ids": ids, "date": day, "summary": a["summary"]}
+
+
 def add_views(report: dict, all_rows: list[dict] | None = None, history_path: Path | None = None) -> None:
     """Fix guide, confidence, merged root causes, systemic issues, top risks, grade summary, changes since the
     last run and the family health trend (see core/report_view.py)."""
@@ -367,6 +381,8 @@ def add_views(report: dict, all_rows: list[dict] | None = None, history_path: Pa
         refs.append(f"text-audit-run{report['_text']['run_id']}")
     if report.get("_links"):
         refs.append(f"link-audit-run{report['_links']['run_id']}")
+    if report.get("_repo"):
+        refs += [f"repo-audit-run{i}" for i in report["_repo"]["run_ids"]]
     changes = run_changes(all_rows or findings, refs)
     titles = {f["id"]: f for f in (all_rows or findings)}
     changes["resolved"] = [{"id": i, "title": titles[i]["title"], "subdomain": titles[i]["subdomain"]}
@@ -531,6 +547,8 @@ def prepare(args: argparse.Namespace) -> tuple[dict, list[str], str | None, str,
                 if args.links is None else None)
     if link_src:
         report["_links"] = link_summary(link_src)
+    if repo_runs := repo_summary(folder):
+        report["_repo"] = repo_runs
     if args.findings:
         rows = json.loads(Path(args.findings).read_text(encoding="utf-8"))
         all_rows = rows
@@ -633,7 +651,7 @@ def collection_report(name: str, slug: str, members: list[tuple[str, str]]) -> d
         R["_host_trends"].update(report.get("_host_trends") or {})
         R["_guide"] = report["_guide"]
         R["_dates"] += [d for d in (run_date, *((report.get(k) or {}).get("date") for k in
-                                                ("_audit", "_perf", "_ai", "_text", "_links"))) if d]
+                                                ("_audit", "_perf", "_ai", "_text", "_links", "_repo"))) if d]
     return R
 
 
