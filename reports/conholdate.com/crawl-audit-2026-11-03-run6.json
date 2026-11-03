@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.com",
   "auditor": "crawl-audit",
-  "run_id": 1,
+  "run_id": 6,
   "params": {
     "hosts": [
       "blog.conholdate.com"
@@ -15,7 +15,7 @@
   },
   "canonical_targets": {},
   "requests": 37,
-  "duration_s": 37.3,
+  "duration_s": 36.5,
   "pages_planned": 57,
   "stopped_early": false,
   "summary": {
@@ -120,7 +120,7 @@
       "fix_tier": 2,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-02"
+      "detected_at": "2026-11-03"
     },
     {
       "id": "onpage-0001",
@@ -226,7 +226,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-02"
+      "detected_at": "2026-11-03"
     },
     {
       "id": "onpage-0002",
@@ -295,7 +295,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-02"
+      "detected_at": "2026-11-03"
     },
     {
       "id": "intl-0001",
@@ -397,7 +397,7 @@
       "fix_tier": 2,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-02"
+      "detected_at": "2026-11-03"
     },
     {
       "id": "ai-0002",
@@ -480,7 +480,7 @@
       "fix_tier": 2,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-02"
+      "detected_at": "2026-11-03"
     },
     {
       "id": "crawl-0001",
@@ -504,7 +504,7 @@
           "https://blog.conholdate.com/tag/add-text-watermark-using-csharp/",
           "https://blog.conholdate.com/tag/convert-html-to-pdf/"
         ],
-        "observed": "21 of 57 sampled pages (by template: generic:/{section}/*/* 1/3, tag 20/22). e.g. https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/: disallowed by robots.txt; https://blog.conholdate.com/tag/slides-to-word/: disallowed by robots.txt; https://blog.conholdate.com/tag/pdf-to-jpg/: disallowed by robots.txt; https://blog.conholdate.com/tag/fuzzy-search-in-c/: disallowed by robots.txt; https://blog.conholdate.com/tag/clear-image-background/: disallowed by robots.txt",
+        "observed": "21 of 57 sampled pages (by template: generic:/{section}/*/* 1/3, tag 20/22). e.g. https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/: disallowed by robots.txt; https://blog.conholdate.com/tag/slides-to-word/: disallowed by robots.txt; https://blog.conholdate.com/tag/pdf-to-jpg/: disallowed by robots.txt; https://blog.conholdate.com/tag/fuzzy-search-in-c/: disallowed by robots.txt; https://blog.conholdate.com/tag/clear-image-background/: disallowed by robots.txt. Exact count from the sitemaps: 2523",
         "expected": "sitemaps list only crawlable pages",
         "locations": [
           {
@@ -552,7 +552,7 @@
           ]
         }
       },
-      "affected_pages": 39579,
+      "affected_pages": 2523,
       "impact": {
         "clicks_28d": 0,
         "impressions_28d": 0,
@@ -562,7 +562,7 @@
       "fix_tier": 3,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-02"
+      "detected_at": "2026-11-03"
     },
     {
       "id": "onpage-0003",
@@ -621,7 +621,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-02"
+      "detected_at": "2026-11-03"
     },
     {
       "id": "onpage-0004",
@@ -708,7 +708,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-02"
+      "detected_at": "2026-11-03"
     }
   ],
   "pages": [
@@ -730,7 +730,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 509,
+      "elapsed_ms": 80,
       "facts": {
         "titles": [
           "Conholdate Blog"
@@ -826,7 +826,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 302,
+      "elapsed_ms": 44,
       "facts": {
         "titles": [
           "Conholdate Blog"
@@ -964,7 +964,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 706,
+      "elapsed_ms": 84,
       "facts": {
         "titles": [
           "Archive"
@@ -1101,7 +1101,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 472,
+      "elapsed_ms": 128,
       "facts": {
         "titles": [
           "Convert PPTX to XML with C# – Simple Code Example"
@@ -1258,7 +1258,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 648,
+      "elapsed_ms": 303,
       "facts": {
         "titles": [
           "Conholdate.Totals"
@@ -1386,7 +1386,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 686,
+      "elapsed_ms": 72,
       "facts": {
         "titles": [
           "hide/unhide rows and columns"
@@ -1524,7 +1524,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 545,
+      "elapsed_ms": 68,
       "facts": {
         "titles": [
           "Conholdate Blog"
@@ -1658,7 +1658,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 561,
+      "elapsed_ms": 81,
       "facts": {
         "titles": [
           "Search"
@@ -1799,7 +1799,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 669,
+      "elapsed_ms": 69,
       "facts": {
         "titles": [
           "C# Code to Merge JPG Images into a PDF"
@@ -1956,7 +1956,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 688,
+      "elapsed_ms": 73,
       "facts": {
         "titles": [
           "Conholdate.Totals"
@@ -2084,7 +2084,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 495,
+      "elapsed_ms": 71,
       "facts": {
         "titles": [
           "hide/unhide rows and columns"
@@ -2218,7 +2218,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 646,
+      "elapsed_ms": 88,
       "facts": {
         "titles": [
           "Conholdate Blog"
@@ -2352,7 +2352,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 697,
+      "elapsed_ms": 84,
       "facts": {
         "titles": [
           "يبحث"
@@ -2493,7 +2493,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 539,
+      "elapsed_ms": 70,
       "facts": {
         "titles": [
           "Convert Visio to PDF Online for Free | VSD VSDX to PDF Converter"
@@ -2650,7 +2650,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 679,
+      "elapsed_ms": 106,
       "facts": {
         "titles": [
           "探す"
@@ -2791,7 +2791,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 570,
+      "elapsed_ms": 537,
       "facts": {
         "titles": [
           "Convert MPP to MPX in C# | Export Microsoft Project Files"
@@ -2952,7 +2952,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 691,
+      "elapsed_ms": 68,
       "facts": {
         "titles": [
           "Java Excel Search: Find Text, Formulas & Patterns"
@@ -3109,7 +3109,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 498,
+      "elapsed_ms": 76,
       "facts": {
         "titles": [
           "Extract Images from EPUB Files in Java | Conholdate Total"
@@ -3266,7 +3266,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 516,
+      "elapsed_ms": 302,
       "facts": {
         "titles": [
           "Convert PDF to PPT PPTX in Java | PDF to PowerPoint Presentation"
@@ -3423,7 +3423,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 745,
+      "elapsed_ms": 317,
       "facts": {
         "titles": [
           "C# Image Comparison: Find Differences Between Pictures"
@@ -3580,7 +3580,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 504,
+      "elapsed_ms": 73,
       "facts": {
         "titles": [
           "Split Excel Workbook in Java"
@@ -3737,7 +3737,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 796,
+      "elapsed_ms": 76,
       "facts": {
         "titles": [
           "Update Excel Cell Value Using C# – Simple Code Example"
@@ -3894,7 +3894,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 694,
+      "elapsed_ms": 73,
       "facts": {
         "titles": [
           "Convert Visio to Image in Java | VSDX to JPG or PNG Easily"
@@ -4055,7 +4055,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 560,
+      "elapsed_ms": 303,
       "facts": {
         "titles": [
           "Convert FBX to OBJ in Java"
@@ -4212,7 +4212,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 836,
+      "elapsed_ms": 83,
       "facts": {
         "titles": [
           "Add Watermark to Images using Java"
@@ -4369,7 +4369,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 686,
+      "elapsed_ms": 78,
       "facts": {
         "titles": [
           "Free Adobe PSD Image Viewer Online | View Photoshop PSD File in C# .NET | Open PSD"
@@ -4530,7 +4530,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 647,
+      "elapsed_ms": 121,
       "facts": {
         "titles": [
           "Extract Text from a PDF File in Java"
@@ -4687,7 +4687,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 665,
+      "elapsed_ms": 77,
       "facts": {
         "titles": [
           "Free Online XML Sitemap Validator | Check Sitemap Errors Instantly"
@@ -4844,7 +4844,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 477,
+      "elapsed_ms": 70,
       "facts": {
         "titles": [
           "Convert SVG to PDF Programmatically in Java"
@@ -5001,7 +5001,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 550,
+      "elapsed_ms": 70,
       "facts": {
         "titles": [
           "Java Word Automation - Insert and Obtain Form Fields from Word Documents (DOC, DOCX)"
@@ -5166,7 +5166,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 512,
+      "elapsed_ms": 356,
       "facts": {
         "titles": [
           "Convert Image to JSON in C# Using .NET OCR API"
@@ -5323,7 +5323,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 519,
+      "elapsed_ms": 119,
       "facts": {
         "titles": [
           "Convert SHP to SVG in C# | Export Shapefile to SVG Format"
@@ -5484,7 +5484,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 483,
+      "elapsed_ms": 72,
       "facts": {
         "titles": [
           "Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX"
@@ -5621,7 +5621,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 489,
+      "elapsed_ms": 69,
       "facts": {
         "titles": [
           "Extract Data from PDF in C#"
@@ -5755,7 +5755,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 621,
+      "elapsed_ms": 79,
       "facts": {
         "titles": [
           "Converti HTML in XPS in Java | Esporta pagina Web in XPS"
@@ -5884,7 +5884,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 754,
+      "elapsed_ms": 69,
       "facts": {
         "titles": [
           "Presentation to Excel Conversion"

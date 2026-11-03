@@ -54,18 +54,18 @@
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 283,
+      "past_impressions": 328,
       "lost_clicks": 0,
-      "lost_impressions": 257,
+      "lost_impressions": 302,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "lost",
-      "score": 3,
+      "score": 4,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "M",
@@ -108,23 +108,23 @@
     },
     "affected_pages": 0,
     "impact": {
-      "clicks_28d": 8333,
-      "impressions_28d": 449552,
+      "clicks_28d": 8321,
+      "impressions_28d": 451295,
       "source": "gsc-host",
       "share": 1.0,
-      "past_clicks": 17216,
-      "past_impressions": 704461,
-      "lost_clicks": 8883,
-      "lost_impressions": 254909,
+      "past_clicks": 17212,
+      "past_impressions": 707721,
+      "lost_clicks": 8891,
+      "lost_impressions": 256426,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 16,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -186,18 +186,18 @@
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 6,
+      "past_impressions": 5,
       "lost_clicks": 0,
-      "lost_impressions": 2,
+      "lost_impressions": 1,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -226,42 +226,26 @@
     "title": "Posts link to blog pages that do not exist",
     "evidence": {
       "urls": [
-        "https://blog.groupdocs.com/ar/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/assembly/groupdocs-assembly-for-net-library-generate-word-and-pdf-documents-from-templates-in-asp-net-c/",
         "https://blog.groupdocs.com/conversion/convert-back-and-forth-between-50-document-formats-in-vb-net-c-sharp-word-to-pdf-to-image-html-to-pdf/",
-        "https://blog.groupdocs.com/cs/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/de/conversion/convert-images-to-pdf-in-csharp/",
         "https://blog.groupdocs.com/de/conversion/convert-json-and-csv-in-csharp/",
-        "https://blog.groupdocs.com/de/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/es/conversion/convert-images-to-pdf-in-csharp/",
         "https://blog.groupdocs.com/es/conversion/convert-json-and-csv-in-csharp/",
-        "https://blog.groupdocs.com/es/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-        "https://blog.groupdocs.com/fa/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/fr/conversion/convert-images-to-pdf-in-csharp/",
         "https://blog.groupdocs.com/fr/conversion/convert-json-and-csv-in-csharp/",
         "https://blog.groupdocs.com/fr/merger/why-ai-agents-should-merge-documents-with-an-engine-mcp/",
-        "https://blog.groupdocs.com/fr/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-        "https://blog.groupdocs.com/he/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-        "https://blog.groupdocs.com/id/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/it/conversion/convert-images-to-pdf-in-csharp/",
         "https://blog.groupdocs.com/it/conversion/convert-json-and-csv-in-csharp/",
-        "https://blog.groupdocs.com/it/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/ja/comparison/compare-word-documents-online/",
         "https://blog.groupdocs.com/ja/conversion/convert-images-to-pdf-in-csharp/",
         "https://blog.groupdocs.com/ja/conversion/convert-json-and-csv-in-csharp/",
-        "https://blog.groupdocs.com/ja/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/ko/conversion/convert-images-to-pdf-in-csharp/",
         "https://blog.groupdocs.com/ko/conversion/convert-json-and-csv-in-csharp/",
-        "https://blog.groupdocs.com/ko/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-        "https://blog.groupdocs.com/nl/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-        "https://blog.groupdocs.com/pl/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/pt/conversion/convert-images-to-pdf-in-csharp/",
         "https://blog.groupdocs.com/pt/conversion/convert-json-and-csv-in-csharp/",
-        "https://blog.groupdocs.com/pt/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/ru/conversion/convert-images-to-pdf-in-csharp/",
         "https://blog.groupdocs.com/ru/conversion/convert-json-and-csv-in-csharp/",
-        "https://blog.groupdocs.com/ru/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-        "https://blog.groupdocs.com/th/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/total/25-percent-off-groupdocs-total-groupdocs-com-newsletter-december-2019/",
         "https://blog.groupdocs.com/total/advanced-documents-conversion-apis-for-.net-and-java-groupdocs-newsletter-october-2018/",
         "https://blog.groupdocs.com/total/celebrate-new-year-25-off-groupdocs.total-apis-groupdocs-newsletter-january-2018/",
@@ -273,28 +257,13 @@
         "https://blog.groupdocs.com/total/groupdocs-newsletter-may-2018-document-manipulation-apis-for-business-apps-development/",
         "https://blog.groupdocs.com/total/new-api-launched-groupdocs.merger-for-java-groupdocs-newsletter-september-2018/",
         "https://blog.groupdocs.com/total/updates-to-groupdocs-privacy-policy-groupdocs-newsletter-june-2018/",
-        "https://blog.groupdocs.com/tr/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-        "https://blog.groupdocs.com/uk/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-        "https://blog.groupdocs.com/vi/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/viewer/instanceid-using-multiple-simultaneous-instances-groupdocs-viewer-net/",
-        "https://blog.groupdocs.com/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-        "https://blog.groupdocs.com/zh-hant/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
         "https://blog.groupdocs.com/zh/conversion/convert-images-to-pdf-in-csharp/",
-        "https://blog.groupdocs.com/zh/conversion/convert-json-and-csv-in-csharp/",
-        "https://blog.groupdocs.com/zh/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/"
+        "https://blog.groupdocs.com/zh/conversion/convert-json-and-csv-in-csharp/"
       ],
-      "observed": "60 links on 56 pages (23 distinct targets); by language: en 19, ja 4, fr 4, de 3, es 3, it 3, ko 3, pt 3, ...; 0 written by translation commits; 21 copied from the original post",
+      "observed": "38 links on 34 pages (22 distinct targets); by language: en 18, ja 3, fr 3, de 2, es 2, it 2, ko 2, pt 2, ...; 0 written by translation commits",
       "expected": "Every internal link points at a live page",
       "locations": [
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/ar/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.ar.md",
-          "line": 99,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
-        },
         {
           "role": "link",
           "url": "https://blog.groupdocs.com/groupdocs-assembly-for-dot-net-generate-word-and-pdf-documents-form-templates-in-c-sharp-vb-net-asp-net",
@@ -312,15 +281,6 @@
           "line": 13,
           "fix": null,
           "commit": "a02ae325 2022-08-31: Fixed 404 & HTTPS page has internal links to HTTP - 321 Files"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/cs/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.cs.md",
-          "line": 98,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
         },
         {
           "role": "link",
@@ -342,15 +302,6 @@
         },
         {
           "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/de/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.de.md",
-          "line": 99,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
-        },
-        {
-          "role": "link",
           "url": "https://blog.groupdocs.com/2019/12/06/convert-eml-or-msg-file-to-pdf-in-csharp/",
           "page": "https://blog.groupdocs.com/es/conversion/convert-images-to-pdf-in-csharp/",
           "file": "content/Groupdocs.Blog/conversion/2021-05-19-convert-images-to-pdf-in-csharp/index.es.md",
@@ -366,24 +317,6 @@
           "line": 126,
           "fix": null,
           "commit": "df584b01 2022-06-04: Added Korean and Spanish Translation for 2020, 2021 & 2022 Articles"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/es/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.es.md",
-          "line": 99,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/fa/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.fa.md",
-          "line": 98,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
         },
         {
           "role": "link",
@@ -414,33 +347,6 @@
         },
         {
           "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/fr/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.fr.md",
-          "line": 99,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/he/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.he.md",
-          "line": 109,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/id/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.id.md",
-          "line": 98,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
-        },
-        {
-          "role": "link",
           "url": "https://blog.groupdocs.com/2019/12/06/convert-eml-or-msg-file-to-pdf-in-csharp/",
           "page": "https://blog.groupdocs.com/it/conversion/convert-images-to-pdf-in-csharp/",
           "file": "content/Groupdocs.Blog/conversion/2021-05-19-convert-images-to-pdf-in-csharp/index.it.md",
@@ -456,15 +362,6 @@
           "line": 126,
           "fix": null,
           "commit": "65c31102 2022-06-07: Added Italian & Portuguese Translated Articles for 2020, 2021 & 2022"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/it/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.it.md",
-          "line": 99,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
         },
         {
           "role": "link",
@@ -495,15 +392,6 @@
         },
         {
           "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/ja/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.ja.md",
-          "line": 99,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
-        },
-        {
-          "role": "link",
           "url": "https://blog.groupdocs.com/2019/12/06/convert-eml-or-msg-file-to-pdf-in-csharp/",
           "page": "https://blog.groupdocs.com/ko/conversion/convert-images-to-pdf-in-csharp/",
           "file": "content/Groupdocs.Blog/conversion/2021-05-19-convert-images-to-pdf-in-csharp/index.ko.md",
@@ -519,33 +407,6 @@
           "line": 126,
           "fix": null,
           "commit": "df584b01 2022-06-04: Added Korean and Spanish Translation for 2020, 2021 & 2022 Articles"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/ko/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.ko.md",
-          "line": 99,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/nl/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.nl.md",
-          "line": 98,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/pl/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.pl.md",
-          "line": 98,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
         },
         {
           "role": "link",
@@ -567,15 +428,6 @@
         },
         {
           "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/pt/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.pt.md",
-          "line": 99,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
-        },
-        {
-          "role": "link",
           "url": "https://blog.groupdocs.com/2019/12/06/convert-eml-or-msg-file-to-pdf-in-csharp/",
           "page": "https://blog.groupdocs.com/ru/conversion/convert-images-to-pdf-in-csharp/",
           "file": "content/Groupdocs.Blog/conversion/2021-05-19-convert-images-to-pdf-in-csharp/index.ru.md",
@@ -591,24 +443,6 @@
           "line": 126,
           "fix": null,
           "commit": "c12105b4 2022-06-02: Added Russian Translation for 2020, 2021 & 2022 Articles"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/ru/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.ru.md",
-          "line": 99,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/viewer/play-pause-apng.html",
-          "page": "https://blog.groupdocs.com/th/viewer/play-pause-animated-gif-and-apng-in-web-pages-using-csharp/",
-          "file": "content/Groupdocs.Blog/viewer/2021-02-28-play-pause-animated-gif-and-apng-in-web-pages-using-csharp/index.th.md",
-          "line": 98,
-          "fix": null,
-          "commit": "db2f223f 2024-10-18: play pause HTML 404 - fix"
         },
         {
           "role": "link",
@@ -645,28 +479,154 @@
           "line": 74,
           "fix": null,
           "commit": "faf49b56 2022-05-09: Update file(s) \"/Groupdocs.Blog/\" from \"groupdocs/groupdocs-blog-content\""
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2018/12/20/15558/?utm_source=nl&utm_campaign=nl-jan19&utm_medium=link",
+          "page": "https://blog.groupdocs.com/total/groupdocs-holiday-offer-25-off-groupdocs.total-24-bottles-award-winning-pirathon-total-wine/",
+          "file": "content/Groupdocs.Blog/total/2019-01-07-groupdocs-holiday-offer-25-off-groupdocs.total-24-bottles-award-winning-pirathon-total-wine/index.md",
+          "line": 79,
+          "fix": null,
+          "commit": "faf49b56 2022-05-09: Update file(s) \"/Groupdocs.Blog/\" from \"groupdocs/groupdocs-blog-content\""
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2018/03/23/asp.net-webforms-document-metadata-editor-app-v2.0.0-groupdocs.metadata-.net/?utm_source=nl&utm_campaign=nl-apr18&utm_medium=link",
+          "page": "https://blog.groupdocs.com/total/groupdocs-newsletter-april-2018-document-manipulation-api-updates/",
+          "file": "content/Groupdocs.Blog/total/2018-04-01-groupdocs-newsletter-april-2018-document-manipulation-api-updates/index.md",
+          "line": 55,
+          "fix": null,
+          "commit": "faf49b56 2022-05-09: Update file(s) \"/Groupdocs.Blog/\" from \"groupdocs/groupdocs-blog-content\""
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2018/03/14/.net-annotation-api-v18.3/?utm_source=nl&utm_campaign=nl-apr18&utm_medium=link",
+          "page": "https://blog.groupdocs.com/total/groupdocs-newsletter-april-2018-document-manipulation-api-updates/",
+          "file": "content/Groupdocs.Blog/total/2018-04-01-groupdocs-newsletter-april-2018-document-manipulation-api-updates/index.md",
+          "line": 63,
+          "fix": null,
+          "commit": "faf49b56 2022-05-09: Update file(s) \"/Groupdocs.Blog/\" from \"groupdocs/groupdocs-blog-content\""
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2018/01/23/.net-e-signing-api-v18.1/?utm_source=nl&utm_campaign=nl-feb18&utm_medium=link",
+          "page": "https://blog.groupdocs.com/total/groupdocs-newsletter-february-2018-document-manipulation-apis-code-examples/",
+          "file": "content/Groupdocs.Blog/total/2018-02-01-groupdocs-newsletter-february-2018-document-manipulation-apis-code-examples/index.md",
+          "line": 60,
+          "fix": null,
+          "commit": "faf49b56 2022-05-09: Update file(s) \"/Groupdocs.Blog/\" from \"groupdocs/groupdocs-blog-content\""
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2018/06/26/.net-esigning-api-v18.6/?utm_source=nl&utm_campaign=nl-july18&utm_medium=link",
+          "page": "https://blog.groupdocs.com/total/groupdocs-newsletter-july-2018-professional-document-manipulation-apis-for-.net-and-java/",
+          "file": "content/Groupdocs.Blog/total/2018-07-01-groupdocs-newsletter-july-2018-professional-document-manipulation-apis-for-.net-and-java/index.md",
+          "line": 77,
+          "fix": null,
+          "commit": "f8adc63e 2022-04-15: Added Translated Files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2018/02/23/multi-threaded-indexing-in-groupdocs.search-for-.net-18.2/?utm_source=nl&utm_campaign=nl-mar18&utm_medium=link",
+          "page": "https://blog.groupdocs.com/total/groupdocs-newsletter-march-2018-document-manipulation-api-updates-code-examples/",
+          "file": "content/Groupdocs.Blog/total/2018-03-01-groupdocs-newsletter-march-2018-document-manipulation-api-updates-code-examples/index.md",
+          "line": 49,
+          "fix": null,
+          "commit": "faf49b56 2022-05-09: Update file(s) \"/Groupdocs.Blog/\" from \"groupdocs/groupdocs-blog-content\""
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2018/02/12/extract-text-from-markdown-documents-using-groupdocs.text-for-.net-18.2/?utm_source=nl&utm_campaign=nl-mar18&utm_medium=link",
+          "page": "https://blog.groupdocs.com/total/groupdocs-newsletter-march-2018-document-manipulation-api-updates-code-examples/",
+          "file": "content/Groupdocs.Blog/total/2018-03-01-groupdocs-newsletter-march-2018-document-manipulation-api-updates-code-examples/index.md",
+          "line": 77,
+          "fix": null,
+          "commit": "faf49b56 2022-05-09: Update file(s) \"/Groupdocs.Blog/\" from \"groupdocs/groupdocs-blog-content\""
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2018/04/23/.net-annotation-api-v18.4/?utm_source=nl&utm_campaign=nl-may18&utm_medium=link",
+          "page": "https://blog.groupdocs.com/total/groupdocs-newsletter-may-2018-document-manipulation-apis-for-business-apps-development/",
+          "file": "content/Groupdocs.Blog/total/2018-05-01-groupdocs-newsletter-may-2018-document-manipulation-apis-for-business-apps-development/index.md",
+          "line": 52,
+          "fix": null,
+          "commit": "faf49b56 2022-05-09: Update file(s) \"/Groupdocs.Blog/\" from \"groupdocs/groupdocs-blog-content\""
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2018/03/26/.net-e-signing-api-v18.3/?utm_source=nl&utm_campaign=nl-may18&utm_medium=link",
+          "page": "https://blog.groupdocs.com/total/groupdocs-newsletter-may-2018-document-manipulation-apis-for-business-apps-development/",
+          "file": "content/Groupdocs.Blog/total/2018-05-01-groupdocs-newsletter-may-2018-document-manipulation-apis-for-business-apps-development/index.md",
+          "line": 108,
+          "fix": null,
+          "commit": "faf49b56 2022-05-09: Update file(s) \"/Groupdocs.Blog/\" from \"groupdocs/groupdocs-blog-content\""
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2018/08/19/insert-hyperlinks-dynamically-using-groupdocs.assembly-for-.net-18.7/?utm_source=nl&utm_campaign=nl-sep18&utm_medium=link",
+          "page": "https://blog.groupdocs.com/total/new-api-launched-groupdocs.merger-for-java-groupdocs-newsletter-september-2018/",
+          "file": "content/Groupdocs.Blog/total/2018-09-01-new-api-launched-groupdocs.merger-for-java-groupdocs-newsletter-september-2018/index.md",
+          "line": 65,
+          "fix": null,
+          "commit": "f8adc63e 2022-04-15: Added Translated Files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2018/05/22/.net-annotation-api-v18.5/?utm_source=nl&utm_campaign=nl-june18&utm_medium=link",
+          "page": "https://blog.groupdocs.com/total/updates-to-groupdocs-privacy-policy-groupdocs-newsletter-june-2018/",
+          "file": "content/Groupdocs.Blog/total/2018-06-01-updates-to-groupdocs-privacy-policy-groupdocs-newsletter-june-2018/index.md",
+          "line": 65,
+          "fix": null,
+          "commit": "faf49b56 2022-05-09: Update file(s) \"/Groupdocs.Blog/\" from \"groupdocs/groupdocs-blog-content\""
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/groupdocs-viewer-for-net-caching-pdf-copies-of-original-documents-and-using-multiple-root-storage-paths",
+          "page": "https://blog.groupdocs.com/viewer/instanceid-using-multiple-simultaneous-instances-groupdocs-viewer-net/",
+          "file": "content/Groupdocs.Blog/viewer/2015-09-10-instanceid-using-multiple-simultaneous-instances-groupdocs-viewer-net/index.md",
+          "line": 13,
+          "fix": null,
+          "commit": "a02ae325 2022-08-31: Fixed 404 & HTTPS page has internal links to HTTP - 321 Files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2019/12/06/convert-eml-or-msg-file-to-pdf-in-csharp/",
+          "page": "https://blog.groupdocs.com/zh/conversion/convert-images-to-pdf-in-csharp/",
+          "file": "content/Groupdocs.Blog/conversion/2021-05-19-convert-images-to-pdf-in-csharp/index.zh.md",
+          "line": 184,
+          "fix": null,
+          "commit": "2eb21892 2022-05-21: Added Chinese Translation for 2021 Articles"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2019/10/21/generate-reports-from-csv-xml-in-csharp/",
+          "page": "https://blog.groupdocs.com/zh/conversion/convert-json-and-csv-in-csharp/",
+          "file": "content/Groupdocs.Blog/conversion/2021-06-18-convert-json-and-csv-in-csharp/index.zh.md",
+          "line": 125,
+          "fix": null,
+          "commit": "2eb21892 2022-05-21: Added Chinese Translation for 2021 Articles"
         }
       ]
     },
-    "affected_pages": 56,
+    "affected_pages": 34,
     "impact": {
-      "clicks_28d": 2,
-      "impressions_28d": 545,
+      "clicks_28d": 1,
+      "impressions_28d": 395,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 3,
-      "past_impressions": 384,
+      "past_clicks": 2,
+      "past_impressions": 144,
       "lost_clicks": 1,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
-      "score": 12,
+      "score": 10,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "M",
@@ -677,7 +637,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run5",
+    "last_seen_run": "link-audit-run6",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -768,23 +728,23 @@
     },
     "affected_pages": 12503,
     "impact": {
-      "clicks_28d": 8256,
-      "impressions_28d": 441710,
+      "clicks_28d": 8245,
+      "impressions_28d": 443374,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 17006,
-      "past_impressions": 696816,
-      "lost_clicks": 8750,
-      "lost_impressions": 255106,
+      "past_clicks": 17001,
+      "past_impressions": 700095,
+      "lost_clicks": 8756,
+      "lost_impressions": 256721,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 16,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -1267,22 +1227,22 @@
     "affected_pages": 85,
     "impact": {
       "clicks_28d": 7,
-      "impressions_28d": 177,
+      "impressions_28d": 170,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 12,
-      "past_impressions": 260,
-      "lost_clicks": 5,
-      "lost_impressions": 83,
+      "past_clicks": 13,
+      "past_impressions": 257,
+      "lost_clicks": 6,
+      "lost_impressions": 87,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 20,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -1293,7 +1253,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run5",
+    "last_seen_run": "link-audit-run6",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -2952,23 +2912,23 @@
     },
     "affected_pages": 1273,
     "impact": {
-      "clicks_28d": 314,
-      "impressions_28d": 30985,
+      "clicks_28d": 313,
+      "impressions_28d": 30813,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 745,
-      "past_impressions": 45163,
-      "lost_clicks": 431,
-      "lost_impressions": 14178,
+      "past_clicks": 754,
+      "past_impressions": 45370,
+      "lost_clicks": 441,
+      "lost_impressions": 14557,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 39,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -2979,7 +2939,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run5",
+    "last_seen_run": "link-audit-run6",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -3007,6 +2967,7 @@
         "https://blog.groupdocs.com/parser/extract-tables-pdf-to-json-ai-agent-mcp/",
         "https://blog.groupdocs.com/parser/read-barcodes-qr-codes-scanned-documents-ai/",
         "https://blog.groupdocs.com/parser/spring-ai-document-reader-office-pdf-email-java/",
+        "https://blog.groupdocs.com/parser/parse-documents-via-mcp-net/",
         "https://blog.groupdocs.com/redaction/custom-ai-redactions-in-pdf-for-net/",
         "https://blog.groupdocs.com/redaction/3-ways-redact-sensitive-data-ai-agents-mcp/",
         "https://blog.groupdocs.com/redaction/enforce-disclosure-redaction-automated-workflows-mcp/",
@@ -3027,7 +2988,7 @@
         "https://blog.groupdocs.com/watermark/batch-watermark-folder-ai-agent-mcp/",
         "https://blog.groupdocs.com/watermark/enforce-brand-guidelines-logo-watermark-mcp/"
       ],
-      "observed": "29 posts lack some supported languages (missing: ja 15, ko 12, th 12, tr 12, cs 10, ar 8, es 8, fa 8, id 8, vi 8, fr 7, he 7, ru 7, de 6, it 6, nl 6, pl 6, uk 6, zh 6, pt 4, zh-hant 4)",
+      "observed": "30 posts lack some supported languages (missing: ja 16, ko 13, th 13, tr 13, cs 10, ar 9, es 9, fa 9, vi 9, fr 8, he 8, id 8, ru 8, de 7, pl 7, uk 7, zh 7, it 6, nl 6, zh-hant 5, pt 4)",
       "expected": "A translated post exists in every supported language",
       "locations": [
         {
@@ -3079,6 +3040,11 @@
           "role": "post",
           "url": "https://blog.groupdocs.com/parser/spring-ai-document-reader-office-pdf-email-java/",
           "note": "missing ar, ja, ko, nl, pl, th, tr, uk"
+        },
+        {
+          "role": "post",
+          "url": "https://blog.groupdocs.com/parser/parse-documents-via-mcp-net/",
+          "note": "missing ar, de, es, fa, fr, he, ja, ko, pl, ru, th, tr, uk, vi, zh, zh-hant"
         },
         {
           "role": "post",
@@ -3177,10 +3143,10 @@
         }
       ]
     },
-    "affected_pages": 29,
+    "affected_pages": 30,
     "impact": {
       "clicks_28d": 2,
-      "impressions_28d": 559,
+      "impressions_28d": 595,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
@@ -3188,14 +3154,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 13,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3206,7 +3172,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run5",
+    "last_seen_run": "link-audit-run6",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_partial",
@@ -3301,23 +3267,23 @@
     },
     "affected_pages": 9093,
     "impact": {
-      "clicks_28d": 6005,
-      "impressions_28d": 321247,
+      "clicks_28d": 5997,
+      "impressions_28d": 322456,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 12369,
-      "past_impressions": 507034,
-      "lost_clicks": 6364,
-      "lost_impressions": 185787,
+      "past_clicks": 12366,
+      "past_impressions": 509448,
+      "lost_clicks": 6369,
+      "lost_impressions": 186992,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 16,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3409,18 +3375,18 @@
       "source": "gsc-template",
       "share": null,
       "past_clicks": 6,
-      "past_impressions": 662,
+      "past_impressions": 670,
       "lost_clicks": 4,
-      "lost_impressions": 576,
+      "lost_impressions": 584,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "lost",
       "score": 3,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3495,23 +3461,23 @@
     },
     "affected_pages": 2253,
     "impact": {
-      "clicks_28d": 1501,
-      "impressions_28d": 80271,
+      "clicks_28d": 1499,
+      "impressions_28d": 80574,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 3091,
-      "past_impressions": 126437,
-      "lost_clicks": 1590,
-      "lost_impressions": 46166,
+      "past_clicks": 3090,
+      "past_impressions": 127017,
+      "lost_clicks": 1591,
+      "lost_impressions": 46443,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 13,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3613,23 +3579,23 @@
     },
     "affected_pages": 4580,
     "impact": {
-      "clicks_28d": 3003,
-      "impressions_28d": 160681,
+      "clicks_28d": 2999,
+      "impressions_28d": 161285,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 6187,
-      "past_impressions": 254103,
-      "lost_clicks": 3184,
-      "lost_impressions": 93422,
+      "past_clicks": 6186,
+      "past_impressions": 255359,
+      "lost_clicks": 3187,
+      "lost_impressions": 94074,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 15,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3693,14 +3659,14 @@
       "lost_clicks": 0,
       "lost_impressions": 2,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
@@ -3770,14 +3736,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-04",
-        "2026-05-01"
+        "2026-04-05",
+        "2026-05-02"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-03",
-        "2026-10-30"
+        "2026-10-04",
+        "2026-10-31"
       ]
     },
     "effort": "S",
