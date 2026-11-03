@@ -1,0 +1,2647 @@
+{
+  "tenant": "aspose.com",
+  "run_id": 2,
+  "hosts": {
+    "blog.aspose.com": {
+      "robots": {
+        "status": 200,
+        "error": null,
+        "is_html": false,
+        "sitemaps": [
+          "https://blog.aspose.com/sitemap.xml"
+        ],
+        "disallow_rules": 9,
+        "ai_bots_named": []
+      },
+      "sitemaps_fetched": 23,
+      "sitemaps_ok": 23,
+      "sitemaps_failed": [],
+      "urls": 57487
+    }
+  },
+  "sections": {
+    "blog.aspose.com": {
+      "": {
+        "urls": 22,
+        "hreflang_urls": 22,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "sv": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "home": 22
+        }
+      },
+      "%20barcode": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "post": 1
+        }
+      },
+      "%20html": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "sv": 1
+        },
+        "templates": {
+          "post": 1
+        }
+      },
+      "%20slides": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "post": 1
+        }
+      },
+      "%E9%82%AE%E7%AE%B1": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "post": 1
+        }
+      },
+      "2022": {
+        "urls": 22,
+        "hreflang_urls": 22,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "sv": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh-cn": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "generic:/{section}/*/*/*": 22
+        }
+      },
+      "2023": {
+        "urls": 22,
+        "hreflang_urls": 22,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "sv": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "generic:/{section}/*/*/*": 22
+        }
+      },
+      "3d": {
+        "urls": 2080,
+        "hreflang_urls": 2039,
+        "langs": {
+          "default": 135,
+          "ar": 94,
+          "cs": 92,
+          "de": 93,
+          "es": 93,
+          "fa": 93,
+          "fr": 93,
+          "he": 92,
+          "id": 91,
+          "it": 93,
+          "ja": 93,
+          "ko": 93,
+          "pl": 93,
+          "pt": 93,
+          "ru": 93,
+          "sv": 93,
+          "th": 91,
+          "tr": 92,
+          "uk": 92,
+          "vi": 92,
+          "zh": 94,
+          "zh-hant": 79,
+          "zh-tw": 13
+        },
+        "templates": {
+          "post": 2080
+        }
+      },
+      "HTML": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "post": 1
+        }
+      },
+      "archives": {
+        "urls": 22,
+        "hreflang_urls": 22,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "sv": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "listing": 22
+        }
+      },
+      "aspose-email-for-net": {
+        "urls": 42,
+        "hreflang_urls": 42,
+        "langs": {
+          "ar": 2,
+          "cs": 2,
+          "de": 2,
+          "es": 2,
+          "fa": 2,
+          "fr": 2,
+          "he": 2,
+          "id": 2,
+          "it": 2,
+          "ja": 2,
+          "ko": 2,
+          "pl": 2,
+          "pt": 2,
+          "ru": 2,
+          "sv": 2,
+          "th": 2,
+          "tr": 2,
+          "uk": 2,
+          "vi": 2,
+          "zh": 2,
+          "zh-hant": 2
+        },
+        "templates": {
+          "post": 42
+        }
+      },
+      "aspose.blog": {
+        "urls": 35,
+        "hreflang_urls": 34,
+        "langs": {
+          "default": 1,
+          "ar": 2,
+          "cs": 1,
+          "de": 2,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 2,
+          "id": 1,
+          "it": 2,
+          "ja": 4,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 2,
+          "sv": 2,
+          "th": 2,
+          "tr": 1,
+          "uk": 2,
+          "vi": 2,
+          "zh": 1,
+          "zh-hant": 2
+        },
+        "templates": {
+          "category": 22,
+          "generic:/{section}/*/*": 13
+        }
+      },
+      "barcode": {
+        "urls": 2387,
+        "hreflang_urls": 2146,
+        "langs": {
+          "default": 339,
+          "ar": 98,
+          "cs": 98,
+          "de": 98,
+          "es": 98,
+          "fa": 98,
+          "fr": 98,
+          "he": 98,
+          "id": 97,
+          "it": 98,
+          "ja": 98,
+          "ko": 98,
+          "pl": 98,
+          "pt": 96,
+          "ru": 98,
+          "sv": 98,
+          "th": 98,
+          "tr": 98,
+          "uk": 98,
+          "vi": 97,
+          "zh": 92,
+          "zh-hant": 90,
+          "zh-tw": 8
+        },
+        "templates": {
+          "post": 2387
+        }
+      },
+      "build-barcode-93-generator-using-csharp-barcode-sdk": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "cad": {
+        "urls": 2042,
+        "hreflang_urls": 2016,
+        "langs": {
+          "default": 119,
+          "ar": 93,
+          "cs": 92,
+          "de": 93,
+          "es": 93,
+          "fa": 89,
+          "fr": 93,
+          "he": 91,
+          "id": 92,
+          "it": 91,
+          "ja": 92,
+          "ko": 93,
+          "pl": 91,
+          "pt": 93,
+          "ru": 92,
+          "sv": 89,
+          "sv-se": 1,
+          "th": 87,
+          "tr": 91,
+          "uk": 92,
+          "vi": 90,
+          "vi-vn": 1,
+          "zh": 89,
+          "zh-cn": 4,
+          "zh-hant": 78,
+          "zh-tw": 13
+        },
+        "templates": {
+          "post": 2042
+        }
+      },
+      "cells": {
+        "urls": 7770,
+        "hreflang_urls": 7314,
+        "langs": {
+          "default": 789,
+          "ar": 332,
+          "cs": 332,
+          "de": 333,
+          "es": 333,
+          "fa": 333,
+          "fr": 333,
+          "he": 331,
+          "id": 332,
+          "it": 333,
+          "ja": 333,
+          "ko": 333,
+          "pl": 332,
+          "pt": 333,
+          "ru": 333,
+          "sv": 331,
+          "th": 332,
+          "tr": 332,
+          "uk": 332,
+          "vi": 332,
+          "zh": 334,
+          "zh-hant": 332
+        },
+        "templates": {
+          "post": 7770
+        }
+      },
+      "change-ai-file-to-png-ai-to-png-online": {
+        "urls": 2,
+        "hreflang_urls": 2,
+        "langs": {
+          "uk": 1,
+          "zh": 1
+        },
+        "templates": {
+          "category": 2
+        }
+      },
+      "convert-a-webpage-to-pdf-in-python": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "pt": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "convert-jpg-to-eps-in-python": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "id": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "convert-markdown-to-png-in-java": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "convert-pdf-to-text-in-python": {
+        "urls": 22,
+        "hreflang_urls": 22,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "sv": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "category": 22
+        }
+      },
+      "convert-postscript-to-png-in-java": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "convert-primavera-xml-to-mpp-in-csharp": {
+        "urls": 22,
+        "hreflang_urls": 22,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "sv": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "category": 22
+        }
+      },
+      "convert-svg-to-pdf-in-java": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "convert-vsd-to-vsdx-java": {
+        "urls": 8,
+        "hreflang_urls": 8,
+        "langs": {
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "category": 8
+        }
+      },
+      "convert-xps-to-pdf-in-python-xps-to-pdf": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "create-animated-slideshow-in-java": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "create-gzip-file-in-java": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "create-iframe-embed-code-in-csharp": {
+        "urls": 2,
+        "hreflang_urls": 2,
+        "langs": {
+          "pt": 1,
+          "zh": 1
+        },
+        "templates": {
+          "category": 2
+        }
+      },
+      "create-micro-qr-code-in-csharp": {
+        "urls": 3,
+        "hreflang_urls": 3,
+        "langs": {
+          "pt": 1,
+          "vi": 1,
+          "zh": 1
+        },
+        "templates": {
+          "category": 3
+        }
+      },
+      "create-mime-messages-in-csharp": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "create-mime-messages-in-java": {
+        "urls": 2,
+        "hreflang_urls": 2,
+        "langs": {
+          "pt": 1,
+          "zh": 1
+        },
+        "templates": {
+          "category": 2
+        }
+      },
+      "create-tex-file-programmatically": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "create-visio-diagram-in-python": {
+        "urls": 22,
+        "hreflang_urls": 22,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "sv": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "category": 22
+        }
+      },
+      "cz": {
+        "urls": 3,
+        "hreflang_urls": 3,
+        "langs": {
+          "default": 1,
+          "cs": 2
+        },
+        "templates": {
+          "generic:/{section}/*/*": 3
+        }
+      },
+      "desfocar-uma-imagem-afiar-imagens-online": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "pt": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "diagram": {
+        "urls": 1704,
+        "hreflang_urls": 1587,
+        "langs": {
+          "default": 190,
+          "ar": 73,
+          "cs": 72,
+          "de": 73,
+          "es": 73,
+          "fa": 72,
+          "fr": 73,
+          "he": 72,
+          "id": 72,
+          "it": 73,
+          "ja": 73,
+          "ko": 73,
+          "pl": 71,
+          "pt": 72,
+          "ru": 72,
+          "sv": 72,
+          "th": 71,
+          "tr": 71,
+          "uk": 72,
+          "vi": 71,
+          "zh": 72,
+          "zh-hant": 71
+        },
+        "templates": {
+          "post": 1704
+        }
+      },
+      "drawing": {
+        "urls": 880,
+        "hreflang_urls": 880,
+        "langs": {
+          "default": 40,
+          "ar": 40,
+          "cs": 40,
+          "de": 40,
+          "es": 40,
+          "fa": 40,
+          "fr": 40,
+          "he": 40,
+          "id": 40,
+          "it": 40,
+          "ja": 40,
+          "ko": 40,
+          "pl": 40,
+          "pt": 40,
+          "ru": 40,
+          "sv": 40,
+          "th": 40,
+          "tr": 40,
+          "uk": 40,
+          "vi": 40,
+          "zh": 40,
+          "zh-hant": 40
+        },
+        "templates": {
+          "post": 880
+        }
+      },
+      "email": {
+        "urls": 3944,
+        "hreflang_urls": 3671,
+        "langs": {
+          "default": 443,
+          "ar": 168,
+          "cs": 167,
+          "de": 168,
+          "es": 168,
+          "fa": 168,
+          "fr": 168,
+          "he": 167,
+          "id": 168,
+          "it": 168,
+          "ja": 167,
+          "ko": 168,
+          "pl": 168,
+          "pt": 166,
+          "ru": 168,
+          "sv": 168,
+          "th": 166,
+          "tr": 168,
+          "uk": 167,
+          "vi": 168,
+          "zh": 146,
+          "zh-cn": 6,
+          "zh-hant": 122,
+          "zh-tw": 43
+        },
+        "templates": {
+          "generic:/{section}/*/*": 21,
+          "post": 3923
+        }
+      },
+      "extract-data-from-image-in-java": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "extract-text-html-java": {
+        "urls": 2,
+        "hreflang_urls": 2,
+        "langs": {
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "category": 2
+        }
+      },
+      "fa": {
+        "urls": 7,
+        "hreflang_urls": 7,
+        "langs": {
+          "fa": 7
+        },
+        "templates": {
+          "generic:/{section}/*/*": 7
+        }
+      },
+      "finance": {
+        "urls": 386,
+        "hreflang_urls": 386,
+        "langs": {
+          "default": 19,
+          "ar": 17,
+          "cs": 19,
+          "de": 17,
+          "es": 17,
+          "fa": 18,
+          "fr": 17,
+          "he": 19,
+          "id": 17,
+          "it": 17,
+          "ja": 17,
+          "ko": 17,
+          "pl": 18,
+          "pt": 17,
+          "ru": 17,
+          "sv": 18,
+          "th": 18,
+          "tr": 17,
+          "uk": 19,
+          "vi": 17,
+          "zh": 17,
+          "zh-hant": 17
+        },
+        "templates": {
+          "post": 386
+        }
+      },
+      "font": {
+        "urls": 705,
+        "hreflang_urls": 704,
+        "langs": {
+          "default": 33,
+          "ar": 32,
+          "cs": 32,
+          "de": 32,
+          "es": 32,
+          "fa": 32,
+          "fr": 32,
+          "he": 32,
+          "id": 32,
+          "it": 32,
+          "ja": 32,
+          "ko": 32,
+          "pl": 32,
+          "pt": 32,
+          "ru": 32,
+          "sv": 32,
+          "th": 32,
+          "tr": 32,
+          "uk": 32,
+          "vi": 32,
+          "zh": 32,
+          "zh-hant": 32
+        },
+        "templates": {
+          "post": 705
+        }
+      },
+      "free-barcode-generator": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "free-pptx-to-emf-converter": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "free-url-to-pdf-converter": {
+        "urls": 2,
+        "hreflang_urls": 2,
+        "langs": {
+          "pt": 1,
+          "zh": 1
+        },
+        "templates": {
+          "category": 2
+        }
+      },
+      "generate-a-pie-chart-in-python": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "generate-barcode-39-in-csharp": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "generate-hibc-lic-barcodes": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "gis": {
+        "urls": 1235,
+        "hreflang_urls": 1219,
+        "langs": {
+          "default": 72,
+          "ar": 55,
+          "cs": 55,
+          "de": 56,
+          "es": 56,
+          "fa": 55,
+          "fr": 56,
+          "he": 55,
+          "id": 55,
+          "it": 56,
+          "ja": 56,
+          "ko": 56,
+          "pl": 55,
+          "pt": 56,
+          "ru": 56,
+          "sv": 55,
+          "th": 55,
+          "tr": 55,
+          "uk": 55,
+          "vi": 55,
+          "zh": 52,
+          "zh-cn": 3,
+          "zh-hant": 50,
+          "zh-tw": 5
+        },
+        "templates": {
+          "post": 1235
+        }
+      },
+      "he": {
+        "urls": 2,
+        "hreflang_urls": 2,
+        "langs": {
+          "he": 2
+        },
+        "templates": {
+          "generic:/{section}/*/*": 2
+        }
+      },
+      "html": {
+        "urls": 2378,
+        "hreflang_urls": 2348,
+        "langs": {
+          "default": 138,
+          "ar": 108,
+          "cs": 107,
+          "de": 108,
+          "es": 108,
+          "fa": 107,
+          "fr": 108,
+          "he": 107,
+          "id": 107,
+          "it": 108,
+          "ja": 108,
+          "ko": 108,
+          "pl": 107,
+          "pt": 105,
+          "ru": 108,
+          "sv": 106,
+          "th": 105,
+          "tr": 107,
+          "uk": 106,
+          "vi": 106,
+          "zh": 94,
+          "zh-cn": 7,
+          "zh-hant": 86,
+          "zh-tw": 19
+        },
+        "templates": {
+          "post": 2378
+        }
+      },
+      "id": {
+        "urls": 2,
+        "hreflang_urls": 2,
+        "langs": {
+          "id": 2
+        },
+        "templates": {
+          "generic:/{section}/*/*": 2
+        }
+      },
+      "imaging": {
+        "urls": 2184,
+        "hreflang_urls": 2092,
+        "langs": {
+          "default": 188,
+          "ar": 96,
+          "cs": 95,
+          "de": 95,
+          "es": 95,
+          "fa": 95,
+          "fr": 95,
+          "he": 95,
+          "id": 95,
+          "it": 95,
+          "ja": 95,
+          "ko": 95,
+          "pl": 95,
+          "pt": 95,
+          "ru": 95,
+          "sv": 96,
+          "th": 95,
+          "tr": 95,
+          "uk": 95,
+          "vi": 95,
+          "zh": 91,
+          "zh-cn": 4,
+          "zh-hant": 84,
+          "zh-tw": 10
+        },
+        "templates": {
+          "post": 2184
+        }
+      },
+      "import-eml-to-pst-using-csharp": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "it": {
+        "urls": 3,
+        "hreflang_urls": 3,
+        "langs": {
+          "it": 3
+        },
+        "templates": {
+          "generic:/{section}/*/*": 3
+        }
+      },
+      "ja": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "ja": 1
+        },
+        "templates": {
+          "generic:/{section}/*/*": 1
+        }
+      },
+      "jp": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "default": 1
+        },
+        "templates": {
+          "generic:/{section}/*/*": 1
+        }
+      },
+      "ko": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "ko": 1
+        },
+        "templates": {
+          "generic:/{section}/*/*": 1
+        }
+      },
+      "kr": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "default": 1
+        },
+        "templates": {
+          "generic:/{section}/*/*": 1
+        }
+      },
+      "llm": {
+        "urls": 88,
+        "hreflang_urls": 88,
+        "langs": {
+          "default": 4,
+          "ar": 4,
+          "cs": 4,
+          "de": 4,
+          "es": 4,
+          "fa": 4,
+          "fr": 4,
+          "he": 4,
+          "id": 4,
+          "it": 4,
+          "ja": 4,
+          "ko": 4,
+          "pl": 4,
+          "pt": 4,
+          "ru": 4,
+          "sv": 4,
+          "th": 4,
+          "tr": 4,
+          "uk": 4,
+          "vi": 4,
+          "zh": 4,
+          "zh-hant": 4
+        },
+        "templates": {
+          "post": 88
+        }
+      },
+      "manage-calendar-items-using-csharp": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "manage-outlook-contacts-using-csharp": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "manage-outlook-items-using-csharp": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "manage-password-protected-pst-files-in-csharp": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "manage-zimbra-tgz-backups-net": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "medical": {
+        "urls": 73,
+        "hreflang_urls": 66,
+        "langs": {
+          "default": 10,
+          "ar": 3,
+          "cs": 3,
+          "de": 3,
+          "es": 3,
+          "fa": 3,
+          "fr": 3,
+          "he": 3,
+          "id": 3,
+          "it": 3,
+          "ja": 3,
+          "ko": 3,
+          "pl": 3,
+          "pt": 3,
+          "ru": 3,
+          "sv": 3,
+          "th": 3,
+          "tr": 3,
+          "uk": 3,
+          "vi": 3,
+          "zh": 3,
+          "zh-hant": 3
+        },
+        "templates": {
+          "post": 73
+        }
+      },
+      "merge-xps-files-in-python-programmatically": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "mudar-arquivo-ai-para-png-ai-para-png-online": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "pt": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "note": {
+        "urls": 1291,
+        "hreflang_urls": 1241,
+        "langs": {
+          "default": 107,
+          "ar": 57,
+          "cs": 56,
+          "de": 57,
+          "es": 57,
+          "fa": 56,
+          "fr": 57,
+          "he": 55,
+          "id": 56,
+          "it": 57,
+          "ja": 57,
+          "ko": 57,
+          "pl": 56,
+          "pt": 57,
+          "ru": 57,
+          "sv": 56,
+          "th": 55,
+          "tr": 56,
+          "uk": 56,
+          "vi": 56,
+          "zh": 57,
+          "zh-hant": 56
+        },
+        "templates": {
+          "post": 1291
+        }
+      },
+      "ocr": {
+        "urls": 1299,
+        "hreflang_urls": 1243,
+        "langs": {
+          "default": 113,
+          "ar": 57,
+          "cs": 56,
+          "de": 57,
+          "es": 57,
+          "fa": 56,
+          "fr": 57,
+          "he": 56,
+          "id": 56,
+          "it": 57,
+          "ja": 57,
+          "ko": 57,
+          "pl": 56,
+          "pt": 57,
+          "ru": 57,
+          "sv": 56,
+          "th": 56,
+          "tr": 56,
+          "uk": 56,
+          "vi": 56,
+          "zh": 57,
+          "zh-hant": 56
+        },
+        "templates": {
+          "post": 1299
+        }
+      },
+      "omr": {
+        "urls": 431,
+        "hreflang_urls": 428,
+        "langs": {
+          "default": 23,
+          "ar": 20,
+          "cs": 19,
+          "de": 20,
+          "es": 20,
+          "fa": 19,
+          "fr": 20,
+          "he": 19,
+          "id": 19,
+          "it": 20,
+          "ja": 20,
+          "ko": 20,
+          "pl": 19,
+          "pt": 20,
+          "ru": 20,
+          "sv": 19,
+          "th": 19,
+          "tr": 19,
+          "uk": 19,
+          "vi": 19,
+          "zh": 19,
+          "zh-hant": 16,
+          "zh-tw": 3
+        },
+        "templates": {
+          "post": 431
+        }
+      },
+      "online-spatial-data-visualization": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "online-webpage-to-image-converter": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "page": {
+        "urls": 1382,
+        "hreflang_urls": 1380,
+        "langs": {
+          "default": 66,
+          "ar": 64,
+          "cs": 63,
+          "de": 63,
+          "es": 63,
+          "fa": 62,
+          "fr": 63,
+          "he": 63,
+          "id": 61,
+          "it": 62,
+          "ja": 63,
+          "ko": 63,
+          "pl": 63,
+          "pt": 63,
+          "ru": 63,
+          "sv": 62,
+          "th": 63,
+          "tr": 62,
+          "uk": 63,
+          "vi": 63,
+          "zh": 57,
+          "zh-cn": 4,
+          "zh-hant": 50,
+          "zh-tw": 13
+        },
+        "templates": {
+          "post": 1382
+        }
+      },
+      "parse-xbrl-in-python": {
+        "urls": 14,
+        "hreflang_urls": 14,
+        "langs": {
+          "ar": 1,
+          "de": 1,
+          "es": 1,
+          "fr": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pt": 1,
+          "ru": 1,
+          "tr": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "category": 14
+        }
+      },
+      "pdf": {
+        "urls": 5411,
+        "hreflang_urls": 5051,
+        "langs": {
+          "default": 591,
+          "ar": 230,
+          "cs": 229,
+          "de": 230,
+          "es": 230,
+          "fa": 229,
+          "fr": 231,
+          "he": 229,
+          "id": 229,
+          "it": 230,
+          "ja": 230,
+          "ko": 230,
+          "pl": 229,
+          "pt": 230,
+          "ru": 230,
+          "sv": 229,
+          "th": 229,
+          "tr": 229,
+          "uk": 229,
+          "vi": 228,
+          "zh": 231,
+          "zh-hant": 229
+        },
+        "templates": {
+          "post": 5411
+        }
+      },
+      "pl": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "pl": 1
+        },
+        "templates": {
+          "generic:/{section}/*/*": 1
+        }
+      },
+      "ppt": {
+        "urls": 22,
+        "hreflang_urls": 22,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "sv": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 2,
+          "zh-tw": 1
+        },
+        "templates": {
+          "post": 22
+        }
+      },
+      "psd": {
+        "urls": 1630,
+        "hreflang_urls": 1622,
+        "langs": {
+          "default": 83,
+          "ar": 75,
+          "cs": 74,
+          "de": 74,
+          "es": 74,
+          "fa": 75,
+          "fr": 74,
+          "he": 74,
+          "id": 74,
+          "it": 74,
+          "ja": 74,
+          "ko": 73,
+          "pl": 75,
+          "pt": 72,
+          "ru": 74,
+          "sv": 74,
+          "th": 73,
+          "tr": 74,
+          "uk": 72,
+          "vi": 74,
+          "zh": 72,
+          "zh-cn": 1,
+          "zh-hant": 53,
+          "zh-tw": 18
+        },
+        "templates": {
+          "post": 1630
+        }
+      },
+      "pub": {
+        "urls": 532,
+        "hreflang_urls": 531,
+        "langs": {
+          "default": 26,
+          "ar": 24,
+          "cs": 24,
+          "de": 24,
+          "es": 24,
+          "fa": 24,
+          "fr": 24,
+          "he": 24,
+          "id": 24,
+          "it": 24,
+          "ja": 24,
+          "ko": 24,
+          "pl": 25,
+          "pt": 24,
+          "ru": 24,
+          "sv": 25,
+          "th": 24,
+          "tr": 24,
+          "uk": 24,
+          "vi": 24,
+          "zh": 24,
+          "zh-hant": 24
+        },
+        "templates": {
+          "generic:/{section}/*/*": 1,
+          "post": 531
+        }
+      },
+      "read-ms-outlook-olm-files-in-csharp-net": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "reduce-svg-file-size-in-csharp": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "retrieve-emails-using-python": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "rotate-barcode-images-in-java": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "pt": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "search": {
+        "urls": 22,
+        "hreflang_urls": 21,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "cs": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "he": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "sv": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "listing": 22
+        }
+      },
+      "send-messages-via-mailgun-and-sendgrid-in-csharp": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "send-messages-via-mailgun-and-sendgrid-in-java": {
+        "urls": 2,
+        "hreflang_urls": 2,
+        "langs": {
+          "pt": 1,
+          "zh": 1
+        },
+        "templates": {
+          "category": 2
+        }
+      },
+      "slide": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "post": 1
+        }
+      },
+      "slides": {
+        "urls": 5021,
+        "hreflang_urls": 4731,
+        "langs": {
+          "default": 507,
+          "ar": 216,
+          "cs": 216,
+          "de": 215,
+          "es": 216,
+          "fa": 215,
+          "fr": 216,
+          "he": 216,
+          "id": 217,
+          "it": 215,
+          "ja": 214,
+          "ko": 215,
+          "pl": 217,
+          "pt": 216,
+          "ru": 216,
+          "sv": 213,
+          "th": 208,
+          "tr": 215,
+          "uk": 215,
+          "vi": 217,
+          "zh": 208,
+          "zh-cn": 1,
+          "zh-hant": 198,
+          "zh-tw": 19
+        },
+        "templates": {
+          "generic:/{section}/*/*": 10,
+          "post": 5011
+        }
+      },
+      "split-merge-pst-files-net": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "storage-files-processing-using-csharp": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "sv": {
+        "urls": 5,
+        "hreflang_urls": 5,
+        "langs": {
+          "sv": 5
+        },
+        "templates": {
+          "generic:/{section}/*/*": 5
+        }
+      },
+      "svg": {
+        "urls": 1276,
+        "hreflang_urls": 1276,
+        "langs": {
+          "default": 58,
+          "ar": 58,
+          "cs": 58,
+          "de": 58,
+          "es": 58,
+          "fa": 58,
+          "fr": 58,
+          "he": 58,
+          "id": 58,
+          "it": 58,
+          "ja": 58,
+          "ko": 58,
+          "pl": 58,
+          "pt": 58,
+          "ru": 58,
+          "sv": 58,
+          "th": 58,
+          "tr": 58,
+          "uk": 58,
+          "vi": 58,
+          "zh": 58,
+          "zh-hant": 58
+        },
+        "templates": {
+          "post": 1276
+        }
+      },
+      "taiwan": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "generic:/{section}/*/*": 1
+        }
+      },
+      "tarefas": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "pt": 1
+        },
+        "templates": {
+          "post": 1
+        }
+      },
+      "tasks": {
+        "urls": 1398,
+        "hreflang_urls": 1254,
+        "langs": {
+          "default": 202,
+          "ar": 57,
+          "cs": 57,
+          "de": 58,
+          "es": 58,
+          "fa": 56,
+          "fr": 58,
+          "he": 57,
+          "id": 56,
+          "it": 58,
+          "ja": 58,
+          "ko": 58,
+          "pl": 56,
+          "pt": 57,
+          "ru": 58,
+          "sv": 56,
+          "th": 56,
+          "tr": 56,
+          "uk": 56,
+          "vi": 56,
+          "zh": 58,
+          "zh-hant": 56
+        },
+        "templates": {
+          "generic:/{section}/*/*": 1,
+          "post": 1397
+        }
+      },
+      "tex": {
+        "urls": 965,
+        "hreflang_urls": 965,
+        "langs": {
+          "default": 44,
+          "ar": 44,
+          "cs": 43,
+          "de": 44,
+          "es": 44,
+          "fa": 44,
+          "fr": 44,
+          "he": 44,
+          "id": 44,
+          "it": 44,
+          "ja": 44,
+          "ko": 44,
+          "pl": 44,
+          "pt": 44,
+          "ru": 44,
+          "sv": 44,
+          "th": 44,
+          "tr": 44,
+          "uk": 44,
+          "vi": 44,
+          "zh": 43,
+          "zh-hant": 34,
+          "zh-tw": 9
+        },
+        "templates": {
+          "post": 965
+        }
+      },
+      "th": {
+        "urls": 20,
+        "hreflang_urls": 20,
+        "langs": {
+          "th": 20
+        },
+        "templates": {
+          "generic:/{section}/*/*": 20
+        }
+      },
+      "total": {
+        "urls": 2074,
+        "hreflang_urls": 978,
+        "langs": {
+          "default": 1145,
+          "ar": 47,
+          "cs": 43,
+          "de": 44,
+          "es": 45,
+          "fa": 44,
+          "fr": 44,
+          "he": 43,
+          "id": 44,
+          "it": 44,
+          "ja": 44,
+          "ko": 44,
+          "pl": 44,
+          "pt": 43,
+          "ru": 43,
+          "sv": 43,
+          "th": 44,
+          "tr": 45,
+          "uk": 43,
+          "vi": 45,
+          "zh": 49,
+          "zh-hant": 44
+        },
+        "templates": {
+          "post": 2074
+        }
+      },
+      "tr": {
+        "urls": 4,
+        "hreflang_urls": 4,
+        "langs": {
+          "tr": 4
+        },
+        "templates": {
+          "generic:/{section}/*/*": 4
+        }
+      },
+      "tw": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "generic:/{section}/*/*": 1
+        }
+      },
+      "ua": {
+        "urls": 4,
+        "hreflang_urls": 4,
+        "langs": {
+          "default": 4
+        },
+        "templates": {
+          "generic:/{section}/*/*": 4
+        }
+      },
+      "unblur-a-picture-sharpen-images-online": {
+        "urls": 1,
+        "hreflang_urls": 1,
+        "langs": {
+          "zh": 1
+        },
+        "templates": {
+          "category": 1
+        }
+      },
+      "words": {
+        "urls": 5050,
+        "hreflang_urls": 4379,
+        "langs": {
+          "default": 871,
+          "ar": 202,
+          "cs": 198,
+          "de": 200,
+          "es": 200,
+          "fa": 198,
+          "fr": 200,
+          "he": 198,
+          "id": 198,
+          "it": 200,
+          "ja": 200,
+          "ko": 200,
+          "pl": 198,
+          "pt": 196,
+          "ru": 200,
+          "sv": 197,
+          "th": 198,
+          "tr": 198,
+          "uk": 198,
+          "vi": 199,
+          "zh": 202,
+          "zh-hant": 199
+        },
+        "templates": {
+          "post": 5050
+        }
+      },
+      "zh": {
+        "urls": 3,
+        "hreflang_urls": 3,
+        "langs": {
+          "zh": 3
+        },
+        "templates": {
+          "generic:/{section}/*/*": 3
+        }
+      },
+      "zip": {
+        "urls": 1456,
+        "hreflang_urls": 1451,
+        "langs": {
+          "default": 72,
+          "ar": 66,
+          "cs": 66,
+          "de": 66,
+          "es": 66,
+          "fa": 65,
+          "fr": 66,
+          "he": 66,
+          "id": 66,
+          "it": 66,
+          "ja": 66,
+          "ko": 66,
+          "pl": 66,
+          "pt": 66,
+          "ru": 66,
+          "sv": 67,
+          "th": 66,
+          "tr": 66,
+          "uk": 66,
+          "vi": 66,
+          "zh": 65,
+          "zh-hant": 61,
+          "zh-tw": 4
+        },
+        "templates": {
+          "post": 1456
+        }
+      }
+    }
+  },
+  "gsc_comparison": [
+    {
+      "path": "/sitemap.xml",
+      "url": "https://blog.aspose.com/sitemap.xml",
+      "gsc_status": "Success",
+      "gsc_discovered": 57539,
+      "live_status": 200,
+      "live_kind": "index",
+      "live_urls": 57500
+    }
+  ],
+  "sitemaps": {
+    "blog.aspose.com": {
+      "": [
+        {
+          "url": "https://blog.aspose.com/sitemap.xml",
+          "parent": null,
+          "depth": 0,
+          "status": 200,
+          "kind": "index",
+          "urls": 57500,
+          "children": 22,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/ar/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2444,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/cs/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2425,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/de/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2437,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/en/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 6438,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/es/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2438,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/fa/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2427,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/fr/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2438,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/he/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2424,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/id/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2424,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/it/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2437,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/ja/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2437,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/ko/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2437,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/pl/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2427,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/pt/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2433,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/ru/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2436,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/sv/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2424,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/th/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2424,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/tr/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2425,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/uk/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2424,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/vi/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2425,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/zh-hant/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2425,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.aspose.com/zh/sitemap.xml",
+          "parent": "https://blog.aspose.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2451,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        }
+      ]
+    }
+  },
+  "new_hosts": {},
+  "sitemaps_fetched": 23,
+  "params": {
+    "hosts": [
+      "blog.aspose.com"
+    ],
+    "sections": null,
+    "max_sitemaps": null
+  },
+  "requests": 24,
+  "duration_s": 60.4,
+  "not_fetched": [],
+  "findings": [
+    {
+      "id": "crawl-0001",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "sitemap",
+      "dimension": "crawl",
+      "check": "dup_in_file",
+      "type": "not_optimized",
+      "title": "Sitemap lists the same URL more than once",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/en/sitemap.xml",
+          "https://blog.aspose.com/ja/sitemap.xml",
+          "https://blog.aspose.com/ko/sitemap.xml",
+          "https://blog.aspose.com/es/sitemap.xml",
+          "https://blog.aspose.com/de/sitemap.xml",
+          "https://blog.aspose.com/ru/sitemap.xml",
+          "https://blog.aspose.com/fr/sitemap.xml",
+          "https://blog.aspose.com/zh/sitemap.xml",
+          "https://blog.aspose.com/it/sitemap.xml",
+          "https://blog.aspose.com/pt/sitemap.xml"
+        ],
+        "observed": "https://blog.aspose.com/en/sitemap.xml: 3 URLs, e.g. https://blog.aspose.com/gis/convert-geojson-to-topojson-in-python/, https://blog.aspose.com/words/extract-images-from-doc-in-java/; https://blog.aspose.com/ja/sitemap.xml: 1 URLs, e.g. https://blog.aspose.com/ja/gis/convert-geojson-to-topojson-in-python/; https://blog.aspose.com/ko/sitemap.xml: 1 URLs, e.g. https://blog.aspose.com/ko/gis/convert-geojson-to-topojson-in-python/; https://blog.aspose.com/es/sitemap.xml: 1 URLs, e.g. https://blog.aspose.com/es/gis/convert-geojson-to-topojson-in-python/; https://blog.aspose.com/de/sitemap.xml: 1 URLs, e.g. https://blog.aspose.com/de/gis/convert-geojson-to-topojson-in-python/; and 17 more sitemaps",
+        "expected": "each URL listed once",
+        "locations": [
+          {
+            "role": "sitemap",
+            "url": "https://blog.aspose.com/en/sitemap.xml",
+            "note": "3 URLs, e.g. https://blog.aspose.com/gis/convert-geojson-to-topojson-in-python/, https://blog.aspose.com/words/extract-images-from-doc-in-java/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.aspose.com/ja/sitemap.xml",
+            "note": "1 URLs, e.g. https://blog.aspose.com/ja/gis/convert-geojson-to-topojson-in-python/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.aspose.com/ko/sitemap.xml",
+            "note": "1 URLs, e.g. https://blog.aspose.com/ko/gis/convert-geojson-to-topojson-in-python/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.aspose.com/es/sitemap.xml",
+            "note": "1 URLs, e.g. https://blog.aspose.com/es/gis/convert-geojson-to-topojson-in-python/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.aspose.com/de/sitemap.xml",
+            "note": "1 URLs, e.g. https://blog.aspose.com/de/gis/convert-geojson-to-topojson-in-python/"
+          }
+        ]
+      },
+      "affected_pages": 39,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-02"
+    },
+    {
+      "id": "crawl-0002",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "sitemap",
+      "dimension": "crawl",
+      "check": "cross_sitemap_dups",
+      "type": "not_optimized",
+      "title": "URLs listed in more than one sitemap",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/barcode/create-micro-qr-code-in-csharp/",
+          "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
+          "https://blog.aspose.com/email/send-messages-via-mailgun-and-sendgrid-in-java/",
+          "https://blog.aspose.com/zh/email/convert-msg-to-oft-in-nodejs/",
+          "https://blog.aspose.com/zh/email/convert-msg-to-pst-in-nodejs/"
+        ],
+        "observed": "13 URLs appear in 2+ sitemaps",
+        "expected": "each URL in exactly one sitemap"
+      },
+      "affected_pages": 13,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-02"
+    }
+  ],
+  "items": {
+    "blog.aspose.com": [
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/en/sitemap.xml",
+        "url": "https://blog.aspose.com/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/en/sitemap.xml",
+        "url": "https://blog.aspose.com/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/en/sitemap.xml",
+        "url": "https://blog.aspose.com/cells/generate-dynamic-questionnaire-and-surveys-save-user-input-into-excel-spreahsheet-and-export-the-results-into-excel-text-csv-and-opendocument-spreadsheet/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/ja/sitemap.xml",
+        "url": "https://blog.aspose.com/ja/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/ko/sitemap.xml",
+        "url": "https://blog.aspose.com/ko/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/es/sitemap.xml",
+        "url": "https://blog.aspose.com/es/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/de/sitemap.xml",
+        "url": "https://blog.aspose.com/de/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/ru/sitemap.xml",
+        "url": "https://blog.aspose.com/ru/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/fr/sitemap.xml",
+        "url": "https://blog.aspose.com/fr/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/zh/sitemap.xml",
+        "url": "https://blog.aspose.com/zh/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/zh/sitemap.xml",
+        "url": "https://blog.aspose.com/zh/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/it/sitemap.xml",
+        "url": "https://blog.aspose.com/it/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/pt/sitemap.xml",
+        "url": "https://blog.aspose.com/pt/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/pt/sitemap.xml",
+        "url": "https://blog.aspose.com/pt/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/ar/sitemap.xml",
+        "url": "https://blog.aspose.com/ar/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/ar/sitemap.xml",
+        "url": "https://blog.aspose.com/ar/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/vi/sitemap.xml",
+        "url": "https://blog.aspose.com/vi/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/vi/sitemap.xml",
+        "url": "https://blog.aspose.com/vi/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/zh-hant/sitemap.xml",
+        "url": "https://blog.aspose.com/zh-hant/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/zh-hant/sitemap.xml",
+        "url": "https://blog.aspose.com/zh-hant/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/tr/sitemap.xml",
+        "url": "https://blog.aspose.com/tr/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/tr/sitemap.xml",
+        "url": "https://blog.aspose.com/tr/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/id/sitemap.xml",
+        "url": "https://blog.aspose.com/id/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/id/sitemap.xml",
+        "url": "https://blog.aspose.com/id/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/th/sitemap.xml",
+        "url": "https://blog.aspose.com/th/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/th/sitemap.xml",
+        "url": "https://blog.aspose.com/th/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/fa/sitemap.xml",
+        "url": "https://blog.aspose.com/fa/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/fa/sitemap.xml",
+        "url": "https://blog.aspose.com/fa/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/pl/sitemap.xml",
+        "url": "https://blog.aspose.com/pl/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/pl/sitemap.xml",
+        "url": "https://blog.aspose.com/pl/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/uk/sitemap.xml",
+        "url": "https://blog.aspose.com/uk/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/uk/sitemap.xml",
+        "url": "https://blog.aspose.com/uk/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/he/sitemap.xml",
+        "url": "https://blog.aspose.com/he/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/he/sitemap.xml",
+        "url": "https://blog.aspose.com/he/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/cs/sitemap.xml",
+        "url": "https://blog.aspose.com/cs/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/cs/sitemap.xml",
+        "url": "https://blog.aspose.com/cs/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/sv/sitemap.xml",
+        "url": "https://blog.aspose.com/sv/gis/convert-geojson-to-topojson-in-python/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/sv/sitemap.xml",
+        "url": "https://blog.aspose.com/sv/finance/xbrl-to-pdf-converter/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.aspose.com/sv/sitemap.xml",
+        "url": "https://blog.aspose.com/sv/words/extract-images-from-doc-in-java/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/barcode/create-micro-qr-code-in-csharp/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/email/send-messages-via-mailgun-and-sendgrid-in-java/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/zh/email/convert-msg-to-oft-in-nodejs/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/zh/email/convert-msg-to-pst-in-nodejs/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/html/java-api-for-manipulating-dom-programmatically/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/zh/html/convert-svg-to-xps-in-java/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/zh/imaging/convert-gif-to-jpeg-in-python-programmatically/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/zh/psd/convert-psd-to-png-in-python/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/zh/psd/convert-psd-to-gif-in-python/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/zh/psd/convert-psd-to-tiff-in-python/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/slides/convert-powerpoint-slide-to-image-in-nodejs-ppt-to-tiff/"
+      },
+      {
+        "check": "cross_sitemap_dups",
+        "sitemap": null,
+        "url": "https://blog.aspose.com/pl/words/translate-word-files-python-ai-functionality/"
+      }
+    ]
+  }
+}

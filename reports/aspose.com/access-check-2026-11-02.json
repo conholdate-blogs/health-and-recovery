@@ -1,0 +1,439 @@
+{
+  "tenant": "aspose.com",
+  "run_date": "2026-11-02",
+  "identity": "sk-serv-acc@health-and-recovery.iam.gserviceaccount.com",
+  "gsc": {
+    "window": [
+      "2026-10-03",
+      "2026-10-30"
+    ],
+    "properties": {
+      "https://blog.aspose.com/": {
+        "permission": "siteRestrictedUser",
+        "clicks": 17868,
+        "impressions": 970303,
+        "top_pages": [
+          {
+            "page": "https://blog.aspose.com/id/gis/convert-kml-to-shp-online/",
+            "clicks": 845,
+            "impressions": 8060
+          },
+          {
+            "page": "https://blog.aspose.com/fa/zip/compress-files-online/",
+            "clicks": 752,
+            "impressions": 6373
+          },
+          {
+            "page": "https://blog.aspose.com/id/drawing/online-ruler-cm-scale/",
+            "clicks": 613,
+            "impressions": 44838
+          },
+          {
+            "page": "https://blog.aspose.com/fa/email/online-gmail-generator/",
+            "clicks": 553,
+            "impressions": 4996
+          },
+          {
+            "page": "https://blog.aspose.com/it/drawing/online-ruler-cm-scale/",
+            "clicks": 478,
+            "impressions": 16878
+          }
+        ],
+        "sitemaps": {
+          "count": 23,
+          "with_errors": [],
+          "pending": []
+        }
+      }
+    },
+    "ok": true,
+    "visible_to_identity": {
+      "https://blog.aspose.cloud/": "siteRestrictedUser",
+      "https://about.aspose.app/": "siteRestrictedUser",
+      "https://blog.aspose.com/": "siteRestrictedUser",
+      "https://blog.aspose.app/": "siteRestrictedUser",
+      "https://blog.conholdate.cloud/": "siteRestrictedUser",
+      "https://blog.conholdate.com/": "siteRestrictedUser",
+      "https://blog.groupdocs.cloud/": "siteRestrictedUser",
+      "https://products.aspose.app/": "siteRestrictedUser",
+      "https://websites.aspose.app/": "siteRestrictedUser",
+      "https://blog.groupdocs.com/": "siteRestrictedUser",
+      "https://releases.aspose.app/": "siteRestrictedUser"
+    }
+  },
+  "ga4": {
+    "ok": true,
+    "property_id": "252213002",
+    "window": [
+      "28daysAgo",
+      "yesterday"
+    ],
+    "hosts": {
+      "reference.aspose.com": {
+        "sessions": 1196181.0,
+        "organic_sessions": 2726.0
+      },
+      "products.aspose.com": {
+        "sessions": 399781.0,
+        "organic_sessions": 58734.0
+      },
+      "search.aspose.com": {
+        "sessions": 259703.0,
+        "organic_sessions": 698.0
+      },
+      "docs.aspose.com": {
+        "sessions": 201040.0,
+        "organic_sessions": 10410.0
+      },
+      "tutorials.aspose.com": {
+        "sessions": 177892.0,
+        "organic_sessions": 3359.0
+      },
+      "forum.aspose.com": {
+        "sessions": 157665.0,
+        "organic_sessions": 7139.0
+      },
+      "(not set)": {
+        "sessions": 152798.0,
+        "organic_sessions": 38679.0
+      },
+      "blog.aspose.com": {
+        "sessions": 124057.0,
+        "organic_sessions": 15381.0
+      },
+      "products.aspose.app": {
+        "sessions": 87034.0,
+        "organic_sessions": 42039.0
+      },
+      "releases.aspose.com": {
+        "sessions": 75092.0,
+        "organic_sessions": 18275.0
+      },
+      "kb.aspose.com": {
+        "sessions": 29684.0,
+        "organic_sessions": 1305.0
+      },
+      "www.aspose.com": {
+        "sessions": 29385.0,
+        "organic_sessions": 8535.0
+      },
+      "blog-qa.aspose.com": {
+        "sessions": 13229.0,
+        "organic_sessions": 0.0
+      },
+      "purchase.aspose.com": {
+        "sessions": 12223.0,
+        "organic_sessions": 3063.0
+      },
+      "docs-qa.aspose.com": {
+        "sessions": 9913.0,
+        "organic_sessions": 420.0
+      },
+      "metrics.aspose.com": {
+        "sessions": 3215.0,
+        "organic_sessions": 141.0
+      },
+      "": {
+        "sessions": 3099.0,
+        "organic_sessions": 883.0
+      },
+      "blog2.aspose.com": {
+        "sessions": 2130.0,
+        "organic_sessions": 1.0
+      },
+      "products-qa.aspose.app": {
+        "sessions": 2050.0,
+        "organic_sessions": 0.0
+      },
+      "websites.aspose.com": {
+        "sessions": 1706.0,
+        "organic_sessions": 339.0
+      },
+      "about.aspose.com": {
+        "sessions": 1520.0,
+        "organic_sessions": 436.0
+      },
+      "helpdesk.aspose.com": {
+        "sessions": 1359.0,
+        "organic_sessions": 334.0
+      },
+      "kb-qa.aspose.com": {
+        "sessions": 1150.0,
+        "organic_sessions": 3.0
+      },
+      "consulting.aspose.com": {
+        "sessions": 738.0,
+        "organic_sessions": 52.0
+      },
+      "products-ui.aspose.com": {
+        "sessions": 656.0,
+        "organic_sessions": 20.0
+      },
+      "aspose.github.io": {
+        "sessions": 458.0,
+        "organic_sessions": 53.0
+      },
+      "pdf-landings.s3-website.dynabic.com": {
+        "sessions": 416.0,
+        "organic_sessions": 0.0
+      },
+      "products.aspose.cloud": {
+        "sessions": 404.0,
+        "organic_sessions": 9.0
+      },
+      "status.aspose.com": {
+        "sessions": 246.0,
+        "organic_sessions": 72.0
+      },
+      "products-aspose-com.b-cdn.net": {
+        "sessions": 190.0,
+        "organic_sessions": 2.0
+      },
+      "aspose-free-consulting.github.io": {
+        "sessions": 142.0,
+        "organic_sessions": 3.0
+      },
+      "blog.admin.containerize.com": {
+        "sessions": 140.0,
+        "organic_sessions": 0.0
+      },
+      "consulting-qa.aspose.com": {
+        "sessions": 105.0,
+        "organic_sessions": 6.0
+      },
+      "api.products.aspose.app": {
+        "sessions": 101.0,
+        "organic_sessions": 17.0
+      },
+      "localhost": {
+        "sessions": 74.0,
+        "organic_sessions": 3.0
+      },
+      "docs2.aspose.com": {
+        "sessions": 61.0,
+        "organic_sessions": 0.0
+      },
+      "websites.aspose.ai": {
+        "sessions": 56.0,
+        "organic_sessions": 1.0
+      },
+      "products-qa.aspose.com": {
+        "sessions": 54.0,
+        "organic_sessions": 0.0
+      },
+      "products-aspose-app.translate.goog": {
+        "sessions": 49.0,
+        "organic_sessions": 47.0
+      },
+      "docs2.aspose.cloud": {
+        "sessions": 40.0,
+        "organic_sessions": 0.0
+      },
+      "asposeapp.github.io": {
+        "sessions": 33.0,
+        "organic_sessions": 21.0
+      },
+      "products-qa.aspose.cloud": {
+        "sessions": 27.0,
+        "organic_sessions": 1.0
+      },
+      "docs2.conholdate.com": {
+        "sessions": 26.0,
+        "organic_sessions": 0.0
+      },
+      "purchase.documentize.com": {
+        "sessions": 23.0,
+        "organic_sessions": 0.0
+      },
+      "127.0.0.1": {
+        "sessions": 21.0,
+        "organic_sessions": 0.0
+      },
+      "www.docs.groupdocs.cloud": {
+        "sessions": 17.0,
+        "organic_sessions": 0.0
+      },
+      "apireference.aspose.com": {
+        "sessions": 17.0,
+        "organic_sessions": 0.0
+      },
+      "benchmark.aspose.com": {
+        "sessions": 16.0,
+        "organic_sessions": 4.0
+      },
+      "pdf-landings.s3-website-qa.dynabic.com": {
+        "sessions": 15.0,
+        "organic_sessions": 0.0
+      },
+      "tutorials-aspose-com.s3-website.dynabic.com": {
+        "sessions": 13.0,
+        "organic_sessions": 0.0
+      },
+      "releases-testing.aspose.com": {
+        "sessions": 12.0,
+        "organic_sessions": 0.0
+      },
+      "www-aspose-com.translate.goog": {
+        "sessions": 12.0,
+        "organic_sessions": 9.0
+      },
+      "198.17.118.232": {
+        "sessions": 10.0,
+        "organic_sessions": 1.0
+      },
+      "downloads.aspose.com": {
+        "sessions": 9.0,
+        "organic_sessions": 0.0
+      },
+      "docs-aspose-com.translate.goog": {
+        "sessions": 8.0,
+        "organic_sessions": 8.0
+      },
+      "purchase.sheetize.com": {
+        "sessions": 8.0,
+        "organic_sessions": 0.0
+      },
+      "172.20.1.230": {
+        "sessions": 6.0,
+        "organic_sessions": 0.0
+      },
+      "forum-aspose-com.translate.goog": {
+        "sessions": 6.0,
+        "organic_sessions": 6.0
+      },
+      "about2-qa.aspose.com": {
+        "sessions": 5.0,
+        "organic_sessions": 0.0
+      },
+      "v-cache.com": {
+        "sessions": 4.0,
+        "organic_sessions": 0.0
+      },
+      "www.softwarelode.com": {
+        "sessions": 4.0,
+        "organic_sessions": 0.0
+      },
+      "releases-qa.aspose.com": {
+        "sessions": 4.0,
+        "organic_sessions": 3.0
+      },
+      "products-aspose-com.translate.goog": {
+        "sessions": 4.0,
+        "organic_sessions": 2.0
+      },
+      "aspose.com": {
+        "sessions": 3.0,
+        "organic_sessions": 0.0
+      },
+      "dubxx9nvs2sxm.cloudfront.net": {
+        "sessions": 3.0,
+        "organic_sessions": 0.0
+      },
+      "reference-aspose-com.translate.goog": {
+        "sessions": 3.0,
+        "organic_sessions": 3.0
+      },
+      "releases-aspose-com.translate.goog": {
+        "sessions": 3.0,
+        "organic_sessions": 0.0
+      },
+      "slides-qa-ui-app.new.qa.k8s.dynabic.com": {
+        "sessions": 3.0,
+        "organic_sessions": 0.0
+      },
+      "urlm.com.br": {
+        "sessions": 3.0,
+        "organic_sessions": 0.0
+      },
+      "actualdownload.com": {
+        "sessions": 3.0,
+        "organic_sessions": 0.0
+      },
+      "www-aspose-com.b-cdn.net": {
+        "sessions": 3.0,
+        "organic_sessions": 2.0
+      },
+      "blog-qa-aspose-com.b-cdn.net": {
+        "sessions": 2.0,
+        "organic_sessions": 2.0
+      },
+      "docs-aspose-com.b-cdn.net": {
+        "sessions": 2.0,
+        "organic_sessions": 2.0
+      },
+      "kb-aspose-com.b-cdn.net": {
+        "sessions": 2.0,
+        "organic_sessions": 2.0
+      },
+      "links.giveawayoftheday.com": {
+        "sessions": 2.0,
+        "organic_sessions": 0.0
+      },
+      "metrics-aspose-com.b-cdn.net": {
+        "sessions": 2.0,
+        "organic_sessions": 2.0
+      },
+      "purchase.tasqize.com": {
+        "sessions": 2.0,
+        "organic_sessions": 0.0
+      },
+      "tutorials-aspose-com.b-cdn.net": {
+        "sessions": 2.0,
+        "organic_sessions": 2.0
+      },
+      "www.getallsoft.com": {
+        "sessions": 2.0,
+        "organic_sessions": 0.0
+      },
+      "zap-products-aspose-com.s3-website.dynabic.com": {
+        "sessions": 2.0,
+        "organic_sessions": 0.0
+      },
+      "about-aspose-com.b-cdn.net": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      },
+      "blog-aspose-com.translate.goog": {
+        "sessions": 1.0,
+        "organic_sessions": 1.0
+      },
+      "docs-src.aspose.com": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      },
+      "products-aspose-com.s3-website.dynabic.com": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      },
+      "qa-benchmark.aspose.com": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      },
+      "repository.aspose.com": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      },
+      "sm-feature.oss-cn-hangzhou.aliyuncs.com": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      },
+      "www.googleadservices.com": {
+        "sessions": 1.0,
+        "organic_sessions": 0.0
+      }
+    },
+    "tenant_hosts_not_seen": [],
+    "excluded_hosts_seen": [
+      "kb-qa.aspose.com",
+      "products-qa.aspose.cloud",
+      "about2-qa.aspose.com",
+      "consulting-qa.aspose.com",
+      "blog-qa.aspose.com",
+      "products-qa.aspose.app",
+      "docs-qa.aspose.com",
+      "pdf-landings.s3-website-qa.dynabic.com",
+      "releases-qa.aspose.com",
+      "products-qa.aspose.com"
+    ]
+  }
+}

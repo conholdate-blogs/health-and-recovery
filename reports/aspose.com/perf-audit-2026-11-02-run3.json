@@ -1,0 +1,556 @@
+{
+  "tenant": "aspose.com",
+  "auditor": "perf-audit",
+  "run_id": 3,
+  "params": {
+    "hosts": [
+      "blog.aspose.com"
+    ],
+    "sections": null,
+    "per_template": 2,
+    "strategy": "mobile",
+    "max_pages": null
+  },
+  "requests": 16,
+  "duration_s": 233.2,
+  "pages_planned": 12,
+  "stopped_early": false,
+  "incomplete": false,
+  "origins": {
+    "blog.aspose.com": {
+      "id": "https://blog.aspose.com",
+      "metrics": {
+        "lcp": 2272,
+        "inp": 157,
+        "cls": 0.08,
+        "fcp": 2300,
+        "ttfb": 1731
+      }
+    }
+  },
+  "summary": {
+    "blog.aspose.com": {
+      "pages": 12,
+      "errors": 0,
+      "not_loaded": 0,
+      "field": 0,
+      "issues": {},
+      "median_score": 84
+    }
+  },
+  "findings": [],
+  "pages": [
+    {
+      "url": "https://blog.aspose.com/aspose.blog/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "category",
+      "group_urls": 161,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 59,
+      "lab": {
+        "lcp": 8973.125537058724,
+        "tbt": 538.5,
+        "cls": 0.07290400972053462,
+        "fcp": 814.0288430251676,
+        "si": 3646.480755535271
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          1650
+        ],
+        [
+          "Use efficient cache lifetimes",
+          450
+        ],
+        [
+          "Improve image delivery",
+          300
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/aspose.blog/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.com/convert-pdf-to-text-in-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "category",
+      "group_urls": 161,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 95,
+      "lab": {
+        "lcp": 1571.2865636658275,
+        "tbt": 142.5,
+        "cls": 0.07290400972053462,
+        "fcp": 1571.2865636658275,
+        "si": 3739.5210062310744
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1050
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/convert-pdf-to-text-in-python/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.com/fa/fa/zip/xz-compression-and-extraction-in-csharp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "generic:/{section}/*/*",
+      "group_urls": 106,
+      "clicks": 1.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 84,
+      "lab": {
+        "lcp": 1566.6440433397702,
+        "tbt": 495,
+        "cls": 0.01935357538814619,
+        "fcp": 1566.6440433397702,
+        "si": 4620.060369604143
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1000
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/fa/fa/zip/xz-compression-and-extraction-in-csharp/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.com/ja/email/net/msg-to-eml-via-csharp-and-powershell/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "generic:/{section}/*/*",
+      "group_urls": 106,
+      "clicks": 1.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 80,
+      "lab": {
+        "lcp": 1697.1869363226451,
+        "tbt": 437,
+        "cls": 0.1337509584155135,
+        "fcp": 1697.1869363226451,
+        "si": 4584.516795979138
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1050
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/ja/email/net/msg-to-eml-via-csharp-and-powershell/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.com/2023/05/09/create-mime-messages-in-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "generic:/{section}/*/*/*",
+      "group_urls": 44,
+      "clicks": 1.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 91,
+      "lab": {
+        "lcp": 1532.9128518860607,
+        "tbt": 314.5,
+        "cls": 0.07290400972053462,
+        "fcp": 1532.9128518860607,
+        "si": 3251.948078095996
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/2023/05/09/create-mime-messages-in-python/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "generic:/{section}/*/*/*",
+      "group_urls": 44,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 93,
+      "lab": {
+        "lcp": 1524.551012730942,
+        "tbt": 255,
+        "cls": 0.0568613304981774,
+        "fcp": 1524.551012730942,
+        "si": 3322.64029100694
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.com/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "home",
+      "group_urls": 22,
+      "clicks": 10.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 66,
+      "lab": {
+        "lcp": 5704.453724797955,
+        "tbt": 349.5,
+        "cls": 0.12976534021871203,
+        "fcp": 1522.5461970959095,
+        "si": 1724.1501011454984
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ],
+        [
+          "Reduce unused JavaScript",
+          600
+        ],
+        [
+          "Improve image delivery",
+          450
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.com/fr/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "home",
+      "group_urls": 22,
+      "clicks": 1.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 66,
+      "lab": {
+        "lcp": 8246.90693009775,
+        "tbt": 317,
+        "cls": 0.07290400972053462,
+        "fcp": 1530.0781136552146,
+        "si": 3270.760451236393
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          1350
+        ],
+        [
+          "Render-blocking requests",
+          750
+        ],
+        [
+          "Use efficient cache lifetimes",
+          450
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/fr/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.com/archives/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "listing",
+      "group_urls": 44,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 63,
+      "lab": {
+        "lcp": 3220.365076493608,
+        "tbt": 792.1349235063922,
+        "cls": 0.12976534021871203,
+        "fcp": 3220.365076493608,
+        "si": 3220.365076493608
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1000
+        ],
+        [
+          "Minimize main-thread work",
+          800
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/archives/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.com/search/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "listing",
+      "group_urls": 44,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 88,
+      "lab": {
+        "lcp": 1551.8940121673218,
+        "tbt": 462,
+        "cls": 0,
+        "fcp": 1551.8940121673218,
+        "si": 1551.8940121673218
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1050
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/search/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.com/id/gis/convert-kml-to-shp-online/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "post",
+      "group_urls": 57110,
+      "clicks": 845.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 78,
+      "lab": {
+        "lcp": 1559.3150435709008,
+        "tbt": 853.5,
+        "cls": 0.08210815277318517,
+        "fcp": 1559.3150435709008,
+        "si": 2594.288122253348
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1050
+        ],
+        [
+          "Reduce JavaScript execution time",
+          950
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/id/gis/convert-kml-to-shp-online/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.com/fa/zip/compress-files-online/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "template": "post",
+      "group_urls": 57110,
+      "clicks": 752.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.aspose.com",
+        "metrics": {
+          "lcp": 2272,
+          "inp": 157,
+          "cls": 0.08,
+          "fcp": 2300,
+          "ttfb": 1731
+        }
+      },
+      "lab_score": 87,
+      "lab": {
+        "lcp": 1523.2459718548475,
+        "tbt": 353,
+        "cls": 0.12117976877107248,
+        "fcp": 1523.2459718548475,
+        "si": 1696.511034004391
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.aspose.com/fa/zip/compress-files-online/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+ "windows": {
+  "current": [
+   "2026-10-04",
+   "2026-10-31"
+  ],
+  "previous": [
+   "2026-09-06",
+   "2026-10-03"
+  ],
+  "six_months_ago": [
+   "2026-04-05",
+   "2026-05-02"
+  ]
+ },
+ "hosts": {},
+ "host_totals": {
+  "blog.aspose.com": {
+   "source": "gsc",
+   "current": {
+    "clicks": 17866,
+    "impressions": 1041496,
+    "pages": 24025
+   },
+   "previous": {
+    "clicks": 19878,
+    "impressions": 1114001,
+    "pages": 24148
+   },
+   "six_months_ago": {
+    "clicks": 40789,
+    "impressions": 1663235,
+    "pages": 22398
+   }
+  }
+ }
+}
