@@ -87,12 +87,12 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
   <header>
     <div class="eyebrow">Site Health &amp; Recovery · Phase 1, audit only</div>
     <h1>Site Health Architecture</h1>
-    <p class="lede">How the audit runs today, per tenant (aspose.app, conholdate.cloud, aspose.cloud, groupdocs.cloud): seven read-only steps on the Mac collect sitemaps, page checks, AI crawler access, page speed, an LLM proofread of the page text, the internal links of every blog post and search traffic into one findings store per tenant, and every push to GitHub rebuilds the published reports. Dashed parts are planned and not built yet.</p>
+    <p class="lede">How the audit runs today, per tenant (aspose.app and the blogs of aspose.cloud, groupdocs.cloud, conholdate.cloud, aspose.com, groupdocs.com, conholdate.com): seven read-only steps on the Mac collect sitemaps, page checks, AI crawler access, page speed, an LLM proofread of the page text, the internal links of every blog post and search traffic into one findings store per tenant, and every push to GitHub rebuilds the published reports. Dashed parts are planned and not built yet.</p>
   </header>
 
   <figure>
     <div class="scroll">
-      <svg viewBox="0 0 1292 750" role="img" aria-label="Data flow: live sites, PageSpeed Insights, an internal LLM, the blogs' source repos, Search Console and GA4 feed seven steps on the Mac (discover, crawl audit, AI audit, speed audit, text check, link check, prioritize); their findings go into one findings store, which is exported to the reports folder in git; a push to GitHub triggers GitHub Actions to rebuild and publish the site health reports on GitHub Pages. Planned auditors and Phase 2 fixer servers are drawn dashed.">
+      <svg viewBox="0 0 1292 750" role="img" aria-label="Data flow: live sites, PageSpeed Insights, an internal LLM, the blogs' source repos, Search Console and GA4 feed seven steps on the Mac (discover, crawl audit, AI audit, speed audit, text check, link and repo file checks, prioritize); their findings go into one findings store, which is exported to the reports folder in git; a push to GitHub triggers GitHub Actions to rebuild and publish the site health reports on GitHub Pages. Planned auditors and Phase 2 fixer servers are drawn dashed.">
         <defs>
           <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head"/></marker>
           <marker id="ahk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head key"/></marker>
@@ -108,7 +108,7 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
         <!-- sources -->
         <rect class="d-box" x="16" y="56" width="176" height="72" rx="6"/>
         <text class="d-t" x="28" y="79">Tenant hosts</text>
-        <text class="d-s" x="28" y="98">14 live hosts</text>
+        <text class="d-s" x="28" y="98">17 live hosts</text>
         <text class="d-s" x="28" y="115">GET only, 1 req/s</text>
 
         <rect class="d-box" x="16" y="160" width="176" height="56" rx="6"/>
@@ -166,8 +166,8 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
         <text class="d-s" x="328" y="399">typos, wrong product</text>
 
         <rect class="d-box" x="316" y="412" width="216" height="44" rx="6"/>
-        <text class="d-t" x="328" y="432">6  audit_links.py</text>
-        <text class="d-s" x="328" y="449">blog links, translations</text>
+        <text class="d-t" x="328" y="432">6  audit_links, audit_repo</text>
+        <text class="d-s" x="328" y="449">links, redirects, post files</text>
 
         <rect class="d-box" x="316" y="462" width="216" height="44" rx="6"/>
         <text class="d-t" x="328" y="482">7  prioritize.py</text>
@@ -200,7 +200,7 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
         <text class="d-s" x="658" y="592">ai-audit-runN.json</text>
         <text class="d-s" x="658" y="608">perf-audit-runN.json</text>
         <text class="d-s" x="658" y="624">text-audit-runN.json</text>
-        <text class="d-s" x="658" y="640">link-audit-runN.json, .csv</text>
+        <text class="d-s" x="658" y="640">link-, repo-audit-runN.json, .csv</text>
         <text class="d-s" x="658" y="656">findings.json</text>
         <text class="d-s" x="658" y="672">traffic-summary.json</text>
         <text class="d-s" x="658" y="688">archive/, health history</text>
@@ -305,7 +305,7 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
         <text class="d-lab" x="920" y="302" text-anchor="middle">approved fixes</text>
       </svg>
     </div>
-    <figcaption>Everything left of the findings store runs on the Mac with read-only access: sites are fetched with GET only (PageSpeed Insights loads each sampled page once from Google's servers), and Google data comes through read-only scopes. The internal LLM receives only the public title, H1 and meta description of pages the crawl audit already fetched. The link check reads the blogs' source repos from local clones and never pulls or writes to them; it records the commit id, date and message of each issue, never the author. The findings store is the single place every step reports to. Its export, with the run files, is committed to <code>reports/&lt;tenant&gt;/</code>, which is all the GitHub build needs. Writing to any site happens only in Phase 2, through separate fixer servers.</figcaption>
+    <figcaption>Everything left of the findings store runs on the Mac with read-only access: sites are fetched with GET only (PageSpeed Insights loads each sampled page once from Google's servers), and Google data comes through read-only scopes. The internal LLM receives only the public title, H1 and meta description of pages the crawl audit already fetched. The link check reads the blogs' source repos from local clones and never pulls or writes to them; it records the commit id, date and message of each issue, never the author. The repo file check reads the same clones. The findings store is the single place every step reports to. Its export, with the run files, is committed to <code>reports/&lt;tenant&gt;/</code>, which is all the GitHub build needs. Writing to any site happens only in Phase 2, through separate fixer servers; the one exception so far is a single fix SK approved by hand on 2026-11-03 (blog.aspose.com's <code>Redirects.json</code>).</figcaption>
     <div class="legend">
       <span><i class="sw"></i>Step or service</span>
       <span><i class="sw store"></i>Data or config</span>
@@ -326,6 +326,7 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
           <tr><td class="step">4</td><td><code>python scripts/audit_perf.py</code></td><td>PageSpeed Insights for the 2 most-visited pages of each crawl-audit template (mobile): Core Web Vitals from real Chrome users (28 days, 75th percentile) and a Lighthouse lab run</td><td>speed findings (real-user LCP, INP, CLS, TTFB; pages that do not load or paint nothing; whole-host Core Web Vitals), <code>reports/&lt;tenant&gt;/perf-audit-runN.json</code></td><td>40 min</td></tr>
           <tr><td class="step">5</td><td><code>python scripts/audit_text.py</code></td><td>title, H1 and meta description of every crawl-audit page (no requests to the sites), proofread by the internal LLM in each page's language; answers cached per page text</td><td>wording findings (typos; placeholder or garbled words; a title about a different product), each quoting the page, <code>reports/&lt;tenant&gt;/text-audit-runN.json</code></td><td>5 min</td></tr>
           <tr><td class="step">6</td><td><code>python scripts/audit_links.py</code></td><td>blogs with a local source repo only: every internal link in every post (outside code), checked against the discovery inventory, else fetched once from the live site; translation sets from the sitemaps; <code>git blame</code> for the commit of each issue</td><td>link and translation findings (link to a translation that does not exist, damaged or broken link, link in the wrong language, partial translation set, unsupported language), <code>reports/&lt;tenant&gt;/link-audit-runN.json</code> and the full fix list <code>link-audit-…-issues.csv</code></td><td>20 min</td></tr>
+          <tr><td class="step">6</td><td><code>python scripts/audit_repo.py</code></td><td>blogs with a local source repo only: <code>Redirects.json</code> and every post file; a fixed sample of 40 redirects fetched from the live site</td><td>invalid <code>Redirects.json</code> and the commit that broke it, malformed redirect sources, self-redirects, bad targets, broken front matter, post urls without a leading slash (items in the fix ledger), redirects not working live (finding level), <code>reports/&lt;tenant&gt;/repo-audit-runN.json</code> and <code>repo-audit-…-issues.csv</code></td><td>5 min</td></tr>
           <tr><td class="step">7</td><td><code>python scripts/prioritize.py</code></td><td>Search Console page clicks (now, previous 28 days, six months ago), GA4 organic sessions for hosts without Search Console</td><td>impact, traffic lost since six months ago and score on every finding, <code>reports/&lt;tenant&gt;/findings.json</code>, <code>reports/&lt;tenant&gt;/traffic-summary.json</code></td><td>1 min</td></tr>
           <tr><td class="step">8</td><td><code>python scripts/build_report.py --snapshot "…"</code></td><td>the run files, findings and traffic summary</td><td>the local report, a frozen copy in <code>reports/&lt;tenant&gt;/archive/</code>, family health in <code>reports/&lt;tenant&gt;/health-history.json</code></td><td>seconds</td></tr>
           <tr><td class="step">9</td><td><code>git push github master</code></td><td>the committed <code>reports/&lt;tenant&gt;/</code> files</td><td>GitHub Actions runs <code>build_site.py</code>: a landing page; per tenant the report (summary, family and host health, priorities, shared problems, findings, changes) at <code>/&lt;tenant&gt;/</code> with its archive; one page per host at <code>/&lt;host&gt;/</code>; one shared fix guide at <code>/fix-guide/</code> (all noindex)</td><td>1 min</td></tr>
@@ -347,8 +348,8 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
   <section>
     <h2>Code layout</h2>
     <div class="layout">
-      <div class="dir">core/</div><div>Deterministic logic: discovery, page audit, AI-readiness audit, speed audit (PageSpeed Insights), text check (LLM client), link check (blog source repos), findings store, prioritizer, family scorecards, fix guide, report views (confidence, shared problems, top risks, changes), Google clients</div><div><span class="tag built">built</span></div>
-      <div class="dir">scripts/</div><div>The commands (each takes <code>--tenant</code>): discover, audit_crawl, audit_ai, audit_perf, audit_text, audit_links, prioritize, build_report, build_archive, build_site, findings, check_access</div><div><span class="tag built">built</span></div>
+      <div class="dir">core/</div><div>Deterministic logic: discovery, page audit, AI-readiness audit, speed audit (PageSpeed Insights), text check (LLM client), link check and repo file check (blog source repos), findings store, prioritizer, family scorecards, fix guide, report views (confidence, shared problems, top risks, changes), Google clients</div><div><span class="tag built">built</span></div>
+      <div class="dir">scripts/</div><div>The commands (each takes <code>--tenant</code>): discover, audit_crawl, audit_ai, audit_perf, audit_text, audit_links, audit_repo, track_items, run_cycle, prioritize, build_report, build_archive, build_site, findings, check_access</div><div><span class="tag built">built</span></div>
       <div class="dir">mcp_servers/</div><div><code>gsc</code> is built; <code>crawl</code>, <code>findings</code>, <code>ga4</code>, <code>pagespeed</code> are next; fixers in Phase 2</div><div><span class="tag part">partly</span></div>
       <div class="dir">agents/</div><div>LangGraph agents that call the MCP servers: diagnosis, content checks, reporting</div><div><span class="tag planned">planned</span></div>
       <div class="dir">tenants/</div><div>One YAML per property, plus its manual findings</div><div><span class="tag built">built</span></div>

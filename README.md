@@ -54,7 +54,8 @@ python scripts/audit_ai.py                                                 # AI 
 python scripts/audit_perf.py --plan                                        # speed audit: list the pages it would measure
 python scripts/audit_perf.py                                               # speed audit via PageSpeed Insights (~40 min)
 python scripts/audit_text.py                                               # text check: LLM proofreads titles, H1s, descriptions (~5 min)
-python scripts/audit_links.py                                              # link check: every internal link of every post, from the blog's local repo (~20 min)
+python scripts/audit_links.py                                              # link check: every internal link of every post, from the blog's local repo (10 min to 8 h)
+python scripts/audit_repo.py                                               # repo file check: Redirects.json, front matter, post urls, a live sample of redirects (<= 5 min)
 python scripts/prioritize.py                                               # Search Console traffic + score per finding
 python scripts/build_report.py --out reports/aspose.app/discovery-latest.html --snapshot "After <run>"   # report + archive snapshot
 python scripts/build_site.py --out site                                    # the Pages site: landing, tenant + host pages, fix guide
@@ -66,7 +67,9 @@ Findings from every run, plus the manual ones in `tenants/<tenant>.seed-findings
 
 The text check needs the internal LLM settings in `.env` (`PROFESSIONALIZE_*`, see `.env.example`; install with `pip install -e ".[llm]"`). It reads the crawl audit's pages, fetches nothing, caches answers per page text in `data/<tenant>/`, and drops reviewed false positives listed under `audit.text.ignore` in the tenant YAML.
 
-The link check (`scripts/audit_links.py`) needs a host's source repo as `local_path` in the tenant YAML and a discovery run. It reads every post's Markdown from the local clone (read-only; pull it first) and checks each internal link on the live site: a target the sitemaps list exists, anything else is fetched once (200 = exists, 404/410 = missing). It reports links into translations that do not exist, damaged links, links to another language although a translation exists, broken links, posts missing some of the tenant's `translation_languages`, and unsupported languages in the sitemaps; `git blame` adds the commit (id, date, message; never the author). The full fix list is written to `reports/<tenant>/link-audit-<date>-run<id>-issues.csv`.
+The link check (`scripts/audit_links.py`) needs a host's source repo as `local_path` in the tenant YAML and a discovery run. It reads every post's Markdown from the local clone (read-only; pull it first) and checks each internal link on the live site: a target the sitemaps list exists, anything else is fetched once (200 = exists, 404/410 = missing). It reports links into translations that do not exist, damaged links, links to another language although a translation exists, broken links, posts missing some of the tenant's `translation_languages`, and unsupported languages in the sitemaps; `git blame` adds the commit (id, date, message; never the author). The full fix list is written to `reports/<tenant>/link-audit-<date>-run<id>-issues.csv`. A tenant can raise the 5,000 live-check cap with `audit.links.max_live`; targets over the cap are not reported, so check `not_checked` in the run file.
+
+The repo file check (`scripts/audit_repo.py`) reads the same clone: an invalid `Redirects.json` and the commit that broke it, redirect sources that cannot match a request, self-redirects, bad targets, post files with broken front matter and post urls without a leading slash. Each is an item in the fix ledger. It also tests a fixed sample of 40 redirects live, reported at finding level only. Results go to `reports/<tenant>/repo-audit-<date>-run<id>.json` and `-issues.csv`.
 
 ## MCP servers
 
