@@ -92,6 +92,9 @@ def test_fix_guide_page(tmp_path, monkeypatch):
               "_guide": {"areas": [], "rows": {"title_missing": {}, "h1_missing": {}}}}
     html = build(report, [], None, guide_url="../fix-guide/")
     assert '"_guide_url": "../fix-guide/"' in html and "h1_missing" not in html  # only rows the report uses
+    # a counted check keeps its row (name, severity in Fix progress) after its finding is resolved
+    report["_hosts"] = [{"items": {"by_check": {"h1_missing": {}}}}]
+    assert "h1_missing" in build(report, [], None, guide_url="../fix-guide/")
 
 
 def test_method_page(tmp_path):

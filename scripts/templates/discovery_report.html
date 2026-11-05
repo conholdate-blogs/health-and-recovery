@@ -59,7 +59,7 @@ section { display: grid; gap: 16px; min-width: 0 }
 select { font: 14px var(--body); padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--fg) }
 select:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
 .count { font-size: 13px; color: var(--muted); margin-left: auto }
-.findings { display: grid; gap: 8px; --fcols: 3.2em minmax(0, 1fr) 7.5em 5.5em 5em 3.5em 6.5em 1em }
+.findings { display: grid; gap: 8px; --fcols: 48px minmax(0, 1fr) 112px 82px 75px 52px 98px 15px }  /* px: em would resolve differently in the smaller header row */
 /* one row per finding, same columns as the header row; the row opens into its evidence */
 .fhead { display: grid; grid-template-columns: var(--fcols); gap: 4px 12px; padding: 0 15px 0 19px; font: 600 12px var(--body); letter-spacing: .04em; text-transform: uppercase; color: var(--muted) }
 .fhead .n { text-align: right }
@@ -989,7 +989,7 @@ __METHOD__
             <span class="fsev">${esc(LABEL[f.type])}</span>
             <span class="fnum" data-l="Pages">${pagesText(f)}</span>
             <span class="fnum" data-l="Clicks">${f.impact && f.impact.source ? fmt(f.impact.clicks_28d || 0) : "–"}</span>
-            <span class="fnum" data-l="Effort" title="${esc(EFFORT_TEXT[f.effort || "S"] || "")}">${esc(f.effort || "S")}</span>
+            <span class="fnum" style="text-align:left" data-l="Effort" title="${esc(EFFORT_TEXT[f.effort || "S"] || "")}">${esc(f.effort || "S")}</span>
             <span class="ffix">${fixLink(f)}</span>
           </span>
           <span class="chev" aria-hidden="true">▸</span>
@@ -1342,9 +1342,10 @@ __METHOD__
       ].join("");
       $("kpis").hidden = false;
       if (H.items) {  // per check: where the Open issues tile comes from
-        const I = H.items, row = (name, c, b) => `<tr><td>${b ? "<b>" + name + "</b>" : name}</td><td class="n">${fmt(c.issues)}</td><td class="n">${fmt(c.fixed)}</td><td class="n">${fmt(c.open)}</td><td class="n">${c.fixed_pct == null ? "–" : c.fixed_pct + "%"}</td></tr>`;
+        const I = H.items, sevCell = k => { const s = GUIDE[k] && GUIDE[k].severity; return s ? `<td class="sev-${esc(s)}" style="color:var(--sev);font-weight:600">${esc(LABEL[s] || s)}</td>` : "<td></td>"; };
+        const row = (name, c, b, k) => `<tr><td>${b ? "<b>" + name + "</b>" : name}</td>${sevCell(k)}<td class="n">${fmt(c.issues)}</td><td class="n">${fmt(c.fixed)}</td><td class="n">${fmt(c.open)}</td><td class="n">${c.fixed_pct == null ? "–" : c.fixed_pct + "%"}</td></tr>`;
         progress.push(`<p class="lede fold">Counted one by one since the first scan (${esc(day(I.since))}), last scanned ${esc(day(I.scanned))}.<span class="rest"> One item = one link, one missing language of a post, or one URL or file of a sitemap problem. Issues = fixed + open.${I.removed ? ` ${fmt(I.removed)} items are gone because their post was deleted (not counted as fixed).` : ""}</span></p>
-          <div class="tablewrap" id="fixes"><table><thead><tr><th>Check</th><th class="n">Issues</th><th class="n">Fixed</th><th class="n">Open</th><th class="n">Fixed %</th></tr></thead><tbody>${Object.entries(I.by_check).map(([k, c]) => row(termify(esc(GUIDE[k] ? GUIDE[k].name : k)), c)).join("")}${row("All", I, true)}</tbody></table></div>`);
+          <div class="tablewrap" id="fixes"><table><thead><tr><th>Check</th><th>Severity</th><th class="n">Issues</th><th class="n">Fixed</th><th class="n">Open</th><th class="n">Fixed %</th></tr></thead><tbody>${Object.entries(I.by_check).map(([k, c]) => row(termify(esc(GUIDE[k] ? GUIDE[k].name : k)), c, false, k)).join("")}${row("All", I, true)}</tbody></table></div>`);
       }
     } else {  // domain page: one full-width row per subdomain, columns aligned for comparison
       const published = SITE_HOSTS.length > 0;

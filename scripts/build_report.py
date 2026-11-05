@@ -84,8 +84,9 @@ def build(report: dict, notes: list[str], run_date: str | None, standalone: bool
     (published at the site root next to the tenant reports)."""
     data = dict(report, _notes=notes, _run_date=run_date, _guide_url=guide_url, _tenants=site_tenants or [],
                 _site_hosts=site_hosts or [], _method_url=method_url, _collections=collections or [])
-    if guide_url and report.get("_guide"):  # only the rows this report's findings link to
+    if guide_url and report.get("_guide"):  # only the rows this report's findings and Fix progress table use
         used = {f.get("_guide") for f in report["findings"]}
+        used |= {k for h in report.get("_hosts") or [] for k in (h.get("items") or {}).get("by_check", {})}
         data["_guide"] = dict(report["_guide"], rows={k: v for k, v in report["_guide"]["rows"].items() if k in used})
     payload = json.dumps(data, default=str).replace("</", "<\\/")
     template = TEMPLATE.read_text(encoding="utf-8")
