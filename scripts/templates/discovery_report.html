@@ -1343,9 +1343,10 @@ __METHOD__
       $("kpis").hidden = false;
       if (H.items) {  // per check: where the Open issues tile comes from
         const I = H.items, sevCell = k => { const s = GUIDE[k] && GUIDE[k].severity; return s ? `<td class="sev-${esc(s)}" style="color:var(--sev);font-weight:600">${esc(LABEL[s] || s)}</td>` : "<td></td>"; };
+        const sevRank = k => { const i = ORDER.indexOf(GUIDE[k] && GUIDE[k].severity); return i < 0 ? ORDER.length : i; };  // severity first, then most open
         const row = (name, c, b, k) => `<tr><td>${b ? "<b>" + name + "</b>" : name}</td>${sevCell(k)}<td class="n">${fmt(c.issues)}</td><td class="n">${fmt(c.fixed)}</td><td class="n">${fmt(c.open)}</td><td class="n">${c.fixed_pct == null ? "–" : c.fixed_pct + "%"}</td></tr>`;
         progress.push(`<p class="lede fold">Counted one by one since the first scan (${esc(day(I.since))}), last scanned ${esc(day(I.scanned))}.<span class="rest"> One item = one link, one missing language of a post, or one URL or file of a sitemap problem. Issues = fixed + open.${I.removed ? ` ${fmt(I.removed)} items are gone because their post was deleted (not counted as fixed).` : ""}</span></p>
-          <div class="tablewrap" id="fixes"><table><thead><tr><th>Check</th><th>Severity</th><th class="n">Issues</th><th class="n">Fixed</th><th class="n">Open</th><th class="n">Fixed %</th></tr></thead><tbody>${Object.entries(I.by_check).map(([k, c]) => row(termify(esc(GUIDE[k] ? GUIDE[k].name : k)), c, false, k)).join("")}${row("All", I, true)}</tbody></table></div>`);
+          <div class="tablewrap" id="fixes"><table><thead><tr><th>Check</th><th>Severity</th><th class="n">Issues</th><th class="n">Fixed</th><th class="n">Open</th><th class="n">Fixed %</th></tr></thead><tbody>${Object.entries(I.by_check).sort(([a, x], [b, y]) => sevRank(a) - sevRank(b) || y.open - x.open).map(([k, c]) => row(termify(esc(GUIDE[k] ? GUIDE[k].name : k)), c, false, k)).join("")}${row("All", I, true)}</tbody></table></div>`);
       }
     } else {  // domain page: one full-width row per subdomain, columns aligned for comparison
       const published = SITE_HOSTS.length > 0;
