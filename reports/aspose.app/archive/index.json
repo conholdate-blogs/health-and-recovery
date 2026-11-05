@@ -142,5 +142,17 @@
     "date": "2026-10-31 (5)",
     "label": "Contents bar in page order, shared pages on the right",
     "runs": "discovery run 9, crawl audit run 28, speed audit run 26, AI audit run 25, text check run 27"
+  },
+  {
+    "file": "2026-11-05.html",
+    "date": "2026-11-05",
+    "label": "Before Fix progress severity and header alignment (downloaded from Pages)",
+    "runs": "see the page"
+  },
+  {
+    "file": "2026-11-05-2.html",
+    "date": "2026-11-05 (2)",
+    "label": "Fix progress with severity, issues list header aligned",
+    "runs": "discovery run 9, crawl audit run 28, speed audit run 26, AI audit run 25, text check run 27"
   }
 ]
