@@ -40,22 +40,22 @@
     "affected_pages": 11,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 17,
+      "impressions_28d": 16,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 261,
+      "past_impressions": 374,
       "lost_clicks": 0,
-      "lost_impressions": 244,
+      "lost_impressions": 358,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "lost",
-      "score": 3,
+      "score": 4,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "M",
@@ -66,7 +66,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run3",
-    "last_seen_run": "crawl-audit-run3",
+    "last_seen_run": "crawl-audit-run13",
     "resolved_run": null,
     "resolved_at": null,
     "check": "content_needs_js",
@@ -98,23 +98,23 @@
     },
     "affected_pages": 0,
     "impact": {
-      "clicks_28d": 601,
-      "impressions_28d": 58085,
+      "clicks_28d": 659,
+      "impressions_28d": 58659,
       "source": "gsc-host",
       "share": 1.0,
-      "past_clicks": 1280,
-      "past_impressions": 79080,
-      "lost_clicks": 679,
-      "lost_impressions": 20995,
+      "past_clicks": 1396,
+      "past_impressions": 80083,
+      "lost_clicks": 737,
+      "lost_impressions": 21424,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 12,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -125,7 +125,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "ai-audit-run4",
-    "last_seen_run": "ai-audit-run4",
+    "last_seen_run": "ai-audit-run14",
     "resolved_run": null,
     "resolved_at": null,
     "check": "llms_txt_missing",
@@ -187,22 +187,22 @@
     "affected_pages": 132,
     "impact": {
       "clicks_28d": 6,
-      "impressions_28d": 570,
+      "impressions_28d": 572,
       "source": "gsc-host",
       "share": 0.01,
-      "past_clicks": 13,
-      "past_impressions": 776,
-      "lost_clicks": 7,
-      "lost_impressions": 206,
+      "past_clicks": 14,
+      "past_impressions": 780,
+      "lost_clicks": 8,
+      "lost_impressions": 208,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 9,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -213,7 +213,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "discovery-run1",
-    "last_seen_run": "discovery-run3",
+    "last_seen_run": "discovery-run4",
     "resolved_run": null,
     "resolved_at": null,
     "check": "dup_in_file",
@@ -260,14 +260,14 @@
       "lost_clicks": 0,
       "lost_impressions": 3,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -278,7 +278,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "discovery-run1",
-    "last_seen_run": "discovery-run3",
+    "last_seen_run": "discovery-run4",
     "resolved_run": null,
     "resolved_at": null,
     "check": "lastmod_missing",
@@ -312,14 +312,14 @@
       "lost_clicks": 0,
       "lost_impressions": 2,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -330,7 +330,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "discovery-run1",
-    "last_seen_run": "discovery-run3",
+    "last_seen_run": "discovery-run4",
     "resolved_run": null,
     "resolved_at": null,
     "check": "cross_sitemap_dups",
@@ -788,22 +788,22 @@
     "affected_pages": 71,
     "impact": {
       "clicks_28d": 4,
-      "impressions_28d": 357,
+      "impressions_28d": 346,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 8,
-      "past_impressions": 1316,
-      "lost_clicks": 4,
-      "lost_impressions": 959,
+      "past_clicks": 11,
+      "past_impressions": 1319,
+      "lost_clicks": 7,
+      "lost_impressions": 973,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
-      "scored_on": "at stake",
-      "score": 12,
+      "scored_on": "lost",
+      "score": 13,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "M",
@@ -814,7 +814,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run11",
+    "last_seen_run": "link-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -889,14 +889,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -907,7 +907,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run12",
-    "last_seen_run": "repo-audit-run12",
+    "last_seen_run": "repo-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_self_loop",
@@ -1032,14 +1032,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -1050,7 +1050,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run12",
-    "last_seen_run": "repo-audit-run12",
+    "last_seen_run": "repo-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",
@@ -1087,22 +1087,22 @@
     "affected_pages": 1,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 13,
+      "impressions_28d": 14,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 87,
+      "past_impressions": 95,
       "lost_clicks": 0,
-      "lost_impressions": 74,
+      "lost_impressions": 81,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "lost",
       "score": 3,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -1113,7 +1113,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run12",
-    "last_seen_run": "repo-audit-run12",
+    "last_seen_run": "repo-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_broken",
@@ -1141,6 +1141,10 @@
           "url": "https://blog.aspose.cloud/2016/06/01/aspose.email-の紹介とその他のニュース-2016年-6月/",
           "note": "404, no redirect"
         }
+      ],
+      "live_sample": [
+        1,
+        40
       ]
     },
     "affected_pages": 29,
@@ -1154,16 +1158,16 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "rule",
       "traffic_score": 0,
       "rule": "broken redirects: fixed high score by rule",
       "score": 60,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "M",
@@ -1174,10 +1178,627 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run12",
-    "last_seen_run": "repo-audit-run12",
+    "last_seen_run": "repo-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_not_working",
+    "notes": []
+  },
+  {
+    "id": "crawl-0009",
+    "key": "crawl/link_redirected/blog.aspose.cloud/post",
+    "source": "link-audit",
+    "tenant": "aspose.cloud",
+    "subdomain": "blog.aspose.cloud",
+    "template": "post",
+    "dimension": "crawl",
+    "type": "improvable",
+    "title": "Posts link to old URLs that redirect",
+    "evidence": {
+      "urls": [
+        "https://blog.aspose.cloud/ar/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/ar/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/ar/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/ar/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/ar/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/ar/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/ar/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/ar/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/da/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/da/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/da/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/da/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/da/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/da/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/da/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/da/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/da/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/de/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/de/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/de/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/de/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/de/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/de/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/de/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/de/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/de/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/el/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/el/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/el/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/el/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/el/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/el/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/el/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/el/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/el/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/email/email-sending-using-aspose.email-cloud-in-heroku-ruby-on-rails/",
+        "https://blog.aspose.cloud/es/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/es/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/es/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/es/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/es/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/es/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/es/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/es/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/es/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/fa/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/fa/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/fa/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/fa/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/fa/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/fa/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/fa/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/fa/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/fa/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/fr/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/fr/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/fr/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/fr/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/fr/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/fr/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/fr/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/fr/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/fr/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/he/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/he/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/he/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/he/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/he/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/he/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/he/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/he/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/he/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/html/get-html-fragments-and-html-page-images-with-aspose.html-cloud-18.7/",
+        "https://blog.aspose.cloud/hu/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/hu/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/hu/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/hu/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/hu/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/hu/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/hu/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/hu/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/hu/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/imaging/convert-jpg-to-tiff-in-java/",
+        "https://blog.aspose.cloud/imaging/convert-tiff-to-jpg-in-java/",
+        "https://blog.aspose.cloud/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/it/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/it/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/it/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/it/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/it/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/it/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/it/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/it/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/it/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/ja/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/ja/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/ja/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/ja/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/ja/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/ja/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/ja/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/ja/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/ja/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/ka/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/ka/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/ka/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/ka/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/ka/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/ka/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/ka/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/ka/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/ka/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/ko/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/ko/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/ko/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/ko/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/ko/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/ko/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/ko/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/ko/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/ko/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/pt/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/pt/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/pt/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/pt/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/pt/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/pt/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/pt/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/pt/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/pt/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/ru/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/ru/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/ru/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/ru/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/ru/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/ru/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/ru/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/ru/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/ru/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/th/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/th/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/th/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/th/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/th/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/th/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/th/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/th/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/th/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/tr/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/tr/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/tr/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/tr/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/tr/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/tr/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/tr/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/tr/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/tr/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/uk/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/uk/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/uk/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/uk/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/uk/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/uk/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/uk/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/uk/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/uk/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/vi/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/vi/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/vi/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/vi/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/vi/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/vi/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/vi/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/vi/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/vi/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/words/convert-epub-to-jpg-with-dotnet-rest-api/",
+        "https://blog.aspose.cloud/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/words/merge-word-documents-with-dotnet-rest-api/",
+        "https://blog.aspose.cloud/words/perform-mail-merge-in-a-word-document/",
+        "https://blog.aspose.cloud/words/word-to-jpg-in-csharp/",
+        "https://blog.aspose.cloud/zh-tw/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/zh-tw/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/zh-tw/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/zh-tw/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/zh-tw/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/zh-tw/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/zh-tw/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/zh-tw/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/zh-tw/words/jpg-to-word-in-java/",
+        "https://blog.aspose.cloud/zh/imaging/convert-jpg-to-png-in-java/",
+        "https://blog.aspose.cloud/zh/imaging/find-duplicate-images-using-java/",
+        "https://blog.aspose.cloud/zh/imaging/resize-image-in-java/",
+        "https://blog.aspose.cloud/zh/pdf/extract-pdf-images-in-java/",
+        "https://blog.aspose.cloud/zh/pdf/pdf-to-txt-in-java/",
+        "https://blog.aspose.cloud/zh/slides/extract-ppt-images-in-java/",
+        "https://blog.aspose.cloud/zh/slides/get-powerpoint-themes-in-java/",
+        "https://blog.aspose.cloud/zh/slides/merge-powerpoint-in-java/",
+        "https://blog.aspose.cloud/zh/words/jpg-to-word-in-java/"
+      ],
+      "observed": "270 links on 204 pages (5 distinct targets); by language: en 19, da 12, de 12, el 12, es 12, fa 12, fr 12, he 12, ...; 0 written by translation commits",
+      "expected": "Every internal link points at the page's current URL, not one that redirects",
+      "locations": [
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/ar/imaging/find-duplicate-images-using-java/",
+          "file": "content/Aspose.Cloud/imaging/2022-10-18-duplicate-image-detection-in-java/index.ar.md",
+          "line": 222,
+          "fix": "https://blog.aspose.cloud/ar/html/convert-html-to-markdown-in-java/",
+          "commit": "613f7d47 2022-11-18: Translation files added for merge PowerPoint in java, Extract PowerPoint Images in Java, Get Slide theme color details, Duplicate Image detection in Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/ar/imaging/resize-image-in-java/",
+          "file": "content/Aspose.Cloud/imaging/2022-10-25-resize-image-in-java/index.ar.md",
+          "line": 113,
+          "fix": "https://blog.aspose.cloud/ar/html/convert-html-to-markdown-in-java/",
+          "commit": "ab176b7b 2022-11-18: translation files added for JPG to PNG conversion & Resize Image in java blogs"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/21/convert-html-to-doc-using-java/",
+          "page": "https://blog.aspose.cloud/ar/pdf/extract-pdf-images-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-05-extract-images-from-pdf-in-java/index.ar.md",
+          "line": 133,
+          "fix": "https://blog.aspose.cloud/ar/words/convert-html-to-doc-using-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/ar/pdf/extract-pdf-images-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-05-extract-images-from-pdf-in-java/index.ar.md",
+          "line": 134,
+          "fix": "https://blog.aspose.cloud/ar/html/convert-html-to-markdown-in-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/ar/pdf/pdf-to-txt-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-04-extract-text-from-pdf-in-java/index.ar.md",
+          "line": 143,
+          "fix": "https://blog.aspose.cloud/ar/html/convert-html-to-markdown-in-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/21/convert-html-to-doc-using-java/",
+          "page": "https://blog.aspose.cloud/ar/pdf/pdf-to-txt-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-04-extract-text-from-pdf-in-java/index.ar.md",
+          "line": 145,
+          "fix": "https://blog.aspose.cloud/ar/words/convert-html-to-doc-using-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/ar/slides/extract-ppt-images-in-java/",
+          "file": "content/Aspose.Cloud/slides/2022-10-13-extract-ppt-images-in-java/index.ar.md",
+          "line": 120,
+          "fix": "https://blog.aspose.cloud/ar/html/convert-html-to-markdown-in-java/",
+          "commit": "613f7d47 2022-11-18: Translation files added for merge PowerPoint in java, Extract PowerPoint Images in Java, Get Slide theme color details, Duplicate Image detection in Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/ar/slides/get-powerpoint-themes-in-java/",
+          "file": "content/Aspose.Cloud/slides/2022-10-13-get-slide-theme-font-color-in-java/index.ar.md",
+          "line": 204,
+          "fix": "https://blog.aspose.cloud/ar/html/convert-html-to-markdown-in-java/",
+          "commit": "613f7d47 2022-11-18: Translation files added for merge PowerPoint in java, Extract PowerPoint Images in Java, Get Slide theme color details, Duplicate Image detection in Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/ar/slides/merge-powerpoint-in-java/",
+          "file": "content/Aspose.Cloud/slides/2022-10-11-merge-powerpoint-in-java/index.ar.md",
+          "line": 157,
+          "fix": "https://blog.aspose.cloud/ar/html/convert-html-to-markdown-in-java/",
+          "commit": "613f7d47 2022-11-18: Translation files added for merge PowerPoint in java, Extract PowerPoint Images in Java, Get Slide theme color details, Duplicate Image detection in Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/ar/words/jpg-to-word-in-java/",
+          "file": "content/Aspose.Cloud/words/2022-10-06-jpg-to-word-in-java/index.ar.md",
+          "line": 154,
+          "fix": "https://blog.aspose.cloud/ar/html/convert-html-to-markdown-in-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/21/convert-html-to-doc-using-java/",
+          "page": "https://blog.aspose.cloud/ar/words/jpg-to-word-in-java/",
+          "file": "content/Aspose.Cloud/words/2022-10-06-jpg-to-word-in-java/index.ar.md",
+          "line": 155,
+          "fix": "https://blog.aspose.cloud/ar/words/convert-html-to-doc-using-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/da/imaging/convert-jpg-to-png-in-java/",
+          "file": "content/Aspose.Cloud/imaging/2022-10-21-convert-jpg-to-png-in-java/index.da.md",
+          "line": 142,
+          "fix": "https://blog.aspose.cloud/da/html/convert-html-to-markdown-in-java/",
+          "commit": "84d7dbf3 2023-06-22: optimzied Image extraction using Python SDK"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/da/imaging/find-duplicate-images-using-java/",
+          "file": "content/Aspose.Cloud/imaging/2022-10-18-duplicate-image-detection-in-java/index.da.md",
+          "line": 222,
+          "fix": "https://blog.aspose.cloud/da/html/convert-html-to-markdown-in-java/",
+          "commit": "fdc8e500 2023-06-27: translations for find duplicate images and PDF to TIFF in Java conversion blogs"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/da/imaging/resize-image-in-java/",
+          "file": "content/Aspose.Cloud/imaging/2022-10-25-resize-image-in-java/index.da.md",
+          "line": 113,
+          "fix": "https://blog.aspose.cloud/da/html/convert-html-to-markdown-in-java/",
+          "commit": "84d7dbf3 2023-06-22: optimzied Image extraction using Python SDK"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/21/convert-html-to-doc-using-java/",
+          "page": "https://blog.aspose.cloud/da/pdf/extract-pdf-images-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-05-extract-images-from-pdf-in-java/index.da.md",
+          "line": 133,
+          "fix": "https://blog.aspose.cloud/da/words/convert-html-to-doc-using-java/",
+          "commit": "cb27a42b 2023-07-11: Extract images from PDF using Java Cloud SDK"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/da/pdf/extract-pdf-images-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-05-extract-images-from-pdf-in-java/index.da.md",
+          "line": 134,
+          "fix": "https://blog.aspose.cloud/da/html/convert-html-to-markdown-in-java/",
+          "commit": "cb27a42b 2023-07-11: Extract images from PDF using Java Cloud SDK"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/da/pdf/pdf-to-txt-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-04-extract-text-from-pdf-in-java/index.da.md",
+          "line": 143,
+          "fix": "https://blog.aspose.cloud/da/html/convert-html-to-markdown-in-java/",
+          "commit": "e0ece5d4 2023-07-06: added translations for Extract Text from PDF using Java and Word to TIFF using Java bogs"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/21/convert-html-to-doc-using-java/",
+          "page": "https://blog.aspose.cloud/da/pdf/pdf-to-txt-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-04-extract-text-from-pdf-in-java/index.da.md",
+          "line": 145,
+          "fix": "https://blog.aspose.cloud/da/words/convert-html-to-doc-using-java/",
+          "commit": "e0ece5d4 2023-07-06: added translations for Extract Text from PDF using Java and Word to TIFF using Java bogs"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/da/slides/extract-ppt-images-in-java/",
+          "file": "content/Aspose.Cloud/slides/2022-10-13-extract-ppt-images-in-java/index.da.md",
+          "line": 120,
+          "fix": "https://blog.aspose.cloud/da/html/convert-html-to-markdown-in-java/",
+          "commit": "758f92e3 2023-06-25: translationsa dded for Merge PPT, extract PPT images and get PPT font theme information"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/da/slides/get-powerpoint-themes-in-java/",
+          "file": "content/Aspose.Cloud/slides/2022-10-13-get-slide-theme-font-color-in-java/index.da.md",
+          "line": 204,
+          "fix": "https://blog.aspose.cloud/da/html/convert-html-to-markdown-in-java/",
+          "commit": "758f92e3 2023-06-25: translationsa dded for Merge PPT, extract PPT images and get PPT font theme information"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/da/slides/merge-powerpoint-in-java/",
+          "file": "content/Aspose.Cloud/slides/2022-10-11-merge-powerpoint-in-java/index.da.md",
+          "line": 157,
+          "fix": "https://blog.aspose.cloud/da/html/convert-html-to-markdown-in-java/",
+          "commit": "758f92e3 2023-06-25: translationsa dded for Merge PPT, extract PPT images and get PPT font theme information"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/da/words/jpg-to-word-in-java/",
+          "file": "content/Aspose.Cloud/words/2022-10-06-jpg-to-word-in-java/index.da.md",
+          "line": 154,
+          "fix": "https://blog.aspose.cloud/da/html/convert-html-to-markdown-in-java/",
+          "commit": "ab72a7ae 2022-12-28: JPG to Word uring Java optimized as well as Translation pages for 62 languages added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/21/convert-html-to-doc-using-java/",
+          "page": "https://blog.aspose.cloud/da/words/jpg-to-word-in-java/",
+          "file": "content/Aspose.Cloud/words/2022-10-06-jpg-to-word-in-java/index.da.md",
+          "line": 155,
+          "fix": "https://blog.aspose.cloud/da/words/convert-html-to-doc-using-java/",
+          "commit": "ab72a7ae 2022-12-28: JPG to Word uring Java optimized as well as Translation pages for 62 languages added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/de/imaging/convert-jpg-to-png-in-java/",
+          "file": "content/Aspose.Cloud/imaging/2022-10-21-convert-jpg-to-png-in-java/index.de.md",
+          "line": 142,
+          "fix": "https://blog.aspose.cloud/de/html/convert-html-to-markdown-in-java/",
+          "commit": "ab176b7b 2022-11-18: translation files added for JPG to PNG conversion & Resize Image in java blogs"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/de/imaging/find-duplicate-images-using-java/",
+          "file": "content/Aspose.Cloud/imaging/2022-10-18-duplicate-image-detection-in-java/index.de.md",
+          "line": 222,
+          "fix": "https://blog.aspose.cloud/de/html/convert-html-to-markdown-in-java/",
+          "commit": "613f7d47 2022-11-18: Translation files added for merge PowerPoint in java, Extract PowerPoint Images in Java, Get Slide theme color details, Duplicate Image detection in Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/de/imaging/resize-image-in-java/",
+          "file": "content/Aspose.Cloud/imaging/2022-10-25-resize-image-in-java/index.de.md",
+          "line": 113,
+          "fix": "https://blog.aspose.cloud/de/html/convert-html-to-markdown-in-java/",
+          "commit": "ab176b7b 2022-11-18: translation files added for JPG to PNG conversion & Resize Image in java blogs"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/21/convert-html-to-doc-using-java/",
+          "page": "https://blog.aspose.cloud/de/pdf/extract-pdf-images-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-05-extract-images-from-pdf-in-java/index.de.md",
+          "line": 133,
+          "fix": "https://blog.aspose.cloud/de/words/convert-html-to-doc-using-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/de/pdf/extract-pdf-images-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-05-extract-images-from-pdf-in-java/index.de.md",
+          "line": 134,
+          "fix": "https://blog.aspose.cloud/de/html/convert-html-to-markdown-in-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/de/pdf/pdf-to-txt-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-04-extract-text-from-pdf-in-java/index.de.md",
+          "line": 143,
+          "fix": "https://blog.aspose.cloud/de/html/convert-html-to-markdown-in-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/21/convert-html-to-doc-using-java/",
+          "page": "https://blog.aspose.cloud/de/pdf/pdf-to-txt-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-04-extract-text-from-pdf-in-java/index.de.md",
+          "line": 145,
+          "fix": "https://blog.aspose.cloud/de/words/convert-html-to-doc-using-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/de/slides/extract-ppt-images-in-java/",
+          "file": "content/Aspose.Cloud/slides/2022-10-13-extract-ppt-images-in-java/index.de.md",
+          "line": 120,
+          "fix": "https://blog.aspose.cloud/de/html/convert-html-to-markdown-in-java/",
+          "commit": "613f7d47 2022-11-18: Translation files added for merge PowerPoint in java, Extract PowerPoint Images in Java, Get Slide theme color details, Duplicate Image detection in Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/de/slides/get-powerpoint-themes-in-java/",
+          "file": "content/Aspose.Cloud/slides/2022-10-13-get-slide-theme-font-color-in-java/index.de.md",
+          "line": 204,
+          "fix": "https://blog.aspose.cloud/de/html/convert-html-to-markdown-in-java/",
+          "commit": "613f7d47 2022-11-18: Translation files added for merge PowerPoint in java, Extract PowerPoint Images in Java, Get Slide theme color details, Duplicate Image detection in Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/de/slides/merge-powerpoint-in-java/",
+          "file": "content/Aspose.Cloud/slides/2022-10-11-merge-powerpoint-in-java/index.de.md",
+          "line": 157,
+          "fix": "https://blog.aspose.cloud/de/html/convert-html-to-markdown-in-java/",
+          "commit": "613f7d47 2022-11-18: Translation files added for merge PowerPoint in java, Extract PowerPoint Images in Java, Get Slide theme color details, Duplicate Image detection in Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/de/words/jpg-to-word-in-java/",
+          "file": "content/Aspose.Cloud/words/2022-10-06-jpg-to-word-in-java/index.de.md",
+          "line": 154,
+          "fix": "https://blog.aspose.cloud/de/html/convert-html-to-markdown-in-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/21/convert-html-to-doc-using-java/",
+          "page": "https://blog.aspose.cloud/de/words/jpg-to-word-in-java/",
+          "file": "content/Aspose.Cloud/words/2022-10-06-jpg-to-word-in-java/index.de.md",
+          "line": 155,
+          "fix": "https://blog.aspose.cloud/de/words/convert-html-to-doc-using-java/",
+          "commit": "4a3f9865 2022-11-18: New Translations for 10 blogs added"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/el/imaging/convert-jpg-to-png-in-java/",
+          "file": "content/Aspose.Cloud/imaging/2022-10-21-convert-jpg-to-png-in-java/index.el.md",
+          "line": 142,
+          "fix": "https://blog.aspose.cloud/el/html/convert-html-to-markdown-in-java/",
+          "commit": "84d7dbf3 2023-06-22: optimzied Image extraction using Python SDK"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/el/imaging/find-duplicate-images-using-java/",
+          "file": "content/Aspose.Cloud/imaging/2022-10-18-duplicate-image-detection-in-java/index.el.md",
+          "line": 222,
+          "fix": "https://blog.aspose.cloud/el/html/convert-html-to-markdown-in-java/",
+          "commit": "fdc8e500 2023-06-27: translations for find duplicate images and PDF to TIFF in Java conversion blogs"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/el/imaging/resize-image-in-java/",
+          "file": "content/Aspose.Cloud/imaging/2022-10-25-resize-image-in-java/index.el.md",
+          "line": 113,
+          "fix": "https://blog.aspose.cloud/el/html/convert-html-to-markdown-in-java/",
+          "commit": "84d7dbf3 2023-06-22: optimzied Image extraction using Python SDK"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/21/convert-html-to-doc-using-java/",
+          "page": "https://blog.aspose.cloud/el/pdf/extract-pdf-images-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-05-extract-images-from-pdf-in-java/index.el.md",
+          "line": 133,
+          "fix": "https://blog.aspose.cloud/el/words/convert-html-to-doc-using-java/",
+          "commit": "cb27a42b 2023-07-11: Extract images from PDF using Java Cloud SDK"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.aspose.cloud/2022/08/26/convert-html-to-markdown-in-java/",
+          "page": "https://blog.aspose.cloud/el/pdf/extract-pdf-images-in-java/",
+          "file": "content/Aspose.Cloud/pdf/2022-10-05-extract-images-from-pdf-in-java/index.el.md",
+          "line": 134,
+          "fix": "https://blog.aspose.cloud/el/html/convert-html-to-markdown-in-java/",
+          "commit": "cb27a42b 2023-07-11: Extract images from PDF using Java Cloud SDK"
+        }
+      ]
+    },
+    "affected_pages": 204,
+    "impact": {
+      "clicks_28d": 1,
+      "impressions_28d": 903,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 21,
+      "past_impressions": 2154,
+      "lost_clicks": 20,
+      "lost_impressions": 1251,
+      "past_window": [
+        "2026-04-08",
+        "2026-05-05"
+      ],
+      "scored_on": "lost",
+      "score": 5,
+      "window": [
+        "2026-10-07",
+        "2026-11-03"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-06",
+    "first_seen_run": "link-audit-run17",
+    "last_seen_run": "link-audit-run17",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "link_redirected",
     "notes": []
   },
   {
@@ -2550,23 +3171,23 @@
     },
     "affected_pages": 990,
     "impact": {
-      "clicks_28d": 8,
-      "impressions_28d": 1061,
+      "clicks_28d": 10,
+      "impressions_28d": 1013,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 21,
-      "past_impressions": 1253,
-      "lost_clicks": 13,
-      "lost_impressions": 192,
+      "past_impressions": 1216,
+      "lost_clicks": 11,
+      "lost_impressions": 203,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 26,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -2577,7 +3198,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run11",
+    "last_seen_run": "link-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -2858,18 +3479,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 1,
-      "past_impressions": 107,
+      "past_impressions": 116,
       "lost_clicks": 1,
-      "lost_impressions": 34,
+      "lost_impressions": 43,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 5,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -2880,7 +3501,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run11",
+    "last_seen_run": "link-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -3299,22 +3920,22 @@
     "affected_pages": 32,
     "impact": {
       "clicks_28d": 1,
-      "impressions_28d": 43,
+      "impressions_28d": 35,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 2,
-      "past_impressions": 65,
+      "past_impressions": 61,
       "lost_clicks": 1,
-      "lost_impressions": 22,
+      "lost_impressions": 26,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 5,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -3325,7 +3946,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run11",
+    "last_seen_run": "link-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -3372,14 +3993,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -3390,7 +4011,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run11",
+    "last_seen_run": "link-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_partial",
@@ -3437,14 +4058,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -3455,7 +4076,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run11",
+    "last_seen_run": "link-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "language_unsupported",
@@ -3548,25 +4169,25 @@
         ]
       }
     },
-    "affected_pages": 13394,
+    "affected_pages": 13548,
     "impact": {
-      "clicks_28d": 544,
-      "impressions_28d": 53079,
+      "clicks_28d": 602,
+      "impressions_28d": 53731,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 1056,
-      "past_impressions": 69864,
-      "lost_clicks": 512,
-      "lost_impressions": 16785,
+      "past_clicks": 1142,
+      "past_impressions": 70676,
+      "lost_clicks": 540,
+      "lost_impressions": 16945,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 12,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -3577,7 +4198,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run3",
-    "last_seen_run": "crawl-audit-run3",
+    "last_seen_run": "crawl-audit-run13",
     "resolved_run": null,
     "resolved_at": null,
     "check": "hreflang_no_xdefault",
@@ -3637,25 +4258,25 @@
         ]
       }
     },
-    "affected_pages": 1206,
+    "affected_pages": 1220,
     "impact": {
-      "clicks_28d": 49,
-      "impressions_28d": 4814,
+      "clicks_28d": 55,
+      "impressions_28d": 4874,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 96,
-      "past_impressions": 6250,
-      "lost_clicks": 47,
-      "lost_impressions": 1436,
+      "past_clicks": 104,
+      "past_impressions": 6282,
+      "lost_clicks": 49,
+      "lost_impressions": 1408,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 11,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "M",
@@ -3666,7 +4287,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run3",
-    "last_seen_run": "crawl-audit-run3",
+    "last_seen_run": "crawl-audit-run13",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_duplicate",
@@ -3755,25 +4376,25 @@
         ]
       }
     },
-    "affected_pages": 1317,
+    "affected_pages": 1331,
     "impact": {
-      "clicks_28d": 49,
-      "impressions_28d": 4952,
+      "clicks_28d": 56,
+      "impressions_28d": 5004,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 96,
-      "past_impressions": 7417,
-      "lost_clicks": 47,
-      "lost_impressions": 2465,
+      "past_clicks": 104,
+      "past_impressions": 7904,
+      "lost_clicks": 48,
+      "lost_impressions": 2900,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 8,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -3784,7 +4405,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run3",
-    "last_seen_run": "crawl-audit-run3",
+    "last_seen_run": "crawl-audit-run13",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -3851,22 +4472,22 @@
     "affected_pages": 24,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 16,
+      "impressions_28d": 18,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 120,
+      "past_impressions": 124,
       "lost_clicks": 0,
-      "lost_impressions": 104,
+      "lost_impressions": 106,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -3877,7 +4498,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run3",
-    "last_seen_run": "crawl-audit-run3",
+    "last_seen_run": "crawl-audit-run13",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -3943,25 +4564,25 @@
         ]
       }
     },
-    "affected_pages": 1207,
+    "affected_pages": 1221,
     "impact": {
-      "clicks_28d": 49,
-      "impressions_28d": 4817,
+      "clicks_28d": 55,
+      "impressions_28d": 4877,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 96,
-      "past_impressions": 6258,
-      "lost_clicks": 47,
-      "lost_impressions": 1441,
+      "past_clicks": 104,
+      "past_impressions": 6291,
+      "lost_clicks": 49,
+      "lost_impressions": 1414,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 11,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "M",
@@ -3972,7 +4593,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run3",
-    "last_seen_run": "crawl-audit-run3",
+    "last_seen_run": "crawl-audit-run13",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_duplicate",
@@ -4057,25 +4678,25 @@
         ]
       }
     },
-    "affected_pages": 1293,
+    "affected_pages": 1307,
     "impact": {
-      "clicks_28d": 49,
-      "impressions_28d": 4936,
+      "clicks_28d": 56,
+      "impressions_28d": 4986,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 96,
-      "past_impressions": 7297,
-      "lost_clicks": 47,
-      "lost_impressions": 2361,
+      "past_clicks": 104,
+      "past_impressions": 7780,
+      "lost_clicks": 48,
+      "lost_impressions": 2794,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 8,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -4086,7 +4707,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run3",
-    "last_seen_run": "crawl-audit-run3",
+    "last_seen_run": "crawl-audit-run13",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -4193,22 +4814,22 @@
     "affected_pages": 11,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 13,
+      "impressions_28d": 17,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 2,
-      "past_impressions": 35,
+      "past_impressions": 41,
       "lost_clicks": 2,
-      "lost_impressions": 22,
+      "lost_impressions": 24,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "lost",
       "score": 5,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -4219,7 +4840,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "text-audit-run7",
-    "last_seen_run": "text-audit-run7",
+    "last_seen_run": "text-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_topic_mismatch",
