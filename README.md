@@ -4,19 +4,18 @@ Domain-agnostic agents that audit a web property and report what is broken, not 
 
 ## Latest reports
 
-One report per tenant (property), listed on the [landing page](https://shoaibkhan-aspose.github.io/health-and-recovery/):
+The [home page](https://shoaibkhan-aspose.github.io/health-and-recovery/) lists the six blogs with their health scores (Subdomains view) or the six domains with their blogs (Domains view). A red line on a blog means it is broken right now (for example `Redirects.json` invalid or most redirects dead); otherwise there is none.
 
-- **[aspose.app](https://shoaibkhan-aspose.github.io/health-and-recovery/aspose.app/)**: summary, product family and host health, priorities, shared problems, all findings (each linked to the fix guide), page speed (Core Web Vitals), AI readiness (AI crawler access, llms.txt), and changes since the last run. Previous versions: [archive](https://shoaibkhan-aspose.github.io/health-and-recovery/aspose.app/archive/).
-- **[conholdate.cloud](https://shoaibkhan-aspose.github.io/health-and-recovery/conholdate.cloud/)**: blog.conholdate.cloud for now. Previous versions: [archive](https://shoaibkhan-aspose.github.io/health-and-recovery/conholdate.cloud/archive/).
-- **[aspose.cloud](https://shoaibkhan-aspose.github.io/health-and-recovery/aspose.cloud/)**: blog.aspose.cloud for now, including the link check of every post. Previous versions: [archive](https://shoaibkhan-aspose.github.io/health-and-recovery/aspose.cloud/archive/).
-- **[groupdocs.cloud](https://shoaibkhan-aspose.github.io/health-and-recovery/groupdocs.cloud/)**: blog.groupdocs.cloud for now, including the link check of every post. Previous versions: [archive](https://shoaibkhan-aspose.github.io/health-and-recovery/groupdocs.cloud/archive/).
-- **[Fix guide](https://shoaibkhan-aspose.github.io/health-and-recovery/fix-guide/)**: one shared page for every report: what each check means, its impact, how to fix and verify it, and which reports have it open.
+- **Blogs:** [blog.aspose.com](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.aspose.com/), [blog.aspose.cloud](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.aspose.cloud/), [blog.groupdocs.com](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.groupdocs.com/) (monitored only, not fixed by the team), [blog.groupdocs.cloud](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.groupdocs.cloud/), [blog.conholdate.com](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.conholdate.com/), [blog.conholdate.cloud](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.conholdate.cloud/). Each page: health score, search traffic, Fix progress (issues counted one by one, with severity), the ranked issues with evidence, and reference tables. Previous versions are linked at the bottom of each page.
+- **[All blogs side by side](https://shoaibkhan-aspose.github.io/health-and-recovery/blogs/)** with the top actions across them.
+- **Domain pages** such as [aspose.com](https://shoaibkhan-aspose.github.io/health-and-recovery/aspose.com/): one row per subdomain (only the blog for now) and its archive.
+- **[Fix guide](https://shoaibkhan-aspose.github.io/health-and-recovery/fix-guide/)** and **[Method](https://shoaibkhan-aspose.github.io/health-and-recovery/method/)**: what each check means and how to fix it; how the audits and scores work.
 
-Each report grades product families and every host (A–F, out of 100). Every host also has its own page at the site root, e.g. [https://shoaibkhan-aspose.github.io/health-and-recovery/blog.conholdate.cloud/](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.conholdate.cloud/) or [https://shoaibkhan-aspose.github.io/health-and-recovery/forum.aspose.app/](https://shoaibkhan-aspose.github.io/health-and-recovery/forum.aspose.app/): the property report filtered to that host, for the team that owns it. The header switches between properties and hosts.
+Scores are out of 100, without letters. aspose.app is still audited in this repo but not published (`published: false` in its tenant file).
 
 [![Publish report](https://github.com/shoaibkhan-aspose/health-and-recovery/actions/workflows/pages.yml/badge.svg)](https://github.com/shoaibkhan-aspose/health-and-recovery/actions/workflows/pages.yml)
 
-The site (landing page, reports, host pages, archives, fix guide) is rebuilt by GitHub Actions (`scripts/build_site.py`) on every push to `master`, from the run files committed in `reports/<tenant>/`. Audits themselves run locally (see Setup). Links to the old address (`…/aspose-app-health-and-recovery/…`, before the repository was renamed) redirect here. All reports move to a private domain later.
+The site (home page, reports, subdomain pages, archives, fix guide) is rebuilt by GitHub Actions (`scripts/build_site.py`) on every push to `master`, from the run files committed in `reports/<tenant>/`. Audits themselves run locally (see Setup). Links to the old address (`…/aspose-app-health-and-recovery/…`, before the repository was renamed) redirect here. All reports move to a private domain later.
 
 ## Architecture
 
@@ -30,7 +29,7 @@ Full page with the step-by-step table, design rules and code layout: [`docs/arch
 core/          deterministic logic (no tenant names allowed)
 mcp_servers/   MCP servers wrapping core (read-only in Phase 1)
 agents/        LLM agents (LangGraph)
-tenants/       one YAML per property: aspose.app, conholdate.cloud, aspose.cloud, groupdocs.cloud
+tenants/       one YAML per property: aspose.cloud, groupdocs.cloud, conholdate.cloud, aspose.com, groupdocs.com, conholdate.com, aspose.app (not published)
 scripts/       CLIs, e.g. check_access.py
 tests/         offline tests
 reports/       reports/<tenant>/: run JSON, findings.json, archive (committed; source of the published reports)
@@ -58,10 +57,10 @@ python scripts/audit_links.py                                              # lin
 python scripts/audit_repo.py                                               # repo file check: Redirects.json, front matter, post urls, a live sample of redirects (<= 5 min)
 python scripts/prioritize.py                                               # Search Console traffic + score per finding
 python scripts/build_report.py --out reports/aspose.app/discovery-latest.html --snapshot "After <run>"   # report + archive snapshot
-python scripts/build_site.py --out site                                    # the Pages site: landing, tenant + host pages, fix guide
+python scripts/build_site.py --out site                                    # the Pages site: home page, tenant + host pages, fix guide
 ```
 
-Each tenant keeps its files apart: `data/<tenant>/` (inventory, audit pages, findings store, Google and LLM caches; not in git) and `reports/<tenant>/` (run files, `findings.json`, traffic summary, health history, `archive/`; committed). GitHub Pages serves a landing page at the root and each tenant's report at `/<tenant>/` with its archive at `/<tenant>/archive/`; the old root links (`/#…`, `/archive/<date>/`) redirect to `/aspose.app/`. A tenant YAML can name its own key variable (`google_credentials_env`).
+Each tenant keeps its files apart: `data/<tenant>/` (inventory, audit pages, findings store, Google and LLM caches; not in git) and `reports/<tenant>/` (run files, `findings.json`, traffic summary, health history, `archive/`; committed). GitHub Pages serves the home page at the root, each published tenant's report at `/<tenant>/` with its archive at `/<tenant>/archive/`, and each subdomain at `/<host>/`. A tenant with `published: false` in its YAML is left off the site; its files stay in the repo. A tenant YAML can name its own key variable (`google_credentials_env`).
 
 Findings from every run, plus the manual ones in `tenants/<tenant>.seed-findings.yaml`, are kept in `data/<tenant>/findings.sqlite` with permanent ids, first/last seen and resolved status (`python scripts/findings.py summary`). `scripts/build_report.py` turns the newest discovery, crawl-audit, speed-audit, AI-audit, text-check and link-check runs plus the store (or `--findings reports/<tenant>/findings.json`) into the HTML report.
 
