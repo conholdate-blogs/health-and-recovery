@@ -31,6 +31,13 @@ def test_published_tenants(tmp_path):
     assert published_tenants(tmp_path) == ["a.org", "b.org"]
 
 
+def test_unpublished_tenant_is_left_off_the_site(monkeypatch):
+    from scripts import build_site
+
+    monkeypatch.setattr(build_site, "published_tenants", lambda: ["aspose.app", "aspose.com"])
+    assert build_site.site_tenants() == ["aspose.com"]  # tenants/aspose.app.yaml: published: false
+
+
 def test_property_must_match_file_name(tmp_path):
     (tmp_path / "x.org.yaml").write_text("property: y.org\nhosts: []\n")
     with pytest.raises(ValueError, match="must match"):

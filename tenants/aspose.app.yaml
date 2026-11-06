@@ -1,6 +1,9 @@
 # Tenant config: everything specific to aspose.app lives here, nothing in core/ or agents/.
 property: aspose.app
 
+# Not on the published site (SK, 2026-11-06: focus on the six blogs); data, reports and archive stay in the repo.
+published: false
+
 # Hosts matching these patterns are never crawled or checked (SK, 2026-10-08).
 excluded_host_patterns:
   - "*-qa.*"

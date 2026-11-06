@@ -56,7 +56,7 @@ li b { font-size: 18px } li span { color: var(--muted); font-size: 14px; overflo
 </style>
 <script>
 // Old links pointed at the first tenant's report on this page (e.g. /#findings): send them there.
-if (location.hash.length > 1) location.replace("__LEGACY__/" + location.hash);
+if (location.hash.length > 1 && "__LEGACY__") location.replace("__LEGACY__/" + location.hash);
 </script>
 <main>
   <h1>""" + brand.logo(36) + """Site health reports</h1>
@@ -293,7 +293,7 @@ def build(out: Path, tenants: list[str]) -> None:
     (out / "fix-guide" / "index.html").write_text(guide_page(tenants), encoding="utf-8")
     (out / "method").mkdir(exist_ok=True)
     (out / "method" / "index.html").write_text(method_page(), encoding="utf-8")
-    legacy = LEGACY_TENANT if LEGACY_TENANT in tenants else (tenants[0] if tenants else "")
+    legacy = LEGACY_TENANT if LEGACY_TENANT in tenants else ""  # its old links lead nowhere while it is not published
     items = "\n".join([tenant_item(t) for t in tenants] + [collection_item(s, m) for s, m in members.items()])
     (out / "index.html").write_text(LANDING.replace("__LEGACY__", legacy).replace("__ITEMS__", items),
                                     encoding="utf-8")
@@ -307,13 +307,18 @@ def build(out: Path, tenants: list[str]) -> None:
                 redirect_page(f"../../{legacy}/archive/{slug}/"), encoding="utf-8")
 
 
+def site_tenants() -> list[str]:
+    """Tenants with a report, less those whose YAML says `published: false` (SK, 2026-11-06: only the blogs)."""
+    return [t for t in published_tenants() if load_tenant(t).raw.get("published", True) is not False]
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--out", default="site", help="Pages output folder")
     ap.add_argument("--tenants", help="comma-separated tenants "
-                    "(default: every tenant with reports/<tenant>/findings.json)")
+                    "(default: every tenant with reports/<tenant>/findings.json, except `published: false`)")
     args = ap.parse_args(argv)
-    tenants = args.tenants.split(",") if args.tenants else published_tenants()
+    tenants = args.tenants.split(",") if args.tenants else site_tenants()
     if not tenants:
         print("No reports/<tenant>/findings.json found.", file=sys.stderr)
         return 1
