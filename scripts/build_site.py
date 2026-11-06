@@ -323,12 +323,11 @@ def host_scores(tenant: str, hosts: list[str]) -> dict[str, tuple[int, str]]:
 
 
 def tenant_item(tenant: str, scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None) -> str:
-    """A domain: its name as the heading (opens the domain page) and archive link, then each of its subdomains with
-    its health (SK, 2026-11-06: no counts on the home page, as in the Subdomains view)."""
+    """A domain: its name as the heading (opens the domain page), then each of its subdomains with its health
+    (SK, 2026-11-06: no counts and no archive link on the home page; the report pages link the archive)."""
     name = html.escape(tenant)
     tiles = "".join(sub_tile(h, scores, alerts) for h in load_tenant(tenant).host_names)
-    return (f'<div class="coll"><div><a href="{name}/"><b>{name}</b></a><span><a href="{name}/archive/">previous versions</a>'
-            f'</span></div><div class="subs">{tiles}</div></div>')
+    return f'<div class="coll"><div><a href="{name}/"><b>{name}</b></a></div><div class="subs">{tiles}</div></div>'
 
 
 def domain_block(tenants: list[str], scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None) -> str:
