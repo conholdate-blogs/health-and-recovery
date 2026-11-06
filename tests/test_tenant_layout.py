@@ -51,6 +51,16 @@ def test_home_page_pairs_subdomains_by_brand():
     assert '<a href="blogs/"><b>Blogs</b></a>' in block
 
 
+def test_home_page_domains_pair_by_brand(monkeypatch):
+    from scripts import build_site
+
+    monkeypatch.setattr(build_site, "tenant_item", lambda t: f"[{t}]")
+    rows = [r for r in build_site.domain_block(["conholdate.cloud", "aspose.cloud", "groupdocs.com", "aspose.com",
+                                                "conholdate.com", "groupdocs.cloud"]).splitlines() if "pairs" in r]
+    assert [r.split('">', 1)[1].split("</div>")[0] for r in rows] == [
+        "[aspose.com][aspose.cloud]", "[groupdocs.com][groupdocs.cloud]", "[conholdate.com][conholdate.cloud]"]
+
+
 def test_property_must_match_file_name(tmp_path):
     (tmp_path / "x.org.yaml").write_text("property: y.org\nhosts: []\n")
     with pytest.raises(ValueError, match="must match"):
