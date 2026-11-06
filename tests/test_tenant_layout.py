@@ -38,6 +38,19 @@ def test_unpublished_tenant_is_left_off_the_site(monkeypatch):
     assert build_site.site_tenants() == ["aspose.com"]  # tenants/aspose.app.yaml: published: false
 
 
+def test_home_page_pairs_subdomains_by_brand():
+    from scripts.build_site import collection_block
+
+    members = [("conholdate.cloud", "blog.conholdate.cloud"), ("aspose.cloud", "blog.aspose.cloud"),
+               ("aspose.com", "blog.aspose.com"), ("conholdate.com", "blog.conholdate.com")]
+    block = collection_block("blogs", members, {"blog.aspose.com": (55, "F"), "blog.aspose.cloud": (67, "C")})
+    rows = [r for r in block.splitlines() if 'class="pairs"' in r]
+    assert [[h for h in ("aspose.com", "aspose.cloud", "conholdate.com", "conholdate.cloud") if f"blog.{h}/" in r]
+            for r in rows] == [["aspose.com", "aspose.cloud"], ["conholdate.com", "conholdate.cloud"]]
+    assert '<a class="sub g-F" href="blog.aspose.com/"><code>blog.aspose.com</code><b>55</b></a>' in block
+    assert '<a href="blogs/"><b>Blogs</b></a>' in block
+
+
 def test_property_must_match_file_name(tmp_path):
     (tmp_path / "x.org.yaml").write_text("property: y.org\nhosts: []\n")
     with pytest.raises(ValueError, match="must match"):

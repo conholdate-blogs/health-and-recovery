@@ -40,9 +40,11 @@ HEAD = """<!doctype html>
 
 LANDING = HEAD + """<title>Site health reports</title>
 <style>
-:root { --bg: #f6f7f9; --surface: #fff; --fg: #18202b; --muted: #5b6676; --line: #dde2e9; --accent: #1f5f8b }
+:root { --bg: #f6f7f9; --surface: #fff; --fg: #18202b; --muted: #5b6676; --line: #dde2e9; --accent: #1f5f8b;
+  --broken: #b42318; --incorrect: #c2410c; --notopt: #a16207; --good: #15803d }
 @media (prefers-color-scheme: dark) { :root { --bg: #11161d; --surface: #182029; --fg: #e4e9f0; --muted: #98a3b3;
-  --line: #2a3542; --accent: #6fb0dc; color-scheme: dark } }
+  --line: #2a3542; --accent: #6fb0dc; --broken: #f2766b; --incorrect: #f59e5b; --notopt: #e3b341; --good: #4ade80;
+  color-scheme: dark } }
 * { box-sizing: border-box }
 body { margin: 0; background: var(--bg); color: var(--fg);
   font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif }
@@ -53,6 +55,22 @@ ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px }
 li { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px;
   display: grid; gap: 4px }
 li b { font-size: 18px } li span { color: var(--muted); font-size: 14px; overflow-wrap: anywhere }
+/* Subdomains or Domains, never both (SK, 2026-11-06: the two lists repeated each other) */
+.views { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; justify-self: start }
+.views button { font: 600 14px system-ui, sans-serif; color: var(--muted); background: var(--surface); border: 0;
+  padding: 7px 16px; cursor: pointer } .views button + button { border-left: 1px solid var(--line) }
+.views button[aria-pressed="true"] { background: var(--accent); color: var(--surface) }
+.views button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.coll { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 8px }
+.coll > div:first-child { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 2px }
+.coll > div:first-child b { font-size: 18px } .coll > div:first-child span { color: var(--muted); font-size: 14px }
+.pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px }
+.sub { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 8px 12px;
+  border: 1px solid var(--line); border-left: 4px solid var(--gc, var(--line)); border-radius: 6px; text-decoration: none; color: var(--fg) }
+.sub:hover { border-color: var(--gc) } .sub code { font-size: 14px; overflow-wrap: anywhere }
+.sub b { font-size: 20px; color: var(--gc); font-variant-numeric: tabular-nums }
+.g-A, .g-B { --gc: var(--good) } .g-C { --gc: var(--notopt) } .g-D { --gc: var(--incorrect) } .g-F { --gc: var(--broken) }
+@media (max-width: 520px) { .pairs { grid-template-columns: 1fr } }
 </style>
 <script>
 // Old links pointed at the first tenant's report on this page (e.g. /#findings): send them there.
@@ -60,13 +78,40 @@ if (location.hash.length > 1 && "__LEGACY__") location.replace("__LEGACY__/" + l
 </script>
 <main>
   <h1>""" + brand.logo(36) + """Site health reports</h1>
-  <p>One report per domain. Read-only audits: nothing on any site is changed.
+  <p>Read-only audits: nothing on any site is changed.
   How to fix each kind of problem: <a href="fix-guide/">fix guide</a>. How the audits and scores work:
   <a href="method/">method</a>.</p>
+  <div class="views" role="group" aria-label="Show">
+    <button type="button" data-v="subdomains" aria-pressed="true">Subdomains</button><button type="button" data-v="domains" aria-pressed="false">Domains</button>
+  </div>
+  <section id="v-subdomains">
+__SUBDOMAINS__
+  </section>
+  <section id="v-domains" hidden>
   <ol>
 __ITEMS__
   </ol>
+  </section>
 </main>
+<script>
+// the choice stays in the link (?view=domains) and in this browser
+(() => {
+  const VIEWS = ["subdomains", "domains"];
+  const show = v => { for (const b of document.querySelectorAll(".views button")) {
+    const on = b.dataset.v === v; b.setAttribute("aria-pressed", String(on)); document.getElementById("v-" + b.dataset.v).hidden = !on; } };
+  const asked = new URLSearchParams(location.search).get("view");
+  let saved = null; try { saved = localStorage.getItem("home-view"); } catch (e) {}
+  show(VIEWS.includes(asked) ? asked : VIEWS.includes(saved) ? saved : "subdomains");
+  document.querySelector(".views").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    show(b.dataset.v);
+    try { localStorage.setItem("home-view", b.dataset.v); } catch (e) {}
+    const u = new URL(location.href);
+    if (b.dataset.v === "domains") u.searchParams.set("view", "domains"); else u.searchParams.delete("view");
+    history.replaceState(null, "", u);
+  });
+})();
+</script>
 </html>
 """
 
@@ -245,10 +290,24 @@ def collection_members(tenants: list[str]) -> dict[str, list[tuple[str, str]]]:
     return {slug: members for slug, members in out.items() if members}
 
 
-def collection_item(slug: str, members: list[tuple[str, str]]) -> str:
-    links = " · ".join(f'<a href="{html.escape(h)}/">{html.escape(h)}</a>' for _, h in members)
-    return (f'    <li><a href="{slug}/"><b>{html.escape(COLLECTIONS[slug])}</b></a><span>{len(members)} subdomains across '
-            f'{len({t for t, _ in members})} domains</span><span>{links}</span></li>')
+BRANDS = ("aspose", "groupdocs", "conholdate")  # row order of the home page's subdomain pairs (SK, 2026-11-06)
+
+
+def collection_block(slug: str, members: list[tuple[str, str]], scores: dict[str, tuple[int, str]]) -> str:
+    """The home page's Subdomains view: the collection's name (opens its page) and each subdomain with its health,
+    one row per brand with .com before .cloud (blog.aspose.com, blog.aspose.cloud)."""
+    rows: dict = {}
+    for _, h in members:
+        rows.setdefault(h.split(".")[1] if h.count(".") > 1 else h, []).append(h)
+    order = sorted(rows, key=lambda b: (BRANDS.index(b) if b in BRANDS else len(BRANDS), b))
+
+    def cell(h: str) -> str:
+        health, grade = scores.get(h, ("–", ""))
+        return f'<a class="sub g-{grade}" href="{html.escape(h)}/"><code>{html.escape(h)}</code><b>{health}</b></a>'
+    pairs = "\n".join(f'      <div class="pairs">{"".join(cell(h) for h in sorted(rows[b], key=lambda h: (not h.endswith(".com"), h)))}</div>'
+                      for b in order)
+    return (f'    <div class="coll"><div><a href="{slug}/"><b>{html.escape(COLLECTIONS[slug])}</b></a>'
+            f'<span>{len(members)} subdomains · health out of 100 · <a href="{slug}/">compare all →</a></span></div>\n{pairs}\n    </div>')
 
 
 def site_hosts(tenants: list[str]) -> dict[str, list[str]]:
@@ -281,8 +340,11 @@ def build(out: Path, tenants: list[str]) -> None:
                 raise SystemExit(f"Host page {h} failed")
         n = build_archive.build(out / t / "archive", paths.archive, t)
         print(f"Archive: {n} snapshots for {t}")
+    blocks = []
     for slug, mem in members.items():  # pages across domains, e.g. /blogs/
-        page = build_report.build(build_report.collection_report(COLLECTIONS[slug], slug, mem), [], None,
+        report = build_report.collection_report(COLLECTIONS[slug], slug, mem)
+        blocks.append(collection_block(slug, mem, {c["host"]: (c["health"], c["grade"]) for c in report["_hosts"]}))
+        page = build_report.build(report, [], None,
                                   standalone=True, guide_url=GUIDE_URL, site_tenants=tenants,
                                   site_hosts=[h for _, h in mem], method_url=METHOD_URL,
                                   collections=build_report.parse_collections(site_collections))
@@ -294,9 +356,9 @@ def build(out: Path, tenants: list[str]) -> None:
     (out / "method").mkdir(exist_ok=True)
     (out / "method" / "index.html").write_text(method_page(), encoding="utf-8")
     legacy = LEGACY_TENANT if LEGACY_TENANT in tenants else ""  # its old links lead nowhere while it is not published
-    items = "\n".join([tenant_item(t) for t in tenants] + [collection_item(s, m) for s, m in members.items()])
-    (out / "index.html").write_text(LANDING.replace("__LEGACY__", legacy).replace("__ITEMS__", items),
-                                    encoding="utf-8")
+    items = "\n".join(tenant_item(t) for t in tenants)
+    (out / "index.html").write_text(LANDING.replace("__LEGACY__", legacy).replace("__ITEMS__", items)
+                                    .replace("__SUBDOMAINS__", "\n".join(blocks)), encoding="utf-8")
     if legacy:  # /archive/ and /archive/<date>/ from before the subfolders
         (out / "archive").mkdir(exist_ok=True)
         (out / "archive" / "index.html").write_text(redirect_page(f"../{legacy}/archive/"), encoding="utf-8")
