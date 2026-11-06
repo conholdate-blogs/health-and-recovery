@@ -54,9 +54,9 @@ def test_home_page_pairs_subdomains_by_brand():
 def test_home_page_domains_pair_by_brand(monkeypatch):
     from scripts import build_site
 
-    monkeypatch.setattr(build_site, "tenant_item", lambda t: f"[{t}]")
+    monkeypatch.setattr(build_site, "tenant_item", lambda t, scores: f"[{t}]")
     rows = [r for r in build_site.domain_block(["conholdate.cloud", "aspose.cloud", "groupdocs.com", "aspose.com",
-                                                "conholdate.com", "groupdocs.cloud"]).splitlines() if "pairs" in r]
+                                                "conholdate.com", "groupdocs.cloud"], {}).splitlines() if "pairs" in r]
     assert [r.split('">', 1)[1].split("</div>")[0] for r in rows] == [
         "[aspose.com][aspose.cloud]", "[groupdocs.com][groupdocs.cloud]", "[conholdate.com][conholdate.cloud]"]
 

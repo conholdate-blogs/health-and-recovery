@@ -65,10 +65,7 @@ a { color: var(--accent) }
   border: 1px solid var(--line); border-left: 4px solid var(--gc, var(--line)); border-radius: 6px; text-decoration: none; color: var(--fg) }
 .sub:hover { border-color: var(--gc) } .sub code { font-size: 14px; overflow-wrap: anywhere }
 .sub b { font-size: 20px; color: var(--gc); font-variant-numeric: tabular-nums }
-.dom { display: grid; gap: 2px; padding: 8px 12px; border: 1px solid var(--line); border-left: 4px solid var(--line); border-radius: 6px }
-.dom:hover { border-color: var(--accent) } .dom small { color: var(--muted); font-size: 13px }
-.dname { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; text-decoration: none; color: var(--fg) }
-.dname code { font-size: 14px; overflow-wrap: anywhere } .dname b { font-size: 20px; color: var(--muted); font-variant-numeric: tabular-nums }
+#v-domains { display: grid; gap: 12px } #v-domains[hidden] { display: none } .subs { display: grid; gap: 8px }
 .g-A, .g-B { --gc: var(--good) } .g-C { --gc: var(--notopt) } .g-D { --gc: var(--incorrect) } .g-F { --gc: var(--broken) }
 @media (max-width: 520px) { .pairs { grid-template-columns: 1fr } }
 </style>
@@ -258,28 +255,44 @@ def redirect_page(target: str) -> str:
             f'<p>This page moved to <a href="{t}">{t}</a>.</p>\n</html>\n')
 
 
-def tenant_item(tenant: str) -> str:
-    """A domain tile: its name (opens the domain page), its open issue types, its subdomains and archive."""
+def sub_tile(host: str, scores: dict[str, tuple[int, str]]) -> str:
+    """A subdomain with its health score, opening its page."""
+    health, grade = scores.get(host, ("–", ""))
+    return f'<a class="sub g-{grade}" href="{html.escape(host)}/"><code>{html.escape(host)}</code><b>{health}</b></a>'
+
+
+def host_scores(tenant: str, hosts: list[str]) -> dict[str, tuple[int, str]]:
+    """Health and grade of each host, as on its own page."""
+    out = {}
+    for h in hosts:
+        prepared = build_report.prepare(build_report.parser().parse_args(
+            ["--tenant", tenant, "--findings", str(tenant_paths(tenant).findings_export), "--host", h]))
+        if isinstance(prepared, int):
+            raise SystemExit(f"Score for {h} of {tenant} failed")
+        card = prepared[0]["_hosts"][0]
+        out[h] = (card["health"], card["grade"])
+    return out
+
+
+def tenant_item(tenant: str, scores: dict[str, tuple[int, str]]) -> str:
+    """A domain: its name as the heading (opens the domain page), its open issue types and archive, then each of its
+    subdomains with its health (SK, 2026-11-06)."""
     rows = json.loads(tenant_paths(tenant).findings_export.read_text(encoding="utf-8"))
     open_n = sum(1 for f in rows if f["status"] in ("open", "unverified"))
-    hosts = load_tenant(tenant).host_names
     name = html.escape(tenant)
-    subs = (f'<a href="{html.escape(hosts[0])}/">1 subdomain</a>' if len(hosts) == 1
-            else f'{len(hosts)} subdomains: ' + " · ".join(f'<a href="{html.escape(h)}/">{html.escape(h)}</a>' for h in hosts))
-    return (f'<div class="dom"><a class="dname" href="{name}/"><code>{name}</code><b>{open_n:,}</b></a>'
-            f'<small>{subs} · <a href="{name}/archive/">previous versions</a></small></div>')
+    tiles = "".join(sub_tile(h, scores) for h in load_tenant(tenant).host_names)
+    return (f'<div class="coll"><div><a href="{name}/"><b>{name}</b></a><span>{open_n:,} open issue types · '
+            f'<a href="{name}/archive/">previous versions</a></span></div><div class="subs">{tiles}</div></div>')
 
 
-def domain_block(tenants: list[str]) -> str:
-    """The home page's Domains view, laid out like the Blogs section: one row per brand, .com before .cloud."""
+def domain_block(tenants: list[str], scores: dict[str, tuple[int, str]]) -> str:
+    """The home page's Domains view: one row per brand, .com before .cloud, like the Blogs section."""
     rows: dict = {}
     for t in tenants:
         rows.setdefault(t.split(".")[0], []).append(t)
     order = sorted(rows, key=lambda b: (BRANDS.index(b) if b in BRANDS else len(BRANDS), b))
-    pairs = "\n".join(f'      <div class="pairs">{"".join(tenant_item(t) for t in sorted(rows[b], key=lambda t: (not t.endswith(".com"), t)))}</div>'
-                      for b in order)
-    return (f'    <div class="coll"><div><b>Domains</b><span>{len(tenants)} domains · open issue types</span></div>\n'
-            f'{pairs}\n    </div>')
+    return "\n".join(f'    <div class="pairs">{"".join(tenant_item(t, scores) for t in sorted(rows[b], key=lambda t: (not t.endswith(".com"), t)))}</div>'
+                     for b in order)
 
 
 # pages across domains: slug -> name; members come from each tenant's YAML `collections` (SK, 2026-10-27)
@@ -312,11 +325,7 @@ def collection_block(slug: str, members: list[tuple[str, str]], scores: dict[str
     for _, h in members:
         rows.setdefault(h.split(".")[1] if h.count(".") > 1 else h, []).append(h)
     order = sorted(rows, key=lambda b: (BRANDS.index(b) if b in BRANDS else len(BRANDS), b))
-
-    def cell(h: str) -> str:
-        health, grade = scores.get(h, ("–", ""))
-        return f'<a class="sub g-{grade}" href="{html.escape(h)}/"><code>{html.escape(h)}</code><b>{health}</b></a>'
-    pairs = "\n".join(f'      <div class="pairs">{"".join(cell(h) for h in sorted(rows[b], key=lambda h: (not h.endswith(".com"), h)))}</div>'
+    pairs = "\n".join(f'      <div class="pairs">{"".join(sub_tile(h, scores) for h in sorted(rows[b], key=lambda h: (not h.endswith(".com"), h)))}</div>'
                       for b in order)
     return (f'    <div class="coll"><div><a href="{slug}/"><b>{html.escape(COLLECTIONS[slug])}</b></a>'
             f'<span>{len(members)} subdomains · health out of 100 · <a href="{slug}/">compare all →</a></span></div>\n{pairs}\n    </div>')
@@ -352,10 +361,11 @@ def build(out: Path, tenants: list[str]) -> None:
                 raise SystemExit(f"Host page {h} failed")
         n = build_archive.build(out / t / "archive", paths.archive, t)
         print(f"Archive: {n} snapshots for {t}")
-    blocks = []
+    blocks, scores = [], {}
     for slug, mem in members.items():  # pages across domains, e.g. /blogs/
         report = build_report.collection_report(COLLECTIONS[slug], slug, mem)
-        blocks.append(collection_block(slug, mem, {c["host"]: (c["health"], c["grade"]) for c in report["_hosts"]}))
+        scores.update({c["host"]: (c["health"], c["grade"]) for c in report["_hosts"]})
+        blocks.append(collection_block(slug, mem, scores))
         page = build_report.build(report, [], None,
                                   standalone=True, guide_url=GUIDE_URL, site_tenants=tenants,
                                   site_hosts=[h for _, h in mem], method_url=METHOD_URL,
@@ -368,7 +378,9 @@ def build(out: Path, tenants: list[str]) -> None:
     (out / "method").mkdir(exist_ok=True)
     (out / "method" / "index.html").write_text(method_page(), encoding="utf-8")
     legacy = LEGACY_TENANT if LEGACY_TENANT in tenants else ""  # its old links lead nowhere while it is not published
-    items = domain_block(tenants)
+    for t in tenants:  # subdomains outside any collection get their score here
+        scores.update(host_scores(t, [h for h in hosts[t] if h not in scores]))
+    items = domain_block(tenants, scores)
     (out / "index.html").write_text(LANDING.replace("__LEGACY__", legacy).replace("__ITEMS__", items)
                                     .replace("__SUBDOMAINS__", "\n".join(blocks)), encoding="utf-8")
     if legacy:  # /archive/ and /archive/<date>/ from before the subfolders
