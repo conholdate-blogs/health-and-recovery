@@ -4,16 +4,16 @@ Domain-agnostic agents that audit a web property and report what is broken, not 
 
 ## Latest reports
 
-The [home page](https://shoaibkhan-aspose.github.io/health-and-recovery/) lists the six blogs with their health scores (Subdomains view) or the six domains with their blogs (Domains view). A red line on a blog means it is broken right now (for example `Redirects.json` invalid or most redirects dead); otherwise there is none.
+The [home page](https://conholdate-blogs.github.io/health-and-recovery/) lists the six blogs with their health scores (Subdomains view) or the six domains with their blogs (Domains view). A red line on a blog means it is broken right now (for example `Redirects.json` invalid or most redirects dead); otherwise there is none.
 
-- **Blogs:** [blog.aspose.com](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.aspose.com/), [blog.aspose.cloud](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.aspose.cloud/), [blog.groupdocs.com](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.groupdocs.com/) (monitored only, not fixed by the team), [blog.groupdocs.cloud](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.groupdocs.cloud/), [blog.conholdate.com](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.conholdate.com/), [blog.conholdate.cloud](https://shoaibkhan-aspose.github.io/health-and-recovery/blog.conholdate.cloud/). Each page: health score, search traffic, Fix progress (issues counted one by one, with severity), the ranked issues with evidence, and reference tables. Previous versions are linked at the bottom of each page.
-- **[All blogs side by side](https://shoaibkhan-aspose.github.io/health-and-recovery/blogs/)** with the top actions across them.
-- **Domain pages** such as [aspose.com](https://shoaibkhan-aspose.github.io/health-and-recovery/aspose.com/): one row per subdomain (only the blog for now) and its archive.
-- **[Fix guide](https://shoaibkhan-aspose.github.io/health-and-recovery/fix-guide/)** and **[Method](https://shoaibkhan-aspose.github.io/health-and-recovery/method/)**: what each check means and how to fix it; how the audits and scores work.
+- **Blogs:** [blog.aspose.com](https://conholdate-blogs.github.io/health-and-recovery/blog.aspose.com/), [blog.aspose.cloud](https://conholdate-blogs.github.io/health-and-recovery/blog.aspose.cloud/), [blog.groupdocs.com](https://conholdate-blogs.github.io/health-and-recovery/blog.groupdocs.com/) (monitored only, not fixed by the team), [blog.groupdocs.cloud](https://conholdate-blogs.github.io/health-and-recovery/blog.groupdocs.cloud/), [blog.conholdate.com](https://conholdate-blogs.github.io/health-and-recovery/blog.conholdate.com/), [blog.conholdate.cloud](https://conholdate-blogs.github.io/health-and-recovery/blog.conholdate.cloud/). Each page: health score, search traffic, Fix progress (issues counted one by one, with severity), the ranked issues with evidence, and reference tables. Previous versions are linked at the bottom of each page.
+- **[All blogs side by side](https://conholdate-blogs.github.io/health-and-recovery/blogs/)** with the top actions across them.
+- **Domain pages** such as [aspose.com](https://conholdate-blogs.github.io/health-and-recovery/aspose.com/): one row per subdomain (only the blog for now) and its archive.
+- **[Fix guide](https://conholdate-blogs.github.io/health-and-recovery/fix-guide/)** and **[Method](https://conholdate-blogs.github.io/health-and-recovery/method/)**: what each check means and how to fix it; how the audits and scores work.
 
 Scores are out of 100, without letters. aspose.app is still audited in this repo but not published (`published: false` in its tenant file).
 
-[![Publish report](https://github.com/shoaibkhan-aspose/health-and-recovery/actions/workflows/pages.yml/badge.svg)](https://github.com/shoaibkhan-aspose/health-and-recovery/actions/workflows/pages.yml)
+[![Publish report](https://github.com/conholdate-blogs/health-and-recovery/actions/workflows/pages.yml/badge.svg)](https://github.com/conholdate-blogs/health-and-recovery/actions/workflows/pages.yml)
 
 The site (home page, reports, subdomain pages, archives, fix guide) is rebuilt by GitHub Actions (`scripts/build_site.py`) on every push to `master`, from the run files committed in `reports/<tenant>/`. Audits themselves run locally (see Setup). Links to the old address (`…/aspose-app-health-and-recovery/…`, before the repository was renamed) redirect here. All reports move to a private domain later.
 
