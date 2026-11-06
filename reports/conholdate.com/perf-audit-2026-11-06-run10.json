@@ -1,0 +1,556 @@
+{
+  "tenant": "conholdate.com",
+  "auditor": "perf-audit",
+  "run_id": 10,
+  "params": {
+    "hosts": [
+      "blog.conholdate.com"
+    ],
+    "sections": null,
+    "per_template": 2,
+    "strategy": "mobile",
+    "max_pages": null
+  },
+  "requests": 12,
+  "duration_s": 38.6,
+  "pages_planned": 12,
+  "stopped_early": false,
+  "incomplete": false,
+  "origins": {
+    "blog.conholdate.com": {
+      "id": "https://blog.conholdate.com",
+      "metrics": {
+        "lcp": 2062,
+        "inp": 139,
+        "cls": 0.1,
+        "fcp": 2089,
+        "ttfb": 962
+      }
+    }
+  },
+  "summary": {
+    "blog.conholdate.com": {
+      "pages": 12,
+      "errors": 0,
+      "not_loaded": 0,
+      "field": 0,
+      "issues": {},
+      "median_score": 80
+    }
+  },
+  "findings": [],
+  "pages": [
+    {
+      "url": "https://blog.conholdate.com/conholdate.total/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "category",
+      "group_urls": 18,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 72,
+      "lab": {
+        "lcp": 6365.513071445399,
+        "tbt": 237,
+        "cls": 0.07290400972053462,
+        "fcp": 789.5130714453995,
+        "si": 1547.220397070065
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          1170
+        ],
+        [
+          "Render-blocking requests",
+          150
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/conholdate.total/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.com/de/conholdate.total/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "category",
+      "group_urls": 18,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 68,
+      "lab": {
+        "lcp": 5524.350411199512,
+        "tbt": 396,
+        "cls": 0.07290400972053462,
+        "fcp": 1553.4383473990235,
+        "si": 2319.274058959773
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1000
+        ],
+        [
+          "Reduce unused JavaScript",
+          600
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/de/conholdate.total/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "generic:/{section}/*/*",
+      "group_urls": 18,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 95,
+      "lab": {
+        "lcp": 1550.8574254058021,
+        "tbt": 204,
+        "cls": 0.07290400972053462,
+        "fcp": 1550.8574254058021,
+        "si": 1971.6650401630886
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1000
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "generic:/{section}/*/*",
+      "group_urls": 18,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 96,
+      "lab": {
+        "lcp": 1554.4270169906413,
+        "tbt": 159.5,
+        "cls": 0.07290400972053462,
+        "fcp": 1554.4270169906413,
+        "si": 1799.7825508043206
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1000
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.com/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "home",
+      "group_urls": 18,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 69,
+      "lab": {
+        "lcp": 4992.607849236878,
+        "tbt": 444.5,
+        "cls": 0.07290400972053462,
+        "fcp": 1527.5674734737538,
+        "si": 2125.29762268394
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ],
+        [
+          "Reduce unused JavaScript",
+          600
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.com/ar/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "home",
+      "group_urls": 18,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 69,
+      "lab": {
+        "lcp": 6732.640284001876,
+        "tbt": 293.5000000000009,
+        "cls": 0.07290400972053462,
+        "fcp": 1550.1624730037547,
+        "si": 2099.613437205435
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          1050
+        ],
+        [
+          "Render-blocking requests",
+          1000
+        ],
+        [
+          "Use efficient cache lifetimes",
+          150
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/ar/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.com/ar/search/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "listing",
+      "group_urls": 36,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 68,
+      "lab": {
+        "lcp": 10328.625588978062,
+        "tbt": 313,
+        "cls": 0,
+        "fcp": 1551.3635567252784,
+        "si": 1908.3260706871179
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1050
+        ],
+        [
+          "Reduce unused JavaScript",
+          910
+        ],
+        [
+          "Use efficient cache lifetimes",
+          150
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/ar/search/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.com/archives/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "listing",
+      "group_urls": 36,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 59,
+      "lab": {
+        "lcp": 7493.41072475152,
+        "tbt": 592.5,
+        "cls": 0.07290400972053462,
+        "fcp": 1676.0843116726373,
+        "si": 1732.018332377032
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          900
+        ],
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/archives/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.com/id/total/unlock-zip-online/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "post",
+      "group_urls": 10026,
+      "clicks": 220.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 85,
+      "lab": {
+        "lcp": 1525.0395760698989,
+        "tbt": 298,
+        "cls": 0.17258034833482924,
+        "fcp": 1525.0395760698989,
+        "si": 1868.651782423839
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/id/total/unlock-zip-online/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.com/ko/total/unlock-zip-online/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "post",
+      "group_urls": 10026,
+      "clicks": 164.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 80,
+      "lab": {
+        "lcp": 1548.2681876598692,
+        "tbt": 319.5,
+        "cls": 0.2361976002430134,
+        "fcp": 1548.2681876598692,
+        "si": 1971.9644830742932
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/ko/total/unlock-zip-online/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.com/ko/tag/remove-ppt-password-online/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "tag",
+      "group_urls": 43584,
+      "clicks": 8.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 82,
+      "lab": {
+        "lcp": 1525.2663758158646,
+        "tbt": 661,
+        "cls": 0.07290400972053462,
+        "fcp": 1525.2663758158646,
+        "si": 1845.6728123285757
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/ko/tag/remove-ppt-password-online/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.com/ru/tag/png-to-xml-online/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "template": "tag",
+      "group_urls": 43584,
+      "clicks": 4.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.conholdate.com",
+        "metrics": {
+          "lcp": 2062,
+          "inp": 139,
+          "cls": 0.1,
+          "fcp": 2089,
+          "ttfb": 962
+        }
+      },
+      "lab_score": 93,
+      "lab": {
+        "lcp": 1525.177451079201,
+        "tbt": 281.5,
+        "cls": 0.07290400972053462,
+        "fcp": 1525.177451079201,
+        "si": 1525.177451079201
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.conholdate.com/ru/tag/png-to-xml-online/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    }
+  ]
+}

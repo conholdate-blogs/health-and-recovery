@@ -1,0 +1,6004 @@
+{
+  "tenant": "conholdate.com",
+  "auditor": "crawl-audit",
+  "run_id": 8,
+  "params": {
+    "hosts": [
+      "blog.conholdate.com"
+    ],
+    "sections": null,
+    "inventory_run": 2,
+    "per_template": 2,
+    "other_langs": 2,
+    "max_per_host": null,
+    "max_pages": null
+  },
+  "canonical_targets": {},
+  "requests": 37,
+  "duration_s": 37.0,
+  "pages_planned": 57,
+  "stopped_early": false,
+  "summary": {
+    "blog.conholdate.com": {
+      "pages": 57,
+      "ok_html": 36,
+      "errors": 0,
+      "redirected": 0,
+      "blocked": 21,
+      "ignored": 0,
+      "issues": {
+        "content_needs_js": 4,
+        "description_length": 19,
+        "h1_missing": 3,
+        "hreflang_no_xdefault": 36,
+        "no_structured_data": 4,
+        "robots_blocked": 21,
+        "title_duplicate": 2,
+        "title_length": 7
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "ai-0001",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "ai",
+      "check": "content_needs_js",
+      "type": "incorrect",
+      "title": "Pages show almost no text without JavaScript",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+          "https://blog.conholdate.com/search/",
+          "https://blog.conholdate.com/ar/search/",
+          "https://blog.conholdate.com/ja/search/"
+        ],
+        "observed": "4 of 57 sampled pages (by template: generic:/{section}/*/* 1/3, listing 3/4). e.g. https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: 199 characters of main text in the HTML; https://blog.conholdate.com/search/: 114 characters of main text in the HTML; https://blog.conholdate.com/ar/search/: 114 characters of main text in the HTML; https://blog.conholdate.com/ja/search/: 114 characters of main text in the HTML",
+        "expected": "the main text in the HTML itself (at least 250 characters); AI crawlers do not run JavaScript",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+            "note": "199 characters of main text in the HTML"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/search/",
+            "note": "114 characters of main text in the HTML"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ar/search/",
+            "note": "114 characters of main text in the HTML"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ja/search/",
+            "note": "114 characters of main text in the HTML"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/ko/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.conholdate.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/en/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/ar/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/ja/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "generic:/{section}/*/*": [
+            1,
+            3
+          ],
+          "listing": [
+            3,
+            4
+          ]
+        }
+      },
+      "affected_pages": 33,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "M",
+      "fix_tier": 2,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0001",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "description_length",
+      "type": "improvable",
+      "title": "Meta descriptions are too long or too short",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/conholdate.total/",
+          "https://blog.conholdate.com/",
+          "https://blog.conholdate.com/archives/",
+          "https://blog.conholdate.com/ru/conholdate.total/",
+          "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+          "https://blog.conholdate.com/ar/",
+          "https://blog.conholdate.com/search/",
+          "https://blog.conholdate.com/de/conholdate.total/",
+          "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+          "https://blog.conholdate.com/id/"
+        ],
+        "observed": "19 of 57 sampled pages (by template: category 3/3, generic:/{section}/*/* 2/3, home 3/3, listing 4/4, post 5/22, tag 2/22). e.g. https://blog.conholdate.com/conholdate.total/: width 33: 'Conholdate Blog - Conholdate Blog'; https://blog.conholdate.com/: width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'; https://blog.conholdate.com/archives/: width 8: 'archives'; https://blog.conholdate.com/ru/conholdate.total/: width 35: 'Conholdate.Totals - Conholdate Blog'; https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'",
+        "expected": "50-170 characters (CJK count double)",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/conholdate.total/",
+            "note": "width 33: 'Conholdate Blog - Conholdate Blog'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/",
+            "note": "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/archives/",
+            "note": "width 8: 'archives'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ru/conholdate.total/",
+            "note": "width 35: 'Conholdate.Totals - Conholdate Blog'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+            "note": "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.conholdate.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/ru/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/ko/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "category": [
+            3,
+            3
+          ],
+          "generic:/{section}/*/*": [
+            2,
+            3
+          ],
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            4,
+            4
+          ],
+          "post": [
+            5,
+            22
+          ],
+          "tag": [
+            2,
+            22
+          ]
+        }
+      },
+      "affected_pages": 6325,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0002",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "h1_missing",
+      "type": "improvable",
+      "title": "Pages have no H1",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/",
+          "https://blog.conholdate.com/ar/",
+          "https://blog.conholdate.com/id/"
+        ],
+        "observed": "3 of 57 sampled pages (by template: home 3/3). e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/id/: no non-empty <h1>",
+        "expected": "one H1 that states the page topic",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ar/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/id/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.conholdate.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/ar/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/id/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "home": [
+            3,
+            3
+          ]
+        }
+      },
+      "affected_pages": 18,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "intl-0001",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "intl",
+      "check": "hreflang_no_xdefault",
+      "type": "improvable",
+      "title": "hreflang set has no x-default",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/conholdate.total/",
+          "https://blog.conholdate.com/",
+          "https://blog.conholdate.com/archives/",
+          "https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/",
+          "https://blog.conholdate.com/ru/conholdate.total/",
+          "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+          "https://blog.conholdate.com/ar/",
+          "https://blog.conholdate.com/search/",
+          "https://blog.conholdate.com/total/merge-jpg-images-into-pdf-using-csharp/",
+          "https://blog.conholdate.com/de/conholdate.total/"
+        ],
+        "observed": "36 of 57 sampled pages (by template: category 3/3, generic:/{section}/*/* 2/3, home 3/3, listing 4/4, post 22/22, tag 2/22). e.g. https://blog.conholdate.com/conholdate.total/: 1 entries: en; https://blog.conholdate.com/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/archives/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/ru/conholdate.total/: 17 entries: ja, ko, es, de, ru, fr",
+        "expected": "an x-default entry",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/conholdate.total/",
+            "note": "1 entries: en"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/",
+            "note": "18 entries: en, ja, ko, es, de, ru"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/archives/",
+            "note": "18 entries: en, ja, ko, es, de, ru"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/",
+            "note": "18 entries: en, ja, ko, es, de, ru"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ru/conholdate.total/",
+            "note": "17 entries: ja, ko, es, de, ru, fr"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.conholdate.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/ru/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "category": [
+            3,
+            3
+          ],
+          "generic:/{section}/*/*": [
+            2,
+            3
+          ],
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            4,
+            4
+          ],
+          "post": [
+            22,
+            22
+          ],
+          "tag": [
+            2,
+            22
+          ]
+        }
+      },
+      "affected_pages": 14072,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 2,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "ai-0002",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "ai",
+      "check": "no_structured_data",
+      "type": "improvable",
+      "title": "Pages have no structured data (JSON-LD)",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+          "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+          "https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/",
+          "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/"
+        ],
+        "observed": "4 of 57 sampled pages (by template: generic:/{section}/*/* 2/3, tag 2/22). e.g. https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: no JSON-LD; https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/: no JSON-LD; https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/: no JSON-LD; https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/: no JSON-LD",
+        "expected": "JSON-LD naming what the page is (e.g. WebApplication, Article, FAQPage) and who publishes it",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+            "note": "no JSON-LD"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+            "note": "no JSON-LD"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/",
+            "note": "no JSON-LD"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/",
+            "note": "no JSON-LD"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/ko/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.conholdate.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/pl/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/it/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/nl/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "generic:/{section}/*/*": [
+            2,
+            3
+          ],
+          "tag": [
+            2,
+            22
+          ]
+        }
+      },
+      "affected_pages": 3974,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 2,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "crawl-0001",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "crawl",
+      "check": "robots_blocked",
+      "type": "incorrect",
+      "title": "Sitemaps list pages that robots.txt blocks",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/",
+          "https://blog.conholdate.com/tag/slides-to-word/",
+          "https://blog.conholdate.com/tag/pdf-to-jpg/",
+          "https://blog.conholdate.com/tag/fuzzy-search-in-c/",
+          "https://blog.conholdate.com/tag/clear-image-background/",
+          "https://blog.conholdate.com/tag/convert-word-to-tiff-in-java/",
+          "https://blog.conholdate.com/tag/excel-to-svg/",
+          "https://blog.conholdate.com/tag/md-to-doc/",
+          "https://blog.conholdate.com/tag/add-text-watermark-using-csharp/",
+          "https://blog.conholdate.com/tag/convert-html-to-pdf/"
+        ],
+        "observed": "21 of 57 sampled pages (by template: generic:/{section}/*/* 1/3, tag 20/22). e.g. https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/: disallowed by robots.txt; https://blog.conholdate.com/tag/slides-to-word/: disallowed by robots.txt; https://blog.conholdate.com/tag/pdf-to-jpg/: disallowed by robots.txt; https://blog.conholdate.com/tag/fuzzy-search-in-c/: disallowed by robots.txt; https://blog.conholdate.com/tag/clear-image-background/: disallowed by robots.txt. Exact count from the sitemaps: 2526",
+        "expected": "sitemaps list only crawlable pages",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/",
+            "note": "disallowed by robots.txt"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/tag/slides-to-word/",
+            "note": "disallowed by robots.txt"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/tag/pdf-to-jpg/",
+            "note": "disallowed by robots.txt"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/tag/fuzzy-search-in-c/",
+            "note": "disallowed by robots.txt"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/tag/clear-image-background/",
+            "note": "disallowed by robots.txt"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.conholdate.com/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "generic:/{section}/*/*": [
+            1,
+            3
+          ],
+          "tag": [
+            20,
+            22
+          ]
+        }
+      },
+      "affected_pages": 2526,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 3,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0003",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "title_duplicate",
+      "type": "not_optimized",
+      "title": "Different pages share the same title",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/conholdate.total/",
+          "https://blog.conholdate.com/"
+        ],
+        "observed": "2 of 57 sampled pages (by template: category 1/3, home 1/3). e.g. https://blog.conholdate.com/conholdate.total/: 'Conholdate Blog' also on https://blog.conholdate.com/; https://blog.conholdate.com/: 'Conholdate Blog' also on https://blog.conholdate.com/conholdate.total/",
+        "expected": "a unique title per page and language",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/conholdate.total/",
+            "note": "'Conholdate Blog' also on https://blog.conholdate.com/"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/",
+            "note": "'Conholdate Blog' also on https://blog.conholdate.com/conholdate.total/"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.conholdate.com/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "category": [
+            1,
+            3
+          ],
+          "home": [
+            1,
+            3
+          ]
+        }
+      },
+      "affected_pages": 12,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "M",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0004",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "title_length",
+      "type": "improvable",
+      "title": "Titles are too long or too short",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/archives/",
+          "https://blog.conholdate.com/search/",
+          "https://blog.conholdate.com/ar/search/",
+          "https://blog.conholdate.com/ja/search/",
+          "https://blog.conholdate.com/total/free-psd-viewer-online/",
+          "https://blog.conholdate.com/total/create-and-obtain-form-fields-from-word-documents-with-java/",
+          "https://blog.conholdate.com/es/total/scrub-metadata-online/"
+        ],
+        "observed": "7 of 57 sampled pages (by template: listing 4/4, post 3/22). e.g. https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/search/: width 6: 'Search'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/ja/search/: width 4: '探す'; https://blog.conholdate.com/total/free-psd-viewer-online/: width 82: 'Free Adobe PSD Image Viewer Online | View Photoshop PSD File in C# .NET | Open PSD'",
+        "expected": "10-70 characters (CJK count double)",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/archives/",
+            "note": "width 7: 'Archive'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/search/",
+            "note": "width 6: 'Search'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ar/search/",
+            "note": "width 4: 'يبحث'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ja/search/",
+            "note": "width 4: '探す'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/total/free-psd-viewer-online/",
+            "note": "width 82: 'Free Adobe PSD Image Viewer Online | View Photoshop PSD File in C# .NET | Open PSD'"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.conholdate.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/ar/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.conholdate.com/ja/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "listing": [
+            4,
+            4
+          ],
+          "post": [
+            3,
+            22
+          ]
+        }
+      },
+      "affected_pages": 1403,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://blog.conholdate.com/conholdate.total/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 18,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/conholdate.total/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 26002,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 555,
+      "facts": {
+        "titles": [
+          "Conholdate Blog"
+        ],
+        "descriptions": [
+          "Conholdate Blog - Conholdate Blog"
+        ],
+        "h1": [
+          "Conholdate Blog"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/conholdate.total/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/conholdate.total/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2200,
+        "jsonld_types": [
+          "BreadcrumbList"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 33: 'Conholdate Blog - Conholdate Blog'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ],
+        [
+          "title_duplicate",
+          "'Conholdate Blog' also on https://blog.conholdate.com/"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 18,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 18,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 31793,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 544,
+      "facts": {
+        "titles": [
+          "Conholdate Blog"
+        ],
+        "descriptions": [
+          "Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java."
+        ],
+        "h1": [],
+        "canonicals": [
+          "https://blog.conholdate.com/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2314,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ],
+        [
+          "title_duplicate",
+          "'Conholdate Blog' also on https://blog.conholdate.com/conholdate.total/"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/archives/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 36,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/archives/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 234063,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 637,
+      "facts": {
+        "titles": [
+          "Archive"
+        ],
+        "descriptions": [
+          "archives"
+        ],
+        "h1": [
+          "Archive"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/archives/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/archives/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/archives/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/archives/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/archives/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/archives/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/archives/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/archives/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/archives/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/archives/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/archives/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/archives/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/archives/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/archives/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/archives/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/archives/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/archives/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/archives/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/archives/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 33091,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 7: 'Archive'"
+        ],
+        [
+          "description_length",
+          "width 8: 'archives'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 34567,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 589,
+      "facts": {
+        "titles": [
+          "Convert PPTX to XML with C# – Simple Code Example"
+        ],
+        "descriptions": [
+          "Step-by-step guide to convert PPTX to XML in C#. Export PowerPoint files to XML quickly with simple code using Conholdate.Total."
+        ],
+        "h1": [
+          "Convert PPTX to XML in C#"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/convert-pptx-to-xml-csharp/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/convert-pptx-to-xml-csharp/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3031,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/slides-to-word/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/ru/conholdate.total/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "ru",
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 18,
+      "listed_in": "https://blog.conholdate.com/ru/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/ru/conholdate.total/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 35173,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 612,
+      "facts": {
+        "titles": [
+          "Conholdate.Totals"
+        ],
+        "descriptions": [
+          "Conholdate.Totals - Conholdate Blog"
+        ],
+        "h1": [
+          "Conholdate.Totals"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/ru/conholdate.total/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/conholdate.total/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/conholdate.total/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/conholdate.total/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/conholdate.total/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/conholdate.total/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/conholdate.total/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/conholdate.total/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/conholdate.total/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/conholdate.total/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/conholdate.total/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/conholdate.total/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/conholdate.total/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/conholdate.total/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/conholdate.total/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/conholdate.total/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/conholdate.total/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/conholdate.total/"
+          ]
+        ],
+        "html_lang": "ru",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2729,
+        "jsonld_types": [
+          "BreadcrumbList"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 35: 'Conholdate.Totals - Conholdate Blog'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "17 entries: ja, ko, es, de, ru, fr"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "ko",
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 18,
+      "listed_in": "https://blog.conholdate.com/ko/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 15550,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 511,
+      "facts": {
+        "titles": [
+          "hide/unhide rows and columns"
+        ],
+        "descriptions": [
+          "Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java."
+        ],
+        "h1": [
+          "hide/unhide rows and columns"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/"
+          ]
+        ],
+        "html_lang": "ko",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 199,
+        "jsonld_types": [],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ],
+        [
+          "content_needs_js",
+          "199 characters of main text in the HTML"
+        ],
+        [
+          "no_structured_data",
+          "no JSON-LD"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/ar/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "ar",
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 18,
+      "listed_in": "https://blog.conholdate.com/ar/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/ar/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 33658,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 651,
+      "facts": {
+        "titles": [
+          "Conholdate Blog"
+        ],
+        "descriptions": [
+          "Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java."
+        ],
+        "h1": [],
+        "canonicals": [
+          "https://blog.conholdate.com/ar/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/"
+          ]
+        ],
+        "html_lang": "ar",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2074,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/search/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 36,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/search/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 15502,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 493,
+      "facts": {
+        "titles": [
+          "Search"
+        ],
+        "descriptions": [
+          "search"
+        ],
+        "h1": [
+          "Search"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/search/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/search/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/search/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/search/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/search/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/search/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/search/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/search/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/search/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/search/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/search/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/search/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/search/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/search/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/search/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/search/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/search/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/search/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/search/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 114,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 6: 'Search'"
+        ],
+        [
+          "description_length",
+          "width 6: 'search'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ],
+        [
+          "content_needs_js",
+          "114 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/merge-jpg-images-into-pdf-using-csharp/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/merge-jpg-images-into-pdf-using-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 38617,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 792,
+      "facts": {
+        "titles": [
+          "C# Code to Merge JPG Images into a PDF"
+        ],
+        "descriptions": [
+          "Learn how to programmatically convert and merge multiple JPG images into a single PDF using C# with Aspose.Imaging and GroupDocs.Merger."
+        ],
+        "h1": [
+          "C# Code to Merge JPG Images into a PDF"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/merge-jpg-images-into-pdf-using-csharp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/merge-jpg-images-into-pdf-using-csharp/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/merge-jpg-images-into-pdf-using-csharp/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3270,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/pdf-to-jpg/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/de/conholdate.total/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "de",
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 18,
+      "listed_in": "https://blog.conholdate.com/de/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/de/conholdate.total/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 32696,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 76,
+      "facts": {
+        "titles": [
+          "Conholdate.Totals"
+        ],
+        "descriptions": [
+          "Conholdate.Totals - Conholdate Blog"
+        ],
+        "h1": [
+          "Conholdate.Totals"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/de/conholdate.total/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/conholdate.total/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/conholdate.total/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/conholdate.total/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/conholdate.total/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/conholdate.total/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/conholdate.total/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/conholdate.total/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/conholdate.total/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/conholdate.total/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/conholdate.total/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/conholdate.total/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/conholdate.total/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/conholdate.total/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/conholdate.total/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/conholdate.total/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/conholdate.total/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/conholdate.total/"
+          ]
+        ],
+        "html_lang": "de",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2863,
+        "jsonld_types": [
+          "BreadcrumbList"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 35: 'Conholdate.Totals - Conholdate Blog'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "17 entries: ja, ko, es, de, ru, fr"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "pl",
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 18,
+      "listed_in": "https://blog.conholdate.com/pl/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 15560,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 537,
+      "facts": {
+        "titles": [
+          "hide/unhide rows and columns"
+        ],
+        "descriptions": [
+          "Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java."
+        ],
+        "h1": [
+          "hide/unhide rows and columns"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/"
+          ]
+        ],
+        "html_lang": "pl",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 307,
+        "jsonld_types": [],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ],
+        [
+          "no_structured_data",
+          "no JSON-LD"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/id/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "id",
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 18,
+      "listed_in": "https://blog.conholdate.com/id/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/id/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 32386,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 542,
+      "facts": {
+        "titles": [
+          "Conholdate Blog"
+        ],
+        "descriptions": [
+          "Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java."
+        ],
+        "h1": [],
+        "canonicals": [
+          "https://blog.conholdate.com/id/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/"
+          ]
+        ],
+        "html_lang": "id",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2612,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/ar/search/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "ar",
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 36,
+      "listed_in": "https://blog.conholdate.com/ar/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/ar/search/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 15578,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 761,
+      "facts": {
+        "titles": [
+          "يبحث"
+        ],
+        "descriptions": [
+          "بحث"
+        ],
+        "h1": [
+          "يبحث"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/ar/search/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/search/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/search/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/search/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/search/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/search/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/search/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/search/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/search/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/search/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/search/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/search/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/search/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/search/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/search/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/search/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/search/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/search/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/search/"
+          ]
+        ],
+        "html_lang": "ar",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 114,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 4: 'يبحث'"
+        ],
+        [
+          "description_length",
+          "width 3: 'بحث'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ],
+        [
+          "content_needs_js",
+          "114 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/convert-visio-to-pdf-online/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/convert-visio-to-pdf-online/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 35170,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 575,
+      "facts": {
+        "titles": [
+          "Convert Visio to PDF Online for Free | VSD VSDX to PDF Converter"
+        ],
+        "descriptions": [
+          "Convert Visio to PDF Online for Free. VSDX VSD to PDF Free Converter. Create Visio to PDF converter in C# or Java."
+        ],
+        "h1": [
+          "Convert Visio to PDF Online"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/convert-visio-to-pdf-online/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/convert-visio-to-pdf-online/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/convert-visio-to-pdf-online/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3203,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/fuzzy-search-in-c/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/ja/search/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "ja",
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 36,
+      "listed_in": "https://blog.conholdate.com/ja/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/ja/search/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 15523,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 838,
+      "facts": {
+        "titles": [
+          "探す"
+        ],
+        "descriptions": [
+          "探す"
+        ],
+        "h1": [
+          "探す"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/ja/search/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/search/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/search/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/search/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/search/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/search/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/search/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/search/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/search/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/search/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/search/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/search/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/search/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/search/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/search/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/search/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/search/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/search/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/search/"
+          ]
+        ],
+        "html_lang": "ja",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 114,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 4: '探す'"
+        ],
+        [
+          "description_length",
+          "width 4: '探す'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ],
+        [
+          "content_needs_js",
+          "114 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 37164,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 706,
+      "facts": {
+        "titles": [
+          "Convert MPP to MPX in C# | Export Microsoft Project Files"
+        ],
+        "descriptions": [
+          "Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsoft Project data into MPX format programmatically to enhance compatibility and integration across systems."
+        ],
+        "h1": [
+          "Convert MPP to MPX in C#"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/convert-mpp-to-mpx-in-csharp/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/convert-mpp-to-mpx-in-csharp/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3182,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 194: 'Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsof'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/clear-image-background/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/search-data-in-excel-using-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/search-data-in-excel-using-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 39124,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 641,
+      "facts": {
+        "titles": [
+          "Java Excel Search: Find Text, Formulas & Patterns"
+        ],
+        "descriptions": [
+          "Step-by-step guide to search cells, text, formulas, and patterns in Excel with Java using Aspose.Cells."
+        ],
+        "h1": [
+          "Java Excel Search: Find Text, Formulas & Patterns"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/search-data-in-excel-using-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/search-data-in-excel-using-java/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/search-data-in-excel-using-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2891,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/convert-word-to-tiff-in-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/extract-images-from-epub-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/extract-images-from-epub-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 36452,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 584,
+      "facts": {
+        "titles": [
+          "Extract Images from EPUB Files in Java | Conholdate Total"
+        ],
+        "descriptions": [
+          "Learn how to extract and save images from EPUB files using Java with the Conholdate.Total SDK. Simple code example for efficient image extraction."
+        ],
+        "h1": [
+          "Extract Images from EPUB Files in Java"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/extract-images-from-epub-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/extract-images-from-epub-java/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/extract-images-from-epub-java/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/extract-images-from-epub-java/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/extract-images-from-epub-java/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/extract-images-from-epub-java/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/extract-images-from-epub-java/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/extract-images-from-epub-java/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/extract-images-from-epub-java/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/extract-images-from-epub-java/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/extract-images-from-epub-java/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/extract-images-from-epub-java/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/extract-images-from-epub-java/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/extract-images-from-epub-java/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/extract-images-from-epub-java/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/extract-images-from-epub-java/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/extract-images-from-epub-java/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/extract-images-from-epub-java/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/extract-images-from-epub-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3526,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/excel-to-svg/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/convert-pdf-to-ppt-using-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/convert-pdf-to-ppt-using-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 38235,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 546,
+      "facts": {
+        "titles": [
+          "Convert PDF to PPT PPTX in Java | PDF to PowerPoint Presentation"
+        ],
+        "descriptions": [
+          "This guide explains how to **convert PDF to PPT or PPTX PowerPoint Presentation using Java**. Export PDF to Presentation slides."
+        ],
+        "h1": [
+          "Convert PDF to PPT or PPTX using Java"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/convert-pdf-to-ppt-using-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/convert-pdf-to-ppt-using-java/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/convert-pdf-to-ppt-using-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3201,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/md-to-doc/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/compare-two-images-and-highlight-differences-csharp/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/compare-two-images-and-highlight-differences-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 40249,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 578,
+      "facts": {
+        "titles": [
+          "C# Image Comparison: Find Differences Between Pictures"
+        ],
+        "descriptions": [
+          "Use our C# image comparison library or free online tool to compare JPG, PNG, BMP, and more, highlighting differences instantly."
+        ],
+        "h1": [
+          "Compare Two Images and Highlight Differences in C#"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/compare-two-images-and-highlight-differences-csharp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/compare-two-images-and-highlight-differences-csharp/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/compare-two-images-and-highlight-differences-csharp/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3027,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/add-text-watermark-using-csharp/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/split-excel-workbook-in-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/split-excel-workbook-in-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 66156,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 701,
+      "facts": {
+        "titles": [
+          "Split Excel Workbook in Java"
+        ],
+        "descriptions": [
+          "Split an Excel workbook into separate XLSX files with Conholdate.Total for Java. Follow this guide for code, setup steps, and performance tips Java developers."
+        ],
+        "h1": [
+          "Split Excel Workbook in Java"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/split-excel-workbook-in-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/split-excel-workbook-in-java/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/split-excel-workbook-in-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 8265,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/convert-html-to-pdf/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/update-cell-value-in-excel-using-csharp/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/update-cell-value-in-excel-using-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 33582,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 752,
+      "facts": {
+        "titles": [
+          "Update Excel Cell Value Using C# – Simple Code Example"
+        ],
+        "descriptions": [
+          "Step-by-step guide to update Excel cell values with C#. Install the Conholdate.Total library and edit any cell programmatically using concise code."
+        ],
+        "h1": [
+          "Update Cell Value in Excel using C#"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/update-cell-value-in-excel-using-csharp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/update-cell-value-in-excel-using-csharp/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/update-cell-value-in-excel-using-csharp/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2091,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/combine-word-documents-into-one/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/convert-visio-to-image-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/convert-visio-to-image-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 33702,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 645,
+      "facts": {
+        "titles": [
+          "Convert Visio to Image in Java | VSDX to JPG or PNG Easily"
+        ],
+        "descriptions": [
+          "Converting Visio VSDX diagrams to common image formats like JPG or PNG simplifies sharing and enhances compatibility with other applications. This guide will show you how to achieve this using Java."
+        ],
+        "h1": [
+          "Convert Visio to Image in Java"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/convert-visio-to-image-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/convert-visio-to-image-java/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/convert-visio-to-image-java/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/convert-visio-to-image-java/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/convert-visio-to-image-java/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/convert-visio-to-image-java/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/convert-visio-to-image-java/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/convert-visio-to-image-java/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/convert-visio-to-image-java/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/convert-visio-to-image-java/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/convert-visio-to-image-java/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/convert-visio-to-image-java/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/convert-visio-to-image-java/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/convert-visio-to-image-java/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/convert-visio-to-image-java/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/convert-visio-to-image-java/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/convert-visio-to-image-java/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/convert-visio-to-image-java/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/convert-visio-to-image-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2495,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 198: 'Converting Visio VSDX diagrams to common image formats like JPG or PNG simplifies sharing '"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/find-and-replace-pdf-text/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/convert-fbx-to-obj-in-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/convert-fbx-to-obj-in-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 61009,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 668,
+      "facts": {
+        "titles": [
+          "Convert FBX to OBJ in Java"
+        ],
+        "descriptions": [
+          "Learn how to convert FBX to OBJ in Java using Conholdate.Total for Java SDK. Follow a guide with code, setup, options, and practices for 3D model conversion."
+        ],
+        "h1": [
+          "Convert FBX to OBJ in Java"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/convert-fbx-to-obj-in-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/convert-fbx-to-obj-in-java/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/convert-fbx-to-obj-in-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 7026,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/convert-vsdx-to-png-in-node.js/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/add-watermark-to-images-using-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/add-watermark-to-images-using-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 36236,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 611,
+      "facts": {
+        "titles": [
+          "Add Watermark to Images using Java"
+        ],
+        "descriptions": [
+          "How to **Add Watermark to Images using Java** programmatically? You can install this **Java imaging library** to manipulate and process images by writing Java code."
+        ],
+        "h1": [
+          "How to Add Watermark to Images using Java"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/add-watermark-to-images-using-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/add-watermark-to-images-using-java/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/add-watermark-to-images-using-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2758,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/merge-two-word-documents/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/free-psd-viewer-online/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/free-psd-viewer-online/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 34372,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 460,
+      "facts": {
+        "titles": [
+          "Free Adobe PSD Image Viewer Online | View Photoshop PSD File in C# .NET | Open PSD"
+        ],
+        "descriptions": [
+          "Free PSD File Viewer Online to Open Adobe Photoshop Images. You can quickly view PSD image online without any signup or payment details with just a few clicks."
+        ],
+        "h1": [
+          "Free PSD Viewer Online"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/free-psd-viewer-online/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/free-psd-viewer-online/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/free-psd-viewer-online/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/free-psd-viewer-online/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/free-psd-viewer-online/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/free-psd-viewer-online/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/free-psd-viewer-online/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/free-psd-viewer-online/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/free-psd-viewer-online/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/free-psd-viewer-online/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/free-psd-viewer-online/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/free-psd-viewer-online/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/free-psd-viewer-online/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/free-psd-viewer-online/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/free-psd-viewer-online/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/free-psd-viewer-online/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/free-psd-viewer-online/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/free-psd-viewer-online/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/free-psd-viewer-online/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2785,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 82: 'Free Adobe PSD Image Viewer Online | View Photoshop PSD File in C# .NET | Open PSD'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/zip-to-7z-csharp/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/extract-text-from-a-pdf-file-in-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/extract-text-from-a-pdf-file-in-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 39617,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 541,
+      "facts": {
+        "titles": [
+          "Extract Text from a PDF File in Java"
+        ],
+        "descriptions": [
+          "Let's learn how to **extract text from a PDF file in Java.** Extract text from a specific page region of PDF file or extract it in any form programmatically."
+        ],
+        "h1": [
+          "Extract Text from a PDF File in Java"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/extract-text-from-a-pdf-file-in-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/extract-text-from-a-pdf-file-in-java/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/extract-text-from-a-pdf-file-in-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3610,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/remove-pages-from-pdf-with-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/xml-sitemap-validator-online/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/xml-sitemap-validator-online/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 33942,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 546,
+      "facts": {
+        "titles": [
+          "Free Online XML Sitemap Validator | Check Sitemap Errors Instantly"
+        ],
+        "descriptions": [
+          "Validate your XML sitemap online for free using our powerful XML Sitemap Validator. Instantly detect sitemap errors, ensure indexing, and improve SEO health."
+        ],
+        "h1": [
+          "XML Sitemap Validator Online"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/xml-sitemap-validator-online/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/xml-sitemap-validator-online/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/xml-sitemap-validator-online/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3027,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/edit-docx-using-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/convert-svg-to-pdf-programmatically-in-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/convert-svg-to-pdf-programmatically-in-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 37170,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 648,
+      "facts": {
+        "titles": [
+          "Convert SVG to PDF Programmatically in Java"
+        ],
+        "descriptions": [
+          "Follow this guide to learn how to **convert SVG to PDF programmatically in Java**. This java library is easy and offers robust file format conversion methods."
+        ],
+        "h1": [
+          "Convert SVG to PDF Programmatically in Java"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/convert-svg-to-pdf-programmatically-in-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/convert-svg-to-pdf-programmatically-in-java/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/convert-svg-to-pdf-programmatically-in-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2972,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/xml-editing-in-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/create-and-obtain-form-fields-from-word-documents-with-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/create-and-obtain-form-fields-from-word-documents-with-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 48544,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 567,
+      "facts": {
+        "titles": [
+          "Java Word Automation - Insert and Obtain Form Fields from Word Documents (DOC, DOCX)"
+        ],
+        "descriptions": [
+          "In this short tutorial, you will learn **how to create and obtain form fields from word documents (DOC, DOCX) with Java**. Merely, Install a **Java Word automation library** and add or retrieve form fields automatically."
+        ],
+        "h1": [
+          "Create and Obtain Form Fields from Word Documents with Java"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/create-and-obtain-form-fields-from-word-documents-with-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 5584,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 84: 'Java Word Automation - Insert and Obtain Form Fields from Word Documents (DOC, DOCX)'"
+        ],
+        [
+          "description_length",
+          "width 220: 'In this short tutorial, you will learn **how to create and obtain form fields from word do'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/convert-ms-office-documents-to-pdf/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/convert-image-to-json-using-csharp/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/convert-image-to-json-using-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 34873,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 692,
+      "facts": {
+        "titles": [
+          "Convert Image to JSON in C# Using .NET OCR API"
+        ],
+        "descriptions": [
+          "Learn how to programmatically convert images to JSON in C# with the .NET OCR API, extracting text and full image details into a clean JSON structure."
+        ],
+        "h1": [
+          "Convert Image to JSON using C#"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/convert-image-to-json-using-csharp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/convert-image-to-json-using-csharp/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/convert-image-to-json-using-csharp/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2668,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/jpg-to-jpg/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/total/convert-shp-to-svg-in-csharp/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/total/convert-shp-to-svg-in-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 38427,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 676,
+      "facts": {
+        "titles": [
+          "Convert SHP to SVG in C# | Export Shapefile to SVG Format"
+        ],
+        "descriptions": [
+          "Learn how to convert SHP to SVG in C# using Conholdate.Total for .NET SDK. Export geospatial shapefiles to SVG vector images programmatically with high accuracy and precision."
+        ],
+        "h1": [
+          "Convert SHP to SVG in C#"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/total/convert-shp-to-svg-in-csharp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/convert-shp-to-svg-in-csharp/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/convert-shp-to-svg-in-csharp/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3798,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 175: 'Learn how to convert SHP to SVG in C# using Conholdate.Total for .NET SDK. Export geospati'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/excel-csharp-api/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/en/sitemap.xml",
+      "status": null,
+      "final_url": null,
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": null,
+      "bytes": 0,
+      "truncated": 0,
+      "blocked": 1,
+      "error": "disallowed by robots.txt",
+      "elapsed_ms": 0,
+      "facts": null,
+      "ignored": null,
+      "issues": [
+        [
+          "robots_blocked",
+          "disallowed by robots.txt"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/es/total/scrub-metadata-online/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "es",
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/es/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/es/total/scrub-metadata-online/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 39649,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 594,
+      "facts": {
+        "titles": [
+          "Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX"
+        ],
+        "descriptions": [
+          "Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Elimine información oculta utilizando el limpiador de metadatos seguro de Conholdate."
+        ],
+        "h1": [
+          "Eliminar metadatos de archivos en línea"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/es/total/scrub-metadata-online/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/scrub-metadata-online/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/scrub-metadata-online/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/scrub-metadata-online/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/scrub-metadata-online/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/scrub-metadata-online/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/scrub-metadata-online/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/scrub-metadata-online/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/scrub-metadata-online/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/scrub-metadata-online/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/scrub-metadata-online/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/scrub-metadata-online/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/scrub-metadata-online/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/scrub-metadata-online/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/scrub-metadata-online/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/scrub-metadata-online/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/scrub-metadata-online/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/scrub-metadata-online/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/scrub-metadata-online/"
+          ]
+        ],
+        "html_lang": "es",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 4933,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'"
+        ],
+        [
+          "description_length",
+          "width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "it",
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/it/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 15460,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 528,
+      "facts": {
+        "titles": [
+          "Extract Data from PDF in C#"
+        ],
+        "descriptions": [
+          "Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java."
+        ],
+        "h1": [
+          "Extract Data from PDF in C#"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/tag/extract-data-from-pdf-in-c/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/tag/extract-data-from-pdf-in-c/"
+          ]
+        ],
+        "html_lang": "it",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 375,
+        "jsonld_types": [],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ],
+        [
+          "no_structured_data",
+          "no JSON-LD"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/it/total/convert-html-to-xps-in-java/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "it",
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 10026,
+      "listed_in": "https://blog.conholdate.com/it/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/it/total/convert-html-to-xps-in-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 38500,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 478,
+      "facts": {
+        "titles": [
+          "Converti HTML in XPS in Java | Esporta pagina Web in XPS"
+        ],
+        "descriptions": [
+          "Scopri come convertire HTML in XPS in Java. Esporta pagine web e documenti HTML nel formato XPS in modo programmatico e con facilità."
+        ],
+        "h1": [
+          "Converti HTML in XPS in Java"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/it/total/convert-html-to-xps-in-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/total/convert-html-to-xps-in-java/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/total/convert-html-to-xps-in-java/"
+          ]
+        ],
+        "html_lang": "it",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3666,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "nl",
+      "template": "tag",
+      "source": "sitemap",
+      "group_urls": 43584,
+      "listed_in": "https://blog.conholdate.com/nl/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 15629,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 662,
+      "facts": {
+        "titles": [
+          "Presentation to Excel Conversion"
+        ],
+        "descriptions": [
+          "Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java."
+        ],
+        "h1": [
+          "Presentation to Excel Conversion"
+        ],
+        "canonicals": [
+          "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.com/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.com/ja/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.com/ko/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.com/es/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.com/de/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.com/ru/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.com/fr/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.com/zh/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.com/it/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.com/pt/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.com/vi/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.com/th/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.com/id/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "ar",
+            "https://blog.conholdate.com/ar/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.com/fa/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.com/tr/tag/presentation-to-excel-conversion/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.com/pl/tag/presentation-to-excel-conversion/"
+          ]
+        ],
+        "html_lang": "nl",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 322,
+        "jsonld_types": [],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "18 entries: en, ja, ko, es, de, ru"
+        ],
+        [
+          "no_structured_data",
+          "no JSON-LD"
+        ]
+      ]
+    }
+  ]
+}

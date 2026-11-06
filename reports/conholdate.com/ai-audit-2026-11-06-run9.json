@@ -1,0 +1,89 @@
+{
+  "tenant": "conholdate.com",
+  "auditor": "ai-audit",
+  "run_id": 9,
+  "params": {
+    "hosts": [
+      "blog.conholdate.com"
+    ]
+  },
+  "requests": 12,
+  "duration_s": 11.5,
+  "stopped_early": false,
+  "summary": {
+    "blog.conholdate.com": {
+      "robots": 200,
+      "answer_blocked": [],
+      "training_blocked": [],
+      "firewall_blocked": {},
+      "firewall_training": {},
+      "llms": {
+        "state": "missing",
+        "note": "HTTP 404",
+        "url": "https://blog.conholdate.com/llms.txt"
+      },
+      "sections": 0,
+      "sections_covered": 0,
+      "section_files": []
+    }
+  },
+  "findings": [
+    {
+      "id": "ai-0001",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "llms.txt",
+      "dimension": "ai",
+      "check": "llms_txt_missing",
+      "type": "improvable",
+      "title": "No llms.txt for AI assistants",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/llms.txt"
+        ],
+        "observed": "https://blog.conholdate.com/llms.txt: HTTP 404",
+        "expected": "/llms.txt as plain text or Markdown: an H1 with the site name, a short summary and links to the key pages",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/llms.txt",
+            "note": "HTTP 404"
+          }
+        ]
+      },
+      "affected_pages": 0,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    }
+  ],
+  "hosts": {
+    "blog.conholdate.com": {
+      "robots": {
+        "status": 200,
+        "error": null,
+        "answer_blocked": {},
+        "training_blocked": {}
+      },
+      "firewall": {
+        "url": "https://blog.conholdate.com/",
+        "baseline": 200,
+        "bytes": 31793,
+        "blocked": {}
+      },
+      "llms": {
+        "url": "https://blog.conholdate.com/llms.txt",
+        "state": "missing",
+        "note": "HTTP 404",
+        "links": []
+      }
+    }
+  }
+}
