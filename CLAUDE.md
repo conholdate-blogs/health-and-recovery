@@ -162,14 +162,14 @@ python scripts/build_report.py --out reports/$TENANT/discovery-latest.html --sna
 #   family health in reports/$TENANT/health-history.json (trend in "Changes since the last run"); after every full run
 python scripts/build_site.py --out /tmp/site   # optional local preview of the whole Pages site
 # delete superseded run JSONs; then
-git add -A && git commit -m "..." && git push github master   # Actions rebuilds the Pages report + archive
+git add -A && git commit -m "..."; then git push origin master, git push shoaibkhan master, git push gitlab master   # Actions rebuilds Pages in both GitHub repos
 ```
 
 **Working rules from SK (keep):**
 - **Commit email: always `shoaib.khan@aspose.com`** (SK, 2026-10-22). Set in this repo's `.git/config`, because something on the Mac switches the global `~/.gitconfig` to SK's personal address; check `git log -1 --format=%ae` after every commit. History rewritten 2026-10-22 (`git filter-repo --mailmap`, 80 of 96 commits moved from the personal address; dates, messages and files unchanged; all commit ids changed; backup bundle kept outside the repo; old → new id map: Claude doc https://claude.ai/artifact/LyhQxpxJhcb3L9twbCJ41k).
 - Commits: SK is the only author and committer. Credit Claude with a plain last line `Assisted by Claude Code` (SK, 2026-10-12; exactly this wording, no model name); **never a `Co-Authored-By: Claude` trailer** (GitHub would show Claude as co-author). Leave old commits as they are.
 - **Bug fixes on site repos (SK, 2026-11-03):** the commit message carries the line `Fixed by Health and Recovery Agent`, before `Assisted by Claude Code`.
-- Commit at each logical step; push to `github` (GitLab `origin` mirrors GitHub).
+- Commit at each logical step; push to all three remotes, one command each: `origin`, `shoaibkhan`, `gitlab` (see Repo below).
 - Report changes apply to the **latest report only**; never regenerate older report pages or run JSONs.
 - **Archive before anything replaces the live report (SK, 2026-10-15: "store in archive whatever is necessary and don't forget it"):** before pushing a report whose structure or data changed, check `reports/<tenant>/archive/index.json`. If the version live on Pages is not archived yet, download it (`curl` the tenant's Pages URL `/<tenant>/` into `reports/<tenant>/archive/<date>.html`, add an index entry "…, before <change>"; it equals a build of the last commit), then build the new report with `--snapshot "After <change>"`. Every version that was ever live must end up in the archive.
 - **No person names in anything committed or published** (follows from the rule below, 2026-10-22): the link audit records the commit id, date and message of each issue, never the git author.
@@ -273,7 +273,7 @@ Stack (confirmed):
 
 Everything runs on SK's Mac (macOS) from VS Code / Claude Code, which has normal network access to aspose.app and Google APIs. (The earlier claude.ai cloud session could not reach aspose.app; that is why development moved here.)
 
-- Repo: `/Users/Apple/Work/Aspose/GitHub/aspose.app-health-and-recovery/site-health-and-recovery` (remotes: `origin` = GitLab `gitlab.recruitize.ai/.../site-health-and-recovery`, upstream of `master`; `github` = GitHub `shoaibkhan-aspose/health-and-recovery` (**public**; Pages via GitHub Actions, Settings → Pages → Source: GitHub Actions), added 2026-10-08. Push to each explicitly: `git push origin master`, `git push github master`).
+- Repo (new home since 2026-11-06, SK): `/Users/Apple/Work/Aspose/GitHub/conholdate-blogs/health-and-recovery`. Remotes: `origin` = GitHub `conholdate-blogs/health-and-recovery` (main, upstream of `master`); `shoaibkhan` = GitHub `shoaibkhan-aspose/health-and-recovery` (kept up to date, **public**, Pages via GitHub Actions); `gitlab` = GitLab `gitlab.recruitize.ai/.../site-health-and-recovery`. Push to each explicitly: `git push origin master`, `git push shoaibkhan master`, `git push gitlab master`. Both GitHub repos publish Pages from the same workflow (SK: keep both); conholdate-blogs needs Settings → Pages → Source: GitHub Actions turned on by an org admin. `data/`, `.env` and `.venv` (same package versions) were copied from the old working copy on 2026-11-06. The old working copy `/Users/Apple/Work/Aspose/GitHub/aspose.app-health-and-recovery/site-health-and-recovery` (remotes `github` = shoaibkhan, `origin` = GitLab) is retired: do not commit there.
 - Parent folder `/Users/Apple/Work/Aspose/GitHub/aspose.app-health-and-recovery` also has empty `docs/` and `ClaudeChat/`.
 - products.aspose.app source (read-only): `/Users/Apple/Work/Aspose/GitHub/aspose-app/products.aspose.app`.
 - **Standalone project (SK, 2026-10-08):** do not integrate with `conholdate/blog-team-tools` or its dashboard for now. Everything, including reports and any UI, is built here.
