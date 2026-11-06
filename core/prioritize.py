@@ -40,6 +40,26 @@ EXACT_PAGE_SOURCES = {"seed", "text-audit", "link-audit", "repo-audit"}
 IMPRESSION_WEIGHT = 0.01  # ~1% CTR: 100 impressions count like one click
 TRAFFIC_SCALE = 20  # score points per decade of click-equivalents
 LOST_WEIGHT = 0.5
+# Broken redirects rank by a fixed score, not by clicks (SK, 2026-11-06): the old URLs they serve have no
+# Search Console clicks of their own, so a traffic score put a redirect outage near the bottom of the list.
+# An outage (invalid file, or at least half of the live sample failing, the alert rule) ranks first; a few
+# failing redirects still rank high.
+FIXED_SCORE_OUTAGE = 100
+FIXED_SCORE_PARTIAL = 60
+
+
+def fixed_score(f: dict) -> tuple[int, str] | None:
+    """(score, reason) for checks ranked by rule instead of traffic, else None."""
+    from core.scorecard import live_sample
+    check = f.get("check")
+    if check == "redirect_file_invalid":
+        return FIXED_SCORE_OUTAGE, "redirect outage: ranked first by rule"
+    if check == "redirect_not_working":
+        failed, sampled = live_sample(f) or (1, 1)
+        if sampled and failed * 2 >= sampled:
+            return FIXED_SCORE_OUTAGE, "redirect outage: ranked first by rule"
+        return FIXED_SCORE_PARTIAL, "broken redirects: fixed high score by rule"
+    return None
 
 
 def page_key(url: str) -> str:
@@ -192,5 +212,9 @@ def prioritize(findings: list[dict], idx: TrafficIndex, section_urls: dict | Non
                      "past_window": list(past.window) if past.window else None,
                      "scored_on": "lost" if LOST_WEIGHT * lost_v > value(now_c, now_i) else "at stake"}
         s = score(now_c, now_i, f["type"], f.get("effort"), lost_v)
+        rule = fixed_score(f)
+        if rule:
+            extra["traffic_score"], extra["scored_on"], extra["rule"] = s, "rule", rule[1]
+            s = rule[0]
         out[f["id"]] = {**t, **extra, "score": s, "window": list(idx.window) if idx.window else None}
     return out

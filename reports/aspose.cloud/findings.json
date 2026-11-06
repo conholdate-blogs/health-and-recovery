@@ -1157,8 +1157,10 @@
         "2026-04-05",
         "2026-05-02"
       ],
-      "scored_on": "at stake",
-      "score": 0,
+      "scored_on": "rule",
+      "traffic_score": 0,
+      "rule": "broken redirects: fixed high score by rule",
+      "score": 60,
       "window": [
         "2026-10-04",
         "2026-10-31"

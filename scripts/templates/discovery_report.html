@@ -41,7 +41,7 @@ header { display: grid; gap: 10px }
 #host-sw-wrap[hidden] { display: none }
 .partof { margin: -4px 0 0; color: var(--muted) } .partof a { color: var(--accent) }
 .crumbs { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; font-size: 14px; color: var(--muted) }
-.crumbs a { color: var(--accent) } .crumbs b { color: var(--fg); font-weight: 600; overflow-wrap: anywhere }
+.crumbs a { color: var(--accent) } .crumbs b { color: var(--fg); font-weight: 600; overflow-wrap: break-word }
 /* phones: the domain and subdomain switches wrap under the logo instead of widening the page */
 .switch { flex-wrap: wrap } .switch select { max-width: 100% } #host-sw-wrap { flex-wrap: wrap; max-width: 100% }
 section { display: grid; gap: 16px; min-width: 0 }
@@ -253,7 +253,7 @@ table.acts a { color: var(--fg); text-decoration-color: var(--line); text-underl
 .srows { display: grid; gap: 10px }
 .srow { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--gc); border-radius: 8px; padding: 14px 16px;
   display: grid; grid-template-columns: minmax(190px, 1.2fr) repeat(5, minmax(110px, 1fr)); gap: 12px 16px; align-items: start; min-width: 0 }
-.sname { display: grid; gap: 6px; min-width: 0 } .sname code { font-size: 16px; font-weight: 600; overflow-wrap: anywhere }
+.sname { display: grid; gap: 6px; min-width: 0 } .sname code { font-size: 16px; font-weight: 600; overflow-wrap: break-word }
 .sscore { display: flex; align-items: baseline; gap: 6px } .sscore > b { font: 600 32px/1 var(--display); color: var(--gc); font-variant-numeric: tabular-nums }
 .sscore > span { font-size: 12px; color: var(--muted) }
 .sc { display: grid; gap: 1px; align-content: start; min-width: 0 } .sl { font: 600 11px var(--body); letter-spacing: .05em; text-transform: uppercase; color: var(--muted) }
@@ -530,6 +530,7 @@ __METHOD__
   const gHref = k => `${GURL}#g-${esc(k)}`;
   const fmt = n => (n == null ? "–" : Number(n).toLocaleString("en-US"));
   const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const hostH = h => esc(h).replace(/\./g, ".<wbr>");  // a host name wraps only after its dots, never inside a word
   const $ = id => document.getElementById(id);
 
   const sc = f => (f.impact && f.impact.score) || 0;
@@ -576,7 +577,7 @@ __METHOD__
       : i.window ? `Search Console, ${span(i.window)}` : "";
     const share = i.share != null && i.share < 1 ? `${Math.round(i.share * 1000) / 10}% of the ${i.source === "gsc-host" || i.source === "ga4-host" ? "host" : "family"}'s traffic` : "";
     return `<table class="kv"><tbody>
-      <tr><th>Priority score</th><td><b>${sc(f)}</b> / 100 <span class="sub">traffic × severity ÷ effort</span></td></tr>
+      <tr><th>Priority score</th><td><b>${sc(f)}</b> / 100 <span class="sub">${i.rule ? `${esc(i.rule)} (traffic score: ${i.traffic_score || 0})` : "traffic × severity ÷ effort"}</span></td></tr>
       <tr><th>Traffic at stake</th><td>${esc(trafficText(i))}${share ? ` <span class="sub">(${esc(share)})</span>` : ""}${win ? `<br><span class="sub">${esc(win)}</span>` : ""}</td></tr>
       ${i.past_window ? `<tr><th>Six months ago</th><td>${compact(i.past_clicks || 0)} clicks${i.lost_clicks ? ` · <b>${compact(i.lost_clicks)} clicks lost</b>` : " · no loss"}${i.scored_on === "lost" ? ` <span class="sub">(the score uses half of this loss, as it is larger than today's traffic)</span>` : ""}<br><span class="sub">${esc(day(i.past_window[0]))} to ${esc(day(i.past_window[1]))}</span></td></tr>` : ""}
       <tr><th>Severity</th><td>${esc(LABEL[f.type])}</td></tr>
@@ -590,7 +591,7 @@ __METHOD__
   if ((R._tenants || []).length || (R._site_hosts || []).length) {  // published: All domains › domain › subdomain
     $("crumbs").hidden = false;
     $("crumbs").innerHTML = `<a href="../">All domains</a><span>›</span>` + (R._page_host
-      ? `<a href="../${esc(R.tenant)}/">${esc(R.tenant)}</a><span>›</span><b aria-current="page">${esc(R._page_host)}</b>`
+      ? `<a href="../${esc(R.tenant)}/">${esc(R.tenant)}</a><span>›</span><b aria-current="page">${hostH(R._page_host)}</b>`
       : `<b aria-current="page">${esc(R.tenant)}</b>`);
   } else if (R._page_host) {
     $("partof").hidden = false;
@@ -757,7 +758,7 @@ __METHOD__
       const ru = c.rollup;
       const tip = ru ? `Health ${c.health}/100 = ${ru.families} families ${ru.weighted} (average${ru.by_clicks ? " weighted by clicks" : ""}) − ${ru.host_wide} for host-wide problems${why(c) ? ": " + why(c) : ""}`
         : `Health ${c.health}/100${why(c) ? ". Points lost: " + why(c) : ""}${c.cosmetic_capped ? " (cosmetic capped at 20)" : ""}`;
-      const name = SITE_HOSTS.includes(c.host) && c.host !== R._page_host ? `<a href="../${esc(c.host)}/"><code>${esc(c.host)}</code></a>` : `<code>${esc(c.host)}</code>`;
+      const name = SITE_HOSTS.includes(c.host) && c.host !== R._page_host ? `<a href="../${esc(c.host)}/"><code>${hostH(c.host)}</code></a>` : `<code>${hostH(c.host)}</code>`;
       return `<tr id="host-${esc(c.host)}"><td>${name}${ru ? `<br><a class="dim" href="#families">${ru.families} families · lowest /${esc(ru.lowest.family)}/ ${esc(ru.lowest.grade)} ${ru.lowest.health}</a>` : ""}</td>
         <td class="g-${c.grade}"><span class="gradebox" title="${esc(tip)}"><b>${c.grade}</b><span>${c.health}</span></span></td>
         <td><div class="chips">${chips || '<span class="chip ok">none</span>'}${total(c) ? `<button type="button" class="link" data-host="${esc(c.host)}">See ${total(c)} →</button>` : ""}</div></td>
@@ -1401,7 +1402,7 @@ __METHOD__
           ? `<a class="sopen" href="../${esc(H.host)}/">Open subdomain page →</a>`
           : `<button type="button" class="sopen" data-host="${esc(H.host)}">See its ${mine.length} findings →</button>`;
         return `<article class="srow g-${H.grade}">
-          <div class="sname"><code>${esc(H.host)}</code>${R._collection ? `<small class="dim">${esc(H.domain)}</small>` : ""}<span class="sscore"><b>${H.health}</b><span>score ${info("Score", H)}</span></span>${sbar(H.health, H.grade, "big")}${before ? `<small class="dim">${signed(H.health - before.health)} since ${esc(day(before.date))}</small>` : ""}</div>
+          <div class="sname"><code>${hostH(H.host)}</code>${R._collection ? `<small class="dim">${esc(H.domain)}</small>` : ""}<span class="sscore"><b>${H.health}</b><span>score ${info("Score", H)}</span></span>${sbar(H.health, H.grade, "big")}${before ? `<small class="dim">${signed(H.health - before.health)} since ${esc(day(before.date))}</small>` : ""}</div>
           ${traffic}
           ${cell(typesLabel, `<b>${mine.length}</b><small>${b ? `<em class="down">${b} broken</em> · ` : ""}${inc} incorrect<br>${changesSub(ch, before)}</small>`)}
           ${!ANY_ITEMS ? "" : cell(itemsLabel, H.items ?`<b>${itemsNum(H.items)}</b><small>${itemsSub(H.items)}</small>` : `<b>–</b><small>no link check (no blog repo configured)</small>`)}
@@ -1448,7 +1449,7 @@ __METHOD__
       const href = f => prop && SITE_HOSTS.includes(f.subdomain) ? `../${esc(f.subdomain)}/#f-${esc(f._orig_id || f.id)}` : `#f-${esc(f.id)}`;
       $("s-top").firstChild.textContent = "Top actions required ";
       $("priorities").querySelector(".lede").innerHTML = `The ${n === 5 ? "five" : "ten"} findings to fix first${multi ? " across all subdomains" : ""}: search traffic at stake × severity ÷ effort. Pages: pages affected (sitewide = the whole subdomain). Clicks: Search Console clicks on those pages in 28 days. <a href="#method-score">How the score works</a>.`;
-      $("top").outerHTML = `<div class="tablewrap"><table class="acts" id="acts"><thead><tr><th class="n">Score</th><th>Issue</th>${multi ? "<th>Subdomain</th>" : ""}<th>Severity</th><th class="n">Pages</th><th class="n">Clicks</th><th>Effort</th></tr></thead><tbody>${top.map(f => `<tr class="sev-${f.type}"><td class="n">${scoreBadge(f)}</td><td><a href="${href(f)}"${href(f).startsWith("#") ? ` data-open="${esc(f.id)}"` : ""}>${termify(esc(plain(f)))}</a></td>${multi ? `<td><code>${esc(f.subdomain)}</code></td>` : ""}<td style="color:var(--sev);font-weight:600">${esc(LABEL[f.type])}</td><td class="n">${f.affected_pages ? fmt(f.affected_pages) : "sitewide"}</td><td class="n">${fmt((f.impact || {}).clicks_28d)}</td><td>${esc(f.effort || "S")}</td></tr>`).join("")}</tbody></table></div>`;
+      $("top").outerHTML = `<div class="tablewrap"><table class="acts" id="acts"><thead><tr><th class="n">Score</th><th>Issue</th>${multi ? "<th>Subdomain</th>" : ""}<th>Severity</th><th class="n">Pages</th><th class="n">Clicks</th><th>Effort</th></tr></thead><tbody>${top.map(f => `<tr class="sev-${f.type}"><td class="n">${scoreBadge(f)}</td><td><a href="${href(f)}"${href(f).startsWith("#") ? ` data-open="${esc(f.id)}"` : ""}>${termify(esc(plain(f)))}</a></td>${multi ? `<td><code>${hostH(f.subdomain)}</code></td>` : ""}<td style="color:var(--sev);font-weight:600">${esc(LABEL[f.type])}</td><td class="n">${f.affected_pages ? fmt(f.affected_pages) : "sitewide"}</td><td class="n">${fmt((f.impact || {}).clicks_28d)}</td><td>${esc(f.effort || "S")}</td></tr>`).join("")}</tbody></table></div>`;
       $("acts").addEventListener("click", openFinding);
     }
   }

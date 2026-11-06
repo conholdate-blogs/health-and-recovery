@@ -102,3 +102,19 @@ def test_traffic_lost_lifts_collapsed_findings():
     assert lifted["score"] > plain["score"]
     steady = prioritize([f], now, past=now)["crawl-9"]
     assert steady["lost_clicks"] == 0 and steady["scored_on"] == "at stake" and steady["score"] == plain["score"]
+
+
+def test_broken_redirects_rank_by_rule_not_by_clicks():
+    """SK, 2026-11-06: an outage ranks 100, a few failing redirects 60; the traffic score is kept beside it."""
+    idx = TrafficIndex.build(make_tenant(), ROWS, {})
+
+    def redirect(fid, check, live=None):
+        r = {**finding(fid, "Redirects.json", source="repo-audit", effort="M"), "check": check}
+        if live:
+            r["evidence"]["live_sample"] = live
+        return r
+
+    out = prioritize([redirect("a", "redirect_file_invalid"), redirect("b", "redirect_not_working", [20, 40]),
+                      redirect("c", "redirect_not_working", [1, 40]), redirect("d", "redirect_self_loop")], idx)
+    assert [out[k]["score"] for k in "abcd"] == [100, 100, 60, 0]
+    assert out["c"]["scored_on"] == "rule" and out["c"]["traffic_score"] == 0 and "rule" not in out["d"]

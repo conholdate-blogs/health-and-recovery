@@ -64,6 +64,7 @@
             <tr><td>Not optimized</td><td class="n">6</td></tr><tr><td>Improvable</td><td class="n">2</td></tr></tbody></table>
           <ul>
             <li><b>share</b> = part of the family or subdomain affected, at least 25%: for sampled checks, ~pages affected ÷ its URLs</li>
+            <li>repo file checks count every file, so their share is exact, at least 1%: an invalid Redirects.json counts 100%, redirects that do not work count the failing part of the live sample</li>
             <li>one root cause counts once; not optimized + improvable cost <b>at most 20</b> together</li>
             <li>a subdomain with product families: their scores weighted by clicks, minus subdomain-wide problems</li>
             <li><b>traffic is not part of health</b>: a small family's broken pages count as much as a big one's</li>
@@ -81,6 +82,7 @@
           <ul>
             <li><b>traffic</b>: Search Console clicks on the affected pages over 28 days, log scale (impressions count 1% of a click)</li>
             <li>if the same pages <b>lost</b> traffic since six months ago and the loss is larger, half the loss counts</li>
+            <li><b>broken redirects</b> rank by rule, as old URLs have no clicks of their own: <b>100</b> for an outage (invalid Redirects.json, or at least half the live sample failing), <b>60</b> when fewer fail</li>
           </ul>
           <table class="mini"><thead><tr><th>Severity</th><th>×</th><th>Effort</th><th>÷</th></tr></thead><tbody>
             <tr><td>Broken</td><td class="n">1</td><td>S: one template or setting</td><td class="n">1</td></tr>

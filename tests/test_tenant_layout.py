@@ -47,7 +47,7 @@ def test_home_page_pairs_subdomains_by_brand():
     rows = [r for r in block.splitlines() if 'class="pairs"' in r]
     assert [[h for h in ("aspose.com", "aspose.cloud", "conholdate.com", "conholdate.cloud") if f"blog.{h}/" in r]
             for r in rows] == [["aspose.com", "aspose.cloud"], ["conholdate.com", "conholdate.cloud"]]
-    assert '<a class="sub g-F" href="blog.aspose.com/"><code>blog.aspose.com</code><b>55</b></a>' in block
+    assert '<a class="sub g-F" href="blog.aspose.com/"><code>blog.<wbr>aspose.<wbr>com</code><b>55</b></a>' in block
     assert '<a href="blogs/"><b>Blogs</b></a>' in block
 
 
@@ -290,10 +290,12 @@ def test_history_records_hosts_and_the_trend_ends_with_this_report(tmp_path):
 def test_history_rows_keep_the_overview_numbers_and_say_what_ran(tmp_path):
     """History table (SK, 2026-11-06): stats per run, newest first, a note naming a check's first run or a newer
     run; entries recorded before stats existed get none, except the newest, which gets today's (start fresh)."""
+    from core.scorecard import SCORE_METHOD
     from scripts.build_report import host_history, record_health
 
     history = tmp_path / "health-history.json"
-    history.write_text(json.dumps([{"date": "2026-10-31", "runs": "discovery run 3, link check run 11", "method": 2,
+    history.write_text(json.dumps([{"date": "2026-10-31", "runs": "discovery run 3, link check run 11",
+                                    "method": SCORE_METHOD,
                                     "hosts": {"b.example": {"health": 68}}}]))
     card = {"host": "b.example", "health": 48, "traffic": {"current": {"clicks": 601, "impressions": 58085}},
             "items": {"open": 1705}}

@@ -256,8 +256,10 @@ class RepoAudit:
                             f"{live['eligible']:,} well-formed entries")
                 locs = [{"role": "redirect", "url": f"https://{host}{s}", "note": "404, no redirect"}
                         for s in live["failed"]]
-                out.append(self._finding(ids, "redirect_not_working", host, urls, observed, locs,
-                                         round(live["eligible"] * share)))
+                f = self._finding(ids, "redirect_not_working", host, urls, observed, locs,
+                                  round(live["eligible"] * share))
+                f["evidence"]["live_sample"] = [live["not_working"], live["sampled"]]
+                out.append(f)
         return out
 
 

@@ -10,6 +10,7 @@ Grades: A >= 90, B >= 75, C >= 60, D >= 40, F below.
 from __future__ import annotations
 
 import math
+import re
 from urllib.parse import urlsplit
 
 from core.findings import template_section
@@ -18,9 +19,15 @@ WEIGHT = {"broken": 40.0, "incorrect": 20.0, "not_optimized": 6.0, "improvable":
 SEVERE = ("broken", "incorrect")
 COSMETIC_CAP = 20.0
 MIN_SHARE = 0.25
+# exact checks that count every file or entry they cover weigh their real share, with this small floor
+# (SK, 2026-11-06: one bad post file of 13k cost as much as a quarter of the site under MIN_SHARE)
+MIN_SHARE_EXACT = 0.01
+EXACT_SHARE_SOURCES = {"repo-audit"}
 # raised whenever the formula changes, so trends compare only scores computed the same way (health-history.json
-# entries without "method" are 1; 2 = sampled findings weigh their estimated pages, 2026-10-27)
-SCORE_METHOD = 2
+# entries without "method" are 1; 2 = sampled findings weigh their estimated pages, 2026-10-27; 3 = repo file
+# checks weigh their real share, floor MIN_SHARE_EXACT, 2026-11-06)
+SCORE_METHOD = 3
+_LIVE_OBSERVED = re.compile(r"^(\d+) of (\d+) sampled")
 GRADES = ((90, "A"), (75, "B"), (60, "C"), (40, "D"), (0, "F"))
 TYPE_ORDER = ("broken", "incorrect", "not_optimized", "improvable")
 
@@ -110,11 +117,38 @@ def group_of(f: dict) -> str:
     return GROUPS.get(check, check)
 
 
+def live_sample(f: dict) -> tuple[int, int] | None:
+    """(failing, sampled) of a redirect_not_working finding: from evidence.live_sample, else from its observed text
+    ("1 of 40 sampled sources ...", findings recorded before the field existed)."""
+    ev = f.get("evidence") or {}
+    if ev.get("live_sample"):
+        failed, sampled = ev["live_sample"]
+        return int(failed), int(sampled)
+    m = _LIVE_OBSERVED.match(ev.get("observed") or "")
+    return (int(m[1]), int(m[2])) if m else None
+
+
 def share_of(f: dict, family_urls: int) -> float:
     """How much of the family a finding covers. A sampled finding: its estimated pages (each failing template's
     share x that template's URLs) / the family's URLs, so a one-page template weighs as one page, not as the
     whole family (SK, 2026-10-27); the failing share of the sample when the URL counts are missing. Else the
-    Prioritizer's share for discovery findings, else affected pages / family URLs."""
+    Prioritizer's share for discovery findings, else affected pages / family URLs.
+
+    Repo file checks (SK, 2026-11-06) are exact, so they weigh what they really cover, floored at MIN_SHARE_EXACT
+    instead of MIN_SHARE: an invalid Redirects.json breaks every redirect (all of it); redirects that do not work
+    weigh the failing share of the live sample; the other checks their files or entries / the subdomain's URLs."""
+    if f.get("source") in EXACT_SHARE_SOURCES:
+        check = f.get("check")
+        if check == "redirect_file_invalid":
+            share = 1.0
+        elif check == "redirect_not_working" and live_sample(f):
+            failed, sampled = live_sample(f)
+            share = failed / sampled if sampled else 1.0
+        elif f.get("affected_pages") and family_urls:
+            share = f["affected_pages"] / family_urls
+        else:
+            share = 1.0
+        return max(MIN_SHARE_EXACT, min(1.0, share))
     sample = (f["evidence"] or {}).get("sample")
     if sample and f.get("affected_pages") and family_urls:
         share = f["affected_pages"] / family_urls

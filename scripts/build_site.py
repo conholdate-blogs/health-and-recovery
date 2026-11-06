@@ -65,7 +65,7 @@ a { color: var(--accent) }
 .pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px }
 .sub { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 8px 12px;
   border: 1px solid var(--line); border-left: 4px solid var(--gc, var(--line)); border-radius: 6px; text-decoration: none; color: var(--fg) }
-.sub:hover { border-color: var(--gc) } .sub code { font-size: 14px; overflow-wrap: anywhere }
+.sub:hover { border-color: var(--gc) } .sub code { font-size: 14px; overflow-wrap: break-word }
 .sub b { font-size: 20px; color: var(--gc); font-variant-numeric: tabular-nums }
 .sub.alerted { flex-wrap: wrap; border-color: var(--broken); border-left-color: var(--broken) }
 .sub .alert { flex-basis: 100%; color: var(--broken); font-size: 13px; font-weight: 600 }
@@ -300,12 +300,17 @@ def day(iso: str | None) -> str:
     return f"{int(iso[8:10])} {('Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split())[int(iso[5:7]) - 1]}" if iso else "?"
 
 
+def host_html(host: str) -> str:
+    """A host name that wraps only after its dots (blog.aspose.<wbr>cloud), never inside a word."""
+    return html.escape(host).replace(".", ".<wbr>")
+
+
 def sub_tile(host: str, scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None) -> str:
     """A subdomain with its health score, opening its page; alerts, if any, under it."""
     health, grade = scores.get(host, ("–", ""))
     lines = "".join(f'<span class="alert">⚠ {html.escape(a["name"])} · since {day(a["since"])} · last checked '
                     f'{day(a["checked"])}</span>' for a in (alerts or {}).get(host, []))
-    return (f'<a class="sub g-{grade}{" alerted" if lines else ""}" href="{html.escape(host)}/"><code>{html.escape(host)}</code>'
+    return (f'<a class="sub g-{grade}{" alerted" if lines else ""}" href="{html.escape(host)}/"><code>{host_html(host)}</code>'
             f'<b>{health}</b>{lines}</a>')
 
 

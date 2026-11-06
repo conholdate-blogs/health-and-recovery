@@ -95,3 +95,24 @@ def test_scores_round_halves_up():
     from core.scorecard import half_up
 
     assert half_up(65.5) == 66 and half_up(65.4) == 65 and half_up(66.5) == 67 and half_up(0.5) == 1
+
+
+def test_repo_checks_weigh_their_real_share_with_a_small_floor():
+    """SK, 2026-11-06: exact repo checks are not floored at 25%; an invalid Redirects.json counts all of it and
+    redirects that do not work count the failing share of the live sample."""
+    from core.scorecard import MIN_SHARE_EXACT, share_of
+
+    def repo(check, pages=0, observed="o", live=None):
+        r = {**f("r", check, "broken", template="post"), "source": "repo-audit", "affected_pages": pages,
+             "impact": {}}
+        r["evidence"]["observed"] = observed
+        if live:
+            r["evidence"]["live_sample"] = live
+        return r
+
+    assert share_of(repo("post_front_matter_broken", pages=1), 13000) == MIN_SHARE_EXACT
+    assert share_of(repo("post_url_relative", pages=500), 1000) == 0.5
+    assert share_of(repo("redirect_file_invalid", pages=10), 100000) == 1.0
+    assert share_of(repo("redirect_not_working", live=[39, 40]), 100000) == 39 / 40
+    assert share_of(repo("redirect_not_working", observed="10 of 40 sampled sources return 404"), 9) == 0.25
+    assert scorecard("h", [repo("post_front_matter_broken", pages=1)], 13000)["health"] == 100  # 40 x 1% = 0.4
