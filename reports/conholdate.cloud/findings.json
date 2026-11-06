@@ -60,7 +60,7 @@
     "affected_pages": 29,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 1,
+      "impressions_28d": 2,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
@@ -68,14 +68,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "M",
@@ -86,7 +86,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-20",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run10",
     "resolved_run": null,
     "resolved_at": null,
     "check": "content_needs_js",
@@ -118,23 +118,23 @@
     },
     "affected_pages": 0,
     "impact": {
-      "clicks_28d": 0,
-      "impressions_28d": 152,
+      "clicks_28d": 2,
+      "impressions_28d": 161,
       "source": "gsc-host",
       "share": 1.0,
       "past_clicks": 1,
-      "past_impressions": 87,
-      "lost_clicks": 1,
+      "past_impressions": 89,
+      "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
-      "score": 2,
+      "score": 3,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -145,7 +145,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-20",
     "first_seen_run": "ai-audit-run2",
-    "last_seen_run": "ai-audit-run2",
+    "last_seen_run": "ai-audit-run11",
     "resolved_run": null,
     "resolved_at": null,
     "check": "llms_txt_missing",
@@ -170,7 +170,7 @@
         "https://blog.conholdate.cloud/conholdate.total/",
         "https://blog.conholdate.cloud/zh-hant/",
         "https://blog.conholdate.cloud/search/",
-        "https://blog.conholdate.cloud/total/convert-html-files/",
+        "https://blog.conholdate.cloud/total/insert-header-footer-in-pdf/",
         "https://blog.conholdate.cloud/he/conholdate.cloud/",
         "https://blog.conholdate.cloud/ru/"
       ],
@@ -230,25 +230,25 @@
         ]
       }
     },
-    "affected_pages": 163,
+    "affected_pages": 186,
     "impact": {
-      "clicks_28d": 0,
-      "impressions_28d": 137,
+      "clicks_28d": 2,
+      "impressions_28d": 141,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 1,
       "past_impressions": 86,
-      "lost_clicks": 1,
+      "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
-      "score": 1,
+      "score": 3,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -259,7 +259,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-20",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run10",
     "resolved_run": null,
     "resolved_at": null,
     "check": "hreflang_no_xdefault",
@@ -333,14 +333,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -351,7 +351,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-26",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run8",
+    "last_seen_run": "link-audit-run14",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -431,10 +431,10 @@
         ]
       }
     },
-    "affected_pages": 64,
+    "affected_pages": 69,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 10,
+      "impressions_28d": 14,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
@@ -442,14 +442,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -460,7 +460,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-20",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run10",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -527,22 +527,22 @@
     "affected_pages": 23,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 102,
+      "impressions_28d": 95,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 61,
+      "past_impressions": 60,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 1,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -553,7 +553,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-20",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run10",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -637,10 +637,10 @@
         ]
       }
     },
-    "affected_pages": 64,
+    "affected_pages": 69,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 10,
+      "impressions_28d": 14,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
@@ -648,14 +648,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -666,7 +666,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-20",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run10",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",

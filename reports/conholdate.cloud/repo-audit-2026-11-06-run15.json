@@ -1,0 +1,51 @@
+{
+  "tenant": "conholdate.cloud",
+  "auditor": "repo-audit",
+  "run_id": 15,
+  "params": {
+    "hosts": [
+      "blog.conholdate.cloud"
+    ],
+    "sample": 40
+  },
+  "requests": 3,
+  "duration_s": 2.7,
+  "stopped_early": false,
+  "summary": {
+    "blog.conholdate.cloud": {
+      "commit": "d2bc592 2026-11-04 Trial off-the-hour cron for staging deploy",
+      "posts": 93,
+      "entries": 4,
+      "invalid": null,
+      "broke_it": null,
+      "live": {
+        "eligible": 4,
+        "sampled": 4,
+        "other": 2,
+        "redirected": 2
+      },
+      "by_check": {}
+    }
+  },
+  "findings": [],
+  "hosts": {
+    "blog.conholdate.cloud": {
+      "commit": "d2bc592 2026-11-04 Trial off-the-hour cron for staging deploy",
+      "posts": 93,
+      "redirects": {
+        "present": true,
+        "entries": 4,
+        "invalid": null,
+        "broke_it": null,
+        "live": {
+          "eligible": 4,
+          "sampled": 4,
+          "other": 2,
+          "redirected": 2,
+          "failed": []
+        }
+      },
+      "issues": []
+    }
+  }
+}

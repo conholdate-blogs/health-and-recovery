@@ -1,16 +1,16 @@
 {
  "windows": {
   "current": [
-   "2026-10-04",
-   "2026-10-31"
+   "2026-10-07",
+   "2026-11-03"
   ],
   "previous": [
-   "2026-09-06",
-   "2026-10-03"
+   "2026-09-09",
+   "2026-10-06"
   ],
   "six_months_ago": [
-   "2026-04-05",
-   "2026-05-02"
+   "2026-04-08",
+   "2026-05-05"
   ]
  },
  "hosts": {},
@@ -18,19 +18,19 @@
   "blog.conholdate.cloud": {
    "source": "gsc",
    "current": {
-    "clicks": 0,
-    "impressions": 152,
-    "pages": 37
+    "clicks": 2,
+    "impressions": 161,
+    "pages": 38
    },
    "previous": {
     "clicks": 3,
-    "impressions": 336,
+    "impressions": 345,
     "pages": 50
    },
    "six_months_ago": {
     "clicks": 1,
-    "impressions": 87,
-    "pages": 22
+    "impressions": 89,
+    "pages": 25
    }
   }
  }

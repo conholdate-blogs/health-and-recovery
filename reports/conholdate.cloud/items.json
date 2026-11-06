@@ -12,7 +12,7 @@
    "first_seen": "2026-10-26",
    "fixed": null,
    "host": "blog.conholdate.cloud",
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-06",
    "link": "https://blog.conholdate.cloud/total/convert-html-files/",
    "page": "https://blog.conholdate.cloud/ar/total/manipulate-pdf-documents/",
    "removed": null
@@ -23,7 +23,7 @@
    "first_seen": "2026-10-26",
    "fixed": null,
    "host": "blog.conholdate.cloud",
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-06",
    "link": "https://blog.conholdate.cloud/total/manipulate-pdf-documents/",
    "page": "https://blog.conholdate.cloud/ar/total/convert-html-files/",
    "removed": null
@@ -34,7 +34,7 @@
    "first_seen": "2026-10-26",
    "fixed": null,
    "host": "blog.conholdate.cloud",
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-06",
    "link": "https://blog.conholdate.cloud/total/convert-html-files/",
    "page": "https://blog.conholdate.cloud/ar/total/manipulate-excel-spreadsheets/",
    "removed": null
@@ -45,7 +45,7 @@
    "first_seen": "2026-10-26",
    "fixed": null,
    "host": "blog.conholdate.cloud",
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-06",
    "link": "https://blog.conholdate.cloud/total/manipulate-pdf-documents/",
    "page": "https://blog.conholdate.cloud/ar/total/manipulate-excel-spreadsheets/",
    "removed": null
@@ -57,6 +57,9 @@
   "link-audit-run7",
   "discovery-run3",
   "link-audit-run8",
-  "repo-audit-run9"
+  "repo-audit-run9",
+  "link-audit-run14",
+  "repo-audit-run15",
+  "discovery-run4"
  ]
 }
