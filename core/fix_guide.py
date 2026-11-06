@@ -456,6 +456,13 @@ _ROWS = [
      "Point the link at the current URL of the post (or remove it); add a redirect for old URL patterns that "
      "many posts use. Fix the original post first, then its translations.",
      "Every listed link returns 200; next link audit has no finding."),
+    ("link_redirected", "Links and translations", "Internal link to an old URL",
+     "A post links to an old URL of the same blog that redirects to the current page (usually through "
+     "Redirects.json), e.g. a WordPress date URL. The link works only while the redirect works.",
+     "Every click and crawl takes an extra hop; when the redirect file breaks (as on 2 Nov 2026), the link "
+     "becomes a 404. A link that turns from 404 into this is not fixed: the post still holds the old URL.",
+     "Replace the old URL with the current one (the fix list gives it, in the page's language where that exists).",
+     "Every listed link returns 200 without a redirect; next link audit has no finding."),
     ("translation_partial", "Links and translations", "Missing supported languages",
      "The post is translated, but not into every supported language.",
      "Readers in the missing languages get no page; language switchers and hreflang sets are incomplete.",

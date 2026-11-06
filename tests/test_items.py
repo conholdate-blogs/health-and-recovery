@@ -74,3 +74,22 @@ def test_sitemap_items_fixed_removed_and_sources_kept_apart(tmp_path):
     c = counts(ledger, HOST)
     assert (c["fixed"], c["removed"], c["open"]) == (2, 1, 2)  # 2nd /a/ and lastmod fixed; /gone/ removed
     assert c["by_check"]["dup_in_file"] == {**c["by_check"]["dup_in_file"], "fixed": 1, "open": 1}
+
+
+def test_broken_link_that_redirects_again_is_changed_not_fixed(tmp_path):
+    """SK, 2026-11-06: after Redirects.json was repaired, a 404 link redirects again; the old URL is still in the
+    post, so it is not fixed: it moves to link_redirected, which counts as open."""
+    (tmp_path / "p.md").write_text("x")
+    repos = in_repo({HOST: str(tmp_path)})
+    ledger = update({}, "r1", "2026-11-03", run_items(run([("p.md", "/2021/12/16/old/"), ("p.md", "/gone/")])), repos)
+    later = run([("p.md", "/2021/12/16/old/")])
+    later["hosts"][HOST]["issues"][0]["check"] = "link_redirected"
+    ledger = update(ledger, "r2", "2026-11-07", run_items(later), repos)
+    c = counts(ledger, HOST)
+    assert (c["fixed"], c["open"], c["changed"], c["redirects"], c["issues"]) == (1, 1, 1, 1, 2)
+    assert c["by_check"]["link_broken"] == {**c["by_check"]["link_broken"], "fixed": 1, "open": 0, "redirects": 1}
+    assert c["by_check"]["link_redirected"]["open"] == 1
+    ledger = update(ledger, "r3", "2026-11-10", run_items(run([("p.md", "/2021/12/16/old/")])), repos)
+    c = counts(ledger, HOST)  # back to 404: the broken item reopens, the old-URL item moves back (not fixed)
+    assert c["by_check"]["link_broken"]["open"] == 1 and c["by_check"]["link_redirected"]["fixed"] == 0
+    assert c["by_check"]["link_redirected"]["changed"] == 1 and c["redirects"] == 0

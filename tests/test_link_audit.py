@@ -37,7 +37,10 @@ class FakeFetcher:
     def get(self, url, headers=None):
         self.requests += 1
         self.asked.append(url)
-        return FetchResult(url, self.live.get(url, 404), final_url=url)
+        got = self.live.get(url, 404)
+        if isinstance(got, str):  # a redirect to this URL, which answers 200
+            return FetchResult(url, 200, final_url=got, redirects=[url], redirect_statuses=[301])
+        return FetchResult(url, got, final_url=url)
 
 
 def post(folder: Path, name: str, url: str, body: str, eol: str = "\n"):
@@ -221,3 +224,19 @@ def test_blame_names_the_translation_commit(tmp_path):
     loc = next(loc for f in report["findings"] for loc in f["evidence"]["locations"] if loc["role"] == "link")
     assert {"page", "file", "line", "fix", "commit"} <= set(loc) and "note" not in loc
     assert re.match(r"^[0-9a-f]{8} \d{4}-\d{2}-\d{2}: ", loc["commit"])  # the format the report splits
+
+
+def test_link_that_redirects_is_an_old_url_with_the_target_as_fix(tmp_path):
+    """SK, 2026-11-06: a link that works only through a redirect is reported (old URL), fix = the target, in the
+    page's language when that exists; a redirect to another host or to the same path is not an old URL."""
+    _, report, _ = run_audit(tmp_path, live={
+        f"https://{HOST}/pdf/removed-post/": f"https://{HOST}/words/other-post/",
+        f"https://{HOST}/ru/pdf/removed-post/": f"https://{HOST}/words/other-post/"})
+    issues = {(i["lang"], i["link"]): i for i in report["hosts"][HOST]["issues"]}
+    en, ru = issues[("en", "/pdf/removed-post/")], issues[("ru", "/ru/pdf/removed-post/")]
+    assert en["check"] == ru["check"] == "link_redirected"
+    assert en["fix"] == f"https://{HOST}/words/other-post/" and ru["fix"] == f"https://{HOST}/ru/words/other-post/"
+    assert en["note"] == "redirects to /words/other-post/"
+    assert [f["check"] for f in report["findings"] if f["check"] == "link_redirected"] == ["link_redirected"]
+    _, report, _ = run_audit(tmp_path / "b", live={f"https://{HOST}/pdf/removed-post/": "https://other.com/x/"})
+    assert not [i for i in report["hosts"][HOST]["issues"] if i["link"] == "/pdf/removed-post/"]

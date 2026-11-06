@@ -16,6 +16,9 @@
                            the same post's default-language file links in full
   link_broken              the link does not exist and cannot be repaired (also when the default-language post
                            has the same broken link: it was copied)
+  link_redirected          the link works only through a redirect to another page of the blog (an old URL); the
+                           fix is the redirect's target, in the page's language when that exists (SK, 2026-11-06:
+                           a 404 link that starts redirecting is not fixed, the post still holds the old URL)
 - Translation sets (only with `translation_languages` in the tenant YAML): translation_partial = a post translated
   into some supported languages but not all; language_unsupported = the sitemaps publish a language that is not
   supported (its pages are listed with no translated posts behind them).
@@ -54,6 +57,8 @@ CHECKS = {
                             "Internal links point at the post in the page's own language", 1, "S"),
     "link_broken": ("crawl", "broken", "Posts link to blog pages that do not exist",
                     "Every internal link points at a live page", 1, "M"),
+    "link_redirected": ("crawl", "improvable", "Posts link to old URLs that redirect",
+                        "Every internal link points at the page's current URL, not one that redirects", 1, "S"),
     "translation_partial": ("intl", "incorrect", "Posts translated into only some supported languages",
                             "A translated post exists in every supported language", 1, "S"),
     "language_unsupported": ("intl", "improvable", "Sitemaps publish languages that are not supported",
@@ -152,6 +157,7 @@ class LinkAudit:
         self.max_live, self.blame, self.now = max_live, blame, now
         self.log = log or (lambda *_: None)
         self.live: dict[str, int | str] = {}  # url -> status (int) or error text
+        self.moved: dict[str, str] = {}  # url -> normalized path it redirects to on the same host (old URLs)
         self.live_requests = 0
         self.results: dict = {}
         self.run_id: int | None = None
@@ -183,6 +189,11 @@ class LinkAudit:
                     res = self.fetcher.get(url[:-1])  # a static file: norm_path's trailing slash hides it
                     self.live_requests += 1
                 self.live[url] = res.status if res.status is not None else (res.error or "no response")
+                if res.redirects and res.final_url:
+                    final = urlsplit(res.final_url)
+                    target = norm_path(final.path or "/")
+                    if final.netloc.lower() == host and target != path:
+                        self.moved[url] = target
         return self.live[url]
 
     # ---- repo ----
@@ -260,6 +271,10 @@ class LinkAudit:
             if not isinstance(st, int) or st not in (200, 404, 410):
                 return None  # unchecked (limit, error, 5xx): never reported
             exists = st == 200
+            target = self.moved.get(f"https://{host}{path}")
+            if exists and target:
+                own = self.localized(page_lang, self.split_lang(target)[1])
+                return "link_redirected", own if own in known else target, f"redirects to {target}"
         if exists:
             own = self.localized(page_lang, rest)
             if (link_lang or self.default_lang) != page_lang and own != path and own in known:

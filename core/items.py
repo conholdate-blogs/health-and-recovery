@@ -15,6 +15,10 @@ Ledger (reports/<tenant>/items.json): {"runs": [run refs], "baseline": {host: {"
 (items without "source" are link-check items).
 Shown as issues = fixed + open, fixed, open and the latest scan date (SK, 2026-10-27: no "new", no baseline on
 the pages; new issues show as a growing issue count). Fixed % = fixed / issues; removed items count neither way.
+
+A gone link item whose link is still in the same file under another check is "changed" (field `became`), not fixed
+(SK, 2026-11-06: a 404 link that redirects again after Redirects.json was repaired still holds the old URL). It
+counts neither as fixed nor as open: its successor item (e.g. link_redirected) counts as open in its own row.
 """
 
 from __future__ import annotations
@@ -99,11 +103,20 @@ def update(ledger: dict, run_ref: str, run_date: str, items: dict[str, dict], ex
             known[key] = {**it, "first_seen": run_date, "last_seen": run_date, "fixed": None, "removed": None}
         else:
             rec.update(last_seen=run_date, fixed=None, removed=None)
+            rec.pop("changed", None)
+            rec.pop("became", None)
+    # the same link in the same file, now reported by another check (a 404 link that redirects again)
+    still = {(it["host"], it["file"], it["link"]): it["check"] for it in items.values()
+             if it.get("source", "link-audit") == "link-audit" and it.get("link")}
     for key, rec in known.items():
-        if (key in items or rec["fixed"] or rec["removed"] or rec["host"] not in exists
+        if (key in items or rec["fixed"] or rec["removed"] or rec.get("changed") or rec["host"] not in exists
                 or rec.get("source", "link-audit") != source):
             continue
-        rec["fixed" if exists[rec["host"]](rec) else "removed"] = run_date
+        became = still.get((rec["host"], rec["file"], rec["link"])) if source == "link-audit" else None
+        if became and became != rec["check"]:
+            rec["changed"], rec["became"] = run_date, became
+        else:
+            rec["fixed" if exists[rec["host"]](rec) else "removed"] = run_date
     ledger["runs"].append(run_ref)
     return ledger
 
@@ -117,9 +130,12 @@ def counts(ledger: dict, host: str) -> dict:
 
     def tally(recs: list[dict]) -> dict:
         fixed = sum(1 for r in recs if r["fixed"])
-        still = sum(1 for r in recs if not r["fixed"] and not r["removed"])
+        still = sum(1 for r in recs if not r["fixed"] and not r["removed"] and not r.get("changed"))
         return {"issues": fixed + still, "fixed": fixed, "open": still,
                 "removed": sum(1 for r in recs if r["removed"]),
+                # changed: the link is still in the post, now under another check (counted there, as open)
+                "changed": sum(1 for r in recs if r.get("changed")),
+                "redirects": sum(1 for r in recs if r.get("became") == "link_redirected"),
                 "baseline": sum(1 for r in recs if r["first_seen"] == base["date"]),
                 "new": sum(1 for r in recs if r["first_seen"] > base["date"]),
                 "fixed_pct": round(100 * fixed / (fixed + still)) if fixed + still else None}
@@ -128,6 +144,7 @@ def counts(ledger: dict, host: str) -> dict:
     by_check: dict = {}
     for r in mine:
         by_check.setdefault(r["check"], []).append(r)
-    scanned = max((d for r in mine for d in (r["last_seen"], r["fixed"], r["removed"]) if d), default=base["date"])
+    scanned = max((d for r in mine for d in (r["last_seen"], r["fixed"], r["removed"], r.get("changed")) if d),
+                  default=base["date"])
     return {**tally(mine), "since": base["date"], "scanned": scanned, "runs": len(ledger.get("runs") or []),
             "by_check": {c: tally(rs) for c, rs in sorted(by_check.items())}}
