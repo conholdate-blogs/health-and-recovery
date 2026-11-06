@@ -130,5 +130,17 @@
     "date": "2026-11-05",
     "label": "Fix progress with severity, issues list header aligned",
     "runs": "discovery run 3, crawl audit run 3, speed audit run 6, AI audit run 4, text check run 7, link check run 11, repo file check run 12"
+  },
+  {
+    "file": "2026-11-06.html",
+    "date": "2026-11-06",
+    "label": "Live version, downloaded before: History table added",
+    "runs": "discovery run 3, crawl audit run 3, speed audit run 6, AI audit run 4, text check run 7, link check run 11, repo file check run 12"
+  },
+  {
+    "file": "2026-11-06-2.html",
+    "date": "2026-11-06 (2)",
+    "label": "History table added",
+    "runs": "discovery run 3, crawl audit run 3, speed audit run 6, AI audit run 4, text check run 7, link check run 11, repo file check run 12"
   }
 ]
