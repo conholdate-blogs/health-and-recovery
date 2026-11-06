@@ -216,7 +216,9 @@ def add_hosts(report: dict, summary_path: Path) -> None:
     family_cards = (report.get("_families") or {}).get("hosts") or {}
     totals = {}
     if summary_path.is_file():
-        totals = json.loads(summary_path.read_text(encoding="utf-8")).get("host_totals") or {}
+        summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        totals = summary.get("host_totals") or {}
+        report["_traffic_window"] = (summary.get("windows") or {}).get("current")
     items_path = summary_path.parent / "items.json"
     ledger = json.loads(items_path.read_text(encoding="utf-8")) if items_path.is_file() else None
     cards = []
@@ -416,7 +418,14 @@ def record_health(report: dict, history_path: Path) -> None:
     history = json.loads(history_path.read_text(encoding="utf-8")) if history_path.is_file() else []
     runs = runs_label(report)
     same = [h for h in history if h["runs"] == runs]
-    if any(h.get("method", 1) == SCORE_METHOD for h in same):
+    if current := next((h for h in same if h.get("method", 1) == SCORE_METHOD), None):
+        # entries from before 2026-11-06 have no stats: the newest gets today's, so the History table starts
+        # with it (SK chose to start fresh, no backfill)
+        if current is history[-1] and not any("stats" in v for v in current["hosts"].values()):
+            for c in hosts:
+                if c["host"] in current["hosts"]:
+                    current["hosts"][c["host"]]["stats"] = host_stats(report, c)
+            history_path.write_text(json.dumps(history, indent=1) + "\n", encoding="utf-8")
         return
     entry: dict = {"date": date.today().isoformat(), "runs": runs, "method": SCORE_METHOD}
     if same:
@@ -429,9 +438,49 @@ def record_health(report: dict, history_path: Path) -> None:
         entry["families"] = {c["family"]: c["health"] for c in fam["hosts"][next(iter(fam["hosts"]))]}
     entry["hosts"] = {c["host"]: {"health": c["health"], **({"areas": {a["dimension"]: a["health"] for a in c["areas"]
                                                                        if a["state"] == "scored"}}
-                                                            if c.get("areas") else {})} for c in hosts}
+                                                            if c.get("areas") else {}),
+                                  "stats": host_stats(report, c)} for c in hosts}
     history.append(entry)
     history_path.write_text(json.dumps(history, indent=1) + "\n", encoding="utf-8")
+
+
+def host_stats(report: dict, card: dict) -> dict:
+    """The Overview tiles of one host, kept per run for the History table (SK, 2026-11-06): search clicks and
+    impressions of the 28 days ending `traffic_to`, issue types (findings), open issues (link and sitemap items)."""
+    cur = (card.get("traffic") or {}).get("current") or {}
+    return {"clicks": cur.get("clicks"), "impressions": cur.get("impressions"),
+            "traffic_to": (report.get("_traffic_window") or [None, None])[1],
+            "issue_types": sum(1 for f in report.get("findings") or [] if f["subdomain"] == card["host"] and not f.get("_merged_into")),
+            "open_issues": (card.get("items") or {}).get("open")}
+
+
+def run_changes_note(runs: str, before: str | None) -> list[str]:
+    """What ran since the previous entry, from the two runs labels: a check's first run, or a newer run of it."""
+    parse = lambda s: dict((m[1], int(m[2])) for m in re.finditer(r"([A-Za-z][\w ]*?) run (\d+)", s or ""))  # noqa: E731
+    now, prev = parse(runs), parse(before)
+    if before is None:
+        return ["first run"]
+    return [f"{name[0].upper()}{name[1:]} added" if name not in prev else f"new {name} (run {n})"
+            for name, n in now.items() if prev.get(name) != n]
+
+
+def host_history(host: str, history_path: Path) -> list[dict]:
+    """One row per recorded run with stats for a host, newest first, each with a note of what changed since the
+    entry before it (so a score jump from a new check reads as that, not as the site getting worse)."""
+    history = json.loads(history_path.read_text(encoding="utf-8")) if history_path.is_file() else []
+    rows, before = [], None
+    for h in history:
+        entry = (h.get("hosts") or {}).get(host)
+        if not entry:
+            continue
+        if "stats" in entry:
+            note = run_changes_note(h["runs"], before["runs"] if before else None)
+            if before and before.get("method", 1) != h.get("method", 1):
+                note.append(f"score method {h.get('method', 1)}")
+            rows.append({"date": h["date"], "health": entry["health"], "areas": entry.get("areas") or {},
+                         **entry["stats"], "note": note})
+        before = h
+    return rows[::-1]
 
 
 def host_trends(report: dict, history_path: Path) -> dict[str, list[dict]]:
@@ -607,6 +656,8 @@ def prepare(args: argparse.Namespace) -> tuple[dict, list[str], str | None, str,
     add_views(report, all_rows, paths.health_history)
     if report["_manager_view"] or args.areas:
         report["_host_trends"] = host_trends(report, paths.health_history)
+    if report.get("_page_host"):
+        report["_history"] = host_history(report["_page_host"], paths.health_history)
     run_date = run_date_of(src, "discovery-")
     sources = (f"{src.name}" + (f" and {len(audit_srcs)} crawl-audit runs (newest {audit_src.name})" if audit_src else "")
                + (f" and {perf_src.name}" if perf_src else "") + (f" and {ai_src.name}" if ai_src else "")

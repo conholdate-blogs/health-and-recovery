@@ -89,6 +89,13 @@
      "onpage": 98,
      "intl": 93,
      "ai": 95
+    },
+    "stats": {
+     "clicks": 0,
+     "impressions": 152,
+     "traffic_to": "2026-10-31",
+     "issue_types": 7,
+     "open_issues": 4
     }
    }
   }

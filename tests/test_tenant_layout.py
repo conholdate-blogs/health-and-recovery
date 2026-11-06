@@ -280,9 +280,35 @@ def test_history_records_hosts_and_the_trend_ends_with_this_report(tmp_path):
     record_health(report, history)
     record_health(report, history)  # same runs: no second entry
     saved = json.loads(history.read_text())
-    assert len(saved) == 1 and saved[0]["hosts"] == {"blog.example.org": {"health": 66, "areas": {"intl": 83}}}
+    stats = {"clicks": None, "impressions": None, "traffic_to": None, "issue_types": 0, "open_issues": None}
+    assert len(saved) == 1 and saved[0]["hosts"] == {"blog.example.org": {"health": 66, "areas": {"intl": 83},
+                                                                          "stats": stats}}
     later = {"run_id": 2, "_hosts": [dict(card, health=70)]}
     assert [p["health"] for p in host_trends(later, history)["blog.example.org"]] == [66, 70]
+
+
+def test_history_rows_keep_the_overview_numbers_and_say_what_ran(tmp_path):
+    """History table (SK, 2026-11-06): stats per run, newest first, a note naming a check's first run or a newer
+    run; entries recorded before stats existed get none, except the newest, which gets today's (start fresh)."""
+    from scripts.build_report import host_history, record_health
+
+    history = tmp_path / "health-history.json"
+    history.write_text(json.dumps([{"date": "2026-10-31", "runs": "discovery run 3, link check run 11", "method": 2,
+                                    "hosts": {"b.example": {"health": 68}}}]))
+    card = {"host": "b.example", "health": 48, "traffic": {"current": {"clicks": 601, "impressions": 58085}},
+            "items": {"open": 1705}}
+    findings = [{"subdomain": "b.example"}, {"subdomain": "b.example", "_merged_into": "x"}, {"subdomain": "o.example"}]
+    report = {"run_id": 3, "_hosts": [card], "findings": findings, "_traffic_window": ["2026-10-04", "2026-10-31"],
+              "_links": {"run_id": 11}}
+    record_health(report, history)  # same runs as the stored entry: it gets the stats
+    assert host_history("b.example", history) == [
+        {"date": "2026-10-31", "health": 68, "areas": {}, "clicks": 601, "impressions": 58085,
+         "traffic_to": "2026-10-31", "issue_types": 1, "open_issues": 1705, "note": ["first run"]}]
+    report["_repo"], report["_links"] = {"run_id": 12}, {"run_id": 12}
+    record_health(report, history)
+    rows = host_history("b.example", history)
+    assert [r["health"] for r in rows] == [48, 68]
+    assert rows[0]["note"] == ["new link check (run 12)", "Repo file check added"]
 
 
 def test_a_new_score_method_rescores_the_same_runs_and_restarts_the_trend(tmp_path):

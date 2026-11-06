@@ -451,6 +451,10 @@ footer a { color: var(--accent) }
 
   <section aria-labelledby="s-ref" id="reference">
     <h2 id="s-ref">Reference</h2>
+    <details class="ref" id="history" hidden open><summary>History <small id="history-st"></small></summary>
+      <p class="lede fold">One row per recorded run, newest first.<span class="rest"> Clicks and impressions: Search Console, the 28 days ending on the date under them. Issue types: findings of the checks. Open issues: link and sitemap items still open. Note: what ran since the row before, so a score change from a new check reads as that.</span></p>
+      <div class="tablewrap"><table id="history-rows"></table></div>
+    </details>
     <details class="ref" id="audit" hidden open><summary>Crawl audit per host <small id="audit-st"></small> <small id="audit-meta"></small></summary>
       <div class="scope" id="audit-scope"></div>
       <div class="tablewrap"><table id="audit-hosts"></table></div>
@@ -1152,6 +1156,36 @@ __METHOD__
       table.innerHTML = head + `<tbody>${shown.map(r => r.html).join("")}</tbody>`;
       btn.hidden = rows.length <= limit;
       btn.textContent = all ? "Show fewer" : `Show all ${rows.length}`;
+    };
+    btn.addEventListener("click", () => { all = !all; render(); });
+    render();
+  }
+
+  // history: the subdomain's Overview numbers per recorded run, newest first (SK, 2026-11-06)
+  const HIST = R._history || [];
+  if (HIST.length) {
+    $("history").hidden = false;
+    $("history-st").textContent = `· ${HIST.length} run${HIST.length > 1 ? "s" : ""} since ${day(HIST[HIST.length - 1].date)}`;
+    const AREA_COLS = [["crawl", "Crawl & indexing"], ["onpage", "On-page"], ["intl", "Languages"], ["ai", "AI readiness"], ["perf", "Speed"]]
+      .filter(([k]) => HIST.some(r => r.areas[k] != null));
+    const withItems = HIST.some(r => r.open_issues != null);
+    const move = (r, older, get) => { const a = get(r), b = older && get(older);
+      return a == null || b == null || a === b ? "" : ` <small class="${a > b ? "up" : "down"}">${a > b ? "+" : "−"}${Math.abs(a - b)}</small>`; };
+    const HIST_SHOWN = 10;
+    const table = $("history-rows"), btn = document.createElement("button");
+    btn.type = "button"; btn.className = "more"; table.closest(".tablewrap").after(btn);
+    let all = false;
+    const render = () => {
+      const shown = all ? HIST : HIST.slice(0, HIST_SHOWN);
+      table.innerHTML = `<thead><tr><th>Date</th><th class="n">Score</th><th class="n">Clicks · 28 days</th><th class="n">Impressions</th><th class="n">Issue types</th>${withItems ? `<th class="n">Open issues</th>` : ""}${AREA_COLS.map(([, n]) => `<th class="n">${n}</th>`).join("")}<th>Note</th></tr></thead><tbody>`
+        + shown.map((r, i) => { const older = HIST[HIST.indexOf(r) + 1];
+          return `<tr><td>${esc(day(r.date))}</td><td class="n"><b>${r.health}</b>${move(r, older, x => x.health)}</td>`
+            + `<td class="n">${fmt(r.clicks)}${r.traffic_to ? `<br><small class="dim">to ${esc(day(r.traffic_to))}</small>` : ""}</td><td class="n">${compact(r.impressions)}</td>`
+            + `<td class="n">${fmt(r.issue_types)}</td>${withItems ? `<td class="n">${fmt(r.open_issues)}</td>` : ""}`
+            + AREA_COLS.map(([k]) => `<td class="n">${r.areas[k] == null ? "–" : r.areas[k]}${move(r, older, x => x.areas[k])}</td>`).join("")
+            + `<td>${r.note.length ? esc(r.note.join(" · ")) : '<span class="dim">–</span>'}</td></tr>`; }).join("") + `</tbody>`;
+      btn.hidden = HIST.length <= HIST_SHOWN;
+      btn.textContent = all ? "Show fewer" : `Show all ${HIST.length}`;
     };
     btn.addEventListener("click", () => { all = !all; render(); });
     render();

@@ -12,6 +12,13 @@
      "intl": 83,
      "ai": 95,
      "perf": 100
+    },
+    "stats": {
+     "clicks": 8321,
+     "impressions": 451295,
+     "traffic_to": "2026-10-31",
+     "issue_types": 14,
+     "open_issues": 4650
     }
    }
   }
