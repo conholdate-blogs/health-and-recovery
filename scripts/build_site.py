@@ -275,14 +275,12 @@ def host_scores(tenant: str, hosts: list[str]) -> dict[str, tuple[int, str]]:
 
 
 def tenant_item(tenant: str, scores: dict[str, tuple[int, str]]) -> str:
-    """A domain: its name as the heading (opens the domain page), its open issue types and archive, then each of its
-    subdomains with its health (SK, 2026-11-06)."""
-    rows = json.loads(tenant_paths(tenant).findings_export.read_text(encoding="utf-8"))
-    open_n = sum(1 for f in rows if f["status"] in ("open", "unverified"))
+    """A domain: its name as the heading (opens the domain page) and archive link, then each of its subdomains with
+    its health (SK, 2026-11-06: no counts on the home page, as in the Subdomains view)."""
     name = html.escape(tenant)
     tiles = "".join(sub_tile(h, scores) for h in load_tenant(tenant).host_names)
-    return (f'<div class="coll"><div><a href="{name}/"><b>{name}</b></a><span>{open_n:,} open issue types · '
-            f'<a href="{name}/archive/">previous versions</a></span></div><div class="subs">{tiles}</div></div>')
+    return (f'<div class="coll"><div><a href="{name}/"><b>{name}</b></a><span><a href="{name}/archive/">previous versions</a>'
+            f'</span></div><div class="subs">{tiles}</div></div>')
 
 
 def domain_block(tenants: list[str], scores: dict[str, tuple[int, str]]) -> str:
