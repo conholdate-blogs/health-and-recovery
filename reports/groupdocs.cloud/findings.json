@@ -40,22 +40,22 @@
     "affected_pages": 10,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 6,
+      "impressions_28d": 5,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 28,
+      "past_impressions": 46,
       "lost_clicks": 0,
-      "lost_impressions": 22,
+      "lost_impressions": 41,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "lost",
-      "score": 0,
+      "score": 1,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "M",
@@ -66,7 +66,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run2",
+    "last_seen_run": "crawl-audit-run12",
     "resolved_run": null,
     "resolved_at": null,
     "check": "content_needs_js",
@@ -98,23 +98,23 @@
     },
     "affected_pages": 0,
     "impact": {
-      "clicks_28d": 591,
-      "impressions_28d": 60754,
+      "clicks_28d": 717,
+      "impressions_28d": 62338,
       "source": "gsc-host",
       "share": 1.0,
-      "past_clicks": 2003,
-      "past_impressions": 102849,
-      "lost_clicks": 1412,
-      "lost_impressions": 42095,
+      "past_clicks": 2113,
+      "past_impressions": 104744,
+      "lost_clicks": 1396,
+      "lost_impressions": 42406,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
-      "score": 12,
+      "score": 13,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -125,7 +125,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "ai-audit-run3",
-    "last_seen_run": "ai-audit-run3",
+    "last_seen_run": "ai-audit-run13",
     "resolved_run": null,
     "resolved_at": null,
     "check": "llms_txt_missing",
@@ -187,22 +187,22 @@
     "affected_pages": 38,
     "impact": {
       "clicks_28d": 2,
-      "impressions_28d": 209,
+      "impressions_28d": 214,
       "source": "gsc-host",
       "share": 0.003,
       "past_clicks": 7,
-      "past_impressions": 353,
+      "past_impressions": 359,
       "lost_clicks": 5,
-      "lost_impressions": 144,
+      "lost_impressions": 145,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 6,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -213,7 +213,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "discovery-run1",
-    "last_seen_run": "discovery-run3",
+    "last_seen_run": "discovery-run4",
     "resolved_run": null,
     "resolved_at": null,
     "check": "dup_in_file",
@@ -1010,7 +1010,7 @@
           "url": "https://blog.groupdocs.cloud/category/conversion/",
           "page": "https://blog.groupdocs.cloud/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
           "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
-          "line": 172,
+          "line": 163,
           "fix": null,
           "commit": "4cce9d5a 2022-12-10: Added Hugo Blog"
         },
@@ -1108,23 +1108,23 @@
     },
     "affected_pages": 509,
     "impact": {
-      "clicks_28d": 20,
-      "impressions_28d": 3964,
+      "clicks_28d": 21,
+      "impressions_28d": 4216,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 60,
-      "past_impressions": 4796,
-      "lost_clicks": 40,
-      "lost_impressions": 832,
+      "past_clicks": 68,
+      "past_impressions": 4876,
+      "lost_clicks": 47,
+      "lost_impressions": 660,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 24,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "M",
@@ -1135,7 +1135,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run10",
+    "last_seen_run": "link-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -1536,14 +1536,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -1554,7 +1554,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run11",
+    "last_seen_run": "repo-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",
@@ -1595,18 +1595,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 36,
+      "past_impressions": 60,
       "lost_clicks": 0,
-      "lost_impressions": 30,
+      "lost_impressions": 54,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -1617,10 +1617,467 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run11",
+    "last_seen_run": "repo-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_target_bad",
+    "notes": []
+  },
+  {
+    "id": "crawl-0005",
+    "key": "crawl/link_redirected/blog.groupdocs.cloud/post",
+    "source": "link-audit",
+    "tenant": "groupdocs.cloud",
+    "subdomain": "blog.groupdocs.cloud",
+    "template": "post",
+    "dimension": "crawl",
+    "type": "improvable",
+    "title": "Posts link to old URLs that redirect",
+    "evidence": {
+      "urls": [
+        "https://blog.groupdocs.cloud/annotation/extract-or-remove-annotations-from-word-files-using-python/",
+        "https://blog.groupdocs.cloud/conversion/convert-svg-to-jpg-and-jpg-to-svg-in-python/",
+        "https://blog.groupdocs.cloud/conversion/convert-svg-to-png-high-quality-in-python/",
+        "https://blog.groupdocs.cloud/conversion/convert-word-to-tiff-file-in-python/",
+        "https://blog.groupdocs.cloud/es/conversion/convert-html-to-markdown-with-java-using-rest-api/",
+        "https://blog.groupdocs.cloud/es/translation/translate-word-excel-documents-with-rest-api/",
+        "https://blog.groupdocs.cloud/fa/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-csv-to-json-and-json-to-csv-in-java/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-html-to-pdf-in-csharp-using-rest-api/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-html-to-pdf-in-java-using-rest-api/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-jpg-to-powerpoint-and-powerpoint-to-jpg-in-java/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-markdown-to-html-in-java-using-rest-api/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-markdown-to-pdf-and-pdf-to-markdown-in-python/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-file-to-png-and-png-to-pdf-format-using-java/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-excel-using-rest-api-in-node.js/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-html-in-java-using-rest-api/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-jpg-image-in-node.js-using-rest-api/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-word-document-in-java-using-rest-api/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-word-in-csharp-net-using-rest-api/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-powerpoint-to-pdf-using-rest-api-in-node.js/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-svg-to-pdf-and-pdf-to-svg-programmatically-in-java/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-text-to-html-and-html-to-text-in-python/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-word-document-to-pdf-in-java-using-rest-api/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-word-to-markdown-and-markdown-to-word-in-python/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-word-to-pdf-programmatically-in-csharp/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-word-to-png-and-png-to-word-document-in-java/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-xml-to-csv-and-csv-to-xml-in-python/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-xml-to-excel-and-excel-to-xml-in-python/",
+        "https://blog.groupdocs.cloud/ja/conversion/how-to-convert-excel-to-pdf-using-java-api/",
+        "https://blog.groupdocs.cloud/ja/conversion/how-to-convert-powerpoint-to-jpg-and-jpg-to-powerpoint-in-node.js/",
+        "https://blog.groupdocs.cloud/ja/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/",
+        "https://blog.groupdocs.cloud/ja/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
+        "https://blog.groupdocs.cloud/ko/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
+        "https://blog.groupdocs.cloud/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
+        "https://blog.groupdocs.cloud/ru/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/",
+        "https://blog.groupdocs.cloud/ru/conversion/convert-html-to-pdf-in-csharp-using-rest-api/",
+        "https://blog.groupdocs.cloud/ru/conversion/convert-svg-to-jpg-and-jpg-to-svg-in-python/",
+        "https://blog.groupdocs.cloud/ru/conversion/convert-svg-to-png-high-quality-in-python/",
+        "https://blog.groupdocs.cloud/ru/conversion/convert-word-to-tiff-file-in-python/",
+        "https://blog.groupdocs.cloud/ru/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
+        "https://blog.groupdocs.cloud/zh/parser/java-dom-parser-extract-text-from-xml-documents-using-java/"
+      ],
+      "observed": "54 links on 44 pages (23 distinct targets); by language: ja 30, en 9, ru 6, es 3, fa 2, ko 2, zh 2; 0 written by translation commits",
+      "expected": "Every internal link points at the page's current URL, not one that redirects",
+      "locations": [
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/2021/02/18/render-project-data-from-mpp-to-pdf-in-python/",
+          "page": "https://blog.groupdocs.cloud/annotation/extract-or-remove-annotations-from-word-files-using-python/",
+          "file": "content/GroupDocs.Cloud/annotation/2021-03-26-extract-or-remove-annotations-from-word-files-using-python/index.md",
+          "line": 116,
+          "fix": "https://blog.groupdocs.cloud/viewer/render-project-data-from-mpp-to-pdf-in-python/",
+          "commit": "aa880b4c 2023-01-27: Fixed broken links and added reviewed changes for convert HTML to PNG in Java."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/conversion/convert-pdf-to-jpeg-png-and-gif-images-in-python/",
+          "page": "https://blog.groupdocs.cloud/conversion/convert-svg-to-jpg-and-jpg-to-svg-in-python/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-10-27-convert-svg-to-jpg-and-jpg-to-svg-in-python/index.md",
+          "line": 150,
+          "fix": "https://blog.groupdocs.cloud/conversion/convert-pdf-to-jpg-png-and-gif-images-in-python/",
+          "commit": "b6eced4a 2022-12-11: Replace date with category"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/conversion/convert-pdf-to-jpeg-png-and-gif-images-in-python/",
+          "page": "https://blog.groupdocs.cloud/conversion/convert-svg-to-png-high-quality-in-python/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-10-19-convert-svg-to-png-high-quality-in-python/index.md",
+          "line": 144,
+          "fix": "https://blog.groupdocs.cloud/conversion/convert-pdf-to-jpg-png-and-gif-images-in-python/",
+          "commit": "b6eced4a 2022-12-11: Replace date with category"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/conversion/convert-pdf-to-jpeg-png-and-gif-images-in-python/",
+          "page": "https://blog.groupdocs.cloud/conversion/convert-word-to-tiff-file-in-python/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-07-30-convert-word-to-tiff-file-in-python/index.md",
+          "line": 124,
+          "fix": "https://blog.groupdocs.cloud/conversion/convert-pdf-to-jpg-png-and-gif-images-in-python/",
+          "commit": "b6eced4a 2022-12-11: Replace date with category"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/es/2023/02/10/convert-html-to-markdown-with-java-using-rest-api/#How-to-Convert-HTML-to-Markdown-via-Java-using-REST-API",
+          "page": "https://blog.groupdocs.cloud/es/conversion/convert-html-to-markdown-with-java-using-rest-api/",
+          "file": "content/GroupDocs.Cloud/conversion/2023-02-10-convert-html-to-markdown-with-java-using-rest-api/index.es.md",
+          "line": 276,
+          "fix": "https://blog.groupdocs.cloud/es/conversion/convert-html-to-markdown-with-java-using-rest-api/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/es/translate/translate-word-excel-documents-with-rest-api/#upload-file-to-translate",
+          "page": "https://blog.groupdocs.cloud/es/translation/translate-word-excel-documents-with-rest-api/",
+          "file": "content/GroupDocs.Cloud/translation/2020-06-06-translate-word-excel-documents-with-rest-api/index.es.md",
+          "line": 34,
+          "fix": "https://blog.groupdocs.cloud/es/translation/translate-word-excel-documents-with-rest-api/",
+          "commit": "241725f4 2023-06-27: Worked on blog translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/es/translate/translate-word-excel-documents-with-rest-api/#translate-word-excel-to-other-language",
+          "page": "https://blog.groupdocs.cloud/es/translation/translate-word-excel-documents-with-rest-api/",
+          "file": "content/GroupDocs.Cloud/translation/2020-06-06-translate-word-excel-documents-with-rest-api/index.es.md",
+          "line": 35,
+          "fix": "https://blog.groupdocs.cloud/es/translation/translate-word-excel-documents-with-rest-api/",
+          "commit": "241725f4 2023-06-27: Worked on blog translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/fa/2021/11/29/parse-word-documents-using-rest-api-in-python/",
+          "page": "https://blog.groupdocs.cloud/fa/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
+          "file": "content/GroupDocs.Cloud/parser/2023-06-17-java-dom-parser-extract-text-from-xml-documents-using-java/index.fa.md",
+          "line": 202,
+          "fix": "https://blog.groupdocs.cloud/fa/parser/parse-word-documents-using-rest-api-in-python/",
+          "commit": "79df8a6a 2023-06-18: Added translations for Java DOM Parser - Extract Text from XML Documents using Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/fa/2021/03/17/extract-text-from-pdf-using-python/",
+          "page": "https://blog.groupdocs.cloud/fa/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
+          "file": "content/GroupDocs.Cloud/parser/2023-06-17-java-dom-parser-extract-text-from-xml-documents-using-java/index.fa.md",
+          "line": 205,
+          "fix": "https://blog.groupdocs.cloud/fa/parser/extract-text-from-pdf-using-python/",
+          "commit": "79df8a6a 2023-06-18: Added translations for Java DOM Parser - Extract Text from XML Documents using Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-csv-to-json-and-json-to-csv-in-java/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-21-convert-csv-to-json-and-json-to-csv-in-java/index.ja.md",
+          "line": 371,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ja.md",
+          "line": 331,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-12-21-convert-excel-file-to-json-file-in-java-using-rest-api/index.ja.md",
+          "line": 276,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-html-to-pdf-in-csharp-using-rest-api/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-04-convert-html-to-pdf-in-csharp-using-rest-api/index.ja.md",
+          "line": 375,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-html-to-pdf-in-java-using-rest-api/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-18-convert-html-to-pdf-in-java-using-rest-api/index.ja.md",
+          "line": 389,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-jpg-to-powerpoint-and-powerpoint-to-jpg-in-java/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-12-22-convert-jpg-to-powerpoint-and-powerpoint-to-jpg-in-java/index.ja.md",
+          "line": 388,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-markdown-to-html-in-java-using-rest-api/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-12-20-convert-markdown-to-html-in-java-using-rest-api/index.ja.md",
+          "line": 341,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-markdown-to-pdf-and-pdf-to-markdown-in-python/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-07-convert-markdown-to-pdf-and-pdf-to-markdown-in-python/index.ja.md",
+          "line": 302,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-file-to-png-and-png-to-pdf-format-using-java/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-12-01-convert-pdf-file-to-png-and-png-to-pdf-format-using-java/index.ja.md",
+          "line": 448,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-excel-using-rest-api-in-node.js/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-09-03-convert-pdf-to-excel-using-rest-api-in-node.js/index.ja.md",
+          "line": 312,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "4f0719b3 2023-06-13: Added translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-html-in-java-using-rest-api/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-12-19-convert-pdf-to-html-in-java-using-rest-api/index.ja.md",
+          "line": 341,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-jpg-image-in-node.js-using-rest-api/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-09-02-convert-pdf-to-jpg-image-in-node.js-using-rest-api/index.ja.md",
+          "line": 437,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "4f0719b3 2023-06-13: Added translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-word-document-in-java-using-rest-api/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-26-convert-pdf-to-word-document-in-java-using-rest-api/index.ja.md",
+          "line": 423,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-word-in-csharp-net-using-rest-api/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-17-convert-pdf-to-word-in-csharp-net-using-rest-api/index.ja.md",
+          "line": 487,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-powerpoint-to-pdf-using-rest-api-in-node.js/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-09-22-convert-powerpoint-to-pdf-using-rest-api-in-node.js/index.ja.md",
+          "line": 414,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "4f0719b3 2023-06-13: Added translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-svg-to-pdf-and-pdf-to-svg-programmatically-in-java/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-12-06-convert-svg-to-pdf-and-pdf-to-svg-programmatically-in-java/index.ja.md",
+          "line": 463,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-text-to-html-and-html-to-text-in-python/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-15-convert-text-to-html-and-html-to-text-in-python/index.ja.md",
+          "line": 320,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-word-document-to-pdf-in-java-using-rest-api/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-28-convert-word-document-to-pdf-in-java-using-rest-api/index.ja.md",
+          "line": 520,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-24-convert-word-to-jpg-and-jpg-to-word-programmatically-in-java/index.ja.md",
+          "line": 457,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-word-to-markdown-and-markdown-to-word-in-python/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-11-convert-word-to-markdown-and-markdown-to-word-in-python/index.ja.md",
+          "line": 273,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-word-to-pdf-programmatically-in-csharp/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-03-convert-word-to-pdf-programmatically-in-csharp/index.ja.md",
+          "line": 504,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-word-to-png-and-png-to-word-document-in-java/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-30-convert-word-to-png-and-png-to-word-document-in-java/index.ja.md",
+          "line": 443,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-xml-to-csv-and-csv-to-xml-in-python/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-01-convert-xml-to-csv-and-csv-to-xml-in-python/index.ja.md",
+          "line": 222,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-xml-to-excel-and-excel-to-xml-in-python/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-10-28-convert-xml-to-excel-and-excel-to-xml-in-python/index.ja.md",
+          "line": 257,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "1220331b 2023-06-13: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/how-to-convert-excel-to-pdf-using-java-api/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-22-how-to-convert-excel-to-pdf-using-java-api/index.ja.md",
+          "line": 367,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "90a4f407 2023-06-12: Added translations."
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/how-to-convert-powerpoint-to-jpg-and-jpg-to-powerpoint-in-node.js/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-09-10-how-to-convert-powerpoint-to-jpg-and-jpg-to-powerpoint-in-node.js/index.ja.md",
+          "line": 445,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "4f0719b3 2023-06-13: Added translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ja/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-09-13-how-to-convert-text-file-to-pdf-online-in-node.js/index.ja.md",
+          "line": 244,
+          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
+          "commit": "4f0719b3 2023-06-13: Added translations"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/2021/12/21/extract-data-from-pdf-using-rest-api-in-node-js/",
+          "page": "https://blog.groupdocs.cloud/ja/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
+          "file": "content/GroupDocs.Cloud/parser/2023-06-17-java-dom-parser-extract-text-from-xml-documents-using-java/index.ja.md",
+          "line": 201,
+          "fix": "https://blog.groupdocs.cloud/ja/parser/extract-data-from-pdf-using-rest-api-in-node-js/",
+          "commit": "79df8a6a 2023-06-18: Added translations for Java DOM Parser - Extract Text from XML Documents using Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/2021/04/28/extract-specific-data-from-pdf-using-python/",
+          "page": "https://blog.groupdocs.cloud/ja/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
+          "file": "content/GroupDocs.Cloud/parser/2023-06-17-java-dom-parser-extract-text-from-xml-documents-using-java/index.ja.md",
+          "line": 203,
+          "fix": "https://blog.groupdocs.cloud/ja/parser/extract-specific-data-from-pdf-using-python/",
+          "commit": "79df8a6a 2023-06-18: Added translations for Java DOM Parser - Extract Text from XML Documents using Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ja/2021/03/19/extract-images-from-pdf-documents-using-python/",
+          "page": "https://blog.groupdocs.cloud/ja/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
+          "file": "content/GroupDocs.Cloud/parser/2023-06-17-java-dom-parser-extract-text-from-xml-documents-using-java/index.ja.md",
+          "line": 204,
+          "fix": "https://blog.groupdocs.cloud/ja/parser/extract-images-from-pdf-documents-using-python/",
+          "commit": "79df8a6a 2023-06-18: Added translations for Java DOM Parser - Extract Text from XML Documents using Java"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.cloud/ko/2021/11/29/parse-word-documents-using-rest-api-in-python/",
+          "page": "https://blog.groupdocs.cloud/ko/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
+          "file": "content/GroupDocs.Cloud/parser/2023-06-17-java-dom-parser-extract-text-from-xml-documents-using-java/index.ko.md",
+          "line": 202,
+          "fix": "https://blog.groupdocs.cloud/ko/parser/parse-word-documents-using-rest-api-in-python/",
+          "commit": "79df8a6a 2023-06-18: Added translations for Java DOM Parser - Extract Text from XML Documents using Java"
+        }
+      ]
+    },
+    "affected_pages": 44,
+    "impact": {
+      "clicks_28d": 3,
+      "impressions_28d": 736,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 21,
+      "past_impressions": 1712,
+      "lost_clicks": 18,
+      "lost_impressions": 976,
+      "past_window": [
+        "2026-04-08",
+        "2026-05-05"
+      ],
+      "scored_on": "lost",
+      "score": 5,
+      "window": [
+        "2026-10-07",
+        "2026-11-03"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-06",
+    "first_seen_run": "link-audit-run16",
+    "last_seen_run": "link-audit-run16",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "link_redirected",
     "notes": []
   },
   {
@@ -2125,23 +2582,23 @@
     },
     "affected_pages": 122,
     "impact": {
-      "clicks_28d": 2,
-      "impressions_28d": 901,
+      "clicks_28d": 3,
+      "impressions_28d": 879,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 13,
-      "past_impressions": 959,
-      "lost_clicks": 11,
-      "lost_impressions": 58,
+      "past_impressions": 954,
+      "lost_clicks": 10,
+      "lost_impressions": 75,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 22,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -2152,7 +2609,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run10",
+    "last_seen_run": "link-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -2273,14 +2730,14 @@
       "lost_clicks": 0,
       "lost_impressions": 3,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -2291,7 +2748,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run10",
+    "last_seen_run": "link-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -2696,22 +3153,22 @@
     "affected_pages": 18,
     "impact": {
       "clicks_28d": 1,
-      "impressions_28d": 68,
+      "impressions_28d": 71,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 1,
-      "past_impressions": 81,
+      "past_impressions": 93,
       "lost_clicks": 0,
-      "lost_impressions": 13,
+      "lost_impressions": 22,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 6,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -2722,7 +3179,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run10",
+    "last_seen_run": "link-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -2811,25 +3268,25 @@
         ]
       }
     },
-    "affected_pages": 11039,
+    "affected_pages": 11077,
     "impact": {
-      "clicks_28d": 569,
-      "impressions_28d": 58103,
+      "clicks_28d": 693,
+      "impressions_28d": 59771,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 1927,
-      "past_impressions": 98786,
-      "lost_clicks": 1358,
-      "lost_impressions": 40683,
+      "past_clicks": 2031,
+      "past_impressions": 100614,
+      "lost_clicks": 1338,
+      "lost_impressions": 40843,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 12,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -2840,7 +3297,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run2",
+    "last_seen_run": "crawl-audit-run12",
     "resolved_run": null,
     "resolved_at": null,
     "check": "hreflang_no_xdefault",
@@ -2927,25 +3384,25 @@
         ]
       }
     },
-    "affected_pages": 555,
+    "affected_pages": 557,
     "impact": {
-      "clicks_28d": 26,
-      "impressions_28d": 2682,
+      "clicks_28d": 32,
+      "impressions_28d": 2755,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 88,
-      "past_impressions": 4664,
-      "lost_clicks": 62,
-      "lost_impressions": 1982,
+      "past_clicks": 92,
+      "past_impressions": 4842,
+      "lost_clicks": 60,
+      "lost_impressions": 2087,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 7,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -2956,7 +3413,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run2",
+    "last_seen_run": "crawl-audit-run12",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -3027,18 +3484,18 @@
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 70,
+      "past_impressions": 97,
       "lost_clicks": 0,
-      "lost_impressions": 49,
+      "lost_impressions": 76,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "lost",
-      "score": 0,
+      "score": 1,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -3049,7 +3506,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run2",
+    "last_seen_run": "crawl-audit-run12",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -3129,25 +3586,25 @@
         ]
       }
     },
-    "affected_pages": 536,
+    "affected_pages": 538,
     "impact": {
-      "clicks_28d": 26,
-      "impressions_28d": 2661,
+      "clicks_28d": 32,
+      "impressions_28d": 2734,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 88,
-      "past_impressions": 4594,
-      "lost_clicks": 62,
-      "lost_impressions": 1933,
+      "past_clicks": 92,
+      "past_impressions": 4746,
+      "lost_clicks": 60,
+      "lost_impressions": 2012,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 7,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -3158,7 +3615,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run2",
+    "last_seen_run": "crawl-audit-run12",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -3203,22 +3660,22 @@
     "affected_pages": 3,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 19,
+      "impressions_28d": 26,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 13,
+      "past_impressions": 9,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-08",
+        "2026-05-05"
       ],
       "scored_on": "at stake",
       "score": 1,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-07",
+        "2026-11-03"
       ]
     },
     "effort": "S",
@@ -3229,7 +3686,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "text-audit-run6",
-    "last_seen_run": "text-audit-run6",
+    "last_seen_run": "text-audit-run15",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_topic_mismatch",

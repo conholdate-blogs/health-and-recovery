@@ -1,0 +1,1008 @@
+{
+  "tenant": "groupdocs.cloud",
+  "auditor": "repo-audit",
+  "run_id": 17,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.cloud"
+    ],
+    "sample": 40
+  },
+  "requests": 41,
+  "duration_s": 50.4,
+  "stopped_early": false,
+  "summary": {
+    "blog.groupdocs.cloud": {
+      "commit": "e2d67869 2026-11-06 Add generated blog for conversion: 2026-11-06-how-to-convert-excel-workbook-to-text-in-python (#72)",
+      "posts": 11040,
+      "entries": 504,
+      "invalid": null,
+      "broke_it": null,
+      "live": {
+        "eligible": 453,
+        "sampled": 40,
+        "redirected": 40
+      },
+      "by_check": {
+        "redirect_key_malformed": 51,
+        "redirect_target_bad": 1
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "crawl-0001",
+      "tenant": "groupdocs.cloud",
+      "subdomain": "blog.groupdocs.cloud",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_key_malformed",
+      "type": "incorrect",
+      "title": "Redirect sources that can never match a request",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.cloud//merger/password-protect-excel-using-password-protection-service/",
+          "https://blog.groupdocs.cloud//web792/",
+          "https://blog.groupdocs.cloud/http://daveandethan.life/exp.html",
+          "https://blog.groupdocs.cloud/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
+          "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
+          "https://blog.groupdocs.cloud/ru//render-excel-data-to-html-using-python/images/Render-Excel-To-HTML.jpg"
+        ],
+        "observed": "51 entries or files; host or scheme in the key: 45, double slash: 6",
+        "expected": "Every source is a path starting with /, percent-encoded",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 330,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c0f1c170 2023-11-06: fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud//merger/password-protect-excel-using-password-protection-service/",
+            "file": "Redirects.json",
+            "line": 335,
+            "note": "double slash",
+            "fix": "https://blog.groupdocs.cloud/merger/password-protect-excel-using-password-protection-service/",
+            "commit": "15e7b36d 2023-09-27: fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud//web792/",
+            "file": "Redirects.json",
+            "line": 353,
+            "note": "double slash",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "7f5e70c8 2023-10-13: convert-svg-to-png-using-svg-to-png-converter translations added"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 358,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c0f1c170 2023-11-06: fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/http://daveandethan.life/exp.html",
+            "file": "Redirects.json",
+            "line": 359,
+            "note": "double slash",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "accb9feb 2023-10-20: fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
+            "file": "Redirects.json",
+            "line": 382,
+            "note": "double slash",
+            "fix": "https://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family/",
+            "commit": "404c9c33 2023-11-13: Fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
+            "file": "Redirects.json",
+            "line": 388,
+            "note": "double slash",
+            "fix": "https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
+            "commit": "f14098cd 2023-12-19: fixed broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 400,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "974d216d 2024-01-22: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 401,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/tags/",
+            "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 404,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 405,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/page/2/",
+            "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 406,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/page/2/",
+            "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 407,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/page/2/",
+            "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 408,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 409,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/page/1/",
+            "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 411,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 412,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/page/2/",
+            "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 413,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 414,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/page/43/",
+            "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 415,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 416,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 420,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 421,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 422,
+            "note": "host or scheme in the key",
+            "fix": "blog.groupdocs.cloud/page/34",
+            "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 423,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/page/43/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 424,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/categories/groupdocs.merger-cloud-product-family/",
+            "commit": "98cdc8f7 2024-02-20: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 425,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "98cdc8f7 2024-02-20: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 426,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 432,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/categories/groupdocs.signature-cloud-product-family/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 433,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 434,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 435,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 436,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 437,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 438,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 439,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 440,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "dd25459d 2024-02-28: Redirects.json format fix"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 441,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 442,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 443,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "dd25459d 2024-02-28: Redirects.json format fix"
+          }
+        ]
+      },
+      "affected_pages": 51,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "crawl-0002",
+      "tenant": "groupdocs.cloud",
+      "subdomain": "blog.groupdocs.cloud",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_target_bad",
+      "type": "improvable",
+      "title": "Redirect targets that are empty or not https",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.cloud/"
+        ],
+        "observed": "1 entries or files; target: blog.groupdocs.cloud/page/34: 1",
+        "expected": "Every target is a full https URL",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 422,
+            "note": "target: blog.groupdocs.cloud/page/34",
+            "fix": null,
+            "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+          }
+        ]
+      },
+      "affected_pages": 1,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    }
+  ],
+  "hosts": {
+    "blog.groupdocs.cloud": {
+      "commit": "e2d67869 2026-11-06 Add generated blog for conversion: 2026-11-06-how-to-convert-excel-workbook-to-text-in-python (#72)",
+      "posts": 11040,
+      "redirects": {
+        "present": true,
+        "entries": 504,
+        "invalid": null,
+        "broke_it": null,
+        "live": {
+          "eligible": 453,
+          "sampled": 40,
+          "redirected": 40,
+          "failed": []
+        }
+      },
+      "issues": [
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 330,
+          "link": "blog.groupdocs.cloud/feed",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c0f1c170 2023-11-06: fixed broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 335,
+          "link": "//merger/password-protect-excel-using-password-protection-service/",
+          "note": "double slash",
+          "fix": "https://blog.groupdocs.cloud/merger/password-protect-excel-using-password-protection-service/",
+          "page": "https://blog.groupdocs.cloud//merger/password-protect-excel-using-password-protection-service/",
+          "commit": "15e7b36d 2023-09-27: fixed broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 353,
+          "link": "//web792/",
+          "note": "double slash",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": "https://blog.groupdocs.cloud//web792/",
+          "commit": "7f5e70c8 2023-10-13: convert-svg-to-png-using-svg-to-png-converter translations added"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 358,
+          "link": "blog.groupdocs.cloud/feed/web792/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c0f1c170 2023-11-06: fixed broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 359,
+          "link": "/http://daveandethan.life/exp.html",
+          "note": "double slash",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": "https://blog.groupdocs.cloud/http://daveandethan.life/exp.html",
+          "commit": "accb9feb 2023-10-20: fixed broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 382,
+          "link": "/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
+          "note": "double slash",
+          "fix": "https://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family/",
+          "page": "https://blog.groupdocs.cloud/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
+          "commit": "404c9c33 2023-11-13: Fixed broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 388,
+          "link": "/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
+          "note": "double slash",
+          "fix": "https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
+          "page": "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
+          "commit": "f14098cd 2023-12-19: fixed broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 400,
+          "link": "blog.groupdocs.cloud/page/120",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "974d216d 2024-01-22: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 401,
+          "link": "blog.groupdocs.cloud/es/tags/C",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/tags/",
+          "page": null,
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 404,
+          "link": "blog.groupdocs.cloud/page/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 405,
+          "link": "blog.groupdocs.cloud/page/100",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/2/",
+          "page": null,
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 406,
+          "link": "blog.groupdocs.cloud/page/119",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/2/",
+          "page": null,
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 407,
+          "link": "blog.groupdocs.cloud/page/121",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/2/",
+          "page": null,
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 408,
+          "link": "blog.groupdocs.cloud/page/122",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "d46c76a9 2024-01-29: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 409,
+          "link": "blog.groupdocs.cloud/pages/100",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/1/",
+          "page": null,
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 411,
+          "link": "blog.groupdocs.cloud/page/01",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 412,
+          "link": "blog.groupdocs.cloud/page/02",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/2/",
+          "page": null,
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 413,
+          "link": "blog.groupdocs.cloud/pages/1",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 414,
+          "link": "blog.groupdocs.cloud/page/50",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/43/",
+          "page": null,
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 415,
+          "link": "blog.groupdocs.cloud/pages/1/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "34379c41 2024-02-07: Update Redirects.json with redirection of broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 416,
+          "link": "blog.groupdocs.cloud/wp-admin/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 420,
+          "link": "blog.groupdocs.cloud/omr/gpa-calculator",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 421,
+          "link": "blog.groupdocs.cloud/omr/gpa-calculator/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 422,
+          "link": "blog.groupdocs.cloud/page/340",
+          "note": "host or scheme in the key",
+          "fix": "blog.groupdocs.cloud/page/34",
+          "page": null,
+          "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+        },
+        {
+          "check": "redirect_target_bad",
+          "file": "Redirects.json",
+          "line": 422,
+          "link": "blog.groupdocs.cloud/page/340",
+          "note": "target: blog.groupdocs.cloud/page/34",
+          "fix": null,
+          "page": null,
+          "commit": "c3873e3d 2024-02-14: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 423,
+          "link": "blog.groupdocs.cloud/page/44/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/43/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 424,
+          "link": "blog.groupdocs.cloud/merger/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/categories/groupdocs.merger-cloud-product-family/",
+          "page": null,
+          "commit": "98cdc8f7 2024-02-20: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 425,
+          "link": "blog.groupdocs.cloud/page/200",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "98cdc8f7 2024-02-20: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 426,
+          "link": "blog.groupdocs.cloud/page/44",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 432,
+          "link": "blog.groupdocs.cloud/ar/tag/c",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/categories/groupdocs.signature-cloud-product-family/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 433,
+          "link": "blog.groupdocs.cloud/page/110",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 434,
+          "link": "blog.groupdocs.cloud/page/150",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 435,
+          "link": "blog.groupdocs.cloud/page/170",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 436,
+          "link": "blog.groupdocs.cloud/page/180",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 437,
+          "link": "blog.groupdocs.cloud/page/190",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 438,
+          "link": "blog.groupdocs.cloud/page/198",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 439,
+          "link": "blog.groupdocs.cloud/page/199",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 440,
+          "link": "blog.groupdocs.cloud/page/200/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "dd25459d 2024-02-28: Redirects.json format fix"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 441,
+          "link": "blog.groupdocs.cloud/page/50/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 442,
+          "link": "blog.groupdocs.cloud/page/70/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "c4c9bfe0 2024-02-28: Update Redirects.json"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 443,
+          "link": "blog.groupdocs.cloud/page/80",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "dd25459d 2024-02-28: Redirects.json format fix"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 444,
+          "link": "blog.groupdocs.cloud/wp-admin/edit.php",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "271943e4 2024-03-04: redirections added for broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 449,
+          "link": "blog.groupdocs.cloud/page/03",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/3/",
+          "page": null,
+          "commit": "271943e4 2024-03-04: redirections added for broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 450,
+          "link": "blog.groupdocs.cloud/page/03/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/3/",
+          "page": null,
+          "commit": "271943e4 2024-03-04: redirections added for broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 451,
+          "link": "blog.groupdocs.cloud/page/100-",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/43/",
+          "page": null,
+          "commit": "6f0ece74 2024-03-12: Redirections added for broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 452,
+          "link": "blog.groupdocs.cloud/2022/09/10/how-to-convert-powerpoint-to-jpg-online-in-node.js/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/conversion/how-to-convert-powerpoint-to-jpg-and-jpg-to-powerpoint-in-node.js/",
+          "page": null,
+          "commit": "6f0ece74 2024-03-12: Redirections added for broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 453,
+          "link": "blog.groupdocs.cloud/page/100/",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "6f0ece74 2024-03-12: Redirections added for broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 454,
+          "link": "blog.groupdocs.cloud/page/60",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "6f0ece74 2024-03-12: Redirections added for broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 455,
+          "link": "blog.groupdocs.cloud/page/70",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "6f0ece74 2024-03-12: Redirections added for broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 456,
+          "link": "blog.groupdocs.cloud/page/99",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "page": null,
+          "commit": "e8867334 2024-03-19: Redirections added for broken links"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 457,
+          "link": "blog.groupdocs.cloud/es/tag/csharp",
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/es/tags/",
+          "page": null,
+          "commit": "c7c99c41 2024-03-27: Redirection added for broken link"
+        },
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 461,
+          "link": "/ru//render-excel-data-to-html-using-python/images/Render-Excel-To-HTML.jpg",
+          "note": "double slash",
+          "fix": "https://blog.groupdocs.cloud/ru/viewer/render-excel-data-to-html-using-python/images/Excel-to-HTML-Python.jpg",
+          "page": "https://blog.groupdocs.cloud/ru//render-excel-data-to-html-using-python/images/Render-Excel-To-HTML.jpg",
+          "commit": "d3ab0f08 2024-04-02: Redirections are added for broken links"
+        }
+      ]
+    }
+  }
+}

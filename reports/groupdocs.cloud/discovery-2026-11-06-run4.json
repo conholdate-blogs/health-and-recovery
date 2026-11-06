@@ -1,0 +1,1087 @@
+{
+  "tenant": "groupdocs.cloud",
+  "run_id": 4,
+  "hosts": {
+    "blog.groupdocs.cloud": {
+      "robots": {
+        "status": 200,
+        "error": null,
+        "is_html": false,
+        "sitemaps": [
+          "https://blog.groupdocs.cloud/sitemap.xml"
+        ],
+        "disallow_rules": 7,
+        "ai_bots_named": []
+      },
+      "sitemaps_fetched": 20,
+      "sitemaps_ok": 20,
+      "sitemaps_failed": [],
+      "urls": 11077
+    }
+  },
+  "sections": {
+    "blog.groupdocs.cloud": {
+      "": {
+        "urls": 19,
+        "hreflang_urls": 19,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "home": 19
+        }
+      },
+      "annotation": {
+        "urls": 513,
+        "hreflang_urls": 513,
+        "langs": {
+          "default": 27,
+          "ar": 27,
+          "de": 27,
+          "es": 27,
+          "fa": 27,
+          "fr": 27,
+          "id": 27,
+          "it": 27,
+          "ja": 27,
+          "ko": 27,
+          "pl": 27,
+          "pt": 27,
+          "ru": 27,
+          "th": 27,
+          "tr": 27,
+          "uk": 27,
+          "vi": 27,
+          "zh": 27,
+          "zh-hant": 27
+        },
+        "templates": {
+          "post": 513
+        }
+      },
+      "archives": {
+        "urls": 19,
+        "hreflang_urls": 19,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "listing": 19
+        }
+      },
+      "assembly": {
+        "urls": 76,
+        "hreflang_urls": 76,
+        "langs": {
+          "default": 4,
+          "ar": 4,
+          "de": 4,
+          "es": 4,
+          "fa": 4,
+          "fr": 4,
+          "id": 4,
+          "it": 4,
+          "ja": 4,
+          "ko": 4,
+          "pl": 4,
+          "pt": 4,
+          "ru": 4,
+          "th": 4,
+          "tr": 4,
+          "uk": 4,
+          "vi": 4,
+          "zh": 4,
+          "zh-hant": 4
+        },
+        "templates": {
+          "post": 76
+        }
+      },
+      "classification": {
+        "urls": 114,
+        "hreflang_urls": 114,
+        "langs": {
+          "default": 6,
+          "ar": 6,
+          "de": 6,
+          "es": 6,
+          "fa": 6,
+          "fr": 6,
+          "id": 6,
+          "it": 6,
+          "ja": 6,
+          "ko": 6,
+          "pl": 6,
+          "pt": 6,
+          "ru": 6,
+          "th": 6,
+          "tr": 6,
+          "uk": 6,
+          "vi": 6,
+          "zh": 6,
+          "zh-hant": 6
+        },
+        "templates": {
+          "post": 114
+        }
+      },
+      "comparison": {
+        "urls": 418,
+        "hreflang_urls": 418,
+        "langs": {
+          "default": 22,
+          "ar": 22,
+          "de": 22,
+          "es": 22,
+          "fa": 22,
+          "fr": 22,
+          "id": 22,
+          "it": 22,
+          "ja": 22,
+          "ko": 22,
+          "pl": 22,
+          "pt": 22,
+          "ru": 22,
+          "th": 22,
+          "tr": 22,
+          "uk": 22,
+          "vi": 22,
+          "zh": 22,
+          "zh-hant": 22
+        },
+        "templates": {
+          "post": 418
+        }
+      },
+      "conversion": {
+        "urls": 4959,
+        "hreflang_urls": 4959,
+        "langs": {
+          "default": 261,
+          "ar": 261,
+          "de": 261,
+          "es": 261,
+          "fa": 261,
+          "fr": 261,
+          "id": 261,
+          "it": 261,
+          "ja": 261,
+          "ko": 261,
+          "pl": 261,
+          "pt": 261,
+          "ru": 261,
+          "th": 261,
+          "tr": 261,
+          "uk": 261,
+          "vi": 261,
+          "zh": 261,
+          "zh-hant": 261
+        },
+        "templates": {
+          "post": 4959
+        }
+      },
+      "editor": {
+        "urls": 342,
+        "hreflang_urls": 342,
+        "langs": {
+          "default": 18,
+          "ar": 18,
+          "de": 18,
+          "es": 18,
+          "fa": 18,
+          "fr": 18,
+          "id": 18,
+          "it": 18,
+          "ja": 18,
+          "ko": 18,
+          "pl": 18,
+          "pt": 18,
+          "ru": 18,
+          "th": 18,
+          "tr": 18,
+          "uk": 18,
+          "vi": 18,
+          "zh": 18,
+          "zh-hant": 18
+        },
+        "templates": {
+          "post": 342
+        }
+      },
+      "groupdocs.cloud": {
+        "urls": 19,
+        "hreflang_urls": 18,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "category": 19
+        }
+      },
+      "merger": {
+        "urls": 1520,
+        "hreflang_urls": 1520,
+        "langs": {
+          "default": 80,
+          "ar": 80,
+          "de": 80,
+          "es": 80,
+          "fa": 80,
+          "fr": 80,
+          "id": 80,
+          "it": 80,
+          "ja": 80,
+          "ko": 80,
+          "pl": 80,
+          "pt": 80,
+          "ru": 80,
+          "th": 80,
+          "tr": 80,
+          "uk": 80,
+          "vi": 80,
+          "zh": 80,
+          "zh-hant": 80
+        },
+        "templates": {
+          "post": 1520
+        }
+      },
+      "metadata": {
+        "urls": 190,
+        "hreflang_urls": 190,
+        "langs": {
+          "default": 10,
+          "ar": 10,
+          "de": 10,
+          "es": 10,
+          "fa": 10,
+          "fr": 10,
+          "id": 10,
+          "it": 10,
+          "ja": 10,
+          "ko": 10,
+          "pl": 10,
+          "pt": 10,
+          "ru": 10,
+          "th": 10,
+          "tr": 10,
+          "uk": 10,
+          "vi": 10,
+          "zh": 10,
+          "zh-hant": 10
+        },
+        "templates": {
+          "post": 190
+        }
+      },
+      "parser": {
+        "urls": 741,
+        "hreflang_urls": 741,
+        "langs": {
+          "default": 39,
+          "ar": 39,
+          "de": 39,
+          "es": 39,
+          "fa": 39,
+          "fr": 39,
+          "id": 39,
+          "it": 39,
+          "ja": 39,
+          "ko": 39,
+          "pl": 39,
+          "pt": 39,
+          "ru": 39,
+          "th": 39,
+          "tr": 39,
+          "uk": 39,
+          "vi": 39,
+          "zh": 39,
+          "zh-hant": 39
+        },
+        "templates": {
+          "post": 741
+        }
+      },
+      "rewriter": {
+        "urls": 38,
+        "hreflang_urls": 38,
+        "langs": {
+          "default": 2,
+          "ar": 2,
+          "de": 2,
+          "es": 2,
+          "fa": 2,
+          "fr": 2,
+          "id": 2,
+          "it": 2,
+          "ja": 2,
+          "ko": 2,
+          "pl": 2,
+          "pt": 2,
+          "ru": 2,
+          "th": 2,
+          "tr": 2,
+          "uk": 2,
+          "vi": 2,
+          "zh": 2,
+          "zh-hant": 2
+        },
+        "templates": {
+          "post": 38
+        }
+      },
+      "search": {
+        "urls": 19,
+        "hreflang_urls": 19,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "listing": 19
+        }
+      },
+      "signature": {
+        "urls": 418,
+        "hreflang_urls": 418,
+        "langs": {
+          "default": 22,
+          "ar": 22,
+          "de": 22,
+          "es": 22,
+          "fa": 22,
+          "fr": 22,
+          "id": 22,
+          "it": 22,
+          "ja": 22,
+          "ko": 22,
+          "pl": 22,
+          "pt": 22,
+          "ru": 22,
+          "th": 22,
+          "tr": 22,
+          "uk": 22,
+          "vi": 22,
+          "zh": 22,
+          "zh-hant": 22
+        },
+        "templates": {
+          "post": 418
+        }
+      },
+      "total": {
+        "urls": 646,
+        "hreflang_urls": 646,
+        "langs": {
+          "default": 34,
+          "ar": 34,
+          "de": 34,
+          "es": 34,
+          "fa": 34,
+          "fr": 34,
+          "id": 34,
+          "it": 34,
+          "ja": 34,
+          "ko": 34,
+          "pl": 34,
+          "pt": 34,
+          "ru": 34,
+          "th": 34,
+          "tr": 34,
+          "uk": 34,
+          "vi": 34,
+          "zh": 34,
+          "zh-hant": 34
+        },
+        "templates": {
+          "post": 646
+        }
+      },
+      "translation": {
+        "urls": 19,
+        "hreflang_urls": 19,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "uk": 1,
+          "vi": 1,
+          "zh": 1,
+          "zh-hant": 1
+        },
+        "templates": {
+          "post": 19
+        }
+      },
+      "viewer": {
+        "urls": 684,
+        "hreflang_urls": 684,
+        "langs": {
+          "default": 36,
+          "ar": 36,
+          "de": 36,
+          "es": 36,
+          "fa": 36,
+          "fr": 36,
+          "id": 36,
+          "it": 36,
+          "ja": 36,
+          "ko": 36,
+          "pl": 36,
+          "pt": 36,
+          "ru": 36,
+          "th": 36,
+          "tr": 36,
+          "uk": 36,
+          "vi": 36,
+          "zh": 36,
+          "zh-hant": 36
+        },
+        "templates": {
+          "post": 684
+        }
+      },
+      "watermark": {
+        "urls": 323,
+        "hreflang_urls": 323,
+        "langs": {
+          "default": 17,
+          "ar": 17,
+          "de": 17,
+          "es": 17,
+          "fa": 17,
+          "fr": 17,
+          "id": 17,
+          "it": 17,
+          "ja": 17,
+          "ko": 17,
+          "pl": 17,
+          "pt": 17,
+          "ru": 17,
+          "th": 17,
+          "tr": 17,
+          "uk": 17,
+          "vi": 17,
+          "zh": 17,
+          "zh-hant": 17
+        },
+        "templates": {
+          "post": 323
+        }
+      }
+    }
+  },
+  "gsc_comparison": [
+    {
+      "path": "/sitemap.xml",
+      "url": "https://blog.groupdocs.cloud/sitemap.xml",
+      "gsc_status": "Success",
+      "gsc_discovered": 11070,
+      "live_status": 200,
+      "live_kind": "index",
+      "live_urls": 11077
+    }
+  ],
+  "sitemaps": {
+    "blog.groupdocs.cloud": {
+      "": [
+        {
+          "url": "https://blog.groupdocs.cloud/sitemap.xml",
+          "parent": null,
+          "depth": 0,
+          "status": 200,
+          "kind": "index",
+          "urls": 11077,
+          "children": 19,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/ar/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/de/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/en/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/es/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/fa/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/fr/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/id/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/it/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/ja/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/ko/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/pl/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/pt/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/ru/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/th/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/tr/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/uk/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/vi/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/zh-hant/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.groupdocs.cloud/zh/sitemap.xml",
+          "parent": "https://blog.groupdocs.cloud/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 583,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        }
+      ]
+    }
+  },
+  "new_hosts": {},
+  "sitemaps_fetched": 20,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.cloud"
+    ],
+    "sections": null,
+    "max_sitemaps": null
+  },
+  "requests": 21,
+  "duration_s": 21.1,
+  "not_fetched": [],
+  "findings": [
+    {
+      "id": "crawl-0001",
+      "tenant": "groupdocs.cloud",
+      "subdomain": "blog.groupdocs.cloud",
+      "template": "sitemap",
+      "dimension": "crawl",
+      "check": "dup_in_file",
+      "type": "not_optimized",
+      "title": "Sitemap lists the same URL more than once",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.cloud/en/sitemap.xml",
+          "https://blog.groupdocs.cloud/ja/sitemap.xml",
+          "https://blog.groupdocs.cloud/ko/sitemap.xml",
+          "https://blog.groupdocs.cloud/es/sitemap.xml",
+          "https://blog.groupdocs.cloud/de/sitemap.xml",
+          "https://blog.groupdocs.cloud/ru/sitemap.xml",
+          "https://blog.groupdocs.cloud/fr/sitemap.xml",
+          "https://blog.groupdocs.cloud/zh/sitemap.xml",
+          "https://blog.groupdocs.cloud/it/sitemap.xml",
+          "https://blog.groupdocs.cloud/pt/sitemap.xml"
+        ],
+        "observed": "https://blog.groupdocs.cloud/en/sitemap.xml: 2 URLs, e.g. https://blog.groupdocs.cloud/comparison/compare-excel-files-via-rest-in-csharp/, https://blog.groupdocs.cloud/parser/extract-text-from-pdf-in-nodejs/; https://blog.groupdocs.cloud/ja/sitemap.xml: 2 URLs, e.g. https://blog.groupdocs.cloud/ja/comparison/compare-excel-files-via-rest-in-csharp/, https://blog.groupdocs.cloud/ja/parser/extract-text-from-pdf-in-nodejs/; https://blog.groupdocs.cloud/ko/sitemap.xml: 2 URLs, e.g. https://blog.groupdocs.cloud/ko/comparison/compare-excel-files-via-rest-in-csharp/, https://blog.groupdocs.cloud/ko/parser/extract-text-from-pdf-in-nodejs/; https://blog.groupdocs.cloud/es/sitemap.xml: 2 URLs, e.g. https://blog.groupdocs.cloud/es/comparison/compare-excel-files-via-rest-in-csharp/, https://blog.groupdocs.cloud/es/parser/extract-text-from-pdf-in-nodejs/; https://blog.groupdocs.cloud/de/sitemap.xml: 2 URLs, e.g. https://blog.groupdocs.cloud/de/comparison/compare-excel-files-via-rest-in-csharp/, https://blog.groupdocs.cloud/de/parser/extract-text-from-pdf-in-nodejs/; and 14 more sitemaps",
+        "expected": "each URL listed once",
+        "locations": [
+          {
+            "role": "sitemap",
+            "url": "https://blog.groupdocs.cloud/en/sitemap.xml",
+            "note": "2 URLs, e.g. https://blog.groupdocs.cloud/comparison/compare-excel-files-via-rest-in-csharp/, https://blog.groupdocs.cloud/parser/extract-text-from-pdf-in-nodejs/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.groupdocs.cloud/ja/sitemap.xml",
+            "note": "2 URLs, e.g. https://blog.groupdocs.cloud/ja/comparison/compare-excel-files-via-rest-in-csharp/, https://blog.groupdocs.cloud/ja/parser/extract-text-from-pdf-in-nodejs/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.groupdocs.cloud/ko/sitemap.xml",
+            "note": "2 URLs, e.g. https://blog.groupdocs.cloud/ko/comparison/compare-excel-files-via-rest-in-csharp/, https://blog.groupdocs.cloud/ko/parser/extract-text-from-pdf-in-nodejs/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.groupdocs.cloud/es/sitemap.xml",
+            "note": "2 URLs, e.g. https://blog.groupdocs.cloud/es/comparison/compare-excel-files-via-rest-in-csharp/, https://blog.groupdocs.cloud/es/parser/extract-text-from-pdf-in-nodejs/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.groupdocs.cloud/de/sitemap.xml",
+            "note": "2 URLs, e.g. https://blog.groupdocs.cloud/de/comparison/compare-excel-files-via-rest-in-csharp/, https://blog.groupdocs.cloud/de/parser/extract-text-from-pdf-in-nodejs/"
+          }
+        ]
+      },
+      "affected_pages": 38,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    }
+  ],
+  "items": {
+    "blog.groupdocs.cloud": [
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/en/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/en/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/ja/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/ja/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/ja/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/ja/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/ko/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/ko/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/ko/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/ko/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/es/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/es/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/es/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/es/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/de/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/de/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/de/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/de/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/ru/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/ru/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/ru/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/ru/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/fr/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/fr/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/fr/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/fr/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/zh/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/zh/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/zh/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/zh/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/it/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/it/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/it/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/it/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/pt/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/pt/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/pt/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/pt/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/ar/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/ar/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/ar/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/ar/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/vi/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/vi/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/vi/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/vi/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/zh-hant/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/zh-hant/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/zh-hant/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/zh-hant/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/tr/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/tr/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/tr/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/tr/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/id/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/id/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/id/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/id/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/th/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/th/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/th/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/th/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/fa/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/fa/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/fa/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/fa/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/uk/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/uk/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/uk/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/uk/parser/extract-text-from-pdf-in-nodejs/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/pl/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/pl/comparison/compare-excel-files-via-rest-in-csharp/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.groupdocs.cloud/pl/sitemap.xml",
+        "url": "https://blog.groupdocs.cloud/pl/parser/extract-text-from-pdf-in-nodejs/"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4663 @@
+{
+  "tenant": "groupdocs.cloud",
+  "auditor": "crawl-audit",
+  "run_id": 12,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.cloud"
+    ],
+    "sections": null,
+    "inventory_run": 4,
+    "per_template": 2,
+    "other_langs": 2,
+    "max_per_host": null,
+    "max_pages": null
+  },
+  "canonical_targets": {},
+  "requests": 33,
+  "duration_s": 32.9,
+  "pages_planned": 32,
+  "stopped_early": false,
+  "summary": {
+    "blog.groupdocs.cloud": {
+      "pages": 32,
+      "ok_html": 32,
+      "errors": 0,
+      "redirected": 0,
+      "blocked": 0,
+      "ignored": 0,
+      "issues": {
+        "content_needs_js": 1,
+        "description_length": 8,
+        "h1_missing": 3,
+        "hreflang_no_xdefault": 32,
+        "title_length": 5
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "ai-0001",
+      "tenant": "groupdocs.cloud",
+      "subdomain": "blog.groupdocs.cloud",
+      "template": "page",
+      "dimension": "ai",
+      "check": "content_needs_js",
+      "type": "incorrect",
+      "title": "Pages show almost no text without JavaScript",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.cloud/search/"
+        ],
+        "observed": "1 of 32 sampled pages (by template: listing 1/4). e.g. https://blog.groupdocs.cloud/search/: 119 characters of main text in the HTML",
+        "expected": "the main text in the HTML itself (at least 250 characters); AI crawlers do not run JavaScript",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/search/",
+            "note": "119 characters of main text in the HTML"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.cloud/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "listing": [
+            1,
+            4
+          ]
+        }
+      },
+      "affected_pages": 10,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "M",
+      "fix_tier": 2,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0001",
+      "tenant": "groupdocs.cloud",
+      "subdomain": "blog.groupdocs.cloud",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "description_length",
+      "type": "improvable",
+      "title": "Meta descriptions are too long or too short",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.cloud/",
+          "https://blog.groupdocs.cloud/search/",
+          "https://blog.groupdocs.cloud/pt/",
+          "https://blog.groupdocs.cloud/archives/",
+          "https://blog.groupdocs.cloud/it/",
+          "https://blog.groupdocs.cloud/fa/archives/",
+          "https://blog.groupdocs.cloud/ar/archives/",
+          "https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/"
+        ],
+        "observed": "8 of 32 sampled pages (by template: home 3/3, listing 4/4, post 1/22). e.g. https://blog.groupdocs.cloud/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '; https://blog.groupdocs.cloud/search/: width 6: 'search'; https://blog.groupdocs.cloud/pt/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '; https://blog.groupdocs.cloud/archives/: width 8: 'archives'; https://blog.groupdocs.cloud/it/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '",
+        "expected": "50-170 characters (CJK count double)",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/",
+            "note": "width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/search/",
+            "note": "width 6: 'search'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/pt/",
+            "note": "width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/archives/",
+            "note": "width 8: 'archives'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/it/",
+            "note": "width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.cloud/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/pt/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/it/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            4,
+            4
+          ],
+          "post": [
+            1,
+            22
+          ]
+        }
+      },
+      "affected_pages": 557,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0002",
+      "tenant": "groupdocs.cloud",
+      "subdomain": "blog.groupdocs.cloud",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "h1_missing",
+      "type": "improvable",
+      "title": "Pages have no H1",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.cloud/",
+          "https://blog.groupdocs.cloud/pt/",
+          "https://blog.groupdocs.cloud/it/"
+        ],
+        "observed": "3 of 32 sampled pages (by template: home 3/3). e.g. https://blog.groupdocs.cloud/: no non-empty <h1>; https://blog.groupdocs.cloud/pt/: no non-empty <h1>; https://blog.groupdocs.cloud/it/: no non-empty <h1>",
+        "expected": "one H1 that states the page topic",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/pt/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/it/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.cloud/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/pt/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/it/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "home": [
+            3,
+            3
+          ]
+        }
+      },
+      "affected_pages": 19,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "intl-0001",
+      "tenant": "groupdocs.cloud",
+      "subdomain": "blog.groupdocs.cloud",
+      "template": "page",
+      "dimension": "intl",
+      "check": "hreflang_no_xdefault",
+      "type": "improvable",
+      "title": "hreflang set has no x-default",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.cloud/groupdocs.cloud/",
+          "https://blog.groupdocs.cloud/",
+          "https://blog.groupdocs.cloud/search/",
+          "https://blog.groupdocs.cloud/parser/extract-images-from-word-in-nodejs-image-extractor/",
+          "https://blog.groupdocs.cloud/de/groupdocs.cloud/",
+          "https://blog.groupdocs.cloud/pt/",
+          "https://blog.groupdocs.cloud/archives/",
+          "https://blog.groupdocs.cloud/viewer/render-excel-data-to-html-using-python/",
+          "https://blog.groupdocs.cloud/id/groupdocs.cloud/",
+          "https://blog.groupdocs.cloud/it/"
+        ],
+        "observed": "32 of 32 sampled pages (by template: category 3/3, home 3/3, listing 4/4, post 22/22). e.g. https://blog.groupdocs.cloud/groupdocs.cloud/: 1 entries: en; https://blog.groupdocs.cloud/: 19 entries: en, ja, ko, es, de, ru; https://blog.groupdocs.cloud/search/: 19 entries: en, ja, ko, es, de, ru; https://blog.groupdocs.cloud/parser/extract-images-from-word-in-nodejs-image-extractor/: 19 entries: en, ja, ko, es, de, ru; https://blog.groupdocs.cloud/de/groupdocs.cloud/: 18 entries: ja, ko, es, de, ru, fr",
+        "expected": "an x-default entry",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/groupdocs.cloud/",
+            "note": "1 entries: en"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/",
+            "note": "19 entries: en, ja, ko, es, de, ru"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/search/",
+            "note": "19 entries: en, ja, ko, es, de, ru"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/parser/extract-images-from-word-in-nodejs-image-extractor/",
+            "note": "19 entries: en, ja, ko, es, de, ru"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/de/groupdocs.cloud/",
+            "note": "18 entries: ja, ko, es, de, ru, fr"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.cloud/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/de/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "category": [
+            3,
+            3
+          ],
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            4,
+            4
+          ],
+          "post": [
+            22,
+            22
+          ]
+        }
+      },
+      "affected_pages": 11077,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 2,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0003",
+      "tenant": "groupdocs.cloud",
+      "subdomain": "blog.groupdocs.cloud",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "title_length",
+      "type": "improvable",
+      "title": "Titles are too long or too short",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.cloud/search/",
+          "https://blog.groupdocs.cloud/archives/",
+          "https://blog.groupdocs.cloud/fa/archives/",
+          "https://blog.groupdocs.cloud/ar/archives/",
+          "https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/"
+        ],
+        "observed": "5 of 32 sampled pages (by template: listing 4/4, post 1/22). e.g. https://blog.groupdocs.cloud/search/: width 6: 'Search'; https://blog.groupdocs.cloud/archives/: width 7: 'Archive'; https://blog.groupdocs.cloud/fa/archives/: width 7: 'آرشیوها'; https://blog.groupdocs.cloud/ar/archives/: width 5: 'أرشيف'; https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/: width 76: 'Python Password Protect an Excel File | XLS/XLSX Password Protector REST API'",
+        "expected": "10-70 characters (CJK count double)",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/search/",
+            "note": "width 6: 'Search'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/archives/",
+            "note": "width 7: 'Archive'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/fa/archives/",
+            "note": "width 7: 'آرشیوها'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/ar/archives/",
+            "note": "width 5: 'أرشيف'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/",
+            "note": "width 76: 'Python Password Protect an Excel File | XLS/XLSX Password Protector REST API'"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.groupdocs.cloud/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/fa/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.groupdocs.cloud/ar/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "listing": [
+            4,
+            4
+          ],
+          "post": [
+            1,
+            22
+          ]
+        }
+      },
+      "affected_pages": 538,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://blog.groupdocs.cloud/groupdocs.cloud/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 19,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/groupdocs.cloud/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 28740,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 74,
+      "facts": {
+        "titles": [
+          "GroupDocs Cloud Blog"
+        ],
+        "descriptions": [
+          "GroupDocs Cloud Blog - Document Processing REST APIs | GroupDocs Cloud"
+        ],
+        "h1": [
+          "GroupDocs Cloud Blog"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/groupdocs.cloud/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/groupdocs.cloud/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 2163,
+        "jsonld_types": [
+          "BreadcrumbList"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 19,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 47563,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 606,
+      "facts": {
+        "titles": [
+          "Document Processing REST APIs | GroupDocs Cloud"
+        ],
+        "descriptions": [
+          "Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# .NET, Ruby, C++, and PHP applications to view, edit, annotate, convert, compare, e-sign, parse, split, merge, extract, redact, watermark, metadata, paraphrase, classify, repair, and translate documents of almost all the popular file formats."
+        ],
+        "h1": [],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2282,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/search/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 38,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/search/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 15734,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 498,
+      "facts": {
+        "titles": [
+          "Search"
+        ],
+        "descriptions": [
+          "search"
+        ],
+        "h1": [
+          "Search"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/search/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/search/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/search/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/search/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/search/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/search/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/search/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/search/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/search/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/search/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/search/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/search/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/search/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/search/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/search/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/search/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/search/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/search/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/search/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/search/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 119,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 6: 'Search'"
+        ],
+        [
+          "description_length",
+          "width 6: 'search'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ],
+        [
+          "content_needs_js",
+          "119 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/parser/extract-images-from-word-in-nodejs-image-extractor/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/parser/extract-images-from-word-in-nodejs-image-extractor/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 44716,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 456,
+      "facts": {
+        "titles": [
+          "Extract Images of Word Document in Node.js | Get DOCX Image"
+        ],
+        "descriptions": [
+          "Learn how to extract images from Word documents (.doc, .docx) using GroupDocs.Parser Cloud SDK for Node.js. Automate image extraction with REST API or cURL"
+        ],
+        "h1": [
+          "Extract Images from Word in Node.js | Word Document Image Extractor"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/parser/extract-images-from-word-in-nodejs-image-extractor/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/parser/extract-images-from-word-in-nodejs-image-extractor/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 4344,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/de/groupdocs.cloud/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": "de",
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 19,
+      "listed_in": "https://blog.groupdocs.cloud/de/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/de/groupdocs.cloud/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 35877,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 308,
+      "facts": {
+        "titles": [
+          "GroupDocs.Clouds"
+        ],
+        "descriptions": [
+          "GroupDocs.Clouds - Document Processing REST APIs | GroupDocs Cloud"
+        ],
+        "h1": [
+          "GroupDocs.Clouds"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/de/groupdocs.cloud/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/groupdocs.cloud/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/groupdocs.cloud/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/groupdocs.cloud/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/groupdocs.cloud/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/groupdocs.cloud/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/groupdocs.cloud/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/groupdocs.cloud/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/groupdocs.cloud/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/groupdocs.cloud/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/groupdocs.cloud/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/groupdocs.cloud/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/groupdocs.cloud/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/groupdocs.cloud/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/groupdocs.cloud/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/groupdocs.cloud/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/groupdocs.cloud/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/groupdocs.cloud/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/groupdocs.cloud/"
+          ]
+        ],
+        "html_lang": "de",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 2862,
+        "jsonld_types": [
+          "BreadcrumbList"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: ja, ko, es, de, ru, fr"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/pt/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": "pt",
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 19,
+      "listed_in": "https://blog.groupdocs.cloud/pt/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/pt/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 48374,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 610,
+      "facts": {
+        "titles": [
+          "Document Processing REST APIs | GroupDocs Cloud"
+        ],
+        "descriptions": [
+          "Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# .NET, Ruby, C++, and PHP applications to view, edit, annotate, convert, compare, e-sign, parse, split, merge, extract, redact, watermark, metadata, paraphrase, classify, repair, and translate documents of almost all the popular file formats."
+        ],
+        "h1": [],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/pt/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/"
+          ]
+        ],
+        "html_lang": "pt",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2565,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/archives/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 38,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/archives/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 290281,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 705,
+      "facts": {
+        "titles": [
+          "Archive"
+        ],
+        "descriptions": [
+          "archives"
+        ],
+        "h1": [
+          "Archive"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/archives/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/archives/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/archives/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/archives/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/archives/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/archives/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/archives/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/archives/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/archives/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/archives/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/archives/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/archives/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/archives/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/archives/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/archives/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/archives/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/archives/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/archives/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/archives/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/archives/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 45915,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 7: 'Archive'"
+        ],
+        [
+          "description_length",
+          "width 8: 'archives'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/viewer/render-excel-data-to-html-using-python/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/viewer/render-excel-data-to-html-using-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 40982,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 571,
+      "facts": {
+        "titles": [
+          "Render Excel Data to HTML using REST API in Python"
+        ],
+        "descriptions": [
+          "Programmatically render Excel spreadsheet data to HTML using a REST API on the cloud in Python with Document Viewer Cloud SDK for Python."
+        ],
+        "h1": [
+          "Render Excel Data to HTML using Python"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/viewer/render-excel-data-to-html-using-python/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/viewer/render-excel-data-to-html-using-python/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/viewer/render-excel-data-to-html-using-python/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 4171,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/id/groupdocs.cloud/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": "id",
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 19,
+      "listed_in": "https://blog.groupdocs.cloud/id/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/id/groupdocs.cloud/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 35409,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 537,
+      "facts": {
+        "titles": [
+          "GroupDocs.Clouds"
+        ],
+        "descriptions": [
+          "GroupDocs.Clouds - Document Processing REST APIs | GroupDocs Cloud"
+        ],
+        "h1": [
+          "GroupDocs.Clouds"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/id/groupdocs.cloud/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/groupdocs.cloud/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/groupdocs.cloud/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/groupdocs.cloud/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/groupdocs.cloud/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/groupdocs.cloud/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/groupdocs.cloud/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/groupdocs.cloud/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/groupdocs.cloud/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/groupdocs.cloud/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/groupdocs.cloud/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/groupdocs.cloud/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/groupdocs.cloud/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/groupdocs.cloud/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/groupdocs.cloud/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/groupdocs.cloud/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/groupdocs.cloud/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/groupdocs.cloud/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/groupdocs.cloud/"
+          ]
+        ],
+        "html_lang": "id",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 2634,
+        "jsonld_types": [
+          "BreadcrumbList"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "18 entries: ja, ko, es, de, ru, fr"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/it/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": "it",
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 19,
+      "listed_in": "https://blog.groupdocs.cloud/it/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/it/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 48383,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 517,
+      "facts": {
+        "titles": [
+          "Document Processing REST APIs | GroupDocs Cloud"
+        ],
+        "descriptions": [
+          "Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# .NET, Ruby, C++, and PHP applications to view, edit, annotate, convert, compare, e-sign, parse, split, merge, extract, redact, watermark, metadata, paraphrase, classify, repair, and translate documents of almost all the popular file formats."
+        ],
+        "h1": [],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/it/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/"
+          ]
+        ],
+        "html_lang": "it",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2677,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/fa/archives/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": "fa",
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 38,
+      "listed_in": "https://blog.groupdocs.cloud/fa/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/fa/archives/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 337271,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 375,
+      "facts": {
+        "titles": [
+          "آرشیوها"
+        ],
+        "descriptions": [
+          "آرشیوها"
+        ],
+        "h1": [
+          "آرشیوها"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/fa/archives/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/archives/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/archives/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/archives/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/archives/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/archives/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/archives/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/archives/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/archives/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/archives/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/archives/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/archives/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/archives/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/archives/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/archives/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/archives/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/archives/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/archives/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/archives/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/archives/"
+          ]
+        ],
+        "html_lang": "fa",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 45562,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 7: 'آرشیوها'"
+        ],
+        [
+          "description_length",
+          "width 7: 'آرشیوها'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/merger/rearrange-pdf-pages-using-rest-api-in-node-js/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/merger/rearrange-pdf-pages-using-rest-api-in-node-js/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 39233,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 623,
+      "facts": {
+        "titles": [
+          "Edit Documents using REST API in PHP | Edit DOCX or XLSX Files in PHP"
+        ],
+        "descriptions": [
+          "Programmatically Rearrange PDF Pages using REST API on the cloud in Node.js with Document Merger Cloud SDK for Node.js. Reorder or Swap PDF pages in Node.js"
+        ],
+        "h1": [
+          "Rearrange PDF Pages using REST API in Node.js"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/merger/rearrange-pdf-pages-using-rest-api-in-node-js/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 3219,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/ar/archives/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": "ar",
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 38,
+      "listed_in": "https://blog.groupdocs.cloud/ar/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/ar/archives/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 334970,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 365,
+      "facts": {
+        "titles": [
+          "أرشيف"
+        ],
+        "descriptions": [
+          "أرشيف"
+        ],
+        "h1": [
+          "أرشيف"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/ar/archives/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/archives/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/archives/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/archives/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/archives/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/archives/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/archives/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/archives/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/archives/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/archives/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/archives/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/archives/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/archives/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/archives/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/archives/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/archives/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/archives/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/archives/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/archives/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/archives/"
+          ]
+        ],
+        "html_lang": "ar",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 46396,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 5: 'أرشيف'"
+        ],
+        [
+          "description_length",
+          "width 5: 'أرشيف'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 47328,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 653,
+      "facts": {
+        "titles": [
+          "How to Convert Text File to PDF Online in Node.js"
+        ],
+        "descriptions": [
+          "Online file and document conversion API allows you to convert file formats in high quality. Let's see how to convert Text File to PDF online in Node.js."
+        ],
+        "h1": [
+          "How to Convert Text File to PDF Online in Node.js"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 5088,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/conversion/september-newsletter/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/conversion/september-newsletter/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 43004,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 614,
+      "facts": {
+        "titles": [
+          "Get Documents Completed and Signed through Online Forms | GroupDocs"
+        ],
+        "descriptions": [
+          "GroupDocs's September 2014 newsletter focuses on the Aspose.Conversion for .NET library but also has news about what's new and what's coming next."
+        ],
+        "h1": [
+          "Spotlight on GroupDocs.Conversion for .NET and News, September 2014"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/conversion/september-newsletter/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/conversion/september-newsletter/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/conversion/september-newsletter/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/conversion/september-newsletter/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/conversion/september-newsletter/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/conversion/september-newsletter/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/conversion/september-newsletter/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/conversion/september-newsletter/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/conversion/september-newsletter/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/conversion/september-newsletter/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/conversion/september-newsletter/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/conversion/september-newsletter/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/conversion/september-newsletter/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/conversion/september-newsletter/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/conversion/september-newsletter/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/conversion/september-newsletter/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/conversion/september-newsletter/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/conversion/september-newsletter/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/conversion/september-newsletter/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/conversion/september-newsletter/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 4537,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 39011,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 741,
+      "facts": {
+        "titles": [
+          "Python Password Protect an Excel File | XLS/XLSX Password Protector REST API"
+        ],
+        "descriptions": [
+          "Secure your Excel files with password protection using Excel Spreadsheet Password Protector REST API. Step-by-step guide for password safeguarding."
+        ],
+        "h1": [
+          "Password Protect Excel Files using REST API in Python"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/merger/password-protect-excel-files-using-rest-api-in-python/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 3257,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 76: 'Python Password Protect an Excel File | XLS/XLSX Password Protector REST API'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/parser/extract-images-from-pdf-files-in-java-using-rest-api/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/parser/extract-images-from-pdf-files-in-java-using-rest-api/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 45039,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1095,
+      "facts": {
+        "titles": [
+          "Extract images from PDF Documents in Java - Java PDF Parser"
+        ],
+        "descriptions": [
+          "Learn how to extract images from PDF files in Java using REST API. This article provides steps of using our SDK for efficient and accurate image extraction."
+        ],
+        "h1": [
+          "Extract Images from PDF Files in Java using REST API"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/parser/extract-images-from-pdf-files-in-java-using-rest-api/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 5162,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/editor/edit-powerpoint-files-using-java-library/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/editor/edit-powerpoint-files-using-java-library/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 47118,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 576,
+      "facts": {
+        "titles": [
+          "Edit PowerPoint Files in Java: Step-by-Step Guide for Devs"
+        ],
+        "descriptions": [
+          "Discover how to edit PowerPoint files with GroupDocs.Editor Cloud SDK for Java. Follow this step-by-step guide to integrate the REST API and see code samples."
+        ],
+        "h1": [
+          "Edit PowerPoint Files Using Java Library"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/editor/edit-powerpoint-files-using-java-library/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/editor/edit-powerpoint-files-using-java-library/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/editor/edit-powerpoint-files-using-java-library/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 5072,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 32061,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 582,
+      "facts": {
+        "titles": [
+          "PDF & Office Java Document Viewer Module for DNN | GroupDocs"
+        ],
+        "descriptions": [
+          "GroupDocs released a module which allows DNN developers to integrate its downloadable Java document viewer into their DNN websites."
+        ],
+        "h1": [
+          "Seamlessly Integrate the GroupDocs.Viewer for Java Library into Your DNN Website"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 1040,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 40744,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 660,
+      "facts": {
+        "titles": [
+          "Convert RAR Files to PNG in Node.js"
+        ],
+        "descriptions": [
+          "GroupDocs.Conversion provides Cloud SDKs and REST APIs for RAR to PNG conversion. Let's learn how to convert RAR to PNG in Node.js programmatically."
+        ],
+        "h1": [
+          "Convert RAR Files to PNG in Node.js - RAR File Converter"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 3617,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/conversion/how-to-convert-svg-to-png-online-in-node.js/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/conversion/how-to-convert-svg-to-png-online-in-node.js/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 48375,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 744,
+      "facts": {
+        "titles": [
+          "How to Convert SVG to PNG Online in Node.js"
+        ],
+        "descriptions": [
+          "Online SVG to PNG API allows to convert SVG file to PNG image with transparent background. This article covers how to convert SVG to PNG online in Node.js"
+        ],
+        "h1": [
+          "How to Convert SVG to PNG Online in Node.js"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/conversion/how-to-convert-svg-to-png-online-in-node.js/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 5659,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/viewer/news-groupdocs-may-2014/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/viewer/news-groupdocs-may-2014/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 45415,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 821,
+      "facts": {
+        "titles": [
+          "February 2014 Newsletter"
+        ],
+        "descriptions": [
+          "Integrations and new Cloud API samples, products releases and updates and more in our February 2014 Newsletter."
+        ],
+        "h1": [
+          "News from GroupDocs, May 2014: GroupDocs.Viewer for .NET 2.0.0 Released"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/viewer/news-groupdocs-may-2014/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/viewer/news-groupdocs-may-2014/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/viewer/news-groupdocs-may-2014/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 5328,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/conversion/convert-mpp-to-html-in-csharp/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/conversion/convert-mpp-to-html-in-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 42572,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 847,
+      "facts": {
+        "titles": [
+          "MS Project Viewer | MPP Viewer | Microsoft Project Reader C#"
+        ],
+        "descriptions": [
+          "How to convert Microsoft Project (MPP) files to HTML using C# .NET. Develop MS Project Viewer in C# by converting MPP to HTML. MPP file viewer using C# .NET"
+        ],
+        "h1": [
+          "Develop MS Project Viewer in C# - MPP File Viewer"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/conversion/convert-mpp-to-html-in-csharp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/conversion/convert-mpp-to-html-in-csharp/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/conversion/convert-mpp-to-html-in-csharp/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 4664,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/metadata/manipulate-metadata-in-java-and-csharp-dotnet/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/metadata/manipulate-metadata-in-java-and-csharp-dotnet/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 60253,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 734,
+      "facts": {
+        "titles": [
+          "Manage Metadata of Documents using Java & .NET | Metadata Cloud API"
+        ],
+        "descriptions": [
+          "Add metadata, edit, remove & extract metadata from 50+ file formats in Java and C# using REST API and open-source Metadata SDKs for Java and .NET."
+        ],
+        "h1": [
+          "Add, Remove, Update, and Extract Metadata using Java and .NET"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/metadata/manipulate-metadata-in-java-and-csharp-dotnet/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 10757,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 44293,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 683,
+      "facts": {
+        "titles": [
+          "GroupDocs Newsletter March 2017– APIs Updates and Code Examples"
+        ],
+        "descriptions": [
+          "GroupDocs developer newsletter of May 2017 describes APIs updates, major feature enhancements and bug fixes within GroupDocs documents manipulation APIs."
+        ],
+        "h1": [
+          "GroupDocs Newsletter May 2017– APIs Updates and Code Examples"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/total/groupdocs-newsletter-may-2017%E2%80%93-apis-updates-code-examples/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 3471,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 41916,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 525,
+      "facts": {
+        "titles": [
+          "Java Convert EML to PDF - A Step-by-Step Guide."
+        ],
+        "descriptions": [
+          "Learn how to convert EML files to PDF in Java using GroupDocs.Conversion Cloud SDK for Java. Enhance security and compatibility using a step-by-step guide."
+        ],
+        "h1": [
+          "Convert EML File to PDF in Java using REST API"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/conversion/convert-eml-file-to-pdf-in-java-using-rest-api/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 5763,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/watermark/add-watermark-to-word-in-java-watermark-creator/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/watermark/add-watermark-to-word-in-java-watermark-creator/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 39708,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 519,
+      "facts": {
+        "titles": [
+          "Add Watermark to Word in Java"
+        ],
+        "descriptions": [
+          "Let's learn how to add Watermark to Word in Java. GroupDocs.Watermark enables you to build a Watermark creator for your business application."
+        ],
+        "h1": [
+          "Add Watermark to Word in Java - Watermark Creator"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/watermark/add-watermark-to-word-in-java-watermark-creator/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/watermark/add-watermark-to-word-in-java-watermark-creator/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 4601,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 39676,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1012,
+      "facts": {
+        "titles": [
+          "Convert LaTeX to HTML | LaTeX Converter | Python LaTeX to HTML"
+        ],
+        "descriptions": [
+          "Learn how to convert LaTeX documents to HTML using Python and the LaTeX Converter REST API. Discover the step-by-step process and unlock web publishing, cross-platform compatibility, and interactivity for your scientific and mathematical content."
+        ],
+        "h1": [
+          "Convert LaTeX to HTML in Python using LaTeX Converter REST API"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/conversion/convert-latex-to-html-in-python-using-rest-api/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 3435,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 246: 'Learn how to convert LaTeX documents to HTML using Python and the LaTeX Converter REST API'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 28993,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 474,
+      "facts": {
+        "titles": [
+          "Display PDF and Microsoft Office Documents on Your Concrete5 Website"
+        ],
+        "descriptions": [
+          "This add-on allows Concrete5 developers to easily embed GroupDocs’ HTML5-based document viewer into their websites."
+        ],
+        "h1": [
+          "GroupDocs Scheduled Maintenance – 2nd August, 2015 (Sunday)"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 645,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/conversion/convert-pdf-to-powerpoint-pptx-using-python/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/conversion/convert-pdf-to-powerpoint-pptx-using-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 41361,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 548,
+      "facts": {
+        "titles": [
+          "Convert PDF to PPTX using a REST API in Python | PDF to PPT"
+        ],
+        "descriptions": [
+          "Programmatically Convert PDF to PowerPoint presentation (PPTX) using a REST API on the cloud in Python with Document Conversion Cloud SDK for Python."
+        ],
+        "h1": [
+          "Convert PDF to PowerPoint PPTX using Python"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/conversion/convert-pdf-to-powerpoint-pptx-using-python/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 4026,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/uk/conversion/convert-pdf-to-html-in-java-using-rest-api/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": "uk",
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/uk/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/uk/conversion/convert-pdf-to-html-in-java-using-rest-api/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 59099,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 698,
+      "facts": {
+        "titles": [
+          "Перетворення документа PDF на веб-сторінку HTML у Java"
+        ],
+        "descriptions": [
+          "Змініть формат PDF на HTML за допомогою простого та зручного API конвертера файлів. У цій статті йдеться про те, як конвертувати PDF у HTML у Java за допомогою REST API."
+        ],
+        "h1": [
+          "Перетворіть PDF у HTML у Java за допомогою REST API"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/uk/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/conversion/convert-pdf-to-html-in-java-using-rest-api/"
+          ]
+        ],
+        "html_lang": "uk",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 12066,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/fa/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": "fa",
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 11001,
+      "listed_in": "https://blog.groupdocs.cloud/fa/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.groupdocs.cloud/fa/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 55659,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 587,
+      "facts": {
+        "titles": [
+          "تبدیل صفحه گسترده به JSON | جاوا تبدیل صفحه گسترده اکسل به داده JSON"
+        ],
+        "descriptions": [
+          "صفحه گسترده اکسل را با استفاده از REST API ایمن و آسان به داده های JSON تبدیل کنید. این مقاله در مورد نحوه تبدیل اکسل به فایل JSON در جاوا با استفاده از REST API است"
+        ],
+        "h1": [
+          "با استفاده از REST API فایل اکسل را به فایل JSON در جاوا تبدیل کنید"
+        ],
+        "canonicals": [
+          "https://blog.groupdocs.cloud/fa/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.groupdocs.cloud/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "ja",
+            "https://blog.groupdocs.cloud/ja/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "ko",
+            "https://blog.groupdocs.cloud/ko/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "es",
+            "https://blog.groupdocs.cloud/es/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "de",
+            "https://blog.groupdocs.cloud/de/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "ru",
+            "https://blog.groupdocs.cloud/ru/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "fr",
+            "https://blog.groupdocs.cloud/fr/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "zh",
+            "https://blog.groupdocs.cloud/zh/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "it",
+            "https://blog.groupdocs.cloud/it/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "pt",
+            "https://blog.groupdocs.cloud/pt/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "ar",
+            "https://blog.groupdocs.cloud/ar/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "vi",
+            "https://blog.groupdocs.cloud/vi/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.groupdocs.cloud/zh-hant/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "tr",
+            "https://blog.groupdocs.cloud/tr/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "id",
+            "https://blog.groupdocs.cloud/id/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "th",
+            "https://blog.groupdocs.cloud/th/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "fa",
+            "https://blog.groupdocs.cloud/fa/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "uk",
+            "https://blog.groupdocs.cloud/uk/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ],
+          [
+            "pl",
+            "https://blog.groupdocs.cloud/pl/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/"
+          ]
+        ],
+        "html_lang": "fa",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": null,
+        "refresh": null,
+        "text_chars": 8892,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "19 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    }
+  ]
+}

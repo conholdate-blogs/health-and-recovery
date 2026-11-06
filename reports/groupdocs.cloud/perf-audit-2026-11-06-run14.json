@@ -1,0 +1,387 @@
+{
+  "tenant": "groupdocs.cloud",
+  "auditor": "perf-audit",
+  "run_id": 14,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.cloud"
+    ],
+    "sections": null,
+    "per_template": 2,
+    "strategy": "mobile",
+    "max_pages": null
+  },
+  "requests": 8,
+  "duration_s": 26.3,
+  "pages_planned": 8,
+  "stopped_early": false,
+  "incomplete": false,
+  "origins": {
+    "blog.groupdocs.cloud": {
+      "id": "https://blog.groupdocs.cloud",
+      "metrics": {
+        "lcp": 2073,
+        "cls": 0.07,
+        "fcp": 2077,
+        "ttfb": 1023
+      }
+    }
+  },
+  "summary": {
+    "blog.groupdocs.cloud": {
+      "pages": 8,
+      "errors": 0,
+      "not_loaded": 0,
+      "field": 0,
+      "issues": {},
+      "median_score": 96
+    }
+  },
+  "findings": [],
+  "pages": [
+    {
+      "url": "https://blog.groupdocs.cloud/de/groupdocs.cloud/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "template": "category",
+      "group_urls": 19,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.cloud",
+        "metrics": {
+          "lcp": 2073,
+          "cls": 0.07,
+          "fcp": 2077,
+          "ttfb": 1023
+        }
+      },
+      "lab_score": 72,
+      "lab": {
+        "lcp": 5406.98625700676,
+        "tbt": 23.5,
+        "cls": 0,
+        "fcp": 3251.291631591789,
+        "si": 4037.299727018985
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          600
+        ],
+        [
+          "Render-blocking requests",
+          150
+        ],
+        [
+          "Use efficient cache lifetimes",
+          150
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.cloud/de/groupdocs.cloud/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/groupdocs.cloud/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "template": "category",
+      "group_urls": 19,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.cloud",
+        "metrics": {
+          "lcp": 2073,
+          "cls": 0.07,
+          "fcp": 2077,
+          "ttfb": 1023
+        }
+      },
+      "lab_score": 80,
+      "lab": {
+        "lcp": 5197.502731074426,
+        "tbt": 114.5,
+        "cls": 0,
+        "fcp": 798.5027310744263,
+        "si": 1184.500917693148
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          750
+        ],
+        [
+          "Use efficient cache lifetimes",
+          150
+        ],
+        [
+          "Render-blocking requests",
+          100
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.cloud/groupdocs.cloud/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "template": "home",
+      "group_urls": 19,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.cloud",
+        "metrics": {
+          "lcp": 2073,
+          "cls": 0.07,
+          "fcp": 2077,
+          "ttfb": 1023
+        }
+      },
+      "lab_score": 81,
+      "lab": {
+        "lcp": 4920.912742474803,
+        "tbt": 78.5,
+        "cls": 0,
+        "fcp": 1562.2696799496061,
+        "si": 1940.1701419832807
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ],
+        [
+          "Reduce unused JavaScript",
+          750
+        ],
+        [
+          "Use efficient cache lifetimes",
+          150
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.cloud/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/it/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "template": "home",
+      "group_urls": 19,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.cloud",
+        "metrics": {
+          "lcp": 2073,
+          "cls": 0.07,
+          "fcp": 2077,
+          "ttfb": 1023
+        }
+      },
+      "lab_score": 76,
+      "lab": {
+        "lcp": 6106.998477026032,
+        "tbt": 39,
+        "cls": 0,
+        "fcp": 1532.1530220260313,
+        "si": 3614.425095812562
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ],
+        [
+          "Reduce unused JavaScript",
+          750
+        ],
+        [
+          "Use efficient cache lifetimes",
+          150
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.cloud/it/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/ar/archives/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "template": "listing",
+      "group_urls": 38,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.cloud",
+        "metrics": {
+          "lcp": 2073,
+          "cls": 0.07,
+          "fcp": 2077,
+          "ttfb": 1023
+        }
+      },
+      "lab_score": 98,
+      "lab": {
+        "lcp": 1716.6028016349508,
+        "tbt": 95,
+        "cls": 0,
+        "fcp": 1716.6028016349508,
+        "si": 2311.459392439716
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1000
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.cloud/ar/archives/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/archives/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "template": "listing",
+      "group_urls": 38,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.cloud",
+        "metrics": {
+          "lcp": 2073,
+          "cls": 0.07,
+          "fcp": 2077,
+          "ttfb": 1023
+        }
+      },
+      "lab_score": 99,
+      "lab": {
+        "lcp": 1679.2653661727363,
+        "tbt": 28.5,
+        "cls": 0,
+        "fcp": 1679.2653661727363,
+        "si": 2075.135348478326
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.cloud/archives/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/editor/edit-word-documents-online-using-a-free-word-editor/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "template": "post",
+      "group_urls": 11001,
+      "clicks": 23.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.cloud",
+        "metrics": {
+          "lcp": 2073,
+          "cls": 0.07,
+          "fcp": 2077,
+          "ttfb": 1023
+        }
+      },
+      "lab_score": 96,
+      "lab": {
+        "lcp": 1551.9367772464248,
+        "tbt": 110.5,
+        "cls": 0.0890361151408265,
+        "fcp": 1551.9367772464248,
+        "si": 2163.322332907609
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1000
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.cloud/editor/edit-word-documents-online-using-a-free-word-editor/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/conversion/zip-to-jpg-online/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "template": "post",
+      "group_urls": 11001,
+      "clicks": 19.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.cloud",
+        "metrics": {
+          "lcp": 2073,
+          "cls": 0.07,
+          "fcp": 2077,
+          "ttfb": 1023
+        }
+      },
+      "lab_score": 99,
+      "lab": {
+        "lcp": 1528.9870697398494,
+        "tbt": 78,
+        "cls": 0.05041498167982411,
+        "fcp": 1528.9870697398494,
+        "si": 1922.0192128768404
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.cloud/conversion/zip-to-jpg-online/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    }
+  ]
+}

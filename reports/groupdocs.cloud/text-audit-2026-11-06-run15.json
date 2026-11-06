@@ -1,0 +1,133 @@
+{
+  "tenant": "groupdocs.cloud",
+  "auditor": "text-audit",
+  "run_id": 15,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.cloud"
+    ],
+    "crawl_runs": [
+      2,
+      12
+    ],
+    "model": "gpt-oss",
+    "prompt_version": 2
+  },
+  "duration_s": 0.0,
+  "stopped_early": false,
+  "pages_checked": 32,
+  "unchecked": [],
+  "incomplete": false,
+  "llm": {
+    "calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cache_hits": 32
+  },
+  "ignored": 0,
+  "summary": {
+    "blog.groupdocs.cloud": {
+      "checked": 32,
+      "pages_with_issues": 3,
+      "issues": {
+        "text_topic_mismatch": 3
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "onpage-0001",
+      "tenant": "groupdocs.cloud",
+      "subdomain": "blog.groupdocs.cloud",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "text_topic_mismatch",
+      "type": "incorrect",
+      "title": "Title or description is about a different product",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.cloud/merger/rearrange-pdf-pages-using-rest-api-in-node-js/",
+          "https://blog.groupdocs.cloud/conversion/september-newsletter/",
+          "https://blog.groupdocs.cloud/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/"
+        ],
+        "observed": "3 of 32 checked pages: /merger/rearrange-pdf-pages-using-rest-api-in-node-js/ title: 'Edit Documents using REST API in PHP | Edit DOCX or XLSX Files in PHP' → 'Rearrange PDF Pages using REST API in Node.js'; /conversion/september-newsletter/ title: 'Get Documents Completed and Signed through Online Forms | GroupDocs' → 'Spotlight on GroupDocs.Conversion for .NET – September 2014 Newsletter'; /viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/ title: 'Display PDF and Microsoft Office Documents on Your Concrete5 Website' → 'GroupDocs Scheduled Maintenance – 2nd August, 2015'",
+        "expected": "Title and meta description describe the page's own product, like its H1",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/merger/rearrange-pdf-pages-using-rest-api-in-node-js/",
+            "note": "title: 'Edit Documents using REST API in PHP | Edit DOCX or XLSX Files in PHP' → 'Rearrange PDF Pages using REST API in Node.js'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/conversion/september-newsletter/",
+            "note": "title: 'Get Documents Completed and Signed through Online Forms | GroupDocs' → 'Spotlight on GroupDocs.Conversion for .NET – September 2014 Newsletter'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/",
+            "note": "title: 'Display PDF and Microsoft Office Documents on Your Concrete5 Website' → 'GroupDocs Scheduled Maintenance – 2nd August, 2015'"
+          }
+        ]
+      },
+      "affected_pages": 3,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://blog.groupdocs.cloud/conversion/september-newsletter/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "title",
+          "kind": "topic_mismatch",
+          "wrong": "Get Documents Completed and Signed through Online Forms | GroupDocs",
+          "fix": "Spotlight on GroupDocs.Conversion for .NET – September 2014 Newsletter",
+          "why": "title mentions online forms, while page is a September 2014 conversion newsletter"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/merger/rearrange-pdf-pages-using-rest-api-in-node-js/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "title",
+          "kind": "topic_mismatch",
+          "wrong": "Edit Documents using REST API in PHP | Edit DOCX or XLSX Files in PHP",
+          "fix": "Rearrange PDF Pages using REST API in Node.js",
+          "why": "title describes PHP document editing, but page is about rearranging PDF pages in Node.js"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.cloud/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "title",
+          "kind": "topic_mismatch",
+          "wrong": "Display PDF and Microsoft Office Documents on Your Concrete5 Website",
+          "fix": "GroupDocs Scheduled Maintenance – 2nd August, 2015",
+          "why": "Title describes PDF/Office display, but page is about scheduled maintenance"
+        }
+      ]
+    }
+  ]
+}
