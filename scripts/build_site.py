@@ -17,8 +17,10 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
@@ -65,6 +67,8 @@ a { color: var(--accent) }
   border: 1px solid var(--line); border-left: 4px solid var(--gc, var(--line)); border-radius: 6px; text-decoration: none; color: var(--fg) }
 .sub:hover { border-color: var(--gc) } .sub code { font-size: 14px; overflow-wrap: anywhere }
 .sub b { font-size: 20px; color: var(--gc); font-variant-numeric: tabular-nums }
+.sub.alerted { flex-wrap: wrap; border-color: var(--broken); border-left-color: var(--broken) }
+.sub .alert { flex-basis: 100%; color: var(--broken); font-size: 13px; font-weight: 600 }
 #v-domains { display: grid; gap: 12px } #v-domains[hidden] { display: none } .subs { display: grid; gap: 8px }
 .g-A, .g-B { --gc: var(--good) } .g-C { --gc: var(--notopt) } .g-D { --gc: var(--incorrect) } .g-F { --gc: var(--broken) }
 @media (max-width: 520px) { .pairs { grid-template-columns: 1fr } }
@@ -255,10 +259,54 @@ def redirect_page(target: str) -> str:
             f'<p>This page moved to <a href="{t}">{t}</a>.</p>\n</html>\n')
 
 
-def sub_tile(host: str, scores: dict[str, tuple[int, str]]) -> str:
-    """A subdomain with its health score, opening its page."""
+# Alerts on the home page: something broken right now, not an SEO issue (SK, 2026-11-06). Only these checks, only open.
+ALERT_CHECKS = {"redirect_file_invalid", "redirect_not_working", "fetch_failed", "host_no_sitemap", "robots_unreachable"}
+HOMEPAGE_CHECKS = {"http_error", "fetch_error"}  # an alert only when the home page itself fails
+
+
+def run_date(tenant: str, run: str | None) -> str | None:
+    """The date of a run label such as 'repo-audit-run7', from its file name (repo-audit-2026-11-03-run7.json)."""
+    m = re.fullmatch(r"(.+)-run(\d+)", run or "")
+    if not m:
+        return None
+    hit = next(iter(sorted(tenant_paths(tenant).reports.glob(f"{m[1]}-*-run{m[2]}.json"))), None)
+    d = re.search(r"\d{4}-\d{2}-\d{2}", hit.name) if hit else None
+    return d[0] if d else None
+
+
+def host_alerts(tenant: str) -> dict[str, list[dict]]:
+    """Open findings that mean a subdomain is broken now, per subdomain: what, since when, last checked when."""
+    out: dict = {}
+    for f in json.loads(tenant_paths(tenant).findings_export.read_text(encoding="utf-8")):
+        if f["status"] not in ("open", "unverified"):
+            continue
+        ev = f.get("evidence") or {}
+        urls = list(ev.get("urls") or []) + [l.get("url") for l in ev.get("locations") or [] if l.get("url")]
+        home = f["check"] in HOMEPAGE_CHECKS and any(urlsplit(u).path in ("", "/") for u in urls)
+        if f["check"] not in ALERT_CHECKS and not home:
+            continue
+        name = "Home page fails to load" if home else GUIDE[f["check"]]["name"]
+        if f["check"] == "redirect_not_working":  # a few dead entries are an issue, not an outage (1 of 40 on 6 Nov)
+            m = re.search(r"(\d+) of (\d+) sampled", ev.get("observed") or "")
+            if m and int(m[1]) * 2 < int(m[2]):
+                continue
+            name += f" ({m[1]} of {m[2]} sampled)" if m else ""
+        out.setdefault(f["subdomain"], []).append({"name": name, "since": (f.get("detected_at") or "")[:10] or None,
+                                                   "checked": run_date(tenant, f.get("last_seen_run"))})
+    return out
+
+
+def day(iso: str | None) -> str:
+    return f"{int(iso[8:10])} {('Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split())[int(iso[5:7]) - 1]}" if iso else "?"
+
+
+def sub_tile(host: str, scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None) -> str:
+    """A subdomain with its health score, opening its page; alerts, if any, under it."""
     health, grade = scores.get(host, ("–", ""))
-    return f'<a class="sub g-{grade}" href="{html.escape(host)}/"><code>{html.escape(host)}</code><b>{health}</b></a>'
+    lines = "".join(f'<span class="alert">⚠ {html.escape(a["name"])} · since {day(a["since"])} · last checked '
+                    f'{day(a["checked"])}</span>' for a in (alerts or {}).get(host, []))
+    return (f'<a class="sub g-{grade}{" alerted" if lines else ""}" href="{html.escape(host)}/"><code>{html.escape(host)}</code>'
+            f'<b>{health}</b>{lines}</a>')
 
 
 def host_scores(tenant: str, hosts: list[str]) -> dict[str, tuple[int, str]]:
@@ -274,22 +322,22 @@ def host_scores(tenant: str, hosts: list[str]) -> dict[str, tuple[int, str]]:
     return out
 
 
-def tenant_item(tenant: str, scores: dict[str, tuple[int, str]]) -> str:
+def tenant_item(tenant: str, scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None) -> str:
     """A domain: its name as the heading (opens the domain page) and archive link, then each of its subdomains with
     its health (SK, 2026-11-06: no counts on the home page, as in the Subdomains view)."""
     name = html.escape(tenant)
-    tiles = "".join(sub_tile(h, scores) for h in load_tenant(tenant).host_names)
+    tiles = "".join(sub_tile(h, scores, alerts) for h in load_tenant(tenant).host_names)
     return (f'<div class="coll"><div><a href="{name}/"><b>{name}</b></a><span><a href="{name}/archive/">previous versions</a>'
             f'</span></div><div class="subs">{tiles}</div></div>')
 
 
-def domain_block(tenants: list[str], scores: dict[str, tuple[int, str]]) -> str:
+def domain_block(tenants: list[str], scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None) -> str:
     """The home page's Domains view: one row per brand, .com before .cloud, like the Blogs section."""
     rows: dict = {}
     for t in tenants:
         rows.setdefault(t.split(".")[0], []).append(t)
     order = sorted(rows, key=lambda b: (BRANDS.index(b) if b in BRANDS else len(BRANDS), b))
-    return "\n".join(f'    <div class="pairs">{"".join(tenant_item(t, scores) for t in sorted(rows[b], key=lambda t: (not t.endswith(".com"), t)))}</div>'
+    return "\n".join(f'    <div class="pairs">{"".join(tenant_item(t, scores, alerts) for t in sorted(rows[b], key=lambda t: (not t.endswith(".com"), t)))}</div>'
                      for b in order)
 
 
@@ -316,14 +364,15 @@ def collection_members(tenants: list[str]) -> dict[str, list[tuple[str, str]]]:
 BRANDS = ("aspose", "groupdocs", "conholdate")  # row order of the home page's subdomain pairs (SK, 2026-11-06)
 
 
-def collection_block(slug: str, members: list[tuple[str, str]], scores: dict[str, tuple[int, str]]) -> str:
+def collection_block(slug: str, members: list[tuple[str, str]], scores: dict[str, tuple[int, str]],
+                     alerts: dict[str, list[dict]] | None = None) -> str:
     """The home page's Subdomains view: the collection's name (opens its page) and each subdomain with its health,
     one row per brand with .com before .cloud (blog.aspose.com, blog.aspose.cloud)."""
     rows: dict = {}
     for _, h in members:
         rows.setdefault(h.split(".")[1] if h.count(".") > 1 else h, []).append(h)
     order = sorted(rows, key=lambda b: (BRANDS.index(b) if b in BRANDS else len(BRANDS), b))
-    pairs = "\n".join(f'      <div class="pairs">{"".join(sub_tile(h, scores) for h in sorted(rows[b], key=lambda h: (not h.endswith(".com"), h)))}</div>'
+    pairs = "\n".join(f'      <div class="pairs">{"".join(sub_tile(h, scores, alerts) for h in sorted(rows[b], key=lambda h: (not h.endswith(".com"), h)))}</div>'
                       for b in order)
     return (f'    <div class="coll"><div><a href="{slug}/"><b>{html.escape(COLLECTIONS[slug])}</b></a>'
             f'<span>{len(members)} subdomains · health out of 100 · <a href="{slug}/">compare all →</a></span></div>\n{pairs}\n    </div>')
@@ -360,10 +409,11 @@ def build(out: Path, tenants: list[str]) -> None:
         n = build_archive.build(out / t / "archive", paths.archive, t)
         print(f"Archive: {n} snapshots for {t}")
     blocks, scores = [], {}
+    alerts = {h: a for t in tenants for h, a in host_alerts(t).items()}
     for slug, mem in members.items():  # pages across domains, e.g. /blogs/
         report = build_report.collection_report(COLLECTIONS[slug], slug, mem)
         scores.update({c["host"]: (c["health"], c["grade"]) for c in report["_hosts"]})
-        blocks.append(collection_block(slug, mem, scores))
+        blocks.append(collection_block(slug, mem, scores, alerts))
         page = build_report.build(report, [], None,
                                   standalone=True, guide_url=GUIDE_URL, site_tenants=tenants,
                                   site_hosts=[h for _, h in mem], method_url=METHOD_URL,
@@ -378,7 +428,7 @@ def build(out: Path, tenants: list[str]) -> None:
     legacy = LEGACY_TENANT if LEGACY_TENANT in tenants else ""  # its old links lead nowhere while it is not published
     for t in tenants:  # subdomains outside any collection get their score here
         scores.update(host_scores(t, [h for h in hosts[t] if h not in scores]))
-    items = domain_block(tenants, scores)
+    items = domain_block(tenants, scores, alerts)
     (out / "index.html").write_text(LANDING.replace("__LEGACY__", legacy).replace("__ITEMS__", items)
                                     .replace("__SUBDOMAINS__", "\n".join(blocks)), encoding="utf-8")
     if legacy:  # /archive/ and /archive/<date>/ from before the subfolders

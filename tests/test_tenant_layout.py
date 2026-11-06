@@ -51,10 +51,37 @@ def test_home_page_pairs_subdomains_by_brand():
     assert '<a href="blogs/"><b>Blogs</b></a>' in block
 
 
+def test_home_page_alerts_only_for_broken_now(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    from scripts import build_site
+
+    reports = tmp_path / "a.org"
+    reports.mkdir()
+    (reports / "repo-audit-2026-11-03-run7.json").write_text("{}")
+    f = lambda check, status="open", url="https://blog.a.org/x/": {  # noqa: E731
+        "check": check, "status": status, "subdomain": "blog.a.org", "detected_at": "2026-11-02T10:00:00",
+        "last_seen_run": "repo-audit-run7", "evidence": {"urls": [url]}}
+    (reports / "findings.json").write_text(json.dumps([
+        f("redirect_file_invalid"), f("redirect_not_working", "resolved"), f("http_error"),
+        f("http_error", url="https://blog.a.org/"), f("link_broken"),
+        dict(f("redirect_not_working"), evidence={"observed": "1 of 40 sampled sources return 404"}),
+        dict(f("redirect_not_working"), evidence={"observed": "39 of 40 sampled sources return 404"})]))
+    monkeypatch.setattr(build_site, "tenant_paths", lambda t: SimpleNamespace(reports=reports,
+                                                                              findings_export=reports / "findings.json"))
+    alerts = build_site.host_alerts("a.org")
+    assert [a["name"] for a in alerts["blog.a.org"]] == ["Redirects.json invalid", "Home page fails to load",
+                                                         "Redirects not working live (39 of 40 sampled)"]
+    assert alerts["blog.a.org"][0] == {"name": "Redirects.json invalid", "since": "2026-11-02", "checked": "2026-11-03"}
+    tile = build_site.sub_tile("blog.a.org", {"blog.a.org": (55, "F")}, alerts)
+    assert "⚠ Redirects.json invalid · since 2 Nov · last checked 3 Nov" in tile and "alerted" in tile
+    assert "alert" not in build_site.sub_tile("blog.b.org", {}, alerts)
+
+
 def test_home_page_domains_pair_by_brand(monkeypatch):
     from scripts import build_site
 
-    monkeypatch.setattr(build_site, "tenant_item", lambda t, scores: f"[{t}]")
+    monkeypatch.setattr(build_site, "tenant_item", lambda t, scores, alerts: f"[{t}]")
     rows = [r for r in build_site.domain_block(["conholdate.cloud", "aspose.cloud", "groupdocs.com", "aspose.com",
                                                 "conholdate.com", "groupdocs.cloud"], {}).splitlines() if "pairs" in r]
     assert [r.split('">', 1)[1].split("</div>")[0] for r in rows] == [
