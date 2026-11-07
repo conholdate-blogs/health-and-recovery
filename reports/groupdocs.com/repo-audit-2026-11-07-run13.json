@@ -1,0 +1,49 @@
+{
+  "tenant": "groupdocs.com",
+  "auditor": "repo-audit",
+  "run_id": 13,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.com"
+    ],
+    "sample": 40
+  },
+  "requests": 41,
+  "duration_s": 67.4,
+  "stopped_early": false,
+  "summary": {
+    "blog.groupdocs.com": {
+      "commit": "3cc5819c 2026-11-07 Fix GroupDocs.Comparison for Java 26.11 post date so Hugo publishes it",
+      "posts": 12818,
+      "entries": 6554,
+      "invalid": null,
+      "broke_it": null,
+      "live": {
+        "eligible": 6554,
+        "sampled": 40,
+        "redirected": 40
+      },
+      "by_check": {}
+    }
+  },
+  "findings": [],
+  "hosts": {
+    "blog.groupdocs.com": {
+      "commit": "3cc5819c 2026-11-07 Fix GroupDocs.Comparison for Java 26.11 post date so Hugo publishes it",
+      "posts": 12818,
+      "redirects": {
+        "present": true,
+        "entries": 6554,
+        "invalid": null,
+        "broke_it": null,
+        "live": {
+          "eligible": 6554,
+          "sampled": 40,
+          "redirected": 40,
+          "failed": []
+        }
+      },
+      "issues": []
+    }
+  }
+}

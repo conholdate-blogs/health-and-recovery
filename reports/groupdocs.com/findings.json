@@ -54,18 +54,18 @@
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 328,
+      "past_impressions": 567,
       "lost_clicks": 0,
-      "lost_impressions": 302,
+      "lost_impressions": 541,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "lost",
-      "score": 4,
+      "score": 5,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "M",
@@ -76,7 +76,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run8",
     "resolved_run": null,
     "resolved_at": null,
     "check": "content_needs_js",
@@ -108,23 +108,23 @@
     },
     "affected_pages": 0,
     "impact": {
-      "clicks_28d": 8321,
-      "impressions_28d": 451295,
+      "clicks_28d": 8350,
+      "impressions_28d": 460693,
       "source": "gsc-host",
       "share": 1.0,
-      "past_clicks": 17212,
-      "past_impressions": 707721,
-      "lost_clicks": 8891,
-      "lost_impressions": 256426,
+      "past_clicks": 17028,
+      "past_impressions": 727317,
+      "lost_clicks": 8678,
+      "lost_impressions": 266624,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "at stake",
       "score": 16,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -135,7 +135,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "ai-audit-run2",
-    "last_seen_run": "ai-audit-run2",
+    "last_seen_run": "ai-audit-run9",
     "resolved_run": null,
     "resolved_at": null,
     "check": "llms_txt_missing",
@@ -182,22 +182,22 @@
     "affected_pages": 7,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 4,
+      "impressions_28d": 2,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
       "past_impressions": 5,
       "lost_clicks": 0,
-      "lost_impressions": 1,
+      "lost_impressions": 3,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -208,7 +208,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run8",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirected",
@@ -611,22 +611,22 @@
     "affected_pages": 34,
     "impact": {
       "clicks_28d": 1,
-      "impressions_28d": 395,
+      "impressions_28d": 368,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 2,
-      "past_impressions": 144,
-      "lost_clicks": 1,
+      "past_clicks": 1,
+      "past_impressions": 164,
+      "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "at stake",
       "score": 10,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "M",
@@ -637,10 +637,630 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run6",
+    "last_seen_run": "link-audit-run12",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
+    "notes": []
+  },
+  {
+    "id": "crawl-0003",
+    "key": "crawl/link_redirected/blog.groupdocs.com/post",
+    "source": "link-audit",
+    "tenant": "groupdocs.com",
+    "subdomain": "blog.groupdocs.com",
+    "template": "post",
+    "dimension": "crawl",
+    "type": "improvable",
+    "title": "Posts link to old URLs that redirect",
+    "evidence": {
+      "urls": [
+        "https://blog.groupdocs.com/annotation/customizing-groupdocs-annotation-for-java-ui-to-match-your-needs/",
+        "https://blog.groupdocs.com/ar/assembly/generate-pdf-report-from-json-data-in-java/",
+        "https://blog.groupdocs.com/ar/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/ar/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/ar/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/ar/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/ar/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/ar/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+        "https://blog.groupdocs.com/ar/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+        "https://blog.groupdocs.com/ar/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+        "https://blog.groupdocs.com/ar/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+        "https://blog.groupdocs.com/assembly/generate-pdf-report-from-json-data-in-java/",
+        "https://blog.groupdocs.com/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+        "https://blog.groupdocs.com/cs/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/cs/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/cs/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/cs/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/de/assembly/generate-pdf-report-from-json-data-in-java/",
+        "https://blog.groupdocs.com/de/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/de/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/de/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/de/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/de/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/de/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+        "https://blog.groupdocs.com/de/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+        "https://blog.groupdocs.com/de/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+        "https://blog.groupdocs.com/de/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+        "https://blog.groupdocs.com/de/watermark/add-watermark-to-images-in-java/",
+        "https://blog.groupdocs.com/de/watermark/find-and-remove-watermarks-from-documents-in-csharp/",
+        "https://blog.groupdocs.com/de/watermark/find-and-remove-watermarks-from-documents-in-java/",
+        "https://blog.groupdocs.com/es/assembly/generate-pdf-report-from-json-data-in-java/",
+        "https://blog.groupdocs.com/es/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/es/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/es/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/es/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/es/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/es/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+        "https://blog.groupdocs.com/es/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+        "https://blog.groupdocs.com/es/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+        "https://blog.groupdocs.com/es/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+        "https://blog.groupdocs.com/es/watermark/add-watermark-to-images-in-java/",
+        "https://blog.groupdocs.com/es/watermark/find-and-remove-watermarks-from-documents-in-csharp/",
+        "https://blog.groupdocs.com/es/watermark/find-and-remove-watermarks-from-documents-in-java/",
+        "https://blog.groupdocs.com/fa/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/fa/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/fa/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/fa/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/fa/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/fr/assembly/generate-pdf-report-from-json-data-in-java/",
+        "https://blog.groupdocs.com/fr/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/fr/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/fr/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/fr/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/fr/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/fr/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+        "https://blog.groupdocs.com/fr/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+        "https://blog.groupdocs.com/fr/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+        "https://blog.groupdocs.com/fr/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+        "https://blog.groupdocs.com/fr/watermark/add-watermark-to-images-in-java/",
+        "https://blog.groupdocs.com/fr/watermark/find-and-remove-watermarks-from-documents-in-csharp/",
+        "https://blog.groupdocs.com/fr/watermark/find-and-remove-watermarks-from-documents-in-java/",
+        "https://blog.groupdocs.com/he/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/he/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/he/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/he/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/he/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/id/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/id/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/id/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/id/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/id/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/it/assembly/generate-pdf-report-from-json-data-in-java/",
+        "https://blog.groupdocs.com/it/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/it/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/it/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/it/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/it/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+        "https://blog.groupdocs.com/it/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+        "https://blog.groupdocs.com/it/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+        "https://blog.groupdocs.com/it/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+        "https://blog.groupdocs.com/it/watermark/add-watermark-to-images-in-java/",
+        "https://blog.groupdocs.com/it/watermark/find-and-remove-watermarks-from-documents-in-csharp/",
+        "https://blog.groupdocs.com/it/watermark/find-and-remove-watermarks-from-documents-in-java/",
+        "https://blog.groupdocs.com/ja/assembly/generate-pdf-report-from-json-data-in-java/",
+        "https://blog.groupdocs.com/ja/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/ja/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/ja/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/ja/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/ja/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+        "https://blog.groupdocs.com/ja/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+        "https://blog.groupdocs.com/ja/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+        "https://blog.groupdocs.com/ja/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+        "https://blog.groupdocs.com/ja/watermark/add-watermark-to-images-in-java/",
+        "https://blog.groupdocs.com/ja/watermark/find-and-remove-watermarks-from-documents-in-csharp/",
+        "https://blog.groupdocs.com/ja/watermark/find-and-remove-watermarks-from-documents-in-java/",
+        "https://blog.groupdocs.com/ko/assembly/generate-pdf-report-from-json-data-in-java/",
+        "https://blog.groupdocs.com/ko/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/ko/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/ko/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/ko/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/ko/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+        "https://blog.groupdocs.com/ko/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+        "https://blog.groupdocs.com/ko/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+        "https://blog.groupdocs.com/ko/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+        "https://blog.groupdocs.com/ko/watermark/add-watermark-to-images-in-java/",
+        "https://blog.groupdocs.com/ko/watermark/find-and-remove-watermarks-from-documents-in-csharp/",
+        "https://blog.groupdocs.com/ko/watermark/find-and-remove-watermarks-from-documents-in-java/",
+        "https://blog.groupdocs.com/merger/password-protect-pdf-files-in-java/",
+        "https://blog.groupdocs.com/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+        "https://blog.groupdocs.com/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+        "https://blog.groupdocs.com/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+        "https://blog.groupdocs.com/nl/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/nl/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/nl/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/nl/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/nl/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/pl/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/pl/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/pl/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/pl/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/pt/assembly/generate-pdf-report-from-json-data-in-java/",
+        "https://blog.groupdocs.com/pt/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/pt/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/pt/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/pt/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/pt/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/pt/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+        "https://blog.groupdocs.com/pt/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+        "https://blog.groupdocs.com/pt/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+        "https://blog.groupdocs.com/pt/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+        "https://blog.groupdocs.com/pt/watermark/add-watermark-to-images-in-java/",
+        "https://blog.groupdocs.com/pt/watermark/find-and-remove-watermarks-from-documents-in-csharp/",
+        "https://blog.groupdocs.com/pt/watermark/find-and-remove-watermarks-from-documents-in-java/",
+        "https://blog.groupdocs.com/ru/assembly/generate-pdf-report-from-json-data-in-java/",
+        "https://blog.groupdocs.com/ru/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/ru/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/ru/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/ru/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/ru/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+        "https://blog.groupdocs.com/ru/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+        "https://blog.groupdocs.com/ru/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+        "https://blog.groupdocs.com/ru/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+        "https://blog.groupdocs.com/ru/watermark/add-watermark-to-images-in-java/",
+        "https://blog.groupdocs.com/ru/watermark/find-and-remove-watermarks-from-documents-in-csharp/",
+        "https://blog.groupdocs.com/ru/watermark/find-and-remove-watermarks-from-documents-in-java/",
+        "https://blog.groupdocs.com/th/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/th/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/th/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/th/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/total/25-percent-off-groupdocs-total-groupdocs-com-newsletter-december-2019/",
+        "https://blog.groupdocs.com/total/6-situations-when-you-need-to-convert-documents/",
+        "https://blog.groupdocs.com/total/advanced-documents-conversion-apis-for-.net-and-java-groupdocs-newsletter-october-2018/",
+        "https://blog.groupdocs.com/total/celebrate-new-year-25-off-groupdocs.total-apis-groupdocs-newsletter-january-2018/",
+        "https://blog.groupdocs.com/total/converting-images-for-your-website-with-groupdocs/",
+        "https://blog.groupdocs.com/total/digitally-sign-documents-.net-java-applications-groupdocs.com-newsletter-february-2019/",
+        "https://blog.groupdocs.com/total/groupdocs-annotation-now-supports-exporting-annotations-for-pdf-documents/",
+        "https://blog.groupdocs.com/total/groupdocs-apps-suite-for-all-your-online-document-management-needs/",
+        "https://blog.groupdocs.com/total/groupdocs-holiday-offer-25-off-groupdocs.total-24-bottles-award-winning-pirathon-total-wine/",
+        "https://blog.groupdocs.com/total/groupdocs-holidays-offer-get-25-off-groupdocs.total-or-a-24-bottle-case-of-award-winning-pirathon-total-shiraz/",
+        "https://blog.groupdocs.com/total/groupdocs-newsletter-april-2018-document-manipulation-api-updates/",
+        "https://blog.groupdocs.com/total/groupdocs-newsletter-august-2018-.net-and-java-documents-manipulation-apis/",
+        "https://blog.groupdocs.com/total/groupdocs-newsletter-february-2018-document-manipulation-apis-code-examples/",
+        "https://blog.groupdocs.com/total/groupdocs-newsletter-july-2018-professional-document-manipulation-apis-for-.net-and-java/",
+        "https://blog.groupdocs.com/total/groupdocs-newsletter-march-2018-document-manipulation-api-updates-code-examples/",
+        "https://blog.groupdocs.com/total/groupdocs-newsletter-may-2018-document-manipulation-apis-for-business-apps-development/",
+        "https://blog.groupdocs.com/total/groupdocs-newsletter-november-2018-.net-and-java-documents-manipulation-apis/",
+        "https://blog.groupdocs.com/total/introducing-groupdocs-assemblys-new-look-and-feel/",
+        "https://blog.groupdocs.com/total/new-api-launched-groupdocs.merger-for-java-groupdocs-newsletter-september-2018/",
+        "https://blog.groupdocs.com/total/updates-to-groupdocs-privacy-policy-groupdocs-newsletter-june-2018/",
+        "https://blog.groupdocs.com/tr/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/tr/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/tr/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/tr/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/uk/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/uk/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/uk/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/uk/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/uk/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/vi/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/vi/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/vi/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/vi/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/vi/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/viewer/complete-guide-for-developing-a-groupdocs-viewer-for-net-plugin-for-kentico-cms/",
+        "https://blog.groupdocs.com/viewer/new-features-and-improvements-in-the-document-viewer-for-net-library-part-b/",
+        "https://blog.groupdocs.com/zh-hant/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/zh-hant/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/zh-hant/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/zh-hant/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/zh/assembly/generate-pdf-report-from-json-data-in-java/",
+        "https://blog.groupdocs.com/zh/comparison/compare-documents-using-nodejs/",
+        "https://blog.groupdocs.com/zh/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+        "https://blog.groupdocs.com/zh/comparison/compare-word-documents-using-python/",
+        "https://blog.groupdocs.com/zh/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+        "https://blog.groupdocs.com/zh/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+        "https://blog.groupdocs.com/zh/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+        "https://blog.groupdocs.com/zh/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+        "https://blog.groupdocs.com/zh/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+        "https://blog.groupdocs.com/zh/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+        "https://blog.groupdocs.com/zh/watermark/add-watermark-to-images-in-java/",
+        "https://blog.groupdocs.com/zh/watermark/find-and-remove-watermarks-from-documents-in-csharp/",
+        "https://blog.groupdocs.com/zh/watermark/find-and-remove-watermarks-from-documents-in-java/"
+      ],
+      "observed": "326 links on 207 pages (198 distinct targets); by language: en 153, de 13, es 13, fr 13, pt 13, zh 13, it 12, ja 12, ...; 0 written by translation commits",
+      "expected": "Every internal link points at the page's current URL, not one that redirects",
+      "locations": [
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/annotation",
+          "page": "https://blog.groupdocs.com/annotation/customizing-groupdocs-annotation-for-java-ui-to-match-your-needs/",
+          "file": "content/Groupdocs.Blog/annotation/2014-05-15-customizing-groupdocs-annotation-for-java-ui-to-match-your-needs/index.md",
+          "line": 13,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.annotation-product-family/",
+          "commit": "a02ae325 2022-08-31: Fixed 404 & HTTPS page has internal links to HTTP - 321 Files"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/ar/2021/02/10/generate-pdf-report-from-json-data-in-java",
+          "page": "https://blog.groupdocs.com/ar/assembly/generate-pdf-report-from-json-data-in-java/",
+          "file": "content/Groupdocs.Blog/assembly/2021-02-10-generate-pdf-report-from-json-data-in-java/index.ar.md",
+          "line": 151,
+          "fix": "https://blog.groupdocs.com/ar/assembly/generate-pdf-report-from-json-data-in-java/",
+          "commit": "724bec84 2022-07-23: Added Arabic Language for 2021 Articles"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/ar/comparison/compare-documents-using-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2025-01-20-compare-documents-using-nodejs/index.ar.md",
+          "line": 162,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "79b2a764 2026-03-14: fix: retranslate posts flagged by quality validation (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/ar/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-20-compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/index.ar.md",
+          "line": 562,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "1a7ae43e 2026-03-11: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/ar/comparison/compare-word-documents-using-python/",
+          "file": "content/Groupdocs.Blog/comparison/2025-07-25-compare-pdfs-using-python/index.ar.md",
+          "line": 206,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "79b2a764 2026-03-14: fix: retranslate posts flagged by quality validation (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/ar/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-15-legal-document-comparison-api-contract-review-automation-nodejs/index.ar.md",
+          "line": 257,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "ecb9386d 2026-01-17: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/ar/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-15-optimize-document-comparison-performance-scale-millions-files-nodejs/index.ar.md",
+          "line": 389,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "0990c1b0 2026-01-18: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/ar/2021/05/22/convert-documents-to-excel-xls-xlsx-in-java",
+          "page": "https://blog.groupdocs.com/ar/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+          "file": "content/Groupdocs.Blog/conversion/2021-05-22-convert-documents-to-excel-xls-xlsx-in-java/index.ar.md",
+          "line": 142,
+          "fix": "https://blog.groupdocs.com/ar/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+          "commit": "724bec84 2022-07-23: Added Arabic Language for 2021 Articles"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/ar/2021/03/05/extract-riff-info-and-metadata-of-wav-files-in-csharp",
+          "page": "https://blog.groupdocs.com/ar/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+          "file": "content/Groupdocs.Blog/metadata/2021-03-05-extract-riff-info-and-metadata-of-wav-files-in-csharp/index.ar.md",
+          "line": 122,
+          "fix": "https://blog.groupdocs.com/ar/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+          "commit": "724bec84 2022-07-23: Added Arabic Language for 2021 Articles"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/ar/2021/03/22/extract-riff-info-and-metadata-of-wav-files-in-java",
+          "page": "https://blog.groupdocs.com/ar/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+          "file": "content/Groupdocs.Blog/metadata/2021-03-22-extract-riff-info-and-metadata-of-wav-files-in-java/index.ar.md",
+          "line": 139,
+          "fix": "https://blog.groupdocs.com/ar/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+          "commit": "724bec84 2022-07-23: Added Arabic Language for 2021 Articles"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/ar/2021/05/10/xmp-and-exif-data-of-heif-heic-images-using-java",
+          "page": "https://blog.groupdocs.com/ar/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+          "file": "content/Groupdocs.Blog/metadata/2021-05-10-xmp-and-exif-data-of-heif-heic-images-using-java/index.ar.md",
+          "line": 172,
+          "fix": "https://blog.groupdocs.com/ar/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+          "commit": "724bec84 2022-07-23: Added Arabic Language for 2021 Articles"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2021/02/10/generate-pdf-report-from-json-data-in-java",
+          "page": "https://blog.groupdocs.com/assembly/generate-pdf-report-from-json-data-in-java/",
+          "file": "content/Groupdocs.Blog/assembly/2021-02-10-generate-pdf-report-from-json-data-in-java/index.md",
+          "line": 127,
+          "fix": "https://blog.groupdocs.com/assembly/generate-pdf-report-from-json-data-in-java/",
+          "commit": "1d660173 2022-04-16: Added Translated Blog Posts"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/comparison/compare-documents-using-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2025-01-20-compare-documents-using-nodejs/index.md",
+          "line": 149,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "7a24fff3 2025-01-20: Compare Documents Using Node.js"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-20-compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/index.md",
+          "line": 548,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "d1253c76 2026-01-23: added blog post for GroupDocs.Comparison"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/comparison/compare-word-documents-using-python/",
+          "file": "content/Groupdocs.Blog/comparison/2025-07-25-compare-pdfs-using-python/index.md",
+          "line": 196,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "91737815 2025-07-27: added new article for comparison"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-15-legal-document-comparison-api-contract-review-automation-nodejs/index.md",
+          "line": 243,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "e2c23744 2026-01-16: added 2 blog posts for groupdocs.comparison for nodejs"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-15-optimize-document-comparison-performance-scale-millions-files-nodejs/index.md",
+          "line": 373,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "e2c23744 2026-01-16: added 2 blog posts for groupdocs.comparison for nodejs"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2021/05/22/convert-documents-to-excel-xls-xlsx-in-java",
+          "page": "https://blog.groupdocs.com/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+          "file": "content/Groupdocs.Blog/conversion/2021-05-22-convert-documents-to-excel-xls-xlsx-in-java/index.md",
+          "line": 122,
+          "fix": "https://blog.groupdocs.com/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+          "commit": "1d660173 2022-04-16: Added Translated Blog Posts"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/cs/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-20-compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/index.cs.md",
+          "line": 555,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "1a7ae43e 2026-03-11: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/cs/comparison/compare-word-documents-using-python/",
+          "file": "content/Groupdocs.Blog/comparison/2025-07-25-compare-pdfs-using-python/index.cs.md",
+          "line": 206,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "79b2a764 2026-03-14: fix: retranslate posts flagged by quality validation (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/cs/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-15-legal-document-comparison-api-contract-review-automation-nodejs/index.cs.md",
+          "line": 243,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "ecb9386d 2026-01-17: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/cs/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-15-optimize-document-comparison-performance-scale-millions-files-nodejs/index.cs.md",
+          "line": 390,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "0990c1b0 2026-01-18: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/de/2021/02/10/generate-pdf-report-from-json-data-in-java",
+          "page": "https://blog.groupdocs.com/de/assembly/generate-pdf-report-from-json-data-in-java/",
+          "file": "content/Groupdocs.Blog/assembly/2021-02-10-generate-pdf-report-from-json-data-in-java/index.de.md",
+          "line": 151,
+          "fix": "https://blog.groupdocs.com/de/assembly/generate-pdf-report-from-json-data-in-java/",
+          "commit": "13686e1e 2022-06-11: Internal link now points to same language page"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/de/comparison/compare-documents-using-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2025-01-20-compare-documents-using-nodejs/index.de.md",
+          "line": 165,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "79b2a764 2026-03-14: fix: retranslate posts flagged by quality validation (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/de/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-20-compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/index.de.md",
+          "line": 564,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "79b2a764 2026-03-14: fix: retranslate posts flagged by quality validation (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/de/comparison/compare-word-documents-using-python/",
+          "file": "content/Groupdocs.Blog/comparison/2025-07-25-compare-pdfs-using-python/index.de.md",
+          "line": 208,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "79b2a764 2026-03-14: fix: retranslate posts flagged by quality validation (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/de/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-15-legal-document-comparison-api-contract-review-automation-nodejs/index.de.md",
+          "line": 260,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "ecb9386d 2026-01-17: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/de/comparison/optimize-document-comparison-performance-scale-millions-files-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-15-optimize-document-comparison-performance-scale-millions-files-nodejs/index.de.md",
+          "line": 391,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "79b2a764 2026-03-14: fix: retranslate posts flagged by quality validation (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/de/2021/05/22/convert-documents-to-excel-xls-xlsx-in-java",
+          "page": "https://blog.groupdocs.com/de/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+          "file": "content/Groupdocs.Blog/conversion/2021-05-22-convert-documents-to-excel-xls-xlsx-in-java/index.de.md",
+          "line": 142,
+          "fix": "https://blog.groupdocs.com/de/conversion/convert-documents-to-excel-xls-xlsx-in-java/",
+          "commit": "13686e1e 2022-06-11: Internal link now points to same language page"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/de/2021/03/05/extract-riff-info-and-metadata-of-wav-files-in-csharp",
+          "page": "https://blog.groupdocs.com/de/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+          "file": "content/Groupdocs.Blog/metadata/2021-03-05-extract-riff-info-and-metadata-of-wav-files-in-csharp/index.de.md",
+          "line": 122,
+          "fix": "https://blog.groupdocs.com/de/metadata/extract-riff-info-and-metadata-of-wav-files-in-csharp/",
+          "commit": "13686e1e 2022-06-11: Internal link now points to same language page"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/de/2021/03/22/extract-riff-info-and-metadata-of-wav-files-in-java",
+          "page": "https://blog.groupdocs.com/de/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+          "file": "content/Groupdocs.Blog/metadata/2021-03-22-extract-riff-info-and-metadata-of-wav-files-in-java/index.de.md",
+          "line": 139,
+          "fix": "https://blog.groupdocs.com/de/metadata/extract-riff-info-and-metadata-of-wav-files-in-java/",
+          "commit": "13686e1e 2022-06-11: Internal link now points to same language page"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/de/2021/05/10/xmp-and-exif-data-of-heif-heic-images-using-java",
+          "page": "https://blog.groupdocs.com/de/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+          "file": "content/Groupdocs.Blog/metadata/2021-05-10-xmp-and-exif-data-of-heif-heic-images-using-java/index.de.md",
+          "line": 172,
+          "fix": "https://blog.groupdocs.com/de/metadata/xmp-and-exif-data-of-heif-heic-images-using-java/",
+          "commit": "13686e1e 2022-06-11: Internal link now points to same language page"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2019/10/21/add-watermark-to-images-using-csharp-dotnet-api/",
+          "page": "https://blog.groupdocs.com/de/watermark/add-watermark-to-images-in-java/",
+          "file": "content/Groupdocs.Blog/watermark/2020-09-15-add-watermark-to-images-in-java/index.de.md",
+          "line": 103,
+          "fix": "https://blog.groupdocs.com/de/watermark/add-watermark-to-images-using-csharp-dotnet/",
+          "commit": "080db2e9 2022-05-25: German Translation for 2020 Articles"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2019/10/21/add-watermark-to-images-using-csharp-dotnet-api/",
+          "page": "https://blog.groupdocs.com/de/watermark/find-and-remove-watermarks-from-documents-in-csharp/",
+          "file": "content/Groupdocs.Blog/watermark/2020-11-27-find-and-remove-watermarks-from-documents-in-csharp/index.de.md",
+          "line": 181,
+          "fix": "https://blog.groupdocs.com/de/watermark/add-watermark-to-images-using-csharp-dotnet/",
+          "commit": "080db2e9 2022-05-25: German Translation for 2020 Articles"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/2019/10/21/add-watermark-to-images-using-csharp-dotnet-api/",
+          "page": "https://blog.groupdocs.com/de/watermark/find-and-remove-watermarks-from-documents-in-java/",
+          "file": "content/Groupdocs.Blog/watermark/2020-11-30-find-and-remove-watermarks-from-documents-in-java/index.de.md",
+          "line": 181,
+          "fix": "https://blog.groupdocs.com/de/watermark/add-watermark-to-images-using-csharp-dotnet/",
+          "commit": "080db2e9 2022-05-25: German Translation for 2020 Articles"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/es/2021/02/10/generate-pdf-report-from-json-data-in-java",
+          "page": "https://blog.groupdocs.com/es/assembly/generate-pdf-report-from-json-data-in-java/",
+          "file": "content/Groupdocs.Blog/assembly/2021-02-10-generate-pdf-report-from-json-data-in-java/index.es.md",
+          "line": 151,
+          "fix": "https://blog.groupdocs.com/es/assembly/generate-pdf-report-from-json-data-in-java/",
+          "commit": "13686e1e 2022-06-11: Internal link now points to same language page"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/es/comparison/compare-documents-using-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2025-01-20-compare-documents-using-nodejs/index.es.md",
+          "line": 165,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "79b2a764 2026-03-14: fix: retranslate posts flagged by quality validation (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/es/comparison/compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-20-compare-excel-spreadsheets-advanced-cell-by-cell-analysis-csharp/index.es.md",
+          "line": 569,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "1a7ae43e 2026-03-11: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/es/comparison/compare-word-documents-using-python/",
+          "file": "content/Groupdocs.Blog/comparison/2025-07-25-compare-pdfs-using-python/index.es.md",
+          "line": 205,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "79b2a764 2026-03-14: fix: retranslate posts flagged by quality validation (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/category/comparison",
+          "page": "https://blog.groupdocs.com/es/comparison/legal-document-comparison-api-contract-review-automation-nodejs/",
+          "file": "content/Groupdocs.Blog/comparison/2026-01-15-legal-document-comparison-api-contract-review-automation-nodejs/index.es.md",
+          "line": 256,
+          "fix": "https://blog.groupdocs.com/categories/groupdocs.comparison-product-family/",
+          "commit": "ecb9386d 2026-01-17: chore: translate blog posts (automated)"
+        }
+      ]
+    },
+    "affected_pages": 207,
+    "impact": {
+      "clicks_28d": 6,
+      "impressions_28d": 961,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 20,
+      "past_impressions": 1536,
+      "lost_clicks": 14,
+      "lost_impressions": 575,
+      "past_window": [
+        "2026-04-09",
+        "2026-05-06"
+      ],
+      "scored_on": "at stake",
+      "score": 5,
+      "window": [
+        "2026-10-08",
+        "2026-11-04"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "none",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-07",
+    "first_seen_run": "link-audit-run12",
+    "last_seen_run": "link-audit-run12",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "link_redirected",
     "notes": []
   },
   {
@@ -726,25 +1346,25 @@
         ]
       }
     },
-    "affected_pages": 12503,
+    "affected_pages": 12742,
     "impact": {
-      "clicks_28d": 8245,
-      "impressions_28d": 443374,
+      "clicks_28d": 8270,
+      "impressions_28d": 453194,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 17001,
-      "past_impressions": 700095,
-      "lost_clicks": 8756,
-      "lost_impressions": 256721,
+      "past_clicks": 16801,
+      "past_impressions": 719410,
+      "lost_clicks": 8531,
+      "lost_impressions": 266216,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "at stake",
       "score": 16,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -755,7 +1375,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run8",
     "resolved_run": null,
     "resolved_at": null,
     "check": "hreflang_no_xdefault",
@@ -1226,23 +1846,23 @@
     },
     "affected_pages": 85,
     "impact": {
-      "clicks_28d": 7,
-      "impressions_28d": 170,
+      "clicks_28d": 6,
+      "impressions_28d": 138,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 13,
-      "past_impressions": 257,
+      "past_clicks": 12,
+      "past_impressions": 244,
       "lost_clicks": 6,
-      "lost_impressions": 87,
+      "lost_impressions": 106,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "at stake",
-      "score": 20,
+      "score": 18,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -1253,7 +1873,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run6",
+    "last_seen_run": "link-audit-run12",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -1304,6 +1924,7 @@
         "https://blog.groupdocs.com/ar/metadata/strip-metadata-before-sharing-ai-agent-mcp/",
         "https://blog.groupdocs.com/ar/parser/3-ways-extract-document-data-ai-agents-mcp/",
         "https://blog.groupdocs.com/ar/parser/enforce-consistent-data-capture-bulk-extraction-mcp/",
+        "https://blog.groupdocs.com/ar/parser/extract-tables-pdf-to-json-ai-agent-mcp/",
         "https://blog.groupdocs.com/ar/redaction/3-ways-redact-sensitive-data-ai-agents-mcp/",
         "https://blog.groupdocs.com/ar/redaction/custom-ai-redactions-in-pdf-for-net/",
         "https://blog.groupdocs.com/ar/redaction/enforce-disclosure-redaction-automated-workflows-mcp/",
@@ -1321,6 +1942,7 @@
         "https://blog.groupdocs.com/ar/signature/read-qr-barcodes-from-documents-ai-agent/",
         "https://blog.groupdocs.com/ar/signature/sign-documents-with-pkcs11-dotnet/",
         "https://blog.groupdocs.com/ar/signature/verify-digital-signatures-ai-agent-mcp/",
+        "https://blog.groupdocs.com/ar/total/on-premise-ai-document-processing-mcp/",
         "https://blog.groupdocs.com/ar/viewer/ai-agents-read-charts-scanned-pages-mcp/",
         "https://blog.groupdocs.com/ar/viewer/document-page-images-for-tickets-reports-ai-agent/",
         "https://blog.groupdocs.com/ar/viewer/give-ai-agents-eyes-render-document-pages-mcp/",
@@ -1380,6 +2002,7 @@
         "https://blog.groupdocs.com/cs/signature/enforce-signing-policy-automated-audit-mcp/",
         "https://blog.groupdocs.com/cs/signature/sign-documents-with-pkcs11-dotnet/",
         "https://blog.groupdocs.com/cs/signature/verify-digital-signatures-ai-agent-mcp/",
+        "https://blog.groupdocs.com/cs/total/on-premise-ai-document-processing-mcp/",
         "https://blog.groupdocs.com/cs/viewer/ai-agents-read-charts-scanned-pages-mcp/",
         "https://blog.groupdocs.com/cs/viewer/document-page-images-for-tickets-reports-ai-agent/",
         "https://blog.groupdocs.com/cs/viewer/give-ai-agents-eyes-render-document-pages-mcp/",
@@ -1388,6 +2011,7 @@
         "https://blog.groupdocs.com/cs/viewer/view-powerpoint-presentations/",
         "https://blog.groupdocs.com/cs/viewer/view-word-documents/",
         "https://blog.groupdocs.com/cs/watermark/3-ways-watermark-documents-ai-agents-mcp/",
+        "https://blog.groupdocs.com/cs/watermark/audit-find-remove-watermarks-own-documents-ai/",
         "https://blog.groupdocs.com/cs/watermark/batch-watermark-folder-ai-agent-mcp/",
         "https://blog.groupdocs.com/cs/watermark/enforce-brand-guidelines-logo-watermark-mcp/",
         "https://blog.groupdocs.com/de/annotation/3-ways-extract-annotations-from-documents-mcp/",
@@ -1469,6 +2093,7 @@
         "https://blog.groupdocs.com/es/conversion/pdf-to-llm-ready-markdown-locally-mcp/",
         "https://blog.groupdocs.com/es/markdown/convert-one-section-to-markdown-token-budget-mcp/",
         "https://blog.groupdocs.com/es/markdown/documents-to-markdown-for-rag-3-ways-mcp/",
+        "https://blog.groupdocs.com/es/markdown/documents-to-static-site-hugo-docusaurus-ai-agent/",
         "https://blog.groupdocs.com/es/markdown/groupdocs-markdown-for-python-first-public-release/",
         "https://blog.groupdocs.com/es/markdown/migrate-legacy-documentation-docs-as-code-ai-agent/",
         "https://blog.groupdocs.com/es/merger/enforce-document-pack-assembly-automated-mcp/",
@@ -1501,6 +2126,8 @@
         "https://blog.groupdocs.com/es/signature/enforce-signing-policy-automated-audit-mcp/",
         "https://blog.groupdocs.com/es/signature/read-qr-barcodes-from-documents-ai-agent/",
         "https://blog.groupdocs.com/es/signature/sign-documents-with-pkcs11-dotnet/",
+        "https://blog.groupdocs.com/es/signature/verify-digital-signatures-ai-agent-mcp/",
+        "https://blog.groupdocs.com/es/total/on-premise-ai-document-processing-mcp/",
         "https://blog.groupdocs.com/es/viewer/ai-agents-read-charts-scanned-pages-mcp/",
         "https://blog.groupdocs.com/es/viewer/document-page-images-for-tickets-reports-ai-agent/",
         "https://blog.groupdocs.com/es/viewer/give-ai-agents-eyes-render-document-pages-mcp/",
@@ -1511,6 +2138,7 @@
         "https://blog.groupdocs.com/es/watermark/3-ways-watermark-documents-ai-agents-mcp/",
         "https://blog.groupdocs.com/es/watermark/audit-find-remove-watermarks-own-documents-ai/",
         "https://blog.groupdocs.com/es/watermark/batch-watermark-folder-ai-agent-mcp/",
+        "https://blog.groupdocs.com/es/watermark/enforce-brand-guidelines-logo-watermark-mcp/",
         "https://blog.groupdocs.com/es/watermark/tiling-watermark-python/",
         "https://blog.groupdocs.com/fa/annotation/3-ways-extract-annotations-from-documents-mcp/",
         "https://blog.groupdocs.com/fa/annotation/agent-verifies-annotations-visually-mcp/",
@@ -1529,6 +2157,7 @@
         "https://blog.groupdocs.com/fa/conversion/pdf-to-llm-ready-markdown-locally-mcp/",
         "https://blog.groupdocs.com/fa/markdown/convert-one-section-to-markdown-token-budget-mcp/",
         "https://blog.groupdocs.com/fa/markdown/documents-to-markdown-for-rag-3-ways-mcp/",
+        "https://blog.groupdocs.com/fa/markdown/documents-to-static-site-hugo-docusaurus-ai-agent/",
         "https://blog.groupdocs.com/fa/markdown/groupdocs-markdown-for-python-first-public-release/",
         "https://blog.groupdocs.com/fa/markdown/migrate-legacy-documentation-docs-as-code-ai-agent/",
         "https://blog.groupdocs.com/fa/merger/enforce-document-pack-assembly-automated-mcp/",
@@ -1569,6 +2198,8 @@
         "https://blog.groupdocs.com/fa/viewer/inspect-document-before-rendering-ai-agent-mcp/",
         "https://blog.groupdocs.com/fa/viewer/view-powerpoint-presentations/",
         "https://blog.groupdocs.com/fa/viewer/view-word-documents/",
+        "https://blog.groupdocs.com/fa/watermark/3-ways-watermark-documents-ai-agents-mcp/",
+        "https://blog.groupdocs.com/fa/watermark/audit-find-remove-watermarks-own-documents-ai/",
         "https://blog.groupdocs.com/fa/watermark/batch-watermark-folder-ai-agent-mcp/",
         "https://blog.groupdocs.com/fa/watermark/enforce-brand-guidelines-logo-watermark-mcp/",
         "https://blog.groupdocs.com/fa/watermark/tiling-watermark-python/",
@@ -1589,6 +2220,7 @@
         "https://blog.groupdocs.com/fr/conversion/pdf-to-llm-ready-markdown-locally-mcp/",
         "https://blog.groupdocs.com/fr/markdown/convert-one-section-to-markdown-token-budget-mcp/",
         "https://blog.groupdocs.com/fr/markdown/documents-to-markdown-for-rag-3-ways-mcp/",
+        "https://blog.groupdocs.com/fr/markdown/documents-to-static-site-hugo-docusaurus-ai-agent/",
         "https://blog.groupdocs.com/fr/markdown/groupdocs-markdown-for-python-first-public-release/",
         "https://blog.groupdocs.com/fr/markdown/migrate-legacy-documentation-docs-as-code-ai-agent/",
         "https://blog.groupdocs.com/fr/merger/enforce-document-pack-assembly-automated-mcp/",
@@ -1638,6 +2270,7 @@
         "https://blog.groupdocs.com/he/annotation/agent-verifies-annotations-visually-mcp/",
         "https://blog.groupdocs.com/he/annotation/ai-review-comments-in-document-not-chat-mcp/",
         "https://blog.groupdocs.com/he/annotation/enforce-review-workflows-annotation-threads-mcp/",
+        "https://blog.groupdocs.com/he/annotation/how-to-annotate-pdf-in-csharp/",
         "https://blog.groupdocs.com/he/assembly/groupdocs-assembly-for-net-25-12/",
         "https://blog.groupdocs.com/he/comparison/3-ways-compare-documents-ai-agents-mcp/",
         "https://blog.groupdocs.com/he/comparison/ai-contract-review-redlines-claude-mcp/",
@@ -1746,6 +2379,7 @@
         "https://blog.groupdocs.com/id/signature/read-qr-barcodes-from-documents-ai-agent/",
         "https://blog.groupdocs.com/id/signature/sign-documents-with-pkcs11-dotnet/",
         "https://blog.groupdocs.com/id/signature/verify-digital-signatures-ai-agent-mcp/",
+        "https://blog.groupdocs.com/id/total/on-premise-ai-document-processing-mcp/",
         "https://blog.groupdocs.com/id/viewer/ai-agents-read-charts-scanned-pages-mcp/",
         "https://blog.groupdocs.com/id/viewer/document-page-images-for-tickets-reports-ai-agent/",
         "https://blog.groupdocs.com/id/viewer/give-ai-agents-eyes-render-document-pages-mcp/",
@@ -1755,6 +2389,7 @@
         "https://blog.groupdocs.com/id/viewer/view-word-documents/",
         "https://blog.groupdocs.com/id/watermark/3-ways-watermark-documents-ai-agents-mcp/",
         "https://blog.groupdocs.com/id/watermark/batch-watermark-folder-ai-agent-mcp/",
+        "https://blog.groupdocs.com/id/watermark/enforce-brand-guidelines-logo-watermark-mcp/",
         "https://blog.groupdocs.com/it/annotation/3-ways-extract-annotations-from-documents-mcp/",
         "https://blog.groupdocs.com/it/annotation/agent-verifies-annotations-visually-mcp/",
         "https://blog.groupdocs.com/it/annotation/ai-review-comments-in-document-not-chat-mcp/",
@@ -1787,6 +2422,7 @@
         "https://blog.groupdocs.com/it/metadata/remove-pii-from-office-files-net/",
         "https://blog.groupdocs.com/it/metadata/strip-metadata-before-sharing-ai-agent-mcp/",
         "https://blog.groupdocs.com/it/parser/3-ways-extract-document-data-ai-agents-mcp/",
+        "https://blog.groupdocs.com/it/parser/enforce-consistent-data-capture-bulk-extraction-mcp/",
         "https://blog.groupdocs.com/it/parser/extract-tables-pdf-to-json-ai-agent-mcp/",
         "https://blog.groupdocs.com/it/redaction/3-ways-redact-sensitive-data-ai-agents-mcp/",
         "https://blog.groupdocs.com/it/redaction/custom-ai-redactions-in-pdf-for-net/",
@@ -1850,6 +2486,7 @@
         "https://blog.groupdocs.com/ja/parser/3-ways-extract-document-data-ai-agents-mcp/",
         "https://blog.groupdocs.com/ja/parser/extract-tables-pdf-to-json-ai-agent-mcp/",
         "https://blog.groupdocs.com/ja/redaction/custom-ai-redactions-in-pdf-for-net/",
+        "https://blog.groupdocs.com/ja/redaction/verify-redaction-complete-ai-agent-mcp/",
         "https://blog.groupdocs.com/ja/search/ai-agent-should-not-read-every-contract-mcp/",
         "https://blog.groupdocs.com/ja/search/do-you-need-vector-database-search-documents-ai-agent-mcp/",
         "https://blog.groupdocs.com/ja/search/grep-cant-read-pdf-coding-agent-document-index-mcp/",
@@ -1858,9 +2495,11 @@
         "https://blog.groupdocs.com/ja/search/project-memory-ai-agents-document-index-mcp/",
         "https://blog.groupdocs.com/ja/search/search-email-archive-pst-attachments-ai-agent-mcp/",
         "https://blog.groupdocs.com/ja/signature/3-ways-sign-documents-ai-agents-mcp/",
+        "https://blog.groupdocs.com/ja/signature/enforce-signing-policy-automated-audit-mcp/",
         "https://blog.groupdocs.com/ja/signature/read-qr-barcodes-from-documents-ai-agent/",
         "https://blog.groupdocs.com/ja/signature/sign-documents-with-pkcs11-dotnet/",
         "https://blog.groupdocs.com/ja/signature/verify-digital-signatures-ai-agent-mcp/",
+        "https://blog.groupdocs.com/ja/total/on-premise-ai-document-processing-mcp/",
         "https://blog.groupdocs.com/ja/viewer/ai-agents-read-charts-scanned-pages-mcp/",
         "https://blog.groupdocs.com/ja/viewer/give-ai-agents-eyes-render-document-pages-mcp/",
         "https://blog.groupdocs.com/ja/viewer/groupdocs-viewer-for-net-ui-8-1-1/",
@@ -1869,6 +2508,7 @@
         "https://blog.groupdocs.com/ja/viewer/view-word-documents/",
         "https://blog.groupdocs.com/ja/watermark/3-ways-watermark-documents-ai-agents-mcp/",
         "https://blog.groupdocs.com/ja/watermark/audit-find-remove-watermarks-own-documents-ai/",
+        "https://blog.groupdocs.com/ja/watermark/batch-watermark-folder-ai-agent-mcp/",
         "https://blog.groupdocs.com/ja/watermark/enforce-brand-guidelines-logo-watermark-mcp/",
         "https://blog.groupdocs.com/ja/watermark/tiling-watermark-python/",
         "https://blog.groupdocs.com/ko/annotation/3-ways-extract-annotations-from-documents-mcp/",
@@ -1884,6 +2524,7 @@
         "https://blog.groupdocs.com/ko/conversion/batch-convert-folder-ai-agent-mcp/",
         "https://blog.groupdocs.com/ko/conversion/convert-svg-to-png-using-nodejs/",
         "https://blog.groupdocs.com/ko/conversion/convert-word-doc-docx-to-pdf-in-nodejs/",
+        "https://blog.groupdocs.com/ko/conversion/export-ai-markdown-to-pdf-word-mcp/",
         "https://blog.groupdocs.com/ko/conversion/pdf-to-llm-ready-markdown-locally-mcp/",
         "https://blog.groupdocs.com/ko/markdown/convert-one-section-to-markdown-token-budget-mcp/",
         "https://blog.groupdocs.com/ko/markdown/documents-to-markdown-for-rag-3-ways-mcp/",
@@ -1918,6 +2559,7 @@
         "https://blog.groupdocs.com/ko/signature/read-qr-barcodes-from-documents-ai-agent/",
         "https://blog.groupdocs.com/ko/signature/sign-documents-with-pkcs11-dotnet/",
         "https://blog.groupdocs.com/ko/signature/verify-digital-signatures-ai-agent-mcp/",
+        "https://blog.groupdocs.com/ko/total/on-premise-ai-document-processing-mcp/",
         "https://blog.groupdocs.com/ko/viewer/ai-agents-read-charts-scanned-pages-mcp/",
         "https://blog.groupdocs.com/ko/viewer/give-ai-agents-eyes-render-document-pages-mcp/",
         "https://blog.groupdocs.com/ko/viewer/groupdocs-viewer-for-net-ui-8-1-1/",
@@ -2180,6 +2822,7 @@
         "https://blog.groupdocs.com/ru/viewer/view-powerpoint-presentations/",
         "https://blog.groupdocs.com/ru/viewer/view-word-documents/",
         "https://blog.groupdocs.com/ru/watermark/3-ways-watermark-documents-ai-agents-mcp/",
+        "https://blog.groupdocs.com/ru/watermark/audit-find-remove-watermarks-own-documents-ai/",
         "https://blog.groupdocs.com/ru/watermark/batch-watermark-folder-ai-agent-mcp/",
         "https://blog.groupdocs.com/ru/watermark/enforce-brand-guidelines-logo-watermark-mcp/",
         "https://blog.groupdocs.com/ru/watermark/tiling-watermark-python/",
@@ -2203,6 +2846,7 @@
         "https://blog.groupdocs.com/th/markdown/documents-to-static-site-hugo-docusaurus-ai-agent/",
         "https://blog.groupdocs.com/th/markdown/groupdocs-markdown-for-python-first-public-release/",
         "https://blog.groupdocs.com/th/markdown/migrate-legacy-documentation-docs-as-code-ai-agent/",
+        "https://blog.groupdocs.com/th/merger/enforce-document-pack-assembly-automated-mcp/",
         "https://blog.groupdocs.com/th/merger/extract-pages-from-many-documents-ai-agent/",
         "https://blog.groupdocs.com/th/merger/split-reassemble-pages-ai-agent-mcp/",
         "https://blog.groupdocs.com/th/merger/why-ai-agents-should-merge-documents-with-an-engine-mcp/",
@@ -2228,6 +2872,7 @@
         "https://blog.groupdocs.com/th/search/search-email-archive-pst-attachments-ai-agent-mcp/",
         "https://blog.groupdocs.com/th/signature/3-ways-sign-documents-ai-agents-mcp/",
         "https://blog.groupdocs.com/th/signature/enforce-signing-policy-automated-audit-mcp/",
+        "https://blog.groupdocs.com/th/signature/read-qr-barcodes-from-documents-ai-agent/",
         "https://blog.groupdocs.com/th/signature/sign-documents-with-pkcs11-dotnet/",
         "https://blog.groupdocs.com/th/signature/verify-digital-signatures-ai-agent-mcp/",
         "https://blog.groupdocs.com/th/viewer/ai-agents-read-charts-scanned-pages-mcp/",
@@ -2240,6 +2885,7 @@
         "https://blog.groupdocs.com/th/watermark/3-ways-watermark-documents-ai-agents-mcp/",
         "https://blog.groupdocs.com/th/watermark/audit-find-remove-watermarks-own-documents-ai/",
         "https://blog.groupdocs.com/th/watermark/batch-watermark-folder-ai-agent-mcp/",
+        "https://blog.groupdocs.com/th/watermark/enforce-brand-guidelines-logo-watermark-mcp/",
         "https://blog.groupdocs.com/th/watermark/tiling-watermark-python/",
         "https://blog.groupdocs.com/tr/annotation/3-ways-extract-annotations-from-documents-mcp/",
         "https://blog.groupdocs.com/tr/annotation/agent-verifies-annotations-visually-mcp/",
@@ -2261,6 +2907,7 @@
         "https://blog.groupdocs.com/tr/markdown/documents-to-static-site-hugo-docusaurus-ai-agent/",
         "https://blog.groupdocs.com/tr/markdown/groupdocs-markdown-for-python-first-public-release/",
         "https://blog.groupdocs.com/tr/markdown/migrate-legacy-documentation-docs-as-code-ai-agent/",
+        "https://blog.groupdocs.com/tr/merger/enforce-document-pack-assembly-automated-mcp/",
         "https://blog.groupdocs.com/tr/merger/extract-pages-from-many-documents-ai-agent/",
         "https://blog.groupdocs.com/tr/merger/split-reassemble-pages-ai-agent-mcp/",
         "https://blog.groupdocs.com/tr/merger/why-ai-agents-should-merge-documents-with-an-engine-mcp/",
@@ -2288,6 +2935,7 @@
         "https://blog.groupdocs.com/tr/signature/read-qr-barcodes-from-documents-ai-agent/",
         "https://blog.groupdocs.com/tr/signature/sign-documents-with-pkcs11-dotnet/",
         "https://blog.groupdocs.com/tr/signature/verify-digital-signatures-ai-agent-mcp/",
+        "https://blog.groupdocs.com/tr/total/on-premise-ai-document-processing-mcp/",
         "https://blog.groupdocs.com/tr/viewer/ai-agents-read-charts-scanned-pages-mcp/",
         "https://blog.groupdocs.com/tr/viewer/give-ai-agents-eyes-render-document-pages-mcp/",
         "https://blog.groupdocs.com/tr/viewer/groupdocs-viewer-for-net-ui-8-1-1/",
@@ -2295,7 +2943,9 @@
         "https://blog.groupdocs.com/tr/viewer/view-powerpoint-presentations/",
         "https://blog.groupdocs.com/tr/viewer/view-word-documents/",
         "https://blog.groupdocs.com/tr/watermark/3-ways-watermark-documents-ai-agents-mcp/",
+        "https://blog.groupdocs.com/tr/watermark/audit-find-remove-watermarks-own-documents-ai/",
         "https://blog.groupdocs.com/tr/watermark/batch-watermark-folder-ai-agent-mcp/",
+        "https://blog.groupdocs.com/tr/watermark/enforce-brand-guidelines-logo-watermark-mcp/",
         "https://blog.groupdocs.com/tr/watermark/tiling-watermark-python/",
         "https://blog.groupdocs.com/uk/annotation/3-ways-extract-annotations-from-documents-mcp/",
         "https://blog.groupdocs.com/uk/annotation/agent-verifies-annotations-visually-mcp/",
@@ -2348,6 +2998,7 @@
         "https://blog.groupdocs.com/uk/signature/read-qr-barcodes-from-documents-ai-agent/",
         "https://blog.groupdocs.com/uk/signature/sign-documents-with-pkcs11-dotnet/",
         "https://blog.groupdocs.com/uk/signature/verify-digital-signatures-ai-agent-mcp/",
+        "https://blog.groupdocs.com/uk/total/on-premise-ai-document-processing-mcp/",
         "https://blog.groupdocs.com/uk/viewer/ai-agents-read-charts-scanned-pages-mcp/",
         "https://blog.groupdocs.com/uk/viewer/document-page-images-for-tickets-reports-ai-agent/",
         "https://blog.groupdocs.com/uk/viewer/give-ai-agents-eyes-render-document-pages-mcp/",
@@ -2481,6 +3132,7 @@
         "https://blog.groupdocs.com/zh-hant/viewer/view-powerpoint-presentations/",
         "https://blog.groupdocs.com/zh-hant/viewer/view-word-documents/",
         "https://blog.groupdocs.com/zh-hant/watermark/3-ways-watermark-documents-ai-agents-mcp/",
+        "https://blog.groupdocs.com/zh-hant/watermark/audit-find-remove-watermarks-own-documents-ai/",
         "https://blog.groupdocs.com/zh-hant/watermark/batch-watermark-folder-ai-agent-mcp/",
         "https://blog.groupdocs.com/zh-hant/watermark/enforce-brand-guidelines-logo-watermark-mcp/",
         "https://blog.groupdocs.com/zh-hant/watermark/tiling-watermark-python/",
@@ -2533,6 +3185,7 @@
         "https://blog.groupdocs.com/zh/signature/3-ways-sign-documents-ai-agents-mcp/",
         "https://blog.groupdocs.com/zh/signature/enforce-signing-policy-automated-audit-mcp/",
         "https://blog.groupdocs.com/zh/signature/sign-documents-with-pkcs11-dotnet/",
+        "https://blog.groupdocs.com/zh/signature/verify-digital-signatures-ai-agent-mcp/",
         "https://blog.groupdocs.com/zh/total/on-premise-ai-document-processing-mcp/",
         "https://blog.groupdocs.com/zh/viewer/ai-agents-read-charts-scanned-pages-mcp/",
         "https://blog.groupdocs.com/zh/viewer/document-page-images-for-tickets-reports-ai-agent/",
@@ -2543,9 +3196,10 @@
         "https://blog.groupdocs.com/zh/viewer/view-word-documents/",
         "https://blog.groupdocs.com/zh/watermark/3-ways-watermark-documents-ai-agents-mcp/",
         "https://blog.groupdocs.com/zh/watermark/audit-find-remove-watermarks-own-documents-ai/",
+        "https://blog.groupdocs.com/zh/watermark/enforce-brand-guidelines-logo-watermark-mcp/",
         "https://blog.groupdocs.com/zh/watermark/tiling-watermark-python/"
       ],
-      "observed": "4,345 links on 1,273 pages (71 distinct targets); by language: pt 263, zh-hant 256, nl 255, it 249, de 246, fr 243, zh 239, he 234, ...; 0 written by translation commits",
+      "observed": "4,959 links on 1,307 pages (72 distinct targets); by language: pt 263, zh-hant 263, es 255, nl 255, uk 255, ar 254, it 254, zh 251, ...; 0 written by translation commits",
       "expected": "Internal links point at the post in the page's own language",
       "locations": [
         {
@@ -2573,6 +3227,15 @@
           "file": "content/Groupdocs.Blog/annotation/2026-10-11-3-ways-extract-annotations-from-documents-mcp/index.ar.md",
           "line": 116,
           "fix": "https://blog.groupdocs.com/ar/annotation/agent-verifies-annotations-visually-mcp/",
+          "commit": "571beefe 2026-10-13: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/total/on-premise-ai-document-processing-mcp/",
+          "page": "https://blog.groupdocs.com/ar/annotation/3-ways-extract-annotations-from-documents-mcp/",
+          "file": "content/Groupdocs.Blog/annotation/2026-10-11-3-ways-extract-annotations-from-documents-mcp/index.ar.md",
+          "line": 117,
+          "fix": "https://blog.groupdocs.com/ar/total/on-premise-ai-document-processing-mcp/",
           "commit": "571beefe 2026-10-13: chore: translate blog posts (automated)"
         },
         {
@@ -2613,6 +3276,15 @@
         },
         {
           "role": "link",
+          "url": "https://blog.groupdocs.com/total/on-premise-ai-document-processing-mcp/",
+          "page": "https://blog.groupdocs.com/ar/annotation/agent-verifies-annotations-visually-mcp/",
+          "file": "content/Groupdocs.Blog/annotation/2026-10-11-agent-verifies-annotations-visually-mcp/index.ar.md",
+          "line": 122,
+          "fix": "https://blog.groupdocs.com/ar/total/on-premise-ai-document-processing-mcp/",
+          "commit": "571beefe 2026-10-13: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
           "url": "https://blog.groupdocs.com/annotation/enforce-review-workflows-annotation-threads-mcp/",
           "page": "https://blog.groupdocs.com/ar/annotation/ai-review-comments-in-document-not-chat-mcp/",
           "file": "content/Groupdocs.Blog/annotation/2026-10-11-ai-review-comments-in-document-not-chat-mcp/index.ar.md",
@@ -2636,6 +3308,15 @@
           "file": "content/Groupdocs.Blog/annotation/2026-10-11-ai-review-comments-in-document-not-chat-mcp/index.ar.md",
           "line": 125,
           "fix": "https://blog.groupdocs.com/ar/annotation/agent-verifies-annotations-visually-mcp/",
+          "commit": "571beefe 2026-10-13: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/total/on-premise-ai-document-processing-mcp/",
+          "page": "https://blog.groupdocs.com/ar/annotation/ai-review-comments-in-document-not-chat-mcp/",
+          "file": "content/Groupdocs.Blog/annotation/2026-10-11-ai-review-comments-in-document-not-chat-mcp/index.ar.md",
+          "line": 126,
+          "fix": "https://blog.groupdocs.com/ar/total/on-premise-ai-document-processing-mcp/",
           "commit": "571beefe 2026-10-13: chore: translate blog posts (automated)"
         },
         {
@@ -2676,6 +3357,15 @@
         },
         {
           "role": "link",
+          "url": "https://blog.groupdocs.com/total/on-premise-ai-document-processing-mcp/",
+          "page": "https://blog.groupdocs.com/ar/annotation/enforce-review-workflows-annotation-threads-mcp/",
+          "file": "content/Groupdocs.Blog/annotation/2026-10-11-enforce-review-workflows-annotation-threads-mcp/index.ar.md",
+          "line": 129,
+          "fix": "https://blog.groupdocs.com/ar/total/on-premise-ai-document-processing-mcp/",
+          "commit": "dbc67647 2026-10-14: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
           "url": "https://blog.groupdocs.com/assembly/groupdocs-assembly-for-net-25-12/",
           "page": "https://blog.groupdocs.com/ar/assembly/groupdocs-assembly-for-net-25-12/",
           "file": "content/Groupdocs.Blog/assembly/2025-12-11-groupdocs-assembly-for-net-25-12/index.ar.md",
@@ -2712,6 +3402,15 @@
         },
         {
           "role": "link",
+          "url": "https://blog.groupdocs.com/total/on-premise-ai-document-processing-mcp/",
+          "page": "https://blog.groupdocs.com/ar/comparison/3-ways-compare-documents-ai-agents-mcp/",
+          "file": "content/Groupdocs.Blog/comparison/2026-10-11-3-ways-compare-documents-ai-agents-mcp/index.ar.md",
+          "line": 118,
+          "fix": "https://blog.groupdocs.com/ar/total/on-premise-ai-document-processing-mcp/",
+          "commit": "dbc67647 2026-10-14: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
           "url": "https://blog.groupdocs.com/comparison/3-ways-compare-documents-ai-agents-mcp/",
           "page": "https://blog.groupdocs.com/ar/comparison/ai-contract-review-redlines-claude-mcp/",
           "file": "content/Groupdocs.Blog/comparison/2026-10-11-ai-contract-review-redlines-claude-mcp/index.ar.md",
@@ -2739,6 +3438,15 @@
         },
         {
           "role": "link",
+          "url": "https://blog.groupdocs.com/total/on-premise-ai-document-processing-mcp/",
+          "page": "https://blog.groupdocs.com/ar/comparison/ai-contract-review-redlines-claude-mcp/",
+          "file": "content/Groupdocs.Blog/comparison/2026-10-11-ai-contract-review-redlines-claude-mcp/index.ar.md",
+          "line": 115,
+          "fix": "https://blog.groupdocs.com/ar/total/on-premise-ai-document-processing-mcp/",
+          "commit": "dbc67647 2026-10-14: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
           "url": "https://blog.groupdocs.com/comparison/3-ways-compare-documents-ai-agents-mcp/",
           "page": "https://blog.groupdocs.com/ar/comparison/enforce-document-comparison-automated-workflows-mcp/",
           "file": "content/Groupdocs.Blog/comparison/2026-10-11-enforce-document-comparison-automated-workflows-mcp/index.ar.md",
@@ -2762,6 +3470,15 @@
           "file": "content/Groupdocs.Blog/comparison/2026-10-11-enforce-document-comparison-automated-workflows-mcp/index.ar.md",
           "line": 114,
           "fix": "https://blog.groupdocs.com/ar/comparison/summarize-document-changes-ai-agent-mcp/",
+          "commit": "94a1b6f4 2026-10-15: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/total/on-premise-ai-document-processing-mcp/",
+          "page": "https://blog.groupdocs.com/ar/comparison/enforce-document-comparison-automated-workflows-mcp/",
+          "file": "content/Groupdocs.Blog/comparison/2026-10-11-enforce-document-comparison-automated-workflows-mcp/index.ar.md",
+          "line": 115,
+          "fix": "https://blog.groupdocs.com/ar/total/on-premise-ai-document-processing-mcp/",
           "commit": "94a1b6f4 2026-10-15: chore: translate blog posts (automated)"
         },
         {
@@ -2789,6 +3506,15 @@
           "file": "content/Groupdocs.Blog/comparison/2026-10-11-summarize-document-changes-ai-agent-mcp/index.ar.md",
           "line": 123,
           "fix": "https://blog.groupdocs.com/ar/comparison/enforce-document-comparison-automated-workflows-mcp/",
+          "commit": "94a1b6f4 2026-10-15: chore: translate blog posts (automated)"
+        },
+        {
+          "role": "link",
+          "url": "https://blog.groupdocs.com/total/on-premise-ai-document-processing-mcp/",
+          "page": "https://blog.groupdocs.com/ar/comparison/summarize-document-changes-ai-agent-mcp/",
+          "file": "content/Groupdocs.Blog/comparison/2026-10-11-summarize-document-changes-ai-agent-mcp/index.ar.md",
+          "line": 124,
+          "fix": "https://blog.groupdocs.com/ar/total/on-premise-ai-document-processing-mcp/",
           "commit": "94a1b6f4 2026-10-15: chore: translate blog posts (automated)"
         },
         {
@@ -2835,100 +3561,28 @@
           "line": 136,
           "fix": "https://blog.groupdocs.com/ar/conversion/announcing-groupdocs-conversion-mcp-server/",
           "commit": "e7ca5c82 2026-10-19: chore: translate blog posts (automated)"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/conversion/ai-agents-convert-documents-properly-mcp/",
-          "page": "https://blog.groupdocs.com/ar/conversion/batch-convert-folder-ai-agent-mcp/",
-          "file": "content/Groupdocs.Blog/conversion/2026-10-11-batch-convert-folder-ai-agent-mcp/index.ar.md",
-          "line": 132,
-          "fix": "https://blog.groupdocs.com/ar/conversion/ai-agents-convert-documents-properly-mcp/",
-          "commit": "e7ca5c82 2026-10-19: chore: translate blog posts (automated)"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/conversion/pdf-to-llm-ready-markdown-locally-mcp/",
-          "page": "https://blog.groupdocs.com/ar/conversion/batch-convert-folder-ai-agent-mcp/",
-          "file": "content/Groupdocs.Blog/conversion/2026-10-11-batch-convert-folder-ai-agent-mcp/index.ar.md",
-          "line": 133,
-          "fix": "https://blog.groupdocs.com/ar/conversion/pdf-to-llm-ready-markdown-locally-mcp/",
-          "commit": "e7ca5c82 2026-10-19: chore: translate blog posts (automated)"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/conversion/export-ai-markdown-to-pdf-word-mcp/",
-          "page": "https://blog.groupdocs.com/ar/conversion/batch-convert-folder-ai-agent-mcp/",
-          "file": "content/Groupdocs.Blog/conversion/2026-10-11-batch-convert-folder-ai-agent-mcp/index.ar.md",
-          "line": 134,
-          "fix": "https://blog.groupdocs.com/ar/conversion/export-ai-markdown-to-pdf-word-mcp/",
-          "commit": "e7ca5c82 2026-10-19: chore: translate blog posts (automated)"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/conversion/announcing-groupdocs-conversion-mcp-server/",
-          "page": "https://blog.groupdocs.com/ar/conversion/batch-convert-folder-ai-agent-mcp/",
-          "file": "content/Groupdocs.Blog/conversion/2026-10-11-batch-convert-folder-ai-agent-mcp/index.ar.md",
-          "line": 135,
-          "fix": "https://blog.groupdocs.com/ar/conversion/announcing-groupdocs-conversion-mcp-server/",
-          "commit": "e7ca5c82 2026-10-19: chore: translate blog posts (automated)"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/conversion/convert-word-doc-docx-to-pdf-in-nodejs/",
-          "page": "https://blog.groupdocs.com/ar/conversion/convert-svg-to-png-using-nodejs/",
-          "file": "content/Groupdocs.Blog/conversion/2024-12-26-convert-svg-to-png-in-nodejs/index.ar.md",
-          "line": 128,
-          "fix": "https://blog.groupdocs.com/ar/conversion/convert-word-doc-docx-to-pdf-in-nodejs/",
-          "commit": "94e42b2f 2026-04-27: fix: retranslate posts flagged by quality validation (automated)"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/conversion/convert-svg-to-png-using-csharp/",
-          "page": "https://blog.groupdocs.com/ar/conversion/convert-svg-to-png-using-nodejs/",
-          "file": "content/Groupdocs.Blog/conversion/2024-12-26-convert-svg-to-png-in-nodejs/index.ar.md",
-          "line": 129,
-          "fix": "https://blog.groupdocs.com/ar/conversion/convert-svg-to-png-using-csharp/",
-          "commit": "94e42b2f 2026-04-27: fix: retranslate posts flagged by quality validation (automated)"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/conversion/convert-svg-to-png-in-java/",
-          "page": "https://blog.groupdocs.com/ar/conversion/convert-svg-to-png-using-nodejs/",
-          "file": "content/Groupdocs.Blog/conversion/2024-12-26-convert-svg-to-png-in-nodejs/index.ar.md",
-          "line": 130,
-          "fix": "https://blog.groupdocs.com/ar/conversion/convert-svg-to-png-in-java/",
-          "commit": "94e42b2f 2026-04-27: fix: retranslate posts flagged by quality validation (automated)"
-        },
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.com/conversion/convert-word-doc-docx-to-pdf-using-csharp/",
-          "page": "https://blog.groupdocs.com/ar/conversion/convert-word-doc-docx-to-pdf-in-nodejs/",
-          "file": "content/Groupdocs.Blog/conversion/2024-06-18-word-to-pdf-node-js/index.ar.md",
-          "line": 103,
-          "fix": "https://blog.groupdocs.com/ar/conversion/convert-word-doc-docx-to-pdf-using-csharp/",
-          "commit": "94e42b2f 2026-04-27: fix: retranslate posts flagged by quality validation (automated)"
         }
       ]
     },
-    "affected_pages": 1273,
+    "affected_pages": 1307,
     "impact": {
-      "clicks_28d": 313,
-      "impressions_28d": 30813,
+      "clicks_28d": 311,
+      "impressions_28d": 30008,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 754,
-      "past_impressions": 45370,
-      "lost_clicks": 441,
-      "lost_impressions": 14557,
+      "past_clicks": 816,
+      "past_impressions": 47717,
+      "lost_clicks": 505,
+      "lost_impressions": 17709,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "at stake",
       "score": 39,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -2939,7 +3593,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run6",
+    "last_seen_run": "link-audit-run12",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -2957,17 +3611,17 @@
     "title": "Posts translated into only some supported languages",
     "evidence": {
       "urls": [
-        "https://blog.groupdocs.com/conversion/export-ai-markdown-to-pdf-word-mcp/",
+        "https://blog.groupdocs.com/annotation/ai-review-comments-pdf-word-csharp/",
+        "https://blog.groupdocs.com/annotation/how-to-annotate-pdf-in-csharp/",
         "https://blog.groupdocs.com/conversion/groupdocs-conversion-for-net-26-10/",
-        "https://blog.groupdocs.com/markdown/documents-to-static-site-hugo-docusaurus-ai-agent/",
         "https://blog.groupdocs.com/merger/enforce-document-pack-assembly-automated-mcp/",
         "https://blog.groupdocs.com/merger/groupdocs-merger-for-net-26-10/",
         "https://blog.groupdocs.com/metadata/strip-metadata-before-sharing-ai-agent-mcp/",
         "https://blog.groupdocs.com/parser/enforce-consistent-data-capture-bulk-extraction-mcp/",
-        "https://blog.groupdocs.com/parser/extract-tables-pdf-to-json-ai-agent-mcp/",
         "https://blog.groupdocs.com/parser/read-barcodes-qr-codes-scanned-documents-ai/",
         "https://blog.groupdocs.com/parser/spring-ai-document-reader-office-pdf-email-java/",
         "https://blog.groupdocs.com/parser/parse-documents-via-mcp-net/",
+        "https://blog.groupdocs.com/parser/groupdocs-parser-for-python-26-10/",
         "https://blog.groupdocs.com/redaction/custom-ai-redactions-in-pdf-for-net/",
         "https://blog.groupdocs.com/redaction/3-ways-redact-sensitive-data-ai-agents-mcp/",
         "https://blog.groupdocs.com/redaction/enforce-disclosure-redaction-automated-workflows-mcp/",
@@ -2976,24 +3630,25 @@
         "https://blog.groupdocs.com/search/grep-cant-read-pdf-coding-agent-document-index-mcp/",
         "https://blog.groupdocs.com/search/grounded-answers-quote-passages-local-index-mcp/",
         "https://blog.groupdocs.com/signature/signing-documents-linux-container-fonts-nodejs-java/",
-        "https://blog.groupdocs.com/signature/enforce-signing-policy-automated-audit-mcp/",
         "https://blog.groupdocs.com/signature/read-qr-barcodes-from-documents-ai-agent/",
-        "https://blog.groupdocs.com/signature/verify-digital-signatures-ai-agent-mcp/",
         "https://blog.groupdocs.com/total/on-premise-ai-document-processing-mcp/",
         "https://blog.groupdocs.com/viewer/rendering-email-messages/",
         "https://blog.groupdocs.com/viewer/groupdocs-viewer-for-node-js-26-5/",
         "https://blog.groupdocs.com/viewer/document-page-images-for-tickets-reports-ai-agent/",
-        "https://blog.groupdocs.com/watermark/3-ways-watermark-documents-ai-agents-mcp/",
         "https://blog.groupdocs.com/watermark/audit-find-remove-watermarks-own-documents-ai/",
-        "https://blog.groupdocs.com/watermark/batch-watermark-folder-ai-agent-mcp/",
         "https://blog.groupdocs.com/watermark/enforce-brand-guidelines-logo-watermark-mcp/"
       ],
-      "observed": "30 posts lack some supported languages (missing: ja 16, ko 13, th 13, tr 13, cs 10, ar 9, es 9, fa 9, vi 9, fr 8, he 8, id 8, ru 8, de 7, pl 7, uk 7, zh 7, it 6, nl 6, zh-hant 5, pt 4)",
+      "observed": "26 posts lack some supported languages (missing: ko 14, ja 13, th 11, cs 10, tr 10, vi 10, de 9, fr 8, nl 8, ru 8, he 8, ar 7, fa 7, id 7, pl 7, es 6, it 6, uk 6, zh 6, pt 5, zh-hant 5)",
       "expected": "A translated post exists in every supported language",
       "locations": [
         {
           "role": "post",
-          "url": "https://blog.groupdocs.com/conversion/export-ai-markdown-to-pdf-word-mcp/",
+          "url": "https://blog.groupdocs.com/annotation/ai-review-comments-pdf-word-csharp/",
+          "note": "missing ar, cs, de, es, fa, fr, id, it, ja, ko, nl, pl, pt, ru, th, tr, uk, vi, zh, zh-hant"
+        },
+        {
+          "role": "post",
+          "url": "https://blog.groupdocs.com/annotation/how-to-annotate-pdf-in-csharp/",
           "note": "missing ko"
         },
         {
@@ -3003,13 +3658,8 @@
         },
         {
           "role": "post",
-          "url": "https://blog.groupdocs.com/markdown/documents-to-static-site-hugo-docusaurus-ai-agent/",
-          "note": "missing es, fa, fr"
-        },
-        {
-          "role": "post",
           "url": "https://blog.groupdocs.com/merger/enforce-document-pack-assembly-automated-mcp/",
-          "note": "missing ja, th, tr"
+          "note": "missing ja"
         },
         {
           "role": "post",
@@ -3024,12 +3674,7 @@
         {
           "role": "post",
           "url": "https://blog.groupdocs.com/parser/enforce-consistent-data-capture-bulk-extraction-mcp/",
-          "note": "missing cs, it, ja"
-        },
-        {
-          "role": "post",
-          "url": "https://blog.groupdocs.com/parser/extract-tables-pdf-to-json-ai-agent-mcp/",
-          "note": "missing ar"
+          "note": "missing cs, ja"
         },
         {
           "role": "post",
@@ -3039,12 +3684,17 @@
         {
           "role": "post",
           "url": "https://blog.groupdocs.com/parser/spring-ai-document-reader-office-pdf-email-java/",
-          "note": "missing ar, ja, ko, nl, pl, th, tr, uk"
+          "note": "missing ko, nl, th, tr"
         },
         {
           "role": "post",
           "url": "https://blog.groupdocs.com/parser/parse-documents-via-mcp-net/",
           "note": "missing ar, de, es, fa, fr, he, ja, ko, pl, ru, th, tr, uk, vi, zh, zh-hant"
+        },
+        {
+          "role": "post",
+          "url": "https://blog.groupdocs.com/parser/groupdocs-parser-for-python-26-10/",
+          "note": "missing cs, de, ko, nl"
         },
         {
           "role": "post",
@@ -3088,23 +3738,13 @@
         },
         {
           "role": "post",
-          "url": "https://blog.groupdocs.com/signature/enforce-signing-policy-automated-audit-mcp/",
-          "note": "missing ja"
-        },
-        {
-          "role": "post",
           "url": "https://blog.groupdocs.com/signature/read-qr-barcodes-from-documents-ai-agent/",
-          "note": "missing cs, th"
-        },
-        {
-          "role": "post",
-          "url": "https://blog.groupdocs.com/signature/verify-digital-signatures-ai-agent-mcp/",
-          "note": "missing es, zh"
+          "note": "missing cs"
         },
         {
           "role": "post",
           "url": "https://blog.groupdocs.com/total/on-premise-ai-document-processing-mcp/",
-          "note": "missing ar, cs, es, id, ja, ko, pl, ru, th, tr, uk"
+          "note": "missing pl, ru, th"
         },
         {
           "role": "post",
@@ -3123,30 +3763,20 @@
         },
         {
           "role": "post",
-          "url": "https://blog.groupdocs.com/watermark/3-ways-watermark-documents-ai-agents-mcp/",
-          "note": "missing fa"
-        },
-        {
-          "role": "post",
           "url": "https://blog.groupdocs.com/watermark/audit-find-remove-watermarks-own-documents-ai/",
-          "note": "missing cs, fa, id, ru, tr, vi, zh-hant"
-        },
-        {
-          "role": "post",
-          "url": "https://blog.groupdocs.com/watermark/batch-watermark-folder-ai-agent-mcp/",
-          "note": "missing ja"
+          "note": "missing id, vi"
         },
         {
           "role": "post",
           "url": "https://blog.groupdocs.com/watermark/enforce-brand-guidelines-logo-watermark-mcp/",
-          "note": "missing de, es, id, th, tr, zh"
+          "note": "missing de"
         }
       ]
     },
-    "affected_pages": 30,
+    "affected_pages": 26,
     "impact": {
-      "clicks_28d": 2,
-      "impressions_28d": 595,
+      "clicks_28d": 3,
+      "impressions_28d": 701,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
@@ -3154,14 +3784,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "at stake",
-      "score": 13,
+      "score": 15,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -3172,7 +3802,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run6",
+    "last_seen_run": "link-audit-run12",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_partial",
@@ -3265,25 +3895,25 @@
         ]
       }
     },
-    "affected_pages": 9093,
+    "affected_pages": 9267,
     "impact": {
-      "clicks_28d": 5997,
-      "impressions_28d": 322456,
+      "clicks_28d": 6015,
+      "impressions_28d": 329605,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 12366,
-      "past_impressions": 509448,
-      "lost_clicks": 6369,
-      "lost_impressions": 186992,
+      "past_clicks": 12220,
+      "past_impressions": 523607,
+      "lost_clicks": 6205,
+      "lost_impressions": 194002,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "at stake",
       "score": 16,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -3294,7 +3924,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run8",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -3371,22 +4001,22 @@
     "affected_pages": 29,
     "impact": {
       "clicks_28d": 2,
-      "impressions_28d": 86,
+      "impressions_28d": 64,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 6,
-      "past_impressions": 670,
-      "lost_clicks": 4,
-      "lost_impressions": 584,
+      "past_clicks": 4,
+      "past_impressions": 692,
+      "lost_clicks": 2,
+      "lost_impressions": 628,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "lost",
       "score": 3,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -3397,7 +4027,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run8",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -3459,25 +4089,25 @@
         ]
       }
     },
-    "affected_pages": 2253,
+    "affected_pages": 2297,
     "impact": {
-      "clicks_28d": 1499,
-      "impressions_28d": 80574,
+      "clicks_28d": 1503,
+      "impressions_28d": 82368,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 3090,
-      "past_impressions": 127017,
-      "lost_clicks": 1591,
-      "lost_impressions": 46443,
+      "past_clicks": 3054,
+      "past_impressions": 130426,
+      "lost_clicks": 1551,
+      "lost_impressions": 48058,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "at stake",
       "score": 13,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -3488,7 +4118,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run8",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_multiple",
@@ -3577,25 +4207,25 @@
         ]
       }
     },
-    "affected_pages": 4580,
+    "affected_pages": 4666,
     "impact": {
-      "clicks_28d": 2999,
-      "impressions_28d": 161285,
+      "clicks_28d": 3009,
+      "impressions_28d": 164852,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 6186,
-      "past_impressions": 255359,
-      "lost_clicks": 3187,
-      "lost_impressions": 94074,
+      "past_clicks": 6112,
+      "past_impressions": 262678,
+      "lost_clicks": 3103,
+      "lost_impressions": 97826,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "at stake",
       "score": 15,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -3606,7 +4236,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run1",
+    "last_seen_run": "crawl-audit-run8",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -3659,14 +4289,14 @@
       "lost_clicks": 0,
       "lost_impressions": 2,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -3677,7 +4307,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "text-audit-run4",
-    "last_seen_run": "text-audit-run4",
+    "last_seen_run": "text-audit-run11",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_leftover",
@@ -3736,14 +4366,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-05",
-        "2026-05-02"
+        "2026-04-09",
+        "2026-05-06"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-04",
-        "2026-10-31"
+        "2026-10-08",
+        "2026-11-04"
       ]
     },
     "effort": "S",
@@ -3754,7 +4384,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "text-audit-run4",
-    "last_seen_run": "text-audit-run4",
+    "last_seen_run": "text-audit-run11",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_typo",

@@ -1,0 +1,247 @@
+{
+  "tenant": "groupdocs.com",
+  "auditor": "text-audit",
+  "run_id": 11,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.com"
+    ],
+    "crawl_runs": [
+      1,
+      8
+    ],
+    "model": "gpt-oss",
+    "prompt_version": 2
+  },
+  "duration_s": 0.0,
+  "stopped_early": false,
+  "pages_checked": 35,
+  "unchecked": [],
+  "incomplete": false,
+  "llm": {
+    "calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cache_hits": 35
+  },
+  "ignored": 0,
+  "summary": {
+    "blog.groupdocs.com": {
+      "checked": 35,
+      "pages_with_issues": 7,
+      "issues": {
+        "text_typo": 4,
+        "text_leftover": 3
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "onpage-0001",
+      "tenant": "groupdocs.com",
+      "subdomain": "blog.groupdocs.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "text_leftover",
+      "type": "incorrect",
+      "title": "Placeholder or garbled words in titles, headings or descriptions",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.com/viewer/groupdocs.viewer-supports-partial-rendering-of-excel-sheets/",
+          "https://blog.groupdocs.com/signature/sign-documents-with-encrypted-custom-objects/",
+          "https://blog.groupdocs.com/signature/groupdocs-online-signature-app-dashboard-new-look-and-feel/"
+        ],
+        "observed": "3 of 35 checked pages: /viewer/groupdocs.viewer-supports-partial-rendering-of-excel-sheets/ meta description: 'GroupDocs.Viewer for .' → 'GroupDocs.Viewer for .NET'; /signature/sign-documents-with-encrypted-custom-objects/ meta description: remove 'in the .'; /signature/groupdocs-online-signature-app-dashboard-new-look-and-feel/ meta description: remove '[caption id=“attachment_216” align=“aligncenter” width=“650” caption=“GroupDocs’ online signature app - the new dashboard”] [/caption]'",
+        "expected": "Finished text in the page's language, without template keys or test words",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/viewer/groupdocs.viewer-supports-partial-rendering-of-excel-sheets/",
+            "note": "meta description: 'GroupDocs.Viewer for .' → 'GroupDocs.Viewer for .NET'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/signature/sign-documents-with-encrypted-custom-objects/",
+            "note": "meta description: remove 'in the .'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/signature/groupdocs-online-signature-app-dashboard-new-look-and-feel/",
+            "note": "meta description: remove '[caption id=“attachment_216” align=“aligncenter” width=“650” caption=“GroupDocs’ online signature app - the new dashboard”] [/caption]'"
+          }
+        ]
+      },
+      "affected_pages": 3,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "none",
+      "status": "open",
+      "detected_at": "2026-11-07"
+    },
+    {
+      "id": "onpage-0002",
+      "tenant": "groupdocs.com",
+      "subdomain": "blog.groupdocs.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "text_typo",
+      "type": "improvable",
+      "title": "Typos in titles, headings or descriptions",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/",
+          "https://blog.groupdocs.com/signature/what-you-expect-from-online-signature-service/",
+          "https://blog.groupdocs.com/viewer/instanceid-using-multiple-simultaneous-instances-groupdocs-viewer-net/",
+          "https://blog.groupdocs.com/signature/groupdocs.signature-for-.net-18.9/"
+        ],
+        "observed": "4 of 35 checked pages: /metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/ meta description: 'releaseof' → 'release of'; /signature/what-you-expect-from-online-signature-service/ meta description: 'AppA' → 'App A'; /viewer/instanceid-using-multiple-simultaneous-instances-groupdocs-viewer-net/ meta description: 'InstqanceID' → 'InstanceID'; /signature/groupdocs.signature-for-.net-18.9/ meta description: 'PDFThe' → 'PDF The'",
+        "expected": "Correctly spelled titles, H1s and meta descriptions",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/",
+            "note": "meta description: 'releaseof' → 'release of'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/signature/what-you-expect-from-online-signature-service/",
+            "note": "meta description: 'AppA' → 'App A'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/viewer/instanceid-using-multiple-simultaneous-instances-groupdocs-viewer-net/",
+            "note": "meta description: 'InstqanceID' → 'InstanceID'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.com/signature/groupdocs.signature-for-.net-18.9/",
+            "note": "meta description: 'PDFThe' → 'PDF The'"
+          }
+        ]
+      },
+      "affected_pages": 4,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "none",
+      "status": "open",
+      "detected_at": "2026-11-07"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://blog.groupdocs.com/metadata/update-metadata-of-mpp-format-using-groupdocs.metadata-for-java-18.6/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "description",
+          "kind": "misspelling",
+          "wrong": "releaseof",
+          "fix": "release of",
+          "why": "missing space between words"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/signature/groupdocs-online-signature-app-dashboard-new-look-and-feel/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "description",
+          "kind": "stray_word",
+          "wrong": "[caption id=“attachment_216” align=“aligncenter” width=“650” caption=“GroupDocs’ online signature app - the new dashboard”] [/caption]",
+          "fix": "",
+          "why": "leftover markup"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/signature/groupdocs.signature-for-.net-18.9/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "description",
+          "kind": "misspelling",
+          "wrong": "PDFThe",
+          "fix": "PDF The",
+          "why": "missing space between words"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/signature/sign-documents-with-encrypted-custom-objects/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "description",
+          "kind": "stray_word",
+          "wrong": "in the .",
+          "fix": "",
+          "why": "incomplete sentence"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/signature/what-you-expect-from-online-signature-service/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "description",
+          "kind": "misspelling",
+          "wrong": "AppA",
+          "fix": "App A",
+          "why": "missing space after 'App'"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/viewer/groupdocs.viewer-supports-partial-rendering-of-excel-sheets/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "description",
+          "kind": "stray_word",
+          "wrong": "GroupDocs.Viewer for .",
+          "fix": "GroupDocs.Viewer for .NET",
+          "why": "truncated placeholder"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.groupdocs.com/viewer/instanceid-using-multiple-simultaneous-instances-groupdocs-viewer-net/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "description",
+          "kind": "misspelling",
+          "wrong": "InstqanceID",
+          "fix": "InstanceID",
+          "why": "typo"
+        }
+      ]
+    }
+  ]
+}
