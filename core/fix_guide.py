@@ -203,6 +203,15 @@ _ROWS = [
      "Usually harmless, but conflicting copies would be ignored.",
      "Render the head block once (check for a duplicated include).",
      "Next crawl audit has no finding."),
+    ("head_closed_early", "Canonical", "<head> ends early",
+     "A body element (usually a <div>, e.g. a language switcher) is written into <head> before the SEO tags. "
+     "Browsers and search engines end <head> at that element, so the title, meta tags, canonical and hreflang "
+     "after it land in <body>.",
+     "Google ignores canonical and hreflang in <body>: duplicate and language versions are no longer tied "
+     "together; meta robots and the title may be missed too.",
+     "Move the element out of <head> (or at least after every head tag); check the template change that added "
+     "it.",
+     "View source: every head tag before </head> (parsed DOM, not the raw HTML); next crawl audit has no finding."),
     # --- titles, descriptions, headings ---
     ("title_missing", "Titles & descriptions", "No <title>",
      "The page has no <title>.",

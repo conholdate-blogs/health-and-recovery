@@ -13,6 +13,10 @@ from dataclasses import asdict, dataclass, field
 from urllib.parse import urljoin
 
 _LINK_HEADER_RE = re.compile(r'<([^>]+)>\s*;([^,]*)')
+# head-only tags looked for in <body> (a <title> inside an inline SVG is fine and does not count)
+BODY_HEAD_TAGS = (("title", "title"), ("meta description", "meta[name=description]"),
+                  ("meta robots", "meta[name=robots]"), ("viewport", "meta[name=viewport]"),
+                  ("canonical", "link[rel=canonical]"), ("hreflang", "link[rel=alternate][hreflang]"))
 
 
 @dataclass
@@ -31,6 +35,9 @@ class PageFacts:
     text_chars: int | None = None  # visible main text in the raw HTML (no scripts, nav, header, footer), no spaces
     jsonld_types: list[str] = field(default_factory=list)  # @type of each JSON-LD item (incl. @graph)
     jsonld_invalid: int = 0  # JSON-LD blocks that do not parse
+    # head-only tags that the parser found in <body>: <head> was closed early, usually by a <div> or other body
+    # element written into it; browsers and search engines do the same (Google ignores canonical/hreflang there)
+    body_head_tags: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -38,6 +45,15 @@ class PageFacts:
     @property
     def noindex(self) -> bool:
         return any("noindex" in r or "none" in [t.strip() for t in r.split(",")] for r in self.robots)
+
+
+def _in_svg(node) -> bool:
+    p = node.parent
+    while p is not None:
+        if p.tag == "svg":
+            return True
+        p = p.parent
+    return False
 
 
 def _clean(text: str | None) -> str:
@@ -70,6 +86,13 @@ def parse_page(html: bytes | str, base_url: str, headers: dict | None = None) ->
         facts.html_lang = (root.attributes.get("lang") or "").strip() or None
 
     facts.titles = [_clean(n.text()) for n in tree.css("head title")]
+    for label, sel in BODY_HEAD_TAGS:
+        if label == "title":
+            found = any(not _in_svg(n) for n in tree.css("body title"))
+        else:
+            found = tree.css_first("body " + sel) is not None
+        if found:
+            facts.body_head_tags.append(label)
     for n in tree.css("head meta"):
         attrs = {k.lower(): v for k, v in n.attributes.items()}
         name = (attrs.get("name") or "").strip().lower()

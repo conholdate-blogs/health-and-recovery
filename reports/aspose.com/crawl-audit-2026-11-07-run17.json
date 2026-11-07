@@ -1,7 +1,7 @@
 {
   "tenant": "aspose.com",
   "auditor": "crawl-audit",
-  "run_id": 10,
+  "run_id": 17,
   "params": {
     "hosts": [
       "blog.aspose.com"
@@ -15,7 +15,7 @@
   },
   "canonical_targets": {},
   "requests": 50,
-  "duration_s": 74.0,
+  "duration_s": 49.6,
   "pages_planned": 49,
   "stopped_early": false,
   "summary": {
@@ -27,115 +27,17 @@
       "blocked": 0,
       "ignored": 0,
       "issues": {
-        "canonical_missing": 17,
         "content_needs_js": 12,
         "description_length": 4,
-        "description_missing": 17,
         "h1_missing": 3,
         "h1_multiple": 1,
-        "hreflang_missing": 17,
+        "head_closed_early": 17,
         "hreflang_no_xdefault": 32,
-        "title_length": 4,
-        "title_missing": 17,
-        "viewport_missing": 17
+        "title_length": 4
       }
     }
   },
   "findings": [
-    {
-      "id": "crawl-0001",
-      "tenant": "aspose.com",
-      "subdomain": "blog.aspose.com",
-      "template": "page",
-      "dimension": "crawl",
-      "check": "canonical_missing",
-      "type": "improvable",
-      "title": "Pages have no canonical tag",
-      "evidence": {
-        "urls": [
-          "https://blog.aspose.com/",
-          "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-          "https://blog.aspose.com/pt/",
-          "https://blog.aspose.com/archives/",
-          "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-          "https://blog.aspose.com/fa/",
-          "https://blog.aspose.com/zh/archives/",
-          "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
-          "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
-          "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
-        ],
-        "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no <link rel=canonical> and no Link header; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no <link rel=canonical> and no Link header; https://blog.aspose.com/pt/: no <link rel=canonical> and no Link header; https://blog.aspose.com/archives/: no <link rel=canonical> and no Link header; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no <link rel=canonical> and no Link header",
-        "expected": "a self-referencing absolute canonical",
-        "locations": [
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/",
-            "note": "no <link rel=canonical> and no Link header"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-            "note": "no <link rel=canonical> and no Link header"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/pt/",
-            "note": "no <link rel=canonical> and no Link header"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/archives/",
-            "note": "no <link rel=canonical> and no Link header"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-            "note": "no <link rel=canonical> and no Link header"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.aspose.com/en/sitemap.xml"
-          },
-          {
-            "role": "sitemap index",
-            "url": "https://blog.aspose.com/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.aspose.com/pt/sitemap.xml"
-          }
-        ],
-        "sample": {
-          "generic:/{section}/*/*": [
-            1,
-            10
-          ],
-          "home": [
-            3,
-            3
-          ],
-          "listing": [
-            2,
-            4
-          ],
-          "post": [
-            11,
-            22
-          ]
-        }
-      },
-      "affected_pages": 28803,
-      "impact": {
-        "clicks_28d": 0,
-        "impressions_28d": 0,
-        "score": 0
-      },
-      "effort": "S",
-      "fix_tier": 2,
-      "fix_channel": "git-pr",
-      "status": "open",
-      "detected_at": "2026-11-06"
-    },
     {
       "id": "ai-0001",
       "tenant": "aspose.com",
@@ -228,7 +130,7 @@
       "fix_tier": 2,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-07"
     },
     {
       "id": "onpage-0001",
@@ -307,104 +209,10 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-07"
     },
     {
       "id": "onpage-0002",
-      "tenant": "aspose.com",
-      "subdomain": "blog.aspose.com",
-      "template": "page",
-      "dimension": "onpage",
-      "check": "description_missing",
-      "type": "improvable",
-      "title": "Pages have no meta description",
-      "evidence": {
-        "urls": [
-          "https://blog.aspose.com/",
-          "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-          "https://blog.aspose.com/pt/",
-          "https://blog.aspose.com/archives/",
-          "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-          "https://blog.aspose.com/fa/",
-          "https://blog.aspose.com/zh/archives/",
-          "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
-          "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
-          "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
-        ],
-        "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no meta description; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no meta description; https://blog.aspose.com/pt/: no meta description; https://blog.aspose.com/archives/: no meta description; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no meta description",
-        "expected": "a unique meta description",
-        "locations": [
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/",
-            "note": "no meta description"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-            "note": "no meta description"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/pt/",
-            "note": "no meta description"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/archives/",
-            "note": "no meta description"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-            "note": "no meta description"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.aspose.com/en/sitemap.xml"
-          },
-          {
-            "role": "sitemap index",
-            "url": "https://blog.aspose.com/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.aspose.com/pt/sitemap.xml"
-          }
-        ],
-        "sample": {
-          "generic:/{section}/*/*": [
-            1,
-            10
-          ],
-          "home": [
-            3,
-            3
-          ],
-          "listing": [
-            2,
-            4
-          ],
-          "post": [
-            11,
-            22
-          ]
-        }
-      },
-      "affected_pages": 28803,
-      "impact": {
-        "clicks_28d": 0,
-        "impressions_28d": 0,
-        "score": 0
-      },
-      "effort": "S",
-      "fix_tier": 1,
-      "fix_channel": "git-pr",
-      "status": "open",
-      "detected_at": "2026-11-06"
-    },
-    {
-      "id": "onpage-0003",
       "tenant": "aspose.com",
       "subdomain": "blog.aspose.com",
       "template": "page",
@@ -470,10 +278,10 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-07"
     },
     {
-      "id": "onpage-0004",
+      "id": "onpage-0003",
       "tenant": "aspose.com",
       "subdomain": "blog.aspose.com",
       "template": "page",
@@ -519,17 +327,17 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-07"
     },
     {
-      "id": "intl-0001",
+      "id": "crawl-0001",
       "tenant": "aspose.com",
       "subdomain": "blog.aspose.com",
       "template": "page",
-      "dimension": "intl",
-      "check": "hreflang_missing",
-      "type": "not_optimized",
-      "title": "Localized pages have no hreflang tags in page HTML",
+      "dimension": "crawl",
+      "check": "head_closed_early",
+      "type": "broken",
+      "title": "<head> ends early: title, canonical and hreflang land in <body>",
       "evidence": {
         "urls": [
           "https://blog.aspose.com/",
@@ -543,33 +351,33 @@
           "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
           "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
         ],
-        "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/pt/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/archives/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no <link rel=alternate hreflang> in <head>",
-        "expected": "hreflang alternates for every language version, incl. a self-reference and x-default",
+        "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: in <body>: title, meta description, meta robots, viewport, canonical, hreflang; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: in <body>: title, meta description, meta robots, viewport, canonical, hreflang; https://blog.aspose.com/pt/: in <body>: title, meta description, meta robots, viewport, canonical, hreflang; https://blog.aspose.com/archives/: in <body>: title, meta description, meta robots, viewport, canonical, hreflang; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: in <body>: title, meta description, meta robots, viewport, canonical, hreflang",
+        "expected": "every head tag inside <head>; no <div> or other body element before them",
         "locations": [
           {
             "role": "page",
             "url": "https://blog.aspose.com/",
-            "note": "no <link rel=alternate hreflang> in <head>"
+            "note": "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
           },
           {
             "role": "page",
             "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-            "note": "no <link rel=alternate hreflang> in <head>"
+            "note": "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
           },
           {
             "role": "page",
             "url": "https://blog.aspose.com/pt/",
-            "note": "no <link rel=alternate hreflang> in <head>"
+            "note": "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
           },
           {
             "role": "page",
             "url": "https://blog.aspose.com/archives/",
-            "note": "no <link rel=alternate hreflang> in <head>"
+            "note": "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
           },
           {
             "role": "page",
             "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-            "note": "no <link rel=alternate hreflang> in <head>"
+            "note": "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
           },
           {
             "role": "listed in",
@@ -609,14 +417,14 @@
         "impressions_28d": 0,
         "score": 0
       },
-      "effort": "M",
-      "fix_tier": 2,
+      "effort": "S",
+      "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-07"
     },
     {
-      "id": "intl-0002",
+      "id": "intl-0001",
       "tenant": "aspose.com",
       "subdomain": "blog.aspose.com",
       "template": "page",
@@ -711,10 +519,10 @@
       "fix_tier": 2,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-07"
     },
     {
-      "id": "onpage-0005",
+      "id": "onpage-0004",
       "tenant": "aspose.com",
       "subdomain": "blog.aspose.com",
       "template": "page",
@@ -794,195 +602,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
-    },
-    {
-      "id": "onpage-0006",
-      "tenant": "aspose.com",
-      "subdomain": "blog.aspose.com",
-      "template": "page",
-      "dimension": "onpage",
-      "check": "title_missing",
-      "type": "broken",
-      "title": "Pages have no <title>",
-      "evidence": {
-        "urls": [
-          "https://blog.aspose.com/",
-          "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-          "https://blog.aspose.com/pt/",
-          "https://blog.aspose.com/archives/",
-          "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-          "https://blog.aspose.com/fa/",
-          "https://blog.aspose.com/zh/archives/",
-          "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
-          "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
-          "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
-        ],
-        "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no <title> in <head>; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no <title> in <head>; https://blog.aspose.com/pt/: no <title> in <head>; https://blog.aspose.com/archives/: no <title> in <head>; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no <title> in <head>",
-        "expected": "a unique, descriptive title",
-        "locations": [
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/",
-            "note": "no <title> in <head>"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-            "note": "no <title> in <head>"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/pt/",
-            "note": "no <title> in <head>"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/archives/",
-            "note": "no <title> in <head>"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-            "note": "no <title> in <head>"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.aspose.com/en/sitemap.xml"
-          },
-          {
-            "role": "sitemap index",
-            "url": "https://blog.aspose.com/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.aspose.com/pt/sitemap.xml"
-          }
-        ],
-        "sample": {
-          "generic:/{section}/*/*": [
-            1,
-            10
-          ],
-          "home": [
-            3,
-            3
-          ],
-          "listing": [
-            2,
-            4
-          ],
-          "post": [
-            11,
-            22
-          ]
-        }
-      },
-      "affected_pages": 28803,
-      "impact": {
-        "clicks_28d": 0,
-        "impressions_28d": 0,
-        "score": 0
-      },
-      "effort": "S",
-      "fix_tier": 1,
-      "fix_channel": "git-pr",
-      "status": "open",
-      "detected_at": "2026-11-06"
-    },
-    {
-      "id": "ux-0001",
-      "tenant": "aspose.com",
-      "subdomain": "blog.aspose.com",
-      "template": "page",
-      "dimension": "ux",
-      "check": "viewport_missing",
-      "type": "not_optimized",
-      "title": "Pages have no meta viewport",
-      "evidence": {
-        "urls": [
-          "https://blog.aspose.com/",
-          "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-          "https://blog.aspose.com/pt/",
-          "https://blog.aspose.com/archives/",
-          "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-          "https://blog.aspose.com/fa/",
-          "https://blog.aspose.com/zh/archives/",
-          "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
-          "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
-          "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
-        ],
-        "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no meta viewport; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no meta viewport; https://blog.aspose.com/pt/: no meta viewport; https://blog.aspose.com/archives/: no meta viewport; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no meta viewport",
-        "expected": "<meta name=viewport content='width=device-width, initial-scale=1'>",
-        "locations": [
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/",
-            "note": "no meta viewport"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-            "note": "no meta viewport"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/pt/",
-            "note": "no meta viewport"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/archives/",
-            "note": "no meta viewport"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-            "note": "no meta viewport"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.aspose.com/en/sitemap.xml"
-          },
-          {
-            "role": "sitemap index",
-            "url": "https://blog.aspose.com/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.aspose.com/pt/sitemap.xml"
-          }
-        ],
-        "sample": {
-          "generic:/{section}/*/*": [
-            1,
-            10
-          ],
-          "home": [
-            3,
-            3
-          ],
-          "listing": [
-            2,
-            4
-          ],
-          "post": [
-            11,
-            22
-          ]
-        }
-      },
-      "affected_pages": 28803,
-      "impact": {
-        "clicks_28d": 0,
-        "impressions_28d": 0,
-        "score": 0
-      },
-      "effort": "S",
-      "fix_tier": 1,
-      "fix_channel": "git-pr",
-      "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-07"
     }
   ],
   "pages": [
@@ -1004,7 +624,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1455,
+      "elapsed_ms": 45,
       "facts": {
         "titles": [
           "Convert Primavera XML to MPP in C# | C# XML to MPP"
@@ -1121,7 +741,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1153,7 +774,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1566,
+      "elapsed_ms": 46,
       "facts": {
         "titles": [
           "Node.jsでPPTを作成および開く| Node.js PowerPointライブラリ"
@@ -1270,7 +891,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1302,7 +924,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1561,
+      "elapsed_ms": 49,
       "facts": {
         "titles": [
           "Access Password Protected PST Files"
@@ -1419,7 +1041,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1451,7 +1074,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 305,
+      "elapsed_ms": 50,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -1468,33 +1091,25 @@
         "jsonld_types": [
           "Organization"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ],
         [
           "h1_missing",
           "no non-empty <h1>"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
         ]
       ]
     },
@@ -1516,7 +1131,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1729,
+      "elapsed_ms": 43,
       "facts": {
         "titles": [
           "Search"
@@ -1629,7 +1244,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1669,7 +1285,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1799,
+      "elapsed_ms": 53,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -1689,29 +1305,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -1733,7 +1341,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1277,
+      "elapsed_ms": 58,
       "facts": {
         "titles": [
           "Convert PDF to Text in Python | Python PDF to TXT | Aspose"
@@ -1850,7 +1458,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1882,7 +1491,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1427,
+      "elapsed_ms": 48,
       "facts": {
         "titles": [
           "Перетворення MSG у PST в Node.js - Легкий Посібник"
@@ -1999,7 +1608,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -2031,7 +1641,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1481,
+      "elapsed_ms": 47,
       "facts": {
         "titles": [
           "Create EML files with images in HTML body using Python"
@@ -2148,7 +1758,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -2180,7 +1791,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1573,
+      "elapsed_ms": 55,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -2197,33 +1808,25 @@
         "jsonld_types": [
           "Organization"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ],
         [
           "h1_missing",
           "no non-empty <h1>"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
         ]
       ]
     },
@@ -2245,7 +1848,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 2367,
+      "elapsed_ms": 186,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -2265,29 +1868,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -2309,7 +1904,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1292,
+      "elapsed_ms": 46,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -2329,29 +1924,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -2373,7 +1960,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1446,
+      "elapsed_ms": 47,
       "facts": {
         "titles": [
           "Create Visio Diagram in Python | Python Visio | Python VSDX"
@@ -2490,7 +2077,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -2522,7 +2110,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1608,
+      "elapsed_ms": 43,
       "facts": {
         "titles": [
           "Bezplatný konvertor TeX souborů - Převeďte TeX na BMP online"
@@ -2639,7 +2227,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -2667,7 +2256,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1564,
+      "elapsed_ms": 44,
       "facts": {
         "titles": [
           "Доступ к защищённым паролем PST файлам"
@@ -2784,7 +2373,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -2816,7 +2406,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1360,
+      "elapsed_ms": 44,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -2833,33 +2423,25 @@
         "jsonld_types": [
           "Organization"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ],
         [
           "h1_missing",
           "no non-empty <h1>"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
         ]
       ]
     },
@@ -2881,7 +2463,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1583,
+      "elapsed_ms": 56,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -2901,29 +2483,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -2945,7 +2519,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1425,
+      "elapsed_ms": 44,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -2965,29 +2539,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -3009,7 +2575,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1366,
+      "elapsed_ms": 44,
       "facts": {
         "titles": [
           "Aspose Blog"
@@ -3041,7 +2607,8 @@
         "jsonld_types": [
           "BreadcrumbList"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -3069,7 +2636,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1836,
+      "elapsed_ms": 42,
       "facts": {
         "titles": [
           "Опануйте, як програмно створити таблицю в PowerPoint за допомогою Aspose.Slides для Java"
@@ -3186,7 +2753,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -3218,7 +2786,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1329,
+      "elapsed_ms": 44,
       "facts": {
         "titles": [
           "パスワード保護されたPSTファイルにアクセスする"
@@ -3335,7 +2903,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -3367,7 +2936,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1476,
+      "elapsed_ms": 42,
       "facts": {
         "titles": [
           "Arama"
@@ -3480,7 +3049,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -3520,7 +3090,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 369,
+      "elapsed_ms": 50,
       "facts": {
         "titles": [
           "Add Text to DWG Files Using Python"
@@ -3553,7 +3123,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -3581,7 +3152,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1434,
+      "elapsed_ms": 49,
       "facts": {
         "titles": [
           "Python'da Visio Diyagramı Oluşturma | Python Şeması Kitaplığı"
@@ -3698,7 +3269,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -3730,7 +3302,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1553,
+      "elapsed_ms": 46,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -3750,29 +3322,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -3794,7 +3358,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1481,
+      "elapsed_ms": 43,
       "facts": {
         "titles": [
           "Delete mesages from PST file permanenetly using .NET"
@@ -3828,7 +3392,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -3860,7 +3425,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1494,
+      "elapsed_ms": 54,
       "facts": {
         "titles": [
           "Преобразование PDF в текст в Python | Python PDF в TXT | Aspose"
@@ -3977,7 +3542,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -4009,7 +3575,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1593,
+      "elapsed_ms": 45,
       "facts": {
         "titles": [
           "Перетворення SVG у XPS на Java з Aspose.HTML"
@@ -4126,7 +3692,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -4154,7 +3721,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1406,
+      "elapsed_ms": 47,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -4174,29 +3741,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -4218,7 +3777,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1511,
+      "elapsed_ms": 54,
       "facts": {
         "titles": [
           "Легко конвертуйте PSD у TIFF на Python"
@@ -4335,7 +3894,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -4367,7 +3927,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1423,
+      "elapsed_ms": 43,
       "facts": {
         "titles": [
           "Apply Codabar Checksum Validation using C# | Aspose.BarCode for .NET"
@@ -4400,7 +3960,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -4428,7 +3989,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1353,
+      "elapsed_ms": 47,
       "facts": {
         "titles": [
           "Java로 프로그래밍 방식으로 PSD를 TIFF 이미지로 변환하기 | PSD 변환기"
@@ -4545,7 +4106,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -4573,7 +4135,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1503,
+      "elapsed_ms": 47,
       "facts": {
         "titles": [
           "Android: Optimize Memory Usage in Excel | Show Formulas in Worksheets"
@@ -4606,7 +4168,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -4634,7 +4197,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1619,
+      "elapsed_ms": 45,
       "facts": {
         "titles": [
           "在 C# 中将 MSG 或 EML 转换为 HTML，带嵌入图像"
@@ -4751,7 +4314,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -4779,7 +4343,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1378,
+      "elapsed_ms": 42,
       "facts": {
         "titles": [
           "Improved OCR Process Through Optimize Bitmap Processing using Java"
@@ -4812,7 +4376,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -4840,7 +4405,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1300,
+      "elapsed_ms": 45,
       "facts": {
         "titles": [
           "Konvertera STL till SVG i Python med Aspose.CAD"
@@ -4957,7 +4522,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -4985,7 +4551,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1465,
+      "elapsed_ms": 42,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -5005,29 +4571,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -5049,7 +4607,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1547,
+      "elapsed_ms": 43,
       "facts": {
         "titles": [
           "In-Browser Editor for Word Documents | Aspose.Editor"
@@ -5082,7 +4640,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -5110,7 +4669,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1515,
+      "elapsed_ms": 44,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -5130,29 +4689,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -5174,7 +4725,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1470,
+      "elapsed_ms": 43,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -5194,29 +4745,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -5238,7 +4781,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1521,
+      "elapsed_ms": 43,
       "facts": {
         "titles": [
           "Aspose.Words vs SoftArtisans WordWriter, TX Text and MS VSTO"
@@ -5271,7 +4814,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -5299,7 +4843,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1380,
+      "elapsed_ms": 46,
       "facts": {
         "titles": [
           "Field Engine Progress in Aspose.Words 11.7 | Word API"
@@ -5332,7 +4876,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -5360,7 +4905,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1457,
+      "elapsed_ms": 45,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -5380,29 +4925,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -5424,7 +4961,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1581,
+      "elapsed_ms": 44,
       "facts": {
         "titles": [
           "Create, Format and Render Excel Slicer in C# | Excel Slicer in Pivot Table"
@@ -5457,7 +4994,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -5489,7 +5027,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1311,
+      "elapsed_ms": 45,
       "facts": {
         "titles": [
           "Set Gray Scale for PSD Image using C# | Aspose.Imaging"
@@ -5522,7 +5060,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -5550,7 +5089,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1441,
+      "elapsed_ms": 50,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -5570,29 +5109,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -5614,7 +5145,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1446,
+      "elapsed_ms": 44,
       "facts": {
         "titles": [
           "Umbraco Quote Generator for Umbraco | Aspose.Words for .NET"
@@ -5647,7 +5178,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -5675,7 +5207,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1371,
+      "elapsed_ms": 47,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -5695,29 +5227,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     },
@@ -5739,7 +5263,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 1470,
+      "elapsed_ms": 43,
       "facts": {
         "titles": [],
         "descriptions": [],
@@ -5759,29 +5283,21 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": [
+          "title",
+          "meta description",
+          "meta robots",
+          "viewport",
+          "canonical",
+          "hreflang"
+        ]
       },
       "ignored": null,
       "issues": [
         [
-          "canonical_missing",
-          "no <link rel=canonical> and no Link header"
-        ],
-        [
-          "title_missing",
-          "no <title> in <head>"
-        ],
-        [
-          "description_missing",
-          "no meta description"
-        ],
-        [
-          "hreflang_missing",
-          "no <link rel=alternate hreflang> in <head>"
-        ],
-        [
-          "viewport_missing",
-          "no meta viewport"
+          "head_closed_early",
+          "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
         ]
       ]
     }

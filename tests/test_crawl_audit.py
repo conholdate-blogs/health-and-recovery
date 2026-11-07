@@ -311,3 +311,24 @@ def test_locations_show_listing_sitemap_and_canonical_target():
     assert target["url"] == "https://app.example.com/conversion" and target["note"] == "HTTP 404"
     assert report["canonical_targets"] == {"https://app.example.com/conversion": "HTTP 404"}
     assert "(HTTP 404)" in f["evidence"]["observed"]
+
+
+def test_head_closed_early_by_a_div_is_one_finding_not_missing_tags():
+    """blog.aspose.com, 3 Nov 2026: a language-switcher <div> written first into <head> ends it; the title,
+    canonical and hreflang after it land in <body>. One head_closed_early, not title/canonical missing. A <title>
+    inside an inline SVG is fine."""
+    url = "https://h.example/de/pdf/merge"
+    page = ("<!doctype html><html lang=de><head><meta charset=utf-8><div id=locale>DE</div>"
+            f"<title>Merge PDF online</title><link rel=canonical href='{url}'>"
+            f"<link rel=alternate hreflang=de href='{url}'></head><body><h1>Merge</h1></body></html>")
+    facts = parse_page(page, url)
+    assert facts.body_head_tags == ["title", "canonical", "hreflang"]
+    got = dict(page_issues(rec(url), facts, localized=True))
+    assert "canonical" in got["head_closed_early"]
+    assert not {"title_missing", "canonical_missing", "description_missing", "hreflang_missing",
+                "viewport_missing"} & set(got)  # head checks skipped
+    assert "h1_missing" not in got and "no_structured_data" in got  # body checks still run
+    no_h1 = parse_page(page.replace("<h1>Merge</h1>", ""), url)
+    assert "h1_missing" in dict(page_issues(rec(url), no_h1, localized=True))
+    svg = parse_page(html(canonical=url).replace(b"<h1>", b"<svg><title>icon</title></svg><h1>"), url)
+    assert svg.body_head_tags == []

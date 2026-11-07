@@ -1,0 +1,24 @@
+[
+ {
+  "host": "blog.aspose.com",
+  "found": "2026-11-03",
+  "issue": "Redirects.json invalid since c099f6e (2 Nov): 39 of 40 sampled old URLs returned 404 instead of redirecting",
+  "check": "redirect_file_invalid",
+  "repo": "Aspose/aspose-blog",
+  "commits": ["a0f21c61f2df40595b65acbd5550994b18ad078b", "11ea88fe469278f3c432cf8c6f04e1115630cd2d"],
+  "fixed": "2026-11-03",
+  "verified": "2026-11-03",
+  "result": "40 of 40 sampled redirects work again (301 to their targets) within minutes; no deploy needed"
+ },
+ {
+  "host": "blog.aspose.com",
+  "found": "2026-11-07",
+  "issue": "<head> ends early since 241f3d2239 (3 Nov): on translated pages title, canonical, all hreflang, robots and JSON-LD landed in <body>, where Google ignores canonical and hreflang",
+  "check": "head_closed_early",
+  "repo": "Aspose/aspose-blog",
+  "commits": ["b76c2369eb54a0b5bce1483dfb75e45e58a176f1"],
+  "fixed": "2026-11-07",
+  "verified": null,
+  "result": "Verified in a Hugo 0.120 build: every tag back in <head>; live with the next production deploy (scheduled Mon 9 Nov 08:00 PKT)"
+ }
+]

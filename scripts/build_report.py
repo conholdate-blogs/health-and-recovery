@@ -599,6 +599,10 @@ def prepare(args: argparse.Namespace) -> tuple[dict, list[str], str | None, str,
         report["_links"] = link_summary(link_src)
     if repo_runs := repo_summary(folder):
         report["_repo"] = repo_runs
+    # fixes the agent made on a site repo, with SK's approval (reports/<tenant>/agent-fixes.json; SK, 2026-11-07:
+    # the report shows that the Health & Recovery Agent found and fixed them)
+    if (fixes := folder / "agent-fixes.json").is_file():
+        report["_agent_fixes"] = json.loads(fixes.read_text(encoding="utf-8"))
     if args.findings:
         rows = json.loads(Path(args.findings).read_text(encoding="utf-8"))
         all_rows = rows

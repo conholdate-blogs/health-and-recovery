@@ -111,7 +111,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run10",
+    "last_seen_run": "crawl-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "content_needs_js",
@@ -3172,124 +3172,6 @@
     "resolved_run": "repo-audit-run9",
     "resolved_at": "2026-11-03T17:27:28+00:00",
     "check": "redirect_not_working",
-    "notes": []
-  },
-  {
-    "id": "crawl-0011",
-    "key": "crawl/canonical_missing/blog.aspose.com/page",
-    "source": "crawl-audit",
-    "tenant": "aspose.com",
-    "subdomain": "blog.aspose.com",
-    "template": "page",
-    "dimension": "crawl",
-    "type": "improvable",
-    "title": "Pages have no canonical tag",
-    "evidence": {
-      "urls": [
-        "https://blog.aspose.com/",
-        "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-        "https://blog.aspose.com/pt/",
-        "https://blog.aspose.com/archives/",
-        "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-        "https://blog.aspose.com/fa/",
-        "https://blog.aspose.com/zh/archives/",
-        "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
-        "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
-        "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
-      ],
-      "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no <link rel=canonical> and no Link header; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no <link rel=canonical> and no Link header; https://blog.aspose.com/pt/: no <link rel=canonical> and no Link header; https://blog.aspose.com/archives/: no <link rel=canonical> and no Link header; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no <link rel=canonical> and no Link header",
-      "expected": "a self-referencing absolute canonical",
-      "locations": [
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/",
-          "note": "no <link rel=canonical> and no Link header"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-          "note": "no <link rel=canonical> and no Link header"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/pt/",
-          "note": "no <link rel=canonical> and no Link header"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/archives/",
-          "note": "no <link rel=canonical> and no Link header"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-          "note": "no <link rel=canonical> and no Link header"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.aspose.com/en/sitemap.xml"
-        },
-        {
-          "role": "sitemap index",
-          "url": "https://blog.aspose.com/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.aspose.com/pt/sitemap.xml"
-        }
-      ],
-      "sample": {
-        "generic:/{section}/*/*": [
-          1,
-          10
-        ],
-        "home": [
-          3,
-          3
-        ],
-        "listing": [
-          2,
-          4
-        ],
-        "post": [
-          11,
-          22
-        ]
-      }
-    },
-    "affected_pages": 28803,
-    "impact": {
-      "clicks_28d": 8743,
-      "impressions_28d": 508749,
-      "source": "gsc-template",
-      "share": null,
-      "past_clicks": 20652,
-      "past_impressions": 833205,
-      "lost_clicks": 11909,
-      "lost_impressions": 324456,
-      "past_window": [
-        "2026-04-09",
-        "2026-05-06"
-      ],
-      "scored_on": "at stake",
-      "score": 17,
-      "window": [
-        "2026-10-08",
-        "2026-11-04"
-      ]
-    },
-    "effort": "S",
-    "fix_tier": 2,
-    "fix_channel": "git-pr",
-    "status": "open",
-    "verification": null,
-    "superseded_by": null,
-    "detected_at": "2026-11-06",
-    "first_seen_run": "crawl-audit-run10",
-    "last_seen_run": "crawl-audit-run10",
-    "resolved_run": null,
-    "resolved_at": null,
-    "check": "canonical_missing",
     "notes": []
   },
   {
@@ -14401,6 +14283,124 @@
     "notes": []
   },
   {
+    "id": "crawl-0013",
+    "key": "crawl/head_closed_early/blog.aspose.com/page",
+    "source": "crawl-audit",
+    "tenant": "aspose.com",
+    "subdomain": "blog.aspose.com",
+    "template": "page",
+    "dimension": "crawl",
+    "type": "broken",
+    "title": "<head> ends early: title, canonical and hreflang land in <body>",
+    "evidence": {
+      "urls": [
+        "https://blog.aspose.com/",
+        "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+        "https://blog.aspose.com/pt/",
+        "https://blog.aspose.com/archives/",
+        "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+        "https://blog.aspose.com/fa/",
+        "https://blog.aspose.com/zh/archives/",
+        "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
+        "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
+        "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
+      ],
+      "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: in <body>: title, meta description, meta robots, viewport, canonical, hreflang; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: in <body>: title, meta description, meta robots, viewport, canonical, hreflang; https://blog.aspose.com/pt/: in <body>: title, meta description, meta robots, viewport, canonical, hreflang; https://blog.aspose.com/archives/: in <body>: title, meta description, meta robots, viewport, canonical, hreflang; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: in <body>: title, meta description, meta robots, viewport, canonical, hreflang",
+      "expected": "every head tag inside <head>; no <div> or other body element before them",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.aspose.com/",
+          "note": "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+          "note": "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.aspose.com/pt/",
+          "note": "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.aspose.com/archives/",
+          "note": "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+          "note": "in <body>: title, meta description, meta robots, viewport, canonical, hreflang"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.aspose.com/en/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.aspose.com/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.aspose.com/pt/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "generic:/{section}/*/*": [
+          1,
+          10
+        ],
+        "home": [
+          3,
+          3
+        ],
+        "listing": [
+          2,
+          4
+        ],
+        "post": [
+          11,
+          22
+        ]
+      }
+    },
+    "affected_pages": 28803,
+    "impact": {
+      "clicks_28d": 8743,
+      "impressions_28d": 508749,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 20652,
+      "past_impressions": 833205,
+      "lost_clicks": 11909,
+      "lost_impressions": 324456,
+      "past_window": [
+        "2026-04-09",
+        "2026-05-06"
+      ],
+      "scored_on": "at stake",
+      "score": 83,
+      "window": [
+        "2026-10-08",
+        "2026-11-04"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-07",
+    "first_seen_run": "crawl-audit-run16",
+    "last_seen_run": "crawl-audit-run17",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "head_closed_early",
+    "notes": []
+  },
+  {
     "id": "intl-0001",
     "key": "intl/hreflang_no_xdefault/blog.aspose.com/page",
     "source": "crawl-audit",
@@ -14516,7 +14516,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run10",
+    "last_seen_run": "crawl-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "hreflang_no_xdefault",
@@ -18528,124 +18528,6 @@
     "notes": []
   },
   {
-    "id": "intl-0007",
-    "key": "intl/hreflang_missing/blog.aspose.com/page",
-    "source": "crawl-audit",
-    "tenant": "aspose.com",
-    "subdomain": "blog.aspose.com",
-    "template": "page",
-    "dimension": "intl",
-    "type": "not_optimized",
-    "title": "Localized pages have no hreflang tags in page HTML",
-    "evidence": {
-      "urls": [
-        "https://blog.aspose.com/",
-        "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-        "https://blog.aspose.com/pt/",
-        "https://blog.aspose.com/archives/",
-        "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-        "https://blog.aspose.com/fa/",
-        "https://blog.aspose.com/zh/archives/",
-        "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
-        "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
-        "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
-      ],
-      "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/pt/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/archives/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no <link rel=alternate hreflang> in <head>",
-      "expected": "hreflang alternates for every language version, incl. a self-reference and x-default",
-      "locations": [
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/",
-          "note": "no <link rel=alternate hreflang> in <head>"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-          "note": "no <link rel=alternate hreflang> in <head>"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/pt/",
-          "note": "no <link rel=alternate hreflang> in <head>"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/archives/",
-          "note": "no <link rel=alternate hreflang> in <head>"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-          "note": "no <link rel=alternate hreflang> in <head>"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.aspose.com/en/sitemap.xml"
-        },
-        {
-          "role": "sitemap index",
-          "url": "https://blog.aspose.com/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.aspose.com/pt/sitemap.xml"
-        }
-      ],
-      "sample": {
-        "generic:/{section}/*/*": [
-          1,
-          10
-        ],
-        "home": [
-          3,
-          3
-        ],
-        "listing": [
-          2,
-          4
-        ],
-        "post": [
-          11,
-          22
-        ]
-      }
-    },
-    "affected_pages": 28803,
-    "impact": {
-      "clicks_28d": 8743,
-      "impressions_28d": 508749,
-      "source": "gsc-template",
-      "share": null,
-      "past_clicks": 20652,
-      "past_impressions": 833205,
-      "lost_clicks": 11909,
-      "lost_impressions": 324456,
-      "past_window": [
-        "2026-04-09",
-        "2026-05-06"
-      ],
-      "scored_on": "at stake",
-      "score": 22,
-      "window": [
-        "2026-10-08",
-        "2026-11-04"
-      ]
-    },
-    "effort": "M",
-    "fix_tier": 2,
-    "fix_channel": "git-pr",
-    "status": "open",
-    "verification": null,
-    "superseded_by": null,
-    "detected_at": "2026-11-06",
-    "first_seen_run": "crawl-audit-run10",
-    "last_seen_run": "crawl-audit-run10",
-    "resolved_run": null,
-    "resolved_at": null,
-    "check": "hreflang_missing",
-    "notes": []
-  },
-  {
     "id": "onpage-0001",
     "key": "onpage/description_length/blog.aspose.com/page",
     "source": "crawl-audit",
@@ -18742,7 +18624,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run10",
+    "last_seen_run": "crawl-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -18835,7 +18717,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run10",
+    "last_seen_run": "crawl-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -18908,7 +18790,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run10",
+    "last_seen_run": "crawl-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_multiple",
@@ -19015,7 +18897,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run10",
+    "last_seen_run": "crawl-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -19176,360 +19058,6 @@
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_typo",
-    "notes": []
-  },
-  {
-    "id": "onpage-0007",
-    "key": "onpage/description_missing/blog.aspose.com/page",
-    "source": "crawl-audit",
-    "tenant": "aspose.com",
-    "subdomain": "blog.aspose.com",
-    "template": "page",
-    "dimension": "onpage",
-    "type": "improvable",
-    "title": "Pages have no meta description",
-    "evidence": {
-      "urls": [
-        "https://blog.aspose.com/",
-        "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-        "https://blog.aspose.com/pt/",
-        "https://blog.aspose.com/archives/",
-        "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-        "https://blog.aspose.com/fa/",
-        "https://blog.aspose.com/zh/archives/",
-        "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
-        "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
-        "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
-      ],
-      "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no meta description; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no meta description; https://blog.aspose.com/pt/: no meta description; https://blog.aspose.com/archives/: no meta description; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no meta description",
-      "expected": "a unique meta description",
-      "locations": [
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/",
-          "note": "no meta description"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-          "note": "no meta description"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/pt/",
-          "note": "no meta description"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/archives/",
-          "note": "no meta description"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-          "note": "no meta description"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.aspose.com/en/sitemap.xml"
-        },
-        {
-          "role": "sitemap index",
-          "url": "https://blog.aspose.com/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.aspose.com/pt/sitemap.xml"
-        }
-      ],
-      "sample": {
-        "generic:/{section}/*/*": [
-          1,
-          10
-        ],
-        "home": [
-          3,
-          3
-        ],
-        "listing": [
-          2,
-          4
-        ],
-        "post": [
-          11,
-          22
-        ]
-      }
-    },
-    "affected_pages": 28803,
-    "impact": {
-      "clicks_28d": 8743,
-      "impressions_28d": 508749,
-      "source": "gsc-template",
-      "share": null,
-      "past_clicks": 20652,
-      "past_impressions": 833205,
-      "lost_clicks": 11909,
-      "lost_impressions": 324456,
-      "past_window": [
-        "2026-04-09",
-        "2026-05-06"
-      ],
-      "scored_on": "at stake",
-      "score": 17,
-      "window": [
-        "2026-10-08",
-        "2026-11-04"
-      ]
-    },
-    "effort": "S",
-    "fix_tier": 1,
-    "fix_channel": "git-pr",
-    "status": "open",
-    "verification": null,
-    "superseded_by": null,
-    "detected_at": "2026-11-06",
-    "first_seen_run": "crawl-audit-run10",
-    "last_seen_run": "crawl-audit-run10",
-    "resolved_run": null,
-    "resolved_at": null,
-    "check": "description_missing",
-    "notes": []
-  },
-  {
-    "id": "onpage-0008",
-    "key": "onpage/title_missing/blog.aspose.com/page",
-    "source": "crawl-audit",
-    "tenant": "aspose.com",
-    "subdomain": "blog.aspose.com",
-    "template": "page",
-    "dimension": "onpage",
-    "type": "broken",
-    "title": "Pages have no <title>",
-    "evidence": {
-      "urls": [
-        "https://blog.aspose.com/",
-        "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-        "https://blog.aspose.com/pt/",
-        "https://blog.aspose.com/archives/",
-        "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-        "https://blog.aspose.com/fa/",
-        "https://blog.aspose.com/zh/archives/",
-        "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
-        "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
-        "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
-      ],
-      "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no <title> in <head>; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no <title> in <head>; https://blog.aspose.com/pt/: no <title> in <head>; https://blog.aspose.com/archives/: no <title> in <head>; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no <title> in <head>",
-      "expected": "a unique, descriptive title",
-      "locations": [
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/",
-          "note": "no <title> in <head>"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-          "note": "no <title> in <head>"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/pt/",
-          "note": "no <title> in <head>"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/archives/",
-          "note": "no <title> in <head>"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-          "note": "no <title> in <head>"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.aspose.com/en/sitemap.xml"
-        },
-        {
-          "role": "sitemap index",
-          "url": "https://blog.aspose.com/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.aspose.com/pt/sitemap.xml"
-        }
-      ],
-      "sample": {
-        "generic:/{section}/*/*": [
-          1,
-          10
-        ],
-        "home": [
-          3,
-          3
-        ],
-        "listing": [
-          2,
-          4
-        ],
-        "post": [
-          11,
-          22
-        ]
-      }
-    },
-    "affected_pages": 28803,
-    "impact": {
-      "clicks_28d": 8743,
-      "impressions_28d": 508749,
-      "source": "gsc-template",
-      "share": null,
-      "past_clicks": 20652,
-      "past_impressions": 833205,
-      "lost_clicks": 11909,
-      "lost_impressions": 324456,
-      "past_window": [
-        "2026-04-09",
-        "2026-05-06"
-      ],
-      "scored_on": "at stake",
-      "score": 83,
-      "window": [
-        "2026-10-08",
-        "2026-11-04"
-      ]
-    },
-    "effort": "S",
-    "fix_tier": 1,
-    "fix_channel": "git-pr",
-    "status": "open",
-    "verification": null,
-    "superseded_by": null,
-    "detected_at": "2026-11-06",
-    "first_seen_run": "crawl-audit-run10",
-    "last_seen_run": "crawl-audit-run10",
-    "resolved_run": null,
-    "resolved_at": null,
-    "check": "title_missing",
-    "notes": []
-  },
-  {
-    "id": "ux-0001",
-    "key": "ux/viewport_missing/blog.aspose.com/page",
-    "source": "crawl-audit",
-    "tenant": "aspose.com",
-    "subdomain": "blog.aspose.com",
-    "template": "page",
-    "dimension": "ux",
-    "type": "not_optimized",
-    "title": "Pages have no meta viewport",
-    "evidence": {
-      "urls": [
-        "https://blog.aspose.com/",
-        "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-        "https://blog.aspose.com/pt/",
-        "https://blog.aspose.com/archives/",
-        "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-        "https://blog.aspose.com/fa/",
-        "https://blog.aspose.com/zh/archives/",
-        "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
-        "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
-        "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
-      ],
-      "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no meta viewport; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no meta viewport; https://blog.aspose.com/pt/: no meta viewport; https://blog.aspose.com/archives/: no meta viewport; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no meta viewport",
-      "expected": "<meta name=viewport content='width=device-width, initial-scale=1'>",
-      "locations": [
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/",
-          "note": "no meta viewport"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
-          "note": "no meta viewport"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/pt/",
-          "note": "no meta viewport"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/archives/",
-          "note": "no meta viewport"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
-          "note": "no meta viewport"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.aspose.com/en/sitemap.xml"
-        },
-        {
-          "role": "sitemap index",
-          "url": "https://blog.aspose.com/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.aspose.com/pt/sitemap.xml"
-        }
-      ],
-      "sample": {
-        "generic:/{section}/*/*": [
-          1,
-          10
-        ],
-        "home": [
-          3,
-          3
-        ],
-        "listing": [
-          2,
-          4
-        ],
-        "post": [
-          11,
-          22
-        ]
-      }
-    },
-    "affected_pages": 28803,
-    "impact": {
-      "clicks_28d": 8743,
-      "impressions_28d": 508749,
-      "source": "gsc-template",
-      "share": null,
-      "past_clicks": 20652,
-      "past_impressions": 833205,
-      "lost_clicks": 11909,
-      "lost_impressions": 324456,
-      "past_window": [
-        "2026-04-09",
-        "2026-05-06"
-      ],
-      "scored_on": "at stake",
-      "score": 33,
-      "window": [
-        "2026-10-08",
-        "2026-11-04"
-      ]
-    },
-    "effort": "S",
-    "fix_tier": 1,
-    "fix_channel": "git-pr",
-    "status": "open",
-    "verification": null,
-    "superseded_by": null,
-    "detected_at": "2026-11-06",
-    "first_seen_run": "crawl-audit-run10",
-    "last_seen_run": "crawl-audit-run10",
-    "resolved_run": null,
-    "resolved_at": null,
-    "check": "viewport_missing",
     "notes": []
   }
 ]

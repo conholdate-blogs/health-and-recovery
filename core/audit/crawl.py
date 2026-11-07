@@ -58,6 +58,8 @@ CHECKS = {
                            "exactly one canonical", 2, "S"),
     "canonical_elsewhere": ("crawl", "incorrect", "Sitemap URLs canonicalize to a different URL",
                             "sitemaps list the canonical URL; canonical points to the page itself", 2, "S"),
+    "head_closed_early": ("crawl", "broken", "<head> ends early: title, canonical and hreflang land in <body>",
+                          "every head tag inside <head>; no <div> or other body element before them", 1, "S"),
     "title_missing": ("onpage", "broken", "Pages have no <title>", "a unique, descriptive title", 1, "S"),
     "title_multiple": ("onpage", "incorrect", "Pages have more than one <title>", "one <title> in <head>", 1, "S"),
     "title_length": ("onpage", "improvable", "Titles are too long or too short",
@@ -154,18 +156,27 @@ def page_issues(rec: dict, facts, localized: bool) -> list[tuple[str, str]]:
         if listed:
             issues.append(("meta_refresh", f"meta refresh to {target}"))
         return issues  # a redirect stub's own tags say nothing about the template
-    if facts.noindex:
+    # <head> ended early: one root cause. The head checks (title, description, robots, canonical, hreflang,
+    # viewport) would fire falsely, so they are skipped on this page; body checks (H1, text, JSON-LD) still run.
+    head = not facts.body_head_tags
+    if not head:
+        issues.append(("head_closed_early", "in <body>: " + ", ".join(facts.body_head_tags)))
+    if head and facts.noindex:
         issues.append(("noindex", f"robots: {'; '.join(facts.robots)}"))
     here = norm_url(rec["final_url"] or rec["url"])
     canon = list(dict.fromkeys(norm_url(c) for c in facts.canonicals))
-    if not canon:
+    if not head:
+        pass
+    elif not canon:
         issues.append(("canonical_missing", "no <link rel=canonical> and no Link header"))
     elif len(canon) > 1:
         issues.append(("canonical_multiple", ", ".join(canon[:3])))
     elif canon[0] != here and not facts.noindex:
         issues.append(("canonical_elsewhere", f"canonical {canon[0]}"))
 
-    if not facts.titles:
+    if not head:
+        pass
+    elif not facts.titles:
         issues.append(("title_missing", "no <title> in <head>"))
     else:
         if len(facts.titles) > 1:
@@ -173,7 +184,9 @@ def page_issues(rec: dict, facts, localized: bool) -> list[tuple[str, str]]:
         if not TITLE_LEN[0] <= display_len(title) <= TITLE_LEN[1]:
             issues.append(("title_length", f"width {display_len(title)}: '{title[:90]}'"))
     desc = facts.descriptions[0] if facts.descriptions else ""
-    if not desc:
+    if not head:
+        pass
+    elif not desc:
         issues.append(("description_missing", "no meta description" if not facts.descriptions else "empty"))
     elif not DESCRIPTION_LEN[0] <= display_len(desc) <= DESCRIPTION_LEN[1]:
         issues.append(("description_length", f"width {display_len(desc)}: '{desc[:90]}'"))
@@ -206,7 +219,7 @@ def page_issues(rec: dict, facts, localized: bool) -> list[tuple[str, str]]:
     if facts.hreflang:
         if not any(c.lower() == "x-default" for c in codes):
             issues.append(("hreflang_no_xdefault", f"{len(codes)} entries: {', '.join(codes[:6])}"))
-    elif localized and not facts.noindex:
+    elif head and localized and not facts.noindex:
         issues.append(("hreflang_missing", "no <link rel=alternate hreflang> in <head>"))
 
     if not facts.html_lang:
@@ -214,7 +227,9 @@ def page_issues(rec: dict, facts, localized: bool) -> list[tuple[str, str]]:
     elif rec["lang"] and facts.html_lang.lower().split("-")[0] != rec["lang"].split("-")[0]:
         issues.append(("html_lang_mismatch", f"URL language {rec['lang']}, <html lang='{facts.html_lang}'>"))
 
-    if facts.viewport is None:
+    if not head:
+        pass
+    elif facts.viewport is None:
         issues.append(("viewport_missing", "no meta viewport"))
     elif NO_ZOOM_RE.search(facts.viewport):
         issues.append(("viewport_no_zoom", facts.viewport))

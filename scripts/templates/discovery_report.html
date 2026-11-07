@@ -245,6 +245,7 @@ button.area:focus-visible { outline: 2px solid var(--accent); outline-offset: 2p
 .kpi svg { display: block; width: 100%; height: 28px }
 .age.old { color: var(--incorrect); font-weight: 600 }
 table.acts td { white-space: normal } table.acts td.n { white-space: nowrap }
+#agent-fixes td { white-space: normal; vertical-align: top } #agent-fixes td:first-child { white-space: nowrap }
 table.acts a { color: var(--fg); text-decoration-color: var(--line); text-underline-offset: 2px } table.acts a:hover { color: var(--accent) }
 /* domain page: one full-width row per subdomain; the same columns in every row so subdomains compare at a glance.
    Every cell carries its own small label, so on a phone a row stacks into a block that still reads on its own. */
@@ -1436,6 +1437,14 @@ __METHOD__
     const gone = CH.resolved || [];
     if (gone.length) progress.push(`<p><b>Resolved since the last run:</b> ${gone.map(r => esc(GUIDE[r.check] ? GUIDE[r.check].name : r.title) + (HOSTS.length > 1 ? ` <span class="dim">(${esc(r.subdomain)})</span>` : "")).join(", ")}</p>`);
     if (FAM_MOVES) progress.push(`<p>${FAM_MOVES}</p>`);
+    // fixes the agent made on the site's repo (SK approves each one), first in Fix progress (SK, 2026-11-07)
+    const AF = (R._agent_fixes || []).filter(x => HOSTS.some(h => h.host === x.host)).sort((a, b) => b.found.localeCompare(a.found));
+    if (AF.length) {
+      const commitLinks = x => x.commits.map(c => `<a class="mono" href="https://github.com/${esc(x.repo)}/commit/${esc(c)}">${esc(c.slice(0, 8))}</a>`).join(" ");
+      const status = x => x.verified ? `<span class="up">✓ verified live ${esc(day(x.verified))}</span>` : `<span style="color:var(--warn, #a16207)">pushed ${esc(day(x.fixed))}, waiting for deploy</span>`;
+      progress.unshift(`<h3 style="margin:0 0 6px">Fixed by Health &amp; Recovery Agent</h3>
+        <div class="tablewrap" id="agent-fixes"><table><thead><tr><th>Found</th><th>Issue</th><th>Fix</th><th>Status</th></tr></thead><tbody>${AF.map(x => `<tr><td>${esc(day(x.found))}</td><td>${GUIDE[x.check] ? `<a href="${gHref(x.check)}" data-guide="${esc(x.check)}">${esc(GUIDE[x.check].name)}</a><br>` : ""}<span class="dim">${esc(x.issue)}</span></td><td>${commitLinks(x)}<br><span class="dim">${esc(x.repo)}</span></td><td>${status(x)}<br><span class="dim">${esc(x.result)}</span></td></tr>`).join("")}</tbody></table></div>`);
+    }
     $("chg-body").innerHTML = progress.join("");
     if (!progress.length) { $("changes").hidden = true; document.querySelector('.toc a[href="#changes"]').hidden = true; }
 

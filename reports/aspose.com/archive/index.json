@@ -28,5 +28,11 @@
     "date": "2026-11-06 (2)",
     "label": "History table added",
     "runs": "discovery run 2, crawl audit run 1, speed audit run 3, AI audit run 2, text check run 4, link check run 6, repo file check run 9"
+  },
+  {
+    "file": "2026-11-07.html",
+    "date": "2026-11-07",
+    "label": "Full scan 7 Nov, head ends early found and fixed by the agent, old URLs counted apart, score method 3",
+    "runs": "discovery run 3, crawl audit run 17, speed audit run 12, AI audit run 11, text check run 13, link check run 14, repo file check run 15"
   }
 ]
