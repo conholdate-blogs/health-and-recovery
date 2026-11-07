@@ -154,5 +154,11 @@
     "date": "2026-11-07",
     "label": "Full scan 7 Nov, old URLs counted apart, score method 3",
     "runs": "discovery run 4, crawl audit run 10, speed audit run 12, AI audit run 11, text check run 13, link check run 14, repo file check run 15"
+  },
+  {
+    "file": "2026-11-07-2.html",
+    "date": "2026-11-07 (2)",
+    "label": "Site structure panel (tags, listing pages)",
+    "runs": "discovery run 4, crawl audit run 10, speed audit run 12, AI audit run 11, text check run 13, link check run 14, repo file check run 15"
   }
 ]
