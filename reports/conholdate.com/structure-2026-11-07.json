@@ -1,0 +1,81 @@
+{
+ "tenant": "conholdate.com",
+ "date": "2026-11-07",
+ "search_window": [
+  "2026-10-07",
+  "2026-11-03"
+ ],
+ "hosts": {
+  "blog.conholdate.com": {
+   "paginate": 10,
+   "posts": 559,
+   "posts_all_languages": 10062,
+   "languages": 18,
+   "tags": 2526,
+   "tags_one_post": 2341,
+   "tags_two_or_less": 2498,
+   "tags_per_post": 5.0,
+   "tag_pages_all_languages": 43602,
+   "top_tags": [
+    [
+     "file conversion api",
+     44
+    ],
+    [
+     "file conversion library",
+     19
+    ],
+    [
+     "file manipulation library",
+     10
+    ],
+    [
+     "node.js excel library",
+     8
+    ],
+    [
+     "java excel library",
+     6
+    ],
+    [
+     "java pdf library",
+     5
+    ],
+    [
+     "file manipulation api",
+     5
+    ],
+    [
+     "free image converter",
+     4
+    ],
+    [
+     "java image converter api",
+     4
+    ],
+    [
+     "pdf to png",
+     4
+    ]
+   ],
+   "categories": 1,
+   "listing_pages": 45708,
+   "tag_listing_pages": 43692,
+   "pages_beyond_cap": 216,
+   "cap": 50,
+   "discovery_run": 2,
+   "sitemap_urls": 53700,
+   "sitemap_tag_urls": 43584,
+   "search": {
+    "clicks": 2906,
+    "tag_clicks": 45,
+    "tag_impressions": 4432,
+    "tag_pages_with_clicks": 27,
+    "paged_clicks": 0,
+    "paged_impressions": 3,
+    "paged_pages_seen": 2,
+    "deep_paged_clicks": 0
+   }
+  }
+ }
+}

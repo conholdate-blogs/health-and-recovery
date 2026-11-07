@@ -1,0 +1,77 @@
+{
+ "tenant": "conholdate.cloud",
+ "date": "2026-11-07",
+ "search_window": [
+  "2026-10-07",
+  "2026-11-03"
+ ],
+ "hosts": {
+  "blog.conholdate.cloud": {
+   "paginate": 10,
+   "posts": 5,
+   "posts_all_languages": 93,
+   "languages": 23,
+   "tags": 27,
+   "tags_one_post": 27,
+   "tags_two_or_less": 27,
+   "tags_per_post": 5.4,
+   "tag_pages_all_languages": 555,
+   "top_tags": [
+    [
+     "combine multiple pdfs in java",
+     1
+    ],
+    [
+     "merge pdf documents using java",
+     1
+    ],
+    [
+     "merge pdf documents using java cloud api",
+     1
+    ],
+    [
+     "convert xls",
+     1
+    ],
+    [
+     "manipulate excel files",
+     1
+    ],
+    [
+     "manipulate xlsx",
+     1
+    ],
+    [
+     "merge worksheets",
+     1
+    ],
+    [
+     "split excel worksheets",
+     1
+    ],
+    [
+     "add header footer in pdf",
+     1
+    ],
+    [
+     "header footer in pdf",
+     1
+    ]
+   ],
+   "categories": 2,
+   "listing_pages": 602,
+   "tag_listing_pages": 555,
+   "pages_beyond_cap": 0,
+   "cap": 50,
+   "discovery_run": 4,
+   "sitemap_urls": 186,
+   "sitemap_tag_urls": 0,
+   "search": {
+    "clicks": 2,
+    "tag_clicks": 0,
+    "tag_impressions": 20,
+    "tag_pages_with_clicks": 0
+   }
+  }
+ }
+}

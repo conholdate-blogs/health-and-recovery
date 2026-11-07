@@ -1,0 +1,117 @@
+"""Site structure of a Hugo blog, read from its source repo (read-only): posts per language, tags and categories,
+and how many listing pages Hugo builds from them (home, each category and each tag, per language, `paginate` posts
+a page). SK, 2026-11-07: most tags hold one or two posts, and every tag is a page in every language, so the tag
+pages dwarf the posts; these numbers show it per blog and give the tag clean-up its before/after.
+
+Search numbers (clicks on tag pages and on paginated /page/N/ listings) and sitemap counts are added by the script
+from the traffic cache and the discovery inventory.
+"""
+
+from __future__ import annotations
+
+import re
+from collections import Counter, defaultdict
+from pathlib import Path
+
+import yaml
+
+_FM = re.compile(r"\A---[ \t]*\n(.*?)\n---[ \t]*(?:\n|\Z)", re.S)
+_NAME = re.compile(r"^index(?:\.([A-Za-z]{2,3}(?:-[A-Za-z]+)?))?\.md$")
+_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+_PAGINATE = re.compile(r"^paginate:\s*(\d+)\s*$", re.M)
+TAG_PATH = re.compile(r"^/(?:[a-z]{2}(?:-[a-z]+)?/)?tags?/[^/]+/")
+PAGED_PATH = re.compile(r"/(?:page|p)/(\d+)/?$")
+DEEP_PAGE = 50  # SK's proposed cap on paginated listing pages
+TOP_TAGS = 10
+
+
+def paginate_of(repo: Path, default: int = 10) -> int:
+    """`paginate` from the repo's config.yml (Hugo's default 10)."""
+    cfg = repo / "config.yml"
+    m = _PAGINATE.search(cfg.read_text(encoding="utf-8", errors="ignore")) if cfg.is_file() else None
+    return int(m.group(1)) if m else default
+
+
+def _terms(value) -> list[str]:
+    if not value:
+        return []
+    items = [value] if isinstance(value, str) else value if isinstance(value, list) else []
+    return sorted({str(v).strip().lower() for v in items if str(v).strip()})
+
+
+def scan(repo: Path, default_lang: str = "en", paginate: int | None = None) -> dict:
+    """Tags, categories and listing pages of one blog repo."""
+    paginate = paginate or paginate_of(repo)
+    posts = Counter()
+    tags: dict[str, Counter] = defaultdict(Counter)
+    cats: dict[str, Counter] = defaultdict(Counter)
+    tags_per_post: list[int] = []
+    for f in repo.glob("content/**/index*.md"):
+        m = _NAME.match(f.name)
+        if not m:
+            continue
+        text = f.read_text(encoding="utf-8", errors="ignore").replace("\r\n", "\n").replace("\r", "\n")
+        fm = _FM.match(text)
+        if not fm:
+            continue
+        try:
+            meta = yaml.load(fm.group(1), Loader=_LOADER) or {}
+        except yaml.YAMLError:
+            continue
+        if not isinstance(meta, dict) or meta.get("draft") is True:
+            continue
+        lang = m.group(1) or default_lang
+        posts[lang] += 1
+        post_tags = _terms(meta.get("tags"))
+        tags[lang].update(post_tags)
+        cats[lang].update(_terms(meta.get("categories")))
+        if lang == default_lang:
+            tags_per_post.append(len(post_tags))
+
+    def pages(n: int) -> int:
+        return max(1, -(-n // paginate))
+
+    listing = tag_listing = deep = 0
+    for lang, n in posts.items():
+        for count, is_tag in [(n, False)] + [(c, False) for c in cats[lang].values()] + \
+                [(c, True) for c in tags[lang].values()]:
+            p = pages(count)
+            listing += p
+            tag_listing += p if is_tag else 0
+            deep += max(0, p - DEEP_PAGE)
+    own = tags[default_lang]
+    return {
+        "paginate": paginate,
+        "posts": posts[default_lang], "posts_all_languages": sum(posts.values()), "languages": len(posts),
+        "tags": len(own),
+        "tags_one_post": sum(1 for c in own.values() if c == 1),
+        "tags_two_or_less": sum(1 for c in own.values() if c <= 2),
+        "tags_per_post": round(sum(tags_per_post) / len(tags_per_post), 1) if tags_per_post else 0,
+        "tag_pages_all_languages": sum(len(t) for t in tags.values()),
+        "top_tags": own.most_common(TOP_TAGS),
+        "categories": len(cats[default_lang]),
+        "listing_pages": listing, "tag_listing_pages": tag_listing, "pages_beyond_cap": deep, "cap": DEEP_PAGE,
+    }
+
+
+def search_numbers(gsc_rows: list[dict], host: str) -> dict:
+    """Clicks and impressions (28 days) on tag pages and on paginated listing pages of one host."""
+    out = Counter()
+    for r in gsc_rows:
+        url = r.get("page") or ""
+        if f"//{host}/" not in url:
+            continue
+        path = "/" + url.split(f"//{host}/", 1)[1]
+        clicks, impr = r.get("clicks", 0), r.get("impressions", 0)
+        out["clicks"] += clicks
+        if TAG_PATH.match(path):
+            out["tag_clicks"] += clicks
+            out["tag_impressions"] += impr
+            out["tag_pages_with_clicks"] += 1 if clicks else 0
+        m = PAGED_PATH.search(path)
+        if m:
+            out["paged_clicks"] += clicks
+            out["paged_impressions"] += impr
+            out["paged_pages_seen"] += 1
+            out["deep_paged_clicks"] += clicks if int(m.group(1)) > DEEP_PAGE else 0
+    return dict(out)

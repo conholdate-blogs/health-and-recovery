@@ -603,6 +603,11 @@ def prepare(args: argparse.Namespace) -> tuple[dict, list[str], str | None, str,
     # the report shows that the Health & Recovery Agent found and fixed them)
     if (fixes := folder / "agent-fixes.json").is_file():
         report["_agent_fixes"] = json.loads(fixes.read_text(encoding="utf-8"))
+    # site structure per blog (scripts/audit_structure.py; SK, 2026-11-07): tags, listing pages, tag pages in sitemaps
+    if structure := newest("structure-*.json", folder):
+        data = json.loads(structure.read_text(encoding="utf-8"))
+        report["_structure"] = {"date": data.get("date"), "search_window": data.get("search_window"),
+                                "hosts": data.get("hosts") or {}}
     if args.findings:
         rows = json.loads(Path(args.findings).read_text(encoding="utf-8"))
         all_rows = rows
@@ -705,6 +710,10 @@ def collection_report(name: str, slug: str, members: list[tuple[str, str]]) -> d
         R["findings"] += report["findings"]
         R["_hosts"].append(card)
         R["_host_trends"].update(report.get("_host_trends") or {})
+        if host in ((report.get("_structure") or {}).get("hosts") or {}):
+            S = R.setdefault("_structure", {"date": report["_structure"]["date"], "hosts": {}})
+            S["hosts"][host] = report["_structure"]["hosts"][host]
+            S["date"] = min(S["date"] or "", report["_structure"]["date"] or "") or S["date"]
         R["_guide"] = report["_guide"]
         R["_dates"] += [d for d in (run_date, *((report.get(k) or {}).get("date") for k in
                                                 ("_audit", "_perf", "_ai", "_text", "_links", "_repo"))) if d]

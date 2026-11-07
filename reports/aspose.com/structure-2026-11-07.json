@@ -1,0 +1,81 @@
+{
+ "tenant": "aspose.com",
+ "date": "2026-11-07",
+ "search_window": [
+  "2026-10-08",
+  "2026-11-04"
+ ],
+ "hosts": {
+  "blog.aspose.com": {
+   "paginate": 10,
+   "posts": 6442,
+   "posts_all_languages": 57739,
+   "languages": 22,
+   "tags": 17043,
+   "tags_one_post": 14281,
+   "tags_two_or_less": 16051,
+   "tags_per_post": 3.8,
+   "tag_pages_all_languages": 299114,
+   "top_tags": [
+    [
+     "product release",
+     213
+    ],
+    [
+     "dotnet",
+     160
+    ],
+    [
+     "nayyer shahbaz",
+     151
+    ],
+    [
+     "customer newsletters",
+     124
+    ],
+    [
+     "imran.rafique",
+     123
+    ],
+    [
+     "java",
+     109
+    ],
+    [
+     "developer community support",
+     99
+    ],
+    [
+     "aspose.words",
+     87
+    ],
+    [
+     "news release",
+     84
+    ],
+    [
+     "roman korchagin",
+     78
+    ]
+   ],
+   "categories": 29,
+   "listing_pages": 311738,
+   "tag_listing_pages": 299806,
+   "pages_beyond_cap": 4782,
+   "cap": 50,
+   "discovery_run": 3,
+   "sitemap_urls": 57872,
+   "sitemap_tag_urls": 0,
+   "search": {
+    "clicks": 17886,
+    "tag_clicks": 409,
+    "tag_impressions": 27120,
+    "tag_pages_with_clicks": 197,
+    "paged_clicks": 0,
+    "paged_impressions": 238,
+    "paged_pages_seen": 114,
+    "deep_paged_clicks": 0
+   }
+  }
+ }
+}

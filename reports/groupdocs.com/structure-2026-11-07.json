@@ -1,0 +1,81 @@
+{
+ "tenant": "groupdocs.com",
+ "date": "2026-11-07",
+ "search_window": [
+  "2026-10-08",
+  "2026-11-04"
+ ],
+ "hosts": {
+  "blog.groupdocs.com": {
+   "paginate": 10,
+   "posts": 1249,
+   "posts_all_languages": 12650,
+   "languages": 22,
+   "tags": 2261,
+   "tags_one_post": 1518,
+   "tags_two_or_less": 1873,
+   "tags_per_post": 4.6,
+   "tag_pages_all_languages": 37158,
+   "top_tags": [
+    [
+     "zarchive",
+     150
+    ],
+    [
+     ".net",
+     121
+    ],
+    [
+     "release",
+     71
+    ],
+    [
+     "mcp",
+     53
+    ],
+    [
+     "model context protocol",
+     53
+    ],
+    [
+     "cursor",
+     52
+    ],
+    [
+     "github copilot",
+     52
+    ],
+    [
+     "ai agents",
+     51
+    ],
+    [
+     "claude",
+     51
+    ],
+    [
+     "releases",
+     48
+    ]
+   ],
+   "categories": 31,
+   "listing_pages": 41755,
+   "tag_listing_pages": 38892,
+   "pages_beyond_cap": 177,
+   "cap": 50,
+   "discovery_run": 2,
+   "sitemap_urls": 12742,
+   "sitemap_tag_urls": 0,
+   "search": {
+    "clicks": 8350,
+    "tag_clicks": 80,
+    "tag_impressions": 7465,
+    "tag_pages_with_clicks": 51,
+    "paged_clicks": 0,
+    "paged_impressions": 200,
+    "paged_pages_seen": 68,
+    "deep_paged_clicks": 0
+   }
+  }
+ }
+}

@@ -29,10 +29,11 @@ sys.path.insert(0, str(REPO_ROOT))
 from core.paths import tenant_paths  # noqa: E402
 from core.tenant import load_tenant  # noqa: E402
 
+# audit_structure last: its search numbers come from the traffic cache that prioritize has just refreshed
 STEPS = ["discover", "audit_crawl", "audit_ai", "audit_perf", "audit_text", "audit_links", "audit_repo", "track_items",
-         "prioritize"]
+         "prioritize", "audit_structure"]
 # the exact (non-sampled) checks only: weekly and after a translation batch; no LLM, about 35 min for the blogs
-QUICK = ["discover", "audit_links", "audit_repo", "track_items", "prioritize"]
+QUICK = ["discover", "audit_links", "audit_repo", "track_items", "prioritize", "audit_structure"]
 
 
 def pull_clones(tenant) -> str | None:
@@ -75,7 +76,8 @@ def main(argv: list[str] | None = None) -> int:
     steps = QUICK if args.quick else STEPS
     steps = steps[steps.index(args.start):] if args.start in steps else steps
     if not (tenant.raw.get("audit") or {}).get("links"):
-        steps = [s for s in steps if s not in ("audit_links", "audit_repo")]  # blog source repos only
+        # blog source repos only
+        steps = [s for s in steps if s not in ("audit_links", "audit_repo", "audit_structure")]
     if not (tenant.raw.get("audit") or {}).get("links") and not (tenant.raw.get("collections") or {}).get("blogs"):
         steps = [s for s in steps if s != "track_items"]  # items come from the link check and blog sitemaps
     env = {**os.environ, **dotenv(REPO_ROOT / ".env"), "TENANT": args.tenant}

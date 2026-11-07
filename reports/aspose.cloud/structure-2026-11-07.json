@@ -1,0 +1,81 @@
+{
+ "tenant": "aspose.cloud",
+ "date": "2026-11-07",
+ "search_window": [
+  "2026-10-07",
+  "2026-11-03"
+ ],
+ "hosts": {
+  "blog.aspose.cloud": {
+   "paginate": 10,
+   "posts": 1248,
+   "posts_all_languages": 13591,
+   "languages": 22,
+   "tags": 3577,
+   "tags_one_post": 2744,
+   "tags_two_or_less": 3223,
+   "tags_per_post": 4.8,
+   "tag_pages_all_languages": 65467,
+   "top_tags": [
+    [
+     "aspose for cloud",
+     156
+    ],
+    [
+     "rest api",
+     122
+    ],
+    [
+     "sdk",
+     97
+    ],
+    [
+     "cloud api",
+     79
+    ],
+    [
+     "news release",
+     54
+    ],
+    [
+     "file format api",
+     40
+    ],
+    [
+     "rest",
+     22
+    ],
+    [
+     "api",
+     21
+    ],
+    [
+     "presentations",
+     21
+    ],
+    [
+     "word to pdf",
+     20
+    ]
+   ],
+   "categories": 16,
+   "listing_pages": 68595,
+   "tag_listing_pages": 65652,
+   "pages_beyond_cap": 264,
+   "cap": 50,
+   "discovery_run": 4,
+   "sitemap_urls": 13548,
+   "sitemap_tag_urls": 0,
+   "search": {
+    "clicks": 659,
+    "tag_clicks": 57,
+    "tag_impressions": 4975,
+    "tag_pages_with_clicks": 38,
+    "paged_clicks": 0,
+    "paged_impressions": 1,
+    "paged_pages_seen": 1,
+    "deep_paged_clicks": 0
+   }
+  }
+ }
+}

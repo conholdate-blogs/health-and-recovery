@@ -456,6 +456,11 @@ footer a { color: var(--accent) }
       <p class="lede fold">One row per recorded run, newest first.<span class="rest"> Clicks and impressions: Search Console, the 28 days ending on the date under them. Issue types: findings of the checks. Open issues: link and sitemap items still open. Note: what ran since the row before, so a score change from a new check reads as that.</span></p>
       <div class="tablewrap"><table id="history-rows"></table></div>
     </details>
+    <details class="ref" id="structure" hidden open><summary>Site structure <small id="structure-st"></small></summary>
+      <p class="lede fold">Tags, categories and the listing pages Hugo builds from them, read from the blog's repo.<span class="rest"> Hugo builds a listing page for the home page, each category and each tag, in every language, with as many /page/N/ pages as the posts need (N posts a page). A tag with one post is a page with one link: thin, and multiplied by every language. Search: Search Console clicks and impressions over 28 days.</span></p>
+      <div class="tablewrap"><table id="structure-rows"></table></div>
+      <p class="lede" id="structure-tags" hidden></p>
+    </details>
     <details class="ref" id="audit" hidden open><summary>Crawl audit per host <small id="audit-st"></small> <small id="audit-meta"></small></summary>
       <div class="scope" id="audit-scope"></div>
       <div class="tablewrap"><table id="audit-hosts"></table></div>
@@ -1437,6 +1442,42 @@ __METHOD__
     const gone = CH.resolved || [];
     if (gone.length) progress.push(`<p><b>Resolved since the last run:</b> ${gone.map(r => esc(GUIDE[r.check] ? GUIDE[r.check].name : r.title) + (HOSTS.length > 1 ? ` <span class="dim">(${esc(r.subdomain)})</span>` : "")).join(", ")}</p>`);
     if (FAM_MOVES) progress.push(`<p>${FAM_MOVES}</p>`);
+    // site structure (SK, 2026-11-07): tags, listing pages, tag pages in sitemaps; on a subdomain page in Reference,
+    // on domain and Blogs pages (whose Reference is hidden when published) under the subdomain rows, one row each
+    const STR = R._structure, STH = STR ? HOSTS.map(h => [h.host, STR.hosts[h.host]]).filter(([, s]) => s) : [];
+    if (STH.length) {
+      const pct = (a, b) => b ? `${Math.round(100 * a / b)}%` : "–";
+      const srch = s => s.search || {};
+      $("structure").hidden = false;
+      $("structure-st").textContent = `· read ${day(STR.date)}`;
+      if (STH.length === 1) {
+        const [, s] = STH[0], q = srch(s);
+        const rows = [
+          ["Posts", `${fmt(s.posts)} <span class="dim">· ${fmt(s.posts_all_languages)} files in ${s.languages} languages</span>`],
+          ["Tags", `${fmt(s.tags)} <span class="dim">· ${s.tags_per_post} per post on average</span>`],
+          ["Tags with one post", `${fmt(s.tags_one_post)} <span class="dim">(${pct(s.tags_one_post, s.tags)})</span>`],
+          ["Tags with one or two posts", `${fmt(s.tags_two_or_less)} <span class="dim">(${pct(s.tags_two_or_less, s.tags)})</span>`],
+          ["Tag pages, all languages", fmt(s.tag_pages_all_languages)],
+          ["Categories", fmt(s.categories)],
+          ["Listing pages Hugo builds", `${fmt(s.listing_pages)} <span class="dim">· ${fmt(s.tag_listing_pages)} of them tag pages (${pct(s.tag_listing_pages, s.listing_pages)}); ${s.paginate} posts a page</span>`],
+          [`Listing pages beyond page ${s.cap}`, fmt(s.pages_beyond_cap)],
+          ["Tag URLs in the sitemaps", s.sitemap_urls != null ? `${fmt(s.sitemap_tag_urls)} <span class="dim">of ${fmt(s.sitemap_urls)} URLs (${pct(s.sitemap_tag_urls, s.sitemap_urls)})</span>` : "–"],
+          ["Search clicks on tag pages", `${fmt(q.tag_clicks || 0)} <span class="dim">of ${fmt(q.clicks || 0)} (${pct(q.tag_clicks || 0, q.clicks || 0)}) · ${fmt(q.tag_pages_with_clicks || 0)} tag pages with a click · ${fmt(q.tag_impressions || 0)} impressions</span>`],
+          ["Search clicks on /page/N/ listings", `${fmt(q.paged_clicks || 0)} <span class="dim">· ${fmt(q.paged_impressions || 0)} impressions on ${fmt(q.paged_pages_seen || 0)} pages; beyond page ${s.cap}: ${fmt(q.deep_paged_clicks || 0)} clicks</span>`],
+        ];
+        $("structure-rows").innerHTML = `<tbody>${rows.map(([k, v]) => `<tr><th scope="row" style="font-weight:500">${k}</th><td style="white-space:normal">${v}</td></tr>`).join("")}</tbody>`;
+        if ((s.top_tags || []).length) {
+          $("structure-tags").hidden = false;
+          $("structure-tags").innerHTML = `<b>Most used tags:</b> ${s.top_tags.map(([t, n]) => `${esc(t)} <span class="dim">${fmt(n)}</span>`).join(" · ")}`;
+        }
+      } else {
+        const cols = ["Subdomain", "Posts", "Tags", "1 post", "≤ 2 posts", "Per post", "Listing pages", "Tag share", `Beyond p.${STH[0][1].cap}`, "Tags in sitemap", "Tag clicks", "/page/N/ clicks"];
+        $("structure-rows").innerHTML = `<thead><tr>${cols.map((c, i) => `<th${i ? ' class="n"' : ""}>${c}</th>`).join("")}</tr></thead><tbody>${STH.map(([h, s]) => { const q = srch(s);
+          return `<tr><td><code>${hostH(h)}</code></td><td class="n">${fmt(s.posts)}</td><td class="n">${fmt(s.tags)}</td><td class="n">${pct(s.tags_one_post, s.tags)}</td><td class="n">${pct(s.tags_two_or_less, s.tags)}</td><td class="n">${s.tags_per_post}</td><td class="n">${fmt(s.listing_pages)}</td><td class="n">${pct(s.tag_listing_pages, s.listing_pages)}</td><td class="n">${fmt(s.pages_beyond_cap)}</td><td class="n">${s.sitemap_urls != null ? `${fmt(s.sitemap_tag_urls)} (${pct(s.sitemap_tag_urls, s.sitemap_urls)})` : "–"}</td><td class="n">${fmt(q.tag_clicks || 0)} (${pct(q.tag_clicks || 0, q.clicks || 0)})</td><td class="n">${fmt(q.paged_clicks || 0)}</td></tr>`; }).join("")}</tbody>`;
+        if (!R._page_host && $("hcards") && !$("hcards").hidden) $("hcards").after($("structure"));  // Reference is hidden there
+      }
+    }
+
     // fixes the agent made on the site's repo (SK approves each one), first in Fix progress (SK, 2026-11-07)
     const AF = (R._agent_fixes || []).filter(x => HOSTS.some(h => h.host === x.host)).sort((a, b) => b.found.localeCompare(a.found));
     if (AF.length) {

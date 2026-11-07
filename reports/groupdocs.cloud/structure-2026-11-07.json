@@ -1,0 +1,81 @@
+{
+ "tenant": "groupdocs.cloud",
+ "date": "2026-11-07",
+ "search_window": [
+  "2026-10-07",
+  "2026-11-03"
+ ],
+ "hosts": {
+  "blog.groupdocs.cloud": {
+   "paginate": 10,
+   "posts": 582,
+   "posts_all_languages": 11040,
+   "languages": 19,
+   "tags": 2254,
+   "tags_one_post": 1959,
+   "tags_two_or_less": 2175,
+   "tags_per_post": 4.7,
+   "tag_pages_all_languages": 42391,
+   "top_tags": [
+    [
+     "customer newsletters",
+     41
+    ],
+    [
+     "cloud api",
+     20
+    ],
+    [
+     "zarchive",
+     18
+    ],
+    [
+     "groupdocs conversion",
+     15
+    ],
+    [
+     "groupdocs viewer",
+     8
+    ],
+    [
+     "groupdocs",
+     6
+    ],
+    [
+     "document conversion",
+     6
+    ],
+    [
+     "extract text from pdf",
+     6
+    ],
+    [
+     "parse document",
+     6
+    ],
+    [
+     "groupdocs annotation",
+     6
+    ]
+   ],
+   "categories": 15,
+   "listing_pages": 44972,
+   "tag_listing_pages": 42524,
+   "pages_beyond_cap": 171,
+   "cap": 50,
+   "discovery_run": 4,
+   "sitemap_urls": 11077,
+   "sitemap_tag_urls": 0,
+   "search": {
+    "clicks": 717,
+    "tag_clicks": 24,
+    "tag_impressions": 2559,
+    "tag_pages_with_clicks": 13,
+    "paged_clicks": 0,
+    "paged_impressions": 13,
+    "paged_pages_seen": 6,
+    "deep_paged_clicks": 0
+   }
+  }
+ }
+}
