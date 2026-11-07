@@ -1,16 +1,16 @@
 {
  "windows": {
   "current": [
-   "2026-10-04",
-   "2026-10-31"
+   "2026-10-08",
+   "2026-11-04"
   ],
   "previous": [
-   "2026-09-06",
-   "2026-10-03"
+   "2026-09-10",
+   "2026-10-07"
   ],
   "six_months_ago": [
-   "2026-04-05",
-   "2026-05-02"
+   "2026-04-09",
+   "2026-05-06"
   ]
  },
  "hosts": {},
@@ -18,19 +18,19 @@
   "blog.aspose.com": {
    "source": "gsc",
    "current": {
-    "clicks": 17866,
-    "impressions": 1041496,
-    "pages": 24025
+    "clicks": 17886,
+    "impressions": 1044950,
+    "pages": 22860
    },
    "previous": {
-    "clicks": 19878,
-    "impressions": 1114001,
-    "pages": 24148
+    "clicks": 19642,
+    "impressions": 1093071,
+    "pages": 24679
    },
    "six_months_ago": {
-    "clicks": 40789,
-    "impressions": 1663235,
-    "pages": 22398
+    "clicks": 42210,
+    "impressions": 1693139,
+    "pages": 22167
    }
   }
  }

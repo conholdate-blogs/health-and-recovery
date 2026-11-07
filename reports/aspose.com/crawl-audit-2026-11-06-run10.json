@@ -1,0 +1,5789 @@
+{
+  "tenant": "aspose.com",
+  "auditor": "crawl-audit",
+  "run_id": 10,
+  "params": {
+    "hosts": [
+      "blog.aspose.com"
+    ],
+    "sections": null,
+    "inventory_run": 3,
+    "per_template": 2,
+    "other_langs": 2,
+    "max_per_host": null,
+    "max_pages": null
+  },
+  "canonical_targets": {},
+  "requests": 50,
+  "duration_s": 74.0,
+  "pages_planned": 49,
+  "stopped_early": false,
+  "summary": {
+    "blog.aspose.com": {
+      "pages": 49,
+      "ok_html": 49,
+      "errors": 0,
+      "redirected": 0,
+      "blocked": 0,
+      "ignored": 0,
+      "issues": {
+        "canonical_missing": 17,
+        "content_needs_js": 12,
+        "description_length": 4,
+        "description_missing": 17,
+        "h1_missing": 3,
+        "h1_multiple": 1,
+        "hreflang_missing": 17,
+        "hreflang_no_xdefault": 32,
+        "title_length": 4,
+        "title_missing": 17,
+        "viewport_missing": 17
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "crawl-0001",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "crawl",
+      "check": "canonical_missing",
+      "type": "improvable",
+      "title": "Pages have no canonical tag",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/",
+          "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+          "https://blog.aspose.com/pt/",
+          "https://blog.aspose.com/archives/",
+          "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+          "https://blog.aspose.com/fa/",
+          "https://blog.aspose.com/zh/archives/",
+          "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
+          "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
+          "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
+        ],
+        "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no <link rel=canonical> and no Link header; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no <link rel=canonical> and no Link header; https://blog.aspose.com/pt/: no <link rel=canonical> and no Link header; https://blog.aspose.com/archives/: no <link rel=canonical> and no Link header; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no <link rel=canonical> and no Link header",
+        "expected": "a self-referencing absolute canonical",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/",
+            "note": "no <link rel=canonical> and no Link header"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+            "note": "no <link rel=canonical> and no Link header"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/pt/",
+            "note": "no <link rel=canonical> and no Link header"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/archives/",
+            "note": "no <link rel=canonical> and no Link header"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+            "note": "no <link rel=canonical> and no Link header"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.aspose.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/pt/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "generic:/{section}/*/*": [
+            1,
+            10
+          ],
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            2,
+            4
+          ],
+          "post": [
+            11,
+            22
+          ]
+        }
+      },
+      "affected_pages": 28803,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 2,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "ai-0001",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "ai",
+      "check": "content_needs_js",
+      "type": "incorrect",
+      "title": "Pages show almost no text without JavaScript",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/",
+          "https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/",
+          "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/",
+          "https://blog.aspose.com/search/",
+          "https://blog.aspose.com/convert-pdf-to-text-in-python/",
+          "https://blog.aspose.com/2023/05/09/create-mime-messages-in-python/",
+          "https://blog.aspose.com/create-visio-diagram-in-python/",
+          "https://blog.aspose.com/ru/2022/11/03/password-protected-pst-in-charp/",
+          "https://blog.aspose.com/ja/2022/11/03/password-protected-pst-in-charp/",
+          "https://blog.aspose.com/tr/search/"
+        ],
+        "observed": "12 of 49 sampled pages (by template: category 5/6, generic:/{section}/*/* 1/10, generic:/{section}/*/*/* 4/4, listing 2/4). e.g. https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/: 141 characters of main text in the HTML; https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/: 141 characters of main text in the HTML; https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/: 141 characters of main text in the HTML; https://blog.aspose.com/search/: 134 characters of main text in the HTML; https://blog.aspose.com/convert-pdf-to-text-in-python/: 141 characters of main text in the HTML",
+        "expected": "the main text in the HTML itself (at least 250 characters); AI crawlers do not run JavaScript",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/",
+            "note": "141 characters of main text in the HTML"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/",
+            "note": "141 characters of main text in the HTML"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/",
+            "note": "141 characters of main text in the HTML"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/search/",
+            "note": "134 characters of main text in the HTML"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/convert-pdf-to-text-in-python/",
+            "note": "141 characters of main text in the HTML"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.aspose.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/ja/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "category": [
+            5,
+            6
+          ],
+          "generic:/{section}/*/*": [
+            1,
+            10
+          ],
+          "generic:/{section}/*/*/*": [
+            4,
+            4
+          ],
+          "listing": [
+            2,
+            4
+          ]
+        }
+      },
+      "affected_pages": 211,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "M",
+      "fix_tier": 2,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0001",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "description_length",
+      "type": "improvable",
+      "title": "Meta descriptions are too long or too short",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/search/",
+          "https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/",
+          "https://blog.aspose.com/tr/search/",
+          "https://blog.aspose.com/ua/psd/convert-psd-to-tiff-in-python/"
+        ],
+        "observed": "4 of 49 sampled pages (by template: generic:/{section}/*/* 2/10, listing 2/4). e.g. https://blog.aspose.com/search/: width 6: 'search'; https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/: width 178: 'Дізнайтеся, як перетворити MSG у PST в Node.js за допомогою Aspose.Email для Node.js через'; https://blog.aspose.com/tr/search/: width 5: 'Arama'; https://blog.aspose.com/ua/psd/convert-psd-to-tiff-in-python/: width 198: 'Дізнайтеся, як конвертувати PSD у TIFF на Python за допомогою [Aspose.PSD for Python via .'",
+        "expected": "50-170 characters (CJK count double)",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/search/",
+            "note": "width 6: 'search'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/",
+            "note": "width 178: 'Дізнайтеся, як перетворити MSG у PST в Node.js за допомогою Aspose.Email для Node.js через'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/tr/search/",
+            "note": "width 5: 'Arama'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/ua/psd/convert-psd-to-tiff-in-python/",
+            "note": "width 198: 'Дізнайтеся, як конвертувати PSD у TIFF на Python за допомогою [Aspose.PSD for Python via .'"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.aspose.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/uk/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/tr/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "generic:/{section}/*/*": [
+            2,
+            10
+          ],
+          "listing": [
+            2,
+            4
+          ]
+        }
+      },
+      "affected_pages": 43,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0002",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "description_missing",
+      "type": "improvable",
+      "title": "Pages have no meta description",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/",
+          "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+          "https://blog.aspose.com/pt/",
+          "https://blog.aspose.com/archives/",
+          "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+          "https://blog.aspose.com/fa/",
+          "https://blog.aspose.com/zh/archives/",
+          "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
+          "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
+          "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
+        ],
+        "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no meta description; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no meta description; https://blog.aspose.com/pt/: no meta description; https://blog.aspose.com/archives/: no meta description; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no meta description",
+        "expected": "a unique meta description",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/",
+            "note": "no meta description"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+            "note": "no meta description"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/pt/",
+            "note": "no meta description"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/archives/",
+            "note": "no meta description"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+            "note": "no meta description"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.aspose.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/pt/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "generic:/{section}/*/*": [
+            1,
+            10
+          ],
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            2,
+            4
+          ],
+          "post": [
+            11,
+            22
+          ]
+        }
+      },
+      "affected_pages": 28803,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0003",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "h1_missing",
+      "type": "improvable",
+      "title": "Pages have no H1",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/",
+          "https://blog.aspose.com/pt/",
+          "https://blog.aspose.com/fa/"
+        ],
+        "observed": "3 of 49 sampled pages (by template: home 3/3). e.g. https://blog.aspose.com/: no non-empty <h1>; https://blog.aspose.com/pt/: no non-empty <h1>; https://blog.aspose.com/fa/: no non-empty <h1>",
+        "expected": "one H1 that states the page topic",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/pt/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/fa/",
+            "note": "no non-empty <h1>"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.aspose.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/pt/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/fa/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "home": [
+            3,
+            3
+          ]
+        }
+      },
+      "affected_pages": 22,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0004",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "h1_multiple",
+      "type": "improvable",
+      "title": "Pages have more than one H1",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/"
+        ],
+        "observed": "1 of 49 sampled pages (by template: post 1/22). e.g. https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/: 2 H1s: Sponsoring Conferences and Events: Globa | About Aspose#",
+        "expected": "one H1 per page",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/",
+            "note": "2 H1s: Sponsoring Conferences and Events: Globa | About Aspose#"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.aspose.com/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "post": [
+            1,
+            22
+          ]
+        }
+      },
+      "affected_pages": 2613,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "intl-0001",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "intl",
+      "check": "hreflang_missing",
+      "type": "not_optimized",
+      "title": "Localized pages have no hreflang tags in page HTML",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/",
+          "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+          "https://blog.aspose.com/pt/",
+          "https://blog.aspose.com/archives/",
+          "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+          "https://blog.aspose.com/fa/",
+          "https://blog.aspose.com/zh/archives/",
+          "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
+          "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
+          "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
+        ],
+        "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/pt/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/archives/: no <link rel=alternate hreflang> in <head>; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no <link rel=alternate hreflang> in <head>",
+        "expected": "hreflang alternates for every language version, incl. a self-reference and x-default",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/",
+            "note": "no <link rel=alternate hreflang> in <head>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+            "note": "no <link rel=alternate hreflang> in <head>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/pt/",
+            "note": "no <link rel=alternate hreflang> in <head>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/archives/",
+            "note": "no <link rel=alternate hreflang> in <head>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+            "note": "no <link rel=alternate hreflang> in <head>"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.aspose.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/pt/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "generic:/{section}/*/*": [
+            1,
+            10
+          ],
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            2,
+            4
+          ],
+          "post": [
+            11,
+            22
+          ]
+        }
+      },
+      "affected_pages": 28803,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "M",
+      "fix_tier": 2,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "intl-0002",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "intl",
+      "check": "hreflang_no_xdefault",
+      "type": "improvable",
+      "title": "hreflang set has no x-default",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/",
+          "https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/",
+          "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/",
+          "https://blog.aspose.com/search/",
+          "https://blog.aspose.com/convert-pdf-to-text-in-python/",
+          "https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/",
+          "https://blog.aspose.com/2023/05/09/create-mime-messages-in-python/",
+          "https://blog.aspose.com/create-visio-diagram-in-python/",
+          "https://blog.aspose.com/cz/tex/convert-tex-to-bmp-online/",
+          "https://blog.aspose.com/ru/2022/11/03/password-protected-pst-in-charp/"
+        ],
+        "observed": "32 of 49 sampled pages (by template: category 6/6, generic:/{section}/*/* 9/10, generic:/{section}/*/*/* 4/4, listing 2/4, post 11/22). e.g. https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/: 22 entries: en, ar, cs, de, es, fa; https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/: 22 entries: en, ar, cs, de, es, fa; https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/: 22 entries: en, ar, cs, de, es, fa; https://blog.aspose.com/search/: 21 entries: en, ja, ko, es, de, ru; https://blog.aspose.com/convert-pdf-to-text-in-python/: 22 entries: en, ar, cs, de, es, fa",
+        "expected": "an x-default entry",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/",
+            "note": "22 entries: en, ar, cs, de, es, fa"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/",
+            "note": "22 entries: en, ar, cs, de, es, fa"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/",
+            "note": "22 entries: en, ar, cs, de, es, fa"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/search/",
+            "note": "21 entries: en, ja, ko, es, de, ru"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/convert-pdf-to-text-in-python/",
+            "note": "22 entries: en, ar, cs, de, es, fa"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.aspose.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/ja/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "category": [
+            6,
+            6
+          ],
+          "generic:/{section}/*/*": [
+            9,
+            10
+          ],
+          "generic:/{section}/*/*/*": [
+            4,
+            4
+          ],
+          "listing": [
+            2,
+            4
+          ],
+          "post": [
+            11,
+            22
+          ]
+        }
+      },
+      "affected_pages": 29070,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 2,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0005",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "title_length",
+      "type": "improvable",
+      "title": "Titles are too long or too short",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/search/",
+          "https://blog.aspose.com/ua/slides/how-to-create-a-table-in-powerpoint-programmatically/",
+          "https://blog.aspose.com/tr/search/",
+          "https://blog.aspose.com/cells/create-manipulate-and-render-slicers-in-ms-excel-files-using-aspose.cells-for-.net-18.6/"
+        ],
+        "observed": "4 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, listing 2/4, post 1/22). e.g. https://blog.aspose.com/search/: width 6: 'Search'; https://blog.aspose.com/ua/slides/how-to-create-a-table-in-powerpoint-programmatically/: width 88: 'Опануйте, як програмно створити таблицю в PowerPoint за допомогою Aspose.Slides для Java'; https://blog.aspose.com/tr/search/: width 5: 'Arama'; https://blog.aspose.com/cells/create-manipulate-and-render-slicers-in-ms-excel-files-using-aspose.cells-for-.net-18.6/: width 74: 'Create, Format and Render Excel Slicer in C# | Excel Slicer in Pivot Table'",
+        "expected": "10-70 characters (CJK count double)",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/search/",
+            "note": "width 6: 'Search'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/ua/slides/how-to-create-a-table-in-powerpoint-programmatically/",
+            "note": "width 88: 'Опануйте, як програмно створити таблицю в PowerPoint за допомогою Aspose.Slides для Java'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/tr/search/",
+            "note": "width 5: 'Arama'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/cells/create-manipulate-and-render-slicers-in-ms-excel-files-using-aspose.cells-for-.net-18.6/",
+            "note": "width 74: 'Create, Format and Render Excel Slicer in C# | Excel Slicer in Pivot Table'"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.aspose.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/uk/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/tr/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "generic:/{section}/*/*": [
+            1,
+            10
+          ],
+          "listing": [
+            2,
+            4
+          ],
+          "post": [
+            1,
+            22
+          ]
+        }
+      },
+      "affected_pages": 2646,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0006",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "title_missing",
+      "type": "broken",
+      "title": "Pages have no <title>",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/",
+          "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+          "https://blog.aspose.com/pt/",
+          "https://blog.aspose.com/archives/",
+          "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+          "https://blog.aspose.com/fa/",
+          "https://blog.aspose.com/zh/archives/",
+          "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
+          "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
+          "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
+        ],
+        "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no <title> in <head>; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no <title> in <head>; https://blog.aspose.com/pt/: no <title> in <head>; https://blog.aspose.com/archives/: no <title> in <head>; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no <title> in <head>",
+        "expected": "a unique, descriptive title",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/",
+            "note": "no <title> in <head>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+            "note": "no <title> in <head>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/pt/",
+            "note": "no <title> in <head>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/archives/",
+            "note": "no <title> in <head>"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+            "note": "no <title> in <head>"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.aspose.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/pt/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "generic:/{section}/*/*": [
+            1,
+            10
+          ],
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            2,
+            4
+          ],
+          "post": [
+            11,
+            22
+          ]
+        }
+      },
+      "affected_pages": 28803,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "ux-0001",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "ux",
+      "check": "viewport_missing",
+      "type": "not_optimized",
+      "title": "Pages have no meta viewport",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/",
+          "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+          "https://blog.aspose.com/pt/",
+          "https://blog.aspose.com/archives/",
+          "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+          "https://blog.aspose.com/fa/",
+          "https://blog.aspose.com/zh/archives/",
+          "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
+          "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
+          "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/"
+        ],
+        "observed": "17 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 2/4, post 11/22). e.g. https://blog.aspose.com/: no meta viewport; https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/: no meta viewport; https://blog.aspose.com/pt/: no meta viewport; https://blog.aspose.com/archives/: no meta viewport; https://blog.aspose.com/zip/extract-zip-archives-in-csharp/: no meta viewport",
+        "expected": "<meta name=viewport content='width=device-width, initial-scale=1'>",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/",
+            "note": "no meta viewport"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+            "note": "no meta viewport"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/pt/",
+            "note": "no meta viewport"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/archives/",
+            "note": "no meta viewport"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+            "note": "no meta viewport"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/en/sitemap.xml"
+          },
+          {
+            "role": "sitemap index",
+            "url": "https://blog.aspose.com/sitemap.xml"
+          },
+          {
+            "role": "listed in",
+            "url": "https://blog.aspose.com/pt/sitemap.xml"
+          }
+        ],
+        "sample": {
+          "generic:/{section}/*/*": [
+            1,
+            10
+          ],
+          "home": [
+            3,
+            3
+          ],
+          "listing": [
+            2,
+            4
+          ],
+          "post": [
+            11,
+            22
+          ]
+        }
+      },
+      "affected_pages": 28803,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 161,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 27130,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1455,
+      "facts": {
+        "titles": [
+          "Convert Primavera XML to MPP in C# | C# XML to MPP"
+        ],
+        "descriptions": [
+          "Programmatically convert Primavera XML to MPP in C# with Aspose.Tasks for .NET API. Step by step guide to convert Primavera P6 XML to MPP in an easy way."
+        ],
+        "h1": [
+          "Convert Primavera XML to MPP in C#"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/convert-primavera-xml-to-mpp-in-csharp/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-hant/convert-primavera-xml-to-mpp-in-csharp/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 141,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "141 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 106,
+      "listed_in": "https://blog.aspose.com/ja/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 26534,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1566,
+      "facts": {
+        "titles": [
+          "Node.jsでPPTを作成および開く| Node.js PowerPointライブラリ"
+        ],
+        "descriptions": [
+          "Node.jsコードを実行してPowerPointファイルを作成および開く方法を学びましょう"
+        ],
+        "h1": [
+          "Node.jsでPPTを作成および開く"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/ppt/create-and-open-ppt-in-nodejs/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-tw/ppt/create-and-open-ppt-in-nodejs/"
+          ]
+        ],
+        "html_lang": "ja",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 141,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "141 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*/*",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 26906,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1561,
+      "facts": {
+        "titles": [
+          "Access Password Protected PST Files"
+        ],
+        "descriptions": [
+          "How to access Password Protected PST & Extract Messages. Verify or Remove & Change a Password for an Outlook PST file programmatically in C#"
+        ],
+        "h1": [
+          "Working with Password-Protected PST files using C# .NET"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh-cn/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-hant/2022/11/03/password-protected-pst-in-charp/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 141,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "141 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 34734,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 305,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "en",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 2194,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/search/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/search/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 14782,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1729,
+      "facts": {
+        "titles": [
+          "Search"
+        ],
+        "descriptions": [
+          "search"
+        ],
+        "h1": [
+          "Search"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/search/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/search/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/search/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/search/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/search/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/search/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/search/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/search/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/search/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/search/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/search/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/search/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/search/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-hant/search/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/search/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/search/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/search/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/search/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/search/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/search/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/search/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/search/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 134,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 6: 'Search'"
+        ],
+        [
+          "description_length",
+          "width 6: 'search'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "21 entries: en, ja, ko, es, de, ru"
+        ],
+        [
+          "content_needs_js",
+          "134 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 36114,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1799,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Protect and Unprotect Excel Files using C#"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "en",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 2636,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/convert-pdf-to-text-in-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 161,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/convert-pdf-to-text-in-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 25536,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1277,
+      "facts": {
+        "titles": [
+          "Convert PDF to Text in Python | Python PDF to TXT | Aspose"
+        ],
+        "descriptions": [
+          "Convert PDF files to plain text (TXT) in Python. Extract text from PDF with ease in a few steps with Aspose' Python library."
+        ],
+        "h1": [
+          "Convert PDF to Text in Python"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/convert-pdf-to-text-in-python/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-hant/convert-pdf-to-text-in-python/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 141,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "141 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 106,
+      "listed_in": "https://blog.aspose.com/uk/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 39121,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1427,
+      "facts": {
+        "titles": [
+          "Перетворення MSG у PST в Node.js - Легкий Посібник"
+        ],
+        "descriptions": [
+          "Дізнайтеся, як перетворити MSG у PST в Node.js за допомогою Aspose.Email для Node.js через .NET. Слідуйте нашому посібнику для безперебійного управління даними електронної пошти."
+        ],
+        "h1": [
+          "Перетворення MSG у PST в Node.js"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/email/convert-msg-to-pst-in-nodejs/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/email/convert-msg-to-pst-in-nodejs/"
+          ]
+        ],
+        "html_lang": "uk",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2170,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 178: 'Дізнайтеся, як перетворити MSG у PST в Node.js за допомогою Aspose.Email для Node.js через'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/2023/05/09/create-mime-messages-in-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*/*",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/2023/05/09/create-mime-messages-in-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 26257,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1481,
+      "facts": {
+        "titles": [
+          "Create EML files with images in HTML body using Python"
+        ],
+        "descriptions": [
+          "Learn to create MIME messages with HTML body. Save messages in EML format programmatically in Python"
+        ],
+        "h1": [
+          "Create MIME messages using Python"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/2023/05/09/create-mime-messages-in-python/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/2023/05/09/create-mime-messages-in-python/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-hant/2023/05/09/create-mime-messages-in-python/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 141,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "141 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/pt/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "pt",
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.aspose.com/pt/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/pt/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 35003,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1573,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "pt",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 2481,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/archives/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/archives/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 2892333,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 2367,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Archive"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "en",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 472732,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/zip/extract-zip-archives-in-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 38081,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1292,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Extract ZIP Archives Programmatically in C#"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "en",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 3200,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/create-visio-diagram-in-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 161,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/create-visio-diagram-in-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 26526,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1446,
+      "facts": {
+        "titles": [
+          "Create Visio Diagram in Python | Python Visio | Python VSDX"
+        ],
+        "descriptions": [
+          "Create Visio diagrams in Python with Python Diagram Library. Add basic shapes to the new or existing MS Visio VSDX diagrams."
+        ],
+        "h1": [
+          "Create Visio Diagram in Python"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/create-visio-diagram-in-python/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/create-visio-diagram-in-python/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/create-visio-diagram-in-python/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/create-visio-diagram-in-python/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/create-visio-diagram-in-python/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/create-visio-diagram-in-python/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/create-visio-diagram-in-python/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/create-visio-diagram-in-python/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/create-visio-diagram-in-python/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/create-visio-diagram-in-python/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/create-visio-diagram-in-python/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/create-visio-diagram-in-python/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/create-visio-diagram-in-python/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/create-visio-diagram-in-python/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/create-visio-diagram-in-python/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/create-visio-diagram-in-python/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/create-visio-diagram-in-python/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/create-visio-diagram-in-python/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/create-visio-diagram-in-python/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/create-visio-diagram-in-python/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/create-visio-diagram-in-python/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/create-visio-diagram-in-python/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-hant/create-visio-diagram-in-python/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 141,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "141 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/cz/tex/convert-tex-to-bmp-online/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 106,
+      "listed_in": "https://blog.aspose.com/cs/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/cz/tex/convert-tex-to-bmp-online/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 38608,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1608,
+      "facts": {
+        "titles": [
+          "Bezplatný konvertor TeX souborů - Převeďte TeX na BMP online"
+        ],
+        "descriptions": [
+          "Snadno převedete TeX na BMP online s naším bezplatným nástrojem poháněným Aspose.TEX. Rychlé, bezpečné a ideální pro vývojáře i ne-technické uživatele."
+        ],
+        "h1": [
+          "Bezplatný konvertor TeX souborů - Převeďte TeX na BMP online"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/cz/tex/convert-tex-to-bmp-online/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-tw/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cz/tex/convert-tex-to-bmp-online/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/tex/convert-tex-to-bmp-online/"
+          ]
+        ],
+        "html_lang": "cs",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 3404,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/ru/2022/11/03/password-protected-pst-in-charp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "ru",
+      "template": "generic:/{section}/*/*/*",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.aspose.com/ru/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/ru/2022/11/03/password-protected-pst-in-charp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 29729,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1564,
+      "facts": {
+        "titles": [
+          "Доступ к защищённым паролем PST файлам"
+        ],
+        "descriptions": [
+          "Как получить доступ к защищённым паролем PST и извлечь сообщения. Проверка, удаление или изменение пароля для файла Outlook PST программно на C#"
+        ],
+        "h1": [
+          "Работа с защищёнными паролем PST файлами с использованием C# .NET"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/ru/2022/11/03/password-protected-pst-in-charp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh-cn/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-hant/2022/11/03/password-protected-pst-in-charp/"
+          ]
+        ],
+        "html_lang": "ru",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 141,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "141 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/fa/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "fa",
+      "template": "home",
+      "source": "sitemap",
+      "group_urls": 22,
+      "listed_in": "https://blog.aspose.com/fa/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/fa/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 37769,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1360,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "fa",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 2388,
+        "jsonld_types": [
+          "Organization"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "h1_missing",
+          "no non-empty <h1>"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/zh/archives/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "zh",
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.aspose.com/zh/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/zh/archives/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 1040490,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1583,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "档案"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "zh",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 98473,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/tasks/convert-mpp-file-to-excel-in-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 38983,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1425,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Convert MPP to Excel in Python"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "en",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 3159,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/aspose.blog/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 161,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/aspose.blog/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 26296,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1366,
+      "facts": {
+        "titles": [
+          "Aspose Blog"
+        ],
+        "descriptions": [
+          "Aspose Blog - Aspose Blog | File Format Processing APIs for C# .NET Core, Java, C++, Python"
+        ],
+        "h1": [
+          "Aspose Blog"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/aspose.blog/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/aspose.blog/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 1989,
+        "jsonld_types": [
+          "BreadcrumbList"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/ua/slides/how-to-create-a-table-in-powerpoint-programmatically/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 106,
+      "listed_in": "https://blog.aspose.com/uk/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/ua/slides/how-to-create-a-table-in-powerpoint-programmatically/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 42605,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1836,
+      "facts": {
+        "titles": [
+          "Опануйте, як програмно створити таблицю в PowerPoint за допомогою Aspose.Slides для Java"
+        ],
+        "descriptions": [
+          "Дізнайтеся, як програмно створити таблицю в PowerPoint за допомогою Aspose.Slides для Java. Автоматизуйте процес і заощаджуйте час на створенні презентацій."
+        ],
+        "h1": [
+          "Як програмно створити таблицю в PowerPoint"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/ua/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/ua/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/slides/how-to-create-a-table-in-powerpoint-programmatically/"
+          ]
+        ],
+        "html_lang": "uk",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2533,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 88: 'Опануйте, як програмно створити таблицю в PowerPoint за допомогою Aspose.Slides для Java'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/ja/2022/11/03/password-protected-pst-in-charp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "ja",
+      "template": "generic:/{section}/*/*/*",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.aspose.com/ja/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/ja/2022/11/03/password-protected-pst-in-charp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 28370,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1329,
+      "facts": {
+        "titles": [
+          "パスワード保護されたPSTファイルにアクセスする"
+        ],
+        "descriptions": [
+          "C#でパスワード保護されたPSTにアクセスし、メッセージを抽出する方法。Outlook PSTファイルのパスワードをプログラムで検証または削除・変更する方法。"
+        ],
+        "h1": [
+          "C# .NETを使用したパスワード保護されたPSTファイルの操作"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/ja/2022/11/03/password-protected-pst-in-charp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh-cn/2022/11/03/password-protected-pst-in-charp/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-hant/2022/11/03/password-protected-pst-in-charp/"
+          ]
+        ],
+        "html_lang": "ja",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 141,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "141 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/tr/search/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "tr",
+      "template": "listing",
+      "source": "sitemap",
+      "group_urls": 44,
+      "listed_in": "https://blog.aspose.com/tr/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/tr/search/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 14802,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1476,
+      "facts": {
+        "titles": [
+          "Arama"
+        ],
+        "descriptions": [
+          "Arama"
+        ],
+        "h1": [
+          "Arama"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/tr/search/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/search/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/search/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/search/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/search/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/search/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/search/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/search/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/search/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/search/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/search/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/search/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/search/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-hant/search/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/search/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/search/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/search/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/search/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/search/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/search/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/search/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/search/"
+          ]
+        ],
+        "html_lang": "tr",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 134,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 5: 'Arama'"
+        ],
+        [
+          "description_length",
+          "width 5: 'Arama'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "21 entries: en, ja, ko, es, de, ru"
+        ],
+        [
+          "content_needs_js",
+          "134 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/cad/add-text-to-dwg-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/cad/add-text-to-dwg-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 77919,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 369,
+      "facts": {
+        "titles": [
+          "Add Text to DWG Files Using Python"
+        ],
+        "descriptions": [
+          "Learn how to add text to DWG drawings using Python with Aspose.CAD. Insert text annotations, customize their position and appearance, and export to DXF or PDF."
+        ],
+        "h1": [
+          "How to Add Text to a DWG Drawing Using Python"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/cad/add-text-to-dwg-python/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/cad/add-text-to-dwg-python/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 13276,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/tr/create-visio-diagram-in-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "tr",
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 161,
+      "listed_in": "https://blog.aspose.com/tr/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/tr/create-visio-diagram-in-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 26716,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1434,
+      "facts": {
+        "titles": [
+          "Python'da Visio Diyagramı Oluşturma | Python Şeması Kitaplığı"
+        ],
+        "descriptions": [
+          "Python Diyagram Kitaplığı ile Python'da Visio diyagramları oluşturun. Yeni veya mevcut MS Visio VSDX diyagramlarına temel şekiller ekleyin."
+        ],
+        "h1": [
+          "Python'da Visio Diyagramı Oluşturma"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/tr/create-visio-diagram-in-python/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/create-visio-diagram-in-python/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/create-visio-diagram-in-python/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/create-visio-diagram-in-python/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/create-visio-diagram-in-python/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/create-visio-diagram-in-python/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/create-visio-diagram-in-python/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/create-visio-diagram-in-python/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/create-visio-diagram-in-python/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/create-visio-diagram-in-python/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/create-visio-diagram-in-python/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/create-visio-diagram-in-python/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/create-visio-diagram-in-python/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/create-visio-diagram-in-python/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/create-visio-diagram-in-python/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/create-visio-diagram-in-python/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/create-visio-diagram-in-python/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/create-visio-diagram-in-python/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/create-visio-diagram-in-python/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/create-visio-diagram-in-python/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/create-visio-diagram-in-python/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/create-visio-diagram-in-python/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-hant/create-visio-diagram-in-python/"
+          ]
+        ],
+        "html_lang": "tr",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 141,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "141 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 106,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/email/net/msg-to-eml-via-csharp-and-powershell/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 65272,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1553,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "אוטומציה של דוא\"ל - המרת MSG ל-EML באמצעות PowerShell ו-.NET"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "he",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 7094,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 25179,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1481,
+      "facts": {
+        "titles": [
+          "Delete mesages from PST file permanenetly using .NET"
+        ],
+        "descriptions": [
+          "You can delete messages from PST file permanently. Many other features are also supported to work with PST files using Aspose.Email for .NET API."
+        ],
+        "h1": [
+          "Sponsoring Conferences and Events: Global Azure Bootcamp 2017 - Kuala Lumpur",
+          "About Aspose#"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 1720,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "h1_multiple",
+          "2 H1s: Sponsoring Conferences and Events: Globa | About Aspose#"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/ru/convert-pdf-to-text-in-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "ru",
+      "template": "category",
+      "source": "sitemap",
+      "group_urls": 161,
+      "listed_in": "https://blog.aspose.com/ru/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/ru/convert-pdf-to-text-in-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 27190,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1494,
+      "facts": {
+        "titles": [
+          "Преобразование PDF в текст в Python | Python PDF в TXT | Aspose"
+        ],
+        "descriptions": [
+          "Преобразование PDF-файлов в обычный текст (TXT) в Python. С легкостью извлекайте текст из PDF за несколько шагов с библиотекой Aspose Python."
+        ],
+        "h1": [
+          "Преобразование PDF в текст в Python"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/ru/convert-pdf-to-text-in-python/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/convert-pdf-to-text-in-python/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-hant/convert-pdf-to-text-in-python/"
+          ]
+        ],
+        "html_lang": "ru",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 141,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ar, cs, de, es, fa"
+        ],
+        [
+          "content_needs_js",
+          "141 characters of main text in the HTML"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/ua/html/convert-svg-to-xps-in-java/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 106,
+      "listed_in": "https://blog.aspose.com/uk/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/ua/html/convert-svg-to-xps-in-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 40452,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1593,
+      "facts": {
+        "titles": [
+          "Перетворення SVG у XPS на Java з Aspose.HTML"
+        ],
+        "descriptions": [
+          "Дізнайтеся, як перетворити SVG у XPS на Java за допомогою Aspose.HTML для Java. Слідуйте нашому керівництву з прикладами коду, щоб спростити процес конвертації файлів."
+        ],
+        "h1": [
+          "Перетворення SVG у XPS на Java"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/ua/html/convert-svg-to-xps-in-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/ua/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/html/convert-svg-to-xps-in-java/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/html/convert-svg-to-xps-in-java/"
+          ]
+        ],
+        "html_lang": "uk",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2480,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/cells/create-or-edit-excel-files-on-linux/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 43231,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1406,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Create or Edit Excel Files on Linux using .NET"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "en",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 4410,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/ua/psd/convert-psd-to-tiff-in-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 106,
+      "listed_in": "https://blog.aspose.com/uk/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/ua/psd/convert-psd-to-tiff-in-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 39929,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1511,
+      "facts": {
+        "titles": [
+          "Легко конвертуйте PSD у TIFF на Python"
+        ],
+        "descriptions": [
+          "Дізнайтеся, як конвертувати PSD у TIFF на Python за допомогою [Aspose.PSD for Python via .NET](https://products.aspose.com/psd/python-net/). Відкрийте для себе покроковий посібник з прикладами коду."
+        ],
+        "h1": [
+          "Конвертувати PSD у TIFF на Python"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/ua/psd/convert-psd-to-tiff-in-python/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/ua/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/psd/convert-psd-to-tiff-in-python/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/psd/convert-psd-to-tiff-in-python/"
+          ]
+        ],
+        "html_lang": "uk",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2346,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "description_length",
+          "width 198: 'Дізнайтеся, як конвертувати PSD у TIFF на Python за допомогою [Aspose.PSD for Python via .'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/barcode/support-codabar-encoded-barcode-checksum-feature-aspose.barcode-ssrs-17.03/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/barcode/support-codabar-encoded-barcode-checksum-feature-aspose.barcode-ssrs-17.03/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 24809,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1423,
+      "facts": {
+        "titles": [
+          "Apply Codabar Checksum Validation using C# | Aspose.BarCode for .NET"
+        ],
+        "descriptions": [
+          "Use .NET barcode generator and scanner API to apply Codabar checksum validation using C# with Aspose.BarCode for .NET 17.03."
+        ],
+        "h1": [
+          "Support For Codabar Encoded Barcode With Checksum Feature in Aspose.BarCode for SSRS 17.03"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/barcode/support-codabar-encoded-barcode-checksum-feature-aspose.barcode-ssrs-17.03/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/barcode/support-codabar-encoded-barcode-checksum-feature-aspose.barcode-ssrs-17.03/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 1572,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/kr/psd/convert-psd-tiff-java/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 106,
+      "listed_in": "https://blog.aspose.com/ko/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/kr/psd/convert-psd-tiff-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 38692,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1353,
+      "facts": {
+        "titles": [
+          "Java로 프로그래밍 방식으로 PSD를 TIFF 이미지로 변환하기 | PSD 변환기"
+        ],
+        "descriptions": [
+          "고급 옵션을 사용하여 Java에서 프로그래밍 방식으로 PSD를 TIFF로 변환합니다. 이 다목적 변환기 도구를 사용하여 PSD 및 TIFF에 대해 다양한 속성을 쉽게 설정할 수 있습니다."
+        ],
+        "h1": [
+          "Java에서 PSD를 TIFF로 변환하기"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/kr/psd/convert-psd-tiff-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/kr/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-tw/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/psd/convert-psd-tiff-java/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/psd/convert-psd-tiff-java/"
+          ]
+        ],
+        "html_lang": "ko",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1770,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/cells/optimize-memory-usage-show-formulas-in-worksheet-in-android/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/cells/optimize-memory-usage-show-formulas-in-worksheet-in-android/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 25107,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1503,
+      "facts": {
+        "titles": [
+          "Android: Optimize Memory Usage in Excel | Show Formulas in Worksheets"
+        ],
+        "descriptions": [
+          "Aspose.Cells provides some relevant options to lower, reduce, and optimize memory usage while working with spreadsheets in Android."
+        ],
+        "h1": [
+          "Optimize Memory Usage and Show Formulas instead of Values in Worksheet in Android"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/cells/optimize-memory-usage-show-formulas-in-worksheet-in-android/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/cells/optimize-memory-usage-show-formulas-in-worksheet-in-android/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 1613,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/zh/zh/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "zh",
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 106,
+      "listed_in": "https://blog.aspose.com/zh/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/zh/zh/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 41949,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1619,
+      "facts": {
+        "titles": [
+          "在 C# 中将 MSG 或 EML 转换为 HTML，带嵌入图像"
+        ],
+        "descriptions": [
+          "了解如何将带有嵌入图像的 MSG 或 EML 文件转换为 HTML。在 C# 中使用我们的强大库轻松处理电子邮件。"
+        ],
+        "h1": [
+          "将嵌入图像的 MSG 或 EML 文件转换为 C# .NET 中的 HTML"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/zh/zh/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/zh/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-tw/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/email/convert-msg-or-eml-files-with-embedded-images-to-html-in-csharp/"
+          ]
+        ],
+        "html_lang": "zh",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 1800,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/ocr/improved-ocr-process-through-optimize-bitmap-processing-using-java/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/ocr/improved-ocr-process-through-optimize-bitmap-processing-using-java/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 22761,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1378,
+      "facts": {
+        "titles": [
+          "Improved OCR Process Through Optimize Bitmap Processing using Java"
+        ],
+        "descriptions": [
+          "Use .NET OCR (Optical Character Recognition) API with improved OCR process through optimize bitmap processing using Java."
+        ],
+        "h1": [
+          "Improved OCR Process Through Optimize Bitmap Processing using Java"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/ocr/improved-ocr-process-through-optimize-bitmap-processing-using-java/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/ocr/improved-ocr-process-through-optimize-bitmap-processing-using-java/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 1147,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/sv/sv/cad/convert-stl-to-svg-in-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "sv",
+      "template": "generic:/{section}/*/*",
+      "source": "sitemap",
+      "group_urls": 106,
+      "listed_in": "https://blog.aspose.com/sv/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/sv/sv/cad/convert-stl-to-svg-in-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 35300,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1300,
+      "facts": {
+        "titles": [
+          "Konvertera STL till SVG i Python med Aspose.CAD"
+        ],
+        "descriptions": [
+          "Lär dig hur du konverterar STL till SVG i Python med Aspose.CAD. Upptäck fördelarna med detta kraftfulla verktyg och effektivisera dina designprojekt."
+        ],
+        "h1": [
+          "Konvertera STL till SVG i Python"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/sv/sv/cad/convert-stl-to-svg-in-python/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "ja",
+            "https://blog.aspose.com/ja/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "ko",
+            "https://blog.aspose.com/ko/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "es",
+            "https://blog.aspose.com/es/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "de",
+            "https://blog.aspose.com/de/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "ru",
+            "https://blog.aspose.com/ru/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "fr",
+            "https://blog.aspose.com/fr/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "zh",
+            "https://blog.aspose.com/zh/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "it",
+            "https://blog.aspose.com/it/it/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "pt",
+            "https://blog.aspose.com/pt/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "ar",
+            "https://blog.aspose.com/ar/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "vi",
+            "https://blog.aspose.com/vi/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.aspose.com/zh-tw/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "tr",
+            "https://blog.aspose.com/tr/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "id",
+            "https://blog.aspose.com/id/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "th",
+            "https://blog.aspose.com/th/th/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "fa",
+            "https://blog.aspose.com/fa/fa/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "pl",
+            "https://blog.aspose.com/pl/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "uk",
+            "https://blog.aspose.com/uk/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "he",
+            "https://blog.aspose.com/he/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "cs",
+            "https://blog.aspose.com/cs/cad/convert-stl-to-svg-in-python/"
+          ],
+          [
+            "sv",
+            "https://blog.aspose.com/sv/sv/cad/convert-stl-to-svg-in-python/"
+          ]
+        ],
+        "html_lang": "sv",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.101.0",
+        "refresh": null,
+        "text_chars": 2582,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "22 entries: en, ja, ko, es, de, ru"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/imaging/clip-and-export-images-in-python/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/imaging/clip-and-export-images-in-python/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 55406,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1465,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Clip and Export Images in Python"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "en",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 5892,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/words/aspose-words-for-net-5-3-0-released/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/words/aspose-words-for-net-5-3-0-released/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 19638,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1547,
+      "facts": {
+        "titles": [
+          "In-Browser Editor for Word Documents | Aspose.Editor"
+        ],
+        "descriptions": [
+          "Create, edit and modify tables, rows, columns, cells in Word documents. Many other editor features including borders, shading, or paragraph. Word Editor."
+        ],
+        "h1": [
+          "Aspose.Words for .NET 5.3.0 Released"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/words/aspose-words-for-net-5-3-0-released/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/words/aspose-words-for-net-5-3-0-released/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 373,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/slides/convert-presentation-to-webpage-html-using-cpp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/slides/convert-presentation-to-webpage-html-using-cpp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 36430,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1515,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Convert PowerPoint PPT to HTML in C++"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "en",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 2750,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/email/async-item-counting-tgz-archives-csharp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/email/async-item-counting-tgz-archives-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 46574,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1470,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Count Items in Zimbra TGZ Backups Asynchronously in C#"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "en",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 4128,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/total/31721/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/total/31721/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 18738,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1521,
+      "facts": {
+        "titles": [
+          "Aspose.Words vs SoftArtisans WordWriter, TX Text and MS VSTO"
+        ],
+        "descriptions": [
+          "Comparison of Aspose.Words with competitors. Find out the best MS Word solution. Aspose vs SoftArtisans WordWriter, Aspose vs TX Text, Aspose vs MS VSTO."
+        ],
+        "h1": [
+          "Aspose.Word.Converters Information"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/total/31721/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/total/31721/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 308,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/total/enhanced-presentation-access-and-rendering-support-provided-in-aspose.slides-for-.net/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/total/enhanced-presentation-access-and-rendering-support-provided-in-aspose.slides-for-.net/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 22413,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1380,
+      "facts": {
+        "titles": [
+          "Field Engine Progress in Aspose.Words 11.7 | Word API"
+        ],
+        "descriptions": [
+          "We have just released Aspose.Words for .NET and Java 11.7. This month’s release includes almost 200 improvements to many areas of our components."
+        ],
+        "h1": [
+          "Enhanced presentation access and rendering support in Aspose.Slides for .NET 6.6"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/total/enhanced-presentation-access-and-rendering-support-provided-in-aspose.slides-for-.net/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/total/enhanced-presentation-access-and-rendering-support-provided-in-aspose.slides-for-.net/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 549,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/html/xpath-document-evaluate-in-csharp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/html/xpath-document-evaluate-in-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 35862,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1457,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Use XPath to Select Nodes using C#"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "en",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 3059,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/cells/create-manipulate-and-render-slicers-in-ms-excel-files-using-aspose.cells-for-.net-18.6/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/cells/create-manipulate-and-render-slicers-in-ms-excel-files-using-aspose.cells-for-.net-18.6/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 43962,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1581,
+      "facts": {
+        "titles": [
+          "Create, Format and Render Excel Slicer in C# | Excel Slicer in Pivot Table"
+        ],
+        "descriptions": [
+          "Create Excel Slicer in Pivot Tables using C#. Format Excel Slicer and apply desired styling. Render Excel Slicer into PDF or image with high accuracy."
+        ],
+        "h1": [
+          "Create, manipulate and render Slicers in MS Excel files using Aspose.Cells for .NET 18.6"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/cells/create-manipulate-and-render-slicers-in-ms-excel-files-using-aspose.cells-for-.net-18.6/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/cells/create-manipulate-and-render-slicers-in-ms-excel-files-using-aspose.cells-for-.net-18.6/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 8420,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "title_length",
+          "width 74: 'Create, Format and Render Excel Slicer in C# | Excel Slicer in Pivot Table'"
+        ],
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/imaging/support-setting-gray-scale-psd-image-aspose.imaging-.net-17.7/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/imaging/support-setting-gray-scale-psd-image-aspose.imaging-.net-17.7/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 24074,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1311,
+      "facts": {
+        "titles": [
+          "Set Gray Scale for PSD Image using C# | Aspose.Imaging"
+        ],
+        "descriptions": [
+          "Use .NET Image Processing API to set the gray scale PSD image programmatically using Java within Spring or other Java based applications."
+        ],
+        "h1": [
+          "Set Gray Scale for PSD Image using C#"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/imaging/support-setting-gray-scale-psd-image-aspose.imaging-.net-17.7/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/imaging/support-setting-gray-scale-psd-image-aspose.imaging-.net-17.7/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 1705,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/psd/flatten-merge-layers-in-psd-csharp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/psd/flatten-merge-layers-in-psd-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 33247,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1441,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Flatten or Merge Layers in PSD Image using C#"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "en",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 1920,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/total/aspose-.net-quote-generator-for-umbraco/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/en/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/total/aspose-.net-quote-generator-for-umbraco/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 28597,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1446,
+      "facts": {
+        "titles": [
+          "Umbraco Quote Generator for Umbraco | Aspose.Words for .NET"
+        ],
+        "descriptions": [
+          "Aspose .NET Quote Generator for Umbraco is an open-source module that enables you to generate quotes in Umbraco site without requiring any other software."
+        ],
+        "h1": [
+          "Umbraco Quote Generator for Umbraco Using Powerful Features of Aspose.Words for .NET"
+        ],
+        "canonicals": [
+          "https://blog.aspose.com/total/aspose-.net-quote-generator-for-umbraco/"
+        ],
+        "head_canonicals": 1,
+        "robots": [
+          "index, follow"
+        ],
+        "hreflang": [
+          [
+            "en",
+            "https://blog.aspose.com/total/aspose-.net-quote-generator-for-umbraco/"
+          ]
+        ],
+        "html_lang": "en",
+        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+        "generator": "Hugo 0.120.4",
+        "refresh": null,
+        "text_chars": 2596,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "hreflang_no_xdefault",
+          "1 entries: en"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/ru/html/convert-epub-to-tiff-in-csharp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "ru",
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/ru/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/ru/html/convert-epub-to-tiff-in-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 50150,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1371,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Преобразование EPUB в TIFF на C#"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "ru",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 5185,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/de/cells/data-validation-in-excel-using-csharp/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": "de",
+      "template": "post",
+      "source": "sitemap",
+      "group_urls": 57495,
+      "listed_in": "https://blog.aspose.com/de/sitemap.xml",
+      "status": 200,
+      "final_url": "https://blog.aspose.com/de/cells/data-validation-in-excel-using-csharp/",
+      "redirects": [],
+      "redirect_statuses": [],
+      "content_type": "text/html",
+      "bytes": 65135,
+      "truncated": 0,
+      "blocked": 0,
+      "error": null,
+      "elapsed_ms": 1470,
+      "facts": {
+        "titles": [],
+        "descriptions": [],
+        "h1": [
+          "Wenden Sie die Datenüberprüfung in Excel mit C# an"
+        ],
+        "canonicals": [],
+        "head_canonicals": 0,
+        "robots": [],
+        "hreflang": [],
+        "html_lang": "de",
+        "viewport": null,
+        "generator": null,
+        "refresh": null,
+        "text_chars": 13448,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "BlogPosting"
+        ],
+        "jsonld_invalid": 0
+      },
+      "ignored": null,
+      "issues": [
+        [
+          "canonical_missing",
+          "no <link rel=canonical> and no Link header"
+        ],
+        [
+          "title_missing",
+          "no <title> in <head>"
+        ],
+        [
+          "description_missing",
+          "no meta description"
+        ],
+        [
+          "hreflang_missing",
+          "no <link rel=alternate hreflang> in <head>"
+        ],
+        [
+          "viewport_missing",
+          "no meta viewport"
+        ]
+      ]
+    }
+  ]
+}

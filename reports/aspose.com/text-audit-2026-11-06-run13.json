@@ -1,0 +1,254 @@
+{
+  "tenant": "aspose.com",
+  "auditor": "text-audit",
+  "run_id": 13,
+  "params": {
+    "hosts": [
+      "blog.aspose.com"
+    ],
+    "crawl_runs": [
+      1,
+      10
+    ],
+    "model": "gpt-oss",
+    "prompt_version": 2
+  },
+  "duration_s": 4.3,
+  "stopped_early": false,
+  "pages_checked": 47,
+  "unchecked": [],
+  "incomplete": false,
+  "llm": {
+    "calls": 1,
+    "prompt_tokens": 1502,
+    "completion_tokens": 246,
+    "cache_hits": 32
+  },
+  "ignored": 0,
+  "summary": {
+    "blog.aspose.com": {
+      "checked": 47,
+      "pages_with_issues": 5,
+      "issues": {
+        "text_typo": 2,
+        "text_topic_mismatch": 7
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "onpage-0001",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "text_topic_mismatch",
+      "type": "incorrect",
+      "title": "Title or description is about a different product",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/",
+          "https://blog.aspose.com/words/aspose-words-for-net-5-3-0-released/",
+          "https://blog.aspose.com/total/enhanced-presentation-access-and-rendering-support-provided-in-aspose.slides-for-.net/",
+          "https://blog.aspose.com/imaging/support-setting-gray-scale-psd-image-aspose.imaging-.net-17.7/",
+          "https://blog.aspose.com/total/aspose-sponsors-the-vjug24-java-conference/"
+        ],
+        "observed": "5 of 47 checked pages: /total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/ H1: 'Sponsoring Conferences and Events: Global Azure Bootcamp 2017 - Kuala Lumpur' → 'Delete messages from PST file permanently using .NET'; /words/aspose-words-for-net-5-3-0-released/ title: 'In-Browser Editor for Word Documents | Aspose.Editor' → 'Aspose.Words for .NET 5.3.0 Released'; /total/enhanced-presentation-access-and-rendering-support-provided-in-aspose.slides-for-.net/ title: 'Field Engine Progress in Aspose.Words 11.7 | Word API' → 'Enhanced presentation access and rendering support in Aspose.Slides for .NET'; /total/enhanced-presentation-access-and-rendering-support-provided-in-aspose.slides-for-.net/ meta description: 'We have just released Aspose.Words for .NET and Java 11.7. This month’s release includes almost 200 improvements to many areas of our components.' → 'We have just released Aspose.Slides for .NET 6.6. This release includes many improvements to presentation handling and rendering.'; /imaging/support-setting-gray-scale-psd-image-aspose.imaging-.net-17.7/ meta description: 'Use .NET Image Processing API to set the gray scale PSD image programmatically using Java within Spring or other Java based applications.' → 'Use .NET Image Processing API to set the gray scale for a PSD image programmatically using C#.'; and 2 more",
+        "expected": "Title and meta description describe the page's own product, like its H1",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/",
+            "note": "H1: 'Sponsoring Conferences and Events: Global Azure Bootcamp 2017 - Kuala Lumpur' → 'Delete messages from PST file permanently using .NET'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/words/aspose-words-for-net-5-3-0-released/",
+            "note": "title: 'In-Browser Editor for Word Documents | Aspose.Editor' → 'Aspose.Words for .NET 5.3.0 Released'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/total/enhanced-presentation-access-and-rendering-support-provided-in-aspose.slides-for-.net/",
+            "note": "title: 'Field Engine Progress in Aspose.Words 11.7 | Word API' → 'Enhanced presentation access and rendering support in Aspose.Slides for .NET'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/total/enhanced-presentation-access-and-rendering-support-provided-in-aspose.slides-for-.net/",
+            "note": "meta description: 'We have just released Aspose.Words for .NET and Java 11.7. This month’s release includes almost 200 improvements to many areas of our components.' → 'We have just released Aspose.Slides for .NET 6.6. This release includes many improvements to presentation handling and rendering.'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/imaging/support-setting-gray-scale-psd-image-aspose.imaging-.net-17.7/",
+            "note": "meta description: 'Use .NET Image Processing API to set the gray scale PSD image programmatically using Java within Spring or other Java based applications.' → 'Use .NET Image Processing API to set the gray scale for a PSD image programmatically using C#.'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/total/aspose-sponsors-the-vjug24-java-conference/",
+            "note": "title: 'Add or Remove Comment Reply in Word in Java | Java Word API' → 'Aspose sponsors the vJUG24 Java Conference'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/total/aspose-sponsors-the-vjug24-java-conference/",
+            "note": "meta description: 'Add or remove comment reply from Word document in Java. Set base document for Word document comparison in Java. Compare Word Docs in Java. Java Word API.' → 'Aspose sponsors the vJUG24 Java Conference, bringing together Java developers to share knowledge and experience.'"
+          }
+        ]
+      },
+      "affected_pages": 5,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    },
+    {
+      "id": "onpage-0002",
+      "tenant": "aspose.com",
+      "subdomain": "blog.aspose.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "text_typo",
+      "type": "improvable",
+      "title": "Typos in titles, headings or descriptions",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/"
+        ],
+        "observed": "1 of 47 checked pages: /total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/ title: 'mesages' → 'messages'; /total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/ title: 'permanenetly' → 'permanently'",
+        "expected": "Correctly spelled titles, H1s and meta descriptions",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/",
+            "note": "title: 'mesages' → 'messages'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/",
+            "note": "title: 'permanenetly' → 'permanently'"
+          }
+        ]
+      },
+      "affected_pages": 1,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-06"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://blog.aspose.com/imaging/support-setting-gray-scale-psd-image-aspose.imaging-.net-17.7/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "description",
+          "kind": "topic_mismatch",
+          "wrong": "Use .NET Image Processing API to set the gray scale PSD image programmatically using Java within Spring or other Java based applications.",
+          "fix": "Use .NET Image Processing API to set the gray scale for a PSD image programmatically using C#.",
+          "why": "Description mentions Java while the page is about C#"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/total/aspose-sponsors-the-vjug24-java-conference/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "title",
+          "kind": "topic_mismatch",
+          "wrong": "Add or Remove Comment Reply in Word in Java | Java Word API",
+          "fix": "Aspose sponsors the vJUG24 Java Conference",
+          "why": "Title describes a Word comment feature, not the conference announcement"
+        },
+        {
+          "field": "description",
+          "kind": "topic_mismatch",
+          "wrong": "Add or remove comment reply from Word document in Java. Set base document for Word document comparison in Java. Compare Word Docs in Java. Java Word API.",
+          "fix": "Aspose sponsors the vJUG24 Java Conference, bringing together Java developers to share knowledge and experience.",
+          "why": "Description talks about Word comment features, unrelated to the conference page"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/total/enhanced-presentation-access-and-rendering-support-provided-in-aspose.slides-for-.net/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "title",
+          "kind": "topic_mismatch",
+          "wrong": "Field Engine Progress in Aspose.Words 11.7 | Word API",
+          "fix": "Enhanced presentation access and rendering support in Aspose.Slides for .NET",
+          "why": "Title mentions Aspose.Words while page is about Aspose.Slides"
+        },
+        {
+          "field": "description",
+          "kind": "topic_mismatch",
+          "wrong": "We have just released Aspose.Words for .NET and Java 11.7. This month’s release includes almost 200 improvements to many areas of our components.",
+          "fix": "We have just released Aspose.Slides for .NET 6.6. This release includes many improvements to presentation handling and rendering.",
+          "why": "Description talks about Aspose.Words instead of Aspose.Slides"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/total/sponsoring-conferences-events-global-azure-bootcamp-2017-kuala-lumpur/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "title",
+          "kind": "misspelling",
+          "wrong": "mesages",
+          "fix": "messages",
+          "why": "misspelled word"
+        },
+        {
+          "field": "title",
+          "kind": "misspelling",
+          "wrong": "permanenetly",
+          "fix": "permanently",
+          "why": "misspelled word"
+        },
+        {
+          "field": "h1",
+          "kind": "topic_mismatch",
+          "wrong": "Sponsoring Conferences and Events: Global Azure Bootcamp 2017 - Kuala Lumpur",
+          "fix": "Delete messages from PST file permanently using .NET",
+          "why": "H1 describes a conference, not the PST‑deletion topic of the page"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.aspose.com/words/aspose-words-for-net-5-3-0-released/",
+      "host": "blog.aspose.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "title",
+          "kind": "topic_mismatch",
+          "wrong": "In-Browser Editor for Word Documents | Aspose.Editor",
+          "fix": "Aspose.Words for .NET 5.3.0 Released",
+          "why": "Title talks about an editor while the page content is about a product release"
+        }
+      ]
+    }
+  ]
+}
