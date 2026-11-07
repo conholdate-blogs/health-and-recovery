@@ -140,6 +140,15 @@ th, td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom
 thead th { font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted);
   background: var(--tint) }
 tr.area th { background: var(--tint); font-size: 15px; border-top: 2px solid var(--accent) }
+/* column headers stay in view (SK, 2026-11-07): sticky on wide screens, where the table needs no sideways scroll
+   (a scroll box would stop sticky); on phones the box scrolls and the headers repeat under each area */
+tr.colhead th { font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted);
+  background: var(--surface); font-weight: 600 }
+@media (min-width: 900px) {
+  .tablewrap { overflow: visible }
+  thead th { position: sticky; top: 0; z-index: 2; box-shadow: 0 1px 0 var(--line) }
+  tr.colhead { display: none }
+}
 tr.area small { color: var(--muted); font-weight: 400; margin-left: 8px }
 td.name { font-weight: 600; min-width: 160px }
 td.sev { white-space: nowrap; font-weight: 600; color: var(--sev) }
@@ -161,9 +170,7 @@ abbr.term { text-decoration: underline dotted; cursor: help }
     <select id="area"><option value="">All areas</option>__OPTIONS__</select>
     <span>__COUNT__</span></div>
   <div class="tablewrap"><table>
-    <thead><tr><th>Check</th><th>Severity</th><th>What it means</th><th>Impact</th><th>How to fix</th>
-      <th>How to verify</th>
-      <th>Open findings</th></tr></thead>
+    <thead><tr>__COLUMNS__</tr></thead>
 __BODY__
   </table></div>
 </main>
@@ -175,6 +182,10 @@ document.getElementById("area").addEventListener("change", e => {
 </script>
 </html>
 """
+
+
+GUIDE_COLUMNS = "".join(f"<th>{c}</th>" for c in ("Check", "Severity", "What it means", "Impact", "How to fix",
+                                                  "How to verify", "Open findings"))
 
 
 def open_by_check(tenants: list[str]) -> dict:
@@ -202,7 +213,8 @@ def guide_page(tenants: list[str]) -> str:
             continue
         n_used = sum(1 for k, _ in rows if k in used)
         head = (f'<tr class="area"><th colspan="7" scope="colgroup">{html.escape(area)}<small>{len(rows)} checks'
-                f'{f" · {n_used} with open findings" if n_used else ""}</small></th></tr>')
+                f'{f" · {n_used} with open findings" if n_used else ""}</small></th></tr>'
+                f'<tr class="colhead" aria-hidden="true">{GUIDE_COLUMNS}</tr>')
         trs = []
         for k, g in rows:
             sev = g["severity"]
@@ -215,7 +227,8 @@ def guide_page(tenants: list[str]) -> str:
         body.append(f'  <tbody data-area="{html.escape(area)}">{head}{"".join(trs)}</tbody>')
     options = "".join(f'<option value="{html.escape(a)}">{html.escape(a)}</option>' for a in AREAS)
     count = f"{len(GUIDE)} checks · {len(used)} with open findings"
-    return GUIDE_PAGE.replace("__OPTIONS__", options).replace("__COUNT__", count).replace("__BODY__", "\n".join(body))
+    return (GUIDE_PAGE.replace("__OPTIONS__", options).replace("__COUNT__", count)
+            .replace("__COLUMNS__", GUIDE_COLUMNS).replace("__BODY__", "\n".join(body)))
 
 
 METHOD_URL = "../method/"  # from a tenant report at <out>/<tenant>/
