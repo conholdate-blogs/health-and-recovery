@@ -457,7 +457,7 @@ footer a { color: var(--accent) }
       <div class="tablewrap"><table id="history-rows"></table></div>
     </details>
     <details class="ref" id="structure" hidden open><summary>Site structure <small id="structure-st"></small></summary>
-      <p class="lede fold">Tags, categories and the listing pages Hugo builds from them, read from the blog's repo.<span class="rest"> Hugo builds a listing page for the home page, each category and each tag, in every language, with as many /page/N/ pages as the posts need (N posts a page). A tag with one post is a page with one link: thin, and multiplied by every language. Search: Search Console clicks and impressions over 28 days.</span></p>
+      <p class="lede fold">Tags, categories and the listing pages Hugo builds from them, read from the blog's repo.<span class="rest"> Hugo builds a listing page for the home page, each category and each tag, in every language, with as many /page/N/ pages as the posts need (N posts a page). A tag with one post is a page with one link: thin, and multiplied by every language. Search: Search Console clicks and impressions over 28 days. Colours: <span class="bad" style="font-weight:600">red</span> = alert, <span class="ok" style="font-weight:600">green</span> = good, black = in between or a plain count. Tags with one post: red from 50%, green up to 20%; with one or two posts: red from 70%, green up to 35%; tags per post: red above 5, green up to 3; tag share of listing pages: red from 80%, green up to 50%; listing pages beyond page 50: red from 1,000, green at 0; tag URLs in the sitemaps: red if any, green at 0.</span></p>
       <div class="tablewrap"><table id="structure-rows"></table></div>
       <p class="lede" id="structure-tags" hidden></p>
     </details>
@@ -1448,20 +1448,31 @@ __METHOD__
     if (STH.length) {
       const pct = (a, b) => b ? `${Math.round(100 * a / b)}%` : "–";
       const srch = s => s.search || {};
+      // red = alert, green = good, black = in between or a plain count (SK, 2026-11-07); one rule set for both views
+      const share = (a, b) => b ? 100 * a / b : null;
+      const RULES = {
+        one: v => v == null ? "" : v >= 50 ? "bad" : v <= 20 ? "ok" : "",          // % of tags with one post
+        two: v => v == null ? "" : v >= 70 ? "bad" : v <= 35 ? "ok" : "",          // % with one or two posts
+        per: v => v > 5 ? "bad" : v <= 3 ? "ok" : "",                               // tags per post
+        tagshare: v => v == null ? "" : v >= 80 ? "bad" : v <= 50 ? "ok" : "",     // % of listing pages that are tags
+        deep: v => v >= 1000 ? "bad" : v === 0 ? "ok" : "",                         // listing pages beyond the cap
+        sitemap: v => v == null ? "" : v > 0 ? "bad" : "ok",                        // tag URLs in the sitemaps
+      };
+      const mk = (cls, html) => cls ? `<span class="${cls}" style="font-weight:600">${html}</span>` : html;
       $("structure").hidden = false;
       $("structure-st").textContent = `· read ${day(STR.date)}`;
       if (STH.length === 1) {
         const [, s] = STH[0], q = srch(s);
         const rows = [
           ["Posts", `${fmt(s.posts)} <span class="dim">· ${fmt(s.posts_all_languages)} files in ${s.languages} languages</span>`],
-          ["Tags", `${fmt(s.tags)} <span class="dim">· ${s.tags_per_post} per post on average</span>`],
-          ["Tags with one post", `${fmt(s.tags_one_post)} <span class="dim">(${pct(s.tags_one_post, s.tags)})</span>`],
-          ["Tags with one or two posts", `${fmt(s.tags_two_or_less)} <span class="dim">(${pct(s.tags_two_or_less, s.tags)})</span>`],
+          ["Tags", `${fmt(s.tags)} <span class="dim">·</span> ${mk(RULES.per(s.tags_per_post), `${s.tags_per_post} per post`)} <span class="dim">on average</span>`],
+          ["Tags with one post", mk(RULES.one(share(s.tags_one_post, s.tags)), `${fmt(s.tags_one_post)} (${pct(s.tags_one_post, s.tags)})`)],
+          ["Tags with one or two posts", mk(RULES.two(share(s.tags_two_or_less, s.tags)), `${fmt(s.tags_two_or_less)} (${pct(s.tags_two_or_less, s.tags)})`)],
           ["Tag pages, all languages", fmt(s.tag_pages_all_languages)],
           ["Categories", fmt(s.categories)],
-          ["Listing pages Hugo builds", `${fmt(s.listing_pages)} <span class="dim">· ${fmt(s.tag_listing_pages)} of them tag pages (${pct(s.tag_listing_pages, s.listing_pages)}); ${s.paginate} posts a page</span>`],
-          [`Listing pages beyond page ${s.cap}`, fmt(s.pages_beyond_cap)],
-          ["Tag URLs in the sitemaps", s.sitemap_urls != null ? `${fmt(s.sitemap_tag_urls)} <span class="dim">of ${fmt(s.sitemap_urls)} URLs (${pct(s.sitemap_tag_urls, s.sitemap_urls)})</span>` : "–"],
+          ["Listing pages Hugo builds", `${fmt(s.listing_pages)} <span class="dim">·</span> ${mk(RULES.tagshare(share(s.tag_listing_pages, s.listing_pages)), `${fmt(s.tag_listing_pages)} of them tag pages (${pct(s.tag_listing_pages, s.listing_pages)})`)}<span class="dim">; ${s.paginate} posts a page</span>`],
+          [`Listing pages beyond page ${s.cap}`, mk(RULES.deep(s.pages_beyond_cap), fmt(s.pages_beyond_cap))],
+          ["Tag URLs in the sitemaps", s.sitemap_urls != null ? `${mk(RULES.sitemap(s.sitemap_tag_urls), fmt(s.sitemap_tag_urls))} <span class="dim">of ${fmt(s.sitemap_urls)} URLs (${pct(s.sitemap_tag_urls, s.sitemap_urls)})</span>` : "–"],
           ["Search clicks on tag pages", `${fmt(q.tag_clicks || 0)} <span class="dim">of ${fmt(q.clicks || 0)} (${pct(q.tag_clicks || 0, q.clicks || 0)}) · ${fmt(q.tag_pages_with_clicks || 0)} tag pages with a click · ${fmt(q.tag_impressions || 0)} impressions</span>`],
           ["Search clicks on /page/N/ listings", `${fmt(q.paged_clicks || 0)} <span class="dim">· ${fmt(q.paged_impressions || 0)} impressions on ${fmt(q.paged_pages_seen || 0)} pages; beyond page ${s.cap}: ${fmt(q.deep_paged_clicks || 0)} clicks</span>`],
         ];
@@ -1473,7 +1484,7 @@ __METHOD__
       } else {
         const cols = ["Subdomain", "Posts", "Tags", "1 post", "≤ 2 posts", "Per post", "Listing pages", "Tag share", `Beyond p.${STH[0][1].cap}`, "Tags in sitemap", "Tag clicks", "/page/N/ clicks"];
         $("structure-rows").innerHTML = `<thead><tr>${cols.map((c, i) => `<th${i ? ' class="n"' : ""}>${c}</th>`).join("")}</tr></thead><tbody>${STH.map(([h, s]) => { const q = srch(s);
-          return `<tr><td><code>${hostH(h)}</code></td><td class="n">${fmt(s.posts)}</td><td class="n">${fmt(s.tags)}</td><td class="n">${pct(s.tags_one_post, s.tags)}</td><td class="n">${pct(s.tags_two_or_less, s.tags)}</td><td class="n">${s.tags_per_post}</td><td class="n">${fmt(s.listing_pages)}</td><td class="n">${pct(s.tag_listing_pages, s.listing_pages)}</td><td class="n">${fmt(s.pages_beyond_cap)}</td><td class="n">${s.sitemap_urls != null ? `${fmt(s.sitemap_tag_urls)} (${pct(s.sitemap_tag_urls, s.sitemap_urls)})` : "–"}</td><td class="n">${fmt(q.tag_clicks || 0)} (${pct(q.tag_clicks || 0, q.clicks || 0)})</td><td class="n">${fmt(q.paged_clicks || 0)}</td></tr>`; }).join("")}</tbody>`;
+          return `<tr><td><code>${hostH(h)}</code></td><td class="n">${fmt(s.posts)}</td><td class="n">${fmt(s.tags)}</td><td class="n">${mk(RULES.one(share(s.tags_one_post, s.tags)), pct(s.tags_one_post, s.tags))}</td><td class="n">${mk(RULES.two(share(s.tags_two_or_less, s.tags)), pct(s.tags_two_or_less, s.tags))}</td><td class="n">${mk(RULES.per(s.tags_per_post), s.tags_per_post)}</td><td class="n">${fmt(s.listing_pages)}</td><td class="n">${mk(RULES.tagshare(share(s.tag_listing_pages, s.listing_pages)), pct(s.tag_listing_pages, s.listing_pages))}</td><td class="n">${mk(RULES.deep(s.pages_beyond_cap), fmt(s.pages_beyond_cap))}</td><td class="n">${s.sitemap_urls != null ? mk(RULES.sitemap(s.sitemap_tag_urls), `${fmt(s.sitemap_tag_urls)} (${pct(s.sitemap_tag_urls, s.sitemap_urls)})`) : "–"}</td><td class="n">${fmt(q.tag_clicks || 0)} (${pct(q.tag_clicks || 0, q.clicks || 0)})</td><td class="n">${fmt(q.paged_clicks || 0)}</td></tr>`; }).join("")}</tbody>`;
         if (!R._page_host && $("hcards") && !$("hcards").hidden) $("hcards").after($("structure"));  // Reference is hidden there
       }
     }
