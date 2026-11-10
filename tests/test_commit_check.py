@@ -31,6 +31,7 @@ def run(repo, rev="HEAD"):
     configs = cc.check_configs(r, res)
     cc.check_redirects(r, base, "blog.example.com", res)
     cc.check_front_matter(r, changed, res)
+    cc.check_shortcodes(r, changed, res)
     return res, configs
 
 
@@ -88,6 +89,29 @@ def test_deleted_post_is_ignored(tmp_path):
     git(repo, "-c", "user.name=t", "-c", "user.email=t@example.com", "commit", "-q", "-m", "delete")
     res, _ = run(repo)
     assert not res.items
+
+
+EN = '---\ntitle: T\n---\n{{< figure src="a.png" caption="A" >}}\n```cs\nvar s = \\"x\\";\n```\n'
+
+
+def test_damaged_shortcode_in_translation_fails(tmp_path):
+    repo = setup(tmp_path)
+    commit(repo, {"content/blog/x/2026-01-02-p/index.md": EN}, "en")
+    commit(repo, {"content/blog/x/2026-01-02-p/index.fa.md": EN.replace('"A" >}}', '"A"} >}}'),
+                  "content/blog/x/2026-01-02-p/index.de.md": EN.replace("```cs\n", "```cs\n```\n"),
+                  "content/blog/x/2026-01-02-p/index.fr.md": EN}, "translations")
+    res, _ = run(repo)
+    assert res.failed
+    assert [w.split(":")[0].rsplit("/", 1)[1] for w in res.items["shortcode_damaged"]] == ["index.fa.md"]
+    assert "stray } before >}}" in res.items["shortcode_damaged"][0]
+    assert len(res.items["code_fence_mismatch"]) == 1 and "index.de.md" in res.items["code_fence_mismatch"][0]
+
+
+def test_unbalanced_shortcode_in_english_fails(tmp_path):
+    repo = setup(tmp_path)
+    commit(repo, {"content/blog/x/2026-01-02-p/index.md": "---\ntitle: T\n---\n{{< figure src=a.png\n"}, "en")
+    res, _ = run(repo)
+    assert "shortcode_damaged" in res.items
 
 
 def test_key_problem():

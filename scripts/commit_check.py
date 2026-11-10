@@ -11,6 +11,9 @@ Checks (fail = exit 1, the deploy should stop; warn = reported only):
   {{ }} in the key (fail); target empty or not https, target equal to its source (warn).
 - Every config*.yml parses (fail).
 - Front matter of changed post files parses, url starts with / (warn; old posts already have some).
+- Every changed post file (no cap): Hugo shortcode delimiters balanced; a translation keeps the English post's
+  shortcode counts and gains no damage pattern ({{< x a=\\"..\\" >}}, a stray } before >}}) (fail: Hugo cannot build
+  the product); a translation's ``` count differs from the English post (warn). From blog-translation-agent c261e54.
 - Hugo build of a sample: the posts changed in the range (max 10, newest first; else the 3 newest posts) plus a
   fixed control set (the post with the most translations, the newest English-only post, the newest post with a gist),
   their home, section, category, tag and page-2 listing pages. Build error (fail); title, meta description/robots/
@@ -49,6 +52,8 @@ LEVEL = {
     "redirect_self_loop": WARN,
     "front_matter_broken": WARN,
     "url_relative": WARN,
+    "shortcode_damaged": FAIL,
+    "code_fence_mismatch": WARN,
 }
 TITLE = {
     "build_failed": "Hugo build fails",
@@ -61,7 +66,13 @@ TITLE = {
     "redirect_self_loop": "New redirect points at itself",
     "front_matter_broken": "Changed post: front matter does not parse",
     "url_relative": "Changed post: url without a leading slash",
+    "shortcode_damaged": "Changed post: Hugo shortcode damaged (breaks the build)",
+    "code_fence_mismatch": "Changed translation: code fences differ from the English post",
 }
+# Shortcode damage seen in LLM translations (blog-translation-agent, translator._shortcode_syntax_corrupted, c261e54)
+DAMAGE = [(r'=\(\\?"', 'value wrapped in ("'), (r'\\"\)', 'value ends with \\")'), (r'=\\"', 'escaped quote =\\"'),
+          (r"\}\s*>\}\}", "stray } before >}}")]
+DELIMS = [("{{<", ">}}"), ("{{%", "%}}")]
 REDIRECTS = "Redirects.json"
 SITE_DIRS = ["layouts", "themes", "static", "assets", "data", "i18n", "archetypes"]
 BODY_TAGS = {
@@ -203,6 +214,32 @@ def check_front_matter(repo: Repo, changed: list[str], res: Result) -> None:
             res.add("url_relative", f"{rel}: url {url}")
 
 
+def check_shortcodes(repo: Repo, changed: list[str], res: Result) -> None:
+    """Every changed post file, no cap: shortcode delimiters balanced; a translation keeps the English post's shortcode
+    and code-fence counts and has no damage pattern the English post lacks (code can contain =\\" legitimately)."""
+    english: dict[str, str | None] = {}
+    for rel in changed:
+        folder, _, name = rel.rpartition("/")
+        if not rel.startswith("content/") or not _INDEX.match(name):
+            continue
+        text = repo.show(rel)
+        if text is None:
+            continue
+        problems = [f"{o} {text.count(o)} vs {c} {text.count(c)}" for o, c in DELIMS if text.count(o) != text.count(c)]
+        if name != "index.md":
+            if folder not in english:
+                english[folder] = repo.show(f"{folder}/index.md")
+            en = english[folder]
+            if en is not None:
+                problems += [f"{d} {text.count(d)} vs English {en.count(d)}" for pair in DELIMS for d in pair
+                             if text.count(d) != en.count(d)]
+                problems += [label for pat, label in DAMAGE if re.search(pat, text) and not re.search(pat, en)]
+                if text.count("```") != en.count("```"):
+                    res.add("code_fence_mismatch", f"{rel}: ``` {text.count('```')} vs English {en.count('```')}")
+        if problems:
+            res.add("shortcode_damaged", f"{rel}: {'; '.join(dict.fromkeys(problems))}")
+
+
 def choose_sample(repo: Repo, changed: list[str], res: Result) -> list[str]:
     """Post folders to build: changed ones (newest first, capped), else the newest few, plus a fixed control set."""
     files: dict[str, list[str]] = defaultdict(list)
@@ -295,12 +332,14 @@ def build_sample(repo: Repo, configs: list[str], folders: list[str], hugo: str, 
             repo.extract(["tools/generate_global_post_order.py"], work)
             subprocess.run([sys.executable, "-I", str(tool)], cwd=work, capture_output=True)
         cfg = ",".join(c for c in ("config.yml", "config.production.yml") if c in configs) or configs[0]
-        cmd = [hugo, "--quiet", "--minify", "--config", cfg, "-d", "out"] + (["-b", base_url] if base_url else [])
+        cmd = [hugo, "--minify", "--config", cfg, "-d", "out"] + (["-b", base_url] if base_url else [])
         env = {**os.environ, "HUGO_PAGINATE": "2"}  # small sample: page 2 of the listings exists
         r = subprocess.run(cmd, cwd=work, capture_output=True, text=True, env=env)
         if r.returncode:
-            lines = [ln for ln in (r.stderr or r.stdout).splitlines() if ln.strip()]
-            res.add("build_failed", " / ".join(lines[-3:])[:400] or f"exit {r.returncode}")
+            lines = [ln.strip() for ln in (r.stderr + "\n" + r.stdout).splitlines() if ln.strip()]
+            errors = [ln.replace(str(work.resolve()) + "/", "").replace(str(work) + "/", "")
+                      for ln in lines if "ERROR" in ln or "Error" in ln] or lines[-3:]
+            res.add("build_failed", " / ".join(errors[:3])[:500] or f"exit {r.returncode}")
             return
         n = check_pages(work / "out", res)
         res.info.append(f"built and checked {n} pages")
@@ -376,6 +415,7 @@ def main() -> int:
     host = re.sub(r"^https?://([^/]+).*", r"\1", base_url) if base_url else None
     check_redirects(repo, base, host, res)
     check_front_matter(repo, changed, res)
+    check_shortcodes(repo, changed, res)
     if not args.no_build and "config_invalid" not in res.items and configs:
         build_sample(repo, configs, choose_sample(repo, changed, res), args.hugo, base_url, res)
     report(res, repo, base, changed, args.json)
