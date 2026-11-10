@@ -1,0 +1,71 @@
+name: Commit Check
+
+# Checks Aspose/aspose-blog before a deploy (called by the production pipelines) and on a schedule (commit-watch.yml):
+# Redirects.json, Hugo config, front matter of changed posts, and a Hugo build of a sample (changed posts + a fixed
+# control set) with every SEO tag required in <head>. Fails on what must not go live. Script: tools/commit_check.py
+# (source of truth: conholdate-blogs/health-and-recovery scripts/commit_check.py).
+on:
+  workflow_call:
+    inputs:
+      since:
+        description: "Check commits after this time (ISO); empty = only the newest commit"
+        type: string
+        default: ""
+      skip:
+        description: "Skip the check (logged)"
+        type: boolean
+        default: false
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "Check commits after this time (ISO, e.g. 2026-11-10T03:00:00Z); empty = only the newest commit"
+        default: ""
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skipped by request
+        if: ${{ inputs.skip }}
+        run: echo "::warning title=Commit check skipped::Skipped by the person who started this run (${{ github.actor }})"
+
+      - name: Checkout workflows repo (for the script)
+        if: ${{ !inputs.skip }}
+        uses: actions/checkout@v4
+        with:
+          path: wf
+
+      - name: Checkout blog repo
+        if: ${{ !inputs.skip }}
+        uses: actions/checkout@v4
+        with:
+          repository: Aspose/aspose-blog
+          ref: master
+          token: ${{ secrets.REPO_TOKEN }}
+          fetch-depth: 0
+          filter: blob:none   # history without file contents; git fetches only what the check reads
+          path: blog
+
+      - name: Setup Hugo
+        if: ${{ !inputs.skip }}
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.120.4'
+          extended: true
+
+      - name: Run commit check
+        if: ${{ !inputs.skip }}
+        env:
+          SINCE: ${{ inputs.since }}
+        run: |
+          pip install --quiet pyyaml selectolax
+          python3 wf/tools/commit_check.py blog --hugo hugo ${SINCE:+--since "$SINCE"} --json commit-check.json
+
+      - name: Keep the result
+        if: ${{ always() && !inputs.skip }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: commit-check-${{ github.run_id }}
+          path: commit-check.json
+          retention-days: 30
+          if-no-files-found: ignore
