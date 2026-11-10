@@ -18,7 +18,7 @@
   "repo": "Aspose/aspose-blog",
   "commits": ["b76c2369eb54a0b5bce1483dfb75e45e58a176f1"],
   "fixed": "2026-11-07",
-  "verified": null,
-  "result": "Verified in a Hugo 0.120 build: every tag back in <head>; live with the next production deploy (scheduled Mon 9 Nov 08:00 PKT)"
+  "verified": "2026-11-10",
+  "result": "Live on 10 Nov: on a translated post title, description, robots, viewport, canonical, 22 hreflang, Open Graph and JSON-LD are all in <head> (none in <body>); Open Graph and JSON-LD now in <head> too, unlike before 3 Nov"
  }
 ]

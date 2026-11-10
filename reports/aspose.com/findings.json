@@ -111,7 +111,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run17",
+    "last_seen_run": "crawl-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "content_needs_js",
@@ -14389,14 +14389,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-07",
     "first_seen_run": "crawl-audit-run16",
     "last_seen_run": "crawl-audit-run17",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run18",
+    "resolved_at": "2026-11-10T14:05:30+00:00",
     "check": "head_closed_early",
     "notes": []
   },
@@ -14415,15 +14415,15 @@
         "https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/",
         "https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/",
         "https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/",
+        "https://blog.aspose.com/",
         "https://blog.aspose.com/search/",
+        "https://blog.aspose.com/cells/protect-or-unprotect-excel-files-using-csharp/",
         "https://blog.aspose.com/convert-pdf-to-text-in-python/",
         "https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/",
         "https://blog.aspose.com/2023/05/09/create-mime-messages-in-python/",
-        "https://blog.aspose.com/create-visio-diagram-in-python/",
-        "https://blog.aspose.com/cz/tex/convert-tex-to-bmp-online/",
-        "https://blog.aspose.com/ru/2022/11/03/password-protected-pst-in-charp/"
+        "https://blog.aspose.com/pt/"
       ],
-      "observed": "32 of 49 sampled pages (by template: category 6/6, generic:/{section}/*/* 9/10, generic:/{section}/*/*/* 4/4, listing 2/4, post 11/22). e.g. https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/: 22 entries: en, ar, cs, de, es, fa; https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/: 22 entries: en, ar, cs, de, es, fa; https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/: 22 entries: en, ar, cs, de, es, fa; https://blog.aspose.com/search/: 21 entries: en, ja, ko, es, de, ru; https://blog.aspose.com/convert-pdf-to-text-in-python/: 22 entries: en, ar, cs, de, es, fa",
+      "observed": "49 of 49 sampled pages (by template: category 6/6, generic:/{section}/*/* 10/10, generic:/{section}/*/*/* 4/4, home 3/3, listing 4/4, post 22/22). e.g. https://blog.aspose.com/convert-primavera-xml-to-mpp-in-csharp/: 22 entries: en, ar, cs, de, es, fa; https://blog.aspose.com/jp/ppt/create-and-open-ppt-in-nodejs/: 22 entries: en, ar, cs, de, es, fa; https://blog.aspose.com/2022/11/03/password-protected-pst-in-charp/: 22 entries: en, ar, cs, de, es, fa; https://blog.aspose.com/: 22 entries: en, ar, cs, de, es, fa; https://blog.aspose.com/search/: 21 entries: en, ja, ko, es, de, ru",
       "expected": "an x-default entry",
       "locations": [
         {
@@ -14443,13 +14443,13 @@
         },
         {
           "role": "page",
-          "url": "https://blog.aspose.com/search/",
-          "note": "21 entries: en, ja, ko, es, de, ru"
+          "url": "https://blog.aspose.com/",
+          "note": "22 entries: en, ar, cs, de, es, fa"
         },
         {
           "role": "page",
-          "url": "https://blog.aspose.com/convert-pdf-to-text-in-python/",
-          "note": "22 entries: en, ar, cs, de, es, fa"
+          "url": "https://blog.aspose.com/search/",
+          "note": "21 entries: en, ja, ko, es, de, ru"
         },
         {
           "role": "listed in",
@@ -14470,39 +14470,43 @@
           6
         ],
         "generic:/{section}/*/*": [
-          9,
+          10,
           10
         ],
         "generic:/{section}/*/*/*": [
           4,
           4
         ],
+        "home": [
+          3,
+          3
+        ],
         "listing": [
-          2,
+          4,
           4
         ],
         "post": [
-          11,
+          22,
           22
         ]
       }
     },
-    "affected_pages": 29070,
+    "affected_pages": 57872,
     "impact": {
-      "clicks_28d": 8734,
-      "impressions_28d": 509088,
+      "clicks_28d": 17477,
+      "impressions_28d": 1017837,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 20654,
-      "past_impressions": 833591,
-      "lost_clicks": 11920,
-      "lost_impressions": 324503,
+      "past_clicks": 41306,
+      "past_impressions": 1666796,
+      "lost_clicks": 23829,
+      "lost_impressions": 648959,
       "past_window": [
         "2026-04-09",
         "2026-05-06"
       ],
       "scored_on": "at stake",
-      "score": 17,
+      "score": 18,
       "window": [
         "2026-10-08",
         "2026-11-04"
@@ -14516,7 +14520,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run17",
+    "last_seen_run": "crawl-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "hreflang_no_xdefault",
@@ -18539,14 +18543,25 @@
     "title": "Meta descriptions are too long or too short",
     "evidence": {
       "urls": [
+        "https://blog.aspose.com/",
         "https://blog.aspose.com/search/",
         "https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/",
+        "https://blog.aspose.com/pt/",
+        "https://blog.aspose.com/archives/",
+        "https://blog.aspose.com/fa/",
+        "https://blog.aspose.com/zh/archives/",
         "https://blog.aspose.com/tr/search/",
-        "https://blog.aspose.com/ua/psd/convert-psd-to-tiff-in-python/"
+        "https://blog.aspose.com/ua/psd/convert-psd-to-tiff-in-python/",
+        "https://blog.aspose.com/email/async-item-counting-tgz-archives-csharp/"
       ],
-      "observed": "4 of 49 sampled pages (by template: generic:/{section}/*/* 2/10, listing 2/4). e.g. https://blog.aspose.com/search/: width 6: 'search'; https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/: width 178: 'Дізнайтеся, як перетворити MSG у PST в Node.js за допомогою Aspose.Email для Node.js через'; https://blog.aspose.com/tr/search/: width 5: 'Arama'; https://blog.aspose.com/ua/psd/convert-psd-to-tiff-in-python/: width 198: 'Дізнайтеся, як конвертувати PSD у TIFF на Python за допомогою [Aspose.PSD for Python via .'",
+      "observed": "11 of 49 sampled pages (by template: generic:/{section}/*/* 2/10, home 3/3, listing 4/4, post 2/22). e.g. https://blog.aspose.com/: width 201: 'C# .NET Core, Java, Python, C++, Android, PHP, Node.js APIs to create, process and convert'; https://blog.aspose.com/search/: width 6: 'search'; https://blog.aspose.com/ua/email/convert-msg-to-pst-in-nodejs/: width 178: 'Дізнайтеся, як перетворити MSG у PST в Node.js за допомогою Aspose.Email для Node.js через'; https://blog.aspose.com/pt/: width 201: 'C# .NET Core, Java, Python, C++, Android, PHP, Node.js APIs to create, process and convert'; https://blog.aspose.com/archives/: width 8: 'archives'",
       "expected": "50-170 characters (CJK count double)",
       "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.aspose.com/",
+          "note": "width 201: 'C# .NET Core, Java, Python, C++, Android, PHP, Node.js APIs to create, process and convert'"
+        },
         {
           "role": "page",
           "url": "https://blog.aspose.com/search/",
@@ -18559,13 +18574,13 @@
         },
         {
           "role": "page",
-          "url": "https://blog.aspose.com/tr/search/",
-          "note": "width 5: 'Arama'"
+          "url": "https://blog.aspose.com/pt/",
+          "note": "width 201: 'C# .NET Core, Java, Python, C++, Android, PHP, Node.js APIs to create, process and convert'"
         },
         {
           "role": "page",
-          "url": "https://blog.aspose.com/ua/psd/convert-psd-to-tiff-in-python/",
-          "note": "width 198: 'Дізнайтеся, як конвертувати PSD у TIFF на Python за допомогою [Aspose.PSD for Python via .'"
+          "url": "https://blog.aspose.com/archives/",
+          "note": "width 8: 'archives'"
         },
         {
           "role": "listed in",
@@ -18581,7 +18596,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.aspose.com/tr/sitemap.xml"
+          "url": "https://blog.aspose.com/pt/sitemap.xml"
         }
       ],
       "sample": {
@@ -18589,28 +18604,36 @@
           2,
           10
         ],
+        "home": [
+          3,
+          3
+        ],
         "listing": [
-          2,
+          4,
           4
+        ],
+        "post": [
+          2,
+          22
         ]
       }
     },
-    "affected_pages": 43,
+    "affected_pages": 5314,
     "impact": {
-      "clicks_28d": 0,
-      "impressions_28d": 231,
+      "clicks_28d": 1600,
+      "impressions_28d": 93046,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 4,
-      "past_impressions": 3286,
-      "lost_clicks": 4,
-      "lost_impressions": 3055,
+      "past_clicks": 3776,
+      "past_impressions": 157761,
+      "lost_clicks": 2176,
+      "lost_impressions": 64715,
       "past_window": [
         "2026-04-09",
         "2026-05-06"
       ],
-      "scored_on": "lost",
-      "score": 5,
+      "scored_on": "at stake",
+      "score": 14,
       "window": [
         "2026-10-08",
         "2026-11-04"
@@ -18624,7 +18647,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run17",
+    "last_seen_run": "crawl-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -18717,7 +18740,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run17",
+    "last_seen_run": "crawl-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -18790,7 +18813,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run17",
+    "last_seen_run": "crawl-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_multiple",
@@ -18808,14 +18831,25 @@
     "title": "Titles are too long or too short",
     "evidence": {
       "urls": [
+        "https://blog.aspose.com/",
         "https://blog.aspose.com/search/",
+        "https://blog.aspose.com/pt/",
+        "https://blog.aspose.com/archives/",
+        "https://blog.aspose.com/fa/",
+        "https://blog.aspose.com/zh/archives/",
         "https://blog.aspose.com/ua/slides/how-to-create-a-table-in-powerpoint-programmatically/",
         "https://blog.aspose.com/tr/search/",
+        "https://blog.aspose.com/html/xpath-document-evaluate-in-csharp/",
         "https://blog.aspose.com/cells/create-manipulate-and-render-slicers-in-ms-excel-files-using-aspose.cells-for-.net-18.6/"
       ],
-      "observed": "4 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, listing 2/4, post 1/22). e.g. https://blog.aspose.com/search/: width 6: 'Search'; https://blog.aspose.com/ua/slides/how-to-create-a-table-in-powerpoint-programmatically/: width 88: 'Опануйте, як програмно створити таблицю в PowerPoint за допомогою Aspose.Slides для Java'; https://blog.aspose.com/tr/search/: width 5: 'Arama'; https://blog.aspose.com/cells/create-manipulate-and-render-slicers-in-ms-excel-files-using-aspose.cells-for-.net-18.6/: width 74: 'Create, Format and Render Excel Slicer in C# | Excel Slicer in Pivot Table'",
+      "observed": "10 of 49 sampled pages (by template: generic:/{section}/*/* 1/10, home 3/3, listing 4/4, post 2/22). e.g. https://blog.aspose.com/: width 77: 'Aspose Blog | File Format Processing APIs for C# .NET Core, Java, C++, Python'; https://blog.aspose.com/search/: width 6: 'Search'; https://blog.aspose.com/pt/: width 77: 'Aspose Blog | File Format Processing APIs for C# .NET Core, Java, C++, Python'; https://blog.aspose.com/archives/: width 7: 'Archive'; https://blog.aspose.com/fa/: width 77: 'Aspose Blog | File Format Processing APIs for C# .NET Core, Java, C++, Python'",
       "expected": "10-70 characters (CJK count double)",
       "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.aspose.com/",
+          "note": "width 77: 'Aspose Blog | File Format Processing APIs for C# .NET Core, Java, C++, Python'"
+        },
         {
           "role": "page",
           "url": "https://blog.aspose.com/search/",
@@ -18823,18 +18857,18 @@
         },
         {
           "role": "page",
-          "url": "https://blog.aspose.com/ua/slides/how-to-create-a-table-in-powerpoint-programmatically/",
-          "note": "width 88: 'Опануйте, як програмно створити таблицю в PowerPoint за допомогою Aspose.Slides для Java'"
+          "url": "https://blog.aspose.com/pt/",
+          "note": "width 77: 'Aspose Blog | File Format Processing APIs for C# .NET Core, Java, C++, Python'"
         },
         {
           "role": "page",
-          "url": "https://blog.aspose.com/tr/search/",
-          "note": "width 5: 'Arama'"
+          "url": "https://blog.aspose.com/archives/",
+          "note": "width 7: 'Archive'"
         },
         {
           "role": "page",
-          "url": "https://blog.aspose.com/cells/create-manipulate-and-render-slicers-in-ms-excel-files-using-aspose.cells-for-.net-18.6/",
-          "note": "width 74: 'Create, Format and Render Excel Slicer in C# | Excel Slicer in Pivot Table'"
+          "url": "https://blog.aspose.com/fa/",
+          "note": "width 77: 'Aspose Blog | File Format Processing APIs for C# .NET Core, Java, C++, Python'"
         },
         {
           "role": "listed in",
@@ -18846,11 +18880,11 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.aspose.com/uk/sitemap.xml"
+          "url": "https://blog.aspose.com/pt/sitemap.xml"
         },
         {
           "role": "listed in",
-          "url": "https://blog.aspose.com/tr/sitemap.xml"
+          "url": "https://blog.aspose.com/fa/sitemap.xml"
         }
       ],
       "sample": {
@@ -18858,32 +18892,36 @@
           1,
           10
         ],
+        "home": [
+          3,
+          3
+        ],
         "listing": [
-          2,
+          4,
           4
         ],
         "post": [
-          1,
+          2,
           22
         ]
       }
     },
-    "affected_pages": 2646,
+    "affected_pages": 5304,
     "impact": {
-      "clicks_28d": 794,
-      "impressions_28d": 46403,
+      "clicks_28d": 1600,
+      "impressions_28d": 93008,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 1879,
-      "past_impressions": 78649,
-      "lost_clicks": 1085,
-      "lost_impressions": 32246,
+      "past_clicks": 3775,
+      "past_impressions": 157715,
+      "lost_clicks": 2175,
+      "lost_impressions": 64707,
       "past_window": [
         "2026-04-09",
         "2026-05-06"
       ],
       "scored_on": "at stake",
-      "score": 12,
+      "score": 14,
       "window": [
         "2026-10-08",
         "2026-11-04"
@@ -18897,7 +18935,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run17",
+    "last_seen_run": "crawl-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
