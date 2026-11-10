@@ -28,5 +28,6 @@ data/
 .DS_Store
 .idea/
 
-# Claude Code: personal allowlist for this Mac
+# Claude Code: personal allowlists for this Mac (Mac paths, one-off approvals); public repo, so never committed
 .claude/settings.local.json
+.claude/settings.json
