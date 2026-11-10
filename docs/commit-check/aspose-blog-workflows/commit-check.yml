@@ -1,0 +1,61 @@
+# Target: Aspose/aspose-blog-workflows .github/workflows/commit-check.yml
+name: Commit Check (deploy gate)
+
+# Called by the AWS and Ceph production pipelines before job1: checks everything aspose-blog's master gained since
+# the commit the last complete deploy shipped, with the script that lives in aspose-blog (tools/commit_check.py).
+# What deploys is master as it is now, so a later fix commit clears an earlier failure. Fails = no deploy.
+on:
+  workflow_call:
+    inputs:
+      base:
+        description: "aspose-blog commit of the last complete deploy (empty = check the newest commit only)"
+        type: string
+        default: ""
+      skip:
+        description: "Skip the check (logged)"
+        type: boolean
+        default: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Skipped by request
+        if: ${{ inputs.skip }}
+        run: echo "::warning title=Commit check skipped::Deploy started with skip_checks by ${{ github.actor }}"
+
+      - name: Checkout blog repo
+        if: ${{ !inputs.skip }}
+        uses: actions/checkout@v4
+        with:
+          repository: Aspose/aspose-blog
+          ref: master
+          token: ${{ secrets.REPO_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        if: ${{ !inputs.skip }}
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.120.4'
+          extended: true
+
+      - name: Run commit check
+        if: ${{ !inputs.skip }}
+        env:
+          BASE: ${{ inputs.base }}
+        run: |
+          pip install --quiet pyyaml selectolax
+          base=""
+          if [ -n "$BASE" ] && git cat-file -e "${BASE}^{commit}" 2>/dev/null; then base="--base $BASE"; fi
+          python3 tools/commit_check.py . --hugo hugo $base --json commit-check.json
+
+      - name: Keep the result
+        if: ${{ always() && !inputs.skip }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: commit-check-${{ github.run_id }}
+          path: commit-check.json
+          retention-days: 30
+          if-no-files-found: ignore

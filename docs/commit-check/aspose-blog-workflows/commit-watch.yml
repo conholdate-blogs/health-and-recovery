@@ -1,0 +1,54 @@
+# Target: Aspose/aspose-blog-workflows .github/workflows/commit-watch.yml
+name: Commit Watch
+
+# Every 15 minutes: reads the results of aspose-blog's own "Commit Check" (it runs on every push there) and fails when
+# a check finished with a failure, or when aspose-blog got a push but no check ran for it. No second build.
+# A failure here emails the person who last edited this file's schedule (GitHub's rule for scheduled runs): that is
+# how a failed commit check reaches SK, while aspose-blog's own run emails only the person who pushed.
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read aspose-blog commit check results
+        uses: actions/github-script@v7
+        env:
+          PREV_TOKEN: ${{ github.token }}
+        with:
+          github-token: ${{ secrets.REPO_TOKEN }}   # needs Actions read on Aspose/aspose-blog
+          script: |
+            // Window: since the newest earlier run of this workflow (any result); first run looks back 1 hour.
+            const own = getOctokit(process.env.PREV_TOKEN);
+            const { data: mine } = await own.rest.actions.listWorkflowRuns({
+              owner: context.repo.owner, repo: context.repo.repo, workflow_id: 'commit-watch.yml', per_page: 5,
+            });
+            const prev = mine.workflow_runs.find((r) => r.id !== context.runId);
+            const since = new Date(prev ? prev.created_at : Date.now() - 3600e3);
+
+            const { data } = await github.rest.actions.listWorkflowRuns({
+              owner: 'Aspose', repo: 'aspose-blog', workflow_id: 'commit-check.yml', branch: 'master', per_page: 30,
+            });
+            // Finished since the last watch run (updated_at), so a check still running now is read next time.
+            const done = data.workflow_runs.filter((r) => r.status === 'completed' && new Date(r.updated_at) > since);
+            const failed = done.filter((r) => !['success', 'skipped', 'cancelled'].includes(r.conclusion));
+            for (const r of done) core.info(`${r.conclusion}: ${r.head_sha.slice(0, 10)} ${r.display_title} ${r.html_url}`);
+
+            // A push without a check (workflow disabled, broken or removed) must not pass silently.
+            const { data: repo } = await github.rest.repos.get({ owner: 'Aspose', repo: 'aspose-blog' });
+            const pushed = new Date(repo.pushed_at);
+            const started = data.workflow_runs.some((r) => new Date(r.created_at) >= new Date(pushed - 120e3));
+            // Judge a push once, when it is 10 min old (time for its check to start), in the run whose window holds that.
+            const due = new Date(pushed.getTime() + 10 * 60e3);
+            const silent = due > since && due <= new Date() && !started;
+
+            for (const r of failed) core.error(`Commit check failed on ${r.head_sha.slice(0, 10)} "${r.display_title}": ${r.html_url}`, { title: 'aspose-blog commit check failed' });
+            if (silent) core.error(`aspose-blog got a push at ${repo.pushed_at} but no Commit Check ran for it`, { title: 'Commit check missing' });
+            if (failed.length || silent) core.setFailed(`${failed.length} failed check(s)${silent ? ', 1 push without a check' : ''}`);
+            else core.info(`OK: ${done.length} finished check(s) since ${since.toISOString()}`);

@@ -1,0 +1,51 @@
+# Target: Aspose/aspose-blog .github/workflows/commit-check.yml (with tools/commit_check.py beside it)
+name: Commit Check
+
+# Runs on every push to master and checks exactly the pushed commits (before..after): Redirects.json, Hugo config,
+# front matter and shortcodes of changed posts, and a Hugo build of a sample with every SEO tag required in <head>.
+# A failure marks the commit with a red X and emails the person who pushed. Redirects.json is read live from this
+# repo, so for it this check is the only fast alert: there is no deploy step to stop.
+# Source of the script: conholdate-blogs/health-and-recovery scripts/commit_check.py (copied to tools/).
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # the commit before the push is needed for the diff
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.120.4'
+          extended: true
+
+      - name: Run commit check
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          pip install --quiet pyyaml selectolax
+          # A new branch or a force push has no usable "before": check the last commit only.
+          base=""
+          if [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ] \
+             && git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then base="--base $BEFORE"; fi
+          python3 tools/commit_check.py . --hugo hugo $base --json commit-check.json
+
+      - name: Keep the result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: commit-check-${{ github.sha }}
+          path: commit-check.json
+          retention-days: 30
+          if-no-files-found: ignore

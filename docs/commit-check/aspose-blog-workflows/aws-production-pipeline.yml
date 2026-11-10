@@ -14,12 +14,12 @@ on:
 jobs:
   check-changes:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'
+    # Runs on manual runs too, so the commit check gets its base; should_run only matters for scheduled runs.
     permissions:
       actions: read
     outputs:
       should_run: ${{ steps.check.outputs.should_run }}
-      since: ${{ steps.last-run.outputs.since }}
+      base: ${{ steps.base.outputs.base }}
     steps:
       - name: Find last deploy attempt
         id: last-run
@@ -38,6 +38,7 @@ jobs:
               status: 'completed',
               per_page: 30,
             });
+            let first = true;
             for (const run of data.workflow_runs) {
               const { data: { jobs } } = await github.rest.actions.listJobsForWorkflowRun({
                 owner: context.repo.owner,
@@ -48,12 +49,38 @@ jobs:
               const attempted = jobs.some((j) => j.name.startsWith('job1') && j.conclusion !== 'skipped');
               if (!attempted) continue;
               const complete = jobs.some((j) => j.name.startsWith('job3') && j.conclusion === 'success');
-              core.info(`Last deploy attempt: ${run.html_url} (created ${run.created_at}, complete: ${complete})`);
-              // created_at, not run_started_at: re-running a failed job moves
-              // run_started_at forward, but job1 deployed at the original time.
-              if (complete) core.setOutput('since', run.created_at);
-              return;
+              if (first) {
+                core.info(`Last deploy attempt: ${run.html_url} (created ${run.created_at}, complete: ${complete})`);
+                // created_at, not run_started_at: re-running a failed job moves
+                // run_started_at forward, but job1 deployed at the original time.
+                if (complete) core.setOutput('since', run.created_at);
+                first = false;
+              }
+              // The commit check compares with the newest COMPLETE deploy, even when a newer attempt failed.
+              if (complete) {
+                core.setOutput('base_time', run.created_at);
+                return;
+              }
             }
+
+      - name: Find the aspose-blog commit the last complete deploy shipped
+        id: base
+        uses: actions/github-script@v7
+        env:
+          BASE_TIME: ${{ steps.last-run.outputs.base_time }}
+        with:
+          github-token: ${{ secrets.REPO_TOKEN }}
+          script: |
+            // master as it was when that deploy started = the "after" of the newest push before it. Push events,
+            // not commit dates: a commit made earlier but pushed later still counts as new.
+            const t = process.env.BASE_TIME;
+            if (!t) { core.info('No complete deploy found: the commit check covers the newest commit only.'); return; }
+            const pushes = await github.paginate('GET /repos/{owner}/{repo}/activity', {
+              owner: 'Aspose', repo: 'aspose-blog', ref: 'refs/heads/master', activity_type: 'push', per_page: 100,
+            }, (res, done) => { if (res.data.some((a) => new Date(a.timestamp) <= new Date(t))) done(); return res.data; });
+            const hit = pushes.find((a) => new Date(a.timestamp) <= new Date(t));
+            if (hit) core.setOutput('base', hit.after);
+            core.info(hit ? `Last complete deploy (${t}) shipped ${hit.after.slice(0, 10)}` : `No push found before ${t}`);
 
       - name: Check for new commits in content repo since last complete deploy
         id: check
@@ -99,12 +126,13 @@ jobs:
       (github.event_name == 'workflow_dispatch' || needs.check-changes.outputs.should_run == 'true')
     uses: ./.github/workflows/commit-check.yml
     with:
-      since: ${{ needs.check-changes.outputs.since }}
+      base: ${{ needs.check-changes.outputs.base }}
       skip: ${{ inputs.skip_checks == true }}
     secrets: inherit
 
   job1:
-    needs: [check-changes, commit-check]
+    needs: commit-check
+    # commit-check runs only when a deploy is due (same condition job1 had), so its success is the gate.
     if: ${{ !cancelled() && needs.commit-check.result == 'success' }}
     uses: ./.github/workflows/production-aws-deploy-blog-posts.yml
     secrets: inherit # Pass secrets if your sub-workflows need them
@@ -124,8 +152,9 @@ jobs:
     secrets: inherit
 
   failure-report:
-    needs: [job1, job2, job3]
-    if: ${{ failure() }}
+    needs: [commit-check, job1, job2, job3]
+    # Memory and log report for deploy failures; a failed commit check has its own summary.
+    if: ${{ failure() && needs.commit-check.result != 'failure' }}
     permissions:
       actions: read
       contents: read
