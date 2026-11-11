@@ -66,6 +66,11 @@ so they get no `en` hreflang and no x-default.
   template; this blog has been Hugo since launch. No internal links to `/tag/`, `/category`, `/feed`; no Search
   Console page for them since Jul 2025. `/tag/` has a purpose (term pages live at `/tag/<x>/`, the list at
   `/tags/`); `/category` and `/feed(/)` never existed here (and `/feed` sends a feed reader to an HTML page).
+- **SK's decision (11 Nov):** keep `/tag/` → `/tags/`, `/category/` → `/categories/` (key gets the slash),
+  `/feed/` → home; drop `/feed`. Live test: keys match exactly; the host forwards no-slash → slash (with a **302**,
+  not 301) only for real folders (`/tags`, `/categories`, posts); `/tag` and `/category/` are 404 today. So `/feed`
+  and `/category` will answer 404 after the change (never visited: fine). Prepared as F5 (JSON valid, 3 entries).
+- Seen: the no-slash → slash forward on real folders is a 302 (temporary); a 301 would be right (host/CDN setting).
 - Also seen: `/search/` and `/<lang>/archives/` get impressions (thin utility pages, for later).
 
 ## Fixes
@@ -76,6 +81,7 @@ so they get no `en` hreflang and no x-default.
 | F2 | x-default hreflang (default language) in `head.html` and `sitemap.xml` | prepared, tested, waiting for SK |
 | F3 | Tag pages (`/tags/`, `/tag/<x>/`) `noindex, follow`; `Disallow: /tags/` and `/tag/` removed from robots.txt so the noindex is seen | prepared, tested, waiting for SK |
 | F4 | 4 wrong-language links in 3 Arabic posts → `/ar/…` | proposed |
+| F5 | Redirects.json: `/category` → `/category/`, `/feed` removed (SK's set); also tests live vs at deploy | prepared, waiting for push approval |
 
 Test (11 Nov, Hugo 0.101.0, production config, full build before/after): file set identical; no SEO tag left in
 `<body>` on any page; 555 tag term pages + 23 `/tags/` pages index → `noindex, follow`, no other robots change;
