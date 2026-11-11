@@ -8,6 +8,13 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 
 **Keep this file current:** when a decision is made, a fact is confirmed or a build step finishes, update the relevant section (Status, Seed findings, Open items) in the same session. New issues found by hand go into `tenants/<tenant>.seed-findings.yaml` (or become a check, so fixes count), never only into prose.
 
+## Notes structure (SK, 2026-11-11: "we should keep noting things")
+
+- **Per-blog log:** `docs/blogs/<host>.md`: facts (deploy, Hugo, Redirects.json live or at deploy), findings with decisions, fixes with commit and verification, plan state, what was learned. Updated in the same session as each step. First: [docs/blogs/blog.conholdate.com.md](docs/blogs/blog.conholdate.com.md).
+- **Playbook:** [docs/playbook.md](docs/playbook.md): the scan → fix → verify order, rules for blog-repo changes and for our own audit, URL rules, traps.
+- **This file:** brief, current state and decisions; dated history below moves out over time.
+- **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
+
 ## Start here (session handoff, 2026-11-07)
 
 ### Next session: Tuesday 10 Nov 2026 (Monday 9 Nov is a holiday), in this order
