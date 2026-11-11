@@ -35,19 +35,21 @@ push to aspose-blog master
 | 3. Deploy gate | aspose-blog-workflows `commit-check.yml`, called by both production pipelines | Before each deploy (scheduled or manual) | Everything since the commit the last complete deploy shipped | No deploy; the pipeline run fails and SK gets the build failure email he already receives |
 
 - The script lives once, in aspose-blog `tools/commit_check.py` (source: this repo, `scripts/commit_check.py`). Layers 1 and 3 run that copy.
-- **Redirects.json is special:** the redirect function on AWS reads it straight from the repo, with no deploy step. So layer 3 can't protect it. Layers 1 and 2 only alert, within minutes, so the commit can be reverted fast.
+- **Redirects.json is special:** the redirect function on AWS reads it straight from the repo, with no deploy step. So layer 3 can't protect it, and it never blocks a deploy over it (a deploy neither ships nor fixes the file; it only reports it). Layers 1 and 2 alert within minutes, so the commit can be reverted fast.
 - What deploys is master as it is now. A later commit that fixes a problem clears the gate, even if an earlier push failed.
 
 ## What it checks
 
-**Fail** = the deploy stops. **Warn** = reported only.
+**Fail** = ✗ on the commit and, in the deploy gate, the deploy stops. **Warn** = reported only.
 
 | Check | Level | Looks at | Example |
 |---|---|---|---|
-| Redirects.json is valid JSON | Fail | The whole file, every time | c099f6e: missing commas |
-| New redirect source can never match | Fail | Entries added in the range | A host in the key, raw `{{ revealButtonHref }}` |
+| Redirects.json is valid JSON | Fail on push; **warn in the deploy gate** | The whole file, every time | c099f6e: missing commas (an outage: every old URL 404) |
+| New redirect source can never match | Warn | Entries added in the range | A host in the key, raw `{{ revealButtonHref }}` |
 | New redirect target empty or not https | Warn | Entries added in the range | `http://…` target |
 | New redirect points at itself | Warn | Entries added in the range | `/a/` → `https://blog.aspose.com/a/` |
+
+Why "can never match" only warns: such an entry is dead, not harmful; it never matches a request. Its usual source is not fixed on blog.aspose.com yet: GitHub gist embeds contain an unfilled `{{ revealButtonHref }}` placeholder, crawlers harvest URLs ending in it, and redirects get added for them (blog.groupdocs.com strips it in `layouts/partials/extend_footer.html` since 19 Oct; porting that fix is open item (a)). Failing on these would raise alarms for harmless entries until then.
 | Hugo config does not parse | Fail | Every `config*.yml` | A YAML syntax error |
 | Hugo shortcode damaged | Fail | Every changed post file, no limit | e1e04d8582: `caption="…"} >}}`; `{{<` and `>}}` counts differ |
 | Code fences differ from the English post | Warn | Every changed translation | An extra or missing ```` ``` ```` |
@@ -87,7 +89,7 @@ Time: 7–15 s on a Mac, about 600–2,000 pages checked.
 
 | Commit | Expected | Result |
 |---|---|---|
-| c099f6e (Redirects.json) | Fail | Fail: invalid JSON + 25 new bad entries with line numbers |
+| c099f6e (Redirects.json) | Fail on push; pass with warnings in the gate | Push: fail on invalid JSON, plus warnings for 25 new dead entries with line numbers. Gate (`--deploy`): the same, as warnings only |
 | e1e04d8582 (shortcode) | Fail | Fail: `index.fa.md` stray `}`, plus Hugo's error |
 | 241f3d2239 (head.html) | Fail | Fail: 617 of 641 pages with SEO tags in `<body>` |
 | b76c2369eb (head fix) | Pass | Pass |
@@ -95,7 +97,7 @@ Time: 7–15 s on a Mac, about 600–2,000 pages checked.
 | All changes since 4 Nov (23 posts) | Pass | Pass, 2,057 pages |
 | All 877 files changed since 1 Oct (no build) | No false alarms | Pass |
 
-Offline tests: `tests/test_commit_check.py` (8 tests, a tiny git repo, no Hugo).
+Offline tests: `tests/test_commit_check.py` (9 tests, a tiny git repo, no Hugo).
 
 Run it by hand:
 
@@ -103,7 +105,7 @@ Run it by hand:
 .venv/bin/python scripts/commit_check.py <path to aspose-blog> [--rev <commit>] [--base <commit> | --since <ISO date>] --hugo <hugo binary>
 ```
 
-`--no-build` skips the Hugo build (static checks only); `--json out.json` writes the result.
+`--no-build` skips the Hugo build (static checks only); `--deploy` is the deploy gate's mode (Redirects.json problems warn only); `--json out.json` writes the result.
 
 ## Known limits
 

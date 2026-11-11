@@ -22,12 +22,12 @@ def commit(repo, files, msg):
     git(repo, "-c", "user.name=t", "-c", "user.email=t@example.com", "commit", "-q", "-m", msg)
 
 
-def run(repo, rev="HEAD"):
+def run(repo, rev="HEAD", deploy=False):
     r = cc.Repo(str(repo), rev)
     r.rev = r.git("rev-parse", rev).strip()
     base = cc.resolve_base(r, None, None)
     changed = r.git("diff", "--name-only", "--diff-filter=d", base, r.rev).splitlines()
-    res = cc.Result()
+    res = cc.Result(deploy=deploy)
     configs = cc.check_configs(r, res)
     cc.check_redirects(r, base, "blog.example.com", res)
     cc.check_front_matter(r, changed, res)
@@ -63,6 +63,17 @@ def test_invalid_redirects_and_bad_keys_fail(tmp_path):
     assert set(res.items) == {"redirects_invalid", "redirect_key_malformed", "redirect_target_bad",
                               "redirect_self_loop"}
     assert "raw template text" in res.items["redirect_key_malformed"][0]
+    assert res.levels["redirect_key_malformed"] == cc.WARN  # dead entry, not an outage
+    gate, _ = run(repo, deploy=True)  # deploy gate: the file is not deployed, so nothing about it blocks
+    assert set(gate.items) == set(res.items) and not gate.failed
+
+
+def test_bad_key_alone_only_warns(tmp_path):
+    repo = setup(tmp_path)
+    commit(repo, {"Redirects.json": '{\n "/old/": "https://blog.example.com/new/",\n'
+                  ' "/p/{{ revealButtonHref }}": "https://blog.example.com/p/"\n}\n'}, "valid but dead key")
+    res, _ = run(repo)
+    assert list(res.items) == ["redirect_key_malformed"] and not res.failed
 
 
 def test_old_bad_entries_are_not_reported_again(tmp_path):

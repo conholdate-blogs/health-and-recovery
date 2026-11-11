@@ -49,7 +49,8 @@ jobs:
           pip install --quiet pyyaml selectolax
           base=""
           if [ -n "$BASE" ] && git cat-file -e "${BASE}^{commit}" 2>/dev/null; then base="--base $BASE"; fi
-          python3 tools/commit_check.py . --hugo hugo $base --json commit-check.json
+          # --deploy: Redirects.json problems are reported, never block (the deploy does not ship that file)
+          python3 tools/commit_check.py . --hugo hugo --deploy $base --json commit-check.json
 
       - name: Keep the result
         if: ${{ always() && !inputs.skip }}

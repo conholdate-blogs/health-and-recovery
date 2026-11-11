@@ -8,7 +8,8 @@ and title, canonical, hreflang and robots landed in <body> on every translated p
 
 Checks (fail = exit 1, the deploy should stop; warn = reported only):
 - Redirects.json parses as JSON (fail); entries added in the range: source not a plain /path, e.g. a host or raw
-  {{ }} in the key (fail); target empty or not https, target equal to its source (warn).
+  {{ }} in the key, target empty or not https, target equal to its source (warn). With --deploy (the deploy gate)
+  every Redirects.json check only warns: the file is read live from the repo, a deploy neither ships nor fixes it.
 - Every config*.yml parses (fail).
 - Front matter of changed post files parses, url starts with / (warn; old posts already have some).
 - Every changed post file (no cap): Hugo shortcode delimiters balanced; a translation keeps the English post's
@@ -47,7 +48,9 @@ LEVEL = {
     "seo_tag_missing": FAIL,
     "config_invalid": FAIL,
     "redirects_invalid": FAIL,
-    "redirect_key_malformed": FAIL,
+    # A key that can never match is a dead entry, not an outage; its source (gist placeholders harvested by
+    # crawlers) is not fixed on every blog, so failing on it would raise alarms for harmless entries (SK, 11 Nov).
+    "redirect_key_malformed": WARN,
     "redirect_target_bad": WARN,
     "redirect_self_loop": WARN,
     "front_matter_broken": WARN,
@@ -74,6 +77,8 @@ DAMAGE = [(r'=\(\\?"', 'value wrapped in ("'), (r'\\"\)', 'value ends with \\")'
           (r"\}\s*>\}\}", "stray } before >}}")]
 DELIMS = [("{{<", ">}}"), ("{{%", "%}}")]
 REDIRECTS = "Redirects.json"
+# Read live from the repo by the redirect function, never deployed: a deploy gate (--deploy) reports these, never blocks
+REDIRECT_CHECKS = {"redirects_invalid", "redirect_key_malformed", "redirect_target_bad", "redirect_self_loop"}
 SITE_DIRS = ["layouts", "themes", "static", "assets", "data", "i18n", "archetypes"]
 BODY_TAGS = {
     "title": "title",
@@ -117,16 +122,17 @@ class Repo:
 
 
 class Result:
-    def __init__(self):
+    def __init__(self, deploy: bool = False):
         self.items: dict[str, list[str]] = defaultdict(list)
         self.info: list[str] = []
+        self.levels = {c: WARN if deploy and c in REDIRECT_CHECKS else lvl for c, lvl in LEVEL.items()}
 
     def add(self, check: str, where: str) -> None:
         self.items[check].append(where)
 
     @property
     def failed(self) -> bool:
-        return any(LEVEL[c] == FAIL for c in self.items)
+        return any(self.levels[c] == FAIL for c in self.items)
 
 
 def key_problem(key: str) -> str | None:
@@ -364,31 +370,32 @@ def report(res: Result, repo: Repo, base: str | None, changed: list[str], out_js
     print(f"Range: {base_s} .. {head.split()[0]} ({len(changed)} files changed)")
     for line in res.info:
         print(f"  {line}")
-    order = sorted(res.items, key=lambda c: (LEVEL[c] != FAIL, c))
+    order = sorted(res.items, key=lambda c: (res.levels[c] != FAIL, c))
     for check in order:
         where = res.items[check]
-        print(f"{LEVEL[check].upper():4} {TITLE[check]} ({len(where)})")
+        print(f"{res.levels[check].upper():4} {TITLE[check]} ({len(where)})")
         for w in where[:MAX_PER_CHECK]:
             print(f"       {w}")
         if len(where) > MAX_PER_CHECK:
             print(f"       ... {len(where) - MAX_PER_CHECK} more")
-    verdict = "FAILED: do not deploy" if res.failed else ("PASSED with warnings" if res.items else "PASSED")
+    verdict = "FAILED" if res.failed else ("PASSED with warnings" if res.items else "PASSED")
     print(verdict)
     if os.environ.get("GITHUB_ACTIONS"):
         for check in order:
-            kind = "error" if LEVEL[check] == FAIL else "warning"
+            kind = "error" if res.levels[check] == FAIL else "warning"
             print(f"::{kind} title={TITLE[check]}::{len(res.items[check])}: {res.items[check][0][:300]}")
         summary = os.environ.get("GITHUB_STEP_SUMMARY")
         if summary:
             rows = [f"## Commit check: {verdict}", "", f"`{head}` (since {base_s}, {len(changed)} files changed)", "",
                     "| Level | Check | Count | First |", "|---|---|---|---|"]
-            rows += [f"| {LEVEL[c]} | {TITLE[c]} | {len(res.items[c])} | `{res.items[c][0][:120]}` |" for c in order]
+            rows += [f"| {res.levels[c]} | {TITLE[c]} | {len(res.items[c])} | `{res.items[c][0][:120]}` |"
+                     for c in order]
             with open(summary, "a") as f:
                 f.write("\n".join(rows + ["", *[f"- {i}" for i in res.info], ""]) + "\n")
     if out_json:
         Path(out_json).write_text(json.dumps({
             "commit": head, "base": base_s, "changed": len(changed), "passed": not res.failed, "info": res.info,
-            "checks": {c: {"level": LEVEL[c], "title": TITLE[c], "items": res.items[c]} for c in order},
+            "checks": {c: {"level": res.levels[c], "title": TITLE[c], "items": res.items[c]} for c in order},
         }, indent=1))
 
 
@@ -402,6 +409,8 @@ def main() -> int:
     ap.add_argument("--hugo", default="hugo")
     ap.add_argument("--no-build", action="store_true", help="skip the Hugo sample build")
     ap.add_argument("--json", help="write the result as JSON")
+    ap.add_argument("--deploy", action="store_true",
+                    help="deploy gate: Redirects.json problems warn instead of fail (the deploy does not ship it)")
     args = ap.parse_args()
 
     repo = Repo(args.repo, args.rev)
@@ -409,7 +418,9 @@ def main() -> int:
     base = resolve_base(repo, args.base, args.since)
     # deleted files left out: nothing of them is built or published any more
     changed = repo.git("diff", "--name-only", "--diff-filter=d", base, repo.rev).splitlines() if base else []
-    res = Result()
+    res = Result(deploy=args.deploy)
+    if args.deploy:
+        res.info.append("deploy gate: Redirects.json checks report only (the file is read live, not deployed)")
     configs = check_configs(repo, res)
     base_url = config_value(repo, configs, "baseURL")
     host = re.sub(r"^https?://([^/]+).*", r"\1", base_url) if base_url else None
