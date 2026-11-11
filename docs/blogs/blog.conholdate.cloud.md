@@ -1,7 +1,7 @@
 # blog.conholdate.cloud: log
 
 Scanned and fixed on **11 Nov 2026** (one session): health **86 → 84** (new checks) **→ 94 → 100**, 0 open findings,
-14 blog commits, 10 rows in `reports/conholdate.cloud/agent-fixes.json`. Steps: [../playbook.md](../playbook.md);
+14 blog commits, 11 rows in `reports/conholdate.cloud/agent-fixes.json`. Steps: [../playbook.md](../playbook.md);
 the reusable fixes from here are the playbook's **fix catalogue**.
 
 ## Facts (confirmed 11 Nov 2026)
@@ -34,7 +34,7 @@ the reusable fixes from here are the playbook's **fix catalogue**.
 | F9 | `/search/`, `/archives/` indexable (thin; one-word titles/descriptions; "text needs JavaScript") | `noindex, follow`, out of the sitemaps (46 pages) | bc3530d |
 | F10 | 19 titles > 70, 26 descriptions > 170; Excel translations stale (English rewritten Jul 2026) | 66 values in 43 files (`scripts/ops/front_matter_set.py` pattern); all posts in range | 16b6a14 |
 | F11 | No llms.txt | `static/llms.txt`: summary, 5 articles, 23 languages, sitemap, category (SK reworded "Product Family") | 4cf4ed8, f672a2f, 05b9fb5 |
-| F12 | Language menu names wrong (日本 "Japan", 한국인 "a Korean person", 中國傳統的 garbled; id/nl/th in English; he with vowel marks) | native names in `config.yml` | 6217d42 — **pushed, waiting for deploy** (with 05b9fb5) |
+| F12 | Language menu names wrong (日本 "Japan", 한국인 "a Korean person", 中國傳統的 garbled; id/nl/th in English; he with vowel marks) | native names in `config.yml` | 6217d42 |
 
 Every template/content change was tested before the push: full Hugo 0.101 build with the production config before
 and after (`scripts/ops/build_diff.py`), `commit_check.py` PASSED, screenshots desktop + 390 px for layout changes,
@@ -75,7 +75,6 @@ and after (`scripts/ops/build_diff.py`), `commit_check.py` PASSED, screenshots d
 - The Java merge post has no translations (SK's translation agent).
 - Arabic, Persian, Hebrew pages render left-to-right (theme; site-wide, pre-existing).
 - Host forwards no-slash → slash with 302 instead of 301 (CDN).
-- F12 + llms.txt languages wait for a deploy; then check `/llms.txt` and the language menu live.
 
 ## Learned here
 

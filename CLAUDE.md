@@ -31,7 +31,7 @@ Open for SK: retag posts (later); home H1 pilot on other blogs; Arabic pages ren
 test, gotcha) and the helpers `scripts/ops/live_head.py` (where SEO tags land live), `scripts/ops/build_diff.py`
 (before/after Hugo builds), `scripts/ops/front_matter_set.py` (`--scan` titles/descriptions repo-wide; JSON spec to
 set values). blog.conholdate.com's log has a carry-over table (6,872 titles/descriptions out of range there).
-Last deploy pending (SK): 05b9fb5 llms.txt languages + 6217d42 language menu names; then check them live.
+All blog.conholdate.cloud fixes are deployed and verified live (last: llms.txt languages, language menu names; 11 agent-fixes rows).
 
 **Paused: blog.conholdate.com, part B.** SK continues later; three decisions wait in
 [docs/blogs/blog.conholdate.com.md](docs/blogs/blog.conholdate.com.md) ("Waiting for SK"): B2 redirects or not

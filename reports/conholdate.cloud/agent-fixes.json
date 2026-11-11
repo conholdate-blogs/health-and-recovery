@@ -129,8 +129,23 @@
   "check": "llms_txt_missing",
   "issue": "No llms.txt for AI assistants",
   "commits": [
-   "4cf4ed848da1212ba8a27dfd05bdd58092cae9e8"
+   "4cf4ed848da1212ba8a27dfd05bdd58092cae9e8",
+   "f672a2ffa446f7a796c50cc3fcd25db9a1dbe602",
+   "05b9fb5e0f08d9e8b7653c60ff437e990161563e"
   ],
-  "result": "Live: /llms.txt with a summary and the 5 articles (all links 200); re-scan resolved ai-0002"
+  "result": "Live: /llms.txt with a summary, the 5 articles (English-only one marked) and the 23 languages; all links 200; re-scan resolved ai-0002"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-11",
+  "check": "language_names",
+  "issue": "Language menu names wrong: 日本 ('Japan'), 한국인 ('a Korean person'), 中國傳統的 (garbled); Indonesian, Dutch, Thai in English; Hebrew with vowel marks",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "commits": [
+   "6217d4200aceccf0b6bf2d2df7a24fce67923ae6"
+  ],
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "result": "Live: the menu shows 日本語, 한국어, 繁體中文, Bahasa Indonesia, Nederlands, ไทย, עברית"
  }
 ]
