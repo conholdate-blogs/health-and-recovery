@@ -147,6 +147,11 @@ def finding_traffic(f: dict, idx: TrafficIndex, section_urls: dict | None = None
         return {"clicks_28d": round(sessions * share), "impressions_28d": None, "source": "ga4-host",
                 "share": round(share, 3)}
 
+    traffic = (f.get("evidence") or {}).get("traffic")
+    if traffic and source_kind == "structure-audit":  # the clicks tag pages earn, measured by the structure step
+        return {"clicks_28d": traffic.get("clicks", 0), "impressions_28d": traffic.get("impressions", 0),
+                "source": "gsc-tag-pages", "share": None}
+
     if source_kind in EXACT_PAGE_SOURCES:
         clicks = impr = 0.0
         for u in f["evidence"]["urls"]:

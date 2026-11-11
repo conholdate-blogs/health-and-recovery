@@ -535,6 +535,20 @@ _ROWS = [
      "Set the translation's url to /<lang>/<English url>/ and redirect the old URL to it (the one kind of new "
      "redirect that is wanted). The translation agent should copy the English url and only add the prefix.",
      "The translation is live at /<lang>/<English url>/; the old URL redirects; next repo check has no item."),
+    ("tag_pages_thin", "Site structure", "Thin tag pages",
+     "Most tags hold one post, and every tag is a page in every language, so tag pages outnumber posts many times "
+     "over while earning almost no search clicks.",
+     "Crawlers spend their visits on near-empty listing pages instead of posts, and thin pages weigh on how the "
+     "site is judged as a whole.",
+     "Cut each post's tags to a short whitelist (product, platform, format); give weak tag pages noindex, follow and "
+     "take them out of the sitemap; keep tag pages that earn clicks.",
+     "Single-post tags at most 20%; the next structure step has no finding."),
+    ("sitemap_lists_tag_pages", "Site structure", "Sitemap lists tag pages",
+     "The sitemaps list tag pages next to the posts.",
+     "A sitemap says 'index these': tag pages crowd out the posts in crawling, and a tag page that robots.txt blocks "
+     "or marks noindex sends Google a mixed signal.",
+     "Leave tag pages out of the sitemaps (Hugo: a sitemap template or a taxonomy setting that skips them).",
+     "The sitemaps list no /tag/ URL; the next structure step has no finding."),
 ]
 
 # Severity per check, as the auditors assign it (checks only discovery's run.py names inline are listed here).
@@ -564,6 +578,8 @@ def _severities() -> dict[str, str]:
     out.update({k: v[1] for k, v in TEXT_CHECKS.items()})
     out.update({k: v[1] for k, v in LINK_CHECKS.items()})
     out.update({k: v[1] for k, v in REPO_CHECKS.items()})
+    from core.audit.structure import CHECKS as STRUCTURE_CHECKS
+    out.update({k: v[1] for k, v in STRUCTURE_CHECKS.items()})
     return out
 
 

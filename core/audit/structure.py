@@ -115,3 +115,51 @@ def search_numbers(gsc_rows: list[dict], host: str) -> dict:
             out["paged_pages_seen"] += 1
             out["deep_paged_clicks"] += clicks if int(m.group(1)) > DEEP_PAGE else 0
     return dict(out)
+
+
+# ---- findings (SK, 2026-11-10: scored tag findings from these numbers) ----
+
+AUDITOR = "structure-audit"
+THIN_SHARE = 0.5  # red in the Site structure panel: at least half the tags hold one post
+# check -> (dimension, type, title, expected, fix_tier, effort)
+CHECKS = {
+    "tag_pages_thin": ("crawl", "improvable", "Most tag pages list a single post",
+                       "Tags group several posts (at most 20% with one post); weak tag pages are noindex, follow and "
+                       "stay out of the sitemap", 3, "M"),
+    "sitemap_lists_tag_pages": ("crawl", "not_optimized", "Sitemaps list tag pages",
+                                "Sitemaps list posts and real landing pages; tag pages stay out", 3, "S"),
+}
+
+
+def findings(tenant: str, host: str, s: dict, fix_channel: str | None = None) -> list[dict]:
+    """Findings for one host from its structure numbers (scan + sitemap + search). Scored on the clicks tag pages
+    earn (evidence.traffic), not on their share of the host's URLs."""
+    from core.findings import FindingIds, make_finding
+
+    ids, out = FindingIds(), []
+    search = s.get("search") or {}
+    clicks = f"tag pages earned {search.get('tag_clicks', 0):,} of {search.get('clicks', 0):,} clicks (28 days)"
+    traffic = {"clicks": search.get("tag_clicks", 0), "impressions": search.get("tag_impressions", 0)}
+
+    def add(check, urls, observed, affected):
+        dimension, ftype, title, expected, tier, effort = CHECKS[check]
+        f = make_finding(ids=ids, tenant=tenant, subdomain=host, template="tag", dimension=dimension, type=ftype,
+                         check=check, title=title, urls=urls, observed=observed, expected=expected,
+                         affected_pages=affected, effort=effort, fix_tier=tier, fix_channel=fix_channel)
+        f["evidence"]["traffic"] = traffic
+        out.append(f)
+
+    tags, one = s.get("tags") or 0, s.get("tags_one_post") or 0
+    if tags and one / tags >= THIN_SHARE:
+        pages = s.get("tag_pages_all_languages") or tags
+        add("tag_pages_thin", [f"https://{host}/tags/"],
+            f"{one:,} of {tags:,} tags ({one / tags:.0%}) have one post; {pages:,} tag pages in "
+            f"{s.get('languages', 1)} languages; {s.get('tags_per_post', 0)} tags per post; {clicks}",
+            round(pages * one / tags))
+    listed = s.get("sitemap_tag_urls") or 0
+    if listed:
+        total = s.get("sitemap_urls") or 0
+        add("sitemap_lists_tag_pages", [f"https://{host}/sitemap.xml"],
+            f"{listed:,} of {total:,} sitemap URLs ({listed / total:.0%}) are tag pages; {clicks}" if total else
+            f"{listed:,} sitemap URLs are tag pages; {clicks}", listed)
+    return out

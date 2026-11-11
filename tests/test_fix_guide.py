@@ -12,6 +12,7 @@ from core.audit.crawl import CHECKS  # noqa: E402
 from core.audit.links import CHECKS as LINK_CHECKS  # noqa: E402
 from core.audit.perf import CHECKS as PERF_CHECKS  # noqa: E402
 from core.audit.repo import CHECKS as REPO_CHECKS  # noqa: E402
+from core.audit.structure import CHECKS as STRUCTURE_CHECKS  # noqa: E402
 from core.audit.text import CHECKS as TEXT_CHECKS  # noqa: E402
 from core.discovery.run import SITEMAP_CHECKS  # noqa: E402
 from core.fix_guide import GUIDE, guide_key  # noqa: E402
@@ -27,6 +28,7 @@ def test_every_check_has_a_guide_row():
     missing += [c for c in TEXT_CHECKS if guide_key(c, "text-audit") is None]
     missing += [c for c in LINK_CHECKS if guide_key(c, "link-audit") is None]
     missing += [c for c in REPO_CHECKS if guide_key(c, "repo-audit") is None]
+    missing += [c for c in STRUCTURE_CHECKS if guide_key(c, "structure-audit") is None]
     missing += [c for c in discovery if guide_key(c, "discovery") is None]
     assert not missing, missing
     assert guide_key("redirected", "discovery") == "sitemap_redirected"

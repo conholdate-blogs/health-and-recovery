@@ -1024,6 +1024,88 @@
     "notes": []
   },
   {
+    "id": "crawl-261111-1",
+    "key": "crawl/tag_pages_thin/blog.conholdate.com/tag",
+    "source": "structure-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "tag",
+    "dimension": "crawl",
+    "type": "improvable",
+    "title": "Most tag pages list a single post",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/tags/"
+      ],
+      "observed": "2,341 of 2,526 tags (93%) have one post; 43,602 tag pages in 18 languages; 5.0 tags per post; tag pages earned 45 of 2,906 clicks (28 days)",
+      "expected": "Tags group several posts (at most 20% with one post); weak tag pages are noindex, follow and stay out of the sitemap",
+      "traffic": {
+        "clicks": 45,
+        "impressions": 4432
+      }
+    },
+    "affected_pages": 40409,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "score": 0
+    },
+    "effort": "M",
+    "fix_tier": 3,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-11",
+    "first_seen_run": "structure-audit-2026-11-11",
+    "last_seen_run": "structure-audit-2026-11-11",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "tag_pages_thin",
+    "notes": []
+  },
+  {
+    "id": "crawl-261111-2",
+    "key": "crawl/sitemap_lists_tag_pages/blog.conholdate.com/tag",
+    "source": "structure-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "tag",
+    "dimension": "crawl",
+    "type": "not_optimized",
+    "title": "Sitemaps list tag pages",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/sitemap.xml"
+      ],
+      "observed": "43,584 of 53,700 sitemap URLs (81%) are tag pages; tag pages earned 45 of 2,906 clicks (28 days)",
+      "expected": "Sitemaps list posts and real landing pages; tag pages stay out",
+      "traffic": {
+        "clicks": 45,
+        "impressions": 4432
+      }
+    },
+    "affected_pages": 43584,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "score": 0
+    },
+    "effort": "S",
+    "fix_tier": 3,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-11",
+    "first_seen_run": "structure-audit-2026-11-11",
+    "last_seen_run": "structure-audit-2026-11-11",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "sitemap_lists_tag_pages",
+    "notes": []
+  },
+  {
     "id": "intl-0001",
     "key": "intl/hreflang_no_xdefault/blog.conholdate.com/page",
     "source": "crawl-audit",

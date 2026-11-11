@@ -20,9 +20,11 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
-from core.audit.structure import scan, search_numbers  # noqa: E402
+from core.audit.structure import AUDITOR, findings, scan, search_numbers  # noqa: E402
+from core.findings import FindingsStore  # noqa: E402
 from core.paths import tenant_paths  # noqa: E402
 from core.tenant import load_tenant  # noqa: E402
+from scripts.findings import export, print_changes  # noqa: E402
 
 
 def sitemap_numbers(inventory: Path, host: str) -> dict:
@@ -76,6 +78,13 @@ def main(argv: list[str] | None = None) -> int:
     out.write_text(json.dumps({"tenant": args.tenant, "date": date.today().isoformat(), "search_window": window,
                                "hosts": hosts}, indent=1) + "\n", encoding="utf-8")
     print(f"Site structure: {out}")
+    # scored findings from these numbers (thin tag pages, tag pages in sitemaps); the run covers its hosts in full
+    channels = {h["host"]: h.get("fix_channel") for h in tenant.raw.get("hosts") or []}
+    found = [f for host, s in hosts.items() for f in findings(tenant.property, host, s, channels.get(host))]
+    fstore = FindingsStore(str(paths.findings_store))
+    print_changes(fstore.import_run(found, f"{AUDITOR}-{date.today().isoformat()}", AUDITOR, hosts=list(hosts),
+                                    resolve_unsectioned=True))
+    print(f"Findings export: {export(fstore, paths.findings_export)}")
     return 0
 
 
