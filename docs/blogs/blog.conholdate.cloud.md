@@ -83,6 +83,7 @@ so they get no `en` hreflang and no x-default.
 | F4 | 4 wrong-language links in 3 Arabic posts → `/ar/…` (SK: fix from here) | pushed `bbe3a99`, waiting for deploy |
 | F5 | Redirects.json: `/category` → `/category/`, `/feed` removed (SK's set) | pushed `9a5a07c`; **live 2 min after the push, no deploy** (`/category/` 301 at 17:49); `/category`, `/feed` still served from CloudFront cache (age ~3,200 s) |
 | F7 | Java merge post moved from `content/Conholdate.Total/` (not in `mainSections`, so **never listed on the home page**) to `content/Conholdate.Cloud/total/`; URL unchanged; `/conholdate.total/` section page gone. Stray empty category `groupdocs.total-product-family` deleted (SK: yes) | pushed `0804d88`, waiting for deploy |
+| F8 | Home H1 + one-line intro in 23 languages (PaperMod `homeInfoParams` in `config.yml`; "Articles on Conholdate.Total Cloud REST APIs and SDKs: …"; SK: "articles", not "tutorials"; translations by Claude, not the translation agent); pilot for the other blogs | pushed `a7d6751`, waiting for deploy |
 | F6 | Category: all 92 files → "Conholdate.Total Cloud Product Family" (SK: the real family) | pushed `bbe3a99`, waiting for deploy |
 
 Pushed 11 Nov 17:47 PKT (`d2bc592..bbe3a99`); commit check PASSED (after fixing our check, 66280a2: it blamed old
