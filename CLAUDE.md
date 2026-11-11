@@ -27,6 +27,11 @@ language, home H1 + one-line "Articles on …" intro in 23 languages (compact; "
 thin tags skipped when tag pages are noindex, and commit_check reports only shortcode damage a range adds.
 **Carry over to blog.conholdate.com (B3):** same head bug (OG/Twitter/JSON-LD in `<body>`), same template fixes.
 Open for SK: retag posts (later); home H1 pilot on other blogs; Arabic pages render left-to-right (theme).
+**For every other blog: [docs/playbook.md](docs/playbook.md) "Fix catalogue"** (11 proven fixes with problem, fix,
+test, gotcha) and the helpers `scripts/ops/live_head.py` (where SEO tags land live), `scripts/ops/build_diff.py`
+(before/after Hugo builds), `scripts/ops/front_matter_set.py` (`--scan` titles/descriptions repo-wide; JSON spec to
+set values). blog.conholdate.com's log has a carry-over table (6,872 titles/descriptions out of range there).
+Last deploy pending (SK): 05b9fb5 llms.txt languages + 6217d42 language menu names; then check them live.
 
 **Paused: blog.conholdate.com, part B.** SK continues later; three decisions wait in
 [docs/blogs/blog.conholdate.com.md](docs/blogs/blog.conholdate.com.md) ("Waiting for SK"): B2 redirects or not
@@ -152,7 +157,7 @@ Site structure (7 Nov): listing pages Hugo builds (tag share, 1-post tags): aspo
 - **GA4** call in prioritize once failed with an IPv6 "No route to host" (transient); the step carries on; blogs score from Search Console.
 - **Pages deploys** after a push were live in 20–40 s; check by fetching the live page (curl + grep), not the Actions API.
 - A `cd` in a Bash call persists: use absolute paths (one call landed in aspose-blog-workflows on 7 Nov).
-- **Testing blog template changes:** `scripts/ops/hugo_check.py <repo> <post folder> [--rev HEAD]` builds a tiny copy with Hugo 0.120 (local) and prints where each SEO tag lands; a full build of blog.aspose.com would take long and GBs of disk.
+- **Testing blog template changes:** `scripts/ops/hugo_check.py <repo> <post folder> [--rev HEAD]` builds a tiny copy with Hugo 0.120 (local) and prints where each SEO tag lands; a full build of blog.aspose.com would take long and GBs of disk. Small blogs (11 Nov): full build before/after with the deploy's Hugo + production config, `scripts/ops/build_diff.py`; after the deploy `scripts/ops/live_head.py`.
 
 **Current state in one glance (read this first; the dated sections below are history):**
 - **New home (SK, 2026-11-06):** this repo, `/Users/Apple/Work/Aspose/GitHub/conholdate-blogs/health-and-recovery`, remote `origin` = GitHub `conholdate-blogs/health-and-recovery`; still pushed to `shoaibkhan` (shoaibkhan-aspose GitHub) and `gitlab`. Site: https://conholdate-blogs.github.io/health-and-recovery/ (same pages also at shoaibkhan-aspose.github.io). `data/`, `.env`, `.venv` copied from the old working copy, which is retired (do not commit there). The Claude Code allowlist is in `.claude/settings.local.json` (not committed). **New 2026-11-06:** History table on every subdomain page (Reference). **SK's reply style:** tables, bullets, numbered steps, no paragraphs.

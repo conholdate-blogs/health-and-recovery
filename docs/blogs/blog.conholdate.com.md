@@ -66,6 +66,22 @@ URL; after the deploy: new URLs 200, old ones 404; the link check then lists int
 | B6 | Commit check on conholdate-blog + workflows | Waiting |
 | C | Re-scan, fix progress, snapshot | After B |
 
+## Carry over from blog.conholdate.cloud (same theme; fixed there 11 Nov, 84 → 100)
+
+Playbook fix catalogue rows; check each here before B3/B4. Facts seen from the blog.conholdate.cloud session:
+
+| Catalogue row | Here | Suggested step |
+|---|---|---|
+| 1 head order | **Present**: home page OG 5, Twitter 3, JSON-LD 1 in `<body>` (11 Nov) | B3 (same file as x-default) |
+| 2 x-default | Missing (14,072 pages); also check sections with `_index.md` in English only | B3 |
+| 3 thin tags | 93% single-post tags, 43,584 tag URLs in sitemaps, `Disallow: /tag/` | B4 (noindex, follow + robots + sitemap) |
+| 4 search/archives | Not checked yet: `live_head.py https://blog.conholdate.com/search/` | B3/B4 |
+| 5 title/description length | **6,872 values out of range** (`front_matter_set.py <repo> --scan`, 11 Nov) | Own step after B; big, by template where possible |
+| 6 home H1 | Not checked yet | After SK sees blog.conholdate.cloud's result |
+| 7 llms.txt | Not checked yet | Small |
+| 9 mainSections / stray categories | Not checked yet | With B4 |
+| 11 language names | Not checked yet (`languageName` in config) | Small |
+
 ## Scan 11 Nov (after A1–A5)
 
 | Check | Result |

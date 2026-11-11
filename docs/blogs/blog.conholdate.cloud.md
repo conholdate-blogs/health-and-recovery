@@ -1,123 +1,87 @@
 # blog.conholdate.cloud: log
 
-Next blog in the "scan and fix" program (SK, 2026-11-11: the smallest site, in a separate session, after
-blog.conholdate.com's plan was set). Steps: [../playbook.md](../playbook.md). Updated in the same session as every
-finding, decision, fix and check.
+Scanned and fixed on **11 Nov 2026** (one session): health **86 → 84** (new checks) **→ 94 → 100**, 0 open findings,
+14 blog commits, 10 rows in `reports/conholdate.cloud/agent-fixes.json`. Steps: [../playbook.md](../playbook.md);
+the reusable fixes from here are the playbook's **fix catalogue**.
 
-## Facts (collected 11 Nov 2026; confirm at the start of the session)
+## Facts (confirmed 11 Nov 2026)
 
 | Item | Value |
 |---|---|
-| Source repo | `conholdate-cloud/blog.conholdate.cloud`, branch **main**; local clone `/Users/Apple/Work/Aspose/GitHub/blog.conholdate.cloud-PROD/blog.conholdate.cloud` (clean, at `d2bc592` 4 Nov) |
-| Workflows | **In the blog repo itself**: `.github/workflows/production-aws.yml`, `production-ceph.yml` (+ staging). So the commit check's push check and deploy gate would both live in this one repo |
-| Production deploy | cron `0 3 * * 1-5` = **08:00 PKT** Mon–Fri (comment says 10–11 AM: wrong, as on blog.conholdate.com), skipped without new commits (`check-changes`); manual run from the Actions tab |
+| Source repo | `conholdate-cloud/blog.conholdate.cloud`, branch **main**; clone `/Users/Apple/Work/Aspose/GitHub/blog.conholdate.cloud-PROD/blog.conholdate.cloud` |
+| Workflows | In the blog repo: `.github/workflows/production-aws.yml`, `production-ceph.yml` (+ staging). Build: `hugo --config "config.yml,config-production.yml" --minify` |
+| Production deploy | cron `0 3 * * 1-5` = 08:00 PKT Mon–Fri (the comment's 10–11 AM is wrong), skipped without new commits; SK runs "Deploy Production - AWS" by hand for same-day fixes |
 | Hugo | **0.101.0** extended (`/Users/Apple/Downloads/Softwares/Hugo/hugo_extended_0.101.0_darwin-amd64/hugo`) |
-| Redirects.json | 4 entries (`/tag/`, `/category`, `/feed`, `/feed/`), all 301 live (checked 11 Nov). Live or at deploy: still unknown (needs a change to test; blog.conholdate.com applies at deploy) |
-| Taxonomy URLs | term pages `/tag/<name>/` (`permalinks: tags: /tag/:title/`), list `/tags/`; categories `/categories/<x>/` (2) |
-| Head order (11 Nov) | Same bug shape as blog.aspose.com: `extend_head.html` (renders the `langswitcher.html` div when translated, i.e. on every page) sits before Open Graph, Twitter and JSON-LD, so those land in `<body>` live (title, canonical, hreflang, robots come before it: fine). blog.conholdate.com has it too (home: OG 5, Twitter 3, JSON-LD 1 in `<body>`) |
-| Size (7 Nov) | 5 English posts, 93 post files, 23 languages, 27 tags (all single-post), 186 sitemap URLs, no tag URLs in sitemaps |
-| Traffic (28 days to 3 Nov) | 2 clicks, 161 impressions |
-| Health (7 Nov) | 86; 7 issue types, 4 open items |
-| Theme | PaperMod (like blog.conholdate.com) |
+| Redirects.json | **Applies live** (~2 min after a push, no deploy). CloudFront caches redirect answers (query string not in the cache key). 3 entries now: `/tag/`, `/category/`, `/feed/` |
+| Redirect behaviour | Keys match exactly; the host forwards no-slash → slash with a **302** only for real folders (should be 301; CDN setting, not changed) |
+| Content | 5 English posts in `content/Conholdate.Cloud/total/` (`mainSections: [Conholdate.Cloud]`), 4 translated into 22 languages, the Java merge post (Mar 2026) English only; 93 post files |
+| Taxonomies | tag pages `/tag/<name>/` (`permalinks: tags: /tag/:title/`), list `/tags/`; one category "Conholdate.Total Cloud Product Family" |
+| Theme | PaperMod (as blog.conholdate.com); custom CSS in `assets/css/extended/custom.css` |
+| Traffic | Jul 2025 – Nov 2026: 14 clicks, 1,307 impressions (home 350); 28 days to 8 Nov: 2 clicks, 173 impressions |
 
-## Open findings at the last scan (7 Nov, before the 11 Nov scan improvements)
+## Fixes (all verified live 11 Nov unless noted)
 
-| Id | Check | Severity |
-|---|---|---|
-| intl-0002 | Posts link to another language although a translation exists (4 links, 3 Arabic posts, from a 2025-08-12 commit) | incorrect |
-| ai-0001 | Pages show almost no text without JavaScript (listing/category pages) | incorrect |
-| intl-0001 | hreflang without x-default | improvable |
-| onpage-0001 / 0003 | Description / title length | improvable |
-| onpage-0002 | Pages without H1 | improvable |
-| ai-0002 | No llms.txt | improvable |
+| # | Problem | Fix | Commit(s) |
+|---|---|---|---|
+| F1 | OG, Twitter, JSON-LD in `<body>` on every page (switcher `<div>` mid-`<head>`) | `extend_head.html` last in `head.html` | d194619 |
+| F2 | No x-default | x-default in `head.html` and `sitemap.xml`; `_index.<lang>.md` for the section so its 23 versions link (they were unlinked, titled "Conholdate.Clouds") | d194619, f414aef |
+| F3 | 27 single-post tags → 578 thin tag pages competing with posts | tag pages `noindex, follow`; `Disallow: /tags/`, `/tag/` removed from robots.txt | 70cb21f |
+| F4 | 4 wrong-language links in 3 Arabic posts (2025-08-12 commit) | → `/ar/…` (SK: fix from here) | bbe3a99 |
+| F5 | Redirects.json WordPress-template leftovers; `/category/` 404 | SK's set: `/tag/`, `/category/`, `/feed/` | 9a5a07c |
+| F6 | Two categories for one family (4 + 1 posts) | all 92 files → "Conholdate.Total Cloud Product Family" (SK: the real family) | bbe3a99 |
+| F7 | Java post in `content/Conholdate.Total/` (outside `mainSections`: never on the home page); empty stray category page | moved into `content/Conholdate.Cloud/total/` (URL unchanged); stray `_index.md` deleted (SK) | 0804d88 |
+| F8 | No H1 on the 23 home pages | PaperMod `homeInfoParams` per language: "Conholdate Cloud Blog" + "Articles on Conholdate.Total Cloud REST APIs and SDKs: …" (SK: "Articles", not "Tutorials"; brand without the dot); compact CSS (SK: the theme's hero took too much room); translations by Claude (SK) | a7d6751, 62d8a5b, d0a4811 |
+| F9 | `/search/`, `/archives/` indexable (thin; one-word titles/descriptions; "text needs JavaScript") | `noindex, follow`, out of the sitemaps (46 pages) | bc3530d |
+| F10 | 19 titles > 70, 26 descriptions > 170; Excel translations stale (English rewritten Jul 2026) | 66 values in 43 files (`scripts/ops/front_matter_set.py` pattern); all posts in range | 16b6a14 |
+| F11 | No llms.txt | `static/llms.txt`: summary, 5 articles, 23 languages, sitemap, category (SK reworded "Product Family") | 4cf4ed8, f672a2f, 05b9fb5 |
+| F12 | Language menu names wrong (日本 "Japan", 한국인 "a Korean person", 中國傳統的 garbled; id/nl/th in English; he with vowel marks) | native names in `config.yml` | 6217d42 — **pushed, waiting for deploy** (with 05b9fb5) |
 
-## Plan for the session
+Every template/content change was tested before the push: full Hugo 0.101 build with the production config before
+and after (`scripts/ops/build_diff.py`), `commit_check.py` PASSED, screenshots desktop + 390 px for layout changes,
+`scripts/ops/live_head.py` after each deploy.
 
-1. Confirm the facts above; test whether Redirects.json applies live or at deploy (one harmless check: curl an entry).
-2. Full scan with the new checks: `caffeinate -i .venv/bin/python scripts/run_cycle.py conholdate.cloud` (~2 min).
-   New checks since the last scan: junk redirect entries, translated URLs, thin tag pages (27 of 27 tags single-post:
-   expect a finding), tag pages in sitemaps (none expected).
-3. Review, snapshot ("Full scan with the new checks"), update this log.
-4. Propose fixes in the playbook order (smallest first), each push approved by SK: the 4 wrong-language links,
-   hreflang x-default, tags, then others. Template fixes found here can carry over to blog.conholdate.com (same theme).
-5. Verify live, agent-fixes table (`reports/conholdate.cloud/agent-fixes.json`), re-scan, snapshot, push.
+## Scans
 
-## Scan 11 Nov 2026 (full, runs 5, 16–21; snapshot 2026-11-11; our commit 7c42489)
+| When | Runs | Health (crawl / on-page / languages / AI) | Note |
+|---|---|---|---|
+| 7 Nov | discovery 4, crawl 10 … | 86 | before the 11 Nov checks |
+| 11 Nov 16:56 | 5, 16–21 | 84 (98 / 98 / 93 / 95) | new `tag_pages_thin`; snapshot 2026-11-11 |
+| 11 Nov 18:39 (after deploy 1) | 6, 22–27 | 94 | thin tags, links, H1 resolved |
+| 11 Nov (after deploy 2) | 7, 28–33 | 94 (100 / 99 / 100 / 95) | x-default resolved; snapshot "Fixes live: …" |
+| 11 Nov (after deploy 3) | 8, 34–39 | **100** (all 100) | 0 open; snapshot "Health 100: …"; speed not scored (no real-user data) |
 
-Health 86 → 84 (crawl 100 → 98) from the new `tag_pages_thin` finding (crawl-261111-1: 27 of 27 tags single-post,
-555 tag pages in 23 languages, 0 clicks, 30 impressions). Repo file check clean (no junk keys, no translated-URL
-mismatches). Open: llms.txt missing, no x-default (186), no H1 (23 home pages), content needs JS (29 listing pages),
-thin tags, 4 wrong-language links (unchanged), title/description length. No page 2 (5 posts, paginate 10).
+## Decisions by SK (11 Nov)
 
-**Audit gap found:** `head_closed_early` checks only tags that come before the div (title, canonical, hreflang …),
-so Open Graph / Twitter / JSON-LD in `<body>` went unreported here and on blog.conholdate.com.
+- Thin tags: an issue only if posts could share better tags; with 5 posts they cannot → noindex (F3); retag later.
+- Redirects: keep `/tag/`, `/category/`, `/feed/` ("no-slash may auto-forward": only true for real folders).
+- x-default: keep (states the fallback Google would mostly guess).
+- Category: "Conholdate.Total Cloud Product Family" is the real family. All posts in one folder.
+- Home H1: pilot here; "Articles", "Conholdate Cloud"; compact; translations by Claude.
+- Target 100 "in sight of Google as well": real fixes only, no audit rule relaxed for the score.
+- llms.txt: list all languages. Language names: fix in config.
 
-**Oddity (not fixed):** `/<lang>/conholdate.cloud/` section pages (22 languages) have no English translation linked,
-so they get no `en` hreflang and no x-default.
+## Our audit, changed because of this blog
 
-## Tags and Redirects.json reviewed (SK's questions, 11 Nov)
+| Change | Commit |
+|---|---|
+| New crawl check `social_tags_in_body` (not optimized; score group "head order" with `head_closed_early`; fix guide entry; commit check warns `social_tag_in_body`) | 7694323 |
+| `tag_pages_thin` not raised when `/tags/` and 2 tag pages answer noindex (read live, robots.txt respected) | 7694323 |
+| `commit_check.py` reports only shortcode damage a range adds (it blamed old `=\"` in commented-out figures of 38 translations) | 66280a2 |
+| Helpers: `scripts/ops/live_head.py`, `build_diff.py`, `front_matter_set.py` | this session |
 
-- **Tags:** 5 English posts (3 PDF, 1 HTML, 1 Excel), 27 tags, each on one post; tags are copied unchanged into
-  every translation. Best possible sharing: "PDF" 3 posts, "Conversion" 3, the rest 1, and a tag on all 5 would just
-  repeat the home page. Search Console since Jul 2025: tag pages 1 click, ~150 impressions, mostly position 30–110,
-  and they compete with the posts (e.g. `/sv/tag/html-to-jpg/` 35 impressions at 15 vs its post 1). Two categories
-  mean the same thing: "Conholdate.Total Product Family" (4 posts) and "Conholdate.Total Cloud Product Family" (1).
-- **Redirects.json:** all 4 entries came with the initial commit (b6056d6, 2025-07-14), copied from a WordPress-era
-  template; this blog has been Hugo since launch. No internal links to `/tag/`, `/category`, `/feed`; no Search
-  Console page for them since Jul 2025. `/tag/` has a purpose (term pages live at `/tag/<x>/`, the list at
-  `/tags/`); `/category` and `/feed(/)` never existed here (and `/feed` sends a feed reader to an HTML page).
-- **SK's decision (11 Nov):** keep `/tag/` → `/tags/`, `/category/` → `/categories/` (key gets the slash),
-  `/feed/` → home; drop `/feed`. Live test: keys match exactly; the host forwards no-slash → slash (with a **302**,
-  not 301) only for real folders (`/tags`, `/categories`, posts); `/tag` and `/category/` are 404 today. So `/feed`
-  and `/category` will answer 404 after the change (never visited: fine). Prepared as F5 (JSON valid, 3 entries).
-- Seen: the no-slash → slash forward on real folders is a 302 (temporary); a 301 would be right (host/CDN setting).
-- Also seen: `/search/` and `/<lang>/archives/` get impressions (thin utility pages, for later).
+## Open (not done)
 
-## Fixes
-
-| # | Fix | State |
-|---|---|---|
-| F1 | `head.html`: `extend_head.html` moved to the end of `<head>` (OG, Twitter, JSON-LD back in `<head>`) | pushed `d194619`, **verified live 11 Nov** |
-| F2 | x-default hreflang (default language) in `head.html` and `sitemap.xml` | pushed `d194619`, **verified live 11 Nov** |
-| F3 | Tag pages (`/tags/`, `/tag/<x>/`) `noindex, follow`; `Disallow: /tags/` and `/tag/` removed from robots.txt so the noindex is seen | pushed `70cb21f`, **verified live 11 Nov** |
-| F4 | 4 wrong-language links in 3 Arabic posts → `/ar/…` (SK: fix from here) | pushed `bbe3a99`, **verified live 11 Nov** |
-| F5 | Redirects.json: `/category` → `/category/`, `/feed` removed (SK's set) | pushed `9a5a07c`; **live 2 min after the push, no deploy** (`/category/` 301 at 17:49); `/category`, `/feed` still served from CloudFront cache (age ~3,200 s) |
-| F7 | Java merge post moved from `content/Conholdate.Total/` (not in `mainSections`, so **never listed on the home page**) to `content/Conholdate.Cloud/total/`; URL unchanged; `/conholdate.total/` section page gone. Stray empty category `groupdocs.total-product-family` deleted (SK: yes) | pushed `0804d88`, **verified live 11 Nov** |
-| F8 | Home H1 + one-line intro in 23 languages (PaperMod `homeInfoParams` in `config.yml`; "Articles on Conholdate.Total Cloud REST APIs and SDKs: …"; SK: "articles", not "tutorials"; translations by Claude, not the translation agent); pilot for the other blogs | pushed `a7d6751`, **verified live 11 Nov** |
-| F9 | Compact home intro (`custom.css`: no 320px hero), blog name "Conholdate Cloud" (SK, not "Conholdate.Cloud") in H1s; `_index.<lang>.md` for the section so its 23 versions link (last x-default gap, titles were "Conholdate.Clouds") | `62d8a5b`, `f414aef`, `d0a4811`, **verified live 11 Nov** (desktop and 390 px) |
-| F10 | Toward 100 (SK: real fixes, no audit rule changes): 66 titles/descriptions in 43 files within 10–70 / 50–170 (Excel translations now follow the July 2026 English; PDF description shortened); `/search/` and `/archives/` (46 pages) `noindex, follow` and out of the sitemaps; `static/llms.txt` | `16b6a14`, `bc3530d`, `4cf4ed8` (+ SK's `f672a2f` llms.txt wording), **verified live 11 Nov** |
-| F11 | `llms.txt`: 23 languages listed (English name + code → home page), URL rule for translations, the Java post marked English only (summary had wrongly said every article is translated); language menu names fixed in `config.yml` (ja 日本→日本語, ko 한국인→한국어, zh-hant 中國傳統的→繁體中文, id/nl/th native, he without vowel marks) | `05b9fb5`, `6217d42` pushed 11 Nov, waiting for deploy |
-| F6 | Category: all 92 files → "Conholdate.Total Cloud Product Family" (SK: the real family) | pushed `bbe3a99`, **verified live 11 Nov** |
-
-Pushed 11 Nov 17:47 PKT (`d2bc592..bbe3a99`); commit check PASSED (after fixing our check, 66280a2: it blamed old
-`=\"` in commented-out figures of 38 translations on the commit). Left alone: `content/categories/groupdocs.total-product-family/_index.md`,
-an empty category page titled "Conholdate.Total Cloud Product Family" (live 200), ask SK.
-
-Audit changes from this blog (7694323): `social_tags_in_body` check (not optimized, group "head order" with
-`head_closed_early`, commit check warns); `tag_pages_thin` skipped when `/tags/` and 2 tag pages answer noindex.
-
-Test (11 Nov, Hugo 0.101.0, production config, full build before/after): file set identical; no SEO tag left in
-`<body>` on any page; 555 tag term pages + 23 `/tags/` pages index → `noindex, follow`, no other robots change;
-x-default on 790 pages; sitemaps changed only by 161 x-default lines; robots.txt only the two lines removed.
-
-## Result (11 Nov, after both deploys)
-
-Re-scan (runs 7, 28–33): health **84 → 94** (crawl 100, on-page 99, languages 100, AI 95); resolved: thin tags
-(noindex), wrong-language links, no H1, no x-default; items 4 of 4 fixed. Snapshot "Fixes live: …"; 7 rows in
-`reports/conholdate.cloud/agent-fixes.json`. Still open: text needs JavaScript (listing pages), no llms.txt,
-title/description length. Not done (SK): retag posts (later); Arabic/Persian/Hebrew pages are left-to-right (theme,
-pre-existing); the merge post has no translations; host forwards no-slash with 302.
-
-## Health 100 (11 Nov, evening)
-
-After the third deploy, re-scan (runs 8, 34–39): **0 open findings, health 100** (crawl, on-page, languages, AI all
-100); snapshot "Health 100: …"; `agent-fixes.json` 10 rows. Reached with real fixes only (SK: "100 in sight of
-Google as well"; no audit rule was relaxed for it). Speed has no real-user data (too little traffic), so it is not
-scored.
+- Retag posts to 2–3 broad tags (SK: later; tag pages are noindex meanwhile).
+- The Java merge post has no translations (SK's translation agent).
+- Arabic, Persian, Hebrew pages render left-to-right (theme; site-wide, pre-existing).
+- Host forwards no-slash → slash with 302 instead of 301 (CDN).
+- F12 + llms.txt languages wait for a deploy; then check `/llms.txt` and the language menu live.
 
 ## Learned here
 
-- Same theme family as blog.conholdate.com: template fixes carry over (head order, x-default, tag noindex).
-- Redirects.json applies **live** here (within ~2 min), unlike blog.conholdate.com (at deploy). CloudFront caches
-  redirect answers (query string not in the cache key), so a removed entry keeps answering until the cache expires.
-- Redirect keys match exactly; the host forwards no-slash → slash (302) only for real folders.
+- Same theme as blog.conholdate.com: F1–F3, F8, F9 carry over (blog.conholdate.com has the F1 bug: OG 5, Twitter 3,
+  JSON-LD 1 in `<body>` on its home page; 6,872 titles/descriptions out of range by `front_matter_set.py --scan`).
+- Look past the sampled pages: the crawl showed 2 long titles, the repo had 45; the x-default gap hid in
+  auto-generated section pages; a post outside `mainSections` never reached the home page.
+- Translations drift: an English title rewritten later leaves 22 stale translated titles.
+- Utility pages (search, archives) cost more than they bring: noindex and out of the sitemap.
