@@ -10184,23 +10184,11 @@
    "page": "https://blog.conholdate.com/zh/total/convert-html-to-bmp-in-java/",
    "removed": null
   },
-  "redirect_key_malformed|blog.conholdate.com|Redirects.json|//total/add-text-or-image-watermarks-in-word-documents-using-csharp/|1": {
-   "check": "redirect_key_malformed",
-   "file": "Redirects.json",
-   "first_seen": "2026-11-03",
-   "fixed": null,
-   "host": "blog.conholdate.com",
-   "last_seen": "2026-11-06",
-   "link": "//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
-   "page": "https://blog.conholdate.com//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
-   "removed": null,
-   "source": "repo-audit"
-  },
   "redirect_key_malformed|blog.conholdate.com|Redirects.json|/2021/09/18/create-encrypted-zip-files-using-csharp/{{ revealButtonHref }}|1": {
    "check": "redirect_key_malformed",
    "file": "Redirects.json",
    "first_seen": "2026-11-03",
-   "fixed": null,
+   "fixed": "2026-11-11",
    "host": "blog.conholdate.com",
    "last_seen": "2026-11-06",
    "link": "/2021/09/18/create-encrypted-zip-files-using-csharp/{{ revealButtonHref }}",
@@ -10212,7 +10200,7 @@
    "check": "redirect_key_malformed",
    "file": "Redirects.json",
    "first_seen": "2026-11-03",
-   "fixed": null,
+   "fixed": "2026-11-11",
    "host": "blog.conholdate.com",
    "last_seen": "2026-11-06",
    "link": "/2021/10/29/save-attachments-from-emails-using-csharp/{{ revealButtonHref }}",
@@ -10224,7 +10212,7 @@
    "check": "redirect_key_malformed",
    "file": "Redirects.json",
    "first_seen": "2026-11-03",
-   "fixed": null,
+   "fixed": "2026-11-11",
    "host": "blog.conholdate.com",
    "last_seen": "2026-11-06",
    "link": "/2021/12/01/ms-word-automation-create-edit-or-convert-word-documents-using-java/{{ revealButtonHref }}",
@@ -10232,27 +10220,15 @@
    "removed": null,
    "source": "repo-audit"
   },
-  "redirect_key_malformed|blog.conholdate.com|Redirects.json|/categorieses//conholdate.total-product-family/|1": {
+  "redirect_key_malformed|blog.conholdate.com|Redirects.json|/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class\u3001|1": {
    "check": "redirect_key_malformed",
    "file": "Redirects.json",
-   "first_seen": "2026-11-03",
+   "first_seen": "2026-11-11",
    "fixed": null,
    "host": "blog.conholdate.com",
-   "last_seen": "2026-11-06",
-   "link": "/categorieses//conholdate.total-product-family/",
-   "page": "https://blog.conholdate.com/categorieses//conholdate.total-product-family/",
-   "removed": null,
-   "source": "repo-audit"
-  },
-  "redirect_key_malformed|blog.conholdate.com|Redirects.json|/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg|1": {
-   "check": "redirect_key_malformed",
-   "file": "Redirects.json",
-   "first_seen": "2026-11-03",
-   "fixed": null,
-   "host": "blog.conholdate.com",
-   "last_seen": "2026-11-06",
-   "link": "/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
-   "page": "https://blog.conholdate.com/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
+   "last_seen": "2026-11-11",
+   "link": "/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class\u3001",
+   "page": "https://blog.conholdate.com/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class\u3001",
    "removed": null,
    "source": "repo-audit"
   }
@@ -10263,6 +10239,7 @@
   "repo-audit-run7",
   "link-audit-run12",
   "repo-audit-run13",
-  "discovery-run2"
+  "discovery-run2",
+  "repo-audit-run15"
  ]
 }

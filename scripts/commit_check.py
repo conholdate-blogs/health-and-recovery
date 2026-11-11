@@ -140,6 +140,8 @@ def key_problem(key: str) -> str | None:
         return "raw template text {{ }}"
     if not key.startswith("/"):
         return "host or scheme in the key"
+    if "#" in key or "%23" in key.lower():
+        return "fragment in the key (#, never sent by browsers)"
     return None  # a double slash is fine: such keys answer 301 on all six blogs (live test 2026-11-11)
 
 

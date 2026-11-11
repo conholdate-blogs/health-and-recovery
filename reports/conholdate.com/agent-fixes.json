@@ -1,0 +1,24 @@
+[
+ {
+  "host": "blog.conholdate.com",
+  "found": "2026-11-03",
+  "issue": "Redirects.json held 6 entries for {{ revealButtonHref }} URLs (GitHub's unfilled gist placeholder, harvested by crawlers): 3 raw keys could never match, 3 sent junk URLs to the home page",
+  "check": "redirect_key_malformed",
+  "repo": "conholdate/conholdate-blog",
+  "commits": ["9cc26f48a45dfd256e84b049a3c9827e6ecd9573"],
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "result": "All 6 removed (1465 -> 1459 entries); after the deploy the placeholder URLs answer 404 and other redirects still answer 301"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "found": "2026-11-11",
+  "issue": "Gist embeds (2,963 in 1,314 post files) left GitHub's {{ revealButtonHref }} placeholder link in every rendered page, which crawlers request under the post URL (404)",
+  "check": "redirect_key_malformed",
+  "repo": "conholdate/conholdate-blog",
+  "commits": ["065759ab7dc25ffa25961cacbff0b0b9887c096c"],
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "result": "Live after the deploy: a post with 4 gists renders all 4 and no placeholder link (headless Chrome); same fix as blog.groupdocs.com"
+ }
+]

@@ -31,6 +31,20 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 5. **Architecture diagram** (`docs/architecture/site-health-architecture.html`, PNG, artifact): add `audit_structure` (last cycle step), the `head_closed_early` check and agent fixes; keep its current shape (rule).
 6. Nothing unpushed at session end (7 Nov): everything is on origin, shoaibkhan and gitlab, including the CLAUDE.md handoff and `scripts/ops/`.
 
+### Done 10–11 Nov 2026
+
+| What | Details | Commit |
+|---|---|---|
+| Head fix verified live (blog.aspose.com) | crawl run 18 resolved crawl-0013; health 50 → 69 | e8b67b8 |
+| Commit check built, not deployed | `scripts/commit_check.py`, drafts + README in `docs/commit-check/` (see Tuesday item 4) | 5bd5ce7 … 3fdc30e |
+| **blog.conholdate.com: gist placeholder fix + Redirects.json cleanup** (SK: pilot on the smaller blog first; remove ALL revealButtonHref entries) | conholdate-blog `065759ab` (`extend_footer.html` strips `.gist template`, as blog.groupdocs.com) and `9cc26f48` (6 entries removed, 1465 → 1459), pushed to `main` 11 Nov. Tested before push with **Hugo 0.101.0** (this blog's deploy version, downloaded to the session scratchpad; local Hugo is 0.120) + headless Chrome: placeholders 4 → 0. **On this blog Redirects.json changes apply only after a deploy** (not live like blog.aspose.com: still 301 after 10 min; 404 right after SK ran Deploy Production - AWS by hand). Verified live 11 Nov; `reports/conholdate.com/agent-fixes.json` created (2 rows). Deploy cron 03:00 UTC = 08:00 PKT (the workflow comment says 10–11 AM, wrong) | 065759ab, 9cc26f48 (conholdate-blog) |
+| **Our audit corrected: a double slash in a redirect key is fine** | Live test: such keys answer 301 on all four blogs that have them. 46 false items (aspose.com 28, aspose.cloud 9, groupdocs.cloud 6, conholdate.com 3) **deleted** from the ledgers (`scripts/ops/drop_false_items.py`), aspose.cloud's finding crawl-0006 (all false) **deleted** from the store (backup in the session scratchpad); repo check re-run (conholdate.com 15, aspose.cloud 19, groupdocs.cloud 18, aspose.com 19); snapshots 2026-11-11 | f860aad + this commit |
+| New dead-key rule: `#` fragment in a key | e.g. a copied `#:~:text=` link (1, blog.conholdate.com); was counted as "redirect not working" | this commit |
+| Commit check finds the `{{< gist >}}` shortcode | blog.conholdate.com embeds gists that way (2,963 embeds in 1,314 files) | f860aad |
+| `.claude/settings.json` gitignored; two standing aspose-blog write rules removed from it | Phase 1: site-repo commits must ask | 2812733 |
+
+**Open, found 11 Nov:** keys with non-ASCII characters (unencoded) do not redirect on blog.aspose.cloud (64 keys) and blog.aspose.com (74) but do on blog.groupdocs.cloud; blog.conholdate.com mixed (5). Old 2010–2017 URLs, mostly Japanese and Chinese newsletters. They are counted correctly in `redirect_not_working` (the live sample); the random sample shifted when the 9 double-slash keys joined it, so blog.aspose.cloud went 67 → 66 (2 of 40 failing, was 1). Options to discuss: percent-encode the keys, or a dedicated check. Also left on blog.conholdate.com: the fragment key (remove it, approval needed); hreflang x-default (next small template change).
+
 ### Done 6–7 Nov 2026 (all pushed to origin, shoaibkhan, gitlab unless noted; live checked)
 
 | What | Details | Commit |

@@ -1,7 +1,7 @@
 {
   "tenant": "groupdocs.cloud",
   "auditor": "repo-audit",
-  "run_id": 17,
+  "run_id": 18,
   "params": {
     "hosts": [
       "blog.groupdocs.cloud"
@@ -9,22 +9,22 @@
     "sample": 40
   },
   "requests": 41,
-  "duration_s": 50.4,
+  "duration_s": 52.3,
   "stopped_early": false,
   "summary": {
     "blog.groupdocs.cloud": {
-      "commit": "e2d67869 2026-11-06 Add generated blog for conversion: 2026-11-06-how-to-convert-excel-workbook-to-text-in-python (#72)",
-      "posts": 11040,
+      "commit": "5d2f8550 2026-11-11 Add generated blog for editor: 2026-11-11-integrating-groupdocseditor-into-an-aspnet-core-web-application (#73)",
+      "posts": 11059,
       "entries": 504,
       "invalid": null,
       "broke_it": null,
       "live": {
-        "eligible": 453,
+        "eligible": 459,
         "sampled": 40,
         "redirected": 40
       },
       "by_check": {
-        "redirect_key_malformed": 51,
+        "redirect_key_malformed": 45,
         "redirect_target_bad": 1
       }
     }
@@ -41,14 +41,9 @@
       "title": "Redirect sources that can never match a request",
       "evidence": {
         "urls": [
-          "https://blog.groupdocs.cloud//merger/password-protect-excel-using-password-protection-service/",
-          "https://blog.groupdocs.cloud//web792/",
-          "https://blog.groupdocs.cloud/http://daveandethan.life/exp.html",
-          "https://blog.groupdocs.cloud/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
-          "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
-          "https://blog.groupdocs.cloud/ru//render-excel-data-to-html-using-python/images/Render-Excel-To-HTML.jpg"
+          "https://blog.groupdocs.cloud/"
         ],
-        "observed": "51 entries or files; host or scheme in the key: 45, double slash: 6",
+        "observed": "45 entries or files; host or scheme in the key: 45",
         "expected": "Every source is a path starting with /, percent-encoded",
         "locations": [
           {
@@ -62,57 +57,12 @@
           },
           {
             "role": "file",
-            "url": "https://blog.groupdocs.cloud//merger/password-protect-excel-using-password-protection-service/",
-            "file": "Redirects.json",
-            "line": 335,
-            "note": "double slash",
-            "fix": "https://blog.groupdocs.cloud/merger/password-protect-excel-using-password-protection-service/",
-            "commit": "15e7b36d 2023-09-27: fixed broken links"
-          },
-          {
-            "role": "file",
-            "url": "https://blog.groupdocs.cloud//web792/",
-            "file": "Redirects.json",
-            "line": 353,
-            "note": "double slash",
-            "fix": "https://blog.groupdocs.cloud/",
-            "commit": "7f5e70c8 2023-10-13: convert-svg-to-png-using-svg-to-png-converter translations added"
-          },
-          {
-            "role": "file",
             "url": "https://blog.groupdocs.cloud/",
             "file": "Redirects.json",
             "line": 358,
             "note": "host or scheme in the key",
             "fix": "https://blog.groupdocs.cloud/",
             "commit": "c0f1c170 2023-11-06: fixed broken links"
-          },
-          {
-            "role": "file",
-            "url": "https://blog.groupdocs.cloud/http://daveandethan.life/exp.html",
-            "file": "Redirects.json",
-            "line": 359,
-            "note": "double slash",
-            "fix": "https://blog.groupdocs.cloud/",
-            "commit": "accb9feb 2023-10-20: fixed broken links"
-          },
-          {
-            "role": "file",
-            "url": "https://blog.groupdocs.cloud/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
-            "file": "Redirects.json",
-            "line": 382,
-            "note": "double slash",
-            "fix": "https://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family/",
-            "commit": "404c9c33 2023-11-13: Fixed broken links"
-          },
-          {
-            "role": "file",
-            "url": "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
-            "file": "Redirects.json",
-            "line": 388,
-            "note": "double slash",
-            "fix": "https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
-            "commit": "f14098cd 2023-12-19: fixed broken links"
           },
           {
             "role": "file",
@@ -410,10 +360,55 @@
             "note": "host or scheme in the key",
             "fix": "https://blog.groupdocs.cloud/",
             "commit": "dd25459d 2024-02-28: Redirects.json format fix"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 444,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/",
+            "commit": "271943e4 2024-03-04: redirections added for broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 449,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/page/3/",
+            "commit": "271943e4 2024-03-04: redirections added for broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 450,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/page/3/",
+            "commit": "271943e4 2024-03-04: redirections added for broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 451,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/page/43/",
+            "commit": "6f0ece74 2024-03-12: Redirections added for broken links"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.groupdocs.cloud/",
+            "file": "Redirects.json",
+            "line": 452,
+            "note": "host or scheme in the key",
+            "fix": "https://blog.groupdocs.cloud/conversion/how-to-convert-powerpoint-to-jpg-and-jpg-to-powerpoint-in-node.js/",
+            "commit": "6f0ece74 2024-03-12: Redirections added for broken links"
           }
         ]
       },
-      "affected_pages": 51,
+      "affected_pages": 45,
       "impact": {
         "clicks_28d": 0,
         "impressions_28d": 0,
@@ -423,7 +418,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     },
     {
       "id": "crawl-0002",
@@ -462,20 +457,20 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     }
   ],
   "hosts": {
     "blog.groupdocs.cloud": {
-      "commit": "e2d67869 2026-11-06 Add generated blog for conversion: 2026-11-06-how-to-convert-excel-workbook-to-text-in-python (#72)",
-      "posts": 11040,
+      "commit": "5d2f8550 2026-11-11 Add generated blog for editor: 2026-11-11-integrating-groupdocseditor-into-an-aspnet-core-web-application (#73)",
+      "posts": 11059,
       "redirects": {
         "present": true,
         "entries": 504,
         "invalid": null,
         "broke_it": null,
         "live": {
-          "eligible": 453,
+          "eligible": 459,
           "sampled": 40,
           "redirected": 40,
           "failed": []
@@ -495,62 +490,12 @@
         {
           "check": "redirect_key_malformed",
           "file": "Redirects.json",
-          "line": 335,
-          "link": "//merger/password-protect-excel-using-password-protection-service/",
-          "note": "double slash",
-          "fix": "https://blog.groupdocs.cloud/merger/password-protect-excel-using-password-protection-service/",
-          "page": "https://blog.groupdocs.cloud//merger/password-protect-excel-using-password-protection-service/",
-          "commit": "15e7b36d 2023-09-27: fixed broken links"
-        },
-        {
-          "check": "redirect_key_malformed",
-          "file": "Redirects.json",
-          "line": 353,
-          "link": "//web792/",
-          "note": "double slash",
-          "fix": "https://blog.groupdocs.cloud/",
-          "page": "https://blog.groupdocs.cloud//web792/",
-          "commit": "7f5e70c8 2023-10-13: convert-svg-to-png-using-svg-to-png-converter translations added"
-        },
-        {
-          "check": "redirect_key_malformed",
-          "file": "Redirects.json",
           "line": 358,
           "link": "blog.groupdocs.cloud/feed/web792/",
           "note": "host or scheme in the key",
           "fix": "https://blog.groupdocs.cloud/",
           "page": null,
           "commit": "c0f1c170 2023-11-06: fixed broken links"
-        },
-        {
-          "check": "redirect_key_malformed",
-          "file": "Redirects.json",
-          "line": 359,
-          "link": "/http://daveandethan.life/exp.html",
-          "note": "double slash",
-          "fix": "https://blog.groupdocs.cloud/",
-          "page": "https://blog.groupdocs.cloud/http://daveandethan.life/exp.html",
-          "commit": "accb9feb 2023-10-20: fixed broken links"
-        },
-        {
-          "check": "redirect_key_malformed",
-          "file": "Redirects.json",
-          "line": 382,
-          "link": "/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
-          "note": "double slash",
-          "fix": "https://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family/",
-          "page": "https://blog.groupdocs.cloud/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
-          "commit": "404c9c33 2023-11-13: Fixed broken links"
-        },
-        {
-          "check": "redirect_key_malformed",
-          "file": "Redirects.json",
-          "line": 388,
-          "link": "/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
-          "note": "double slash",
-          "fix": "https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
-          "page": "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
-          "commit": "f14098cd 2023-12-19: fixed broken links"
         },
         {
           "check": "redirect_key_malformed",
@@ -991,16 +936,6 @@
           "fix": "https://blog.groupdocs.cloud/es/tags/",
           "page": null,
           "commit": "c7c99c41 2024-03-27: Redirection added for broken link"
-        },
-        {
-          "check": "redirect_key_malformed",
-          "file": "Redirects.json",
-          "line": 461,
-          "link": "/ru//render-excel-data-to-html-using-python/images/Render-Excel-To-HTML.jpg",
-          "note": "double slash",
-          "fix": "https://blog.groupdocs.cloud/ru/viewer/render-excel-data-to-html-using-python/images/Excel-to-HTML-Python.jpg",
-          "page": "https://blog.groupdocs.cloud/ru//render-excel-data-to-html-using-python/images/Render-Excel-To-HTML.jpg",
-          "commit": "d3ab0f08 2024-04-02: Redirections are added for broken links"
         }
       ]
     }

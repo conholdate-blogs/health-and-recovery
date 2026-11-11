@@ -972,73 +972,23 @@
     "title": "Redirect sources that can never match a request",
     "evidence": {
       "urls": [
-        "https://blog.conholdate.com/2021/10/29/save-attachments-from-emails-using-csharp/{{ revealButtonHref }}",
-        "https://blog.conholdate.com/2021/09/18/create-encrypted-zip-files-using-csharp/{{ revealButtonHref }}",
-        "https://blog.conholdate.com/2021/12/01/ms-word-automation-create-edit-or-convert-word-documents-using-java/{{ revealButtonHref }}",
-        "https://blog.conholdate.com/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
-        "https://blog.conholdate.com//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
-        "https://blog.conholdate.com/categorieses//conholdate.total-product-family/"
+        "https://blog.conholdate.com/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class、"
       ],
-      "observed": "6 entries or files; unencoded template text: 3, double slash: 3",
+      "observed": "1 entries or files; fragment in the key (#, never sent by browsers): 1",
       "expected": "Every source is a path starting with /, percent-encoded",
       "locations": [
         {
           "role": "file",
-          "url": "https://blog.conholdate.com/2021/10/29/save-attachments-from-emails-using-csharp/{{ revealButtonHref }}",
+          "url": "https://blog.conholdate.com/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class、",
           "file": "Redirects.json",
-          "line": 1300,
-          "note": "unencoded template text",
-          "fix": "https://blog.conholdate.com/total/save-attachments-from-emails-using-csharp/",
-          "commit": "106b21ce 2023-01-12: Update Redirects.json"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/2021/09/18/create-encrypted-zip-files-using-csharp/{{ revealButtonHref }}",
-          "file": "Redirects.json",
-          "line": 1335,
-          "note": "unencoded template text",
+          "line": 1352,
+          "note": "fragment in the key (#, never sent by browsers)",
           "fix": "https://blog.conholdate.com/",
-          "commit": "fddb141c 2023-09-14: Fixed Broken Links"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/2021/12/01/ms-word-automation-create-edit-or-convert-word-documents-using-java/{{ revealButtonHref }}",
-          "file": "Redirects.json",
-          "line": 1337,
-          "note": "unencoded template text",
-          "fix": "https://blog.conholdate.com/",
-          "commit": "fddb141c 2023-09-14: Fixed Broken Links"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
-          "file": "Redirects.json",
-          "line": 1353,
-          "note": "double slash",
-          "fix": "https://blog.conholdate.com/total/convert-jpg-to-word/images/JPG-Image-to-Word.jpg",
-          "commit": "59bee26e 2023-10-02: Fixed Broken Links"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
-          "file": "Redirects.json",
-          "line": 1365,
-          "note": "double slash",
-          "fix": "https://blog.conholdate.com/total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
-          "commit": "bbd9b4bf 2023-11-21: Broken Links"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/categorieses//conholdate.total-product-family/",
-          "file": "Redirects.json",
-          "line": 1379,
-          "note": "double slash",
-          "fix": "https://blog.conholdate.com/es/categories/conholdate.total-product-family/",
-          "commit": "80a80101 2023-12-05: Optimization and Broken Links Fixes"
+          "commit": "a1c3218a 2023-10-13: Fixed Broken Links"
         }
       ]
     },
-    "affected_pages": 6,
+    "affected_pages": 1,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -1067,7 +1017,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run13",
+    "last_seen_run": "repo-audit-run15",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",

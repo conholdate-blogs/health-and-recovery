@@ -1578,29 +1578,16 @@
     "title": "Redirect sources that can never match a request",
     "evidence": {
       "urls": [
-        "https://blog.aspose.com//0.0.7.229/01/15/Split-PDF-Files-using-Java/",
-        "https://blog.aspose.com/gis/id//convert-gpx-to-csv-in-csharp/",
-        "https://blog.aspose.com/gis//convert-gpx-to-csv-in-csharp/",
-        "https://blog.aspose.com//3d/fbx-to-glb-java/",
-        "https://blog.aspose.com/barcode/wpf-barcode-generator-in-csharp//",
-        "https://blog.aspose.com/ja/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
-        "https://blog.aspose.com/zh/3d/3d-in-python/https://home.firefoxchina.cn",
-        "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
-        "https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/](https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/)",
-        "https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/"
+        "https://blog.aspose.com/cells/create-cylinder-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+        "https://blog.aspose.com/cells/create-cylinder100percentstacked-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+        "https://blog.aspose.com/cells/create-funnel-chart-in-excel-using-csharp/{{ revealButtonHref }}",
+        "https://blog.aspose.com/cells/export-excel-to-stream-csharp/{{ revealButtonHref }}",
+        "https://blog.aspose.com/cs/cells/add-picture-to-excel-in-csharp/{{ revealButtonHref }}",
+        "https://blog.aspose.com/pl/cells/open-excel-file-online/{{ revealButtonHref }}"
       ],
-      "observed": "43 entries or files; double slash: 28, host or scheme in the key: 9, unencoded template text: 6",
+      "observed": "15 entries or files; host or scheme in the key: 9, unencoded template text: 6",
       "expected": "Every source is a path starting with /, percent-encoded",
       "locations": [
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//0.0.7.229/01/15/Split-PDF-Files-using-Java/",
-          "file": "Redirects.json",
-          "line": 406,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/ja/pdf/split-pdf-files-using-java/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
         {
           "role": "file",
           "url": "https://blog.aspose.com/",
@@ -1608,87 +1595,6 @@
           "line": 8460,
           "note": "host or scheme in the key",
           "fix": "https://blog.aspose.com/total/convert-rdl-or-rdlc-files-to-image-formats-or-display-gaps-in-a-line-chart/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/gis/id//convert-gpx-to-csv-in-csharp/",
-          "file": "Redirects.json",
-          "line": 16074,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/gis/convert-gpx-to-csv-in-csharp/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/gis//convert-gpx-to-csv-in-csharp/",
-          "file": "Redirects.json",
-          "line": 16095,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/gis/convert-gpx-to-csv-in-csharp/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//3d/fbx-to-glb-java/",
-          "file": "Redirects.json",
-          "line": 16102,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/3d/fbx-to-glb-java/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/barcode/wpf-barcode-generator-in-csharp//",
-          "file": "Redirects.json",
-          "line": 16122,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/barcode/wpf-barcode-generator-in-csharp/",
-          "commit": "0b193840 2024-02-07: fixed broken links"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/ja/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
-          "file": "Redirects.json",
-          "line": 16178,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/ja/cad/convert-dwg-and-dxf-to-pdf-in-java/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/zh/3d/3d-in-python/https://home.firefoxchina.cn",
-          "file": "Redirects.json",
-          "line": 16185,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/zh/3d/3d-in-python/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com/cad/java/",
-          "file": "Redirects.json",
-          "line": 16196,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/](https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/)",
-          "file": "Redirects.json",
-          "line": 16198,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/fa/email/read-emails-using-imap-in-python/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/",
-          "file": "Redirects.json",
-          "line": 16199,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/he/cad/convert-dwf-to-pdf-online/",
           "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
         },
         {
@@ -1702,56 +1608,11 @@
         },
         {
           "role": "file",
-          "url": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/https://products.aspose.com",
-          "file": "Redirects.json",
-          "line": 16209,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/cad/convert-dwg-and-dxf-to-pdf-in-java/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//email/merge-multiple-mbox-files-in-csharp/",
-          "file": "Redirects.json",
-          "line": 16228,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/email/merge-multiple-mbox-files-in-csharp/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
           "url": "https://blog.aspose.com/",
           "file": "Redirects.json",
           "line": 16246,
           "note": "host or scheme in the key",
           "fix": "https://blog.aspose.com/words/convert-word-to-excel-using-csharp/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//html/extract-text-from-webpage-in-csharp-text-extraction-api/",
-          "file": "Redirects.json",
-          "line": 16257,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/html/extract-text-from-webpage-in-csharp-text-extraction-api/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//email/5ways-to-retrieve-emails-using-csharp/",
-          "file": "Redirects.json",
-          "line": 16272,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/email/5ways-to-retrieve-emails-using-csharp/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/zh-hant//email/5ways-to-retrieve-emails-using-csharp/",
-          "file": "Redirects.json",
-          "line": 16280,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/email/5ways-to-retrieve-emails-using-csharp/",
           "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
         },
         {
@@ -1765,111 +1626,12 @@
         },
         {
           "role": "file",
-          "url": "https://blog.aspose.com//psd/the-ultimate-guide-to-compress-psd-file/",
-          "file": "Redirects.json",
-          "line": 16292,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/psd/compress-psd-file-online/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//ru/",
-          "file": "Redirects.json",
-          "line": 16355,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//es/",
-          "file": "Redirects.json",
-          "line": 16415,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/es/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//ko/",
-          "file": "Redirects.json",
-          "line": 16416,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/ko/",
-          "commit": "4d4f96bb 2026-01-06: fixed broken links"
-        },
-        {
-          "role": "file",
           "url": "https://blog.aspose.com/",
           "file": "Redirects.json",
           "line": 16424,
           "note": "host or scheme in the key",
           "fix": "https://blog.aspose.com/ru/tex/convert-latex-to-word-online-latex-to-docx/",
           "commit": "4d4f96bb 2026-01-06: fixed broken links"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//cs/",
-          "file": "Redirects.json",
-          "line": 16432,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/cs/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//de/",
-          "file": "Redirects.json",
-          "line": 16433,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/de/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//fa/",
-          "file": "Redirects.json",
-          "line": 16434,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/fa/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//it/",
-          "file": "Redirects.json",
-          "line": 16435,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/it/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//ja/",
-          "file": "Redirects.json",
-          "line": 16436,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/ja/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//pl/",
-          "file": "Redirects.json",
-          "line": 16437,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/pl/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com//uk/",
-          "file": "Redirects.json",
-          "line": 16438,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/uk/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
         },
         {
           "role": "file",
@@ -1900,29 +1662,11 @@
         },
         {
           "role": "file",
-          "url": "https://blog.aspose.com/pt//imaging/convert-gif-to-png-in-python-image-manipulation-service/",
-          "file": "Redirects.json",
-          "line": 16577,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/pt/imaging/convert-gif-to-png-in-python-image-manipulation-service/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
           "url": "https://blog.aspose.com/",
           "file": "Redirects.json",
           "line": 16667,
           "note": "host or scheme in the key",
           "fix": "https://blog.aspose.com/zh-hant/cad/convert-svg-to-gif-in-python-programmatically/",
-          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.aspose.com/zh//imaging/convert-gif-to-png-in-python-image-manipulation-service/",
-          "file": "Redirects.json",
-          "line": 16697,
-          "note": "double slash",
-          "fix": "https://blog.aspose.com/zh-tw/imaging/convert-gif-to-png-in-python-image-manipulation-service/",
           "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
         },
         {
@@ -1951,17 +1695,44 @@
           "note": "unencoded template text",
           "fix": "https://blog.aspose.com/cells/create-funnel-chart-in-excel-using-csharp/",
           "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.com/cells/export-excel-to-stream-csharp/{{ revealButtonHref }}",
+          "file": "Redirects.json",
+          "line": 16716,
+          "note": "unencoded template text",
+          "fix": "https://blog.aspose.com/cells/export-excel-to-stream-csharp/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.com/cs/cells/add-picture-to-excel-in-csharp/{{ revealButtonHref }}",
+          "file": "Redirects.json",
+          "line": 16717,
+          "note": "unencoded template text",
+          "fix": "https://blog.aspose.com/cs/cells/add-picture-to-excel-in-csharp/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.aspose.com/pl/cells/open-excel-file-online/{{ revealButtonHref }}",
+          "file": "Redirects.json",
+          "line": 16719,
+          "note": "unencoded template text",
+          "fix": "https://blog.aspose.com/pl/cells/open-excel-file-online/",
+          "commit": "f373239e 2026-09-15: Removed redirection duplicate keys"
         }
       ]
     },
-    "affected_pages": 43,
+    "affected_pages": 15,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 270,
+      "impressions_28d": 0,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 43,
+      "past_impressions": 0,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
@@ -1969,7 +1740,7 @@
         "2026-05-06"
       ],
       "scored_on": "at stake",
-      "score": 8,
+      "score": 0,
       "window": [
         "2026-10-08",
         "2026-11-04"
@@ -1983,7 +1754,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run15",
+    "last_seen_run": "repo-audit-run19",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",
@@ -2056,7 +1827,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run15",
+    "last_seen_run": "repo-audit-run19",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_target_bad",
@@ -2149,7 +1920,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run15",
+    "last_seen_run": "repo-audit-run19",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_self_loop",
@@ -2563,7 +2334,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run15",
+    "last_seen_run": "repo-audit-run19",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_url_relative",
@@ -2905,7 +2676,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run15",
+    "last_seen_run": "repo-audit-run19",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_broken",

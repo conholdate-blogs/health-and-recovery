@@ -130,5 +130,11 @@
     "date": "2026-11-07 (2)",
     "label": "Site structure panel (tags, listing pages)",
     "runs": "discovery run 4, crawl audit run 12, speed audit run 14, AI audit run 13, text check run 15, link check run 16, repo file check run 17"
+  },
+  {
+    "file": "2026-11-11.html",
+    "date": "2026-11-11",
+    "label": "Repo check corrected: double-slash redirects are not malformed",
+    "runs": "discovery run 4, crawl audit run 12, speed audit run 14, AI audit run 13, text check run 15, link check run 16, repo file check run 18"
   }
 ]

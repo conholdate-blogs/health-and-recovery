@@ -61,6 +61,8 @@ def key_problem(key: str) -> str | None:
         return "unencoded template text"
     if not key.startswith("/"):
         return "host or scheme in the key"
+    if "#" in key or "%23" in key.lower():
+        return "fragment in the key (#, never sent by browsers)"  # e.g. a copied #:~:text= scroll-to-text link
     # A double slash is NOT a problem: such keys answer 301 on all six blogs (live test 2026-11-11, e.g.
     # blog.conholdate.com//total/...). Counted as broken until then: 46 false issues on four blogs.
     return None

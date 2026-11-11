@@ -83,6 +83,7 @@ def test_key_problem():
     assert key_problem("/a/{{ t }}") == "unencoded template text"
     assert key_problem("blog.example.com/a/") == key_problem("http://blog.example.com/a") == "host or scheme in the key"
     assert key_problem("//a/") is None and key_problem("/a//b/") is None  # double slash redirects fine (live)
+    assert key_problem("/a/%23:~:text=x").startswith("fragment") and key_problem("/a/#b").startswith("fragment")
 
 
 def test_invalid_file_is_still_read_line_by_line():

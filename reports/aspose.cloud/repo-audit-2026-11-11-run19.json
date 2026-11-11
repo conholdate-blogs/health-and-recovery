@@ -1,0 +1,262 @@
+{
+  "tenant": "aspose.cloud",
+  "auditor": "repo-audit",
+  "run_id": 19,
+  "params": {
+    "hosts": [
+      "blog.aspose.cloud"
+    ],
+    "sample": 40
+  },
+  "requests": 41,
+  "duration_s": 53.2,
+  "stopped_early": false,
+  "summary": {
+    "blog.aspose.cloud": {
+      "commit": "574707360f 2026-11-11 Add generated blog for words: 2026-11-11-comparing-and-merging-odt-files-programmatically-in-net (#101)",
+      "posts": 13681,
+      "entries": 1183,
+      "invalid": null,
+      "broke_it": null,
+      "live": {
+        "eligible": 1183,
+        "sampled": 40,
+        "redirected": 38,
+        "not_working": 2
+      },
+      "by_check": {
+        "redirect_self_loop": 4,
+        "post_front_matter_broken": 1
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "crawl-0001",
+      "tenant": "aspose.cloud",
+      "subdomain": "blog.aspose.cloud",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_self_loop",
+      "type": "incorrect",
+      "title": "Redirects that point at themselves",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.cloud/bg/archives/",
+          "https://blog.aspose.cloud/zh-tw/search/",
+          "https://blog.aspose.cloud/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+          "https://blog.aspose.cloud/hu/cells/convert-excel-to-powerpoint-in-csharp/"
+        ],
+        "observed": "4 entries or files; target is the source: 4",
+        "expected": "A redirect's target differs from its source",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/bg/archives/",
+            "file": "Redirects.json",
+            "line": 889,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/zh-tw/search/",
+            "file": "Redirects.json",
+            "line": 899,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+            "file": "Redirects.json",
+            "line": 1069,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/hu/cells/convert-excel-to-powerpoint-in-csharp/",
+            "file": "Redirects.json",
+            "line": 1076,
+            "note": "target is the source",
+            "fix": null,
+            "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+          }
+        ]
+      },
+      "affected_pages": 4,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-11"
+    },
+    {
+      "id": "crawl-0002",
+      "tenant": "aspose.cloud",
+      "subdomain": "blog.aspose.cloud",
+      "template": "post",
+      "dimension": "crawl",
+      "check": "post_front_matter_broken",
+      "type": "broken",
+      "title": "Post files whose front matter does not parse",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.cloud/"
+        ],
+        "observed": "1 entries or files; while parsing a quoted scalar: 1",
+        "expected": "Every post file starts with a valid front matter block",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.aspose.cloud/",
+            "file": "content/Aspose.Cloud/cells/2025-07-15-spreadsheet-cleaning-api-excel-spaces-line-breaks-fix/index.tr.md",
+            "line": 1,
+            "note": "while parsing a quoted scalar",
+            "fix": null,
+            "commit": "5a1fd5463e 2025-07-18 fix tr error:spreadsheet-cleaning-api-excel-spaces-line-breaks-fix"
+          }
+        ]
+      },
+      "affected_pages": 1,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-11"
+    },
+    {
+      "id": "crawl-0003",
+      "tenant": "aspose.cloud",
+      "subdomain": "blog.aspose.cloud",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_not_working",
+      "type": "broken",
+      "title": "Redirects in Redirects.json do not work on the live site",
+      "evidence": {
+        "urls": [
+          "https://blog.aspose.cloud/2013/11/01/aspose-ニュースレター-2013年-11月/",
+          "https://blog.aspose.cloud/2014/11/01/aspose.slides-for-.net-の紹介およびその他のニュース-2014年-11月-2/"
+        ],
+        "observed": "2 of 40 sampled sources return 404 without a redirect (38 redirect, 0 other); 1,183 well-formed entries",
+        "expected": "Every well-formed source answers with a redirect to its target",
+        "locations": [
+          {
+            "role": "redirect",
+            "url": "https://blog.aspose.cloud/2013/11/01/aspose-ニュースレター-2013年-11月/",
+            "note": "404, no redirect"
+          },
+          {
+            "role": "redirect",
+            "url": "https://blog.aspose.cloud/2014/11/01/aspose.slides-for-.net-の紹介およびその他のニュース-2014年-11月-2/",
+            "note": "404, no redirect"
+          }
+        ],
+        "live_sample": [
+          2,
+          40
+        ]
+      },
+      "affected_pages": 59,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "M",
+      "fix_tier": 3,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-11"
+    }
+  ],
+  "hosts": {
+    "blog.aspose.cloud": {
+      "commit": "574707360f 2026-11-11 Add generated blog for words: 2026-11-11-comparing-and-merging-odt-files-programmatically-in-net (#101)",
+      "posts": 13681,
+      "redirects": {
+        "present": true,
+        "entries": 1183,
+        "invalid": null,
+        "broke_it": null,
+        "live": {
+          "eligible": 1183,
+          "sampled": 40,
+          "redirected": 38,
+          "not_working": 2,
+          "failed": [
+            "/2013/11/01/aspose-ニュースレター-2013年-11月/",
+            "/2014/11/01/aspose.slides-for-.net-の紹介およびその他のニュース-2014年-11月-2/"
+          ]
+        }
+      },
+      "issues": [
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 889,
+          "link": "/bg/archives/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.cloud/bg/archives/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 899,
+          "link": "/zh-tw/search/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.cloud/zh-tw/search/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 1069,
+          "link": "/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.cloud/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "redirect_self_loop",
+          "file": "Redirects.json",
+          "line": 1076,
+          "link": "/hu/cells/convert-excel-to-powerpoint-in-csharp/",
+          "note": "target is the source",
+          "fix": null,
+          "page": "https://blog.aspose.cloud/hu/cells/convert-excel-to-powerpoint-in-csharp/",
+          "commit": "b42de296 2026-01-22: Updated Redirects JSON file"
+        },
+        {
+          "check": "post_front_matter_broken",
+          "file": "content/Aspose.Cloud/cells/2025-07-15-spreadsheet-cleaning-api-excel-spaces-line-breaks-fix/index.tr.md",
+          "line": 1,
+          "link": null,
+          "page": null,
+          "fix": null,
+          "note": "while parsing a quoted scalar",
+          "commit": "5a1fd5463e 2025-07-18 fix tr error:spreadsheet-cleaning-api-excel-spaces-line-breaks-fix"
+        }
+      ]
+    }
+  }
+}

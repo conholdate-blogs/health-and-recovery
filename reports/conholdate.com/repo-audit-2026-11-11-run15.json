@@ -1,0 +1,104 @@
+{
+  "tenant": "conholdate.com",
+  "auditor": "repo-audit",
+  "run_id": 15,
+  "params": {
+    "hosts": [
+      "blog.conholdate.com"
+    ],
+    "sample": 40
+  },
+  "requests": 40,
+  "duration_s": 43.7,
+  "stopped_early": false,
+  "summary": {
+    "blog.conholdate.com": {
+      "commit": "9cc26f48 2026-11-11 Redirects.json: remove all 6 {{ revealButtonHref }} entries",
+      "posts": 10062,
+      "entries": 1459,
+      "invalid": null,
+      "broke_it": null,
+      "live": {
+        "eligible": 1458,
+        "sampled": 40,
+        "redirected": 39,
+        "other": 1
+      },
+      "by_check": {
+        "redirect_key_malformed": 1
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "crawl-0001",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "Redirects.json",
+      "dimension": "crawl",
+      "check": "redirect_key_malformed",
+      "type": "incorrect",
+      "title": "Redirect sources that can never match a request",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class、"
+        ],
+        "observed": "1 entries or files; fragment in the key (#, never sent by browsers): 1",
+        "expected": "Every source is a path starting with /, percent-encoded",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.com/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class、",
+            "file": "Redirects.json",
+            "line": 1352,
+            "note": "fragment in the key (#, never sent by browsers)",
+            "fix": "https://blog.conholdate.com/",
+            "commit": "a1c3218a 2023-10-13: Fixed Broken Links"
+          }
+        ]
+      },
+      "affected_pages": 1,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-11"
+    }
+  ],
+  "hosts": {
+    "blog.conholdate.com": {
+      "commit": "9cc26f48 2026-11-11 Redirects.json: remove all 6 {{ revealButtonHref }} entries",
+      "posts": 10062,
+      "redirects": {
+        "present": true,
+        "entries": 1459,
+        "invalid": null,
+        "broke_it": null,
+        "live": {
+          "eligible": 1458,
+          "sampled": 40,
+          "redirected": 39,
+          "other": 1,
+          "failed": []
+        }
+      },
+      "issues": [
+        {
+          "check": "redirect_key_malformed",
+          "file": "Redirects.json",
+          "line": 1352,
+          "link": "/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class、",
+          "note": "fragment in the key (#, never sent by browsers)",
+          "fix": "https://blog.conholdate.com/",
+          "page": "https://blog.conholdate.com/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class、",
+          "commit": "a1c3218a 2023-10-13: Fixed Broken Links"
+        }
+      ]
+    }
+  }
+}

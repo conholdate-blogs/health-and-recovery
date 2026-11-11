@@ -1,0 +1,6 @@
+host,check,file,line,link,fix,note,commit
+blog.aspose.cloud,redirect_self_loop,Redirects.json,889,/bg/archives/,,target is the source,b42de296 2026-01-22: Updated Redirects JSON file
+blog.aspose.cloud,redirect_self_loop,Redirects.json,899,/zh-tw/search/,,target is the source,b42de296 2026-01-22: Updated Redirects JSON file
+blog.aspose.cloud,redirect_self_loop,Redirects.json,1069,/pdf/pdf-to-doc-converter-aspose.pdf-cloud-sdks-for-node.js/,,target is the source,b42de296 2026-01-22: Updated Redirects JSON file
+blog.aspose.cloud,redirect_self_loop,Redirects.json,1076,/hu/cells/convert-excel-to-powerpoint-in-csharp/,,target is the source,b42de296 2026-01-22: Updated Redirects JSON file
+blog.aspose.cloud,post_front_matter_broken,content/Aspose.Cloud/cells/2025-07-15-spreadsheet-cleaning-api-excel-spaces-line-breaks-fix/index.tr.md,1,,,while parsing a quoted scalar,5a1fd5463e 2025-07-18 fix tr error:spreadsheet-cleaning-api-excel-spaces-line-breaks-fix

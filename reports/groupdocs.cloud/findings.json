@@ -1153,14 +1153,9 @@
     "title": "Redirect sources that can never match a request",
     "evidence": {
       "urls": [
-        "https://blog.groupdocs.cloud//merger/password-protect-excel-using-password-protection-service/",
-        "https://blog.groupdocs.cloud//web792/",
-        "https://blog.groupdocs.cloud/http://daveandethan.life/exp.html",
-        "https://blog.groupdocs.cloud/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
-        "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
-        "https://blog.groupdocs.cloud/ru//render-excel-data-to-html-using-python/images/Render-Excel-To-HTML.jpg"
+        "https://blog.groupdocs.cloud/"
       ],
-      "observed": "51 entries or files; host or scheme in the key: 45, double slash: 6",
+      "observed": "45 entries or files; host or scheme in the key: 45",
       "expected": "Every source is a path starting with /, percent-encoded",
       "locations": [
         {
@@ -1174,57 +1169,12 @@
         },
         {
           "role": "file",
-          "url": "https://blog.groupdocs.cloud//merger/password-protect-excel-using-password-protection-service/",
-          "file": "Redirects.json",
-          "line": 335,
-          "note": "double slash",
-          "fix": "https://blog.groupdocs.cloud/merger/password-protect-excel-using-password-protection-service/",
-          "commit": "15e7b36d 2023-09-27: fixed broken links"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud//web792/",
-          "file": "Redirects.json",
-          "line": 353,
-          "note": "double slash",
-          "fix": "https://blog.groupdocs.cloud/",
-          "commit": "7f5e70c8 2023-10-13: convert-svg-to-png-using-svg-to-png-converter translations added"
-        },
-        {
-          "role": "file",
           "url": "https://blog.groupdocs.cloud/",
           "file": "Redirects.json",
           "line": 358,
           "note": "host or scheme in the key",
           "fix": "https://blog.groupdocs.cloud/",
           "commit": "c0f1c170 2023-11-06: fixed broken links"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/http://daveandethan.life/exp.html",
-          "file": "Redirects.json",
-          "line": 359,
-          "note": "double slash",
-          "fix": "https://blog.groupdocs.cloud/",
-          "commit": "accb9feb 2023-10-20: fixed broken links"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family",
-          "file": "Redirects.json",
-          "line": 382,
-          "note": "double slash",
-          "fix": "https://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family/",
-          "commit": "404c9c33 2023-11-13: Fixed broken links"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
-          "file": "Redirects.json",
-          "line": 388,
-          "note": "double slash",
-          "fix": "https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/",
-          "commit": "f14098cd 2023-12-19: fixed broken links"
         },
         {
           "role": "file",
@@ -1522,25 +1472,70 @@
           "note": "host or scheme in the key",
           "fix": "https://blog.groupdocs.cloud/",
           "commit": "dd25459d 2024-02-28: Redirects.json format fix"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 444,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/",
+          "commit": "271943e4 2024-03-04: redirections added for broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 449,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/3/",
+          "commit": "271943e4 2024-03-04: redirections added for broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 450,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/3/",
+          "commit": "271943e4 2024-03-04: redirections added for broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 451,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/page/43/",
+          "commit": "6f0ece74 2024-03-12: Redirections added for broken links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/",
+          "file": "Redirects.json",
+          "line": 452,
+          "note": "host or scheme in the key",
+          "fix": "https://blog.groupdocs.cloud/conversion/how-to-convert-powerpoint-to-jpg-and-jpg-to-powerpoint-in-node.js/",
+          "commit": "6f0ece74 2024-03-12: Redirections added for broken links"
         }
       ]
     },
-    "affected_pages": 51,
+    "affected_pages": 45,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 0,
+      "impressions_28d": 6,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 0,
+      "past_impressions": 60,
       "lost_clicks": 0,
-      "lost_impressions": 0,
+      "lost_impressions": 54,
       "past_window": [
         "2026-04-08",
         "2026-05-05"
       ],
-      "scored_on": "at stake",
-      "score": 0,
+      "scored_on": "lost",
+      "score": 1,
       "window": [
         "2026-10-07",
         "2026-11-03"
@@ -1554,7 +1549,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run17",
+    "last_seen_run": "repo-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",
@@ -1617,7 +1612,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run17",
+    "last_seen_run": "repo-audit-run18",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_target_bad",

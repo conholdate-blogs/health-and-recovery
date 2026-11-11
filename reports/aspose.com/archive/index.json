@@ -46,5 +46,11 @@
     "date": "2026-11-10",
     "label": "Head fix verified live (agent fix)",
     "runs": "discovery run 3, crawl audit run 18, speed audit run 12, AI audit run 11, text check run 13, link check run 14, repo file check run 15"
+  },
+  {
+    "file": "2026-11-11.html",
+    "date": "2026-11-11",
+    "label": "Repo check corrected: double-slash redirects are not malformed",
+    "runs": "discovery run 3, crawl audit run 18, speed audit run 12, AI audit run 11, text check run 13, link check run 14, repo file check run 19"
   }
 ]

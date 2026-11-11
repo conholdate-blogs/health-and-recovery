@@ -129,3 +129,4 @@ def test_key_problem():
     assert cc.key_problem("/ok/path/") is None
     assert cc.key_problem("blog.example.com/x") == "host or scheme in the key"
     assert cc.key_problem("/x//y") is None and cc.key_problem("//x/") is None  # redirects fine (live test)
+    assert cc.key_problem("/x/%23:~:text=y").startswith("fragment")

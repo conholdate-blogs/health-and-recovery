@@ -67,5 +67,28 @@
     }
    }
   }
+ },
+ {
+  "date": "2026-11-11",
+  "runs": "discovery run 3, crawl audit run 18, speed audit run 12, AI audit run 11, text check run 13, link check run 14, repo file check run 19",
+  "method": 3,
+  "hosts": {
+   "blog.aspose.com": {
+    "health": 69,
+    "areas": {
+     "crawl": 88,
+     "onpage": 94,
+     "intl": 83,
+     "ai": 95
+    },
+    "stats": {
+     "clicks": 17886,
+     "impressions": 1044950,
+     "traffic_to": "2026-11-04",
+     "issue_types": 23,
+     "open_issues": 25623
+    }
+   }
+  }
  }
 ]

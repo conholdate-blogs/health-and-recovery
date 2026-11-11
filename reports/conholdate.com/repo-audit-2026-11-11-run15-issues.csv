@@ -1,0 +1,2 @@
+host,check,file,line,link,fix,note,commit
+blog.conholdate.com,redirect_key_malformed,Redirects.json,1352,"/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class、",https://blog.conholdate.com/,"fragment in the key (#, never sent by browsers)",a1c3218a 2023-10-13: Fixed Broken Links
