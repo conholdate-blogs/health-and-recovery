@@ -1,0 +1,79 @@
+[
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-11",
+  "issue": "A language-switcher <div> in the middle of <head> ended it on every page: Open Graph, Twitter card and JSON-LD tags landed in <body>",
+  "check": "social_tags_in_body",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "commits": ["d1946199a0d952f3bb0fa74a3d5af64f21cbde0e"],
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "result": "Live after the deploy: home, a translated post and tag pages have OG, Twitter and JSON-LD in <head>, none in <body>"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-10-20",
+  "issue": "hreflang sets had no x-default (pages and sitemaps)",
+  "check": "hreflang_no_xdefault",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "commits": ["d1946199a0d952f3bb0fa74a3d5af64f21cbde0e"],
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "result": "Live: x-default to the English page in <head> and in the sitemaps"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-11",
+  "issue": "27 tags with one post each made 578 thin tag pages (23 languages) that competed with the posts in search; robots.txt blocked the English ones, so a noindex could not be read",
+  "check": "tag_pages_thin",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "commits": ["70cb21f3353a65403593e2378f52602cfd9f0a34"],
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "result": "Live: /tags/ and /tag/<name>/ pages answer noindex, follow; robots.txt no longer blocks them"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-11",
+  "issue": "Redirects.json: /category/ answered 404 (only /category was listed); /feed was a leftover from a WordPress template",
+  "check": "redirect_not_working",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "commits": ["9a5a07c23b844ec63be32d92ff79dc247a56379a"],
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "result": "Live 2 minutes after the push (no deploy needed): /category/ answers 301 to /categories/; kept /tag/ and /feed/"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2025-08-12",
+  "issue": "3 Arabic posts linked 4 times to the English version of a post whose Arabic version exists",
+  "check": "link_wrong_language",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "commits": ["bbe3a99b79d009203a56610df300ce26c1809d33"],
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "result": "Live: the links point to /ar/total/convert-html-files/ and /ar/total/manipulate-pdf-documents/"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-11",
+  "issue": "Two categories for one product family (4 posts and 1 post), plus an empty stray category page; one post sat outside mainSections, so the home page never listed it",
+  "check": "structure",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "commits": ["bbe3a99b79d009203a56610df300ce26c1809d33", "0804d887e3767f4f66b748bd798a4d1cc489388a"],
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "result": "Live: one category (Conholdate.Total Cloud Product Family); the old and stray category pages and /conholdate.total/ answer 404; the home page lists all 5 posts"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-07",
+  "issue": "The 23 home pages had no H1",
+  "check": "h1_missing",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "commits": ["a7d67518b7d126ec230edf041be058d3d11ad7d9"],
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "result": "Live: one H1 and a one-line intro in each language on every home page"
+ }
+]

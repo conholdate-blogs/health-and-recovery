@@ -10,7 +10,7 @@
    "check": "link_wrong_language",
    "file": "content/Conholdate.Cloud/total/2025-07-08-manipulate-pdf-documents/index.ar.md",
    "first_seen": "2026-10-26",
-   "fixed": null,
+   "fixed": "2026-11-11",
    "host": "blog.conholdate.cloud",
    "last_seen": "2026-11-11",
    "link": "https://blog.conholdate.cloud/total/convert-html-files/",
@@ -21,7 +21,7 @@
    "check": "link_wrong_language",
    "file": "content/Conholdate.Cloud/total/2025-07-09-convert-html-files/index.ar.md",
    "first_seen": "2026-10-26",
-   "fixed": null,
+   "fixed": "2026-11-11",
    "host": "blog.conholdate.cloud",
    "last_seen": "2026-11-11",
    "link": "https://blog.conholdate.cloud/total/manipulate-pdf-documents/",
@@ -32,7 +32,7 @@
    "check": "link_wrong_language",
    "file": "content/Conholdate.Cloud/total/2025-07-14-manipulate-excel-files/index.ar.md",
    "first_seen": "2026-10-26",
-   "fixed": null,
+   "fixed": "2026-11-11",
    "host": "blog.conholdate.cloud",
    "last_seen": "2026-11-11",
    "link": "https://blog.conholdate.cloud/total/convert-html-files/",
@@ -43,7 +43,7 @@
    "check": "link_wrong_language",
    "file": "content/Conholdate.Cloud/total/2025-07-14-manipulate-excel-files/index.ar.md",
    "first_seen": "2026-10-26",
-   "fixed": null,
+   "fixed": "2026-11-11",
    "host": "blog.conholdate.cloud",
    "last_seen": "2026-11-11",
    "link": "https://blog.conholdate.cloud/total/manipulate-pdf-documents/",
@@ -63,6 +63,9 @@
   "discovery-run4",
   "link-audit-run20",
   "repo-audit-run21",
-  "discovery-run5"
+  "discovery-run5",
+  "link-audit-run26",
+  "repo-audit-run27",
+  "discovery-run6"
  ]
 }

@@ -1,6 +1,6 @@
 {
   "tenant": "conholdate.cloud",
-  "run_id": 5,
+  "run_id": 6,
   "hosts": {
     "blog.conholdate.cloud": {
       "robots": {
@@ -10,13 +10,13 @@
         "sitemaps": [
           "https://blog.conholdate.cloud/sitemap.xml"
         ],
-        "disallow_rules": 10,
+        "disallow_rules": 8,
         "ai_bots_named": []
       },
       "sitemaps_fetched": 24,
       "sitemaps_ok": 24,
       "sitemaps_failed": [],
-      "urls": 186
+      "urls": 185
     }
   },
   "sections": {
@@ -117,16 +117,6 @@
           "category": 23
         }
       },
-      "conholdate.total": {
-        "urls": 1,
-        "hreflang_urls": 0,
-        "langs": {
-          "default": 1
-        },
-        "templates": {
-          "category": 1
-        }
-      },
       "search": {
         "urls": 23,
         "hreflang_urls": 23,
@@ -201,7 +191,7 @@
       "gsc_discovered": 172,
       "live_status": 200,
       "live_kind": "index",
-      "live_urls": 186
+      "live_urls": 185
     }
   ],
   "sitemaps": {
@@ -213,7 +203,7 @@
           "depth": 0,
           "status": 200,
           "kind": "index",
-          "urls": 186,
+          "urls": 185,
           "children": 23,
           "ok": true,
           "error": null,
@@ -261,7 +251,7 @@
           "depth": 1,
           "status": 200,
           "kind": "urlset",
-          "urls": 10,
+          "urls": 9,
           "children": 0,
           "ok": true,
           "error": null,
@@ -508,7 +498,7 @@
     "max_sitemaps": null
   },
   "requests": 25,
-  "duration_s": 24.6,
+  "duration_s": 24.7,
   "not_fetched": [],
   "findings": [],
   "items": {

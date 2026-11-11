@@ -1,28 +1,28 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "text-audit",
-  "run_id": 19,
+  "run_id": 25,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
     ],
     "crawl_runs": [
-      10,
-      16
+      16,
+      22
     ],
     "model": "gpt-oss",
     "prompt_version": 2
   },
-  "duration_s": 0.0,
+  "duration_s": 4.1,
   "stopped_early": false,
   "pages_checked": 15,
   "unchecked": [],
   "incomplete": false,
   "llm": {
-    "calls": 0,
-    "prompt_tokens": 0,
-    "completion_tokens": 0,
-    "cache_hits": 15
+    "calls": 1,
+    "prompt_tokens": 834,
+    "completion_tokens": 203,
+    "cache_hits": 12
   },
   "ignored": 0,
   "summary": {
