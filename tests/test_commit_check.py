@@ -128,4 +128,4 @@ def test_unbalanced_shortcode_in_english_fails(tmp_path):
 def test_key_problem():
     assert cc.key_problem("/ok/path/") is None
     assert cc.key_problem("blog.example.com/x") == "host or scheme in the key"
-    assert cc.key_problem("/x//y") == "double slash"
+    assert cc.key_problem("/x//y") is None and cc.key_problem("//x/") is None  # redirects fine (live test)

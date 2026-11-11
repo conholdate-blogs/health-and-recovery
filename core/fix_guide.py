@@ -496,8 +496,8 @@ _ROWS = [
      "Make the file valid first, then check how the edge function loads it (a parse failure, a failed deploy).",
      "Sampled sources answer with a redirect; next repo check has no finding."),
     ("redirect_key_malformed", "Repo files", "Malformed redirect source",
-     "A key that a request can never match: a host or scheme in the key, unencoded {{ template text }}, or a double "
-     "slash. Keys are paths starting with /; text with spaces or braces must be percent-encoded.",
+     "A key that a request can never match: a host or scheme in the key, or unencoded {{ template text }}. Keys are "
+     "paths starting with /; text with spaces or braces must be percent-encoded (a double slash is fine).",
      "The redirect silently does nothing, and it hides that the broken URL is still broken.",
      "Rewrite the key as a path, or remove it. {{ revealButtonHref }} is GitHub's gist placeholder that crawlers "
      "harvest: remove `.gist template` from the page instead of adding redirects.",

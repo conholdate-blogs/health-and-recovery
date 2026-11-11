@@ -82,7 +82,7 @@ def test_key_problem():
     assert key_problem("/ok/%7B%7B%20t%20%7D%7D") is None and key_problem("/ok/") is None
     assert key_problem("/a/{{ t }}") == "unencoded template text"
     assert key_problem("blog.example.com/a/") == key_problem("http://blog.example.com/a") == "host or scheme in the key"
-    assert key_problem("//a/") == "double slash"
+    assert key_problem("//a/") is None and key_problem("/a//b/") is None  # double slash redirects fine (live)
 
 
 def test_invalid_file_is_still_read_line_by_line():

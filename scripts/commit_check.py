@@ -140,9 +140,7 @@ def key_problem(key: str) -> str | None:
         return "raw template text {{ }}"
     if not key.startswith("/"):
         return "host or scheme in the key"
-    if "//" in key:
-        return "double slash"
-    return None
+    return None  # a double slash is fine: such keys answer 301 on all six blogs (live test 2026-11-11)
 
 
 def json_error(text: str) -> str | None:
@@ -272,7 +270,8 @@ def choose_sample(repo: Repo, changed: list[str], res: Result) -> list[str]:
     most = max(newest, key=lambda f: len(files[f]), default=None)
     english_only = next((f for f in newest if files[f] == ["index.md"]), None)
     gist = None
-    grep = repo.git("grep", "-l", "gist.github.com", repo.rev, "--", "content/", check=False)
+    # gists come as script links (blog.aspose.com) or as Hugo's gist shortcode (blog.conholdate.com)
+    grep = repo.git("grep", "-l", "-E", r"gist\.github\.com|\{\{< ?gist ", repo.rev, "--", "content/", check=False)
     gist_folders = {line.split(":", 1)[1].rpartition("/")[0] for line in grep.splitlines() if ":" in line}
     gist = next((f for f in newest if f in gist_folders), None)
     for f, label in ((most, "most translations"), (english_only, "English only"), (gist, "gist")):
