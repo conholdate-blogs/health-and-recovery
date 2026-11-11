@@ -35,10 +35,21 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 |---|---|---|
 | 2026-11-11 | `{{ revealButtonHref }}` URLs: 0 Search Console impressions in 16 months | Fix the source (footer) and remove all redirect entries (SK: none should exist) |
 | 2026-11-11 | Junk redirect entry left: 1 `#:~:text=` fragment key (`/total/export-data-to-excel-in-java/%23:~:text=…`); 5 non-ASCII keys | Remove (B1); SK's rule: no redirect for junk URLs |
-| 2026-11-11 | 15 translations under their own URL (5 non-ASCII, e.g. `fr/total/créez-votre-propre-application-google-docs-like`) | Back to `/<lang>/<English url>/` with old→new redirects (B2) |
+| 2026-11-11 | 15 translations under their own URL (all French, 2020–2022; e.g. `fr/total/créez-votre-propre-application-google-docs-like`) | Back to `/fr/<English url>/` (B2); redirects or not: **open, see "Waiting for SK"** |
 | 2026-11-11 | hreflang without x-default (14,072 pages) | Template fix (B3) |
 | 2026-11-11 | 93% of tags have one post; sitemaps list 43,584 tag pages; `Disallow: /tag/` blocks the English ones (crawl-0002) | Tag + pagination pilot (B4) |
 | 2026-11-11 | Wrong-language links 374, broken 81, damaged 54, missing translations 20 | Link fixes from the fix lists (B5) |
+
+## Waiting for SK (paused 11 Nov; SK continues B later)
+
+| # | Decision | Recommendation given |
+|---|---|---|
+| 1 | B2: redirect the 15 old French URLs to the corrected ones? | **No redirects**: the 15 pages earned 8 clicks / 1,838 impressions in 16 months; redirects would add 15 non-English keys, which SK's rule calls junk (our check would flag them) |
+| 2 | Make B1 (15 junk entries out, 1,459 → 1,444) and B2 (one `url:` line in 15 French files) in two commits, push to `main`, then SK runs Deploy Production - AWS | Yes, both in one go, one deploy |
+| 3 | B5 link fixes (374 wrong-language, 81 broken, 54 damaged, 20 missing translations): by the agent directly, or by SK's translation agent? | Agent for the mechanical ones (wrong-language, damaged), each batch approved; translation agent for anything needing translation |
+
+Before pushing B1/B2: commit check with Hugo 0.101 (`--base 9cc26f48`), a sample build showing a French page at its new
+URL; after the deploy: new URLs 200, old ones 404; the link check then lists internal links to the old French URLs (B5).
 
 ## Plan (agreed 11 Nov)
 

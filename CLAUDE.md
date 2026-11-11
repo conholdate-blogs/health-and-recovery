@@ -15,7 +15,39 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
-## Start here (session handoff, 2026-11-07)
+## Start here (session handoff, 2026-11-11)
+
+**Next session (SK): scan and fix blog.conholdate.cloud** (the smallest blog), in its own session. Open
+[docs/blogs/blog.conholdate.cloud.md](docs/blogs/blog.conholdate.cloud.md) first: facts, open findings, the plan
+(confirm facts → test whether Redirects.json applies live → `run_cycle.py conholdate.cloud` → review, snapshot →
+fixes in playbook order, each push approved). Its workflows live in the blog repo itself.
+
+**Paused: blog.conholdate.com, part B.** SK continues later; three decisions wait in
+[docs/blogs/blog.conholdate.com.md](docs/blogs/blog.conholdate.com.md) ("Waiting for SK"): B2 redirects or not
+(recommended: not), make B1 + B2 and push + deploy, who does B5 link fixes.
+
+**Everything is pushed** (our repo on origin, shoaibkhan, gitlab; conholdate-blog `065759ab`, `9cc26f48` live).
+Nothing waits locally. SK should refresh the claude.ai Project copy of this file.
+
+**Status of the 7 Nov "Tuesday" plan:** (1) head fix verified live 10 Nov; (2) tag findings built (A4); (3) tag +
+pagination pilot is now step B4 of blog.conholdate.com; (4) commit checks designed and built, drafts not deployed
+(see item 4 below and `docs/commit-check/README.md`; first rollout on blog.conholdate.com = B6); fixed-issues page,
+pages page, commits page still to plan; (5) architecture diagram not updated yet (add audit_structure + findings,
+commit check, agent fixes, rescore step).
+
+**Report pages changed 11 Nov (all pushed, small layout, no snapshot):** History Note = snapshot label + short
+note ("full scan", "re-run: links"), run numbers on hover; two-line History headers, table headers wrap, History
+fits 1280 px, newest 5 rows + Show all; one-subdomain pages no longer repeat the subdomain (top actions, finding
+details, area label, coverage, one-row Reference tables) and say "needs attention" / "fine" instead of "1 of 1";
+red: Open on broken Fix progress rows, points lost under Health by area, History increases of issue types / open
+issues (fewer = green); Fixed % as a green bar.
+
+**Open beyond the two blogs:** junk redirect clean-ups and `translated_url_mismatch` on the other blogs (blog.aspose.com
+602 translations, blog.aspose.cloud 22 incl. a French file at `fa/`); non-ASCII redirect keys that do not work on
+blog.aspose.cloud (64) and blog.aspose.com (74); gist footer port to aspose-blog (proven on blog.conholdate.com);
+commit check rollout on aspose-blog; earlier open items (a), (b), (e) below.
+
+## Start here (session handoff, 2026-11-07; history)
 
 ### Next session: Tuesday 10 Nov 2026 (Monday 9 Nov is a holiday), in this order
 
@@ -49,6 +81,14 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 | New dead-key rule: `#` fragment in a key | e.g. a copied `#:~:text=` link (1, blog.conholdate.com); was counted as "redirect not working" | this commit |
 | Commit check finds the `{{< gist >}}` shortcode | blog.conholdate.com embeds gists that way (2,963 embeds in 1,314 files) | f860aad |
 | `.claude/settings.json` gitignored; two standing aspose-blog write rules removed from it | Phase 1: site-repo commits must ask | 2812733 |
+| **A1** New finding ids carry the date | `<dimension>-<yymmdd>-<n>` (e.g. crawl-261111-1); old ids unchanged (SK) | 8ed6a9f |
+| **A2** One "junk redirect entry" warning | `redirect_key_malformed` (name kept) now improvable, covers placeholder (raw/encoded), host, `#` fragment, double slash, non-English slug; junk left out of the live sample | 5edf934 |
+| **A3** `translated_url_mismatch` | Repo check, one item per translation not at `/<lang>/<English url>/` (effective paths; relative urls stay `post_url_relative`) | 63fa79a |
+| **A4** Tag findings | Structure step emits `tag_pages_thin`, `sitemap_lists_tag_pages` (source `structure-audit`, scored on tag-page clicks via `evidence.traffic`); `run_cycle` gained a `rescore` step | 62ee1fb, bcedc3f |
+| **A5** Hugo version per blog | `hugo_version` in tenant YAMLs (0.101.0; blog.aspose.com 0.120.4); binary kept at `/Users/Apple/Downloads/Softwares/Hugo/hugo_extended_0.101.0_darwin-amd64/hugo` | 0895fc7 |
+| **A6** blog.conholdate.com full scan | Health 70 → 65 from the new checks; snapshot 2026-11-11-2; details in its log | d335906 |
+| Notes structure | `docs/blogs/<host>.md` per blog, `docs/playbook.md` | 3674603 |
+| Report layout (SK) | History notes, headers, 5 rows; no repeated subdomain; red figures; Fixed % bar | 39dc3fe, 9cbbb08, a0dfa5c, 9863d52 |
 
 **Open, found 11 Nov:** keys with non-ASCII characters (unencoded) do not redirect on blog.aspose.cloud (64 keys) and blog.aspose.com (74) but do on blog.groupdocs.cloud; blog.conholdate.com mixed (5). Old 2010–2017 URLs, mostly Japanese and Chinese newsletters. They are counted correctly in `redirect_not_working` (the live sample); the random sample shifted when the 9 double-slash keys joined it, so blog.aspose.cloud went 67 → 66 (2 of 40 failing, was 1). Options to discuss: percent-encode the keys, or a dedicated check. **SK's rule (11 Nov):** no redirect entries for junk URLs (double slash, non-ASCII slugs, fragments, placeholders); every post URL is English, and each translation shares it with only a language prefix (a translated slug is an error). Search Console: old dated URLs on blog.aspose.cloud 0 clicks / 191 impressions in 16 months, non-ASCII ones on blog.aspose.com 0 / 20. **Translated posts whose `url` breaks that rule (repo scan 11 Nov):** blog.aspose.com 602 (375 own slug, 168 `zh-tw/` on zh-hant files, 29 `zh-cn/` on zh, 10 `zh-TW/`, 7 `zh/` on zh-hant, 5 no prefix, 4 `ua/` on uk, 3 other), blog.aspose.cloud 22 (21 own slug, 1 French file with url `fa/…`, colliding with the Persian page), blog.conholdate.com 15 (5 non-ASCII), blog.groupdocs.cloud 1, blog.groupdocs.com 1. Proposed: a repo check `translated_url_mismatch` (exact, items), junk redirect entries reclassified as one "junk entry" warning; not built. History table score changes now green/red (0f9e091). Also left on blog.conholdate.com: the fragment key (remove it, approval needed); hreflang x-default (next small template change).
 
