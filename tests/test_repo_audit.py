@@ -144,3 +144,20 @@ def test_fix_counts_in_ledger_and_findings_resolve(tmp_path):
     assert after["post_url_relative"]["open"] == 1  # not touched by the revert
     changes = import_report(store, second)
     assert changes["resolved"]
+
+
+def test_translated_url_mismatch(tmp_path):
+    repo = make_repo(tmp_path)
+    post = repo / "content/Blog/pdf/2026-01-02-b"
+    post.mkdir(parents=True)
+    (post / "index.md").write_text("---\ntitle: b\nurl: /pdf/b/\n---\n", encoding="utf-8")
+    for lang, url in {"de": "/de/pdf/b/", "fr": "/fr/pdf/créez-b/", "zh-hant": "/zh-tw/pdf/b/", "fa": "/fr/pdf/b/",
+                      "id": "/pdf/b/", "ko": "ko/pdf/b/"}.items():
+        (post / f"index.{lang}.md").write_text(f"---\ntitle: b\nurl: {url}\n---\n", encoding="utf-8")
+    audit = RepoAudit(make_tenant(repo), FakeFetcher(), AuditStore(":memory:"), sample=0, log=None)
+    issues = [i for i in audit.check_posts(HOST)[0] if i["check"] == "translated_url_mismatch"]
+    got = {i["file"].rsplit(".", 2)[-2]: (i["note"], i["fix"]) for i in issues}
+    assert got == {"fr": ("own slug (translated or changed)", "/fr/pdf/b/"),
+                   "zh-hant": ("language prefix zh-tw on a zh-hant post", "/zh-hant/pdf/b/"),
+                   "fa": ("language prefix fr on a fa post", "/fa/pdf/b/"),
+                   "id": ("same URL as the English post (no language prefix)", "/id/pdf/b/")}

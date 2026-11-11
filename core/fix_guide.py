@@ -526,6 +526,15 @@ _ROWS = [
      "The expected URL returns 404, so links to the post break, and the page lives at a wrong address.",
      "Add the leading / to the url, and redirect the doubled path to the correct one.",
      "The post is live at the expected URL; next repo check has no finding."),
+    ("translated_url_mismatch", "Links and translations", "Translation under its own URL",
+     "A translated post is published at a different URL than the English post plus its language prefix: a "
+     "translated slug (/fr/total/créez-…/), another language's prefix (zh-tw/ on a zh-hant post, fa/ on a French "
+     "post) or no prefix at all.",
+     "Language versions stop matching: links built from the English URL 404, hreflang pairs drift, and a wrong "
+     "prefix can put the page in another language's folder or on top of another post.",
+     "Set the translation's url to /<lang>/<English url>/ and redirect the old URL to it (the one kind of new "
+     "redirect that is wanted). The translation agent should copy the English url and only add the prefix.",
+     "The translation is live at /<lang>/<English url>/; the old URL redirects; next repo check has no item."),
 ]
 
 # Severity per check, as the auditors assign it (checks only discovery's run.py names inline are listed here).

@@ -56,6 +56,10 @@ CHECKS = {
                                  "Every post file starts with a valid front matter block", 1, "S"),
     "post_url_relative": ("crawl", "incorrect", "Post urls without a leading slash",
                           "A post's url starts with /", 1, "S"),
+    "translated_url_mismatch": ("intl", "incorrect",
+                                "Translations published under a different URL than the English post",
+                                "A translation's URL is the English post's URL with only its language prefix added",
+                                3, "M"),
 }
 
 
@@ -186,6 +190,7 @@ class RepoAudit:
     def check_posts(self, host: str) -> tuple[list[dict], int]:
         repo = self.repos[host]
         issues, posts = [], 0
+        urls: dict[str, dict[str, tuple[str, str]]] = {}  # post folder -> language ("" = English) -> (url, file)
         for f in sorted(repo.glob("content/**/index*.md")):
             if not _NAME.match(f.name):
                 continue
@@ -211,7 +216,45 @@ class RepoAudit:
                 issues.append({"check": "post_url_relative", "file": rel, "line": 1, "link": str(url), "fix": f"/{url}",
                                "page": None, "note": "published under a doubled language",
                                "commit": self.last_commit(host, rel)})
+            if url and not data.get("draft"):
+                lang = f.name[len("index."):-len(".md")] if f.name != "index.md" else ""
+                urls.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (str(url).strip(), rel)
+        issues += self.check_translated_urls(host, urls)
         return issues, posts
+
+    def check_translated_urls(self, host: str, urls: dict[str, dict[str, tuple[str, str]]]) -> list[dict]:
+        """A translation is published at the English post's URL with only its language prefix added (SK, 2026-11-11:
+        every post URL is English; a translated slug or another prefix is an error). Hugo adds the language prefix
+        itself to a url without a leading slash, so effective paths are compared, not the raw front matter."""
+        def path(url: str, lang: str) -> str:
+            p = url if url.startswith("/") else (f"/{lang}/" if lang else "/") + url
+            return "/" + p.strip("/")
+
+        issues = []
+        for folder in sorted(urls):
+            by = urls[folder]
+            if "" not in by:
+                continue
+            en = path(by[""][0], "")
+            for lang, (url, rel) in sorted(by.items()):
+                if not lang or not url.startswith("/"):
+                    continue  # a url without a leading slash is reported once, as post_url_relative
+                got, want = path(url, lang), f"/{lang}{en}"
+                if got == want:
+                    continue
+                first, _, rest = got.lstrip("/").partition("/")
+                if got == en:
+                    note = "same URL as the English post (no language prefix)"
+                elif first == lang:
+                    note = "own slug (translated or changed)"
+                elif "/" + rest == en:
+                    note = f"language prefix {first} on a {lang} post"
+                else:
+                    note = "other"
+                issues.append({"check": "translated_url_mismatch", "file": rel, "line": 1, "link": url,
+                               "fix": want + "/", "page": f"https://{host}{got}/", "note": note,
+                               "commit": self.last_commit(host, rel)})
+        return issues
 
     def run(self) -> dict:
         started = time.monotonic()
