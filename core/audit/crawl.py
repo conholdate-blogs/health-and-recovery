@@ -60,6 +60,9 @@ CHECKS = {
                             "sitemaps list the canonical URL; canonical points to the page itself", 2, "S"),
     "head_closed_early": ("crawl", "broken", "<head> ends early: title, canonical and hreflang land in <body>",
                           "every head tag inside <head>; no <div> or other body element before them", 1, "S"),
+    "social_tags_in_body": ("crawl", "not_optimized",
+                            "<head> ends early: Open Graph and Twitter tags (and JSON-LD) land in <body>",
+                            "every head tag inside <head>; a <div> (e.g. language switcher) only after them", 1, "S"),
     "title_missing": ("onpage", "broken", "Pages have no <title>", "a unique, descriptive title", 1, "S"),
     "title_multiple": ("onpage", "incorrect", "Pages have more than one <title>", "one <title> in <head>", 1, "S"),
     "title_length": ("onpage", "improvable", "Titles are too long or too short",
@@ -160,7 +163,9 @@ def page_issues(rec: dict, facts, localized: bool) -> list[tuple[str, str]]:
     # viewport) would fire falsely, so they are skipped on this page; body checks (H1, text, JSON-LD) still run.
     head = not facts.body_head_tags
     if not head:
-        issues.append(("head_closed_early", "in <body>: " + ", ".join(facts.body_head_tags)))
+        issues.append(("head_closed_early", "in <body>: " + ", ".join(facts.body_head_tags + facts.body_social_tags)))
+    elif facts.body_social_tags:  # same cause, later in <head>: search tags fine, link previews and template at risk
+        issues.append(("social_tags_in_body", "in <body>: " + ", ".join(facts.body_social_tags)))
     if head and facts.noindex:
         issues.append(("noindex", f"robots: {'; '.join(facts.robots)}"))
     here = norm_url(rec["final_url"] or rec["url"])

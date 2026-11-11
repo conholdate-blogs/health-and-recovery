@@ -131,6 +131,44 @@ CHECKS = {
 }
 
 
+TAG_SAMPLE = 2  # tag term pages read live besides the tags list
+
+
+def _robots_noindex(headers: dict, html: str) -> bool:
+    from selectolax.lexbor import LexborHTMLParser
+
+    values = [headers.get("x-robots-tag") or ""]
+    values += [m.attributes.get("content") or "" for m in LexborHTMLParser(html).css('meta[name="robots"]')]
+    return any("noindex" in v.lower() for v in values)
+
+
+def tag_robots(get, host: str) -> dict:
+    """Do the tag pages tell search engines to stay away? Reads https://<host>/tags/ and up to TAG_SAMPLE tag pages it
+    links to. `get(url)` returns (status, headers, html, blocked_by_robots). A page blocked by robots.txt does not count
+    as noindex: its noindex is never read (SK, 2026-11-11: thin tags only matter while tag pages are indexable)."""
+    from urllib.parse import urljoin, urlsplit
+
+    from selectolax.lexbor import LexborHTMLParser
+
+    pages, list_url = [], f"https://{host}/tags/"
+    status, headers, html, blocked = get(list_url)
+    pages.append({"url": list_url, "status": status, "blocked": blocked,
+                  "noindex": bool(status == 200 and not blocked and _robots_noindex(headers, html))})
+    terms = []
+    if status == 200 and html:
+        for a in LexborHTMLParser(html).css("a[href]"):
+            u = urljoin(list_url, a.attributes.get("href") or "")
+            path = urlsplit(u).path
+            parts = [p for p in path.split("/") if p]
+            if urlsplit(u).netloc == host and len(parts) == 2 and parts[0] in ("tag", "tags") and u not in terms:
+                terms.append(u)
+    for u in terms[:TAG_SAMPLE]:
+        status, headers, html, blocked = get(u)
+        pages.append({"url": u, "status": status, "blocked": blocked,
+                      "noindex": bool(status == 200 and not blocked and _robots_noindex(headers, html))})
+    return {"pages": pages, "all_noindex": len(pages) > 1 and all(p["noindex"] for p in pages)}
+
+
 def findings(tenant: str, host: str, s: dict, fix_channel: str | None = None) -> list[dict]:
     """Findings for one host from its structure numbers (scan + sitemap + search). Scored on the clicks tag pages
     earn (evidence.traffic), not on their share of the host's URLs."""
@@ -150,7 +188,8 @@ def findings(tenant: str, host: str, s: dict, fix_channel: str | None = None) ->
         out.append(f)
 
     tags, one = s.get("tags") or 0, s.get("tags_one_post") or 0
-    if tags and one / tags >= THIN_SHARE:
+    handled = (s.get("tag_robots") or {}).get("all_noindex")  # thin but out of the index: no search problem
+    if tags and one / tags >= THIN_SHARE and not handled:
         pages = s.get("tag_pages_all_languages") or tags
         add("tag_pages_thin", [f"https://{host}/tags/"],
             f"{one:,} of {tags:,} tags ({one / tags:.0%}) have one post; {pages:,} tag pages in "

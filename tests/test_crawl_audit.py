@@ -332,3 +332,22 @@ def test_head_closed_early_by_a_div_is_one_finding_not_missing_tags():
     assert "h1_missing" in dict(page_issues(rec(url), no_h1, localized=True))
     svg = parse_page(html(canonical=url).replace(b"<h1>", b"<svg><title>icon</title></svg><h1>"), url)
     assert svg.body_head_tags == []
+
+
+def test_social_tags_after_the_div_are_their_own_finding():
+    """blog.conholdate.cloud, 11 Nov 2026: the switcher <div> comes after title, canonical and hreflang but before
+    Open Graph, Twitter and JSON-LD. Search tags are fine, so not head_closed_early: social_tags_in_body."""
+    url = "https://h.example/de/pdf/merge"
+    page = ("<!doctype html><html lang=de><head><meta charset=utf-8><title>Merge PDF online</title>"
+            f"<link rel=canonical href='{url}'><link rel=alternate hreflang=de href='{url}'>"
+            "<div id=locale>DE</div><meta property='og:title' content='Merge'><meta name='twitter:card' content='s'>"
+            "<script type='application/ld+json'>{}</script></head><body><h1>Merge</h1></body></html>")
+    facts = parse_page(page, url)
+    assert facts.body_head_tags == [] and facts.body_social_tags == ["Open Graph", "Twitter card", "JSON-LD"]
+    got = dict(page_issues(rec(url), facts, localized=True))
+    assert "social_tags_in_body" in got and "head_closed_early" not in got
+    ok = parse_page(page.replace("<div id=locale>DE</div>", ""), url)  # JSON-LD in <body> alone is valid: no finding
+    assert ok.body_social_tags == []
+    only_ld = parse_page("<html><head><title>t</title></head><body><script type='application/ld+json'>{}</script>"
+                         "</body></html>", url)
+    assert only_ld.body_social_tags == []

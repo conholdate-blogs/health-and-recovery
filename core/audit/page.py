@@ -17,6 +17,9 @@ _LINK_HEADER_RE = re.compile(r'<([^>]+)>\s*;([^,]*)')
 BODY_HEAD_TAGS = (("title", "title"), ("meta description", "meta[name=description]"),
                   ("meta robots", "meta[name=robots]"), ("viewport", "meta[name=viewport]"),
                   ("canonical", "link[rel=canonical]"), ("hreflang", "link[rel=alternate][hreflang]"))
+# Head-only meta tags whose place in <body> also shows that <head> ended early (OG/Twitter: link previews). JSON-LD is
+# valid in <body>, so it is reported only alongside these, never alone.
+BODY_SOCIAL_TAGS = (("Open Graph", "meta[property^='og:']"), ("Twitter card", "meta[name^='twitter:']"))
 
 
 @dataclass
@@ -38,6 +41,7 @@ class PageFacts:
     # head-only tags that the parser found in <body>: <head> was closed early, usually by a <div> or other body
     # element written into it; browsers and search engines do the same (Google ignores canonical/hreflang there)
     body_head_tags: list[str] = field(default_factory=list)
+    body_social_tags: list[str] = field(default_factory=list)  # OG/Twitter in <body> (+ "JSON-LD" when also there)
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -93,6 +97,10 @@ def parse_page(html: bytes | str, base_url: str, headers: dict | None = None) ->
             found = tree.css_first("body " + sel) is not None
         if found:
             facts.body_head_tags.append(label)
+    facts.body_social_tags = [label for label, sel in BODY_SOCIAL_TAGS if tree.css_first("body " + sel) is not None]
+    if facts.body_social_tags and tree.css_first('body script[type="application/ld+json"]') is not None \
+            and tree.css_first('head script[type="application/ld+json"]') is None:
+        facts.body_social_tags.append("JSON-LD")
     for n in tree.css("head meta"):
         attrs = {k.lower(): v for k, v in n.attributes.items()}
         name = (attrs.get("name") or "").strip().lower()

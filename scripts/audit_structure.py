@@ -20,7 +20,8 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
-from core.audit.structure import AUDITOR, findings, scan, search_numbers  # noqa: E402
+from core.audit.structure import AUDITOR, findings, scan, search_numbers, tag_robots  # noqa: E402
+from core.discovery.fetch import PoliteFetcher  # noqa: E402
 from core.findings import FindingsStore  # noqa: E402
 from core.paths import tenant_paths  # noqa: E402
 from core.tenant import load_tenant  # noqa: E402
@@ -57,17 +58,24 @@ def main(argv: list[str] | None = None) -> int:
     paths = tenant_paths(args.tenant)
     default_lang = (tenant.raw.get("audit") or {}).get("default_lang") or "en"
     rows, window = gsc_rows(paths.data, args.tenant)
+    fetcher = PoliteFetcher(min_interval=1.0)
+
+    def get(url):
+        r = fetcher.get(url)
+        return r.status, r.headers, r.body.decode("utf-8", "replace"), r.blocked_by_robots
+
     hosts = {}
     for h in tenant.raw.get("hosts") or []:
         if not h.get("local_path"):
             continue
         host = h["host"]
         hosts[host] = {**scan(Path(h["local_path"]), default_lang), **sitemap_numbers(paths.inventory, host),
-                       "search": search_numbers(rows, host)}
+                       "search": search_numbers(rows, host), "tag_robots": tag_robots(get, host)}
         s = hosts[host]
         print(f"{host}: {s['posts']:,} posts, {s['tags']:,} tags ({s['tags_one_post']:,} with one post), "
               f"{s['listing_pages']:,} listing pages ({s['tag_listing_pages']:,} tag), "
-              f"{s.get('sitemap_tag_urls', 0):,} tag URLs in sitemaps")
+              f"{s.get('sitemap_tag_urls', 0):,} tag URLs in sitemaps; tag pages noindex: "
+              f"{'yes' if s['tag_robots']['all_noindex'] else 'no'} ({len(s['tag_robots']['pages'])} read)")
     if not hosts:
         print("No blog repo (local_path) in this tenant; nothing to do")
         return 0

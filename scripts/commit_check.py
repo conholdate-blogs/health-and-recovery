@@ -46,6 +46,7 @@ FAIL, WARN = "fail", "warn"
 LEVEL = {
     "build_failed": FAIL,
     "seo_tag_in_body": FAIL,
+    "social_tag_in_body": WARN,
     "seo_tag_missing": FAIL,
     "config_invalid": FAIL,
     "redirects_invalid": FAIL,
@@ -62,6 +63,7 @@ LEVEL = {
 TITLE = {
     "build_failed": "Hugo build fails",
     "seo_tag_in_body": "SEO tags land in <body> (<head> ends early)",
+    "social_tag_in_body": "Open Graph / Twitter tags land in <body> (<head> ends early after the SEO tags)",
     "seo_tag_missing": "Page without <title> or canonical in <head>",
     "config_invalid": "Hugo config does not parse",
     "redirects_invalid": "Redirects.json is not valid JSON",
@@ -89,6 +91,7 @@ BODY_TAGS = {
     "canonical": 'link[rel="canonical"]',
     "hreflang": "link[rel=alternate][hreflang]",
 }
+SOCIAL_TAGS = {"Open Graph": "meta[property^='og:']", "Twitter card": "meta[name^='twitter:']"}
 MAX_CHANGED = 10
 FALLBACK = 3
 MAX_PER_CHECK = 30  # locations printed per check
@@ -349,6 +352,9 @@ def check_pages(out: Path, res: Result) -> int:
                  if [n for n in doc.css(f"body {sel}") if not (label == "title" and in_svg(n))]]
         if moved:
             res.add("seo_tag_in_body", f"{rel}: {', '.join(moved)}")
+        social = [label for label, sel in SOCIAL_TAGS.items() if doc.css_first(f"body {sel}") is not None]
+        if social and not moved:
+            res.add("social_tag_in_body", f"{rel}: {', '.join(social)}")
         missing = [label for label in ("title", "canonical") if not doc.css(f"head {BODY_TAGS[label]}")]
         if missing and not moved:
             res.add("seo_tag_missing", f"{rel}: no {' or '.join(missing)} in <head>")

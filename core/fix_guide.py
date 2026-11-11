@@ -212,6 +212,13 @@ _ROWS = [
      "Move the element out of <head> (or at least after every head tag); check the template change that added "
      "it.",
      "View source: every head tag before </head> (parsed DOM, not the raw HTML); next crawl audit has no finding."),
+    ("social_tags_in_body", "Canonical", "Open Graph tags in <body>",
+     "A body element (usually a language-switcher <div>) sits in <head> after the search tags but before the Open "
+     "Graph, Twitter card and often JSON-LD tags, so those land in <body>.",
+     "Search is not affected (Google reads JSON-LD anywhere), but link previews on social and chat apps can miss "
+     "the title and image; one more include above the element would push canonical and hreflang into <body> too.",
+     "Render the element last in <head> (or move it into the page body).",
+     "Parsed DOM: og: and twitter: meta inside <head>; next crawl audit has no finding."),
     # --- titles, descriptions, headings ---
     ("title_missing", "Titles & descriptions", "No <title>",
      "The page has no <title>.",

@@ -41,3 +41,42 @@ def test_search_numbers_tag_and_paginated_pages():
     q = search_numbers(rows, "b.example")
     assert (q["clicks"], q["tag_clicks"], q["tag_impressions"], q["tag_pages_with_clicks"]) == (16, 3, 45, 1)
     assert (q["paged_clicks"], q["paged_pages_seen"], q["deep_paged_clicks"]) == (3, 2, 2)
+
+
+TAGS_LIST = '<html><head><meta name="robots" content="{r}"></head><body>' \
+            '<a href="/tag/a/">a</a><a href="https://blog.example.com/tag/b/">b</a><a href="/tag/c/">c</a>' \
+            '<a href="/post/">p</a><a href="https://other.example.com/tag/x/">x</a></body></html>'
+
+
+def fake_get(robots="noindex, follow", blocked=(), header=None):
+    seen = []
+
+    def get(url):
+        seen.append(url)
+        if url in blocked:
+            return None, {}, "", True
+        return 200, ({"x-robots-tag": header} if header else {}), TAGS_LIST.format(r=robots), False
+    return get, seen
+
+
+def test_tag_robots_all_noindex_skips_thin_finding():
+    from core.audit.structure import findings, tag_robots
+
+    get, seen = fake_get()
+    tr = tag_robots(get, "blog.example.com")
+    assert seen == ["https://blog.example.com/tags/", "https://blog.example.com/tag/a/",
+                    "https://blog.example.com/tag/b/"]
+    assert tr["all_noindex"]
+    s = {"tags": 10, "tags_one_post": 9, "tag_pages_all_languages": 200, "languages": 20, "tag_robots": tr}
+    assert findings("t", "blog.example.com", s) == []
+    s["tag_robots"] = tag_robots(fake_get(robots="index, follow")[0], "blog.example.com")
+    assert not s["tag_robots"]["all_noindex"]
+    assert [f["check"] for f in findings("t", "blog.example.com", s)] == ["tag_pages_thin"]
+
+
+def test_tag_robots_blocked_page_is_not_noindex_and_header_counts():
+    from core.audit.structure import tag_robots
+
+    tr = tag_robots(fake_get(blocked={"https://blog.example.com/tag/a/"})[0], "blog.example.com")
+    assert not tr["all_noindex"] and tr["pages"][1]["blocked"]
+    assert tag_robots(fake_get(robots="index", header="noindex")[0], "blog.example.com")["all_noindex"]
