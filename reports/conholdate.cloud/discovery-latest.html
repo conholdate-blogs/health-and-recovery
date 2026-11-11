@@ -243,6 +243,7 @@ button.area:focus-visible { outline: 2px solid var(--accent); outline-offset: 2p
 .kpi .up { color: var(--good); font-weight: 600 } .kpi .down { color: var(--broken); font-weight: 600 }
 #history-rows .up { color: var(--good); font-weight: 600 } #history-rows .down { color: var(--broken); font-weight: 600 }
 th { white-space: normal }  /* headers may wrap at spaces when a table would get too wide (SK, 2026-11-11) */
+#fixes .up { color: var(--good); font-weight: 600 } #fixes .down { color: var(--broken); font-weight: 600 }
 #history-rows th { vertical-align: bottom } #history-rows th, #history-rows td { padding: 8px 9px } #history-rows td.note { white-space: normal; min-width: 10rem; max-width: 22rem; font-size: 13px } #history-rows td.note small { display: block; color: var(--muted) }
 .kpi.g-A, .kpi.g-B, .kpi.g-C, .kpi.g-D, .kpi.g-F { border-top: 4px solid var(--gc) } .kpi.g-A .kv, .kpi.g-B .kv, .kpi.g-C .kv, .kpi.g-D .kv, .kpi.g-F .kv { color: var(--gc) }
 .kpi svg { display: block; width: 100%; height: 28px }
@@ -464,19 +465,19 @@ footer a { color: var(--accent) }
       <div class="tablewrap"><table id="structure-rows"></table></div>
       <p class="lede" id="structure-tags" hidden></p>
     </details>
-    <details class="ref" id="audit" hidden open><summary>Crawl audit per host <small id="audit-st"></small> <small id="audit-meta"></small></summary>
+    <details class="ref" id="audit" hidden open><summary>Crawl audit <small id="audit-st"></small> <small id="audit-meta"></small></summary>
       <div class="scope" id="audit-scope"></div>
       <div class="tablewrap"><table id="audit-hosts"></table></div>
     </details>
-    <details class="ref" id="speed" hidden open><summary>Speed per subdomain <small id="speed-st"></small> <small id="speed-meta"></small></summary>
+    <details class="ref" id="speed" hidden open><summary>Speed <small id="speed-st"></small> <small id="speed-meta"></small></summary>
       <p class="lede fold">The lab score (Lighthouse, 0-100) varies by up to ~20 points between runs, so it is shown here only, never as a finding.<span class="rest"> Whole host: real Chrome users over 28 days, 75th percentile, mobile (good: LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1). Pages: the most-visited pages per template; "real-user data" counts pages with enough visits for their own numbers.</span></p>
       <div class="tablewrap"><table id="speed-hosts"></table></div>
     </details>
-    <details class="ref" id="ai" hidden open><summary>AI access per subdomain <small id="ai-st"></small> <small id="ai-meta"></small></summary>
+    <details class="ref" id="ai" hidden open><summary>AI access <small id="ai-st"></small> <small id="ai-meta"></small></summary>
       <p class="lede fold">Blocks on AI <i>training</i> crawlers (GPTBot, ClaudeBot, CCBot, Google-Extended) are a business choice, shown here only, never as a finding.<span class="rest"> Can AI search and answer engines (ChatGPT search, Perplexity, Claude, Google AI Overviews, Copilot) reach each host? "robots.txt" and "Firewall" test their crawlers; a block there is a finding. llms.txt is a proposed convention (llmstxt.org) that some AI tools read: on products, a family counts as covered by its own file or a link from the host's file.</span></p>
       <div class="tablewrap"><table id="ai-hosts"></table></div>
     </details>
-    <details class="ref" open><summary>Subdomains: robots.txt and sitemaps <small id="hosts-st"></small></summary>
+    <details class="ref" open><summary>robots.txt and sitemaps <small id="hosts-st"></small></summary>
       <div class="tablewrap"><table id="hosts"></table></div>
     </details>
     <details class="ref" open><summary>Sections <small id="sections-st"></small> <small id="sec-host"></small></summary>
@@ -771,7 +772,7 @@ footer a { color: var(--accent) }
   } else { $("sum-grades").hidden = true; }
   $("sum-numbers").innerHTML = `<span class="dim">Open findings and coverage</span><div class="nums">
       ${ORDER.map(t => `<div class="${t}"><b>${byType[t]}</b><span>${esc(LABEL[t].toLowerCase())}</span></div>`).join("")}
-      <div><b>${fmt(hosts.length)}</b><span>subdomain${hosts.length === 1 ? "" : "s"}</span></div>
+      ${hosts.length > 1 ? `<div><b>${fmt(hosts.length)}</b><span>subdomains</span></div>` : ""}
       <div><b>${fmt(totalUrls)}</b><span>URLs in sitemaps</span></div>
       ${A ? `<div><b>${fmt(A.pages)}</b><span>pages audited</span></div>` : ""}
       <div><b>${findings.filter(f => f._confidence === "to confirm").length}</b><span>to confirm</span></div></div>`;
@@ -869,12 +870,12 @@ footer a { color: var(--accent) }
       const big = scored ? loss1(a) : "";
       const num = scored ? `<b tabindex="0" data-x="${explain(a.name, a.health, a.penalties, false)}">${a.health}</b>` : `<b>–</b>`;
       return `<${a.state === "not checked" ? "div" : "button type=\"button\""} class="arow${scored ? " g-" + a.grade : ""}" data-dim="${esc(a.dimension)}">${num}<span class="an">${esc(a.name)}</span>`
-        + `${sbar(scored ? a.health : null, a.grade)}<span class="ai"><span>${issues}</span>${big ? `<small>${termify(esc(big))}</small>` : ""}</span></${a.state === "not checked" ? "div" : "button"}>`;
+        + `${sbar(scored ? a.health : null, a.grade)}<span class="ai"><span>${issues}</span>${big ? `<small>${termify(esc(big)).replace(/−(\d+)$/, '<span class="bad">−$1</span>')}</small>` : ""}</span></${a.state === "not checked" ? "div" : "button"}>`;
     };
     const scale = `<div class="arow ascale" aria-hidden="true"><span></span><span></span><span class="sticks">${[0, 40, 60, 75, 90, 100].map(x => `<em style="left:${x}%">${x}</em>`).join("")}</span><span></span></div>`;
     $("sum-areas").hidden = false;
     if ($("method-areas")) $("method-areas").hidden = false;
-    $("sum-areas").innerHTML = `<span class="dim">Health by area · <code>${esc(AH.host)}</code></span>
+    $("sum-areas").innerHTML = `<span class="dim">Health by area${(R._hosts || []).length > 1 ? ` · <code>${esc(AH.host)}</code>` : ""}</span>
       ${R._manager_view ? `<div class="arows">${AH.areas.map(arow).join("")}${scale}</div>`
         : `<div class="areas"><div class="area overall g-${AH.grade}"><b>${AH.health}</b><span class="an">Overall · ${AH.grade}</span><small>all areas together</small></div>${AH.areas.map(tile).join("")}</div>`}
       <div class="why">Each area is scored like the overall health (100 minus points for open problems), on that area's findings only. The overall spends the points of every area, so it is never higher than an area. Select an area to see its findings.</div>`;
@@ -893,7 +894,7 @@ footer a { color: var(--accent) }
   if (!HOSTS.length) $("toc-host").hidden = true;
   else {
     $("host-health").hidden = false;
-    $("host-meta").textContent = `${HOSTS.length} host${HOSTS.length === 1 ? "" : "s"}`;  // includes hosts with families (rolled up)
+    $("host-meta").textContent = `${HOSTS.length} subdomain${HOSTS.length === 1 ? "" : "s"}`;  // includes hosts with families (rolled up)
     const trafficLine = t => !t.source ? `<span class="dim">no data</span>`
       : t.source === "ga4" ? `<b>${compact(t.current.sessions)}</b> organic sessions <span class="dim" title="No Search Console property for this host">(GA4)</span>`
       : `<b>${compact(t.current.clicks)}</b> clicks · ${compact(t.current.impressions)} impr.${t.previous ? ` <span class="dim">(prev. ${compact(t.previous.clicks)})</span>` : ""}`;
@@ -1089,7 +1090,9 @@ footer a { color: var(--accent) }
 
   // top priorities
   const plain = f => (f._guide && GUIDE[f._guide] ? GUIDE[f._guide].name : f.title);
-  const where = f => f._family ? `/${f._family}/` : f.subdomain;
+  // one subdomain on the page: its name is in the header, so rows and details do not repeat it (SK, 2026-11-11)
+  const ONE_SUB = new Set(findings.map(f => f.subdomain)).size <= 1;
+  const where = f => f._family ? `/${f._family}/` : ONE_SUB ? "" : f.subdomain;
   const fixLink = f => f._guide ? `<a href="${gHref(f._guide)}" data-guide="${esc(f._guide)}">How to fix →</a>` : "";
   if (scored) {
     const top = findings.slice().sort((a, b) => sc(b) - sc(a)).slice(0, 10);
@@ -1097,7 +1100,7 @@ footer a { color: var(--accent) }
     $("priorities").hidden = false;
     $("top-meta").textContent = R._collection ? "Search Console, each domain's latest 28 days" : w ? `Search Console ${span(w)}` : "";
     $("top").innerHTML = top.map(f => `
-      <li class="sev-${f.type}">${scoreBadge(f)}<span class="ftitle"><a href="#f-${esc(f.id)}" data-open="${esc(f.id)}">${termify(esc(plain(f)))}</a> · ${esc(where(f))}</span>
+      <li class="sev-${f.type}">${scoreBadge(f)}<span class="ftitle"><a href="#f-${esc(f.id)}" data-open="${esc(f.id)}">${termify(esc(plain(f)))}</a>${where(f) ? ` · ${esc(where(f))}` : ""}</span>
         <span class="fsub">${esc(LABEL[f.type])} · effort ${esc(f.effort || "S")} · <span class="traffic">${esc(riskImpact(f.impact))}</span> · ${fixLink(f)}</span></li>`).join("");
     $("top").addEventListener("click", openFinding);
   }
@@ -1151,7 +1154,7 @@ footer a { color: var(--accent) }
           ${f._guide && GUIDE[f._guide] ? `<div class="fixline"><b>How to fix:</b> ${esc(GUIDE[f._guide].fix)} ${fixLink(f).replace("How to fix →", "Full guide →")}</div>` : ""}
           <dl>
           <dt>Check</dt><dd>${esc(f.title)}</dd>
-          <dt>Where</dt><dd><span>${esc(f.subdomain)}${f._family ? ` · /${esc(f._family)}/` : ""} · ${esc(f.dimension)} · ${esc(LABEL[f.source || "discovery"])} · confidence: ${esc(f._confidence || "–")} · <span class="mono">${esc(f.id)}</span>${trafficText(f.impact) ? ` · <span class="traffic">${esc(trafficText(f.impact))}</span>` : ""}</span></dd>
+          <dt>Where</dt><dd><span>${[ONE_SUB ? "" : esc(f.subdomain), f._family ? `/${esc(f._family)}/` : ""].filter(Boolean).map(s => s + " · ").join("")}${esc(f.dimension)} · ${esc(LABEL[f.source || "discovery"])} · confidence: ${esc(f._confidence || "–")} · <span class="mono">${esc(f.id)}</span>${trafficText(f.impact) ? ` · <span class="traffic">${esc(trafficText(f.impact))}</span>` : ""}</span></dd>
           <dt>Observed</dt><dd>${observedHtml(f)}</dd>
           <dt>Expected</dt><dd>${esc(readable(f.evidence.expected))}</dd>
           <dt>Evidence</dt><dd>${(f.evidence.locations || []).some(l => l.page)
@@ -1298,7 +1301,14 @@ footer a { color: var(--accent) }
     table.closest(".tablewrap").after(btn);
     const st = $(statusId);
     st.className = need ? "need" : "fine";
-    st.textContent = need ? `· ${need} of ${rows.length} ${noun} need attention${bad ? ` (${bad} broken)` : ""}` : `· all ${rows.length} fine`;
+    // one row (a one-subdomain page): plain status, no "1 of 1" (SK, 2026-11-11)
+    st.textContent = rows.length === 1 ? (bad ? "· broken" : need ? "· needs attention" : "· fine")
+      : need ? `· ${need} of ${rows.length} ${noun} need attention${bad ? ` (${bad} broken)` : ""}` : `· all ${rows.length} fine`;
+    // a one-row table on a one-subdomain page: the Subdomain column only repeats the page's subdomain
+    if (rows.length === 1 && noun === "subdomains") {
+      head = head.replace(/<th>Subdomain<\/th>/, "");
+      rows[0].html = rows[0].html.replace(/^<tr><td class="mono">.*?<\/td>/, "<tr>");
+    }
     let all = false;
     const render = () => {
       const shown = all ? rows : rows.slice(0, limit);
@@ -1319,8 +1329,9 @@ footer a { color: var(--accent) }
     const AREA_COLS = [["crawl", "Crawl &<br>indexing"], ["onpage", "On-page"], ["intl", "Languages"], ["ai", "AI<br>readiness"], ["perf", "Speed"]]
       .filter(([k]) => HIST.some(r => r.areas[k] != null));
     const withItems = HIST.some(r => r.open_issues != null);
-    const move = (r, older, get) => { const a = get(r), b = older && get(older);
-      return a == null || b == null || a === b ? "" : ` <small class="${a > b ? "up" : "down"}">${a > b ? "+" : "−"}${Math.abs(a - b)}</small>`; };
+    // change since the row below; for issue counts more is worse, so the colours flip (SK, 2026-11-11)
+    const move = (r, older, get, moreIsWorse) => { const a = get(r), b = older && get(older);
+      return a == null || b == null || a === b ? "" : ` <small class="${(a > b) !== !!moreIsWorse ? "up" : "down"}">${a > b ? "+" : "−"}${fmt(Math.abs(a - b))}</small>`; };
     const HIST_SHOWN = 5;  // like the other Reference tables (SK, 2026-11-11)
     const table = $("history-rows"), btn = document.createElement("button");
     btn.type = "button"; btn.className = "more"; table.closest(".tablewrap").after(btn);
@@ -1331,7 +1342,7 @@ footer a { color: var(--accent) }
         + shown.map((r, i) => { const older = HIST[HIST.indexOf(r) + 1];
           return `<tr><td>${esc(day(r.date))}</td><td class="n"><b>${r.health}</b>${move(r, older, x => x.health)}</td>`
             + `<td class="n">${fmt(r.clicks)}${r.traffic_to ? `<br><small class="dim">to ${esc(day(r.traffic_to))}</small>` : ""}</td><td class="n">${compact(r.impressions)}</td>`
-            + `<td class="n">${fmt(r.issue_types)}</td>${withItems ? `<td class="n">${fmt(r.open_issues)}</td>` : ""}`
+            + `<td class="n">${fmt(r.issue_types)}${move(r, older, x => x.issue_types, true)}</td>${withItems ? `<td class="n">${fmt(r.open_issues)}${move(r, older, x => x.open_issues, true)}</td>` : ""}`
             + AREA_COLS.map(([k]) => `<td class="n">${r.areas[k] == null ? "–" : r.areas[k]}${move(r, older, x => x.areas[k])}</td>`).join("")
             // the snapshot label says why; the short note what ran; run numbers on hover (SK, 2026-11-11: no sideways scroll)
             + `<td class="note" title="${esc(r.runs || "")}">${r.label ? esc(r.label) : ""}`
@@ -1361,7 +1372,7 @@ footer a { color: var(--accent) }
         const st = s.errors ? "bad" : (s.redirected || s.blocked || s.ignored) ? "warn" : "ok";
         const top = Object.entries(s.issues).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([c, n]) => `<b>${esc(CHECK(c))}</b> ${n}`).join(" · ");
         return { st, w: s.pages, html: `<tr><td class="mono">${mk(st)}${esc(h)}</td><td class="n">${fmt(s.pages)}${s.ignored ? ` <span class="dim" title="Skipped by a tenant rule (e.g. private pages)">(${s.ignored} ignored)</span>` : ""}</td><td class="n">${fmt(s.ok_html)}</td><td class="n ${s.errors ? "bad" : ""}">${fmt(s.errors)}</td><td class="n ${s.redirected ? "warn" : ""}">${fmt(s.redirected)}</td><td class="n">${auditFindings.filter(f => f.subdomain === h).length}</td><td class="issues">${top || '<span class="ok">none</span>'}</td></tr>` };
-      }), "audit-st", "hosts");
+      }), "audit-st", "subdomains");
   }
 
   // speed audit
@@ -1380,7 +1391,7 @@ footer a { color: var(--accent) }
         const st = s.not_loaded || rates.includes("bad") ? "bad" : rates.includes("warn") ? "warn" : "ok";
         const origin = ["lcp", "inp", "cls"].filter(k => m[k] != null).map(k => `<span class="${rate(k, m[k]) === "ok" ? "" : rate(k, m[k])}">${k.toUpperCase()} ${val(k, m[k])}</span>`).join(" · ");
         return { st, w: s.pages, html: `<tr><td class="mono">${mk(st)}${esc(h)}</td><td>${origin || '<span class="dim">too few visits for host data</span>'}</td><td class="n">${fmt(s.pages)}</td><td class="n">${fmt(s.field)}</td><td class="n ${s.not_loaded ? "bad" : ""}">${fmt(s.not_loaded || 0)}</td><td class="n">${s.median_score == null ? "–" : s.median_score}</td><td class="n">${perfFindings.filter(f => f.subdomain === h).length}</td></tr>` };
-      }), "speed-st", "hosts");
+      }), "speed-st", "subdomains");
   }
 
   // AI audit
@@ -1400,7 +1411,7 @@ footer a { color: var(--accent) }
           : l.state === "missing" || (s.sections && s.sections_covered < s.sections) ? "warn" : "ok";
         const fam = s.sections ? `<span class="${s.sections_covered < s.sections ? "warn" : "ok"}">${s.sections_covered} / ${s.sections}</span>${s.section_files.length ? ` <span class="dim">(own file: ${list(s.section_files)})</span>` : ""}` : "–";
         return { st, w: s.sections || 1, html: `<tr><td class="mono">${mk(st)}${esc(h)}</td><td>${s.answer_blocked.length ? `<span class="bad">blocks ${list(s.answer_blocked)}</span>` : `<span class="ok">allowed</span>${s.robots === 200 ? "" : ` <span class="dim">(no robots.txt: ${esc(s.robots)})</span>`}`}</td><td>${fwAnswer.length ? `<span class="bad">blocks ${list(fwAnswer)}</span>` : `<span class="ok">allowed</span>`}</td><td>${s.training_blocked.length ? list(s.training_blocked) : '<span class="dim">none</span>'}${fwTraining.length ? ` <span class="dim">(firewall: ${list(fwTraining)})</span>` : ""}</td><td>${llms}</td><td class="n">${fam}</td><td class="n">${aiFindings.filter(f => f.subdomain === h).length}</td></tr>` };
-      }), "ai-st", "hosts");
+      }), "ai-st", "subdomains");
   }
 
   // hosts
@@ -1417,7 +1428,7 @@ footer a { color: var(--accent) }
       const r = h.robots;
       const st = (r.error || r.is_html || h.sitemaps_failed.length) ? "bad" : (r.status !== 200 || !r.sitemaps.length) ? "warn" : "ok";
       return { st, w: h.urls, html: `<tr><td class="mono">${mk(st)}${esc(name)}</td><td>${robotsCell(h.robots)}</td><td class="n">${fmt(h.sitemaps_ok)}</td><td class="n ${h.sitemaps_failed.length ? "bad" : ""}">${fmt(h.sitemaps_failed.length)}</td><td class="n">${fmt(h.urls)}</td><td class="n">${pct(hl, h.urls)}</td><td class="n">${nf}</td></tr>` };
-    }), "hosts-st", "hosts");
+    }), "hosts-st", "subdomains");
 
   // sections: the host with the most sections that have real volume (product families)
   const secHost = Object.keys(R.sections || {}).sort((a, b) => (R.hosts[b] ? R.hosts[b].urls : 0) - (R.hosts[a] ? R.hosts[a].urls : 0))[0];
@@ -1531,7 +1542,7 @@ footer a { color: var(--accent) }
         const I = H.items, sevCell = k => { const s = GUIDE[k] && GUIDE[k].severity; return s ? `<td class="sev-${esc(s)}" style="color:var(--sev);font-weight:600">${esc(LABEL[s] || s)}</td>` : "<td></td>"; };
         const sevRank = k => { const i = ORDER.indexOf(GUIDE[k] && GUIDE[k].severity); return i < 0 ? ORDER.length : i; };  // severity first, then most open
         const moved = (I.changed || 0) > 0;  // links still in the post under another check (a 404 link that redirects again)
-        const row = (name, c, b, k) => `<tr><td>${b ? "<b>" + name + "</b>" : name}</td>${sevCell(k)}<td class="n">${fmt(c.issues)}</td><td class="n">${fmt(c.fixed)}</td>${moved ? `<td class="n">${c.redirects ? fmt(c.redirects) : "–"}</td>` : ""}<td class="n">${fmt(c.open)}</td><td class="n">${c.fixed_pct == null ? "–" : c.fixed_pct + "%"}</td></tr>`;
+        const row = (name, c, b, k) => `<tr><td>${b ? "<b>" + name + "</b>" : name}</td>${sevCell(k)}<td class="n">${fmt(c.issues)}</td><td class="n${c.fixed ? " up" : ""}">${fmt(c.fixed)}</td>${moved ? `<td class="n">${c.redirects ? fmt(c.redirects) : "–"}</td>` : ""}<td class="n${c.open && k && GUIDE[k] && GUIDE[k].severity === "broken" ? " down" : ""}">${fmt(c.open)}</td><td class="n">${c.fixed_pct == null ? "–" : c.fixed_pct + "%"}</td></tr>`;
         const movedNote = !moved ? "" : ` ${fmt(I.redirects || 0)} links now redirect: the old URL is still in the post, so they are not fixed and count as open under "${esc((GUIDE.link_redirected || {}).name || "link_redirected")}".${I.changed > (I.redirects || 0) ? ` ${fmt(I.changed - (I.redirects || 0))} more moved to another check.` : ""}`;
         progress.push(`<p class="lede fold">Counted one by one since the first scan (${esc(day(I.since))}), last scanned ${esc(day(I.scanned))}.<span class="rest"> One item = one link, one missing language of a post, or one URL or file of a sitemap problem. Issues = fixed + open.${movedNote}${I.removed ? ` ${fmt(I.removed)} items are gone because their post was deleted (not counted as fixed).` : ""}</span></p>
           <div class="tablewrap" id="fixes"><table><thead><tr><th>Check</th><th>Severity</th><th class="n">Issues</th><th class="n">Fixed</th>${moved ? `<th class="n" title="Still in the post: the link now works only through a redirect">Now redirects</th>` : ""}<th class="n">Open</th><th class="n">Fixed %</th></tr></thead><tbody>${Object.entries(I.by_check).sort(([a, x], [b, y]) => sevRank(a) - sevRank(b) || y.open - x.open).map(([k, c]) => row(termify(esc(GUIDE[k] ? GUIDE[k].name : k)), c, false, k)).join("")}${row("All", I, true)}</tbody></table></div>`);
