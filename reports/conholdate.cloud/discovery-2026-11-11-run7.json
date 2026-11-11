@@ -1,6 +1,6 @@
 {
   "tenant": "conholdate.cloud",
-  "run_id": 6,
+  "run_id": 7,
   "hosts": {
     "blog.conholdate.cloud": {
       "robots": {
@@ -87,7 +87,7 @@
       },
       "conholdate.cloud": {
         "urls": 23,
-        "hreflang_urls": 22,
+        "hreflang_urls": 23,
         "langs": {
           "default": 1,
           "ar": 1,

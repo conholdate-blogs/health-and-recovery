@@ -1,13 +1,13 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "crawl-audit",
-  "run_id": 22,
+  "run_id": 28,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
     ],
     "sections": null,
-    "inventory_run": 6,
+    "inventory_run": 7,
     "per_template": 2,
     "other_langs": 2,
     "max_per_host": null,
@@ -15,7 +15,7 @@
   },
   "canonical_targets": {},
   "requests": 15,
-  "duration_s": 14.6,
+  "duration_s": 14.7,
   "pages_planned": 14,
   "stopped_early": false,
   "summary": {
@@ -29,7 +29,6 @@
       "issues": {
         "content_needs_js": 2,
         "description_length": 5,
-        "hreflang_no_xdefault": 2,
         "title_length": 5
       }
     }
@@ -180,65 +179,6 @@
       "detected_at": "2026-11-11"
     },
     {
-      "id": "intl-0001",
-      "tenant": "conholdate.cloud",
-      "subdomain": "blog.conholdate.cloud",
-      "template": "page",
-      "dimension": "intl",
-      "check": "hreflang_no_xdefault",
-      "type": "improvable",
-      "title": "hreflang set has no x-default",
-      "evidence": {
-        "urls": [
-          "https://blog.conholdate.cloud/he/conholdate.cloud/",
-          "https://blog.conholdate.cloud/th/conholdate.cloud/"
-        ],
-        "observed": "2 of 14 sampled pages (by template: category 2/3). e.g. https://blog.conholdate.cloud/he/conholdate.cloud/: 22 entries: ar, cs, de, es, fa, fr; https://blog.conholdate.cloud/th/conholdate.cloud/: 22 entries: ar, cs, de, es, fa, fr",
-        "expected": "an x-default entry",
-        "locations": [
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/he/conholdate.cloud/",
-            "note": "22 entries: ar, cs, de, es, fa, fr"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/th/conholdate.cloud/",
-            "note": "22 entries: ar, cs, de, es, fa, fr"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/he/sitemap.xml"
-          },
-          {
-            "role": "sitemap index",
-            "url": "https://blog.conholdate.cloud/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/th/sitemap.xml"
-          }
-        ],
-        "sample": {
-          "category": [
-            2,
-            3
-          ]
-        }
-      },
-      "affected_pages": 15,
-      "impact": {
-        "clicks_28d": 0,
-        "impressions_28d": 0,
-        "score": 0
-      },
-      "effort": "S",
-      "fix_tier": 2,
-      "fix_channel": "git-pr",
-      "status": "open",
-      "detected_at": "2026-11-11"
-    },
-    {
       "id": "onpage-0002",
       "tenant": "conholdate.cloud",
       "subdomain": "blog.conholdate.cloud",
@@ -343,11 +283,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 16035,
+      "bytes": 23328,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 619,
+      "elapsed_ms": 414,
       "facts": {
         "titles": [
           "Conholdate Cloud Blog"
@@ -371,6 +311,94 @@
             "https://blog.conholdate.cloud/conholdate.cloud/"
           ],
           [
+            "ar",
+            "https://blog.conholdate.cloud/ar/conholdate.cloud/"
+          ],
+          [
+            "cs",
+            "https://blog.conholdate.cloud/cs/conholdate.cloud/"
+          ],
+          [
+            "de",
+            "https://blog.conholdate.cloud/de/conholdate.cloud/"
+          ],
+          [
+            "es",
+            "https://blog.conholdate.cloud/es/conholdate.cloud/"
+          ],
+          [
+            "fa",
+            "https://blog.conholdate.cloud/fa/conholdate.cloud/"
+          ],
+          [
+            "fr",
+            "https://blog.conholdate.cloud/fr/conholdate.cloud/"
+          ],
+          [
+            "he",
+            "https://blog.conholdate.cloud/he/conholdate.cloud/"
+          ],
+          [
+            "id",
+            "https://blog.conholdate.cloud/id/conholdate.cloud/"
+          ],
+          [
+            "it",
+            "https://blog.conholdate.cloud/it/conholdate.cloud/"
+          ],
+          [
+            "ja",
+            "https://blog.conholdate.cloud/ja/conholdate.cloud/"
+          ],
+          [
+            "ko",
+            "https://blog.conholdate.cloud/ko/conholdate.cloud/"
+          ],
+          [
+            "nl",
+            "https://blog.conholdate.cloud/nl/conholdate.cloud/"
+          ],
+          [
+            "pl",
+            "https://blog.conholdate.cloud/pl/conholdate.cloud/"
+          ],
+          [
+            "pt",
+            "https://blog.conholdate.cloud/pt/conholdate.cloud/"
+          ],
+          [
+            "ru",
+            "https://blog.conholdate.cloud/ru/conholdate.cloud/"
+          ],
+          [
+            "sv",
+            "https://blog.conholdate.cloud/sv/conholdate.cloud/"
+          ],
+          [
+            "th",
+            "https://blog.conholdate.cloud/th/conholdate.cloud/"
+          ],
+          [
+            "tr",
+            "https://blog.conholdate.cloud/tr/conholdate.cloud/"
+          ],
+          [
+            "uk",
+            "https://blog.conholdate.cloud/uk/conholdate.cloud/"
+          ],
+          [
+            "vi",
+            "https://blog.conholdate.cloud/vi/conholdate.cloud/"
+          ],
+          [
+            "zh",
+            "https://blog.conholdate.cloud/zh/conholdate.cloud/"
+          ],
+          [
+            "zh-hant",
+            "https://blog.conholdate.cloud/zh-hant/conholdate.cloud/"
+          ],
+          [
             "x-default",
             "https://blog.conholdate.cloud/conholdate.cloud/"
           ]
@@ -379,7 +407,7 @@
         "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
         "generator": null,
         "refresh": null,
-        "text_chars": 885,
+        "text_chars": 1030,
         "jsonld_types": [
           "BreadcrumbList"
         ],
@@ -408,7 +436,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 70,
+      "elapsed_ms": 427,
       "facts": {
         "titles": [
           "File Format and Document Processing APIs | Conholdate Cloud"
@@ -417,7 +445,7 @@
           "File Format and Document Processing APIs for document automation of almost all the popular file formats."
         ],
         "h1": [
-          "Conholdate.Cloud Blog"
+          "Conholdate Cloud Blog"
         ],
         "canonicals": [
           "https://blog.conholdate.cloud/"
@@ -557,7 +585,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 686,
+      "elapsed_ms": 435,
       "facts": {
         "titles": [
           "Archive"
@@ -716,7 +744,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 543,
+      "elapsed_ms": 706,
       "facts": {
         "titles": [
           "Excel Convert, Merge & Split API – Conholdate.Cloud"
@@ -862,20 +890,20 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19005,
+      "bytes": 19451,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 600,
+      "elapsed_ms": 400,
       "facts": {
         "titles": [
-          "Conholdate.Clouds"
+          "הבלוג של Conholdate Cloud"
         ],
         "descriptions": [
-          "Conholdate.Clouds - File Format and Document Processing APIs | Conholdate Cloud"
+          "הבלוג של Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
         ],
         "h1": [
-          "Conholdate.Clouds"
+          "הבלוג של Conholdate Cloud"
         ],
         "canonicals": [
           "https://blog.conholdate.cloud/he/conholdate.cloud/"
@@ -885,6 +913,10 @@
           "index, follow"
         ],
         "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.cloud/conholdate.cloud/"
+          ],
           [
             "ar",
             "https://blog.conholdate.cloud/ar/conholdate.cloud/"
@@ -972,13 +1004,17 @@
           [
             "zh-hant",
             "https://blog.conholdate.cloud/zh-hant/conholdate.cloud/"
+          ],
+          [
+            "x-default",
+            "https://blog.conholdate.cloud/conholdate.cloud/"
           ]
         ],
         "html_lang": "he",
         "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
         "generator": null,
         "refresh": null,
-        "text_chars": 699,
+        "text_chars": 706,
         "jsonld_types": [
           "BreadcrumbList"
         ],
@@ -987,12 +1023,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "hreflang_no_xdefault",
-          "22 entries: ar, cs, de, es, fa, fr"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/zh-hant/",
@@ -1012,7 +1043,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 583,
+      "elapsed_ms": 515,
       "facts": {
         "titles": [
           "File Format and Document Processing APIs | Conholdate Cloud"
@@ -1021,7 +1052,7 @@
           "File Format and Document Processing APIs for document automation of almost all the popular file formats."
         ],
         "h1": [
-          "Conholdate.Cloud 部落格"
+          "Conholdate Cloud 部落格"
         ],
         "canonicals": [
           "https://blog.conholdate.cloud/zh-hant/"
@@ -1161,7 +1192,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 597,
+      "elapsed_ms": 569,
       "facts": {
         "titles": [
           "Search"
@@ -1324,7 +1355,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 688,
+      "elapsed_ms": 604,
       "facts": {
         "titles": [
           "Insert PDF Headers and Footers using Conholdate.Cloud"
@@ -1470,20 +1501,20 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19944,
+      "bytes": 20390,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 547,
+      "elapsed_ms": 545,
       "facts": {
         "titles": [
-          "Conholdate.Clouds"
+          "บล็อก Conholdate Cloud"
         ],
         "descriptions": [
-          "Conholdate.Clouds - File Format and Document Processing APIs | Conholdate Cloud"
+          "บล็อก Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
         ],
         "h1": [
-          "Conholdate.Clouds"
+          "บล็อก Conholdate Cloud"
         ],
         "canonicals": [
           "https://blog.conholdate.cloud/th/conholdate.cloud/"
@@ -1493,6 +1524,10 @@
           "index, follow"
         ],
         "hreflang": [
+          [
+            "en",
+            "https://blog.conholdate.cloud/conholdate.cloud/"
+          ],
           [
             "ar",
             "https://blog.conholdate.cloud/ar/conholdate.cloud/"
@@ -1580,13 +1615,17 @@
           [
             "zh-hant",
             "https://blog.conholdate.cloud/zh-hant/conholdate.cloud/"
+          ],
+          [
+            "x-default",
+            "https://blog.conholdate.cloud/conholdate.cloud/"
           ]
         ],
         "html_lang": "th",
         "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
         "generator": null,
         "refresh": null,
-        "text_chars": 801,
+        "text_chars": 808,
         "jsonld_types": [
           "BreadcrumbList"
         ],
@@ -1595,12 +1634,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "hreflang_no_xdefault",
-          "22 entries: ar, cs, de, es, fa, fr"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/ru/",
@@ -1620,7 +1654,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 559,
+      "elapsed_ms": 440,
       "facts": {
         "titles": [
           "File Format and Document Processing APIs | Conholdate Cloud"
@@ -1629,7 +1663,7 @@
           "File Format and Document Processing APIs for document automation of almost all the popular file formats."
         ],
         "h1": [
-          "Блог Conholdate.Cloud"
+          "Блог Conholdate Cloud"
         ],
         "canonicals": [
           "https://blog.conholdate.cloud/ru/"
@@ -1769,7 +1803,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 556,
+      "elapsed_ms": 461,
       "facts": {
         "titles": [
           "Archief"
@@ -1924,11 +1958,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 37874,
+      "bytes": 37882,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 616,
+      "elapsed_ms": 435,
       "facts": {
         "titles": [
           "Manipuluj plikami Excel za pomocą REST API | Konwertuj, scalaj, dziel Excel"
@@ -2083,7 +2117,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 464,
+      "elapsed_ms": 490,
       "facts": {
         "titles": [
           "검색"
@@ -2242,11 +2276,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38437,
+      "bytes": 38445,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 535,
+      "elapsed_ms": 614,
       "facts": {
         "titles": [
           "Manipuleer PDF-documenten met de Conholdate.Cloud REST API"

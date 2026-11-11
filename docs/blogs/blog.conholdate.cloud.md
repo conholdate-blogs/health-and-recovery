@@ -77,14 +77,15 @@ so they get no `en` hreflang and no x-default.
 
 | # | Fix | State |
 |---|---|---|
-| F1 | `head.html`: `extend_head.html` moved to the end of `<head>` (OG, Twitter, JSON-LD back in `<head>`) | pushed `d194619` 11 Nov, waiting for deploy |
-| F2 | x-default hreflang (default language) in `head.html` and `sitemap.xml` | pushed `d194619`, waiting for deploy |
-| F3 | Tag pages (`/tags/`, `/tag/<x>/`) `noindex, follow`; `Disallow: /tags/` and `/tag/` removed from robots.txt so the noindex is seen | pushed `70cb21f`, waiting for deploy |
-| F4 | 4 wrong-language links in 3 Arabic posts → `/ar/…` (SK: fix from here) | pushed `bbe3a99`, waiting for deploy |
+| F1 | `head.html`: `extend_head.html` moved to the end of `<head>` (OG, Twitter, JSON-LD back in `<head>`) | pushed `d194619`, **verified live 11 Nov** |
+| F2 | x-default hreflang (default language) in `head.html` and `sitemap.xml` | pushed `d194619`, **verified live 11 Nov** |
+| F3 | Tag pages (`/tags/`, `/tag/<x>/`) `noindex, follow`; `Disallow: /tags/` and `/tag/` removed from robots.txt so the noindex is seen | pushed `70cb21f`, **verified live 11 Nov** |
+| F4 | 4 wrong-language links in 3 Arabic posts → `/ar/…` (SK: fix from here) | pushed `bbe3a99`, **verified live 11 Nov** |
 | F5 | Redirects.json: `/category` → `/category/`, `/feed` removed (SK's set) | pushed `9a5a07c`; **live 2 min after the push, no deploy** (`/category/` 301 at 17:49); `/category`, `/feed` still served from CloudFront cache (age ~3,200 s) |
-| F7 | Java merge post moved from `content/Conholdate.Total/` (not in `mainSections`, so **never listed on the home page**) to `content/Conholdate.Cloud/total/`; URL unchanged; `/conholdate.total/` section page gone. Stray empty category `groupdocs.total-product-family` deleted (SK: yes) | pushed `0804d88`, waiting for deploy |
-| F8 | Home H1 + one-line intro in 23 languages (PaperMod `homeInfoParams` in `config.yml`; "Articles on Conholdate.Total Cloud REST APIs and SDKs: …"; SK: "articles", not "tutorials"; translations by Claude, not the translation agent); pilot for the other blogs | pushed `a7d6751`, waiting for deploy |
-| F6 | Category: all 92 files → "Conholdate.Total Cloud Product Family" (SK: the real family) | pushed `bbe3a99`, waiting for deploy |
+| F7 | Java merge post moved from `content/Conholdate.Total/` (not in `mainSections`, so **never listed on the home page**) to `content/Conholdate.Cloud/total/`; URL unchanged; `/conholdate.total/` section page gone. Stray empty category `groupdocs.total-product-family` deleted (SK: yes) | pushed `0804d88`, **verified live 11 Nov** |
+| F8 | Home H1 + one-line intro in 23 languages (PaperMod `homeInfoParams` in `config.yml`; "Articles on Conholdate.Total Cloud REST APIs and SDKs: …"; SK: "articles", not "tutorials"; translations by Claude, not the translation agent); pilot for the other blogs | pushed `a7d6751`, **verified live 11 Nov** |
+| F9 | Compact home intro (`custom.css`: no 320px hero), blog name "Conholdate Cloud" (SK, not "Conholdate.Cloud") in H1s; `_index.<lang>.md` for the section so its 23 versions link (last x-default gap, titles were "Conholdate.Clouds") | `62d8a5b`, `f414aef`, `d0a4811`, **verified live 11 Nov** (desktop and 390 px) |
+| F6 | Category: all 92 files → "Conholdate.Total Cloud Product Family" (SK: the real family) | pushed `bbe3a99`, **verified live 11 Nov** |
 
 Pushed 11 Nov 17:47 PKT (`d2bc592..bbe3a99`); commit check PASSED (after fixing our check, 66280a2: it blamed old
 `=\"` in commented-out figures of 38 translations on the commit). Left alone: `content/categories/groupdocs.total-product-family/_index.md`,
@@ -96,6 +97,14 @@ Audit changes from this blog (7694323): `social_tags_in_body` check (not optimiz
 Test (11 Nov, Hugo 0.101.0, production config, full build before/after): file set identical; no SEO tag left in
 `<body>` on any page; 555 tag term pages + 23 `/tags/` pages index → `noindex, follow`, no other robots change;
 x-default on 790 pages; sitemaps changed only by 161 x-default lines; robots.txt only the two lines removed.
+
+## Result (11 Nov, after both deploys)
+
+Re-scan (runs 7, 28–33): health **84 → 94** (crawl 100, on-page 99, languages 100, AI 95); resolved: thin tags
+(noindex), wrong-language links, no H1, no x-default; items 4 of 4 fixed. Snapshot "Fixes live: …"; 7 rows in
+`reports/conholdate.cloud/agent-fixes.json`. Still open: text needs JavaScript (listing pages), no llms.txt,
+title/description length. Not done (SK): retag posts (later); Arabic/Persian/Hebrew pages are left-to-right (theme,
+pre-existing); the merge post has no translations; host forwards no-slash with 302.
 
 ## Learned here
 

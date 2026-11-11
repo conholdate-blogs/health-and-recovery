@@ -1,0 +1,51 @@
+{
+  "tenant": "conholdate.cloud",
+  "auditor": "repo-audit",
+  "run_id": 33,
+  "params": {
+    "hosts": [
+      "blog.conholdate.cloud"
+    ],
+    "sample": 40
+  },
+  "requests": 3,
+  "duration_s": 3.4,
+  "stopped_early": false,
+  "summary": {
+    "blog.conholdate.cloud": {
+      "commit": "d0a4811 2026-11-11 Blog name in the home H1 and section titles: 'Conholdate Cloud', not 'Conholdate.Cloud' (SK)",
+      "posts": 93,
+      "entries": 3,
+      "invalid": null,
+      "broke_it": null,
+      "live": {
+        "eligible": 3,
+        "sampled": 3,
+        "other": 1,
+        "redirected": 2
+      },
+      "by_check": {}
+    }
+  },
+  "findings": [],
+  "hosts": {
+    "blog.conholdate.cloud": {
+      "commit": "d0a4811 2026-11-11 Blog name in the home H1 and section titles: 'Conholdate Cloud', not 'Conholdate.Cloud' (SK)",
+      "posts": 93,
+      "redirects": {
+        "present": true,
+        "entries": 3,
+        "invalid": null,
+        "broke_it": null,
+        "live": {
+          "eligible": 3,
+          "sampled": 3,
+          "other": 1,
+          "redirected": 2,
+          "failed": []
+        }
+      },
+      "issues": []
+    }
+  }
+}

@@ -15,12 +15,18 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
-## Start here (session handoff, 2026-11-11)
+## Start here (session handoff, 2026-11-11, evening)
 
-**Next session (SK): scan and fix blog.conholdate.cloud** (the smallest blog), in its own session. Open
-[docs/blogs/blog.conholdate.cloud.md](docs/blogs/blog.conholdate.cloud.md) first: facts, open findings, the plan
-(confirm facts → test whether Redirects.json applies live → `run_cycle.py conholdate.cloud` → review, snapshot →
-fixes in playbook order, each push approved). Its workflows live in the blog repo itself.
+**blog.conholdate.cloud: scanned and fixed (11 Nov), health 84 → 94.** Details in
+[docs/blogs/blog.conholdate.cloud.md](docs/blogs/blog.conholdate.cloud.md). 10 blog commits pushed with SK's
+approval and deployed (d194619 … d0a4811): head order (OG/Twitter/JSON-LD back in `<head>`), x-default, tag pages
+`noindex, follow` + robots.txt unblocked, Redirects.json (SK's 3 entries; **applies live on this blog**), one category,
+4 Arabic links, all posts in `content/Conholdate.Cloud` (one post was never on the home page), section `_index` per
+language, home H1 + one-line "Articles on …" intro in 23 languages (compact; "Conholdate Cloud", SK). 7 rows in
+`reports/conholdate.cloud/agent-fixes.json`. Our audit gained `social_tags_in_body` (not optimized; group "head order"),
+thin tags skipped when tag pages are noindex, and commit_check reports only shortcode damage a range adds.
+**Carry over to blog.conholdate.com (B3):** same head bug (OG/Twitter/JSON-LD in `<body>`), same template fixes.
+Open for SK: retag posts (later); home H1 pilot on other blogs; Arabic pages render left-to-right (theme).
 
 **Paused: blog.conholdate.com, part B.** SK continues later; three decisions wait in
 [docs/blogs/blog.conholdate.com.md](docs/blogs/blog.conholdate.com.md) ("Waiting for SK"): B2 redirects or not
