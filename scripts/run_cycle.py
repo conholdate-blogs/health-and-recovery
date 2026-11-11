@@ -5,12 +5,12 @@
     .venv/bin/python scripts/run_cycle.py aspose.cloud --quick     # discovery, link check, prioritize
 
 Before the link check, each blog's local clone is fast-forwarded (git pull --ff-only); a clone with local
-changes or a diverged history stops the cycle untouched. Loads .env itself (the same keys `set -a; source .env` would export), runs discover, audit_crawl, audit_ai,
-audit_perf, audit_text, audit_links (only for tenants with `audit.links` in their YAML), track_items (also for
-tenants with `collections.blogs`: blog sitemap items) and
-prioritize with
---tenant, and writes each step's output to data/<tenant>/cycle-<date>.log. Building, snapshotting and pushing the
-report stay manual: the results are reviewed by hand first (LLM findings in particular).
+changes or a diverged history stops the cycle untouched. Loads .env itself (the same keys `set -a; source .env`
+would export). Steps (STEPS below): discover, audit_crawl, audit_ai, audit_perf, audit_text, then for blogs with a
+source repo (`audit.links` in the YAML) audit_links and audit_repo, track_items, prioritize, audit_structure and
+rescore (prioritize --offline, scoring the structure findings). Each step gets --tenant; output goes to
+data/<tenant>/cycle-<date>.log. Building, snapshotting and pushing the report stay manual: the results are reviewed
+by hand first (LLM findings in particular).
 """
 
 from __future__ import annotations
@@ -29,11 +29,12 @@ sys.path.insert(0, str(REPO_ROOT))
 from core.paths import tenant_paths  # noqa: E402
 from core.tenant import load_tenant  # noqa: E402
 
-# audit_structure last: its search numbers come from the traffic cache that prioritize has just refreshed
+# audit_structure after prioritize: its search numbers come from the traffic cache that prioritize has just
+# refreshed; rescore (prioritize --offline, no Google calls) then scores the structure findings it adds
 STEPS = ["discover", "audit_crawl", "audit_ai", "audit_perf", "audit_text", "audit_links", "audit_repo", "track_items",
-         "prioritize", "audit_structure"]
+         "prioritize", "audit_structure", "rescore"]
 # the exact (non-sampled) checks only: weekly and after a translation batch; no LLM, about 35 min for the blogs
-QUICK = ["discover", "audit_links", "audit_repo", "track_items", "prioritize", "audit_structure"]
+QUICK = ["discover", "audit_links", "audit_repo", "track_items", "prioritize", "audit_structure", "rescore"]
 
 
 def pull_clones(tenant) -> str | None:
@@ -77,7 +78,7 @@ def main(argv: list[str] | None = None) -> int:
     steps = steps[steps.index(args.start):] if args.start in steps else steps
     if not (tenant.raw.get("audit") or {}).get("links"):
         # blog source repos only
-        steps = [s for s in steps if s not in ("audit_links", "audit_repo", "audit_structure")]
+        steps = [s for s in steps if s not in ("audit_links", "audit_repo", "audit_structure", "rescore")]
     if not (tenant.raw.get("audit") or {}).get("links") and not (tenant.raw.get("collections") or {}).get("blogs"):
         steps = [s for s in steps if s != "track_items"]  # items come from the link check and blog sitemaps
     env = {**os.environ, **dotenv(REPO_ROOT / ".env"), "TENANT": args.tenant}
@@ -90,8 +91,11 @@ def main(argv: list[str] | None = None) -> int:
                 if error:
                     print(f"Stopped before the link check: {error}", file=sys.stderr)
                     return 1
-            cmd = [sys.executable, str(REPO_ROOT / "scripts" / f"{step}.py"), "--tenant", args.tenant]
-            if step != "prioritize":
+            script = "prioritize" if step == "rescore" else step
+            cmd = [sys.executable, str(REPO_ROOT / "scripts" / f"{script}.py"), "--tenant", args.tenant]
+            if step == "rescore":
+                cmd.append("--offline")
+            elif step != "prioritize":
                 cmd.append("--quiet")
             started = time.time()
             print(f"[{time.strftime('%H:%M')}] {step} ...", flush=True)
