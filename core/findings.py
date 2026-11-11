@@ -1,7 +1,8 @@
 """Findings: records in the schema confirmed in CLAUDE.md, and the SQLite store that tracks them across runs.
 
 Every finding has a stable `key`. Code findings: `<dimension>/<check>/<subdomain>/<template>`; seed (manual)
-findings: `seed/<id>`. The store gives each key one permanent id (crawl-0001, ...), records when it was first
+findings: `seed/<id>`. The store gives each key one permanent id (crawl-261113-1 since 2026-11-11, crawl-0001
+before), records when it was first
 and last seen, marks it resolved when a later run in the same scope no longer reports it, and reopens it if
 it comes back.
 """
@@ -124,10 +125,13 @@ class FindingsStore:
 
     # ---- writes ----
 
-    def _new_id(self, dimension: str) -> str:
-        rows = self.db.execute("SELECT id FROM findings WHERE id LIKE ?", (f"{dimension}-%",)).fetchall()
-        nums = [int(r["id"].rsplit("-", 1)[1]) for r in rows if r["id"].rsplit("-", 1)[1].isdigit()]
-        return f"{dimension}-{max(nums, default=0) + 1:04d}"
+    def _new_id(self, dimension: str, day: date | None = None) -> str:
+        """New findings: <dimension>-<yymmdd>-<n>, e.g. crawl-261113-1, the date it was first found (SK, 2026-11-11).
+        Ids given before that keep the old form (crawl-0006): snapshots, ledgers and agent-fix rows link to them."""
+        prefix = f"{dimension}-{(day or date.today()).strftime('%y%m%d')}-"
+        rows = self.db.execute("SELECT id FROM findings WHERE id LIKE ?", (f"{prefix}%",)).fetchall()
+        nums = [int(r["id"][len(prefix):]) for r in rows if r["id"][len(prefix):].isdigit()]
+        return f"{prefix}{max(nums, default=0) + 1}"
 
     def _start_run(self, ref: str, source: str, scope: dict) -> None:
         seq = self.db.execute("SELECT COALESCE(MAX(seq), 0) + 1 FROM runs").fetchone()[0]

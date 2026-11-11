@@ -12,6 +12,7 @@ from core.discovery.run import import_report  # noqa: E402
 from core.findings import FindingIds, FindingsStore, finding_key, make_finding  # noqa: E402
 
 IDS = FindingIds()
+DAY = __import__("datetime").date.today().strftime("%y%m%d")  # new ids carry the day first found
 
 
 def f(check, host="app.example.com", template="sitemap:pdf", dimension="crawl", pages=1):
@@ -28,7 +29,7 @@ def test_ids_are_stable_and_findings_resolve_and_reopen():
     s = FindingsStore(":memory:")
     a, b = f("fetch_failed"), f("empty")
     r1 = s.import_run([a, b], "discovery-run1", "discovery", hosts=["app.example.com"])
-    assert sorted(r1["new"]) == ["crawl-0001", "crawl-0002"]
+    assert sorted(r1["new"]) == [f"crawl-{DAY}-1", f"crawl-{DAY}-2"]
     rows = ids_by_key(s)
     id_a, id_b = rows[finding_key(a)]["id"], rows[finding_key(b)]["id"]
 
@@ -89,7 +90,7 @@ def test_seed_import_keeps_ids_status_and_notes():
     robots = next(r for r in rows.values() if r["key"] == note["applies_to"])
     assert robots["notes"] == ["Routing never serves it."]
     # discovery ids are not disturbed by seeds
-    assert robots["id"] == "crawl-0001"
+    assert robots["id"] == f"crawl-{DAY}-1"
 
 
 def test_real_seed_file_imports():
@@ -113,3 +114,17 @@ def test_report_from_export_matches_store():
         assert findings == s.findings()
         assert changes["new"] == want["new"] and changes["first_run"] == want["first_run"]
         assert [r["id"] for r in changes["resolved"]] == [r["id"] for r in want["resolved"]]
+
+
+def test_new_ids_carry_the_day_and_old_ids_stay():
+    from datetime import date
+    s = FindingsStore(":memory:")
+    old = f("fetch_failed")
+    s.db.execute("INSERT INTO findings (id, key, dimension, status) VALUES ('crawl-0006', ?, 'crawl', 'open')",
+                 (finding_key(old),))
+    s.import_run([old, f("empty")], "discovery-run1", "discovery", hosts=["app.example.com"])
+    rows = ids_by_key(s)
+    assert rows[finding_key(old)]["id"] == "crawl-0006"  # an existing finding keeps its old id
+    assert rows[finding_key(f("empty"))]["id"] == f"crawl-{DAY}-1"
+    assert s._new_id("crawl", date(2026, 11, 13)) == "crawl-261113-1"
+    assert s._new_id("intl", date(2026, 11, 13)) == "intl-261113-1"
