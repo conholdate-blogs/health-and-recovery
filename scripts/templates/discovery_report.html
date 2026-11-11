@@ -242,6 +242,7 @@ button.area:focus-visible { outline: 2px solid var(--accent); outline-offset: 2p
 .kpi .ks { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums }
 .kpi .up { color: var(--good); font-weight: 600 } .kpi .down { color: var(--broken); font-weight: 600 }
 #history-rows .up { color: var(--good); font-weight: 600 } #history-rows .down { color: var(--broken); font-weight: 600 }
+#history-rows td.note { white-space: normal; min-width: 14rem; max-width: 24rem; font-size: 13px } #history-rows td.note small { display: block; color: var(--muted) }
 .kpi.g-A, .kpi.g-B, .kpi.g-C, .kpi.g-D, .kpi.g-F { border-top: 4px solid var(--gc) } .kpi.g-A .kv, .kpi.g-B .kv, .kpi.g-C .kv, .kpi.g-D .kv, .kpi.g-F .kv { color: var(--gc) }
 .kpi svg { display: block; width: 100%; height: 28px }
 .age.old { color: var(--incorrect); font-weight: 600 }
@@ -1191,7 +1192,9 @@ __METHOD__
             + `<td class="n">${fmt(r.clicks)}${r.traffic_to ? `<br><small class="dim">to ${esc(day(r.traffic_to))}</small>` : ""}</td><td class="n">${compact(r.impressions)}</td>`
             + `<td class="n">${fmt(r.issue_types)}</td>${withItems ? `<td class="n">${fmt(r.open_issues)}</td>` : ""}`
             + AREA_COLS.map(([k]) => `<td class="n">${r.areas[k] == null ? "–" : r.areas[k]}${move(r, older, x => x.areas[k])}</td>`).join("")
-            + `<td>${r.note.length ? esc(r.note.join(" · ")) : '<span class="dim">–</span>'}</td></tr>`; }).join("") + `</tbody>`;
+            // the snapshot label says why; the short note what ran; run numbers on hover (SK, 2026-11-11: no sideways scroll)
+            + `<td class="note" title="${esc(r.runs || "")}">${r.label ? esc(r.label) : ""}`
+            + `${r.note.length ? (r.label ? `<small>${esc(r.note.join(" · "))}</small>` : esc(r.note.join(" · "))) : (r.label ? "" : '<span class="dim">–</span>')}</td></tr>`; }).join("") + `</tbody>`;
       btn.hidden = HIST.length <= HIST_SHOWN;
       btn.textContent = all ? "Show fewer" : `Show all ${HIST.length}`;
     };

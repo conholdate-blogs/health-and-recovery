@@ -305,12 +305,26 @@ def test_history_rows_keep_the_overview_numbers_and_say_what_ran(tmp_path):
     record_health(report, history)  # same runs as the stored entry: it gets the stats
     assert host_history("b.example", history) == [
         {"date": "2026-10-31", "health": 68, "areas": {}, "clicks": 601, "impressions": 58085,
-         "traffic_to": "2026-10-31", "issue_types": 1, "open_issues": 1705, "note": ["first run"]}]
+         "traffic_to": "2026-10-31", "issue_types": 1, "open_issues": 1705, "note": ["first run"],
+         "runs": "discovery run 3, link check run 11"}]
     report["_repo"], report["_links"] = {"run_id": 12}, {"run_id": 12}
     record_health(report, history)
     rows = host_history("b.example", history)
     assert [r["health"] for r in rows] == [48, 68]
-    assert rows[0]["note"] == ["new link check (run 12)", "Repo file check added"]
+    assert rows[0]["note"] == ["re-run: links", "Repo file check added"]
+    (tmp_path / "archive").mkdir()  # a snapshot label for these runs says why the score moved
+    index = [{"runs": rows[0]["runs"], "label": "Repo check added"}]
+    (tmp_path / "archive" / "index.json").write_text(json.dumps(index))
+    assert host_history("b.example", history)[0]["label"] == "Repo check added"
+
+
+def test_run_changes_note_is_short():
+    from scripts.build_report import run_changes_note
+    before = "discovery run 2, crawl audit run 8, speed audit run 10, AI audit run 9, link check run 12"
+    after = "discovery run 3, crawl audit run 16, speed audit run 18, AI audit run 17, link check run 20"
+    assert run_changes_note(after, before) == ["full scan"]
+    assert run_changes_note(after + ", repo file check run 21", before) == ["full scan", "Repo file check added"]
+    assert run_changes_note(before.replace("link check run 12", "link check run 13"), before) == ["re-run: links"]
 
 
 def test_a_new_score_method_rescores_the_same_runs_and_restarts_the_trend(tmp_path):

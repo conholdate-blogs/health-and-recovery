@@ -454,20 +454,38 @@ def host_stats(report: dict, card: dict) -> dict:
             "open_issues": (card.get("items") or {}).get("open")}
 
 
+# short names for the History table's Note (SK, 2026-11-11: the full "new crawl audit (run 16) · …" list scrolled
+# sideways); the run numbers go into the cell's tooltip
+RUN_SHORT = {"discovery": "discovery", "crawl audit": "crawl", "speed audit": "speed", "AI audit": "AI",
+             "text check": "text", "link check": "links", "repo file check": "repo files"}
+
+
 def run_changes_note(runs: str, before: str | None) -> list[str]:
-    """What ran since the previous entry, from the two runs labels: a check's first run, or a newer run of it."""
+    """What ran since the previous entry, short: "full scan" when every check re-ran (4 or more), else
+    "re-run: crawl, links"; a check's first run as "<Check> added"."""
     parse = lambda s: dict((m[1], int(m[2])) for m in re.finditer(r"([A-Za-z][\w ]*?) run (\d+)", s or ""))  # noqa: E731
     now, prev = parse(runs), parse(before)
     if before is None:
         return ["first run"]
-    return [f"{name[0].upper()}{name[1:]} added" if name not in prev else f"new {name} (run {n})"
-            for name, n in now.items() if prev.get(name) != n]
+    again = [name for name in now if name in prev and prev[name] != now[name]]
+    kept = [name for name in now if name in prev]
+    out = (["full scan"] if len(again) >= 4 and len(again) == len(kept) else
+           [f"re-run: {', '.join(RUN_SHORT.get(n, n) for n in again)}"] if again else [])
+    return out + [f"{name[0].upper()}{name[1:]} added" for name in now if name not in prev]
+
+
+def snapshot_labels(history_path: Path) -> dict[str, str]:
+    """runs label -> the newest archive snapshot label with those runs (it says why the score moved)."""
+    index = history_path.parent / "archive" / "index.json"
+    entries = json.loads(index.read_text(encoding="utf-8")) if index.is_file() else []
+    return {e["runs"]: e["label"] for e in entries if e.get("runs") and e.get("label")}
 
 
 def host_history(host: str, history_path: Path) -> list[dict]:
     """One row per recorded run with stats for a host, newest first, each with a note of what changed since the
     entry before it (so a score jump from a new check reads as that, not as the site getting worse)."""
     history = json.loads(history_path.read_text(encoding="utf-8")) if history_path.is_file() else []
+    labels = snapshot_labels(history_path)
     rows, before = [], None
     for h in history:
         entry = (h.get("hosts") or {}).get(host)
@@ -477,8 +495,11 @@ def host_history(host: str, history_path: Path) -> list[dict]:
             note = run_changes_note(h["runs"], before["runs"] if before else None)
             if before and before.get("method", 1) != h.get("method", 1):
                 note.append(f"score method {h.get('method', 1)}")
-            rows.append({"date": h["date"], "health": entry["health"], "areas": entry.get("areas") or {},
-                         **entry["stats"], "note": note})
+            row = {"date": h["date"], "health": entry["health"], "areas": entry.get("areas") or {},
+                   **entry["stats"], "note": note, "runs": h["runs"]}
+            if labels.get(h["runs"]):
+                row["label"] = labels[h["runs"]]
+            rows.append(row)
         before = h
     return rows[::-1]
 
