@@ -77,11 +77,19 @@ so they get no `en` hreflang and no x-default.
 
 | # | Fix | State |
 |---|---|---|
-| F1 | `head.html`: `extend_head.html` moved to the end of `<head>` (OG, Twitter, JSON-LD back in `<head>`) | prepared, tested, waiting for SK |
-| F2 | x-default hreflang (default language) in `head.html` and `sitemap.xml` | prepared, tested, waiting for SK |
-| F3 | Tag pages (`/tags/`, `/tag/<x>/`) `noindex, follow`; `Disallow: /tags/` and `/tag/` removed from robots.txt so the noindex is seen | prepared, tested, waiting for SK |
-| F4 | 4 wrong-language links in 3 Arabic posts → `/ar/…` | proposed |
-| F5 | Redirects.json: `/category` → `/category/`, `/feed` removed (SK's set); also tests live vs at deploy | prepared, waiting for push approval |
+| F1 | `head.html`: `extend_head.html` moved to the end of `<head>` (OG, Twitter, JSON-LD back in `<head>`) | pushed `d194619` 11 Nov, waiting for deploy |
+| F2 | x-default hreflang (default language) in `head.html` and `sitemap.xml` | pushed `d194619`, waiting for deploy |
+| F3 | Tag pages (`/tags/`, `/tag/<x>/`) `noindex, follow`; `Disallow: /tags/` and `/tag/` removed from robots.txt so the noindex is seen | pushed `70cb21f`, waiting for deploy |
+| F4 | 4 wrong-language links in 3 Arabic posts → `/ar/…` (SK: fix from here) | pushed `bbe3a99`, waiting for deploy |
+| F5 | Redirects.json: `/category` → `/category/`, `/feed` removed (SK's set) | pushed `9a5a07c`; **live 2 min after the push, no deploy** (`/category/` 301 at 17:49); `/category`, `/feed` still served from CloudFront cache (age ~3,200 s) |
+| F6 | Category: all 92 files → "Conholdate.Total Cloud Product Family" (SK: the real family) | pushed `bbe3a99`, waiting for deploy |
+
+Pushed 11 Nov 17:47 PKT (`d2bc592..bbe3a99`); commit check PASSED (after fixing our check, 66280a2: it blamed old
+`=\"` in commented-out figures of 38 translations on the commit). Left alone: `content/categories/groupdocs.total-product-family/_index.md`,
+an empty category page titled "Conholdate.Total Cloud Product Family" (live 200), ask SK.
+
+Audit changes from this blog (7694323): `social_tags_in_body` check (not optimized, group "head order" with
+`head_closed_early`, commit check warns); `tag_pages_thin` skipped when `/tags/` and 2 tag pages answer noindex.
 
 Test (11 Nov, Hugo 0.101.0, production config, full build before/after): file set identical; no SEO tag left in
 `<body>` on any page; 555 tag term pages + 23 `/tags/` pages index → `noindex, follow`, no other robots change;
@@ -90,3 +98,6 @@ x-default on 790 pages; sitemaps changed only by 161 x-default lines; robots.txt
 ## Learned here
 
 - Same theme family as blog.conholdate.com: template fixes carry over (head order, x-default, tag noindex).
+- Redirects.json applies **live** here (within ~2 min), unlike blog.conholdate.com (at deploy). CloudFront caches
+  redirect answers (query string not in the cache key), so a removed entry keeps answering until the cache expires.
+- Redirect keys match exactly; the host forwards no-slash → slash (302) only for real folders.
