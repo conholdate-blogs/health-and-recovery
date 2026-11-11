@@ -31,7 +31,7 @@ def run(repo, rev="HEAD", deploy=False):
     configs = cc.check_configs(r, res)
     cc.check_redirects(r, base, "blog.example.com", res)
     cc.check_front_matter(r, changed, res)
-    cc.check_shortcodes(r, changed, res)
+    cc.check_shortcodes(r, changed, res, base)
     return res, configs
 
 
@@ -116,6 +116,20 @@ def test_damaged_shortcode_in_translation_fails(tmp_path):
     assert [w.split(":")[0].rsplit("/", 1)[1] for w in res.items["shortcode_damaged"]] == ["index.fa.md"]
     assert "stray } before >}}" in res.items["shortcode_damaged"][0]
     assert len(res.items["code_fence_mismatch"]) == 1 and "index.de.md" in res.items["code_fence_mismatch"][0]
+
+
+def test_old_shortcode_damage_is_not_blamed_on_a_new_commit(tmp_path):
+    repo = setup(tmp_path)
+    old = EN.replace('src="a.png"', 'src=\\"a.png\\"')  # commented-out figure with =\" from an old translation
+    commit(repo, {"content/blog/x/2026-01-02-p/index.md": EN,
+                  "content/blog/x/2026-01-02-p/index.de.md": old}, "old damage")
+    commit(repo, {"content/blog/x/2026-01-02-p/index.de.md": old.replace("title: T", "title: T2")}, "front matter edit")
+    res, _ = run(repo)
+    assert not res.items
+    commit(repo, {"content/blog/x/2026-01-02-p/index.de.md": old.replace('"A" >}}', '"A"} >}}')}, "new damage")
+    res, _ = run(repo)
+    assert res.failed and "stray } before >}}" in res.items["shortcode_damaged"][0]
+    assert "escaped quote" not in res.items["shortcode_damaged"][0]
 
 
 def test_unbalanced_shortcode_in_english_fails(tmp_path):

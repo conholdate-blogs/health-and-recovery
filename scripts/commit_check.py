@@ -227,10 +227,33 @@ def check_front_matter(repo: Repo, changed: list[str], res: Result) -> None:
             res.add("url_relative", f"{rel}: url {url}")
 
 
-def check_shortcodes(repo: Repo, changed: list[str], res: Result) -> None:
+def _shortcode_problems(text: str, en: str | None) -> tuple[list[str], str | None]:
+    """Shortcode problems of one post file (en = its English post, None for the English file) and a code-fence
+    mismatch note."""
+    problems = [f"{o} {text.count(o)} vs {c} {text.count(c)}" for o, c in DELIMS if text.count(o) != text.count(c)]
+    fences = None
+    if en is not None:
+        problems += [f"{d} {text.count(d)} vs English {en.count(d)}" for pair in DELIMS for d in pair
+                     if text.count(d) != en.count(d)]
+        problems += [label for pat, label in DAMAGE if re.search(pat, text) and not re.search(pat, en)]
+        if text.count("```") != en.count("```"):
+            fences = f"``` {text.count('```')} vs English {en.count('```')}"
+    return list(dict.fromkeys(problems)), fences
+
+
+def check_shortcodes(repo: Repo, changed: list[str], res: Result, base: str | None = None) -> None:
     """Every changed post file, no cap: shortcode delimiters balanced; a translation keeps the English post's shortcode
-    and code-fence counts and has no damage pattern the English post lacks (code can contain =\\" legitimately)."""
-    english: dict[str, str | None] = {}
+    and code-fence counts and has no damage pattern the English post lacks (code can contain =\\" legitimately).
+    Only what the range adds is reported: a problem the file already had at `base` (e.g. old commented-out figures
+    with =\\" in translations, which Hugo builds) is left out, so a commit touching such a file is not blamed."""
+    old = Repo(repo.path, base) if base else None
+    english: dict[tuple[str, str], str | None] = {}
+
+    def en_of(r: Repo, folder: str) -> str | None:
+        if (r.rev, folder) not in english:
+            english[(r.rev, folder)] = r.show(f"{folder}/index.md")
+        return english[(r.rev, folder)]
+
     for rel in changed:
         folder, _, name = rel.rpartition("/")
         if not rel.startswith("content/") or not _INDEX.match(name):
@@ -238,19 +261,17 @@ def check_shortcodes(repo: Repo, changed: list[str], res: Result) -> None:
         text = repo.show(rel)
         if text is None:
             continue
-        problems = [f"{o} {text.count(o)} vs {c} {text.count(c)}" for o, c in DELIMS if text.count(o) != text.count(c)]
-        if name != "index.md":
-            if folder not in english:
-                english[folder] = repo.show(f"{folder}/index.md")
-            en = english[folder]
-            if en is not None:
-                problems += [f"{d} {text.count(d)} vs English {en.count(d)}" for pair in DELIMS for d in pair
-                             if text.count(d) != en.count(d)]
-                problems += [label for pat, label in DAMAGE if re.search(pat, text) and not re.search(pat, en)]
-                if text.count("```") != en.count("```"):
-                    res.add("code_fence_mismatch", f"{rel}: ``` {text.count('```')} vs English {en.count('```')}")
+        is_tr = name != "index.md"
+        problems, fences = _shortcode_problems(text, en_of(repo, folder) if is_tr else None)
+        before = old.show(rel) if old and (problems or fences) else None
+        if before is not None:
+            was, was_fences = _shortcode_problems(before, en_of(old, folder) if is_tr else None)
+            problems = [p for p in problems if p not in was]
+            fences = None if fences == was_fences else fences
+        if fences:
+            res.add("code_fence_mismatch", f"{rel}: {fences}")
         if problems:
-            res.add("shortcode_damaged", f"{rel}: {'; '.join(dict.fromkeys(problems))}")
+            res.add("shortcode_damaged", f"{rel}: {'; '.join(problems)}")
 
 
 def choose_sample(repo: Repo, changed: list[str], res: Result) -> list[str]:
@@ -434,7 +455,7 @@ def main() -> int:
     host = re.sub(r"^https?://([^/]+).*", r"\1", base_url) if base_url else None
     check_redirects(repo, base, host, res)
     check_front_matter(repo, changed, res)
-    check_shortcodes(repo, changed, res)
+    check_shortcodes(repo, changed, res, base)
     if not args.no_build and "config_invalid" not in res.items and configs:
         build_sample(repo, configs, choose_sample(repo, changed, res), args.hugo, base_url, res)
     report(res, repo, base, changed, args.json)
