@@ -18,6 +18,7 @@ hosts:
     platform: hugo            # PaperMod theme; S3 + CloudFront (2026-10-22); repo also has Ceph deploy workflows
     repo: github.com/aspose-cloud/aspose-cloud-blog
     local_path: /Users/Apple/Work/Aspose/GitHub/blog.aspose.cloud-PROD/aspose-cloud-blog
+    hugo_version: "0.101.0"   # production deploy (11 Nov 2026); test template changes with this version
     sitemap: https://blog.aspose.cloud/sitemap.xml       # index of 24 language sitemaps
     robots: https://blog.aspose.cloud/robots.txt
     fix_channel: git-pr

@@ -18,6 +18,7 @@ hosts:
     platform: hugo            # PaperMod theme, 23 languages, hugo deploy to S3 (us-west-2)
     repo: github.com/conholdate-cloud/blog.conholdate.cloud
     local_path: /Users/Apple/Work/Aspose/GitHub/blog.conholdate.cloud-PROD/blog.conholdate.cloud
+    hugo_version: "0.101.0"   # production deploy (11 Nov 2026); test template changes with this version
     sitemap: https://blog.conholdate.cloud/sitemap.xml       # index of 23 language sitemaps
     robots: https://blog.conholdate.cloud/robots.txt
     fix_channel: git-pr
