@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "repo-audit",
-  "run_id": 15,
+  "run_id": 21,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
@@ -9,7 +9,7 @@
     "sample": 40
   },
   "requests": 3,
-  "duration_s": 2.7,
+  "duration_s": 2.8,
   "stopped_early": false,
   "summary": {
     "blog.conholdate.cloud": {

@@ -160,5 +160,11 @@
     "date": "2026-11-07 (2)",
     "label": "Site structure panel (tags, listing pages)",
     "runs": "discovery run 4, crawl audit run 10, speed audit run 12, AI audit run 11, text check run 13, link check run 14, repo file check run 15"
+  },
+  {
+    "file": "2026-11-11.html",
+    "date": "2026-11-11",
+    "label": "Full scan with the new checks (tag findings, translated URLs, junk redirect entries)",
+    "runs": "discovery run 5, crawl audit run 16, speed audit run 18, AI audit run 17, text check run 19, link check run 20, repo file check run 21"
   }
 ]

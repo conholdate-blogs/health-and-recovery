@@ -1,13 +1,13 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "crawl-audit",
-  "run_id": 10,
+  "run_id": 16,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
     ],
     "sections": null,
-    "inventory_run": 4,
+    "inventory_run": 5,
     "per_template": 2,
     "other_langs": 2,
     "max_per_host": null,
@@ -15,7 +15,7 @@
   },
   "canonical_targets": {},
   "requests": 16,
-  "duration_s": 15.6,
+  "duration_s": 15.5,
   "pages_planned": 15,
   "stopped_early": false,
   "summary": {
@@ -103,7 +103,7 @@
       "fix_tier": 2,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     },
     {
       "id": "onpage-0001",
@@ -188,7 +188,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     },
     {
       "id": "onpage-0002",
@@ -257,7 +257,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     },
     {
       "id": "intl-0001",
@@ -347,7 +347,7 @@
       "fix_tier": 2,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     },
     {
       "id": "onpage-0003",
@@ -436,7 +436,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     }
   ],
   "pages": [
@@ -458,7 +458,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 612,
+      "elapsed_ms": 788,
       "facts": {
         "titles": [
           "Conholdate Cloud Blog"
@@ -490,7 +490,8 @@
         "jsonld_types": [
           "BreadcrumbList"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -518,7 +519,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 425,
+      "elapsed_ms": 594,
       "facts": {
         "titles": [
           "File Format and Document Processing APIs | Conholdate Cloud"
@@ -636,7 +637,8 @@
         "jsonld_types": [
           "Organization"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -668,7 +670,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 523,
+      "elapsed_ms": 500,
       "facts": {
         "titles": [
           "Archive"
@@ -789,7 +791,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -825,7 +828,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 447,
+      "elapsed_ms": 445,
       "facts": {
         "titles": [
           "Excel Convert, Merge & Split API – Conholdate.Cloud"
@@ -946,7 +949,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -974,7 +978,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 626,
+      "elapsed_ms": 429,
       "facts": {
         "titles": [
           "Conholdate.Totals"
@@ -1006,7 +1010,8 @@
         "jsonld_types": [
           "BreadcrumbList"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1038,7 +1043,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 605,
+      "elapsed_ms": 672,
       "facts": {
         "titles": [
           "File Format and Document Processing APIs | Conholdate Cloud"
@@ -1156,7 +1161,8 @@
         "jsonld_types": [
           "Organization"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1188,7 +1194,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 776,
+      "elapsed_ms": 578,
       "facts": {
         "titles": [
           "Search"
@@ -1309,7 +1315,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1349,7 +1356,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 464,
+      "elapsed_ms": 428,
       "facts": {
         "titles": [
           "Insert PDF Headers and Footers using Conholdate.Cloud"
@@ -1470,7 +1477,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1498,7 +1506,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 467,
+      "elapsed_ms": 445,
       "facts": {
         "titles": [
           "Conholdate.Clouds"
@@ -1614,7 +1622,8 @@
         "jsonld_types": [
           "BreadcrumbList"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1642,7 +1651,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 566,
+      "elapsed_ms": 434,
       "facts": {
         "titles": [
           "File Format and Document Processing APIs | Conholdate Cloud"
@@ -1760,7 +1769,8 @@
         "jsonld_types": [
           "Organization"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1792,7 +1802,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 590,
+      "elapsed_ms": 399,
       "facts": {
         "titles": [
           "Archief"
@@ -1913,7 +1923,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -1949,7 +1960,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 567,
+      "elapsed_ms": 475,
       "facts": {
         "titles": [
           "Manipuluj plikami Excel za pomocą REST API | Konwertuj, scalaj, dziel Excel"
@@ -2070,7 +2081,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -2102,7 +2114,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 562,
+      "elapsed_ms": 757,
       "facts": {
         "titles": [
           "Conholdate.Clouds"
@@ -2218,7 +2230,8 @@
         "jsonld_types": [
           "BreadcrumbList"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -2246,7 +2259,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 515,
+      "elapsed_ms": 578,
       "facts": {
         "titles": [
           "검색"
@@ -2367,7 +2380,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
@@ -2407,7 +2421,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 532,
+      "elapsed_ms": 424,
       "facts": {
         "titles": [
           "Manipuleer PDF-documenten met de Conholdate.Cloud REST API"
@@ -2528,7 +2542,8 @@
           "BreadcrumbList",
           "BlogPosting"
         ],
-        "jsonld_invalid": 0
+        "jsonld_invalid": 0,
+        "body_head_tags": []
       },
       "ignored": null,
       "issues": [
