@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.com",
   "auditor": "ai-audit",
-  "run_id": 9,
+  "run_id": 17,
   "params": {
     "hosts": [
       "blog.conholdate.com"
@@ -61,7 +61,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     }
   ],
   "hosts": {
@@ -75,7 +75,7 @@
       "firewall": {
         "url": "https://blog.conholdate.com/",
         "baseline": 200,
-        "bytes": 31793,
+        "bytes": 31886,
         "blocked": {}
       },
       "llms": {

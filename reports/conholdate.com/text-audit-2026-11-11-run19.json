@@ -1,14 +1,14 @@
 {
   "tenant": "conholdate.com",
   "auditor": "text-audit",
-  "run_id": 11,
+  "run_id": 19,
   "params": {
     "hosts": [
       "blog.conholdate.com"
     ],
     "crawl_runs": [
-      6,
-      8
+      8,
+      16
     ],
     "model": "gpt-oss",
     "prompt_version": 2
@@ -74,7 +74,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     }
   ],
   "pages": [

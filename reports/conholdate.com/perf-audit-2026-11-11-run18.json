@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.com",
   "auditor": "perf-audit",
-  "run_id": 10,
+  "run_id": 18,
   "params": {
     "hosts": [
       "blog.conholdate.com"
@@ -12,7 +12,7 @@
     "max_pages": null
   },
   "requests": 12,
-  "duration_s": 38.6,
+  "duration_s": 42.1,
   "pages_planned": 12,
   "stopped_early": false,
   "incomplete": false,
@@ -20,11 +20,11 @@
     "blog.conholdate.com": {
       "id": "https://blog.conholdate.com",
       "metrics": {
-        "lcp": 2062,
-        "inp": 139,
+        "lcp": 1978,
+        "inp": 131,
         "cls": 0.1,
-        "fcp": 2089,
-        "ttfb": 962
+        "fcp": 1990,
+        "ttfb": 995
       }
     }
   },
@@ -35,7 +35,7 @@
       "not_loaded": 0,
       "field": 0,
       "issues": {},
-      "median_score": 80
+      "median_score": 74
     }
   },
   "findings": [],
@@ -53,29 +53,29 @@
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 72,
+      "lab_score": 67,
       "lab": {
-        "lcp": 6365.513071445399,
-        "tbt": 237,
+        "lcp": 6419.030907378472,
+        "tbt": 397.5,
         "cls": 0.07290400972053462,
-        "fcp": 789.5130714453995,
-        "si": 1547.220397070065
+        "fcp": 815.0309073784715,
+        "si": 1754.3995359025978
       },
       "savings": [
         [
           "Reduce unused JavaScript",
-          1170
+          1050
         ],
         [
           "Render-blocking requests",
-          150
+          100
         ]
       ],
       "final_url": "https://blog.conholdate.com/conholdate.total/",
@@ -97,29 +97,33 @@
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 68,
+      "lab_score": 67,
       "lab": {
-        "lcp": 5524.350411199512,
-        "tbt": 396,
+        "lcp": 6586.597976473623,
+        "tbt": 367,
         "cls": 0.07290400972053462,
-        "fcp": 1553.4383473990235,
-        "si": 2319.274058959773
+        "fcp": 1552.8789754472455,
+        "si": 2288.26810418456
       },
       "savings": [
+        [
+          "Reduce unused JavaScript",
+          1050
+        ],
         [
           "Render-blocking requests",
           1000
         ],
         [
-          "Reduce unused JavaScript",
-          600
+          "Use efficient cache lifetimes",
+          150
         ]
       ],
       "final_url": "https://blog.conholdate.com/de/conholdate.total/",
@@ -141,20 +145,20 @@
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 95,
+      "lab_score": 97,
       "lab": {
-        "lcp": 1550.8574254058021,
-        "tbt": 204,
+        "lcp": 1577.4880386154728,
+        "tbt": 115,
         "cls": 0.07290400972053462,
-        "fcp": 1550.8574254058021,
-        "si": 1971.6650401630886
+        "fcp": 1577.4880386154728,
+        "si": 2827.61529152818
       },
       "savings": [
         [
@@ -181,25 +185,25 @@
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 96,
+      "lab_score": 87,
       "lab": {
-        "lcp": 1554.4270169906413,
-        "tbt": 159.5,
+        "lcp": 1577.8216444133382,
+        "tbt": 460,
         "cls": 0.07290400972053462,
-        "fcp": 1554.4270169906413,
-        "si": 1799.7825508043206
+        "fcp": 1577.8216444133382,
+        "si": 1833.2608612908784
       },
       "savings": [
         [
           "Render-blocking requests",
-          1000
+          1050
         ]
       ],
       "final_url": "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
@@ -221,25 +225,25 @@
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 69,
+      "lab_score": 66,
       "lab": {
-        "lcp": 4992.607849236878,
-        "tbt": 444.5,
+        "lcp": 5092.706192363714,
+        "tbt": 521.5,
         "cls": 0.07290400972053462,
-        "fcp": 1527.5674734737538,
-        "si": 2125.29762268394
+        "fcp": 1551.3281897274292,
+        "si": 2174.2097238993892
       },
       "savings": [
         [
           "Render-blocking requests",
-          750
+          1050
         ],
         [
           "Reduce unused JavaScript",
@@ -265,20 +269,20 @@
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 69,
+      "lab_score": 64,
       "lab": {
-        "lcp": 6732.640284001876,
-        "tbt": 293.5000000000009,
+        "lcp": 6758.945528923714,
+        "tbt": 446.50000000000045,
         "cls": 0.07290400972053462,
-        "fcp": 1550.1624730037547,
-        "si": 2099.613437205435
+        "fcp": 1526.9903578474273,
+        "si": 1913.3633811517616
       },
       "savings": [
         [
@@ -287,7 +291,7 @@
         ],
         [
           "Render-blocking requests",
-          1000
+          750
         ],
         [
           "Use efficient cache lifetimes",
@@ -313,33 +317,29 @@
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 68,
+      "lab_score": 63,
       "lab": {
-        "lcp": 10328.625588978062,
-        "tbt": 313,
+        "lcp": 10677.695828084468,
+        "tbt": 460,
         "cls": 0,
-        "fcp": 1551.3635567252784,
-        "si": 1908.3260706871179
+        "fcp": 1527.7156126251,
+        "si": 2102.183071437437
       },
       "savings": [
         [
-          "Render-blocking requests",
-          1050
-        ],
-        [
           "Reduce unused JavaScript",
-          910
+          920
         ],
         [
-          "Use efficient cache lifetimes",
-          150
+          "Render-blocking requests",
+          750
         ]
       ],
       "final_url": "https://blog.conholdate.com/ar/search/",
@@ -361,29 +361,29 @@
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 59,
+      "lab_score": 72,
       "lab": {
-        "lcp": 7493.41072475152,
-        "tbt": 592.5,
+        "lcp": 7374.1029085237105,
+        "tbt": 179,
         "cls": 0.07290400972053462,
-        "fcp": 1676.0843116726373,
-        "si": 1732.018332377032
+        "fcp": 1695.8998405976595,
+        "si": 2117.799798213422
       },
       "savings": [
         [
           "Reduce unused JavaScript",
-          900
+          1050
         ],
         [
           "Render-blocking requests",
-          750
+          1050
         ]
       ],
       "final_url": "https://blog.conholdate.com/archives/",
@@ -398,27 +398,27 @@
       "section": "",
       "template": "post",
       "group_urls": 10026,
-      "clicks": 220.0,
+      "clicks": 217.0,
       "source": "search",
       "strategy": "mobile",
       "field": null,
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 85,
+      "lab_score": 83,
       "lab": {
-        "lcp": 1525.0395760698989,
-        "tbt": 298,
-        "cls": 0.17258034833482924,
-        "fcp": 1525.0395760698989,
-        "si": 1868.651782423839
+        "lcp": 1526.888458052822,
+        "tbt": 634.5,
+        "cls": 0.07290400972053462,
+        "fcp": 1526.888458052822,
+        "si": 2020.9890892658025
       },
       "savings": [
         [
@@ -438,27 +438,27 @@
       "section": "",
       "template": "post",
       "group_urls": 10026,
-      "clicks": 164.0,
+      "clicks": 143.0,
       "source": "search",
       "strategy": "mobile",
       "field": null,
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 80,
+      "lab_score": 74,
       "lab": {
-        "lcp": 1548.2681876598692,
-        "tbt": 319.5,
-        "cls": 0.2361976002430134,
-        "fcp": 1548.2681876598692,
-        "si": 1971.9644830742932
+        "lcp": 1525.3628597746986,
+        "tbt": 752,
+        "cls": 0.1703612090706891,
+        "fcp": 1525.3628597746986,
+        "si": 1797.132483833977
       },
       "savings": [
         [
@@ -485,20 +485,20 @@
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 82,
+      "lab_score": 93,
       "lab": {
-        "lcp": 1525.2663758158646,
-        "tbt": 661,
+        "lcp": 1528.028391699091,
+        "tbt": 276.5,
         "cls": 0.07290400972053462,
-        "fcp": 1525.2663758158646,
-        "si": 1845.6728123285757
+        "fcp": 1528.028391699091,
+        "si": 1798.3628539654658
       },
       "savings": [
         [
@@ -525,20 +525,20 @@
       "origin": {
         "id": "https://blog.conholdate.com",
         "metrics": {
-          "lcp": 2062,
-          "inp": 139,
+          "lcp": 1978,
+          "inp": 131,
           "cls": 0.1,
-          "fcp": 2089,
-          "ttfb": 962
+          "fcp": 1990,
+          "ttfb": 995
         }
       },
-      "lab_score": 93,
+      "lab_score": 90,
       "lab": {
-        "lcp": 1525.177451079201,
-        "tbt": 281.5,
+        "lcp": 1524.8896111836182,
+        "tbt": 353.5,
         "cls": 0.07290400972053462,
-        "fcp": 1525.177451079201,
-        "si": 1525.177451079201
+        "fcp": 1524.8896111836182,
+        "si": 1524.8896111836182
       },
       "savings": [
         [

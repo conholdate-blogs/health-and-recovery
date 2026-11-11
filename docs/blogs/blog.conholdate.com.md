@@ -45,7 +45,7 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | Step | What | State |
 |---|---|---|
 | A1–A5 | Scan improvements: ids with dates, junk redirect warning, translated-URL check, tag findings, Hugo version per blog | Done 11 Nov |
-| A6 | Full scan as the new starting point | Running 11 Nov |
+| A6 | Full scan as the new starting point | Done 11 Nov 14:50–14:56 (runs 3, 16–21); health 70 → 65 from the new checks (19 issue types, 952 open items); snapshot 2026-11-11-2 |
 | B1 | Junk redirect entries out | Waiting (approval) |
 | B2 | 15 translated URLs back + redirects | Waiting |
 | B3 | hreflang x-default | Waiting |
@@ -53,6 +53,15 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | B5 | Link fixes | Waiting (SK: agent directly or translation agent) |
 | B6 | Commit check on conholdate-blog + workflows | Waiting |
 | C | Re-scan, fix progress, snapshot | After B |
+
+## Scan 11 Nov (after A1–A5)
+
+| Check | Result |
+|---|---|
+| Junk redirect entries | 15: 11 non-English slugs (old French/Japanese/Chinese URLs, an Arabic Amazon path, an en dash), 3 double slashes, 1 fragment |
+| Translated URLs (intl-261111-1) | 15, all **French** posts from 2020–2022 with a French slug (e.g. `/fr/total/rechercher-un-mot-dans-pdf-en-utilisant-java/`); these 15 URLs earned 8 clicks, 1,838 impressions in 16 months |
+| Tag findings | crawl-261111-1 Thin tag pages (93% single-post tags), crawl-261111-2 Sitemaps list tag pages (43,584; score 16) |
+| Live redirect sample | 40 of 40 redirect |
 
 ## Learned here
 

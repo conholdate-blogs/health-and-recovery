@@ -74,22 +74,22 @@
     "affected_pages": 33,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 16,
+      "impressions_28d": 11,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 17,
+      "past_impressions": 26,
       "lost_clicks": 0,
-      "lost_impressions": 1,
+      "lost_impressions": 15,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "at stake",
-      "score": 1,
+      "score": 0,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "M",
@@ -100,7 +100,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run8",
+    "last_seen_run": "crawl-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "content_needs_js",
@@ -181,22 +181,22 @@
     "affected_pages": 3974,
     "impact": {
       "clicks_28d": 4,
-      "impressions_28d": 406,
+      "impressions_28d": 422,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 17,
-      "past_impressions": 782,
-      "lost_clicks": 13,
-      "lost_impressions": 376,
+      "past_clicks": 18,
+      "past_impressions": 774,
+      "lost_clicks": 14,
+      "lost_impressions": 352,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "lost",
       "score": 4,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -207,7 +207,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run8",
+    "last_seen_run": "crawl-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "no_structured_data",
@@ -239,23 +239,23 @@
     },
     "affected_pages": 0,
     "impact": {
-      "clicks_28d": 2906,
-      "impressions_28d": 137572,
+      "clicks_28d": 2805,
+      "impressions_28d": 140374,
       "source": "gsc-host",
       "share": 1.0,
-      "past_clicks": 5621,
-      "past_impressions": 162283,
-      "lost_clicks": 2715,
-      "lost_impressions": 24711,
+      "past_clicks": 5903,
+      "past_impressions": 165560,
+      "lost_clicks": 3098,
+      "lost_impressions": 25186,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "at stake",
-      "score": 15,
+      "score": 14,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -266,7 +266,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "ai-audit-run2",
-    "last_seen_run": "ai-audit-run9",
+    "last_seen_run": "ai-audit-run17",
     "resolved_run": null,
     "resolved_at": null,
     "check": "llms_txt_missing",
@@ -328,22 +328,22 @@
     "affected_pages": 36,
     "impact": {
       "clicks_28d": 2,
-      "impressions_28d": 92,
+      "impressions_28d": 94,
       "source": "gsc-host",
       "share": 0.001,
       "past_clicks": 4,
-      "past_impressions": 109,
+      "past_impressions": 111,
       "lost_clicks": 2,
       "lost_impressions": 17,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "at stake",
       "score": 5,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -354,7 +354,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "discovery-run1",
-    "last_seen_run": "discovery-run2",
+    "last_seen_run": "discovery-run3",
     "resolved_run": null,
     "resolved_at": null,
     "check": "dup_in_file",
@@ -433,23 +433,23 @@
     },
     "affected_pages": 2526,
     "impact": {
-      "clicks_28d": 41,
-      "impressions_28d": 4026,
+      "clicks_28d": 35,
+      "impressions_28d": 4172,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 170,
-      "past_impressions": 7818,
-      "lost_clicks": 129,
-      "lost_impressions": 3792,
+      "past_clicks": 177,
+      "past_impressions": 7718,
+      "lost_clicks": 142,
+      "lost_impressions": 3546,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "lost",
       "score": 27,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -460,7 +460,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run8",
+    "last_seen_run": "crawl-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "robots_blocked",
@@ -928,22 +928,22 @@
     "affected_pages": 81,
     "impact": {
       "clicks_28d": 11,
-      "impressions_28d": 495,
+      "impressions_28d": 451,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 4,
-      "past_impressions": 429,
+      "past_clicks": 5,
+      "past_impressions": 406,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "at stake",
       "score": 16,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "M",
@@ -954,7 +954,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run12",
+    "last_seen_run": "link-audit-run20",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -968,15 +968,69 @@
     "subdomain": "blog.conholdate.com",
     "template": "Redirects.json",
     "dimension": "crawl",
-    "type": "incorrect",
-    "title": "Redirect sources that can never match a request",
+    "type": "improvable",
+    "title": "Junk entries in Redirects.json",
     "evidence": {
       "urls": [
-        "https://blog.conholdate.com/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class、"
+        "https://blog.conholdate.com/2019/02/10/introducing-groupdocs.redaction-for-.net-–-an-api-to-redact-classified-content-in-documents/",
+        "https://blog.conholdate.com/total/view-z%E2%80%A6",
+        "https://blog.conholdate.com/ja/total/search-data-in-excel-using-java/盛んで",
+        "https://blog.conholdate.com/ja/total/search-data-in-excel-using-java/%E7%9B%9B%E3%82%93%E3%81%A7",
+        "https://blog.conholdate.com/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
+        "https://blog.conholdate.com/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class、",
+        "https://blog.conholdate.com//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+        "https://blog.conholdate.com/كرايون-لوجيتيك-لجميع-اصدارها-الاحدث/dp/B07H3HGVDW",
+        "https://blog.conholdate.com/categorieses//conholdate.total-product-family/",
+        "https://blog.conholdate.com/fr/2020/06/29/cr%C3%A9ez-votre-propre-application-google-docs-like-part-two/"
       ],
-      "observed": "1 entries or files; fragment in the key (#, never sent by browsers): 1",
-      "expected": "Every source is a path starting with /, percent-encoded",
+      "observed": "15 entries or files; non-English slug: 11, double slash: 3, fragment in the key (#, never sent by browsers): 1",
+      "expected": "Every source is a real blog URL: an English path starting with /, without a host, # fragment, {{ placeholder }}, double slash or non-English slug",
       "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/2019/02/10/introducing-groupdocs.redaction-for-.net-–-an-api-to-redact-classified-content-in-documents/",
+          "file": "Redirects.json",
+          "line": 1298,
+          "note": "non-English slug",
+          "fix": "https://blog.conholdate.com/total/redact-pdf-documents-using-csharp/",
+          "commit": "106b21ce 2023-01-12: Update Redirects.json"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/view-z%E2%80%A6",
+          "file": "Redirects.json",
+          "line": 1315,
+          "note": "non-English slug",
+          "fix": "https://blog.conholdate.com/",
+          "commit": "4f2c2858 2023-08-17: Redirections Added"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/search-data-in-excel-using-java/盛んで",
+          "file": "Redirects.json",
+          "line": 1335,
+          "note": "non-English slug",
+          "fix": "https://blog.conholdate.com/ja/total/search-data-in-excel-using-java/",
+          "commit": "fddb141c 2023-09-14: Fixed Broken Links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/search-data-in-excel-using-java/%E7%9B%9B%E3%82%93%E3%81%A7",
+          "file": "Redirects.json",
+          "line": 1339,
+          "note": "non-English slug",
+          "fix": "https://blog.conholdate.com/ja/total/search-data-in-excel-using-java/",
+          "commit": "fddb141c 2023-09-14: Fixed Broken Links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/convert-jpg-to-word//images/JPG-Image-to-Word.jpg",
+          "file": "Redirects.json",
+          "line": 1347,
+          "note": "double slash",
+          "fix": "https://blog.conholdate.com/total/convert-jpg-to-word/images/JPG-Image-to-Word.jpg",
+          "commit": "59bee26e 2023-10-02: Fixed Broken Links"
+        },
         {
           "role": "file",
           "url": "https://blog.conholdate.com/total/export-data-to-excel-in-java/%23:~:text=Create%2520an%2520instance%2520of%2520the%2520Workbook%2520class%2520Get,the%2520save%2520%2528%2529%2520method%2520of%2520the%2520Workbook%2520class、",
@@ -985,10 +1039,91 @@
           "note": "fragment in the key (#, never sent by browsers)",
           "fix": "https://blog.conholdate.com/",
           "commit": "a1c3218a 2023-10-13: Fixed Broken Links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com//total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+          "file": "Redirects.json",
+          "line": 1359,
+          "note": "double slash",
+          "fix": "https://blog.conholdate.com/total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+          "commit": "bbd9b4bf 2023-11-21: Broken Links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/كرايون-لوجيتيك-لجميع-اصدارها-الاحدث/dp/B07H3HGVDW",
+          "file": "Redirects.json",
+          "line": 1368,
+          "note": "non-English slug",
+          "fix": "https://blog.conholdate.com/",
+          "commit": "c1546280 2023-11-27: Broken Links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/categorieses//conholdate.total-product-family/",
+          "file": "Redirects.json",
+          "line": 1373,
+          "note": "double slash",
+          "fix": "https://blog.conholdate.com/es/categories/conholdate.total-product-family/",
+          "commit": "80a80101 2023-12-05: Optimization and Broken Links Fixes"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/2020/06/29/cr%C3%A9ez-votre-propre-application-google-docs-like-part-two/",
+          "file": "Redirects.json",
+          "line": 1390,
+          "note": "non-English slug",
+          "fix": "https://blog.conholdate.com/fr/total/cr%C3%A9ez-votre-propre-application-google-docs-like-part-two/",
+          "commit": "f10e8e6e 2023-12-28: Fixed Broken Links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/zh/tag/使用-csharp-添加-textfiled-注释/",
+          "file": "Redirects.json",
+          "line": 1402,
+          "note": "non-English slug",
+          "fix": "https://blog.conholdate.com/zh/total/annotate-jpg-images-using-csharp/",
+          "commit": "f10e8e6e 2023-12-28: Fixed Broken Links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/tag/g%C3%A9n%C3%A9rer-des-rapports-from-excel/",
+          "file": "Redirects.json",
+          "line": 1404,
+          "note": "non-English slug",
+          "fix": "https://blog.conholdate.com/fr/total/g%C3%A9n%C3%A9rer-des-rapports-%C3%A0-partir-de-donn%C3%A9es-excel-dans-csharp/",
+          "commit": "f10e8e6e 2023-12-28: Fixed Broken Links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/2022/03/29/rendre-pr%C3%A9sentation-powerpoint-en-utilisant-csharp/",
+          "file": "Redirects.json",
+          "line": 1415,
+          "note": "non-English slug",
+          "fix": "https://blog.conholdate.com/fr/total/rendre-pr%C3%A9sentation-powerpoint-en-utilisant-csharp/",
+          "commit": "f10e8e6e 2023-12-28: Fixed Broken Links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/tag/ajouter-des-m%C3%A9tadonn%C3%A9es-xmp-personnalis%C3%A9es/",
+          "file": "Redirects.json",
+          "line": 1427,
+          "note": "non-English slug",
+          "fix": "https://blog.conholdate.com/fr/tag/add-custom-xmp-metadata-csharp/",
+          "commit": "532c0fcc 2024-01-11: Fixed Broken Links"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/tag/fusionner-des-fichiers-docx-%C3%A0-laide-de-java/",
+          "file": "Redirects.json",
+          "line": 1429,
+          "note": "non-English slug",
+          "fix": "https://blog.conholdate.com/fr/total/merge-word-documents-using-java/",
+          "commit": "532c0fcc 2024-01-11: Fixed Broken Links"
         }
       ]
     },
-    "affected_pages": 1,
+    "affected_pages": 15,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -999,14 +1134,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -1017,7 +1152,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run15",
+    "last_seen_run": "repo-audit-run21",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",
@@ -1037,18 +1172,33 @@
       "urls": [
         "https://blog.conholdate.com/tags/"
       ],
-      "observed": "2,341 of 2,526 tags (93%) have one post; 43,602 tag pages in 18 languages; 5.0 tags per post; tag pages earned 45 of 2,906 clicks (28 days)",
+      "observed": "2,341 of 2,526 tags (93%) have one post; 43,602 tag pages in 18 languages; 5.0 tags per post; tag pages earned 39 of 2,805 clicks (28 days)",
       "expected": "Tags group several posts (at most 20% with one post); weak tag pages are noindex, follow and stay out of the sitemap",
       "traffic": {
-        "clicks": 45,
-        "impressions": 4432
+        "clicks": 39,
+        "impressions": 4594
       }
     },
     "affected_pages": 40409,
     "impact": {
-      "clicks_28d": 0,
-      "impressions_28d": 0,
-      "score": 0
+      "clicks_28d": 39,
+      "impressions_28d": 4594,
+      "source": "gsc-tag-pages",
+      "share": null,
+      "past_clicks": 39,
+      "past_impressions": 4594,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-13",
+        "2026-05-10"
+      ],
+      "scored_on": "at stake",
+      "score": 5,
+      "window": [
+        "2026-10-12",
+        "2026-11-08"
+      ]
     },
     "effort": "M",
     "fix_tier": 3,
@@ -1078,18 +1228,33 @@
       "urls": [
         "https://blog.conholdate.com/sitemap.xml"
       ],
-      "observed": "43,584 of 53,700 sitemap URLs (81%) are tag pages; tag pages earned 45 of 2,906 clicks (28 days)",
+      "observed": "43,584 of 53,700 sitemap URLs (81%) are tag pages; tag pages earned 39 of 2,805 clicks (28 days)",
       "expected": "Sitemaps list posts and real landing pages; tag pages stay out",
       "traffic": {
-        "clicks": 45,
-        "impressions": 4432
+        "clicks": 39,
+        "impressions": 4594
       }
     },
     "affected_pages": 43584,
     "impact": {
-      "clicks_28d": 0,
-      "impressions_28d": 0,
-      "score": 0
+      "clicks_28d": 39,
+      "impressions_28d": 4594,
+      "source": "gsc-tag-pages",
+      "share": null,
+      "past_clicks": 39,
+      "past_impressions": 4594,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-13",
+        "2026-05-10"
+      ],
+      "scored_on": "at stake",
+      "score": 15,
+      "window": [
+        "2026-10-12",
+        "2026-11-08"
+      ]
     },
     "effort": "S",
     "fix_tier": 3,
@@ -1198,23 +1363,23 @@
     },
     "affected_pages": 14072,
     "impact": {
-      "clicks_28d": 2865,
-      "impressions_28d": 133545,
+      "clicks_28d": 2770,
+      "impressions_28d": 136201,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 5451,
-      "past_impressions": 154453,
-      "lost_clicks": 2586,
-      "lost_impressions": 20908,
+      "past_clicks": 5726,
+      "past_impressions": 157834,
+      "lost_clicks": 2956,
+      "lost_impressions": 21633,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "at stake",
       "score": 14,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -1225,7 +1390,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run8",
+    "last_seen_run": "crawl-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "hreflang_no_xdefault",
@@ -1452,22 +1617,22 @@
     "affected_pages": 20,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 522,
+      "impressions_28d": 480,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 33,
+      "past_impressions": 29,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "at stake",
-      "score": 16,
+      "score": 15,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -1478,7 +1643,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run12",
+    "last_seen_run": "link-audit-run20",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -1919,22 +2084,22 @@
     "affected_pages": 54,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 23,
+      "impressions_28d": 27,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 81,
+      "past_impressions": 79,
       "lost_clicks": 0,
-      "lost_impressions": 58,
+      "lost_impressions": 52,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
-      "scored_on": "lost",
+      "scored_on": "at stake",
       "score": 2,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -1945,7 +2110,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run12",
+    "last_seen_run": "link-audit-run20",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -2706,22 +2871,22 @@
     "affected_pages": 374,
     "impact": {
       "clicks_28d": 15,
-      "impressions_28d": 974,
+      "impressions_28d": 964,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 13,
-      "past_impressions": 438,
+      "past_impressions": 429,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "at stake",
       "score": 20,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -2732,10 +2897,208 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run12",
+    "last_seen_run": "link-audit-run20",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
+    "notes": []
+  },
+  {
+    "id": "intl-261111-1",
+    "key": "intl/translated_url_mismatch/blog.conholdate.com/post",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "intl",
+    "type": "incorrect",
+    "title": "Translations published under a different URL than the English post",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/fr/total/créez-votre-propre-application-google-docs-like/",
+        "https://blog.conholdate.com/fr/total/créez-votre-propre-application-google-docs-like-part-two/",
+        "https://blog.conholdate.com/fr/total/offre-rabais-fin-bientôt/",
+        "https://blog.conholdate.com/fr/total/convertir-jpg-en-png-ou-pdf-en-csharp/",
+        "https://blog.conholdate.com/fr/total/générer-des-rapports-à-partir-de-données-excel-dans-csharp/",
+        "https://blog.conholdate.com/fr/total/rechercher-un-mot-dans-pdf-en-utilisant-java/",
+        "https://blog.conholdate.com/fr/total/annoter-les-images-jpg-avec-csharp/",
+        "https://blog.conholdate.com/fr/total/masquer-et-afficher-les-lignes-ou-les-colonnes-dans-excel-en-utilisant-csharp/",
+        "https://blog.conholdate.com/fr/total/comparer-deux-ou-plus-mot-documents-en-utilisant-csharp/",
+        "https://blog.conholdate.com/fr/total/extraire-texte-des-documents-word-en-utilisant-java/"
+      ],
+      "observed": "15 entries or files; own slug (translated or changed): 15",
+      "expected": "A translation's URL is the English post's URL with only its language prefix added",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/créez-votre-propre-application-google-docs-like/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/build-your-own-google-docs-like-app/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/créez-votre-propre-application-google-docs-like-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/build-your-own-google-docs-like-app-part-two/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/offre-rabais-fin-bientôt/",
+          "file": "content/Conholdate.Total/total/2021-01-01-discount-offer-ends-soon/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/discount-offer-ends-soon/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/convertir-jpg-en-png-ou-pdf-en-csharp/",
+          "file": "content/Conholdate.Total/total/2021-04-17-convert-jpg-to-png-or-pdf-in-csharp/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/convert-jpg-to-png-or-pdf-in-csharp/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/générer-des-rapports-à-partir-de-données-excel-dans-csharp/",
+          "file": "content/Conholdate.Total/total/2021-04-29-generate-reports-from-excel-data-in-csharp/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/generate-reports-from-excel-data-in-csharp/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/rechercher-un-mot-dans-pdf-en-utilisant-java/",
+          "file": "content/Conholdate.Total/total/2021-05-11-search-for-a-word-in-pdf-using-java/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/search-for-a-word-in-pdf-using-java/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/annoter-les-images-jpg-avec-csharp/",
+          "file": "content/Conholdate.Total/total/2021-07-13-annotate-jpg-images-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/annotate-jpg-images-using-csharp/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/masquer-et-afficher-les-lignes-ou-les-colonnes-dans-excel-en-utilisant-csharp/",
+          "file": "content/Conholdate.Total/total/2021-09-28-hide-and-show-rows-or-columns-in-excel-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/hide-and-show-rows-or-columns-in-excel-using-csharp/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/comparer-deux-ou-plus-mot-documents-en-utilisant-csharp/",
+          "file": "content/Conholdate.Total/total/2021-10-01-compare-two-or-more-word-documents-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/compare-two-or-more-word-documents-using-csharp/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/extraire-texte-des-documents-word-en-utilisant-java/",
+          "file": "content/Conholdate.Total/total/2021-10-13-extract-text-from-word-documents-using-java/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/extract-text-from-word-documents-using-java/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/ajouter-texte-ou-image-filigranes-dans-word-documents-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-10-22-add-text-or-image-watermarks-in-word-documents-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/add-text-or-image-watermarks-in-word-documents-using-csharp/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/recadrer-et-redimensionner-les-images-jpeg-en-utilisant-csharp/",
+          "file": "content/Conholdate.Total/total/2022-01-05-crop-and-resize-jpeg-images-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/crop-and-resize-jpeg-images-using-csharp/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/appliquer-les-formules-les-plus-utilisees-dans-excel-en-utilisant-csharp/",
+          "file": "content/Conholdate.Total/total/2022-01-20-apply-the-most-used-formulas-in-excel-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/apply-the-most-used-formulas-in-excel-using-csharp/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/rendre-présentation-powerpoint-en-utilisant-csharp/",
+          "file": "content/Conholdate.Total/total/2022-03-29-render-powerpoint-presentation-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/render-powerpoint-presentation-using-csharp/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/extraire-texte-et-images-des-documents-pdf-en-utilisant-java/",
+          "file": "content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.fr.md",
+          "line": 1,
+          "note": "own slug (translated or changed)",
+          "fix": "/fr/total/extract-text-and-images-from-pdf-documents-using-java/",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        }
+      ]
+    },
+    "affected_pages": 15,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 16,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 9,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-13",
+        "2026-05-10"
+      ],
+      "scored_on": "at stake",
+      "score": 1,
+      "window": [
+        "2026-10-12",
+        "2026-11-08"
+      ]
+    },
+    "effort": "M",
+    "fix_tier": 3,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-11",
+    "first_seen_run": "repo-audit-run21",
+    "last_seen_run": "repo-audit-run21",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "translated_url_mismatch",
     "notes": []
   },
   {
@@ -2835,23 +3198,23 @@
     },
     "affected_pages": 6325,
     "impact": {
-      "clicks_28d": 654,
-      "impressions_28d": 30691,
+      "clicks_28d": 632,
+      "impressions_28d": 31299,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 1253,
-      "past_impressions": 35754,
-      "lost_clicks": 599,
-      "lost_impressions": 5063,
+      "past_clicks": 1316,
+      "past_impressions": 36537,
+      "lost_clicks": 684,
+      "lost_impressions": 5238,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "at stake",
       "score": 12,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -2862,7 +3225,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run8",
+    "last_seen_run": "crawl-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -2929,22 +3292,22 @@
     "affected_pages": 18,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 14,
+      "impressions_28d": 12,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 1,
-      "past_impressions": 38,
+      "past_impressions": 55,
       "lost_clicks": 1,
-      "lost_impressions": 24,
+      "lost_impressions": 43,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -2955,7 +3318,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run8",
+    "last_seen_run": "crawl-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -3012,22 +3375,22 @@
     "affected_pages": 12,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 5,
+      "impressions_28d": 4,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 13,
+      "past_impressions": 18,
       "lost_clicks": 0,
-      "lost_impressions": 8,
+      "lost_impressions": 14,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
-      "scored_on": "at stake",
+      "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "M",
@@ -3038,7 +3401,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run8",
+    "last_seen_run": "crawl-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_duplicate",
@@ -3122,23 +3485,23 @@
     },
     "affected_pages": 1403,
     "impact": {
-      "clicks_28d": 390,
-      "impressions_28d": 18170,
+      "clicks_28d": 377,
+      "impressions_28d": 18524,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 741,
-      "past_impressions": 20969,
-      "lost_clicks": 351,
-      "lost_impressions": 2799,
+      "past_clicks": 778,
+      "past_impressions": 21438,
+      "lost_clicks": 401,
+      "lost_impressions": 2914,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "at stake",
       "score": 11,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -3149,7 +3512,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run8",
+    "last_seen_run": "crawl-audit-run16",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -3196,14 +3559,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-08",
-        "2026-05-05"
+        "2026-04-13",
+        "2026-05-10"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-07",
-        "2026-11-03"
+        "2026-10-12",
+        "2026-11-08"
       ]
     },
     "effort": "S",
@@ -3214,7 +3577,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "text-audit-run4",
-    "last_seen_run": "text-audit-run11",
+    "last_seen_run": "text-audit-run19",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_topic_mismatch",

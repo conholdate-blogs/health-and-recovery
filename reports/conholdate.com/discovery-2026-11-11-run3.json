@@ -1,6 +1,6 @@
 {
   "tenant": "conholdate.com",
-  "run_id": 2,
+  "run_id": 3,
   "hosts": {
     "blog.conholdate.com": {
       "robots": {
@@ -441,7 +441,7 @@
     "max_sitemaps": null
   },
   "requests": 20,
-  "duration_s": 53.4,
+  "duration_s": 51.9,
   "not_fetched": [],
   "findings": [
     {
@@ -506,7 +506,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     }
   ],
   "items": {

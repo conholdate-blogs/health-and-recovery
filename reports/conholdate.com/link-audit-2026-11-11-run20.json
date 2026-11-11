@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.com",
   "auditor": "link-audit",
-  "run_id": 12,
+  "run_id": 20,
   "params": {
     "hosts": [
       "blog.conholdate.com"
@@ -15,8 +15,8 @@
   "summary": {
     "blog.conholdate.com": {
       "repo": {
-        "commit": "f05b0114",
-        "date": "2026-11-05",
+        "commit": "9cc26f48",
+        "date": "2026-11-11",
         "stale": false
       },
       "posts": 10062,
@@ -263,7 +263,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     },
     {
       "id": "intl-0002",
@@ -706,7 +706,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     },
     {
       "id": "intl-0003",
@@ -1469,7 +1469,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     },
     {
       "id": "crawl-0001",
@@ -1939,20 +1939,20 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-06"
+      "detected_at": "2026-11-11"
     }
   ],
   "hosts": {
     "blog.conholdate.com": {
       "repo": {
         "path": "/Users/Apple/Work/Aspose/GitHub/blog.conholdate.com-PROD/conholdate-blog",
-        "commit": "f05b0114",
-        "date": "2026-11-05",
-        "subject": "Translate articles for: \"Visio to Word Conversion in Java\" - (17 files)",
-        "age_days": 1.3,
+        "commit": "9cc26f48",
+        "date": "2026-11-11",
+        "subject": "Redirects.json: remove all 6 {{ revealButtonHref }} entries",
+        "age_days": 0.1,
         "stale": false
       },
-      "discovery_run": 2,
+      "discovery_run": 3,
       "sitemap_paths": 53368,
       "posts": 10062,
       "posts_without_url": [],
