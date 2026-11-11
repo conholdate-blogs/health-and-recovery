@@ -495,14 +495,15 @@ _ROWS = [
      "Old URLs in backlinks, bookmarks and search results hit a dead end, and the value of those links is lost.",
      "Make the file valid first, then check how the edge function loads it (a parse failure, a failed deploy).",
      "Sampled sources answer with a redirect; next repo check has no finding."),
-    ("redirect_key_malformed", "Repo files", "Malformed redirect source",
-     "A key that a request can never match: a host or scheme in the key, unencoded {{ template text }}, or a # "
-     "fragment (browsers never send it). Keys are paths starting with /; text with spaces or braces must be "
-     "percent-encoded (a double slash is fine).",
-     "The redirect silently does nothing, and it hides that the broken URL is still broken.",
-     "Rewrite the key as a path, or remove it. {{ revealButtonHref }} is GitHub's gist placeholder that crawlers "
-     "harvest: remove `.gist template` from the page instead of adding redirects.",
-     "No listed key remains; next repo check has no finding."),
+    ("redirect_key_malformed", "Repo files", "Junk redirect entry",
+     "A source that is not a real blog URL: GitHub's {{ revealButtonHref }} gist placeholder, a host in the key, a # "
+     "fragment, a double slash or a non-English slug. Real post URLs are English; a translation only adds its "
+     "language prefix.",
+     "Junk entries do nothing useful (several can never match) and hide the real problem: a bad link somewhere "
+     "keeps producing these URLs. A 404 is the right answer for a URL that never existed.",
+     "Remove the entry and fix what produced the URL: for the gist placeholder remove `.gist template` from the "
+     "page (footer script); for a double slash or a translated slug fix the link or the post's url.",
+     "No listed entry remains; next repo check has no finding."),
     ("redirect_self_loop", "Repo files", "Self-redirect",
      "A redirect's target is its own source.",
      "Browsers and crawlers can loop until they give up, on a page that may otherwise work.",

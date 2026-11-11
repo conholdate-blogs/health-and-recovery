@@ -62,7 +62,7 @@ def test_invalid_redirects_and_bad_keys_fail(tmp_path):
     assert res.failed
     assert set(res.items) == {"redirects_invalid", "redirect_key_malformed", "redirect_target_bad",
                               "redirect_self_loop"}
-    assert "raw template text" in res.items["redirect_key_malformed"][0]
+    assert "gist placeholder" in res.items["redirect_key_malformed"][0]
     assert res.levels["redirect_key_malformed"] == cc.WARN  # dead entry, not an outage
     gate, _ = run(repo, deploy=True)  # deploy gate: the file is not deployed, so nothing about it blocks
     assert set(gate.items) == set(res.items) and not gate.failed
@@ -128,5 +128,7 @@ def test_unbalanced_shortcode_in_english_fails(tmp_path):
 def test_key_problem():
     assert cc.key_problem("/ok/path/") is None
     assert cc.key_problem("blog.example.com/x") == "host or scheme in the key"
-    assert cc.key_problem("/x//y") is None and cc.key_problem("//x/") is None  # redirects fine (live test)
+    assert cc.key_problem("/x//y") == cc.key_problem("//x/") == "double slash"  # redirects, but junk
+    assert cc.key_problem("/2017/07/02/2017年7月/") == "non-English slug"
+    assert cc.key_problem("/p/%7B%7B%20revealButtonHref%20%7D%7D").startswith("gist placeholder")
     assert cc.key_problem("/x/%23:~:text=y").startswith("fragment")

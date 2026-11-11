@@ -37,6 +37,7 @@ import tarfile
 import tempfile
 from collections import defaultdict
 from pathlib import Path
+from urllib.parse import unquote
 
 import yaml
 from selectolax.lexbor import LexborHTMLParser
@@ -64,7 +65,7 @@ TITLE = {
     "seo_tag_missing": "Page without <title> or canonical in <head>",
     "config_invalid": "Hugo config does not parse",
     "redirects_invalid": "Redirects.json is not valid JSON",
-    "redirect_key_malformed": "New redirect source can never match a request",
+    "redirect_key_malformed": "New junk entry in Redirects.json",
     "redirect_target_bad": "New redirect target empty or not https",
     "redirect_self_loop": "New redirect points at itself",
     "front_matter_broken": "Changed post: front matter does not parse",
@@ -136,13 +137,19 @@ class Result:
 
 
 def key_problem(key: str) -> str | None:
-    if "{{" in key or "}}" in key:
-        return "raw template text {{ }}"
+    """Why a redirect source is a junk entry (same rule as the repo check, SK 2026-11-11: no redirect for junk URLs;
+    post URLs are English and translations only add a language prefix)."""
+    if "{{" in unquote(key) or "revealbuttonhref" in key.lower():
+        return "gist placeholder {{ revealButtonHref }}"
     if not key.startswith("/"):
         return "host or scheme in the key"
     if "#" in key or "%23" in key.lower():
         return "fragment in the key (#, never sent by browsers)"
-    return None  # a double slash is fine: such keys answer 301 on all six blogs (live test 2026-11-11)
+    if "//" in key:
+        return "double slash"
+    if re.search(r"[^\x00-\x7f]", unquote(key)):
+        return "non-English slug"
+    return None
 
 
 def json_error(text: str) -> str | None:

@@ -79,11 +79,15 @@ def test_report_counts_every_repo_run_of_the_latest_day(tmp_path):
 
 
 def test_key_problem():
-    assert key_problem("/ok/%7B%7B%20t%20%7D%7D") is None and key_problem("/ok/") is None
-    assert key_problem("/a/{{ t }}") == "unencoded template text"
+    # junk entries (SK, 2026-11-11): no redirect for URLs that are not real blog URLs
+    assert key_problem("/ok/") is None and key_problem("/2021/09/10/convert-html-to-pdf-using-java") is None
+    assert key_problem("/a/{{ revealButtonHref }}").startswith("gist placeholder")
+    assert key_problem("/a/%7B%7B%20revealButtonHref%20%7D%7D").startswith("gist placeholder")  # encoded too
     assert key_problem("blog.example.com/a/") == key_problem("http://blog.example.com/a") == "host or scheme in the key"
-    assert key_problem("//a/") is None and key_problem("/a//b/") is None  # double slash redirects fine (live)
     assert key_problem("/a/%23:~:text=x").startswith("fragment") and key_problem("/a/#b").startswith("fragment")
+    assert key_problem("//a/") == key_problem("/a//b/") == "double slash"  # it redirects, but is junk
+    assert key_problem("/2017/07/02/2017年7月aspose/") == "non-English slug"
+    assert key_problem("/fr/total/cr%C3%A9ez-votre-application/") == "non-English slug"  # encoded too
 
 
 def test_invalid_file_is_still_read_line_by_line():

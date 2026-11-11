@@ -20,7 +20,7 @@ import subprocess
 import time
 from collections import Counter
 from pathlib import Path
-from urllib.parse import quote, urlsplit
+from urllib.parse import quote, unquote, urlsplit
 
 import yaml
 
@@ -35,6 +35,7 @@ _LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 _PAIR = re.compile(r'^\s*"((?:[^"\\]|\\.)*)"\s*:\s*"((?:[^"\\]|\\.)*)"')
 _FM = re.compile(r"\A---[ \t]*\n(.*?)\n---[ \t]*(?:\n|\Z)", re.S)
 _NAME = re.compile(r"^index(?:\.[A-Za-z]{2,3}(?:-[A-Za-z]+)?)?\.md$")
+_NON_ASCII = re.compile(r"[^\x00-\x7f]")
 
 # check -> (dimension, type, title, expected, fix_tier, effort)
 CHECKS = {
@@ -42,8 +43,11 @@ CHECKS = {
                               "Redirects.json parses as JSON, checked before every merge", 1, "S"),
     "redirect_not_working": ("crawl", "broken", "Redirects in Redirects.json do not work on the live site",
                              "Every well-formed source answers with a redirect to its target", 3, "M"),
-    "redirect_key_malformed": ("crawl", "incorrect", "Redirect sources that can never match a request",
-                               "Every source is a path starting with /, percent-encoded", 1, "S"),
+    # Internal name kept (finding keys and ledger items stay); since 2026-11-11 it covers every junk entry (SK's rule:
+    # no redirect for junk URLs; every post URL is English, translations only add a language prefix).
+    "redirect_key_malformed": ("crawl", "improvable", "Junk entries in Redirects.json",
+                               "Every source is a real blog URL: an English path starting with /, without a host, "
+                               "# fragment, {{ placeholder }}, double slash or non-English slug", 1, "S"),
     "redirect_self_loop": ("crawl", "incorrect", "Redirects that point at themselves",
                            "A redirect's target differs from its source", 1, "S"),
     "redirect_target_bad": ("crawl", "improvable", "Redirect targets that are empty or not https",
@@ -56,15 +60,21 @@ CHECKS = {
 
 
 def key_problem(key: str) -> str | None:
-    """Why a redirect source can never match a request's path, or None."""
-    if "{{" in key:
-        return "unencoded template text"
+    """Why a redirect source is a junk entry, or None (SK, 2026-11-11: junk URLs get no redirect).
+
+    Some can never match a request (placeholder, host, fragment); the others may still redirect (a double slash
+    answers 301 on every blog; non-ASCII slugs do on some), but no real blog URL looks like that. Junk entries are
+    left out of the live redirect sample, so redirect_not_working measures real redirects only."""
+    if "{{" in unquote(key) or "revealbuttonhref" in key.lower():  # raw or percent-encoded
+        return "gist placeholder {{ revealButtonHref }}"
     if not key.startswith("/"):
         return "host or scheme in the key"
     if "#" in key or "%23" in key.lower():
         return "fragment in the key (#, never sent by browsers)"  # e.g. a copied #:~:text= scroll-to-text link
-    # A double slash is NOT a problem: such keys answer 301 on all six blogs (live test 2026-11-11, e.g.
-    # blog.conholdate.com//total/...). Counted as broken until then: 46 false issues on four blogs.
+    if "//" in key:
+        return "double slash"
+    if _NON_ASCII.search(unquote(key)):
+        return "non-English slug"
     return None
 
 
