@@ -55,6 +55,19 @@ so Open Graph / Twitter / JSON-LD in `<body>` went unreported here and on blog.c
 **Oddity (not fixed):** `/<lang>/conholdate.cloud/` section pages (22 languages) have no English translation linked,
 so they get no `en` hreflang and no x-default.
 
+## Tags and Redirects.json reviewed (SK's questions, 11 Nov)
+
+- **Tags:** 5 English posts (3 PDF, 1 HTML, 1 Excel), 27 tags, each on one post; tags are copied unchanged into
+  every translation. Best possible sharing: "PDF" 3 posts, "Conversion" 3, the rest 1, and a tag on all 5 would just
+  repeat the home page. Search Console since Jul 2025: tag pages 1 click, ~150 impressions, mostly position 30–110,
+  and they compete with the posts (e.g. `/sv/tag/html-to-jpg/` 35 impressions at 15 vs its post 1). Two categories
+  mean the same thing: "Conholdate.Total Product Family" (4 posts) and "Conholdate.Total Cloud Product Family" (1).
+- **Redirects.json:** all 4 entries came with the initial commit (b6056d6, 2025-07-14), copied from a WordPress-era
+  template; this blog has been Hugo since launch. No internal links to `/tag/`, `/category`, `/feed`; no Search
+  Console page for them since Jul 2025. `/tag/` has a purpose (term pages live at `/tag/<x>/`, the list at
+  `/tags/`); `/category` and `/feed(/)` never existed here (and `/feed` sends a feed reader to an HTML page).
+- Also seen: `/search/` and `/<lang>/archives/` get impressions (thin utility pages, for later).
+
 ## Fixes
 
 | # | Fix | State |
