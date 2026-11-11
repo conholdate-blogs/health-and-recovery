@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "link-audit",
-  "run_id": 32,
+  "run_id": 38,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
@@ -15,7 +15,7 @@
   "summary": {
     "blog.conholdate.cloud": {
       "repo": {
-        "commit": "d0a4811",
+        "commit": "f672a2f",
         "date": "2026-11-11",
         "stale": false
       },
@@ -35,14 +35,14 @@
     "blog.conholdate.cloud": {
       "repo": {
         "path": "/Users/Apple/Work/Aspose/GitHub/blog.conholdate.cloud-PROD/blog.conholdate.cloud",
-        "commit": "d0a4811",
+        "commit": "f672a2f",
         "date": "2026-11-11",
-        "subject": "Blog name in the home H1 and section titles: 'Conholdate Cloud', not 'Conholdate.Cloud' (SK)",
+        "subject": "llms.txt: category link named like the category (Product Family)",
         "age_days": 0.0,
         "stale": false
       },
-      "discovery_run": 7,
-      "sitemap_paths": 185,
+      "discovery_run": 8,
+      "sitemap_paths": 139,
       "posts": 93,
       "posts_without_url": [],
       "links": 141,

@@ -93,5 +93,44 @@
   "fixed": "2026-11-11",
   "verified": "2026-11-11",
   "result": "Live: one H1 ('Conholdate Cloud Blog', localized) and a one-line intro on every home page, in a compact block; checked on desktop and at 390 px"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "found": "2026-10-20",
+  "check": "content_needs_js",
+  "issue": "/search/ and /archives/ (23 languages each) were indexable and in every sitemap, though utility pages: the search page has almost no text without JavaScript, both had one-word titles and descriptions",
+  "commits": [
+   "bc3530d30ed21ecfc26df068575a4bcd953674b3"
+  ],
+  "result": "Live: the 46 pages answer noindex, follow and are out of the sitemaps; re-scan resolved ai-0001"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "found": "2026-10-20",
+  "check": "title_length",
+  "issue": "19 post titles over 70 and 26 descriptions over 170 characters; the Excel post's 22 translations still carried an outdated title and description",
+  "commits": [
+   "16b6a14f4535a00e5df7701a96f0e827548b0a2d"
+  ],
+  "result": "Live: every post title 10-70 and description 50-170 characters (all 93 files); Excel translations follow the current English; re-scan resolved onpage-0001 and onpage-0003"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-11",
+  "verified": "2026-11-11",
+  "found": "2026-10-20",
+  "check": "llms_txt_missing",
+  "issue": "No llms.txt for AI assistants",
+  "commits": [
+   "4cf4ed848da1212ba8a27dfd05bdd58092cae9e8"
+  ],
+  "result": "Live: /llms.txt with a summary and the 5 articles (all links 200); re-scan resolved ai-0002"
  }
 ]

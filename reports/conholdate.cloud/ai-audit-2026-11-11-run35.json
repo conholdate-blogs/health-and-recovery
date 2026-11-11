@@ -1,0 +1,61 @@
+{
+  "tenant": "conholdate.cloud",
+  "auditor": "ai-audit",
+  "run_id": 35,
+  "params": {
+    "hosts": [
+      "blog.conholdate.cloud"
+    ]
+  },
+  "requests": 18,
+  "duration_s": 17.1,
+  "stopped_early": false,
+  "summary": {
+    "blog.conholdate.cloud": {
+      "robots": 200,
+      "answer_blocked": [],
+      "training_blocked": [],
+      "firewall_blocked": {},
+      "firewall_training": {},
+      "llms": {
+        "state": "ok",
+        "note": "7 links, 1,428 characters",
+        "url": "https://blog.conholdate.cloud/llms.txt"
+      },
+      "sections": 0,
+      "sections_covered": 0,
+      "section_files": []
+    }
+  },
+  "findings": [],
+  "hosts": {
+    "blog.conholdate.cloud": {
+      "robots": {
+        "status": 200,
+        "error": null,
+        "answer_blocked": {},
+        "training_blocked": {}
+      },
+      "firewall": {
+        "url": "https://blog.conholdate.cloud/",
+        "baseline": 200,
+        "bytes": 23264,
+        "blocked": {}
+      },
+      "llms": {
+        "url": "https://blog.conholdate.cloud/llms.txt",
+        "state": "ok",
+        "note": "7 links, 1,428 characters",
+        "links": [
+          "https://blog.conholdate.cloud/total/insert-header-footer-in-pdf/",
+          "https://blog.conholdate.cloud/total/merge-pdf-documents-using-java-cloud-api/",
+          "https://blog.conholdate.cloud/total/manipulate-excel-spreadsheets/",
+          "https://blog.conholdate.cloud/total/convert-html-files/",
+          "https://blog.conholdate.cloud/total/manipulate-pdf-documents/",
+          "https://blog.conholdate.cloud/sitemap.xml",
+          "https://blog.conholdate.cloud/categories/conholdate.total-cloud-product-family/"
+        ]
+      }
+    }
+  }
+}

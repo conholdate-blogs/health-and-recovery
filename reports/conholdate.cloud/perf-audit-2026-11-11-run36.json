@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "perf-audit",
-  "run_id": 30,
+  "run_id": 36,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
@@ -12,7 +12,7 @@
     "max_pages": null
   },
   "requests": 8,
-  "duration_s": 27.1,
+  "duration_s": 25.7,
   "pages_planned": 8,
   "stopped_early": false,
   "incomplete": false,
@@ -24,7 +24,7 @@
       "not_loaded": 0,
       "field": 0,
       "issues": {},
-      "median_score": 86
+      "median_score": 83
     }
   },
   "findings": [],
@@ -40,13 +40,13 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 70,
+      "lab_score": 79,
       "lab": {
-        "lcp": 5607.85239943722,
-        "tbt": 152.33907735930507,
+        "lcp": 5239.241094931358,
+        "tbt": 113.5,
         "cls": 0,
-        "fcp": 3388.1742447186098,
-        "si": 3716.547449250789
+        "fcp": 1527.508069931358,
+        "si": 1646.5431599351518
       },
       "savings": [
         [
@@ -54,12 +54,12 @@
           750
         ],
         [
-          "Use efficient cache lifetimes",
-          450
+          "Render-blocking requests",
+          750
         ],
         [
-          "Improve image delivery",
-          300
+          "Use efficient cache lifetimes",
+          600
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/conholdate.cloud/",
@@ -79,13 +79,13 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 86,
+      "lab_score": 83,
       "lab": {
-        "lcp": 3210.33420272461,
-        "tbt": 34,
+        "lcp": 3265.2647924688513,
+        "tbt": 46,
         "cls": 0,
-        "fcp": 3210.33420272461,
-        "si": 3924.299577078308
+        "fcp": 3265.2647924688513,
+        "si": 4954.822102083142
       },
       "savings": [
         [
@@ -110,26 +110,22 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 78,
+      "lab_score": 69,
       "lab": {
-        "lcp": 5196.074562457289,
-        "tbt": 155,
+        "lcp": 5474.44668551642,
+        "tbt": 93.5,
         "cls": 0,
-        "fcp": 1549.5160424572887,
-        "si": 1766.6157310326362
+        "fcp": 3330.48316650821,
+        "si": 5037.692446774375
       },
       "savings": [
         [
-          "Render-blocking requests",
-          1050
-        ],
-        [
           "Reduce unused JavaScript",
-          750
+          600
         ],
         [
-          "Use efficient cache lifetimes",
-          450
+          "Render-blocking requests",
+          150
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/",
@@ -149,22 +145,22 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 80,
+      "lab_score": 73,
       "lab": {
-        "lcp": 4784.116088956638,
-        "tbt": 157,
+        "lcp": 4897.359113433175,
+        "tbt": 139,
         "cls": 0,
-        "fcp": 1557.2332489566375,
-        "si": 2116.8225153869453
+        "fcp": 3330.089109216587,
+        "si": 3555.4709444192636
       },
       "savings": [
         [
-          "Render-blocking requests",
-          1050
+          "Reduce unused JavaScript",
+          600
         ],
         [
-          "Reduce unused JavaScript",
-          750
+          "Render-blocking requests",
+          300
         ],
         [
           "Use efficient cache lifetimes",
@@ -188,13 +184,13 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 98,
+      "lab_score": 100,
       "lab": {
-        "lcp": 1528.7511078800494,
-        "tbt": 141.5,
+        "lcp": 1527.5795444159567,
+        "tbt": 47,
         "cls": 0,
-        "fcp": 1528.7511078800494,
-        "si": 1560.8937094810087
+        "fcp": 1527.5795444159567,
+        "si": 1527.5795444159567
       },
       "savings": [
         [
@@ -219,22 +215,26 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 78,
+      "lab_score": 81,
       "lab": {
-        "lcp": 4880.4602594319795,
-        "tbt": 203,
+        "lcp": 4999.221190437634,
+        "tbt": 95,
         "cls": 0,
-        "fcp": 1547.263609431979,
-        "si": 2165.570994859942
+        "fcp": 1527.519040437634,
+        "si": 1527.519040437634
       },
       "savings": [
         [
           "Render-blocking requests",
-          1000
+          750
         ],
         [
           "Reduce unused JavaScript",
           600
+        ],
+        [
+          "Use efficient cache lifetimes",
+          150
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/ko/search/",
@@ -254,18 +254,18 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 98,
+      "lab_score": 99,
       "lab": {
-        "lcp": 1525.147497413175,
-        "tbt": 128,
+        "lcp": 1554.2492959384156,
+        "tbt": 27,
         "cls": 0,
-        "fcp": 1525.147497413175,
-        "si": 1804.4164292039936
+        "fcp": 1554.2492959384156,
+        "si": 2186.93447143456
       },
       "savings": [
         [
           "Render-blocking requests",
-          750
+          1050
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/fa/total/insert-header-footer-in-pdf/",
@@ -285,18 +285,18 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 99,
+      "lab_score": 100,
       "lab": {
-        "lcp": 1549.4314319871266,
-        "tbt": 27,
+        "lcp": 1524.1613789345304,
+        "tbt": 36,
         "cls": 0,
-        "fcp": 1549.4314319871266,
-        "si": 1833.3164287914592
+        "fcp": 1524.1613789345304,
+        "si": 1708.253847427427
       },
       "savings": [
         [
           "Render-blocking requests",
-          1050
+          750
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/nl/total/manipulate-pdf-documents/",

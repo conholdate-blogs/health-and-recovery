@@ -17,7 +17,7 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 
 ## Start here (session handoff, 2026-11-11, evening)
 
-**blog.conholdate.cloud: scanned and fixed (11 Nov), health 84 → 94.** Details in
+**blog.conholdate.cloud: scanned and fixed (11 Nov), health 84 → 94 → 100** (0 open findings; later fixes: titles/descriptions in range, `/search/` + `/archives/` noindex and out of sitemaps, `llms.txt`; 10 agent-fixes rows). Details in
 [docs/blogs/blog.conholdate.cloud.md](docs/blogs/blog.conholdate.cloud.md). 10 blog commits pushed with SK's
 approval and deployed (d194619 … d0a4811): head order (OG/Twitter/JSON-LD back in `<head>`), x-default, tag pages
 `noindex, follow` + robots.txt unblocked, Redirects.json (SK's 3 entries; **applies live on this blog**), one category,

@@ -172,5 +172,11 @@
     "date": "2026-11-11 (2)",
     "label": "Fixes live: head order, x-default, tag noindex, one category, Arabic links, home H1 (agent fixes)",
     "runs": "discovery run 7, crawl audit run 28, speed audit run 30, AI audit run 29, text check run 31, link check run 32, repo file check run 33"
+  },
+  {
+    "file": "2026-11-11-3.html",
+    "date": "2026-11-11 (3)",
+    "label": "Health 100: titles and descriptions, search/archive noindex, llms.txt (agent fixes)",
+    "runs": "discovery run 8, crawl audit run 34, speed audit run 36, AI audit run 35, text check run 37, link check run 38, repo file check run 39"
   }
 ]

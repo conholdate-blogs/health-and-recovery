@@ -168,5 +168,28 @@
     }
    }
   }
+ },
+ {
+  "date": "2026-11-11",
+  "runs": "discovery run 8, crawl audit run 34, speed audit run 36, AI audit run 35, text check run 37, link check run 38, repo file check run 39",
+  "method": 3,
+  "hosts": {
+   "blog.conholdate.cloud": {
+    "health": 100,
+    "areas": {
+     "crawl": 100,
+     "onpage": 100,
+     "intl": 100,
+     "ai": 100
+    },
+    "stats": {
+     "clicks": 2,
+     "impressions": 173,
+     "traffic_to": "2026-11-08",
+     "issue_types": 0,
+     "open_issues": 0
+    }
+   }
+  }
  }
 ]
