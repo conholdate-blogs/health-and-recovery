@@ -39,6 +39,7 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | 2026-11-11 | hreflang without x-default (14,072 pages) | Template fix (B3) |
 | 2026-11-11 | 93% of tags have one post; sitemaps list 43,584 tag pages; `Disallow: /tag/` blocks the English ones (crawl-0002) | Tag + pagination pilot (B4) |
 | 2026-11-11 | Wrong-language links 374, broken 81, damaged 54, missing translations 20 | Link fixes from the fix lists (B5) |
+| 2026-11-11 | Open Graph, Twitter and JSON-LD land in `<body>` (home checked live: OG 5, Twitter 3, JSON-LD 1), found during the blog.conholdate.cloud session: language-switcher div ends `<head>` before them, as on blog.aspose.com; our `head_closed_early` does not cover these tags | Proposed: same head-order fix as blog.conholdate.cloud F1 (fold into B3) |
 
 ## Waiting for SK (paused 11 Nov; SK continues B later)
 

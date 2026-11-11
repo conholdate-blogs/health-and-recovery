@@ -12,7 +12,9 @@ finding, decision, fix and check.
 | Workflows | **In the blog repo itself**: `.github/workflows/production-aws.yml`, `production-ceph.yml` (+ staging). So the commit check's push check and deploy gate would both live in this one repo |
 | Production deploy | cron `0 3 * * 1-5` = **08:00 PKT** Mon–Fri (comment says 10–11 AM: wrong, as on blog.conholdate.com), skipped without new commits (`check-changes`); manual run from the Actions tab |
 | Hugo | **0.101.0** extended (`/Users/Apple/Downloads/Softwares/Hugo/hugo_extended_0.101.0_darwin-amd64/hugo`) |
-| Redirects.json | 4 entries (`/tag/`, `/category`, `/feed`, `/feed/`). Live or at deploy: **unknown, test first** (blog.conholdate.com applies at deploy) |
+| Redirects.json | 4 entries (`/tag/`, `/category`, `/feed`, `/feed/`), all 301 live (checked 11 Nov). Live or at deploy: still unknown (needs a change to test; blog.conholdate.com applies at deploy) |
+| Taxonomy URLs | term pages `/tag/<name>/` (`permalinks: tags: /tag/:title/`), list `/tags/`; categories `/categories/<x>/` (2) |
+| Head order (11 Nov) | Same bug shape as blog.aspose.com: `extend_head.html` (renders the `langswitcher.html` div when translated, i.e. on every page) sits before Open Graph, Twitter and JSON-LD, so those land in `<body>` live (title, canonical, hreflang, robots come before it: fine). blog.conholdate.com has it too (home: OG 5, Twitter 3, JSON-LD 1 in `<body>`) |
 | Size (7 Nov) | 5 English posts, 93 post files, 23 languages, 27 tags (all single-post), 186 sitemap URLs, no tag URLs in sitemaps |
 | Traffic (28 days to 3 Nov) | 2 clicks, 161 impressions |
 | Health (7 Nov) | 86; 7 issue types, 4 open items |
@@ -40,10 +42,32 @@ finding, decision, fix and check.
    hreflang x-default, tags, then others. Template fixes found here can carry over to blog.conholdate.com (same theme).
 5. Verify live, agent-fixes table (`reports/conholdate.cloud/agent-fixes.json`), re-scan, snapshot, push.
 
+## Scan 11 Nov 2026 (full, runs 5, 16–21; snapshot 2026-11-11; our commit 7c42489)
+
+Health 86 → 84 (crawl 100 → 98) from the new `tag_pages_thin` finding (crawl-261111-1: 27 of 27 tags single-post,
+555 tag pages in 23 languages, 0 clicks, 30 impressions). Repo file check clean (no junk keys, no translated-URL
+mismatches). Open: llms.txt missing, no x-default (186), no H1 (23 home pages), content needs JS (29 listing pages),
+thin tags, 4 wrong-language links (unchanged), title/description length. No page 2 (5 posts, paginate 10).
+
+**Audit gap found:** `head_closed_early` checks only tags that come before the div (title, canonical, hreflang …),
+so Open Graph / Twitter / JSON-LD in `<body>` went unreported here and on blog.conholdate.com.
+
+**Oddity (not fixed):** `/<lang>/conholdate.cloud/` section pages (22 languages) have no English translation linked,
+so they get no `en` hreflang and no x-default.
+
 ## Fixes
 
-None yet.
+| # | Fix | State |
+|---|---|---|
+| F1 | `head.html`: `extend_head.html` moved to the end of `<head>` (OG, Twitter, JSON-LD back in `<head>`) | prepared, tested, waiting for SK |
+| F2 | x-default hreflang (default language) in `head.html` and `sitemap.xml` | prepared, tested, waiting for SK |
+| F3 | Tag pages (`/tags/`, `/tag/<x>/`) `noindex, follow`; `Disallow: /tags/` and `/tag/` removed from robots.txt so the noindex is seen | prepared, tested, waiting for SK |
+| F4 | 4 wrong-language links in 3 Arabic posts → `/ar/…` | proposed |
+
+Test (11 Nov, Hugo 0.101.0, production config, full build before/after): file set identical; no SEO tag left in
+`<body>` on any page; 555 tag term pages + 23 `/tags/` pages index → `noindex, follow`, no other robots change;
+x-default on 790 pages; sitemaps changed only by 161 x-default lines; robots.txt only the two lines removed.
 
 ## Learned here
 
-Nothing yet.
+- Same theme family as blog.conholdate.com: template fixes carry over (head order, x-default, tag noindex).
