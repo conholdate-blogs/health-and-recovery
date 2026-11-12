@@ -98,8 +98,8 @@ product"). Snapshot 2026-11-12-2. Full-crawl limit raised to 1,000 URLs (SK).
 | # | Problem | Fix / state |
 |---|---|---|
 | F17 | **No company bar on /zh-hant/** (SK spotted): `params.dynamicmenuid.zh-hant: conholdatecloud-zh-hant`; the menu script (menucdn.containerize.com/core/engine.min.js) splits the id on `-` and accepts exactly two parts, so it drew nothing. The service has Traditional Chinese as `zht` | `conholdatecloud-zht`; blog commit **39f62ad, committed, not pushed (needs SK's approval)**; tested with a local Hugo 0.101 build: bar renders in Traditional Chinese; commit check PASSED. New repo check `menu_id_invalid` (51b22b2). he/nl/sv have no menu JSON on the CDN but render through the service's API fallback (fine) |
-| F18 (proposed) | SK's translation agent added the Java post's 22 translations (1244f92, 12 Nov 09:50 UTC): **9 titles and 9 descriptions too long** (": Schritt-für-Schritt-Anleitung" etc.) | Shorten like F10, or let the translation agent redo them; waiting for SK |
-| F19 (proposed) | `static/llms.txt` still says the Java post is "English only" | Remove "(English only)"; waiting for SK |
+| F18 | SK's translation agent added the Java post's 22 translations (1244f92, 12 Nov 09:50 UTC): **9 titles and 9 descriptions too long** (": Schritt-für-Schritt-Anleitung" etc.) | SK: fix now and update the agent. Blog commit **98431b5** (18 values, scan 0 out of range); agent commit 697af12 (length limits); both committed, not pushed |
+| F19 | `static/llms.txt` still says the Java post is "English only" | Blog commit **50ce0eb**, committed, not pushed |
 
 ## Decisions by SK (11 Nov)
 

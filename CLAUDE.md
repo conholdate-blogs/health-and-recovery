@@ -22,8 +22,9 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 | # | What | State |
 |---|---|---|
 | F17 | Company menu bar missing on all /zh-hant/ pages: menu id `conholdatecloud-zh-hant` → `conholdatecloud-zht` | blog commit **39f62ad committed, not pushed**; tested locally (bar renders in Traditional Chinese), commit check PASSED |
-| F18 | The Java post's new translations (SK's translation agent, 1244f92): 9 titles, 9 descriptions too long | proposed: shorten (F10 pattern) or the translation agent redoes them |
-| F19 | `static/llms.txt` calls the Java post "English only" (now translated) | proposed |
+| F18 | The Java post's new translations (SK's translation agent, 1244f92): 9 titles, 9 descriptions too long | blog commit **98431b5 committed, not pushed** (SK: fix now; `front_matter_set.py` now handles values wrapped over several lines) |
+| F19 | `static/llms.txt` calls the Java post "English only" (now translated) | blog commit **50ce0eb committed, not pushed** |
+| agent | Translation agent keeps title/seoTitle ≤ 70 and description ≤ 170 wide (shortens by LLM) | agent repo commit **697af12 committed, not pushed** (SK: "update translation agent so it takes care next time") |
 | F16 | No-slash URLs answer 302, not 301 | CDN (CloudFront) setting, not the repo; owner to be named |
 | other blogs | Company menu: blog.aspose.cloud zh-tw and blog.groupdocs.cloud zh-hant have **no bar** (3-part ids; `<venture>-zht` exists); blog.conholdate.com vi/th/tr show the English bar (no id); blog.aspose.com zh-hant shows the Simplified bar (`aspose-zht` exists) | found by the new repo check (dry run); not yet in their reports (next scan) |
 
@@ -45,7 +46,7 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
   [docs/site-pages.md](docs/site-pages.md).
 - **Later plans:** indexed % via URL Inspection (SK: not now).
 
-**Where to look:** [docs/site-pages.md](docs/site-pages.md) (site pages, data files, how to add a fix, note or
+**Where to look:** [docs/identified-issues.md](docs/identified-issues.md) (register of every issue found and not yet fixed, per blog), [docs/site-pages.md](docs/site-pages.md) (site pages, data files, how to add a fix, note or
 rule), [docs/playbook.md](docs/playbook.md) (fix catalogue rows 1–15, traps, rules for our audit),
 [docs/blogs/blog.conholdate.cloud.md](docs/blogs/blog.conholdate.cloud.md) (F1–F19),
 [docs/blogs/blog.conholdate.com.md](docs/blogs/blog.conholdate.com.md) (next blog, carry-over table),

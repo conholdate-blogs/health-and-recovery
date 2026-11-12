@@ -5,7 +5,8 @@ blog.conholdate.cloud: 66 seoTitle/description values in 43 files, Excel transla
     .venv/bin/python scripts/ops/front_matter_set.py <blog repo> --scan        # list titles/descriptions out of range
 
 spec.json: {"content/<...>/index.de.md": {"seoTitle": "...", "description": "..."}, ...}
-Each key must exist exactly once in the file's front matter (a `key: ...` line); the value is written double-quoted.
+Each key must exist exactly once in the file's front matter (a `key: ...` line, possibly wrapped onto indented lines);
+the value is written double-quoted on one line.
 Checks every value against the crawl audit's limits (core/audit/crawl.py: TITLE_LEN 10-70, DESCRIPTION_LEN 50-170,
 CJK counted double) and re-parses the front matter to confirm. --scan reports every post whose search title
 (seoTitle, else title) or description (description, else summary) is out of range, over all index*.md files: the
@@ -56,7 +57,8 @@ def apply(repo: Path, spec: dict, dry: bool) -> int:
         for key, val in kv.items():
             lo, hi = LIMITS.get(key, (0, 10**6))
             assert lo <= display_len(val) <= hi, f"{rel} {key}: width {display_len(val)} outside {lo}-{hi}"
-            pat = re.compile(rf"^{re.escape(key)}:.*$", re.M)
+            # the value may wrap onto indented lines (yaml.dump wraps at 80 characters, as the translation agent writes)
+            pat = re.compile(rf"^{re.escape(key)}:.*(?:\n[ \t]+\S.*)*$", re.M)
             assert len(pat.findall(fm)) == 1, f"{rel}: {key} not exactly once"
             fm = pat.sub(lambda _, k=key, v=val: f"{k}: {q(v)}", fm)
         parsed = yaml.safe_load(fm)
