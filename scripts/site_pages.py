@@ -199,11 +199,12 @@ LOG_CSS = """
 .tile[aria-pressed="true"] { outline: 2px solid var(--accent) }
 .tile b { display: block; font-size: 26px; line-height: 1.2 } .tile small { color: var(--muted) }
 .tile span { font-size: 13px; font-weight: 600 }
-.t-open b { color: var(--broken) } .t-fixed b { color: #067647 } .t-res b, .t-rev b { color: var(--muted) }
-@media (prefers-color-scheme: dark) { .t-fixed b { color: #47cd89 } }
+.t-open b { color: var(--broken) } .t-fixed b { color: #067647 }
+.t-res b { color: #1570ef } .t-rev b { color: var(--muted) }
+@media (prefers-color-scheme: dark) { .t-fixed b { color: #47cd89 } .t-res b { color: #53b1fd } }
 .bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: var(--line); gap: 2px }
 .bar i { display: block } i.t-open { background: var(--broken) } i.t-fixed { background: #12b76a }
-i.t-pushed { background: #a6f4c5 } i.t-res { background: #98a2b3 } i.t-rev { background: #d0d5dd }
+i.t-pushed { background: #a6f4c5 } i.t-res { background: #2e90fa } i.t-rev { background: #d0d5dd }
 .legend { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 14px }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px }
 th.sort { cursor: pointer; user-select: none; white-space: nowrap }
