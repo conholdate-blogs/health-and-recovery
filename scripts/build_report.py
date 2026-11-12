@@ -505,6 +505,31 @@ def host_history(host: str, history_path: Path) -> list[dict]:
     return rows[::-1]
 
 
+def issue_log_summary(tenant: str, host: str, history_path: Path) -> dict:
+    """Issue log counts for the subdomain page's tiles and Fix progress, and the worm graph series: open and fixed
+    issues on each day with a recorded run (SK, 2026-11-12: one meaning of "issue" on every page)."""
+    try:
+        from scripts import site_pages
+    except ImportError:  # run as scripts/build_report.py
+        import site_pages
+    rows = site_pages.issue_rows(tenant, host)
+    n = {s: sum(r["status"] == s for r in rows) for s in site_pages.STATUS_ORDER}
+    history = json.loads(history_path.read_text(encoding="utf-8")) if history_path.is_file() else []
+    days = sorted({h["date"][:10] for h in history if h.get("date") and host in (h.get("hosts") or {})})
+    health = {h["date"][:10]: h["hosts"][host]["health"] for h in history  # the day's last recorded score
+              if h.get("date") and host in (h.get("hosts") or {})}
+    fixed_states = ("✓ Verified live", "Pushed, waiting for deploy")
+    series = []
+    for d in days:
+        found = [r for r in rows if (r["found"] or "")[:10] <= d]
+        closed = lambda r: not r["open"] and (r["fixed"] or "")[:10] and (r["fixed"] or "")[:10] <= d  # noqa: E731
+        series.append({"date": d, "open": sum(1 for r in found if not closed(r)), "health": health.get(d),
+                       "fixed": sum(1 for r in found if r["status"] in fixed_states and closed(r))})
+    return {"total": len(rows), "open": n["Open"], "verified": n["✓ Verified live"],
+            "pushed": n["Pushed, waiting for deploy"], "resolved": n["Resolved"],
+            "reviewed": n["Reviewed"] + n["Won't fix"], "series": series}
+
+
 def host_trends(report: dict, history_path: Path) -> dict[str, list[dict]]:
     """Health of each host per recorded set of runs, ending with this report (for the Overview and host cards)."""
     history = json.loads(history_path.read_text(encoding="utf-8")) if history_path.is_file() else []
@@ -689,6 +714,7 @@ def prepare(args: argparse.Namespace) -> tuple[dict, list[str], str | None, str,
         report["_host_trends"] = host_trends(report, paths.health_history)
     if report.get("_page_host"):
         report["_history"] = host_history(report["_page_host"], paths.health_history)
+        report["_issue_log"] = issue_log_summary(args.tenant, report["_page_host"], paths.health_history)
     run_date = run_date_of(src, "discovery-")
     sources = (f"{src.name}" + (f" and {len(audit_srcs)} crawl-audit runs (newest {audit_src.name})" if audit_src else "")
                + (f" and {perf_src.name}" if perf_src else "") + (f" and {ai_src.name}" if ai_src else "")

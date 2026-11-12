@@ -8,7 +8,7 @@ __FAVICON__
 :root {
   --bg: #f6f7f9; --surface: #ffffff; --fg: #18202b; --muted: #5b6676; --line: #dde2e9; --accent: #1f5f8b;
   --broken: #b42318; --incorrect: #c2410c; --notopt: #a16207; --improvable: #4b5f7a; --good: #15803d;
-  --tint: #eef3f8;
+  --tint: #eef3f8; --w-open: #b42318; --w-fixed: #17b26a;
   --display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
   --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -16,11 +16,11 @@ __FAVICON__
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #11161d; --surface: #182029; --fg: #e4e9f0; --muted: #98a3b3; --line: #2a3542; --accent: #6fb0dc;
   --broken: #f2766b; --incorrect: #f59e5b; --notopt: #e3b341; --improvable: #9fb2cc; --good: #4ade80;
-  --tint: #1d2834; color-scheme: dark } }
+  --tint: #1d2834; --w-open: #c01e1e; --w-fixed: #17a865; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #11161d; --surface: #182029; --fg: #e4e9f0; --muted: #98a3b3; --line: #2a3542; --accent: #6fb0dc;
   --broken: #f2766b; --incorrect: #f59e5b; --notopt: #e3b341; --improvable: #9fb2cc; --good: #4ade80;
-  --tint: #1d2834; color-scheme: dark }
+  --tint: #1d2834; --w-open: #c01e1e; --w-fixed: #17a865; color-scheme: dark }
 * { box-sizing: border-box }
 [hidden] { display: none !important }
 body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); }
@@ -243,6 +243,23 @@ button.area:focus-visible { outline: 2px solid var(--accent); outline-offset: 2p
 .kpi .up { color: var(--good); font-weight: 600 } .kpi .down { color: var(--broken); font-weight: 600 }
 #history-rows .up { color: var(--good); font-weight: 600 } #history-rows .down { color: var(--broken); font-weight: 600 }
 th { white-space: normal }  /* headers may wrap at spaces when a table would get too wide (SK, 2026-11-11) */
+/* subdomain page, 12 Nov 2026 (SK): red rows for open checks, area cards that open their data, worm graph */
+#fixes tr.openrow td:first-child { box-shadow: inset 3px 0 var(--broken) } #fixes td.n.open { color: var(--broken); font-weight: 700 }
+.acards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-top: 8px }
+.acard { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; text-align: left;
+  font: inherit; color: inherit; cursor: pointer; display: flex; flex-direction: column; gap: 4px }
+.acard[aria-expanded="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) }
+.acard .an { font-weight: 600 } .acard b { font-size: 24px; line-height: 1.1 } .acard small { color: var(--muted); font-size: 12px }
+.acard .open { font-size: 12px; color: var(--accent) } .acard[aria-expanded="true"] .open::after { content: " ▴" }
+.acard[aria-expanded="false"] .open::after { content: " ▾" } div.acard { cursor: default }
+#area-data { display: grid; gap: 12px; margin-top: 12px } #area-data:empty { display: none }
+#area-data .ahead { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap }
+#changes, #chg-body, #chg-body > *, #sum-areas, #area-data, #area-data > * { min-width: 0 }  /* wide tables scroll inside */
+.worm { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin: 0 0 14px }
+.worm svg { display: block; width: 100%; height: auto; overflow: visible } .worm .lg { font-size: 13px; color: var(--muted); display: flex; gap: 16px; flex-wrap: wrap }
+.worm .lg i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px }
+.worm .tip { position: absolute; pointer-events: none; background: var(--fg); color: var(--bg); font-size: 12px; padding: 6px 8px;
+  border-radius: 6px; white-space: nowrap; transform: translate(-50%, -110%) }
 /* Fixed % as a bar (SK, 2026-11-11); the number stays beside it */
 .pbar { display: inline-block; width: 64px; height: 6px; border-radius: 3px; background: var(--line); vertical-align: middle; overflow: hidden }
 .pbar i { display: block; height: 100%; background: var(--good); border-radius: 3px }
@@ -460,7 +477,7 @@ footer a { color: var(--accent) }
   <section aria-labelledby="s-ref" id="reference">
     <h2 id="s-ref">Reference</h2>
     <details class="ref" id="history" hidden open><summary>History <small id="history-st"></small></summary>
-      <p class="lede fold">One row per recorded run, newest first.<span class="rest"> Clicks and impressions: Search Console, the 28 days ending on the date under them. Issue types: findings of the checks. Open issues: link and sitemap items still open. Note: what ran since the row before, so a score change from a new check reads as that.</span></p>
+      <p class="lede fold">One row per recorded run, newest first.<span class="rest"> Clicks and impressions: Search Console, the 28 days ending on the date under them. Open issues: kinds of problem still open (as in the Issue log). Open items: pages, links and files still affected. Note: what ran since the row before, so a score change from a new check reads as that.</span></p>
       <div class="tablewrap"><table id="history-rows"></table></div>
     </details>
     <details class="ref" id="structure" hidden open><summary>Site structure <small id="structure-st"></small></summary>
@@ -1214,7 +1231,7 @@ __METHOD__
     let all = false;
     const render = () => {
       const shown = all ? HIST : HIST.slice(0, HIST_SHOWN);
-      table.innerHTML = `<thead><tr><th>Date</th><th class="n">Score</th><th class="n">Clicks<br>28 days</th><th class="n">Impressions</th><th class="n">Issue<br>types</th>${withItems ? `<th class="n">Open<br>issues</th>` : ""}${AREA_COLS.map(([, n]) => `<th class="n">${n}</th>`).join("")}<th>Note</th></tr></thead><tbody>`
+      table.innerHTML = `<thead><tr><th>Date</th><th class="n">Score</th><th class="n">Clicks<br>28 days</th><th class="n">Impressions</th><th class="n">Open<br>issues</th>${withItems ? `<th class="n">Open<br>items</th>` : ""}${AREA_COLS.map(([, n]) => `<th class="n">${n}</th>`).join("")}<th>Note</th></tr></thead><tbody>`
         + shown.map((r, i) => { const older = HIST[HIST.indexOf(r) + 1];
           return `<tr><td>${esc(day(r.date))}</td><td class="n"><b>${r.health}</b>${move(r, older, x => x.health)}</td>`
             + `<td class="n">${fmt(r.clicks)}${r.traffic_to ? `<br><small class="dim">to ${esc(day(r.traffic_to))}</small>` : ""}</td><td class="n">${compact(r.impressions)}</td>`
@@ -1230,6 +1247,16 @@ __METHOD__
     render();
   }
 
+  // what the crawl covered (12 Nov 2026): every sitemap URL on small hosts, else a fixed + rotating sample
+  function crawlScope() {
+    const cov = Object.entries(A.coverage || {}).filter(([h]) => !R._page_host || h === R._page_host).map(([, c]) => c);
+    const p = A.params || {};
+    if (cov.length && cov.every(c => c.checked >= c.urls)) return `Every sitemap URL crawled: ${fmt(A.pages)} pages.`;
+    const checked = cov.reduce((n, c) => n + c.checked, 0), urls = cov.reduce((n, c) => n + c.urls, 0), runs = Math.max(0, ...cov.map(c => c.runs));
+    const share = urls ? ` ${fmt(checked)} of ${fmt(urls)} sitemap URLs checked in the last ${runs} run${runs === 1 ? "" : "s"}.` : "";
+    return cov.length ? `A sample: ${p.per_template} pages per template and 1 in each of up to ${p.other_langs} other languages; half stay the same every run, half change (pages not checked recently and the newest posts first); pages that failed last run are checked again${A.recheck ? ` (${fmt(A.recheck)})` : ""}.${share}`
+      : `A sample: ${p.per_template} pages per template, plus 1 page in each of up to ${p.other_langs} other languages, the same pages every run.`;
+  }
   // crawl audit
   if (A) {
     $("audit").hidden = false;
@@ -1238,7 +1265,7 @@ __METHOD__
     const p = A.params;
     const secs = Object.entries(A.sections || {}).filter(([, v]) => v.length);
     $("audit-scope").innerHTML = [
-      `<p class="lede fold">A sample: ${p.per_template} pages per template, plus 1 page in each of up to ${p.other_langs} other languages, the same pages every run.<span class="rest"> Every host's homepage and the products hub pages are added. Scope: every host and homepage${secs.length ? `, plus ${secs.map(([h, v]) => `${v.length} sections on <span class="mono">${esc(h)}</span>`).join(", ")}` : ""}${runs.length > 1 ? `, across ${runs.length} runs (a page checked more than once shows its newest result)` : ""}.</span></p>`,
+      `<p class="lede fold">${crawlScope()}<span class="rest"> Every host's homepage and the products hub pages are added. Scope: every host and homepage${secs.length ? `, plus ${secs.map(([h, v]) => `${v.length} sections on <span class="mono">${esc(h)}</span>`).join(", ")}` : ""}${runs.length > 1 ? `, across ${runs.length} runs (a page checked more than once shows its newest result)` : ""}.</span></p>`,
       A.stopped_early ? `<div class="warn"><b>Stopped early</b> (page limit reached): absent findings prove nothing.</div>` : "",
     ].join("");
     const CHECK = c => c.replace(/_/g, " ");
@@ -1337,12 +1364,120 @@ __METHOD__
         const live = g.live_status === 200 ? (g.live_urls ? `<span class="ok">200</span>` : `<span class="warn">200, 0 URLs</span>`) : `<span class="bad">${esc(g.live_status)}</span>`;
         const gs = g.gsc_status === "Success" ? `<span class="dim">Success</span>` : `<span class="bad">${esc(g.gsc_status)}</span>`;
         const gap = g.gsc_discovered ? Math.abs(g.live_urls - g.gsc_discovered) / g.gsc_discovered : 0;
-        const st = (g.live_status !== 200 || !g.live_urls || g.gsc_status !== "Success") ? "bad" : gap > 0.1 ? "warn" : "ok";
-        return { st, w: g.gsc_discovered || g.live_urls || 0, html: `<tr><td class="mono">${mk(st)}${g.url ? `<a href="${esc(g.url)}" target="_blank" rel="noopener">${esc(g.path)}</a>` : esc(g.path)}</td><td>${gs}</td><td class="n">${fmt(g.gsc_discovered)}</td><td>${live}</td><td class="n">${fmt(g.live_urls)}</td></tr>` };
+        // a count gap is information (SK, 2026-11-12): Search Console updates when Google re-reads the sitemap
+        const st = (g.live_status !== 200 || !g.live_urls || g.gsc_status !== "Success") ? "bad" : "ok";
+        const gapNote = gap > 0.1 ? `<br><small class="dim">${g.live_urls < g.gsc_discovered ? "lower than Search Console: URLs removed since Google last read it" : "higher than Search Console: new URLs Google has not read yet"}</small>` : "";
+        return { st, w: g.gsc_discovered || g.live_urls || 0, html: `<tr><td class="mono">${mk(st)}${g.url ? `<a href="${esc(g.url)}" target="_blank" rel="noopener">${esc(g.path)}</a>` : esc(g.path)}</td><td>${gs}</td><td class="n">${fmt(g.gsc_discovered)}</td><td>${live}</td><td class="n">${fmt(g.live_urls)}${gapNote}</td></tr>` };
       }), "gsc-st", "sitemaps");
   } else {
     $("gsc").outerHTML = `<p class="lede" style="padding:10px 14px">No Search Console sitemap snapshot for this property yet (tenant YAML <code>gsc_sitemaps_snapshot</code>), so there is nothing to compare with the live sitemaps.</p>`;
     $("gsc-st").textContent = "· no snapshot";
+  }
+
+  // Subdomain page layout (SK, 2026-11-12): the worm graph and History in Fix progress; five area cards replace
+  // "Health by area" and each opens its data tables (formerly Reference); no run line in the header; no filters
+  // on a short list of issues.
+  function wormGraph(series, width) {
+    // two panels, one x axis (SK, 2026-11-12): issues on top, health score (0-100) below; never two y-scales on one plot
+    const W = Math.max(300, Math.round(width || 640)), H = 200, L = 34, Rm = 80, T = 14, B = 26, HP = 70, HG = 30;
+    const max = Math.max(1, ...series.map(p => Math.max(p.open, p.fixed)));
+    const step = max <= 5 ? 1 : max <= 10 ? 2 : max <= 25 ? 5 : max <= 50 ? 10 : Math.ceil(max / 5 / 10) * 10;
+    const top = Math.ceil(max / step) * step, x = i => L + (series.length === 1 ? 0 : i * (W - L - Rm) / (series.length - 1));
+    const y = v => T + (H - T - B) * (1 - v / top);
+    const grid = []; for (let v = 0; v <= top; v += step) grid.push(`<line x1="${L}" x2="${W - Rm}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end" font-size="11" fill="var(--muted)">${v}</text>`);
+    const every = Math.ceil(series.length / 7);
+    const xl = series.map((p, i) => i % every && i !== series.length - 1 ? "" : `<text x="${x(i)}" y="${H - 6}" text-anchor="middle" font-size="11" fill="var(--muted)">${esc(day(p.date).replace(/ \d{4}$/, ""))}</text>`).join("");
+    const line = (k, c) => `<polyline fill="none" stroke="var(${c})" stroke-width="2" stroke-linejoin="round" points="${series.map((p, i) => `${x(i)},${y(p[k])}`).join(" ")}"/>`
+      + series.map((p, i) => `<circle cx="${x(i)}" cy="${y(p[k])}" r="4" fill="var(${c})" stroke="var(--surface)" stroke-width="2"/>`).join("");
+    const last = series[series.length - 1], lx = x(series.length - 1) + 10;
+    let oy = y(last.open) + 4, fy = y(last.fixed) + 4;
+    if (Math.abs(oy - fy) < 14) { if (oy <= fy) oy = fy - 14; else fy = oy - 14; }  // keep the end labels apart
+    const hasH = series.some(p => p.health != null), FULL = hasH ? H + HG + HP : H;
+    const hy = v => H + HG + HP * (1 - v / 100);
+    const healthPanel = () => !hasH ? "" : `<text x="${L}" y="${H + HG - 8}" font-size="12" font-weight="600" fill="var(--fg)">Health score</text>`
+      + [0, 50, 100].map(v => `<line x1="${L}" x2="${W - Rm}" y1="${hy(v)}" y2="${hy(v)}" stroke="var(--line)"/><text x="${L - 6}" y="${hy(v) + 4}" text-anchor="end" font-size="11" fill="var(--muted)">${v}</text>`).join("")
+      + `<polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" points="${series.map((p, i) => p.health == null ? "" : `${x(i)},${hy(p.health)}`).filter(Boolean).join(" ")}"/>`
+      + series.map((p, i) => p.health == null ? "" : `<circle cx="${x(i)}" cy="${hy(p.health)}" r="4" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`).join("")
+      + (last.health != null ? `<text x="${lx}" y="${hy(last.health) + 4}" font-size="12" fill="var(--fg)">Health ${last.health}</text>` : "");
+    const hits = series.map((p, i) => `<rect class="hit" data-i="${i}" x="${x(i) - (W - L - Rm) / Math.max(1, series.length - 1) / 2}" y="${T}" width="${(W - L - Rm) / Math.max(1, series.length - 1)}" height="${FULL - T}" fill="transparent"/>`).join("");
+    return `<div class="worm" id="worm"><div class="lg"><span><i style="background:var(--w-open)"></i>Open issues</span><span><i style="background:var(--w-fixed)"></i>Fixed issues (total so far)</span></div>
+      <svg viewBox="0 0 ${W} ${FULL}" role="img" aria-label="Open and fixed issues, and the health score, per day with a recorded run; the same numbers are in History below">
+      ${grid.join("")}${xl}<line id="worm-x" y1="${T}" y2="${FULL}" stroke="var(--muted)" stroke-width="1" visibility="hidden"/>${line("open", "--w-open")}${line("fixed", "--w-fixed")}
+      <text x="${lx}" y="${oy}" font-size="12" fill="var(--fg)">Open ${last.open}</text><text x="${lx}" y="${fy}" font-size="12" fill="var(--fg)">Fixed ${last.fixed}</text>${healthPanel()}${hits}</svg>
+      <div class="tip" id="worm-tip" hidden></div></div>`;
+  }
+  function wireWorm(series) {
+    const box = $("worm"), svg = box.querySelector("svg"), tip = $("worm-tip"), xl = $("worm-x");
+    const show = r => {
+      const p = series[+r.dataset.i], b = r.getBBox(), cx = b.x + b.width / 2, k = svg.clientWidth / svg.viewBox.baseVal.width;
+      xl.setAttribute("x1", cx); xl.setAttribute("x2", cx); xl.setAttribute("visibility", "visible");
+      tip.innerHTML = `<b>${esc(day(p.date))}</b><br>Open ${p.open} · Fixed ${p.fixed}${p.health != null ? ` · Health ${p.health}` : ""}`; tip.hidden = false;
+      const br = box.getBoundingClientRect(), sr = svg.getBoundingClientRect();  // SVG elements have no offsetLeft
+      tip.style.left = `${Math.min(Math.max(sr.left - br.left + cx * k, 80), br.width - 80)}px`; tip.style.top = `${sr.top - br.top + 14 * k}px`;
+    };
+    svg.querySelectorAll("rect.hit").forEach(r => { r.addEventListener("mouseenter", () => show(r)); r.addEventListener("click", () => show(r)); });
+    svg.addEventListener("mouseleave", () => { tip.hidden = true; xl.setAttribute("visibility", "hidden"); });
+  }
+  function subdomainLayout() {
+    $("meta").hidden = true;  // the Overview line says how old the data is; run numbers are in the footer
+    const body = $("chg-body"), LOG = R._issue_log;
+    if (LOG && LOG.series && LOG.series.length > 1) {
+      const agent = body.querySelector(".agent-line"), w = body.clientWidth - 26;
+      if (agent) agent.insertAdjacentHTML("afterend", wormGraph(LOG.series, w));
+      else body.insertAdjacentHTML("afterbegin", wormGraph(LOG.series, w));
+      wireWorm(LOG.series);
+      let last = w, t = 0;
+      window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(() => {
+        const nw = $("worm").clientWidth - 26; if (Math.abs(nw - last) < 8) return; last = nw;
+        $("worm").outerHTML = wormGraph(LOG.series, nw); wireWorm(LOG.series); }, 150); });
+    }
+    if (!$("history").hidden) body.append($("history"));
+    // fewer than 6 issues: the filters and severity chips add nothing
+    if (findings.length < 6) {
+      document.querySelector("#findings .filters").hidden = true;
+      document.querySelectorAll(".fchips .chip").forEach(c => { c.hidden = true; });
+    }
+    if (!AH) return;
+    const PANELS = { crawl: ["hosts-st", "gsc-st", "structure-st"], onpage: ["audit-st"], intl: ["sections-st"], ai: ["ai-st"], perf: ["speed-st"] };
+    const panelsOf = d => (PANELS[d] || []).map(id => $(id) && $(id).closest("details")).filter(el => el && !el.hidden);
+    const data = document.createElement("div"); data.id = "area-data";
+    const card = a => {
+      const n = Object.values(a.counts || {}).reduce((x, v) => x + v, 0), b = (a.counts || {}).broken || 0, has = panelsOf(a.dimension).length;
+      const scored = a.state === "scored";
+      const sub = a.state === "not checked" ? "not checked in this run" : a.state === "no data" ? `no real-user data · lab median ${a.lab_median ?? "–"}`
+        : !n ? "no issues" : (b ? `<span class="down">${b} broken</span> · ` : "") + `${n - b ? `${n - b} issue${n - b === 1 ? "" : "s"}` : ""}`;
+      const inner = `<span class="an">${esc(a.name)}</span><b>${scored ? a.health : "–"}</b>${sbar(scored ? a.health : null, a.grade)}<small>${sub}</small>${has ? `<span class="open">Data</span>` : ""}`;
+      return has ? `<button type="button" class="acard${scored ? " g-" + a.grade : ""}" data-dim="${esc(a.dimension)}" aria-expanded="false" aria-controls="area-data">${inner}</button>`
+        : `<div class="acard${scored ? " g-" + a.grade : ""}">${inner}</div>`;
+    };
+    $("sum-areas").innerHTML = `<span class="dim">Health by area · select an area to see its data</span><div class="acards">${AH.areas.map(card).join("")}</div>`;
+    $("sum-areas").append(data);
+    const shelf = document.createElement("div"); shelf.hidden = true; document.body.append(shelf);  // closed panels wait here
+    Object.keys(PANELS).forEach(d => panelsOf(d).forEach(el => shelf.append(el)));
+    const open = (dim) => {
+      [...data.querySelectorAll("details")].forEach(el => shelf.append(el));
+      data.innerHTML = "";
+      $("sum-areas").querySelectorAll(".acard[data-dim]").forEach(c => c.setAttribute("aria-expanded", c.dataset.dim === dim));
+      if (!dim) return;
+      const a = AH.areas.find(x => x.dimension === dim), n = findings.filter(f => f.dimension === dim).length;
+      data.insertAdjacentHTML("beforeend", `<div class="ahead"><b>${esc(a ? a.name : dim)}: data</b>${n ? ` <a href="#findings" data-dim="${esc(dim)}">its ${n} issue${n === 1 ? "" : "s"} →</a>` : ""}</div>`);
+      panelsOf(dim).forEach(el => data.append(el));
+    };
+    $("sum-areas").addEventListener("click", e => {
+      const c = e.target.closest(".acard[data-dim]");
+      if (c) { e.stopPropagation(); open(c.getAttribute("aria-expanded") === "true" ? null : c.dataset.dim); return; }
+      const l = e.target.closest("a[data-dim]");
+      if (!l) return;
+      e.preventDefault(); e.stopPropagation();
+      for (const k of ["f-src", "f-type", "f-host", "f-fam"]) $(k).value = "";
+      $("f-dim").value = l.dataset.dim; showAll = true; renderFindings(); $("s-find").scrollIntoView({ behavior: "smooth" });
+    }, true);
+    const low = AH.areas.filter(a => a.state === "scored" && a.health < 100 && panelsOf(a.dimension).length).sort((a, b) => a.health - b.health)[0];
+    if (low) open(low.dimension);
+    // what is left in Reference
+    if (![...$("reference").querySelectorAll("details")].some(el => !el.hidden)) {
+      $("reference").hidden = true; document.querySelector('.toc a[href="#reference"]').hidden = true;
+    }
   }
 
   // Overview (tenant opt-in report.manager_view): numbers first, details after; scores without letters (SK). A
@@ -1369,11 +1504,15 @@ __METHOD__
     // link-check and blog sitemap items as "Open issues: open of issues, fixed and %"; findings are "Issue types"
     // next to it, with what changed since the last run (SK, 2026-10-27). The scan date is in the age line.
     const note = (title, text) => { EXPLAIN.push(`<b class="xt">${esc(title)}</b><p>${esc(text)}</p>`); return EXPLAIN.length - 1; };
-    const ITEMS_NOTE = note("Open issues", "Counted one by one: each broken link and each missing or unsupported language of a post (read from the blog's repo, where one is configured), and each URL or sitemap file affected by a sitemap problem. Issues = fixed + open; a fix counts when the item is gone while its post or URL still exists.");
+    const ITEMS_NOTE = note("Items", "Counted one by one: each broken link and each missing or unsupported language of a post (read from the blog's repo, where one is configured), and each URL or sitemap file affected by a sitemap problem. Items = fixed + open; a fix counts when the item is gone while its post or URL still exists.");
     const TYPES_NOTE = note("Issue types", "Findings of the page checks (crawl, speed, AI readiness, text): one finding is one kind of problem, however many pages it affects.");
     const ask = i => `<button type="button" class="info" aria-label="What is counted" data-x="${i}">?</button>`;
-    const itemsLabel = `Open issues ${ask(ITEMS_NOTE)}`, typesLabel = `Issue types ${ask(TYPES_NOTE)}`;
-    const itemsNum = I => `${fmt(I.open)} <small>of ${fmt(I.issues)}</small>`;
+    // one meaning on every page (SK, 2026-11-12): an issue is a row of the Issue log, an item a page, link or file
+    const LOG = R._issue_log || null;
+    const ISSUES_NOTE = note("Issues", "Kinds of problem found on this subdomain, as listed in the Issue log: open ones, and those fixed, resolved (gone without a known fix) or reviewed. One issue can affect many items.");
+    const issuesLabel = `Issues ${ask(ISSUES_NOTE)}`;
+    const itemsLabel = `${LOG ? "Items" : "Open issues"} ${ask(ITEMS_NOTE)}`, typesLabel = `Issue types ${ask(TYPES_NOTE)}`;
+    const itemsNum = I => `${fmt(I.open)} <small>${LOG ? "open " : ""}of ${fmt(I.issues)}</small>`;
     const itemsSub = I => `<span class="${I.fixed ? "up" : ""}">${fmt(I.fixed)} fixed</span>${I.fixed_pct == null ? "" : ` · ${I.fixed_pct}%`}`;
     const changesSub = (ch, before) => before ? `${ch.gone} resolved · ${ch.add} new since ${esc(day(before.date))}` : "no earlier run to compare";
     // how old the data is: managers must not read a two-week-old crawl as today's state
@@ -1408,6 +1547,8 @@ __METHOD__
           : t.source === "ga4"
           ? `<div class="kpi"><span class="kl">Organic sessions</span><span class="kv">${fmt(cur.sessions)} <small>28 days, GA4</small></span><span class="ks">${delta(cur.sessions, prev.sessions, "previous 28 days")}</span></div>`
           : `<div class="kpi"><span class="kl">Search traffic</span><span class="kv">–</span><span class="ks">no Search Console or GA4 data</span></div>`,
+        LOG ? `<div class="kpi"><span class="kl">${issuesLabel}</span><span class="kv">${fmt(LOG.open)} <small>open of ${fmt(LOG.total)}</small></span><span class="ks"><span class="${LOG.verified + LOG.pushed ? "up" : ""}">${fmt(LOG.verified + LOG.pushed)} fixed</span> · ${fmt(LOG.resolved)} resolved${LOG.reviewed ? ` · ${fmt(LOG.reviewed)} reviewed` : ""}</span>`
+          + `<span class="ks">${GURL ? `<a href="issues/">Issue log →</a>` : ""}</span></div>` :
         `<div class="kpi"><span class="kl">${typesLabel}</span><span class="kv">${findings.length}</span><span class="ks"><span class="down">${byType.broken} broken</span> · ${byType.incorrect} incorrect · ${byType.not_optimized + byType.improvable} minor</span>`
           + `<span class="ks">${!before ? "no earlier run to compare" : (CH.resolved || []).length  // resolved ones are named in Fix progress; new ones are tagged in the list
             ? `<a href="#changes">${changesSub({ add: (CH.new || []).length, gone: CH.resolved.length }, before)}</a>` : changesSub({ add: (CH.new || []).length, gone: 0 }, before)}</span></div>`,
@@ -1418,10 +1559,10 @@ __METHOD__
         const I = H.items, sevCell = k => { const s = GUIDE[k] && GUIDE[k].severity; return s ? `<td class="sev-${esc(s)}" style="color:var(--sev);font-weight:600">${esc(LABEL[s] || s)}</td>` : "<td></td>"; };
         const sevRank = k => { const i = ORDER.indexOf(GUIDE[k] && GUIDE[k].severity); return i < 0 ? ORDER.length : i; };  // severity first, then most open
         const moved = (I.changed || 0) > 0;  // links still in the post under another check (a 404 link that redirects again)
-        const row = (name, c, b, k) => `<tr><td>${b ? "<b>" + name + "</b>" : name}</td>${sevCell(k)}<td class="n">${fmt(c.issues)}</td><td class="n${c.fixed ? " up" : ""}">${fmt(c.fixed)}</td>${moved ? `<td class="n">${c.redirects ? fmt(c.redirects) : "–"}</td>` : ""}<td class="n${c.open && k && GUIDE[k] && GUIDE[k].severity === "broken" ? " down" : ""}">${fmt(c.open)}</td><td class="n">${c.fixed_pct == null ? "–" : `<span class="pbar" aria-hidden="true"><i style="width:${Math.min(100, c.fixed_pct)}%"></i></span> ${c.fixed_pct}%`}</td></tr>`;
+        const row = (name, c, b, k) => `<tr${c.open ? ' class="openrow"' : ""}><td>${b ? "<b>" + name + "</b>" : name}</td>${sevCell(k)}<td class="n">${fmt(c.issues)}</td><td class="n${c.fixed ? " up" : ""}">${fmt(c.fixed)}</td>${moved ? `<td class="n">${c.redirects ? fmt(c.redirects) : "–"}</td>` : ""}<td class="n${c.open ? " open" : ""}">${fmt(c.open)}</td><td class="n">${c.fixed_pct == null ? "–" : `<span class="pbar" aria-hidden="true"><i style="width:${Math.min(100, c.fixed_pct)}%"></i></span> ${c.fixed_pct}%`}</td></tr>`;
         const movedNote = !moved ? "" : ` ${fmt(I.redirects || 0)} links now redirect: the old URL is still in the post, so they are not fixed and count as open under "${esc((GUIDE.link_redirected || {}).name || "link_redirected")}".${I.changed > (I.redirects || 0) ? ` ${fmt(I.changed - (I.redirects || 0))} more moved to another check.` : ""}`;
-        progress.push(`<p class="lede fold">Counted one by one since the first scan (${esc(day(I.since))}), last scanned ${esc(day(I.scanned))}.<span class="rest"> One item = one link, one missing language of a post, or one URL or file of a sitemap problem. Issues = fixed + open.${movedNote}${I.removed ? ` ${fmt(I.removed)} items are gone because their post was deleted (not counted as fixed).` : ""}</span></p>
-          <div class="tablewrap" id="fixes"><table><thead><tr><th>Check</th><th>Severity</th><th class="n">Issues</th><th class="n">Fixed</th>${moved ? `<th class="n" title="Still in the post: the link now works only through a redirect">Now redirects</th>` : ""}<th class="n">Open</th><th class="n">Fixed %</th></tr></thead><tbody>${Object.entries(I.by_check).sort(([a, x], [b, y]) => sevRank(a) - sevRank(b) || y.open - x.open).map(([k, c]) => row(termify(esc(GUIDE[k] ? GUIDE[k].name : k)), c, false, k)).join("")}${row("All", I, true)}</tbody></table></div>`);
+        progress.push(`<p class="lede fold">Counted one by one since the first scan (${esc(day(I.since))}), last scanned ${esc(day(I.scanned))}.<span class="rest"> One item = one link, one missing language of a post, or one URL or file of a sitemap problem. Items = fixed + open.${movedNote}${I.removed ? ` ${fmt(I.removed)} items are gone because their post was deleted (not counted as fixed).` : ""}</span></p>
+          <div class="tablewrap" id="fixes"><table><thead><tr><th>Check</th><th>Severity</th><th class="n">Items</th><th class="n">Fixed</th>${moved ? `<th class="n" title="Still in the post: the link now works only through a redirect">Now redirects</th>` : ""}<th class="n">Open</th><th class="n">Fixed %</th></tr></thead><tbody>${Object.entries(I.by_check).sort(([a, x], [b, y]) => sevRank(a) - sevRank(b) || y.open - x.open).map(([k, c]) => row(termify(esc(GUIDE[k] ? GUIDE[k].name : k)), c, false, k)).join("")}${row("All", I, true)}</tbody></table></div>`);
       }
     } else {  // domain page: one full-width row per subdomain, columns aligned for comparison
       const published = SITE_HOSTS.length > 0;
@@ -1534,7 +1675,8 @@ __METHOD__
         <div class="tablewrap" id="agent-fixes"><table><thead><tr><th>Found</th><th>Issue</th><th>Fix</th><th>Status</th></tr></thead><tbody>${AF.map(x => `<tr><td>${esc(day(x.found))}</td><td>${GUIDE[x.check] ? `<a href="${gHref(x.check)}" data-guide="${esc(x.check)}">${esc(GUIDE[x.check].name)}</a><br>` : ""}<span class="dim">${esc(x.issue)}</span></td><td>${commitLinks(x)}<br><span class="dim">${esc(x.repo)}</span></td><td>${status(x)}<br><span class="dim">${esc(x.result)}</span></td></tr>`).join("")}</tbody></table></div>`);
     }
     $("chg-body").innerHTML = progress.join("");
-    if (!progress.length) { $("changes").hidden = true; document.querySelector('.toc a[href="#changes"]').hidden = true; }
+    if (R._page_host) subdomainLayout();  // SK, 2026-11-12
+    if (!$("chg-body").children.length) { $("changes").hidden = true; document.querySelector('.toc a[href="#changes"]').hidden = true; }
 
     // a subdomain page has its issues ranked by score right below the overview: a top list would repeat them (SK)
     if (R._page_host) {
