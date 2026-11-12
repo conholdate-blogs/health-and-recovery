@@ -9,13 +9,13 @@
   "blog.conholdate.cloud": {
    "paginate": 10,
    "posts": 5,
-   "posts_all_languages": 93,
+   "posts_all_languages": 115,
    "languages": 23,
    "tags": 27,
    "tags_one_post": 27,
    "tags_two_or_less": 27,
    "tags_per_post": 5.4,
-   "tag_pages_all_languages": 555,
+   "tag_pages_all_languages": 621,
    "top_tags": [
     [
      "convert xls",
@@ -59,8 +59,8 @@
     ]
    ],
    "categories": 1,
-   "listing_pages": 601,
-   "tag_listing_pages": 555,
+   "listing_pages": 667,
+   "tag_listing_pages": 621,
    "pages_beyond_cap": 0,
    "cap": 50,
    "discovery_run": 10,

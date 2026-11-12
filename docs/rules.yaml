@@ -168,3 +168,10 @@ rules:
     date: 2026-11-11
     checks: []
     status: active
+  - id: PROC-3
+    rule: "An issue found by hand (by Shoaib Khan or anyone) and fixed by the agent is logged as a row in reports/<tenant>/agent-fixes.json with found_by, and becomes an audit check when it can recur."
+    why: A scan sees only the current state, so a problem fixed before the next scan would leave no trace in the reports.
+    set_by: Shoaib Khan
+    date: 2026-11-12
+    checks: []
+    status: active

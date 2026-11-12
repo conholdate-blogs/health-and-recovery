@@ -50,7 +50,8 @@ Words: an **issue** is a kind of problem (one Issue log row); an **item** is one
 
 | To record | Edit |
 |---|---|
-| A fix by the agent | a row in `reports/<tenant>/agent-fixes.json`: host, found, check, issue, repo, commits, fixed, verified, result; optional `finding` (id) and `fixed_by` (default "Health and Recovery Agent"; also "Translation Agent", "Blog Team Platform", "Shoaib Khan") |
+| A fix by the agent | a row in `reports/<tenant>/agent-fixes.json`: host, found, check, issue, repo, commits, fixed, verified, result; optional `finding` (id), `fixed_by` (default "Health and Recovery Agent"; also "Translation Agent", "Blog Team Platform", "Shoaib Khan") and `found_by` (who found it, for issues found by hand) |
+| An issue found by hand and fixed | always an agent-fixes row with `found_by` (rule PROC-3): a scan sees only the current state, so a problem fixed before the next scan would leave no trace; set `verified` after checking it live; make it a check if it can recur |
 | A note or decision | `reports/<tenant>/issue-notes.json`: `{"<finding id or check>": {"status": "Reviewed", "notes": [{"date", "by", "text"}]}}`; `by` in full ("Shoaib Khan") |
 | A rule | `docs/rules.yaml` (id, rule, why, set_by, date, checks, status); a test checks ids and check names |
 

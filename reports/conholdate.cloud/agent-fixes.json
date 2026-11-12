@@ -186,5 +186,47 @@
    "21c934768eed48f6db2d4c769e80ce85997c527c"
   ],
   "result": "Live: <html dir=rtl> on ar, fa, he pages; layout checked desktop and 390 px"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-12",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-12",
+  "verified": null,
+  "check": "menu_id_invalid",
+  "issue": "Company menu bar (black CONHOLDATE header) missing on every /zh-hant/ page: menu id conholdatecloud-zh-hant has three parts, the menu script accepts two",
+  "commits": [
+   "39f62adb58f660846183ef168fd43fe665a197bd"
+  ],
+  "result": "Pushed 12 Nov; menu id conholdatecloud-zht; local build renders the bar in Traditional Chinese. Waiting for Deploy Production - AWS",
+  "found_by": "Shoaib Khan"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-12",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-12",
+  "verified": null,
+  "check": "post_title_length",
+  "issue": "The Java merge post's 22 new translations (translation agent, 1244f92): 9 search titles (up to 82 wide) and 9 descriptions (up to 197) too long",
+  "commits": [
+   "98431b598c8fe7bd4f9f2a25f9554462cfb2d609"
+  ],
+  "result": "Pushed 12 Nov; all values within 10-70 / 50-170 (repo scan 0). Translation agent now shortens over-long values itself (conholdate/blog-translation-agent 423a608). Waiting for deploy",
+  "found_by": "Health and Recovery Agent"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-12",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-12",
+  "verified": null,
+  "check": "llms_txt_outdated",
+  "issue": "llms.txt still called the Java merge post 'English only' after its translations were added",
+  "commits": [
+   "50ce0eb56fd6f7f850798c0527840ac452902cb6"
+  ],
+  "result": "Pushed 12 Nov; waiting for deploy",
+  "found_by": "Health and Recovery Agent"
  }
 ]

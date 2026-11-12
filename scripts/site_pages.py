@@ -4,7 +4,8 @@ SK, 2026-11-12: keep the list of issues we identify and fix, with notes, and our
 Issue log rows come from the committed files only:
 - reports/<tenant>/findings.json: every finding of the subdomain, open and resolved (found, severity, scope);
 - reports/<tenant>/agent-fixes.json: fixes by the agent (commit, fixed, verified, result); a row is matched to its
-  finding by `finding` id, else by check; a fix without a finding (found by hand) is a row of its own;
+  finding by `finding` id, else by check; a fix without a finding (found by hand) is a row of its own, and
+  `found_by` says who found it (e.g. "Shoaib Khan"; SK, 2026-11-12: issues he finds and we fix are logged);
 - reports/<tenant>/issue-notes.json (optional): {"<finding id or check>": {"status": "...", "notes": [{"date",
   "by", "text"}]}}: decisions and notes; `status` overrides the computed one (e.g. "Reviewed", "Won't fix").
 Rules come from docs/rules.yaml.
@@ -146,7 +147,8 @@ def issue_rows(tenant: str, host: str) -> list[dict]:
         rows.append(
             {
                 "id": "–",
-                "area": "found by hand",
+                "area": "found by " + who(r.get("found_by") or "hand"),
+                "found_by": who(r.get("found_by") or ""),
                 "found": r.get("found"),
                 "issue": r.get("issue"),
                 "check": r.get("check"),
@@ -250,7 +252,8 @@ def section_switch(host: str, hosts: list[str], tail: str) -> str:
     return (
         '<div class="switch"><label for="sec-sw">Section</label><select id="sec-sw"><option selected>Blogs</option>'
         f'</select><label for="sub-sw">Subdomain</label><select id="sub-sw"><option value="">All blogs</option>{opts}'
-        "</select></div>\n<script>document.getElementById('sec-sw').onchange = () => { location.href = '../../blogs/'; };"
+        "</select></div>\n<script>"
+        "document.getElementById('sec-sw').onchange = () => { location.href = '../../blogs/'; };"
         "document.getElementById('sub-sw').onchange = e => { location.href = e.target.value ? "
         f"`../../${{e.target.value}}/{tail}` : '../../blogs/'; }};</script>\n"
     )
@@ -287,7 +290,8 @@ def issue_log_page(
         if r["id"] != "–":
             det.append(("ID · check", f"{esc(r['id'])} · <code>{esc(r['check'])}</code> · {esc(r['area'])}"))
         else:
-            det.append(("Found", "by hand (no audit check at the time)"))
+            who_found = f"by {esc(r['found_by'])}" if r.get("found_by") else "by hand (no audit check at the time)"
+            det.append(("Found", who_found))
         if r["means"]:
             det.append(("What it means", esc(r["means"])))
         if r["observed"]:
