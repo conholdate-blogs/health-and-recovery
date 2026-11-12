@@ -44,7 +44,8 @@ _FM = re.compile(r"\A---[ \t]*\n(.*?)\n---[ \t]*(?:\n|\Z)", re.S)
 _NAME = re.compile(r"^index(?:\.[A-Za-z]{2,3}(?:-[A-Za-z]+)?)?\.md$")
 _NON_ASCII = re.compile(r"[^\x00-\x7f]")
 _TEXT_KEYS = re.compile(r"^(seoTitle|title|description|summary):")
-TEMPLATES = {"language_name_wrong": "config", "rtl_direction_missing": "config", "slash_redirect_temporary": "host",
+TEMPLATES = {"menu_id_invalid": "config", "menu_id_missing": "config", "menu_id_wrong_script": "config",
+             "language_name_wrong": "config", "rtl_direction_missing": "config", "slash_redirect_temporary": "host",
              "section_index_untranslated": "listing", "category_page_unused": "listing"}
 STALE_SIMILARITY = 0.75  # below this the English title or description counts as rewritten, not trimmed
 RTL = {"ar", "fa", "he", "ur", "ps", "yi"}
@@ -103,6 +104,14 @@ CHECKS = {
                             "Each language's languageName is its own name in that language (日本語, not 日本)", 1, "S"),
     "rtl_direction_missing": ("intl", "improvable", "Right-to-left languages render left to right",
                               "Arabic, Persian, Hebrew (and other RTL languages) set languageDirection: rtl", 1, "S"),
+    # the company menu bar a menu service draws from params.dynamicmenuid (12 Nov 2026: missing on zh-hant pages)
+    "menu_id_invalid": ("ux", "incorrect", "Company menu bar missing in a language",
+                        "Each language's menu id is <venture>-<language>, two parts: the menu script rejects more",
+                        1, "S"),
+    "menu_id_missing": ("ux", "improvable", "Company menu bar in English on translated pages",
+                        "Every language has its own menu id in params.dynamicmenuid", 1, "S"),
+    "menu_id_wrong_script": ("ux", "improvable", "Traditional Chinese pages show the Simplified Chinese menu",
+                             "zh-hant / zh-tw pages use the Traditional Chinese menu (<venture>-zht)", 1, "S"),
     "category_page_unused": ("crawl", "improvable", "Category pages no post uses",
                              "Every content/categories/<name>/_index.md belongs to a category that posts use", 1, "S"),
     "slash_redirect_temporary": ("crawl", "improvable", "URLs without the trailing slash forward with a 302",
@@ -342,6 +351,7 @@ class RepoAudit:
         issues += self.check_sections(host, section_langs, langs, default, commit)
         issues += self.check_categories(host, cats_used, commit)
         issues += self.check_languages(host, langs)
+        issues += self.check_menu_ids(host, langs, (cfg.get("params") or {}).get("dynamicmenuid"))
         issues += self.check_slash(host, urls)
         return issues, posts
 
@@ -468,6 +478,37 @@ class RepoAudit:
                             "page": f"https://{host}/{code}/", "fix": "languageDirection: rtl",
                             "note": f"{code}: languageDirection {v.get('languageDirection') or 'not set'}",
                             "commit": None})
+        return out
+
+    def check_menu_ids(self, host, langs, ids) -> list[dict]:
+        """The theme looks up params.dynamicmenuid by each language's languageCode and hands it to a menu script that
+        splits it on "-" and accepts exactly two parts (venture, language): "x-zh-hant" draws no bar at all. A
+        language without an id gets the default (English) menu."""
+        if not isinstance(ids, dict) or not ids:
+            return []
+        out = []
+        for code, v in langs.items():
+            v = v if isinstance(v, dict) else {}
+            key = str(v.get("languageCode") or code)
+            mid = ids.get(key)
+            page = f"https://{host}/{code}/" if code != "en" else f"https://{host}/"
+            if mid is None:
+                if str(code) != "en":
+                    out.append({"check": "menu_id_missing", "file": "config.yml", "line": 0, "link": str(code),
+                                "page": page, "fix": f"params.dynamicmenuid.{key}: <venture>-{key}",
+                                "note": f"{code}: no menu id, so the English menu is shown", "commit": None})
+                continue
+            parts = str(mid).split("-")
+            if len(parts) != 2:
+                fix = f"{parts[0]}-zht" if key.lower() in ("zh-hant", "zh-tw") else f"{parts[0]}-{''.join(parts[1:])}"
+                out.append({"check": "menu_id_invalid", "file": "config.yml", "line": 0, "link": str(code),
+                            "page": page,
+                            "fix": fix, "note": f"{code}: menu id {mid!r} has {len(parts)} parts; the menu script "
+                            "rejects it and draws no bar", "commit": None})
+            elif key.lower() in ("zh-hant", "zh-tw") and parts[1].lower() == "zh":
+                out.append({"check": "menu_id_wrong_script", "file": "config.yml", "line": 0, "link": str(code),
+                            "page": page, "fix": f"{parts[0]}-zht",
+                            "note": f"{code}: menu id {mid!r} is the Simplified Chinese menu", "commit": None})
         return out
 
     def check_slash(self, host: str, urls: dict) -> list[dict]:

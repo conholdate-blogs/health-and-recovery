@@ -225,3 +225,21 @@ def test_site_checks_found_by_hand_on_a_small_blog(tmp_path):
     assert [i["file"] for i in by["category_page_unused"]] == ["content/categories/old-family/_index.md"]
     assert {i["link"] for i in by["slash_redirect_temporary"]} == {"/b", "/tags"}
     assert {f["check"] for f in report["findings"]} >= set(by)
+
+
+def test_menu_ids_the_menu_script_cannot_use(tmp_path):
+    repo = tmp_path / "repo"
+    git(tmp_path, "init", "-q", str(repo))
+    (repo / "config.yml").write_text(
+        "params:\n  dynamicmenuid:\n    en: shop-en\n    zh: shop-zh\n    zh-hant: shop-zh-hant\n    zh-tw: shop-zh\n"
+        "languages:\n  en: {languageCode: en}\n  zh: {languageCode: zh}\n  zh-hant: {languageCode: zh-hant}\n"
+        "  zh-tw: {languageCode: zh-tw}\n  vi: {languageCode: vi}\n", encoding="utf-8")
+    (repo / "content").mkdir()
+    git(repo, "add", "-A")
+    git(repo, "commit", "-q", "-m", "x")
+    by = {}
+    for i in run(repo)["hosts"][HOST]["issues"]:
+        by.setdefault(i["check"], []).append(i)
+    assert [(i["link"], i["fix"]) for i in by["menu_id_invalid"]] == [("zh-hant", "shop-zht")]
+    assert [i["link"] for i in by["menu_id_missing"]] == ["vi"]
+    assert [i["link"] for i in by["menu_id_wrong_script"]] == ["zh-tw"]
