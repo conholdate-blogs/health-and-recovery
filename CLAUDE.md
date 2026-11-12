@@ -17,7 +17,7 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 
 ## Start here (session handoff, 2026-11-12, end of day)
 
-**State at end of 12 Nov:** blog.conholdate.cloud **health 100**; F17 (company menu on /zh-hant/, found by Shoaib
+**State at end of 12 Nov:** blog.conholdate.cloud **health 100**; F20 llms.txt generated at build, F21 README, F22 llms.txt as UTF-8 (all verified live, 20 agent-fix rows); F17 (company menu on /zh-hant/, found by Shoaib
 Khan), F18 (Java translation lengths), F19 (llms.txt) pushed, deployed by SK and verified live; 17 agent-fix rows, all
 verified; snapshot 2026-11-12-3. Translation agent now keeps titles/descriptions in range (423a608, GitHub only; its
 GitLab main is on another commit). Issues found by hand and fixed are logged with `found_by` (rule PROC-3).
@@ -27,7 +27,6 @@ GitLab main is on another commit). Issues found by hand and fixed are logged wit
 | What | State |
 |---|---|
 | F20 llms.txt generated at build (output format `llms` + `layouts/index.llms.txt`, `static/llms.txt` removed) | blog commit **7bf0f7b deployed and verified live** (23 files, all links answer); guard `llms_txt_outdated` (6f910c0); rule AI-1; then the other blogs |
-| F22 llms.txt (and robots.txt) served without charset=utf-8, garbled in browsers | blog commit **32f3330 committed, not pushed** (deploy matcher); check `llms_txt_charset` |
 | F16 no-slash 302 | CDN setting; owner to be named |
 | Company menu on the other blogs (aspose.cloud zh-tw and groupdocs.cloud zh-hant: no bar; conholdate.com vi/th/tr English bar; aspose.com zh-hant Simplified) | in [docs/identified-issues.md](docs/identified-issues.md); counted in their reports at their next scan |
 | blog.conholdate.com part B | waiting (its log) |

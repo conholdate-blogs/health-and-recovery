@@ -265,10 +265,11 @@
   "issue": "llms.txt served as text/plain without charset=utf-8: browsers garbled the language names (العربية shown as Ø¹Ø±Ø¨ÙŠ) and every /<lang>/llms.txt",
   "repo": "conholdate-cloud/blog.conholdate.cloud",
   "commits": [
-   "32f3330d4e08b17c56b62e0999e18b8c6b57ff65"
+   "32f3330d4e08b17c56b62e0999e18b8c6b57ff65",
+   "f83b80c4a6805d24f96a4cfe4e4995b574295178"
   ],
   "fixed": "2026-11-12",
-  "verified": null,
-  "result": "Committed: hugo deploy sets text/plain; charset=utf-8 for *.txt. Waiting for push and Deploy Production - AWS"
+  "verified": "2026-11-12",
+  "result": "Live: llms.txt and every /<lang>/llms.txt served as text/plain; charset=utf-8; Chrome shows the language names correctly. Needed a content change (\"Last updated\" line) because hugo deploy re-uploads only changed files; robots.txt (ASCII) gets the header at its next change"
  }
 ]
