@@ -96,6 +96,8 @@ scan on the fixed blogs now (launchd; catches regressions); (3) deploy the commi
 `docs/commit-check/`, needs SK's review + approved pushes); optional: make hand fixes as PRs too (needs `gh`/token).
 Hand-fix order: blog.conholdate.com (waits for SK's 3 decisions in its log) → blog.groupdocs.cloud →
 blog.aspose.cloud → blog.aspose.com (last: live Redirects.json, 9 h scans); blog.groupdocs.com monitor only.
+**Next session (13 Nov, SK):** continue blog.conholdate.com part B; first get SK's 3 decisions (recommended: B2 no
+redirects; B1 + B2 push and deploy after the build diff; B5 link fixes by the agent as scripted fixes).
 **Switch rule:** a fix is automated only after it was applied by hand on ≥ 2 blogs, broke nothing after deploy,
 and has a pre-push test and a live check.
 
