@@ -377,7 +377,7 @@ footer a { color: var(--accent) }
   </header>
 
   <nav class="toc" aria-label="Contents">
-    <a href="#summary">Summary</a><a href="#families" id="toc-fam">Families</a><a href="#host-health" id="toc-host">Subdomains</a><a href="#priorities">Priorities</a><a href="#systemic" id="toc-sys">Shared problems</a><a href="#findings">Issues and fixes</a><a href="#changes">Changes</a><a href="#reference">Reference</a><a href="#fix-guide" id="toc-guide" class="shared">Fix guide</a><a href="#method" class="shared">Method</a>
+    <a href="#summary">Summary</a><a href="#families" id="toc-fam">Families</a><a href="#host-health" id="toc-host">Subdomains</a><a href="#priorities">Priorities</a><a href="#systemic" id="toc-sys">Shared problems</a><a href="#findings">Issues and fixes</a><a href="#changes">Changes</a><a href="#reference">Reference</a><a href="issues/" id="toc-issues" class="shared" hidden>Issue log</a><a href="#fix-guide" id="toc-guide" class="shared">Fix guide</a><a href="#" id="toc-rules" class="shared" hidden>Rules</a><a href="#method" class="shared">Method</a>
   </nav>
 
   <section aria-labelledby="s-sum" id="summary">
@@ -1131,6 +1131,9 @@ __METHOD__
   if (GURL) {
     $("fix-guide").hidden = true;
     $("toc-guide").href = $("lede-guide").href = GURL;
+    $("toc-rules").href = GURL.replace("fix-guide/", "rules/");  // shared rules page (SK, 2026-11-12)
+    $("toc-rules").hidden = false;
+    if (R._page_host && !R._snapshot) $("toc-issues").hidden = false;  // /<subdomain>/issues/
   } else {
     const AREAS = (R._guide && R._guide.areas) || [];
     $("g-area").innerHTML = `<option value="">All areas</option>` + AREAS.map(a => `<option value="${esc(a)}">${esc(a)}</option>`).join("");

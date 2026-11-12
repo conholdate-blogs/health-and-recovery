@@ -17,6 +17,16 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 
 ## Start here (session handoff, 2026-11-12)
 
+**Later on 12 Nov:** F13–F15 pushed and deployed by SK, verified live, blog.conholdate.cloud **health 100** (open: no-slash
+302, F16, CDN). New site pages: **Issue log** `/<subdomain>/issues/` (findings + `agent-fixes.json` + new
+`reports/<tenant>/issue-notes.json` for notes/decisions; columns ID·Area, Found, Issue, Severity, Scope, Status,
+Fixed·by·commit, Verified live, Notes) and **Rules** `/rules/` from `docs/rules.yaml` (21 rules; Fix guide rows link
+their rules); builder `scripts/site_pages.py`. Crawl sample: full crawl ≤ 1,000 URLs; else fixed half + rotating half
+(unseen, newest posts first by repo date) + recheck of last run's failing pages; coverage on the "Checked" line.
+Untranslated checks follow the translation agent's keep-in-English rules (`core/audit/keep_terms.py`); TR-2 (short
+English titles count) confirmed by SK. LLM: internal OpenAI-compatible endpoint, model `gpt-oss` (borrowed
+translation-agent key). Every site page stays `noindex, nofollow` (checked: 136 of 136).
+
 **Audit of the auditors (SK: "audit our auditors and improve them"), then rescan of blog.conholdate.cloud:**
 11 new checks + full crawl for hosts with ≤ 500 sitemap URLs (commits 073d772 … this one; details in
 [docs/playbook.md](docs/playbook.md) "Rules for our own audit" and the blog log). blog.conholdate.cloud **100 → 94,

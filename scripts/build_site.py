@@ -29,7 +29,7 @@ from core import brand  # noqa: E402
 from core.fix_guide import AREAS, GUIDE, guide_key, mark_terms  # noqa: E402
 from core.paths import published_tenants, tenant_paths  # noqa: E402
 from core.tenant import load_tenant  # noqa: E402
-from scripts import build_archive, build_report  # noqa: E402
+from scripts import build_archive, build_report, site_pages  # noqa: E402
 
 LEGACY_TENANT = "aspose.app"  # its report was the site root until 2026-10-20
 
@@ -203,6 +203,7 @@ def open_by_check(tenants: list[str]) -> dict:
 def guide_page(tenants: list[str]) -> str:
     """The shared fix guide: rows grouped by area, worst severity first; anchors #g-<check> as in the reports."""
     used = open_by_check(tenants)
+    rules = site_pages.rules_by_check()
     order = list(SEVERITY)
     body = []
     for area in AREAS:
@@ -220,7 +221,9 @@ def guide_page(tenants: list[str]) -> str:
             sev = g["severity"]
             opened = ", ".join(f'<a href="../{html.escape(t)}/">{html.escape(t)}</a> {n}'
                                for t, n in sorted(used.get(k, {}).items()))
-            trs.append(f'<tr id="g-{html.escape(k)}"><td class="name">{mark_terms(html.escape(g["name"]))}</td>'
+            ruled = " ".join(f'<a href="../rules/#{html.escape(r)}">{html.escape(r)}</a>' for r in rules.get(k, []))
+            trs.append(f'<tr id="g-{html.escape(k)}"><td class="name">{mark_terms(html.escape(g["name"]))}'
+                       f'{f"<br><small>Rule {ruled}</small>" if ruled else ""}</td>'
                        f'<td class="sev sev-{html.escape(sev)}"><span class="dot"></span>{SEVERITY.get(sev, sev)}</td>'
                        + "".join(f"<td>{html.escape(g[c])}</td>" for c in ("means", "impact", "fix", "verify"))
                        + f'<td class="open">{opened or "–"}</td></tr>')
@@ -360,7 +363,7 @@ def domain_block(tenants: list[str], scores: dict[str, tuple[int, str]], alerts:
 
 # pages across domains: slug -> name; members come from each tenant's YAML `collections` (SK, 2026-10-27)
 COLLECTIONS = {"blogs": "Blogs"}
-RESERVED = {"fix-guide", "method", "archive", *COLLECTIONS}  # site folders that are neither tenants nor hosts
+RESERVED = {"fix-guide", "method", "archive", "rules", *COLLECTIONS}  # site folders that are neither tenants nor hosts
 
 
 def collection_members(tenants: list[str]) -> dict[str, list[tuple[str, str]]]:
@@ -440,6 +443,14 @@ def build(out: Path, tenants: list[str]) -> None:
         print(f"{COLLECTIONS[slug]}: {len(mem)} subdomains")
     (out / "fix-guide").mkdir(exist_ok=True)
     (out / "fix-guide" / "index.html").write_text(guide_page(tenants), encoding="utf-8")
+    css = GUIDE_PAGE.split("<style>", 1)[1].split("</style>", 1)[0]
+    (out / "rules").mkdir(exist_ok=True)
+    (out / "rules" / "index.html").write_text(site_pages.rules_page(css, HEAD, brand.logo(36)), encoding="utf-8")
+    for t in tenants:  # issue log per subdomain (SK, 2026-11-12)
+        for h in hosts[t]:
+            (out / h / "issues").mkdir(parents=True, exist_ok=True)
+            (out / h / "issues" / "index.html").write_text(
+                site_pages.issue_log_page(t, h, css, HEAD, brand.logo(36)), encoding="utf-8")
     (out / "method").mkdir(exist_ok=True)
     (out / "method" / "index.html").write_text(method_page(), encoding="utf-8")
     legacy = LEGACY_TENANT if LEGACY_TENANT in tenants else ""  # its old links lead nowhere while it is not published
