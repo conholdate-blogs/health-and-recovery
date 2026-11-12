@@ -21,10 +21,10 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 
 | # | What | State |
 |---|---|---|
-| F17 | Company menu bar missing on all /zh-hant/ pages: menu id `conholdatecloud-zh-hant` → `conholdatecloud-zht` | blog commit **39f62ad committed, not pushed**; tested locally (bar renders in Traditional Chinese), commit check PASSED |
-| F18 | The Java post's new translations (SK's translation agent, 1244f92): 9 titles, 9 descriptions too long | blog commit **98431b5 committed, not pushed** (SK: fix now; `front_matter_set.py` now handles values wrapped over several lines) |
-| F19 | `static/llms.txt` calls the Java post "English only" (now translated) | blog commit **50ce0eb committed, not pushed** |
-| agent | Translation agent keeps title/seoTitle ≤ 70 and description ≤ 170 wide (shortens by LLM) | agent repo commit **697af12 committed, not pushed** (SK: "update translation agent so it takes care next time") |
+| F17 | Company menu bar missing on all /zh-hant/ pages: menu id `conholdatecloud-zh-hant` → `conholdatecloud-zht` | blog commit **39f62ad pushed 12 Nov, waiting for Deploy Production - AWS**; tested locally (bar renders in Traditional Chinese), commit check PASSED |
+| F18 | The Java post's new translations (SK's translation agent, 1244f92): 9 titles, 9 descriptions too long | blog commit **98431b5 pushed, waiting for deploy** (SK: fix now; `front_matter_set.py` now handles values wrapped over several lines) |
+| F19 | `static/llms.txt` calls the Java post "English only" (now translated) | blog commit **50ce0eb pushed, waiting for deploy** |
+| agent | Translation agent keeps title/seoTitle ≤ 70 and description ≤ 170 wide (shortens by LLM) | agent repo commit **423a608** (amended to carry the credit line), **pushed to GitHub origin/main**; GitLab main is on another commit (e97d9c8), not touched |
 | F16 | No-slash URLs answer 302, not 301 | CDN (CloudFront) setting, not the repo; owner to be named |
 | other blogs | Company menu: blog.aspose.cloud zh-tw and blog.groupdocs.cloud zh-hant have **no bar** (3-part ids; `<venture>-zht` exists); blog.conholdate.com vi/th/tr show the English bar (no id); blog.aspose.com zh-hant shows the Simplified bar (`aspose-zht` exists) | found by the new repo check (dry run); not yet in their reports (next scan) |
 
@@ -391,7 +391,7 @@ git add -A && git commit -m "..."; then git push origin master, git push shoaibk
 **Working rules from SK (keep):**
 - **Commit email: always `shoaib.khan@aspose.com`** (SK, 2026-10-22). Set in this repo's `.git/config`, because something on the Mac switches the global `~/.gitconfig` to SK's personal address; check `git log -1 --format=%ae` after every commit. History rewritten 2026-10-22 (`git filter-repo --mailmap`, 80 of 96 commits moved from the personal address; dates, messages and files unchanged; all commit ids changed; backup bundle kept outside the repo; old → new id map: Claude doc https://claude.ai/artifact/LyhQxpxJhcb3L9twbCJ41k).
 - Commits: SK is the only author and committer. Credit Claude with a plain last line `Assisted by Claude Code` (SK, 2026-10-12; exactly this wording, no model name); **never a `Co-Authored-By: Claude` trailer** (GitHub would show Claude as co-author). Leave old commits as they are.
-- **Bug fixes on site repos (SK, 2026-11-03):** the commit message carries the line `Fixed by Health and Recovery Agent`, before `Assisted by Claude Code`.
+- **Fixes in other repos (SK, 2026-11-03; widened 2026-11-12):** every fix or improvement the agent commits to a repo other than this one (blog site repos and SK's tools such as `conholdate/blog-translation-agent`) carries the line `Fixed by Health and Recovery Agent`, before `Assisted by Claude Code`.
 - Commit at each logical step; push to all three remotes, one command each: `origin`, `shoaibkhan`, `gitlab` (see Repo below).
 - Report changes apply to the **latest report only**; never regenerate older report pages or run JSONs.
 - **Archive before anything replaces the live report (SK, 2026-10-15: "store in archive whatever is necessary and don't forget it"):** before pushing a report whose structure or data changed, check `reports/<tenant>/archive/index.json`. If the version live on Pages is not archived yet, download it (`curl` the tenant's Pages URL `/<tenant>/` into `reports/<tenant>/archive/<date>.html`, add an index entry "…, before <change>"; it equals a build of the last commit), then build the new report with `--snapshot "After <change>"`. Every version that was ever live must end up in the archive.

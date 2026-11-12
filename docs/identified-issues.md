@@ -8,11 +8,11 @@ otherwise. When a blog is scanned, its report and Issue log take over; tick the 
 
 | Issue | Count | State |
 |---|---|---|
-| Company menu bar missing on /zh-hant/ (`menu_id_invalid`) | 1 language | F17 fix 39f62ad, committed, **push + deploy waiting for SK** |
-| Java post translations: titles/descriptions too long (`post_title_length`, `post_description_length`) | 9 + 9 | F18 fix 98431b5, committed, **push + deploy waiting** |
-| llms.txt calls the Java post "English only" | 1 | F19 fix 50ce0eb, committed, **push + deploy waiting** |
+| Company menu bar missing on /zh-hant/ (`menu_id_invalid`) | 1 language | F17 fix 39f62ad, pushed 12 Nov, **deploy waiting** |
+| Java post translations: titles/descriptions too long (`post_title_length`, `post_description_length`) | 9 + 9 | F18 fix 98431b5, pushed, **deploy waiting** |
+| llms.txt calls the Java post "English only" | 1 | F19 fix 50ce0eb, pushed, **deploy waiting** |
 | No-slash URLs answer 302 (`slash_redirect_temporary`) | host | F16: CDN setting, owner to be named |
-| Translation agent writes over-long titles/descriptions | tool | agent commit 697af12 (length limits), committed, **push waiting** |
+| Translation agent writes over-long titles/descriptions | tool | agent commit 423a608 (length limits), pushed to GitHub |
 | Tags: 27 tags, all with one post | 27 | SK: retag later (tag pages noindex meanwhile) |
 | English H2s in translated post bodies (e.g. "Convert HTML to DOCX" on /ar/) | seen by hand | not a check yet (body text); for the translation agent |
 | Header label "Home" in English on every language | site-wide | small config change (`params.label.text` per language) |
