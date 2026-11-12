@@ -271,8 +271,12 @@ def rules_page(css: str, head: str, logo: str) -> str:
             )
             trs.append(
                 f'<tr id="{esc(r["id"])}"><td class="id">{esc(r["id"])}</td><td class="rule">{esc(r["rule"])}</td>'
-                f'<td>{esc(r.get("why"))}</td><td class="num">{esc(who(r.get("set_by")))}'
-                + (f"<br><small>({esc(TEAM[who(r.get('set_by'))])})</small>" if who(r.get("set_by")) in TEAM else "")
+                f'<td>{esc(r.get("why"))}</td><td class="num">'
+                + (  # a person under their team (SK, 2026-11-12): "Blogs Team" / "- Shoaib Khan"
+                    f"{esc(TEAM[who(r.get('set_by'))])}<br>- {esc(who(r.get('set_by')))}"
+                    if who(r.get("set_by")) in TEAM
+                    else esc(who(r.get("set_by")))
+                )
                 + f"<br><small>"
                 f'{day(r.get("date"))}</small></td><td class="fix">{checks}</td>'
                 f'<td class="st {"st-ok" if r.get("status") == "active" else ""}">{esc(r.get("status"))}</td></tr>'
