@@ -415,7 +415,8 @@ def build(out: Path, tenants: list[str]) -> None:
     out.mkdir(parents=True, exist_ok=True)
     hosts = site_hosts(tenants)
     members = collection_members(tenants)
-    site_collections = ",".join(f"{slug}:{COLLECTIONS[slug]}" for slug in members)
+    site_collections = ",".join(f"{slug}:{COLLECTIONS[slug]}:{'|'.join(h for _, h in mem)}" for slug, mem in members.items())
+    section_hosts = [h for _, h in members.get("blogs", [])]
     for t in tenants:
         paths = tenant_paths(t)
         common = ["--tenant", t, "--findings", str(paths.findings_export), "--standalone", "--guide-url", GUIDE_URL,
@@ -450,7 +451,7 @@ def build(out: Path, tenants: list[str]) -> None:
         for h in hosts[t]:
             (out / h / "issues").mkdir(parents=True, exist_ok=True)
             (out / h / "issues" / "index.html").write_text(
-                site_pages.issue_log_page(t, h, css, HEAD, brand.logo(36)), encoding="utf-8")
+                site_pages.issue_log_page(t, h, css, HEAD, brand.logo(36), section_hosts), encoding="utf-8")
     (out / "method").mkdir(exist_ok=True)
     (out / "method" / "index.html").write_text(method_page(), encoding="utf-8")
     legacy = LEGACY_TENANT if LEGACY_TENANT in tenants else ""  # its old links lead nowhere while it is not published

@@ -524,6 +524,7 @@ def issue_log_summary(tenant: str, host: str, history_path: Path) -> dict:
         found = [r for r in rows if (r["found"] or "")[:10] <= d]
         closed = lambda r: not r["open"] and (r["fixed"] or "")[:10] and (r["fixed"] or "")[:10] <= d  # noqa: E731
         series.append({"date": d, "open": sum(1 for r in found if not closed(r)), "health": health.get(d),
+                       "total": len(found),
                        "fixed": sum(1 for r in found if r["status"] in fixed_states and closed(r))})
     return {"total": len(rows), "open": n["Open"], "verified": n["✓ Verified live"],
             "pushed": n["Pushed, waiting for deploy"], "resolved": n["Resolved"],
@@ -723,8 +724,14 @@ def prepare(args: argparse.Namespace) -> tuple[dict, list[str], str | None, str,
 
 
 def parse_collections(spec: str | None) -> list[dict]:
-    """'blogs:Blogs,forums:Forums' -> [{'slug': 'blogs', 'name': 'Blogs'}, ...]"""
-    return [dict(zip(("slug", "name"), item.split(":", 1))) for item in (spec or "").split(",") if ":" in item]
+    """'blogs:Blogs:h1|h2,forums:Forums' -> [{'slug': 'blogs', 'name': 'Blogs', 'hosts': ['h1', 'h2']}, ...]"""
+    out = []
+    for item in (spec or "").split(","):
+        if ":" not in item:
+            continue
+        slug, name, *rest = item.split(":", 2)
+        out.append({"slug": slug, "name": name, "hosts": [h for h in (rest[0] if rest else "").split("|") if h]})
+    return out
 
 
 def collection_report(name: str, slug: str, members: list[tuple[str, str]]) -> dict:

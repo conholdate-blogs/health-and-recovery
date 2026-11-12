@@ -349,7 +349,8 @@ def test_blogs_page_members_and_ids():
     from scripts import build_site
     from scripts.build_report import collection_report, parse_collections
 
-    assert parse_collections("blogs:Blogs,x") == [{"slug": "blogs", "name": "Blogs"}]
+    assert parse_collections("blogs:Blogs,x") == [{"slug": "blogs", "name": "Blogs", "hosts": []}]
+    assert parse_collections("blogs:Blogs:a.com|b.com")[0]["hosts"] == ["a.com", "b.com"]
     members = build_site.collection_members(["aspose.cloud", "groupdocs.cloud"])
     assert members["blogs"] == [("aspose.cloud", "blog.aspose.cloud"), ("groupdocs.cloud", "blog.groupdocs.cloud")]
     R = collection_report("Blogs", "blogs", members["blogs"])

@@ -192,6 +192,8 @@ TILES = [
 ]
 
 LOG_CSS = """
+.switch { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: flex-end; font-size: 13px;
+  color: var(--muted) } .switch select { font: inherit; padding: 3px 6px; max-width: 100% }
 /* one row per status: count, name, bar, share (SK, 2026-11-12); a row filters the table */
 .sbars { display: grid; gap: 4px; max-width: 900px }
 .srow { display: grid; grid-template-columns: 44px 230px 1fr 48px; align-items: center; gap: 12px; padding: 4px 8px;
@@ -240,7 +242,23 @@ def _status_detail(r: dict) -> str:
     return "".join(f'<small class="{"commits" if x == commits else ""}">{x}</small>' for x in lines if x)
 
 
-def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> str:
+def section_switch(host: str, hosts: list[str], tail: str) -> str:
+    """Section (Blogs only, SK 2026-11-12) and Subdomain selects, as on the report pages; `tail` keeps the page kind."""
+    if not hosts:
+        return ""
+    opts = "".join(f'<option value="{esc(h)}"{" selected" if h == host else ""}>{esc(h)}</option>' for h in hosts)
+    return (
+        '<div class="switch"><label for="sec-sw">Section</label><select id="sec-sw"><option selected>Blogs</option>'
+        f'</select><label for="sub-sw">Subdomain</label><select id="sub-sw"><option value="">All blogs</option>{opts}'
+        "</select></div>\n<script>document.getElementById('sec-sw').onchange = () => { location.href = '../../blogs/'; };"
+        "document.getElementById('sub-sw').onchange = e => { location.href = e.target.value ? "
+        f"`../../${{e.target.value}}/{tail}` : '../../blogs/'; }};</script>\n"
+    )
+
+
+def issue_log_page(
+    tenant: str, host: str, css: str, head: str, logo: str, section_hosts: list[str] | None = None
+) -> str:
     """The page at /<host>/issues/ (two levels below the site root): tiles and a bar on top, then a sortable table."""
     rows = issue_rows(tenant, host)
     cols = [
@@ -338,8 +356,10 @@ def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> st
     opts = "".join(f'<option value="{esc(v)}">{esc(v)}</option>' for v in areas)
     heads = "".join(f'<th class="sort" data-t="{t}" tabindex="0">{c}</th>' if t else f"<th>{c}</th>" for c, t in cols)
     return (
-        head + f"<title>Issue log: {esc(host)}</title>\n<style>{css}{EXTRA_CSS}{LOG_CSS}</style>\n<main>\n"
-        f'  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">All domains</a> › '
+        head
+        + f"<title>Issue log: {esc(host)}</title>\n<style>{css}{EXTRA_CSS}{LOG_CSS}</style>\n<main>\n"
+        + section_switch(host, section_hosts or [], "issues/")
+        + f'  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">All domains</a> › '
         f'<a href="../../{esc(tenant)}/">{esc(tenant)}</a> › <a href="../">{esc(host)}</a> › <b>Issue log</b></nav>\n'
         f"  <h1>{logo}Issue log</h1>\n"
         f"  <p>Every issue the audits identified on {esc(host)}, open and closed: status with the date and commits, "
