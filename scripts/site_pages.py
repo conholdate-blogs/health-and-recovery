@@ -183,7 +183,7 @@ def _status_cls(status: str) -> str:
 
 
 SEV_RANK = {"broken": 0, "incorrect": 1, "not_optimized": 2, "improvable": 3}
-# summary tiles and bar: (label, statuses counted, css class); "Fixed" = verified live + pushed (SK, 2026-11-12)
+# status rows (count, bar, share): (label, statuses, css class); "Fixed" = verified live + pushed (SK, 2026-11-12)
 TILES = [
     ("Open", ["Open"], "t-open"),
     ("Fixed", ["✓ Verified live", "Pushed, waiting for deploy"], "t-fixed"),
@@ -192,21 +192,22 @@ TILES = [
 ]
 
 LOG_CSS = """
-.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px }
-.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px;
-  text-align: left; font: inherit; color: inherit; cursor: pointer; display: flex; flex-direction: column;
-  justify-content: flex-start }
-.tile[aria-pressed="true"] { outline: 2px solid var(--accent) }
-.tile b { display: block; font-size: 26px; line-height: 1.2 } .tile small { color: var(--muted) }
-.tile span { font-size: 13px; font-weight: 600 }
-.t-open b { color: var(--broken) } .t-fixed b { color: #067647 }
-.t-res b { color: #1570ef } .t-rev b { color: var(--muted) }
+/* one row per status: count, name, bar, share (SK, 2026-11-12); a row filters the table */
+.sbars { display: grid; gap: 4px; max-width: 900px }
+.srow { display: grid; grid-template-columns: 44px 230px 1fr 48px; align-items: center; gap: 12px; padding: 4px 8px;
+  background: none; border: 1px solid transparent; border-radius: 6px; font: inherit; color: inherit; text-align: left;
+  cursor: pointer }
+.srow:hover { background: var(--surface) } .srow[aria-pressed="true"] { border-color: var(--accent);
+  background: var(--surface) }
+.srow b { font-size: 18px; text-align: right } .srow span small { color: var(--muted); margin-left: 6px }
+.srow em { font-style: normal; color: var(--muted); font-size: 13px; text-align: right }
+.track { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--line) }
+.track i { display: block } i.t-all { background: var(--accent) } i.t-open { background: var(--broken) }
+i.t-fixed { background: #12b76a } i.t-pushed { background: #a6f4c5 } i.t-res { background: #2e90fa }
+i.t-rev { background: #98a2b3 }
+.t-open b { color: var(--broken) } .t-fixed b { color: #067647 } .t-res b { color: #1570ef }
 @media (prefers-color-scheme: dark) { .t-fixed b { color: #47cd89 } .t-res b { color: #53b1fd } }
-.bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: var(--line); gap: 2px }
-.bar i { display: block } i.t-open { background: var(--broken) } i.t-fixed { background: #12b76a }
-i.t-pushed { background: #a6f4c5 } i.t-res { background: #2e90fa } i.t-rev { background: #d0d5dd }
-.legend { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 14px }
-.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px }
+@media (max-width: 640px) { .srow { grid-template-columns: 36px 1fr 44px } .srow .track { grid-column: 1 / -1 } }
 th.sort { cursor: pointer; user-select: none; white-space: nowrap }
 th.sort::after { content: " ↕"; opacity: .4 } th[aria-sort="ascending"]::after { content: " ↑"; opacity: 1 }
 th[aria-sort="descending"]::after { content: " ↓"; opacity: 1 }
@@ -310,31 +311,29 @@ def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> st
         )
     n = {s: sum(r["status"] == s for r in rows) for s in STATUS_ORDER}
     verified, pushed = n["✓ Verified live"], n["Pushed, waiting for deploy"]
-    tiles = [
-        f'<button type="button" class="tile" data-f="" aria-pressed="true"><span>Total</span><b>{len(rows)}</b>'
-        f"<small>issues found</small></button>"
-    ]
+    total = max(len(rows), 1)
     sub = {
         "Open": "to fix",
-        "Fixed": f"{verified} verified live · {pushed} waiting for deploy",
+        "Fixed": f"{verified} verified live" + (f" · {pushed} waiting for deploy" if pushed else ""),
         "Resolved": "gone, no fix recorded",
-        "Reviewed": "false or relabelled findings, decisions",
+        "Reviewed": "false or relabelled",
     }
-    for label, sts, cls in TILES:
-        tiles.append(
-            f'<button type="button" class="tile {cls}" data-f="{esc("|".join(sts))}" aria-pressed="false">'
-            f"<span>{label}</span><b>{sum(n[s] for s in sts)}</b><small>{esc(sub[label])}</small></button>"
+
+    def srow(label, k, fill, f, cls="", pressed=False, note=""):
+        return (
+            f'<button type="button" class="srow {cls}" data-f="{esc(f)}" aria-pressed="{str(pressed).lower()}">'
+            f'<b>{k}</b><span>{label}<small>{esc(note)}</small></span><span class="track">{fill}</span>'
+            f"<em>{100 * k / total:.0f}%</em></button>"
         )
-    segs = [
-        ("t-open", n["Open"], "Open"),
-        ("t-fixed", verified, "Verified live"),
-        ("t-pushed", pushed, "Waiting for deploy"),
-        ("t-res", n["Resolved"], "Resolved"),
-        ("t-rev", n["Reviewed"] + n["Won't fix"], "Reviewed"),
-    ]
-    total = max(len(rows), 1)
-    bar = "".join(f'<i class="{c}" style="flex:{k}" title="{t}: {k}"></i>' for c, k, t in segs if k)
-    legend = "".join(f'<span><i class="{c}"></i>{t} {k} ({100 * k / total:.0f}%)</span>' for c, k, t in segs if k)
+
+    def seg(cls, k):
+        return f'<i class="{cls}" style="width:{100 * k / total:.2f}%"></i>' if k else ""
+
+    srows = [srow("Total", len(rows), seg("t-all", len(rows)), "", pressed=True, note="issues found")]
+    fills = {"Fixed": seg("t-fixed", verified) + seg("t-pushed", pushed)}
+    for label, sts, cls in TILES:
+        k = sum(n[s] for s in sts)
+        srows.append(srow(label, k, fills.get(label) or seg(cls, k), "|".join(sts), cls, note=sub[label]))
     areas = sorted({r["area"] for r in rows})
     opts = "".join(f'<option value="{esc(v)}">{esc(v)}</option>' for v in areas)
     heads = "".join(f'<th class="sort" data-t="{t}" tabindex="0">{c}</th>' if t else f"<th>{c}</th>" for c, t in cols)
@@ -344,11 +343,9 @@ def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> st
         f'<a href="../../{esc(tenant)}/">{esc(tenant)}</a> › <a href="../">{esc(host)}</a> › <b>Issue log</b></nav>\n'
         f"  <h1>{logo}Issue log</h1>\n"
         f"  <p>Every issue the audits identified on {esc(host)}, open and closed: status with the date and commits, "
-        f"who fixed it, and notes and decisions. Issues found by hand and fixed are listed too. Click a tile to "
-        f"filter, a column header to sort.</p>\n"
-        f'  <div class="tiles">{"".join(tiles)}</div>\n'
-        f'  <div class="bar" role="img" aria-label="Issues by status">{bar}</div>\n'
-        f'  <div class="legend">{legend}</div>\n'
+        f"who fixed it, and notes and decisions. Issues found by hand and fixed are listed too. Click a status row "
+        f"to filter, a column header to sort.</p>\n"
+        f'  <div class="sbars">{"".join(srows)}</div>\n'
         f'  <div class="filters"><label for="ar">Area</label><select id="ar"><option value="">All</option>{opts}'
         f'</select><span id="shown"></span></div>\n'
         f'  <div class="tablewrap"><table>\n    <thead><tr>{heads}</tr></thead>\n'
@@ -358,7 +355,7 @@ def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> st
 
 LOG_JS = """<script>
 const table = document.querySelector("table"), groups = () => [...table.tBodies];
-const tiles = [...document.querySelectorAll(".tile")];
+const tiles = [...document.querySelectorAll(".srow")];
 let want = "";
 function filter() {
   const a = ar.value, sts = want ? want.split("|") : null;
