@@ -602,6 +602,13 @@ _ROWS = [
      "Text, lists and code mix directions; pages are hard to read for those readers.",
      "Set languageDirection: rtl for the language in config.yml; check the theme's RTL styles on one page.",
      "<html dir=rtl> on those pages; next repo check has no item."),
+    ("llms_txt_outdated", "AI readiness", "llms.txt misses the newest posts",
+     "llms.txt lists N posts, but some of the newest N English posts are not in it: the file was written by hand and "
+     "not updated when posts were added.",
+     "AI assistants that read llms.txt do not see the newest articles.",
+     "Build llms.txt from the content on every deploy (Hugo output format + layouts/index.llms.txt; pilot "
+     "blog.conholdate.cloud, 12 Nov 2026) instead of a static file.",
+     "The live llms.txt lists the post; next repo check has no item."),
     ("menu_id_invalid", "Links and translations", "Company menu bar missing in a language",
      "The language's menu id in params.dynamicmenuid has more than two parts (conholdatecloud-zh-hant); the menu "
      "script splits it on \"-\", expects venture-language and draws nothing.",

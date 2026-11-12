@@ -243,3 +243,26 @@ def test_menu_ids_the_menu_script_cannot_use(tmp_path):
     assert [(i["link"], i["fix"]) for i in by["menu_id_invalid"]] == [("zh-hant", "shop-zht")]
     assert [i["link"] for i in by["menu_id_missing"]] == ["vi"]
     assert [i["link"] for i in by["menu_id_wrong_script"]] == ["zh-tw"]
+
+
+def test_llms_txt_missing_the_newest_posts(tmp_path):
+    repo = tmp_path / "repo"
+    git(tmp_path, "init", "-q", str(repo))
+    ok = "seoTitle: A post title that is long enough\ndescription: " + "d" * 60 + "\n"
+    for i, date in enumerate(("2026-01-01", "2026-02-01", "2026-03-01")):
+        d = repo / f"content/Blog/p{i}"
+        d.mkdir(parents=True)
+        (d / "index.md").write_text(f"---\n{ok}date: {date}\nurl: /p{i}/\n---\n", encoding="utf-8")
+    git(repo, "add", "-A")
+    git(repo, "commit", "-q", "-m", "x")
+    llms = f"# Blog\n\n- [One](https://{HOST}/p0/): x\n- [Two](https://{HOST}/p1/): y\n".encode()
+
+    class Llms(FakeFetcher):
+        def get(self, url, headers=None):
+            self.requests += 1
+            if url.endswith("/llms.txt"):
+                return FetchResult(url, 200, final_url=url, body=llms)
+            return FetchResult(url, 404, final_url=url)
+
+    items = [i for i in run(repo, Llms())["hosts"][HOST]["issues"] if i["check"] == "llms_txt_outdated"]
+    assert [i["link"] for i in items] == [f"https://{HOST}/p2/"]  # lists 2, the newest 2 are p2 and p1

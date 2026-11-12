@@ -44,7 +44,8 @@ _FM = re.compile(r"\A---[ \t]*\n(.*?)\n---[ \t]*(?:\n|\Z)", re.S)
 _NAME = re.compile(r"^index(?:\.[A-Za-z]{2,3}(?:-[A-Za-z]+)?)?\.md$")
 _NON_ASCII = re.compile(r"[^\x00-\x7f]")
 _TEXT_KEYS = re.compile(r"^(seoTitle|title|description|summary):")
-TEMPLATES = {"menu_id_invalid": "config", "menu_id_missing": "config", "menu_id_wrong_script": "config",
+TEMPLATES = {"llms_txt_outdated": "host", "menu_id_invalid": "config", "menu_id_missing": "config",
+             "menu_id_wrong_script": "config",
              "language_name_wrong": "config", "rtl_direction_missing": "config", "slash_redirect_temporary": "host",
              "section_index_untranslated": "listing", "category_page_unused": "listing"}
 STALE_SIMILARITY = 0.75  # below this the English title or description counts as rewritten, not trimmed
@@ -112,6 +113,8 @@ CHECKS = {
                         "Every language has its own menu id in params.dynamicmenuid", 1, "S"),
     "menu_id_wrong_script": ("ux", "improvable", "Traditional Chinese pages show the Simplified Chinese menu",
                              "zh-hant / zh-tw pages use the Traditional Chinese menu (<venture>-zht)", 1, "S"),
+    "llms_txt_outdated": ("ai", "improvable", "llms.txt misses the newest posts",
+                          "llms.txt lists the newest posts (built from the content on every deploy)", 1, "S"),
     "category_page_unused": ("crawl", "improvable", "Category pages no post uses",
                              "Every content/categories/<name>/_index.md belongs to a category that posts use", 1, "S"),
     "slash_redirect_temporary": ("crawl", "improvable", "URLs without the trailing slash forward with a 302",
@@ -292,6 +295,7 @@ class RepoAudit:
         urls: dict[str, dict[str, tuple[str, str]]] = {}  # post folder -> language ("" = English) -> (url, file)
         section_langs: dict[str, set] = {}  # top-level and nested content dirs -> languages with posts there
         stale_candidates = []
+        posts_by_date: list[tuple[str, str, str]] = []  # English posts: (date, page, file), for the llms.txt check
         texts: dict[str, dict[str, tuple[dict, str, str | None]]] = {}  # folder -> language -> (values, file, page)
         cats_used: set[str] = set()
         for f in sorted(repo.glob("content/**/index*.md")):
@@ -343,6 +347,8 @@ class RepoAudit:
                 section_langs.setdefault("/".join(parts[:i]), set()).add(lang or default)
             if lang:
                 stale_candidates.append((rel, str(f.parent.relative_to(repo) / "index.md"), page))
+            elif page and data.get("date"):
+                posts_by_date.append((str(data["date"])[:10], page, rel))
             texts.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (
                 {k: str(data.get(k) or "") for k in ("seoTitle", "title", "description")}, rel, page)
         issues += self.check_translated_urls(host, urls, commit)
@@ -353,6 +359,7 @@ class RepoAudit:
         issues += self.check_languages(host, langs)
         issues += self.check_menu_ids(host, langs, (cfg.get("params") or {}).get("dynamicmenuid"))
         issues += self.check_slash(host, urls)
+        issues += self.check_llms(host, posts_by_date)
         return issues, posts
 
     def front_matter_at(self, host: str, rev: str, rel: str) -> dict:
@@ -510,6 +517,23 @@ class RepoAudit:
                             "page": page, "fix": f"{parts[0]}-zht",
                             "note": f"{code}: menu id {mid!r} is the Simplified Chinese menu", "commit": None})
         return out
+
+    def check_llms(self, host: str, posts: list) -> list[dict]:
+        """The live llms.txt lists N posts; the newest N English posts should all be among them (12 Nov 2026: a
+        hand-made file goes stale as posts and translations land daily). No llms.txt: the AI audit reports that."""
+        if not posts:
+            return []
+        res = self.fetcher.get(f"https://{host}/llms.txt")
+        body = res.body.decode("utf-8", "replace") if res.status == 200 and res.body else ""
+        if not body or "<html" in body[:500].lower():
+            return []
+        listed = {u.rstrip("/") + "/" for u in re.findall(r"\]\((https?://[^)\s]+)\)", body)}
+        n = sum(1 for _, page, _ in posts if page.rstrip("/") + "/" in listed)
+        newest = sorted(posts, reverse=True)[:max(n, 1)]
+        return [{"check": "llms_txt_outdated", "file": "llms.txt", "line": 0, "link": page, "page": page,
+                 "fix": "list it (generate llms.txt from the content at build)",
+                 "note": f"post of {d} missing from llms.txt ({n} posts listed)", "commit": None}
+                for d, page, _ in newest if page.rstrip("/") + "/" not in listed]
 
     def check_slash(self, host: str, urls: dict) -> list[dict]:
         """A few URLs without their trailing slash (a post, the tags list, a language home): does the host forward
