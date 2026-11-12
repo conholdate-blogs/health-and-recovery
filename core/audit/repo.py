@@ -89,6 +89,8 @@ CHECKS = {
     "post_description_length": ("onpage", "improvable", "Post descriptions too long or too short",
                                 "Every post's description (description, else summary) is 50-170 characters wide",
                                 1, "S"),
+    "post_text_untranslated": ("intl", "incorrect", "Translations that keep the English title or description",
+                               "A translation's seoTitle, title and description are in its own language", 3, "M"),
     "post_outside_main_sections": ("crawl", "incorrect", "Posts outside the home page's sections",
                                    "Every post folder is under a section listed in params.mainSections", 1, "S"),
     "translation_stale": ("intl", "improvable", "Translations older than the English title or description",
@@ -280,6 +282,7 @@ class RepoAudit:
         urls: dict[str, dict[str, tuple[str, str]]] = {}  # post folder -> language ("" = English) -> (url, file)
         section_langs: dict[str, set] = {}  # top-level and nested content dirs -> languages with posts there
         stale_candidates = []
+        texts: dict[str, dict[str, tuple[dict, str, str | None]]] = {}  # folder -> language -> (values, file, page)
         cats_used: set[str] = set()
         for f in sorted(repo.glob("content/**/index*.md")):
             if not _NAME.match(f.name):
@@ -330,8 +333,11 @@ class RepoAudit:
                 section_langs.setdefault("/".join(parts[:i]), set()).add(lang or default)
             if lang:
                 stale_candidates.append((rel, str(f.parent.relative_to(repo) / "index.md"), page))
+            texts.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (
+                {k: str(data.get(k) or "") for k in ("seoTitle", "title", "description")}, rel, page)
         issues += self.check_translated_urls(host, urls, commit)
         issues += self.check_stale(host, stale_candidates, commits, commit)
+        issues += self.check_untranslated(host, texts, commit)
         issues += self.check_sections(host, section_langs, langs, default, commit)
         issues += self.check_categories(host, cats_used, commit)
         issues += self.check_languages(host, langs)
@@ -384,6 +390,29 @@ class RepoAudit:
                                     f"translation ({time.strftime('%Y-%m-%d', time.gmtime(tr_t))}); "
                                     + "; ".join(rewritten),
                             "commit": commit(rel)})
+        return out
+
+    def check_untranslated(self, host, texts, commit) -> list[dict]:
+        """A translation whose seoTitle, title or description is the English value word for word (the crawl check
+        title_untranslated sees only crawled pages; this reads every file). Values of fewer than 3 Latin words besides
+        the host name's labels are left out (a product name may rightly stay English)."""
+        brand = {w.lower() for w in host.split(".")}
+        out = []
+        for folder in sorted(texts):
+            by = texts[folder]
+            if "" not in by:
+                continue
+            en = by[""][0]
+            for lang, (vals, rel, page) in sorted(by.items()):
+                if not lang:
+                    continue
+                same = [k for k, v in vals.items() if v and v == en.get(k)
+                        and len([w for w in re.findall(r"[A-Za-z]{2,}", v) if w.lower() not in brand]) >= 3]
+                if same:
+                    out.append({"check": "post_text_untranslated", "file": rel, "line": 1, "link": None, "page": page,
+                                "fix": f"translate {', '.join(same)}",
+                                "note": "; ".join(f"{k} in English: {vals[k][:60]!r}" for k in same),
+                                "commit": commit(rel)})
         return out
 
     def check_sections(self, host, section_langs, langs, default, commit) -> list[dict]:

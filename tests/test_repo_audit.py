@@ -101,6 +101,7 @@ def test_invalid_file_is_still_read_line_by_line():
 def test_finds_every_kind_and_names_the_commit(tmp_path):
     report = run(make_repo(tmp_path))
     checks = {f["check"]: f for f in report["findings"]}
+    checks.pop("post_text_untranslated")  # the fixture's translations copy the English seoTitle: right to flag
     assert set(checks) == {"redirect_file_invalid", "redirect_not_working", "redirect_key_malformed",
                            "redirect_self_loop", "redirect_target_bad", "post_front_matter_broken", "post_url_relative"}
     invalid = checks["redirect_file_invalid"]
@@ -181,6 +182,8 @@ def test_site_checks_found_by_hand_on_a_small_blog(tmp_path):
     (repo / "content/Blog/_index.md").write_text("---\ntitle: Blog\n---\n", encoding="utf-8")
     (a / "index.md").write_text("---\n" + ok + "url: /total/a/\ncategories: [Family]\n---\n", encoding="utf-8")
     (a / "index.ja.md").write_text("---\n" + ok + "url: /ja/total/a/\n---\n", encoding="utf-8")
+    (a / "index.ar.md").write_text("---\nseoTitle: عنوان طويل بما يكفي للبحث هنا\ndescription: " + "d" * 60
+                                   + "\nurl: /ar/total/a/\n---\n", encoding="utf-8")
     b = repo / "content/Other/b"
     b.mkdir(parents=True)
     (b / "index.md").write_text("---\nseoTitle: " + "t" * 80 + "\ndescription: short\nurl: /b/\n---\n",
@@ -210,8 +213,13 @@ def test_site_checks_found_by_hand_on_a_small_blog(tmp_path):
     assert {i["file"] for i in by["post_title_length"]} == {"content/Other/b/index.md"}
     assert {i["file"] for i in by["post_description_length"]} == {"content/Other/b/index.md"}
     assert [i["file"] for i in by["post_outside_main_sections"]] == ["content/Other/b/index.md"]
-    assert [i["file"] for i in by["translation_stale"]] == ["content/Blog/total/a/index.ja.md"]
-    assert [i["file"] for i in by["section_index_untranslated"]] == ["content/Blog/_index.ja.md"]
+    assert [i["file"] for i in by["translation_stale"]] == ["content/Blog/total/a/index.ar.md",
+                                                            "content/Blog/total/a/index.ja.md"]
+    # ja copies the old English seoTitle (differs from today's); ar has its own title but the same description,
+    # which is no Latin words (d's only) and so not counted
+    assert [i["file"] for i in by.get("post_text_untranslated", [])] == []
+    assert [i["file"] for i in by["section_index_untranslated"]] == ["content/Blog/_index.ar.md",
+                                                                     "content/Blog/_index.ja.md"]
     assert [i["link"] for i in by["language_name_wrong"]] == ["ja"]  # عربي is accepted
     assert [i["link"] for i in by["rtl_direction_missing"]] == ["ar"]
     assert [i["file"] for i in by["category_page_unused"]] == ["content/categories/old-family/_index.md"]
