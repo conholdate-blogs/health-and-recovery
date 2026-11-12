@@ -546,7 +546,9 @@ class CrawlAudit:
                            for t, n in per_template.items())
             tmpl = ", ".join(f"{t} {n}/{sampled[(host, section, t)]}" for t, n in sorted(per_template.items()))
             examples = "; ".join(f"{p['url']}: {note}" for p, note in items[:EXAMPLES])
-            observed = (f"{len(items)} of {in_scope} sampled pages (by template: {tmpl}). e.g. {examples}")
+            full = all(n >= group_size[g] for g, n in sampled.items() if g[0] == host and g[1] == section)
+            kind = "pages (every sitemap URL crawled)" if full else "sampled pages"
+            observed = (f"{len(items)} of {in_scope} {kind} (by template: {tmpl}). e.g. {examples}")
             if check == "robots_blocked":
                 estimate = self.blocked_in_inventory(host, section)
                 observed += f". Exact count from the sitemaps: {estimate}"
