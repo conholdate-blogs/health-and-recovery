@@ -44,7 +44,8 @@ _FM = re.compile(r"\A---[ \t]*\n(.*?)\n---[ \t]*(?:\n|\Z)", re.S)
 _NAME = re.compile(r"^index(?:\.[A-Za-z]{2,3}(?:-[A-Za-z]+)?)?\.md$")
 _NON_ASCII = re.compile(r"[^\x00-\x7f]")
 _TEXT_KEYS = re.compile(r"^(seoTitle|title|description|summary):")
-TEMPLATES = {"llms_txt_outdated": "host", "menu_id_invalid": "config", "menu_id_missing": "config",
+TEMPLATES = {"llms_txt_outdated": "host", "llms_txt_charset": "host", "menu_id_invalid": "config",
+             "menu_id_missing": "config",
              "menu_id_wrong_script": "config",
              "language_name_wrong": "config", "rtl_direction_missing": "config", "slash_redirect_temporary": "host",
              "section_index_untranslated": "listing", "category_page_unused": "listing"}
@@ -115,6 +116,8 @@ CHECKS = {
                              "zh-hant / zh-tw pages use the Traditional Chinese menu (<venture>-zht)", 1, "S"),
     "llms_txt_outdated": ("ai", "improvable", "llms.txt misses the newest posts",
                           "llms.txt lists the newest posts (built from the content on every deploy)", 1, "S"),
+    "llms_txt_charset": ("ai", "improvable", "llms.txt served without charset=utf-8",
+                         "llms.txt is served as text/plain; charset=utf-8 when it holds non-ASCII text", 1, "S"),
     "category_page_unused": ("crawl", "improvable", "Category pages no post uses",
                              "Every content/categories/<name>/_index.md belongs to a category that posts use", 1, "S"),
     "slash_redirect_temporary": ("crawl", "improvable", "URLs without the trailing slash forward with a 302",
@@ -527,13 +530,19 @@ class RepoAudit:
         body = res.body.decode("utf-8", "replace") if res.status == 200 and res.body else ""
         if not body or "<html" in body[:500].lower():
             return []
+        out = []
+        ctype = (res.headers or {}).get("content-type", "")
+        if _NON_ASCII.search(body) and "charset" not in ctype.lower():  # browsers then guess and garble it
+            out.append({"check": "llms_txt_charset", "file": "llms.txt", "line": 0, "link": f"https://{host}/llms.txt",
+                        "page": f"https://{host}/llms.txt", "fix": "serve .txt as text/plain; charset=utf-8",
+                        "note": f"content-type {ctype or 'missing'} for a file with non-ASCII text", "commit": None})
         listed = {u.rstrip("/") + "/" for u in re.findall(r"\]\((https?://[^)\s]+)\)", body)}
         n = sum(1 for _, page, _ in posts if page.rstrip("/") + "/" in listed)
         newest = sorted(posts, reverse=True)[:max(n, 1)]
-        return [{"check": "llms_txt_outdated", "file": "llms.txt", "line": 0, "link": page, "page": page,
-                 "fix": "list it (generate llms.txt from the content at build)",
-                 "note": f"post of {d} missing from llms.txt ({n} posts listed)", "commit": None}
-                for d, page, _ in newest if page.rstrip("/") + "/" not in listed]
+        return out + [{"check": "llms_txt_outdated", "file": "llms.txt", "line": 0, "link": page, "page": page,
+                       "fix": "list it (generate llms.txt from the content at build)",
+                       "note": f"post of {d} missing from llms.txt ({n} posts listed)", "commit": None}
+                      for d, page, _ in newest if page.rstrip("/") + "/" not in listed]
 
     def check_slash(self, host: str, urls: dict) -> list[dict]:
         """A few URLs without their trailing slash (a post, the tags list, a language home): does the host forward

@@ -59,7 +59,7 @@ GROUPS = {
                     "speed"),
     **dict.fromkeys(("lab_load_failed",), "page errors"),  # same root cause as HTTP errors
     **dict.fromkeys(("content_needs_js", "no_structured_data", "llms_txt_missing", "llms_txt_invalid",
-                     "llms_txt_outdated", "ai_bot_blocked", "ai_bot_firewalled"), "ai"),
+                     "llms_txt_outdated", "llms_txt_charset", "ai_bot_blocked", "ai_bot_firewalled"), "ai"),
     **dict.fromkeys(("text_typo", "text_leftover", "text_topic_mismatch"), "wording"),
     **dict.fromkeys(("link_missing_translation", "link_damaged", "link_wrong_language", "link_broken",
                      "link_redirected"), "internal links"),

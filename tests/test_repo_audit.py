@@ -255,14 +255,16 @@ def test_llms_txt_missing_the_newest_posts(tmp_path):
         (d / "index.md").write_text(f"---\n{ok}date: {date}\nurl: /p{i}/\n---\n", encoding="utf-8")
     git(repo, "add", "-A")
     git(repo, "commit", "-q", "-m", "x")
-    llms = f"# Blog\n\n- [One](https://{HOST}/p0/): x\n- [Two](https://{HOST}/p1/): y\n".encode()
+    llms = f"# Blog\n\n- [One](https://{HOST}/p0/): x\n- [Two](https://{HOST}/p1/): y\n- [日本語 (ja)](https://{HOST}/ja/)\n".encode()
 
     class Llms(FakeFetcher):
         def get(self, url, headers=None):
             self.requests += 1
             if url.endswith("/llms.txt"):
-                return FetchResult(url, 200, final_url=url, body=llms)
+                return FetchResult(url, 200, final_url=url, body=llms, headers={"content-type": "text/plain"})
             return FetchResult(url, 404, final_url=url)
 
     items = [i for i in run(repo, Llms())["hosts"][HOST]["issues"] if i["check"] == "llms_txt_outdated"]
     assert [i["link"] for i in items] == [f"https://{HOST}/p2/"]  # lists 2, the newest 2 are p2 and p1
+    issues = run(repo, Llms())["hosts"][HOST]["issues"]
+    assert [i["check"] for i in issues if i["check"] == "llms_txt_charset"] == ["llms_txt_charset"]

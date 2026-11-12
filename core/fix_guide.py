@@ -609,6 +609,12 @@ _ROWS = [
      "Build llms.txt from the content on every deploy (Hugo output format + layouts/index.llms.txt; pilot "
      "blog.conholdate.cloud, 12 Nov 2026) instead of a static file.",
      "The live llms.txt lists the post; next repo check has no item."),
+    ("llms_txt_charset", "AI readiness", "llms.txt without charset=utf-8",
+     "llms.txt holds non-ASCII text (language names, translated titles) but is served as text/plain without a "
+     "charset, so browsers guess the encoding and garble it.",
+     "People checking the file see broken characters; tools that do not assume UTF-8 misread it.",
+     "Serve .txt files as text/plain; charset=utf-8 (Hugo deploy: deployment.matchers with contentType).",
+     "curl -I shows charset=utf-8; next repo check has no item."),
     ("menu_id_invalid", "Links and translations", "Company menu bar missing in a language",
      "The language's menu id in params.dynamicmenuid has more than two parts (conholdatecloud-zh-hant); the menu "
      "script splits it on \"-\", expects venture-language and draws nothing.",
