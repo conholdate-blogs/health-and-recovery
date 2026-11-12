@@ -11,10 +11,13 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read   # the retry finds the previous successful run (its Pages deployment may be stuck)
 
+# One deploy at a time; a new push waits instead of cancelling a running deploy (GitHub's advice for Pages: a cancelled
+# deploy can leave its Pages deployment "in progress" and block every later one).
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -38,7 +41,24 @@ jobs:
     runs-on: ubuntu-24.04
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.retry.outputs.page_url }}
     steps:
       - id: deployment
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+      # 12 Nov 2026: GitHub Pages twice kept a finished deployment "in progress" and refused the next one ("Please
+      # cancel <sha> first"). Cancel the previous successful run's Pages deployment, wait, deploy once more.
+      - name: Cancel a stuck previous Pages deployment
+        if: steps.deployment.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          prev=$(gh run list -R "$GITHUB_REPOSITORY" --workflow pages.yml --status success --limit 1 --json headSha -q '.[0].headSha')
+          echo "previous successful deploy: $prev"
+          if [ -n "$prev" ] && [ "$prev" != "$GITHUB_SHA" ]; then
+            gh api -X POST "repos/$GITHUB_REPOSITORY/pages/deployments/$prev/cancel" || echo "nothing to cancel"
+          fi
+          sleep 30
+      - id: retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v5
