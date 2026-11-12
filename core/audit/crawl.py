@@ -17,6 +17,7 @@ import unicodedata
 from collections import defaultdict, deque
 from urllib.parse import urlsplit, urlunsplit
 
+from core.audit.keep_terms import looks_untranslated
 from core.audit.page import parse_page
 from core.audit.sample import FULL_MAX, SampledUrl, group_langs, sample_inventory
 from core.discovery.classify import LANG_CODES, classify_url, compile_templates
@@ -252,15 +253,13 @@ def page_issues(rec: dict, facts, localized: bool) -> list[tuple[str, str]]:
     return issues
 
 
-_LATIN_WORD = re.compile(r"[A-Za-z]{2,}")
-
-
-def untranslated_issues(pages: list[dict], field: str, check: str, default_lang: str = "en") -> None:
+def untranslated_issues(pages: list[dict], field: str, check: str, default_lang: str = "en",
+                        keep_terms: list[str] | None = None) -> None:
     """Add `check` to translated pages whose title/description is the English page's, word for word (2026-11-12:
     blog.conholdate.cloud's 22 translated home pages kept the English <title>; the LLM text check noticed 2). The
     English page is the page's own hreflang entry for the default language (or x-default), when it was crawled.
-    Values of fewer than 3 Latin words besides the host name's labels (a brand name alone, "<Brand> Blog") are left
-    out: they may rightly stay the same."""
+    Words a translation keeps in English (product and brand names, formats, platforms, the host's labels:
+    core/audit/keep_terms.py) do not count; fewer than 3 others and the value may rightly stay the same."""
     by_url = {norm_url(p["final_url"] or p["url"]): p for p in pages if p.get("facts") and p["status"] == 200}
     for p in pages:
         f = p.get("facts")
@@ -273,9 +272,7 @@ def untranslated_issues(pages: list[dict], field: str, check: str, default_lang:
         if not en or en is p or not f[field] or not en["facts"][field]:
             continue
         value = f[field][0]
-        brand = {w.lower() for w in p["host"].split(".")}  # "Conholdate Cloud Blog" is German too
-        words = [w for w in _LATIN_WORD.findall(value) if w.lower() not in brand]
-        if value == en["facts"][field][0] and len(words) >= 3:
+        if value == en["facts"][field][0] and looks_untranslated(value, p["host"], keep_terms):
             p["issues"].append((check, f"same as {en['url']}: '{value[:70]}'"))
 
 
@@ -494,8 +491,9 @@ class CrawlAudit:
         duplicate_issues(self.pages, "titles", "title_duplicate")
         duplicate_issues(self.pages, "descriptions", "description_duplicate")
         default_lang = self.audit_cfg.get("default_lang", "en")
-        untranslated_issues(self.pages, "titles", "title_untranslated", default_lang)
-        untranslated_issues(self.pages, "descriptions", "description_untranslated", default_lang)
+        keep = (self.audit_cfg.get("translation") or {}).get("keep_terms")
+        untranslated_issues(self.pages, "titles", "title_untranslated", default_lang, keep)
+        untranslated_issues(self.pages, "descriptions", "description_untranslated", default_lang, keep)
         for rec in self.pages:
             self.store.add_page(self.run_id, rec)
 

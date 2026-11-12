@@ -30,6 +30,7 @@ from urllib.parse import quote, unquote, urlsplit
 
 import yaml
 
+from core.audit.keep_terms import looks_untranslated
 from core.findings import FindingIds, make_finding
 
 AUDITOR = "repo-audit"
@@ -394,9 +395,9 @@ class RepoAudit:
 
     def check_untranslated(self, host, texts, commit) -> list[dict]:
         """A translation whose seoTitle, title or description is the English value word for word (the crawl check
-        title_untranslated sees only crawled pages; this reads every file). Values of fewer than 3 Latin words besides
-        the host name's labels are left out (a product name may rightly stay English)."""
-        brand = {w.lower() for w in host.split(".")}
+        title_untranslated sees only crawled pages; this reads every file). Words a translation keeps in English do not
+        count (core/audit/keep_terms.py)."""
+        keep = ((self.tenant.raw.get("audit") or {}).get("translation") or {}).get("keep_terms")
         out = []
         for folder in sorted(texts):
             by = texts[folder]
@@ -406,8 +407,7 @@ class RepoAudit:
             for lang, (vals, rel, page) in sorted(by.items()):
                 if not lang:
                     continue
-                same = [k for k, v in vals.items() if v and v == en.get(k)
-                        and len([w for w in re.findall(r"[A-Za-z]{2,}", v) if w.lower() not in brand]) >= 3]
+                same = [k for k, v in vals.items() if v and v == en.get(k) and looks_untranslated(v, host, keep)]
                 if same:
                     out.append({"check": "post_text_untranslated", "file": rel, "line": 1, "link": None, "page": page,
                                 "fix": f"translate {', '.join(same)}",
@@ -558,11 +558,19 @@ class RepoAudit:
             for i in r["issues"]:
                 by_check.setdefault(i["check"], []).append(i)
             for check, items in by_check.items():
-                locs = [{"role": "file", "url": i["page"] or f"https://{host}/", "file": i["file"], "line": i["line"],
-                         "note": i["note"], "fix": i["fix"], "commit": i.get("commit")} for i in items]
+                if check == "slash_redirect_temporary":  # a live request, not a file: show the URL to try
+                    locs = [{"role": "live test", "url": i["page"], "note": f"answers {i['note']}; try: curl -I "
+                             f"{i['page']}", "fix": i["fix"]} for i in items]
+                else:
+                    locs = [{"role": "file", "url": i["page"] or f"https://{host}/", "file": i["file"],
+                             "line": i["line"], "note": i["note"], "fix": i["fix"], "commit": i.get("commit")}
+                            for i in items]
                 urls = [i["page"] for i in items if i["page"]][:10] or [f"https://{host}/"]
                 notes = Counter(i["note"] for i in items).most_common(4)
                 observed = (items[0]["note"] if check == "redirect_file_invalid" else
+                            "Live test (CDN, not a repo file): " + "; ".join(f"{i['page']} answers {i['note']}"
+                                                                              for i in items)
+                            if check == "slash_redirect_temporary" else
                             f"{len(items):,} entries or files; " + ", ".join(f"{n}: {c:,}" for n, c in notes))
                 affected = entries if check == "redirect_file_invalid" else len(items)
                 out.append(self._finding(ids, check, host, urls, observed, locs, affected))
