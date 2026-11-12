@@ -97,9 +97,17 @@ product"). Snapshot 2026-11-12-2. Full-crawl limit raised to 1,000 URLs (SK).
 
 | # | Problem | Fix / state |
 |---|---|---|
-| F17 | **No company bar on /zh-hant/** (SK spotted): `params.dynamicmenuid.zh-hant: conholdatecloud-zh-hant`; the menu script (menucdn.containerize.com/core/engine.min.js) splits the id on `-` and accepts exactly two parts, so it drew nothing. The service has Traditional Chinese as `zht` | `conholdatecloud-zht`; blog commit **39f62ad, committed, not pushed (needs SK's approval)**; tested with a local Hugo 0.101 build: bar renders in Traditional Chinese; commit check PASSED. New repo check `menu_id_invalid` (51b22b2). he/nl/sv have no menu JSON on the CDN but render through the service's API fallback (fine) |
-| F18 | SK's translation agent added the Java post's 22 translations (1244f92, 12 Nov 09:50 UTC): **9 titles and 9 descriptions too long** (": Schritt-für-Schritt-Anleitung" etc.) | SK: fix now and update the agent. Blog commit **98431b5** (18 values, scan 0 out of range); agent commit 697af12 (length limits); both committed, not pushed |
-| F19 | `static/llms.txt` still says the Java post is "English only" | Blog commit **50ce0eb**, committed, not pushed |
+| F17 | **No company bar on /zh-hant/** (SK spotted): `params.dynamicmenuid.zh-hant: conholdatecloud-zh-hant`; the menu script (menucdn.containerize.com/core/engine.min.js) splits the id on `-` and accepts exactly two parts, so it drew nothing. The service has Traditional Chinese as `zht` | `conholdatecloud-zht`; blog commit **39f62ad, pushed and deployed 12 Nov, verified live** (bar in Traditional Chinese); tested with a local Hugo 0.101 build: bar renders in Traditional Chinese; commit check PASSED. New repo check `menu_id_invalid` (51b22b2). he/nl/sv have no menu JSON on the CDN but render through the service's API fallback (fine) |
+| F18 | SK's translation agent added the Java post's 22 translations (1244f92, 12 Nov 09:50 UTC): **9 titles and 9 descriptions too long** (": Schritt-für-Schritt-Anleitung" etc.) | SK: fix now and update the agent. Blog commit **98431b5** (18 values), deployed and verified live; translation agent 423a608 (length limits) pushed to GitHub |
+| F19 | `static/llms.txt` still says the Java post is "English only" | Blog commit **50ce0eb**, deployed and verified live |
+
+Rescan after the deploy (12 Nov, evening): discovery 11, crawl 72 (161 pages, every sitemap URL; +22 Java
+translations), AI 73, speed 74, text 75, links 76 (207 links), repo 78: **health 100**, open only F16 (no-slash 302,
+CDN). 17 agent-fix rows, all verified; F17 found by Shoaib Khan (`found_by`). Snapshot 2026-11-12-3.
+
+Next proposed (SK, 12 Nov: llms.txt needs regular updates as posts, translations and optimisations land daily):
+generate llms.txt with a Hugo output format and template at build time instead of a hand-made `static/llms.txt`;
+pilot here, then the other blogs; plus an audit guard (sitemap articles missing from llms.txt, dead links in it).
 
 ## Decisions by SK (11 Nov)
 

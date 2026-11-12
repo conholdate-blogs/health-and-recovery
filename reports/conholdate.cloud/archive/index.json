@@ -190,5 +190,11 @@
     "date": "2026-11-12 (2)",
     "label": "Fixes live: home titles per language, RTL, translations (agent fixes)",
     "runs": "discovery run 10, crawl audit run 59, speed audit run 61, AI audit run 60, text check run 68, link check run 69, repo file check run 70"
+  },
+  {
+    "file": "2026-11-12-3.html",
+    "date": "2026-11-12 (3)",
+    "label": "Fixes live: company menu on zh-hant, Java translation lengths, llms.txt (agent fixes)",
+    "runs": "discovery run 11, crawl audit run 72, speed audit run 74, AI audit run 73, text check run 75, link check run 76, repo file check run 78"
   }
 ]

@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "link-audit",
-  "run_id": 69,
+  "run_id": 76,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
@@ -15,12 +15,12 @@
   "summary": {
     "blog.conholdate.cloud": {
       "repo": {
-        "commit": "21c9347",
+        "commit": "50ce0eb",
         "date": "2026-11-12",
         "stale": false
       },
-      "posts": 93,
-      "links": 141,
+      "posts": 115,
+      "links": 207,
       "live_checked": 0,
       "not_checked": 0,
       "by_check": {},
@@ -35,17 +35,17 @@
     "blog.conholdate.cloud": {
       "repo": {
         "path": "/Users/Apple/Work/Aspose/GitHub/blog.conholdate.cloud-PROD/blog.conholdate.cloud",
-        "commit": "21c9347",
+        "commit": "50ce0eb",
         "date": "2026-11-12",
-        "subject": "Arabic, Persian and Hebrew pages right to left (languageDirection: rtl)",
+        "subject": "llms.txt: the Java merge post is translated now (no longer 'English only')",
         "age_days": 0.0,
         "stale": false
       },
-      "discovery_run": 10,
-      "sitemap_paths": 139,
-      "posts": 93,
+      "discovery_run": 11,
+      "sitemap_paths": 161,
+      "posts": 115,
       "posts_without_url": [],
-      "links": 141,
+      "links": 207,
       "live_checked": 0,
       "not_checked": 0,
       "issues": [],

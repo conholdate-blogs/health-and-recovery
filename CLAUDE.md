@@ -17,16 +17,19 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 
 ## Start here (session handoff, 2026-11-12, end of day)
 
-**Waiting for SK (approve, then push + Deploy Production - AWS on blog.conholdate.cloud):**
+**State at end of 12 Nov:** blog.conholdate.cloud **health 100**; F17 (company menu on /zh-hant/, found by Shoaib
+Khan), F18 (Java translation lengths), F19 (llms.txt) pushed, deployed by SK and verified live; 17 agent-fix rows, all
+verified; snapshot 2026-11-12-3. Translation agent now keeps titles/descriptions in range (423a608, GitHub only; its
+GitLab main is on another commit). Issues found by hand and fixed are logged with `found_by` (rule PROC-3).
 
-| # | What | State |
-|---|---|---|
-| F17 | Company menu bar missing on all /zh-hant/ pages: menu id `conholdatecloud-zh-hant` → `conholdatecloud-zht` | blog commit **39f62ad pushed 12 Nov, waiting for Deploy Production - AWS**; tested locally (bar renders in Traditional Chinese), commit check PASSED |
-| F18 | The Java post's new translations (SK's translation agent, 1244f92): 9 titles, 9 descriptions too long | blog commit **98431b5 pushed, waiting for deploy** (SK: fix now; `front_matter_set.py` now handles values wrapped over several lines) |
-| F19 | `static/llms.txt` calls the Java post "English only" (now translated) | blog commit **50ce0eb pushed, waiting for deploy** |
-| agent | Translation agent keeps title/seoTitle ≤ 70 and description ≤ 170 wide (shortens by LLM) | agent repo commit **423a608** (amended to carry the credit line), **pushed to GitHub origin/main**; GitLab main is on another commit (e97d9c8), not touched |
-| F16 | No-slash URLs answer 302, not 301 | CDN (CloudFront) setting, not the repo; owner to be named |
-| other blogs | Company menu: blog.aspose.cloud zh-tw and blog.groupdocs.cloud zh-hant have **no bar** (3-part ids; `<venture>-zht` exists); blog.conholdate.com vi/th/tr show the English bar (no id); blog.aspose.com zh-hant shows the Simplified bar (`aspose-zht` exists) | found by the new repo check (dry run); not yet in their reports (next scan) |
+**Open / waiting:**
+
+| What | State |
+|---|---|
+| llms.txt generated at build (Hugo output format) instead of by hand; audit guard for missing/dead entries | proposed to SK (he raised it: daily new posts and translations); pilot on blog.conholdate.cloud |
+| F16 no-slash 302 | CDN setting; owner to be named |
+| Company menu on the other blogs (aspose.cloud zh-tw and groupdocs.cloud zh-hant: no bar; conholdate.com vi/th/tr English bar; aspose.com zh-hant Simplified) | in [docs/identified-issues.md](docs/identified-issues.md); counted in their reports at their next scan |
+| blog.conholdate.com part B | waiting (its log) |
 
 **Done 12 Nov (all pushed; our repo at the commit after 1a4a35e plus today's docs commits):**
 - **Audit of the auditors** (SK): 11 + 3 new checks; every hand-found issue became a check (rule AUD-3):

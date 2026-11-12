@@ -1,3 +1,0 @@
-host,check,file,line,link,fix,note,commit
-blog.conholdate.cloud,slash_redirect_temporary,(host),0,/total/convert-html-files,301 to the URL with /,302 to https://blog.conholdate.cloud/total/convert-html-files/,
-blog.conholdate.cloud,slash_redirect_temporary,(host),0,/tags,301 to the URL with /,302 to https://blog.conholdate.cloud/tags/,

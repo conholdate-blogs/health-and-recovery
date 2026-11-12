@@ -8,14 +8,15 @@ otherwise. When a blog is scanned, its report and Issue log take over; tick the 
 
 | Issue | Count | State |
 |---|---|---|
-| Company menu bar missing on /zh-hant/ (`menu_id_invalid`) | 1 language | F17 fix 39f62ad, pushed 12 Nov, **deploy waiting** |
-| Java post translations: titles/descriptions too long (`post_title_length`, `post_description_length`) | 9 + 9 | F18 fix 98431b5, pushed, **deploy waiting** |
-| llms.txt calls the Java post "English only" | 1 | F19 fix 50ce0eb, pushed, **deploy waiting** |
+| Company menu bar missing on /zh-hant/ (`menu_id_invalid`) | 1 language | F17 fix 39f62ad: ✓ verified live 12 Nov |
+| Java post translations: titles/descriptions too long (`post_title_length`, `post_description_length`) | 9 + 9 | F18 fix 98431b5: ✓ verified live 12 Nov |
+| llms.txt calls the Java post "English only" | 1 | F19 fix 50ce0eb: ✓ verified live 12 Nov |
 | No-slash URLs answer 302 (`slash_redirect_temporary`) | host | F16: CDN setting, owner to be named |
 | Translation agent writes over-long titles/descriptions | tool | agent commit 423a608 (length limits), pushed to GitHub |
 | Tags: 27 tags, all with one post | 27 | SK: retag later (tag pages noindex meanwhile) |
 | English H2s in translated post bodies (e.g. "Convert HTML to DOCX" on /ar/) | seen by hand | not a check yet (body text); for the translation agent |
 | Header label "Home" in English on every language | site-wide | small config change (`params.label.text` per language) |
+| llms.txt maintained by hand (goes stale as posts and translations land daily) | file | proposed: generate at build (Hugo output format), pilot here (SK, 12 Nov) |
 
 ## blog.conholdate.com (next blog; plan B1–B6 in its log)
 

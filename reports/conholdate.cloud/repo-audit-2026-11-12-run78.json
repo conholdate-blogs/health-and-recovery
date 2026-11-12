@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "repo-audit",
-  "run_id": 70,
+  "run_id": 78,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
@@ -9,12 +9,12 @@
     "sample": 40
   },
   "requests": 5,
-  "duration_s": 4.2,
+  "duration_s": 4.3,
   "stopped_early": false,
   "summary": {
     "blog.conholdate.cloud": {
-      "commit": "21c9347 2026-11-12 Arabic, Persian and Hebrew pages right to left (languageDirection: rtl)",
-      "posts": 93,
+      "commit": "50ce0eb 2026-11-12 llms.txt: the Java merge post is translated now (no longer 'English only')",
+      "posts": 115,
       "entries": 3,
       "invalid": null,
       "broke_it": null,
@@ -76,8 +76,8 @@
   ],
   "hosts": {
     "blog.conholdate.cloud": {
-      "commit": "21c9347 2026-11-12 Arabic, Persian and Hebrew pages right to left (languageDirection: rtl)",
-      "posts": 93,
+      "commit": "50ce0eb 2026-11-12 llms.txt: the Java merge post is translated now (no longer 'English only')",
+      "posts": 115,
       "redirects": {
         "present": true,
         "entries": 3,

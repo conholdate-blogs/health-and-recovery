@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "ai-audit",
-  "run_id": 60,
+  "run_id": 73,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
@@ -19,7 +19,7 @@
       "firewall_training": {},
       "llms": {
         "state": "ok",
-        "note": "30 links, 2,722 characters",
+        "note": "30 links, 2,707 characters",
         "url": "https://blog.conholdate.cloud/llms.txt"
       },
       "sections": 0,
@@ -45,7 +45,7 @@
       "llms": {
         "url": "https://blog.conholdate.cloud/llms.txt",
         "state": "ok",
-        "note": "30 links, 2,722 characters",
+        "note": "30 links, 2,707 characters",
         "links": [
           "https://blog.conholdate.cloud/total/insert-header-footer-in-pdf/",
           "https://blog.conholdate.cloud/total/merge-pdf-documents-using-java-cloud-api/",
