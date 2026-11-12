@@ -15,6 +15,7 @@ import re
 import time
 import unicodedata
 from collections import defaultdict, deque
+from datetime import date
 from urllib.parse import urlsplit, urlunsplit
 
 from core.audit.keep_terms import looks_untranslated
@@ -26,6 +27,8 @@ from core.findings import FindingIds, make_finding
 AUDITOR = "crawl-audit"
 EXAMPLES = 5
 MAX_CANONICAL_TARGETS = 50  # distinct canonical targets fetched per run, to show whether they exist
+RECENT_RUNS = 3  # the rotating half avoids pages crawled in this many previous runs
+COVERAGE_RUNS = 4  # "N of M pages checked in the last COVERAGE_RUNS runs"
 TITLE_LEN = (10, 70)  # display width (CJK characters count 2); outside this range is a finding
 DESCRIPTION_LEN = (50, 170)
 REFRESH_URL_RE = re.compile(r"url\s*=\s*['\"]?([^'\";]+)", re.I)
@@ -339,8 +342,15 @@ class CrawlAudit:
         sample = sample_inventory(self.inventory_db, self.inventory_run, self.hosts, self.sectioned, self.sections,
                                   self.per_template, self.other_langs, self.audit_cfg.get("default_lang", "en"),
                                   self.max_per_host, self.audit_cfg.get("per_template_by_host"),
-                                  self.audit_cfg.get("full_crawl_max_urls", FULL_MAX))
+                                  self.audit_cfg.get("full_crawl_max_urls", FULL_MAX),
+                                  salt=date.today().isoformat(), seen=self.recent_urls(), dates=self.post_dates())
         seen = {s.url for s in sample}
+        for url in self.recheck_urls():  # pages that failed last run: verify each fix page by page
+            if url not in seen:
+                seen.add(url)
+                c = self._classified(url, "recheck")
+                if self.sections is None or not c.section or c.section in self.sections:
+                    sample.append(c)
         extra = [f"https://{h}/" for h in self.hosts]  # homepages always, also with a section filter
         for host, paths in (self.audit_cfg.get("section_urls") or {}).items():
             if host in self.hosts:  # pages per section that no sitemap lists (e.g. hub pages)
@@ -359,6 +369,56 @@ class CrawlAudit:
                 seen.add(t.url)
                 sample.append(t)
         return sample
+
+    def _previous_runs(self, n: int) -> list[int]:
+        rows = self.store.db.execute("SELECT id FROM runs WHERE tenant = ? AND auditor = ? AND finished_at IS NOT NULL "
+                                     "ORDER BY id DESC LIMIT ?", (self.tenant.property, AUDITOR, n)).fetchall()
+        return [r[0] for r in rows]
+
+    def recent_urls(self) -> set:
+        """URLs crawled in the last RECENT_RUNS runs: the rotating half of the sample looks elsewhere first."""
+        runs = self._previous_runs(RECENT_RUNS)
+        if not runs:
+            return set()
+        q = f"SELECT DISTINCT url FROM pages WHERE run_id IN ({', '.join('?' * len(runs))})"
+        return {r[0] for r in self.store.db.execute(q, runs)}
+
+    def recheck_urls(self) -> list[str]:
+        """Pages of this run's hosts that had an issue in the previous run (crawled again, not counted in the sample
+        share: a page picked because it failed would inflate the estimate)."""
+        runs = self._previous_runs(1)
+        if not runs:
+            return []
+        rows = self.store.db.execute("SELECT url, host FROM pages WHERE run_id = ? AND issues NOT IN ('[]', 'null') "
+                                     "AND (ignored IS NULL OR ignored = '')", runs).fetchall()
+        return sorted(u for u, h in rows if h in self.hosts)
+
+    def post_dates(self) -> dict[str, str]:
+        from pathlib import Path
+
+        from core.audit.postdates import post_dates
+
+        out: dict = {}
+        for h in self.tenant.hosts:
+            if h["host"] in self.hosts and h.get("local_path") and Path(h["local_path"]).is_dir():
+                out.update(post_dates(Path(h["local_path"]), h["host"]))
+        return out
+
+    def coverage(self) -> dict:
+        """Per host: distinct inventory URLs crawled in this run and the previous COVERAGE_RUNS - 1 runs."""
+        runs = [self.run_id, *[r for r in self._previous_runs(COVERAGE_RUNS) if r != self.run_id]][:COVERAGE_RUNS]
+        q = (f"SELECT p.host, COUNT(DISTINCT p.url) FROM pages p JOIN urls_now u ON u.url = p.url "
+             f"WHERE p.run_id IN ({', '.join('?' * len(runs))}) GROUP BY p.host")
+        inv = self.inventory_db.execute("SELECT url, host FROM urls WHERE run_id = ?", (self.inventory_run,)).fetchall()
+        totals: dict = defaultdict(int)
+        for _, h in inv:
+            totals[h] += 1
+        self.store.db.execute("CREATE TEMP TABLE IF NOT EXISTS urls_now (url TEXT PRIMARY KEY)")
+        self.store.db.execute("DELETE FROM urls_now")
+        self.store.db.executemany("INSERT OR IGNORE INTO urls_now VALUES (?)", [(u,) for u, _ in inv])
+        checked = dict(self.store.db.execute(q, runs).fetchall())
+        return {h: {"checked": checked.get(h, 0), "urls": totals.get(h, 0), "runs": len(runs)}
+                for h in self.hosts if totals.get(h)}
 
     def _search_fill(self, covered: set) -> list[SampledUrl]:
         """Sections with no sitemap URLs: sample their top search pages per template instead (source 'search')."""
@@ -500,7 +560,8 @@ class CrawlAudit:
         report = {"tenant": self.tenant.property, "auditor": AUDITOR, "run_id": self.run_id, "params": params,
                   "canonical_targets": self.target_status,
                   "requests": self.fetcher.requests, "duration_s": round(time.monotonic() - started, 1),
-                  "pages_planned": len(targets), "stopped_early": self.stopped_early, "summary": self.summary()}
+                  "pages_planned": len(targets), "stopped_early": self.stopped_early, "summary": self.summary(),
+                  "recheck": sum(p.get("source") == "recheck" for p in self.pages), "coverage": self.coverage()}
         report["findings"] = self.findings()
         self.store.finish_run(self.run_id, {k: v for k, v in report.items() if k != "findings"})
         report["pages"] = self.pages
@@ -522,8 +583,8 @@ class CrawlAudit:
         sampled: dict = defaultdict(int)  # (host, section, template) -> sampled pages
         group_size: dict = {}
         for p in self.pages:
-            if p.get("ignored"):
-                continue  # excluded from the sample: neither a failure nor a pass
+            if p.get("ignored") or p.get("source") == "recheck":
+                continue  # excluded from the sample: neither a failure nor a pass (a recheck is not a random pick)
             g = (p["host"], p["section"], p["template"])
             sampled[g] += 1
             group_size[g] = max(group_size.get(g, 0), p["group_urls"])
@@ -537,16 +598,22 @@ class CrawlAudit:
         for (check, host, section), items in sorted(hits.items()):
             dimension, ftype, title, expected, tier, effort = CHECKS[check]
             per_template: dict = defaultdict(int)
+            rechecked = 0
             for p, _ in items:
-                per_template[p["template"]] += 1
+                if p.get("source") == "recheck" or (p["host"], p["section"], p["template"]) not in sampled:
+                    rechecked += 1
+                else:
+                    per_template[p["template"]] += 1
             in_scope = sum(n for (h, s, _), n in sampled.items() if h == host and s == section)
-            estimate = sum(round(group_size[(host, section, t)] * n / sampled[(host, section, t)])
-                           for t, n in per_template.items())
+            estimate = max(len(items), sum(round(group_size[(host, section, t)] * n / sampled[(host, section, t)])
+                                           for t, n in per_template.items()))
             tmpl = ", ".join(f"{t} {n}/{sampled[(host, section, t)]}" for t, n in sorted(per_template.items()))
             examples = "; ".join(f"{p['url']}: {note}" for p, note in items[:EXAMPLES])
             full = all(n >= group_size[g] for g, n in sampled.items() if g[0] == host and g[1] == section)
             kind = "pages (every sitemap URL crawled)" if full else "sampled pages"
-            observed = (f"{len(items)} of {in_scope} {kind} (by template: {tmpl}). e.g. {examples}")
+            observed = (f"{len(items) - rechecked} of {in_scope} {kind} (by template: {tmpl or '-'})"
+                        + (f"; {rechecked} more among pages rechecked because they failed last run" if rechecked
+                           else "") + f". e.g. {examples}")
             if check == "robots_blocked":
                 estimate = self.blocked_in_inventory(host, section)
                 observed += f". Exact count from the sitemaps: {estimate}"

@@ -1070,10 +1070,19 @@ __METHOD__
     $("find-first").textContent = "One row per kind of problem, fix from the top; open a row (▸) for its evidence.";
     $("find-score").innerHTML = `The score is search traffic at stake × severity ÷ effort (<a href="#method-score">how it works</a>). Pages: pages affected. Clicks: Search Console clicks on those pages in 28 days. `;
   }
+  // pages checked over the last few crawl runs (fixed half + rotating half of the sample, newest posts first)
+  function coverLine() {
+    const cov = A && A.coverage ? hosts.map(([h]) => A.coverage[h]).filter(Boolean) : [];
+    if (!cov.length) return "";
+    const checked = cov.reduce((n, c) => n + c.checked, 0), urls = cov.reduce((n, c) => n + c.urls, 0);
+    const runs = Math.max(...cov.map(c => c.runs));
+    if (checked >= urls) return " · every sitemap URL crawled";
+    return ` · ${fmt(checked)} of ${fmt(urls)} pages (${(100 * checked / urls).toFixed(checked * 1000 < urls ? 2 : 1)}%) checked in the last ${runs} crawl run${runs > 1 ? "s" : ""}`;
+  }
   // severity counts as filter chips, and how much was checked, above the list
   $("find-lede").insertAdjacentHTML("afterend", `<div class="fchips">${ORDER.filter(t => byType[t]).map(t =>
       `<button type="button" class="chip sev-${t}" data-t="${t}" aria-pressed="false"><b>${byType[t]}</b> ${esc(LABEL[t].toLowerCase())}</button>`).join("")}
-    <span class="cover">Checked: ${hosts.length > 1 ? `${fmt(hosts.length)} subdomains · ` : ""}${fmt(totalUrls)} URLs in sitemaps${A ? ` · ${fmt(A.pages)} pages audited` : ""}${findings.some(f => f._confidence === "to confirm") ? ` · ${findings.filter(f => f._confidence === "to confirm").length} to confirm` : ""}</span></div>`);
+    <span class="cover">Checked: ${hosts.length > 1 ? `${fmt(hosts.length)} subdomains · ` : ""}${fmt(totalUrls)} URLs in sitemaps${A ? ` · ${fmt(A.pages)} pages audited` : ""}${coverLine()}${findings.some(f => f._confidence === "to confirm") ? ` · ${findings.filter(f => f._confidence === "to confirm").length} to confirm` : ""}</span></div>`);
   document.querySelector(".fchips").addEventListener("click", e => {
     const c = e.target.closest(".chip"); if (!c) return;
     $("f-type").value = $("f-type").value === c.dataset.t ? "" : c.dataset.t;

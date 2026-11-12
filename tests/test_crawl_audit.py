@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from core.audit.crawl import audit, import_report, latest_inventory_run, page_issues  # noqa: E402
+from core.audit.crawl import CrawlAudit, audit, import_report, latest_inventory_run, page_issues  # noqa: E402
 from core.audit.page import parse_page  # noqa: E402
 from core.audit.sample import sample_inventory  # noqa: E402
 from core.audit.store import AuditStore  # noqa: E402
@@ -382,3 +382,39 @@ def test_translated_page_with_the_english_title_is_found():
     assert not de2["issues"]  # one word besides the host's labels (b, example, com)
     assert [c for c, _ in ja["issues"]] == ["title_untranslated"]
     assert not en["issues"] and not de["issues"] and not brand["issues"]
+
+
+def test_half_the_sample_rotates_unseen_and_newest_first():
+    inv, run = make_inventory()
+    H, S = ["app.example.com"], {"app.example.com"}
+
+    def tools(sample):
+        return [s.url for s in sample if s.template == "tool" and s.section == "pdf" and s.lang is None]
+
+    a = tools(sample_inventory(inv.db, run, H, S, full_max=0, per_template=4, salt="2026-11-12"))
+    b = tools(sample_inventory(inv.db, run, H, S, full_max=0, per_template=4, salt="2026-11-19"))
+    assert len(a) == len(b) == 4
+    assert a[:2] == b[:2]  # fixed half: same pages every run
+    assert a[2:] != b[2:]  # rotating half: another run, other pages
+    seen = set(a)
+    c = tools(sample_inventory(inv.db, run, H, S, full_max=0, per_template=4, salt="2026-11-12", seen=seen))
+    assert not set(c[2:]) & seen  # pages checked recently are skipped while others remain
+    new = "https://app.example.com/pdf/tool42"
+    d = tools(sample_inventory(inv.db, run, H, S, full_max=0, per_template=4, salt="x",
+                               dates={new: "2026-11-10", "https://app.example.com/pdf/tool7": "2024-01-01"}))
+    assert new in d[2:] or new in d[:2]  # the newest post is picked first in the rotating half
+
+
+def test_rechecked_pages_do_not_count_in_the_sample_share():
+    tenant = make_tenant()
+    inv, run = make_inventory()
+    audit = CrawlAudit(tenant, FakeFetcher({}), inv.db, run, AuditStore(":memory:"), log=None)
+    audit.run_id = 1
+    mk = lambda url, source, issues: {"url": url, "host": "app.example.com", "section": "pdf", "lang": None,  # noqa: E731
+                                      "template": "tool", "source": source, "group_urls": 50, "status": 200,
+                                      "issues": issues, "facts": None, "ignored": None}
+    audit.pages = [mk("https://app.example.com/pdf/tool1", "sitemap", []),
+                   mk("https://app.example.com/pdf/tool2", "sitemap", []),
+                   mk("https://app.example.com/pdf/tool9", "recheck", [("h1_missing", "no H1")])]
+    f = next(x for x in audit.findings() if x["check"] == "h1_missing")
+    assert f["affected_pages"] == 1 and "rechecked" in f["evidence"]["observed"]

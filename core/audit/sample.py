@@ -13,7 +13,6 @@ titles in the sample while 45 posts had one): its findings then count pages exac
 from __future__ import annotations
 
 import hashlib
-import heapq
 from collections import defaultdict
 from dataclasses import dataclass
 
@@ -47,17 +46,22 @@ def group_langs(db, run_id: int, sectioned_hosts: set[str]) -> dict[tuple[str, s
 def sample_inventory(db, run_id: int, hosts: list[str], sectioned_hosts: set[str], sections: list[str] | None = None,
                      per_template: int = 2, other_langs: int = 2, default_lang: str = "en",
                      max_per_host: int | None = None, per_template_by_host: dict | None = None,
-                     full_max: int = FULL_MAX) -> list[SampledUrl]:
+                     full_max: int = FULL_MAX, salt: str | None = None, seen: set | None = None,
+                     dates: dict | None = None) -> list[SampledUrl]:
+    """Per group, half the picks are fixed (stable hash rank: runs stay comparable) and half rotate (SK, 2026-11-12):
+    pages not checked in recent runs (`seen`) first, newest first (`dates`: url -> ISO date, from the posts' front
+    matter), then a hash salted per run (`salt`), so each run looks at other pages and coverage grows. Without salt,
+    seen and dates the rotating picks are stable too (tests, ad hoc runs)."""
     marks = ", ".join("?" * len(hosts))
     sizes = dict(db.execute(f"SELECT host, COUNT(*) FROM urls WHERE run_id = ? AND host IN ({marks}) GROUP BY host",
                             [run_id, *hosts]).fetchall())
     full = {h for h, n in sizes.items() if n <= full_max}
-    whole: list[SampledUrl] = []
+    seen, dates = seen or set(), dates or {}
+    whole: list = []
+    rows_by_group: dict = defaultdict(list)  # group -> [(url, lang, sitemap)]
+    counts: dict = defaultdict(int)
     rows = db.execute("SELECT url, host, section, lang, template, sitemap FROM urls "
                       f"WHERE run_id = ? AND host IN ({marks})", [run_id, *hosts])
-    default: dict = defaultdict(list)  # group -> heap of (-rank, url, lang, sitemap): the lowest ranks
-    other: dict = defaultdict(dict)  # group -> lang -> (rank, url, sitemap)
-    counts: dict = defaultdict(int)
     for url, host, section, lang, template, sitemap in rows:
         sec = section if host in sectioned_hosts else ""
         if sections is not None and host in sectioned_hosts and sec not in sections:
@@ -66,30 +70,41 @@ def sample_inventory(db, run_id: int, hosts: list[str], sectioned_hosts: set[str
         counts[group] += 1
         if host in full:
             whole.append((url, host, sec, lang, template, sitemap))
-            continue
-        rank = _rank(url)
-        if lang is None or lang == default_lang:
-            heap = default[group]
-            item = (_neg(rank), url, lang, sitemap)
-            if len(heap) < (per_template_by_host or {}).get(host, per_template):
-                heapq.heappush(heap, item)
-            elif item > heap[0]:
-                heapq.heapreplace(heap, item)
         else:
-            best = other[group].get(lang)
-            if best is None or rank < best[0]:
-                other[group][lang] = (rank, url, sitemap)
+            rows_by_group[group].append((url, lang, sitemap))
+
+    def rot_key(url: str):
+        return (url in seen, _neg_date(dates.get(url)), _rank(f"{salt}|{url}") if salt else _rank(url))
 
     # Per host, take the 1st pick of every group, then the 2nd, ... so a host cap trims evenly across templates.
     by_host: dict = defaultdict(list)  # host -> [[SampledUrl, ...] per group]
-    for group in sorted(counts):
+    for group in sorted(rows_by_group):
         host, sec, template = group
-        picks = [(url, lang, sm) for _, url, lang, sm in sorted(default[group], reverse=True)]
-        langs = sorted(other[group].items(), key=lambda kv: kv[1][0])
+        n_default = (per_template_by_host or {}).get(host, per_template)
+        default = [r for r in rows_by_group[group] if r[1] is None or r[1] == default_lang]
+        other = [r for r in rows_by_group[group] if not (r[1] is None or r[1] == default_lang)]
+        fixed_n = (n_default + 1) // 2
+        by_rank = sorted(default, key=lambda r: _rank(r[0]))
+        picks = by_rank[:fixed_n]
+        taken = {r[0] for r in picks}
+        picks += sorted((r for r in default if r[0] not in taken), key=lambda r: rot_key(r[0]))[:n_default - fixed_n]
         extra = other_langs if picks else other_langs + 1  # no default-language page: one more localized page
-        picks += [(url, lang, sm) for lang, (_, url, sm) in langs[:extra]]
+        best: dict = {}  # language -> its lowest-ranked URL (the fixed choice per language)
+        for r in other:
+            if r[1] not in best or _rank(r[0]) < _rank(best[r[1]][0]):
+                best[r[1]] = r
+        langs = sorted(best, key=lambda lang: _rank(best[lang][0]))
+        fixed_l = (extra + 1) // 2
+        lpicks = [best[lang] for lang in langs[:fixed_l]]
+        used = {r[1] for r in lpicks}
+        for r in sorted((r for r in other if r[1] not in used), key=lambda r: rot_key(r[0])):
+            if len(lpicks) >= extra:
+                break
+            if r[1] not in used:
+                used.add(r[1])
+                lpicks.append(r)
         by_host[host].append([SampledUrl(url, host, sec, lang, template, counts[group], sitemap=sm)
-                              for url, lang, sm in picks])
+                              for url, lang, sm in picks + lpicks])
 
     out: list[SampledUrl] = [SampledUrl(url, host, sec, lang, template, counts[(host, sec, template)], sitemap=sm)
                              for url, host, sec, lang, template, sm in sorted(whole, key=lambda r: (r[1], _rank(r[0])))]
@@ -100,6 +115,13 @@ def sample_inventory(db, run_id: int, hosts: list[str], sectioned_hosts: set[str
             taken += [g[i] for g in groups if i < len(g)]
         out += taken[:max_per_host] if max_per_host is not None else taken
     return out
+
+
+def _neg_date(value: str | None) -> str:
+    """Newest first in an ascending sort; no date sorts last."""
+    if not value:
+        return "~"
+    return "".join(chr(ord("9") - ord(c) + ord("0")) if c.isdigit() else c for c in str(value)[:10])
 
 
 def _neg(rank: str) -> str:

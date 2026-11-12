@@ -162,7 +162,8 @@ def audit_summary(paths: list[Path], notes: list[str]) -> dict:
             "summary": summarize_pages(list(pages.values())), "pages": len(pages),
             "requests": sum(r["requests"] for r in runs), "duration_s": sum(r["duration_s"] for r in runs),
             "stopped_early": any(r["stopped_early"] for r in runs),
-            "sections": {h: sorted(v) for h, v in sections.items()}, "notes": notes}
+            "sections": {h: sorted(v) for h, v in sections.items()}, "notes": notes,
+            "coverage": last.get("coverage") or {}, "recheck": last.get("recheck") or 0}
 
 
 def add_families(report: dict, summary_path: Path) -> None:
