@@ -203,10 +203,10 @@ LOG_CSS = """
 .srow em { font-style: normal; color: var(--muted); font-size: 13px; text-align: right }
 .track { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--line) }
 .track i { display: block } i.t-all { background: var(--accent) } i.t-open { background: var(--broken) }
-i.t-fixed { background: #12b76a } i.t-pushed { background: #a6f4c5 } i.t-res { background: #2e90fa }
-i.t-rev { background: #98a2b3 }
-.t-open b { color: var(--broken) } .t-fixed b { color: #067647 } .t-res b { color: #1570ef }
-@media (prefers-color-scheme: dark) { .t-fixed b { color: #47cd89 } .t-res b { color: #53b1fd } }
+i.t-fixed { background: #12b76a } i.t-pushed { background: #a6f4c5 } i.t-res { background: #98a2b3 }
+i.t-rev { background: #d0d5dd }
+.t-open b { color: var(--broken) } .t-fixed b { color: #067647 } .t-res b { color: var(--muted) }
+@media (prefers-color-scheme: dark) { .t-fixed b { color: #47cd89 } }
 @media (max-width: 640px) { .srow { grid-template-columns: 36px 1fr 44px } .srow .track { grid-column: 1 / -1 } }
 th.sort { cursor: pointer; user-select: none; white-space: nowrap }
 th.sort::after { content: " ↕"; opacity: .4 } th[aria-sort="ascending"]::after { content: " ↑"; opacity: 1 }
