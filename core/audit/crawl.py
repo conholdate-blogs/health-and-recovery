@@ -259,7 +259,8 @@ def untranslated_issues(pages: list[dict], field: str, check: str, default_lang:
     """Add `check` to translated pages whose title/description is the English page's, word for word (2026-11-12:
     blog.conholdate.cloud's 22 translated home pages kept the English <title>; the LLM text check noticed 2). The
     English page is the page's own hreflang entry for the default language (or x-default), when it was crawled.
-    Values of fewer than 3 Latin words (a brand name alone) are left out: they may rightly stay the same."""
+    Values of fewer than 3 Latin words besides the host name's labels (a brand name alone, "<Brand> Blog") are left
+    out: they may rightly stay the same."""
     by_url = {norm_url(p["final_url"] or p["url"]): p for p in pages if p.get("facts") and p["status"] == 200}
     for p in pages:
         f = p.get("facts")
@@ -272,7 +273,9 @@ def untranslated_issues(pages: list[dict], field: str, check: str, default_lang:
         if not en or en is p or not f[field] or not en["facts"][field]:
             continue
         value = f[field][0]
-        if value == en["facts"][field][0] and len(_LATIN_WORD.findall(value)) >= 3:
+        brand = {w.lower() for w in p["host"].split(".")}  # "Conholdate Cloud Blog" is German too
+        words = [w for w in _LATIN_WORD.findall(value) if w.lower() not in brand]
+        if value == en["facts"][field][0] and len(words) >= 3:
             p["issues"].append((check, f"same as {en['url']}: '{value[:70]}'"))
 
 

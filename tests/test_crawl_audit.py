@@ -368,7 +368,7 @@ def test_translated_page_with_the_english_title_is_found():
     from core.audit.crawl import untranslated_issues
 
     def page(url, lang, title, refs):
-        return {"url": url, "final_url": url, "status": 200, "lang": lang, "issues": [],
+        return {"url": url, "host": "b.example.com", "final_url": url, "status": 200, "lang": lang, "issues": [],
                 "facts": {"titles": [title], "descriptions": [], "robots": [], "hreflang": refs}}
 
     refs = [["en", "https://b.example.com/"], ["ja", "https://b.example.com/ja/"], ["de", "https://b.example.com/de/"]]
@@ -376,6 +376,9 @@ def test_translated_page_with_the_english_title_is_found():
     ja = page("https://b.example.com/ja/", "ja", "File Format APIs | Brand Cloud", refs)
     de = page("https://b.example.com/de/", "de", "Dateiformat-APIs | Brand Cloud", refs)
     brand = page("https://b.example.com/ko/", "ko", "Brand", refs + [["ko", "https://b.example.com/ko/"]])
-    untranslated_issues([en, ja, de, brand], "titles", "title_untranslated")
+    en2 = page("https://b.example.com/s/", "en", "Example Blog News", [["en", "https://b.example.com/s/"]])
+    de2 = page("https://b.example.com/de/s/", "de", "Example Blog News", [["en", "https://b.example.com/s/"]])
+    untranslated_issues([en, ja, de, brand, en2, de2], "titles", "title_untranslated")
+    assert not de2["issues"]  # one word besides the host's labels (b, example, com)
     assert [c for c, _ in ja["issues"]] == ["title_untranslated"]
     assert not en["issues"] and not de["issues"] and not brand["issues"]
