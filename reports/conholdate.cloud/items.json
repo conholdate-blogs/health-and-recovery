@@ -49,6 +49,114 @@
    "link": "https://blog.conholdate.cloud/total/manipulate-pdf-documents/",
    "page": "https://blog.conholdate.cloud/ar/total/manipulate-excel-spreadsheets/",
    "removed": null
+  },
+  "post_text_untranslated|blog.conholdate.cloud|content/Conholdate.Cloud/total/2025-07-08-manipulate-pdf-documents/index.vi.md||1": {
+   "check": "post_text_untranslated",
+   "file": "content/Conholdate.Cloud/total/2025-07-08-manipulate-pdf-documents/index.vi.md",
+   "first_seen": "2026-11-12",
+   "fixed": null,
+   "host": "blog.conholdate.cloud",
+   "last_seen": "2026-11-12",
+   "link": null,
+   "page": "https://blog.conholdate.cloud/vi/total/manipulate-pdf-documents/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "post_text_untranslated|blog.conholdate.cloud|content/Conholdate.Cloud/total/2025-07-09-convert-html-files/index.ar.md||1": {
+   "check": "post_text_untranslated",
+   "file": "content/Conholdate.Cloud/total/2025-07-09-convert-html-files/index.ar.md",
+   "first_seen": "2026-11-12",
+   "fixed": null,
+   "host": "blog.conholdate.cloud",
+   "last_seen": "2026-11-12",
+   "link": null,
+   "page": "https://blog.conholdate.cloud/ar/total/convert-html-files/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "post_text_untranslated|blog.conholdate.cloud|content/Conholdate.Cloud/total/2025-07-09-convert-html-files/index.fr.md||1": {
+   "check": "post_text_untranslated",
+   "file": "content/Conholdate.Cloud/total/2025-07-09-convert-html-files/index.fr.md",
+   "first_seen": "2026-11-12",
+   "fixed": null,
+   "host": "blog.conholdate.cloud",
+   "last_seen": "2026-11-12",
+   "link": null,
+   "page": "https://blog.conholdate.cloud/fr/total/convert-html-files/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "post_text_untranslated|blog.conholdate.cloud|content/Conholdate.Cloud/total/2025-07-14-manipulate-excel-files/index.vi.md||1": {
+   "check": "post_text_untranslated",
+   "file": "content/Conholdate.Cloud/total/2025-07-14-manipulate-excel-files/index.vi.md",
+   "first_seen": "2026-11-12",
+   "fixed": null,
+   "host": "blog.conholdate.cloud",
+   "last_seen": "2026-11-12",
+   "link": null,
+   "page": "https://blog.conholdate.cloud/vi/total/manipulate-excel-spreadsheets/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "rtl_direction_missing|blog.conholdate.cloud|config.yml|ar|1": {
+   "check": "rtl_direction_missing",
+   "file": "config.yml",
+   "first_seen": "2026-11-12",
+   "fixed": null,
+   "host": "blog.conholdate.cloud",
+   "last_seen": "2026-11-12",
+   "link": "ar",
+   "page": "https://blog.conholdate.cloud/ar/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "rtl_direction_missing|blog.conholdate.cloud|config.yml|fa|1": {
+   "check": "rtl_direction_missing",
+   "file": "config.yml",
+   "first_seen": "2026-11-12",
+   "fixed": null,
+   "host": "blog.conholdate.cloud",
+   "last_seen": "2026-11-12",
+   "link": "fa",
+   "page": "https://blog.conholdate.cloud/fa/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "rtl_direction_missing|blog.conholdate.cloud|config.yml|he|1": {
+   "check": "rtl_direction_missing",
+   "file": "config.yml",
+   "first_seen": "2026-11-12",
+   "fixed": null,
+   "host": "blog.conholdate.cloud",
+   "last_seen": "2026-11-12",
+   "link": "he",
+   "page": "https://blog.conholdate.cloud/he/",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "slash_redirect_temporary|blog.conholdate.cloud|(host)|/tags|1": {
+   "check": "slash_redirect_temporary",
+   "file": "(host)",
+   "first_seen": "2026-11-12",
+   "fixed": null,
+   "host": "blog.conholdate.cloud",
+   "last_seen": "2026-11-12",
+   "link": "/tags",
+   "page": "https://blog.conholdate.cloud/tags",
+   "removed": null,
+   "source": "repo-audit"
+  },
+  "slash_redirect_temporary|blog.conholdate.cloud|(host)|/total/convert-html-files|1": {
+   "check": "slash_redirect_temporary",
+   "file": "(host)",
+   "first_seen": "2026-11-12",
+   "fixed": null,
+   "host": "blog.conholdate.cloud",
+   "last_seen": "2026-11-12",
+   "link": "/total/convert-html-files",
+   "page": "https://blog.conholdate.cloud/total/convert-html-files",
+   "removed": null,
+   "source": "repo-audit"
   }
  },
  "runs": [
@@ -72,6 +180,13 @@
   "discovery-run7",
   "link-audit-run38",
   "repo-audit-run39",
-  "discovery-run8"
+  "discovery-run8",
+  "link-audit-run44",
+  "repo-audit-run45",
+  "discovery-run9",
+  "link-audit-run50",
+  "repo-audit-run51",
+  "link-audit-run56",
+  "repo-audit-run57"
  ]
 }

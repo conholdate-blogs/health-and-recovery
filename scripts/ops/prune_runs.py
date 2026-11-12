@@ -38,5 +38,11 @@ print(f"\n{len(doomed)} files to delete, {size:.1f} MB:")
 for f in doomed:
     print("  ", f.relative_to(REPO))
 if go and doomed:
-    subprocess.run(["git", "-C", str(REPO), "rm", "-q", *[str(f.relative_to(REPO)) for f in doomed]], check=True)
-    print("git rm done")
+    rels = [str(f.relative_to(REPO)) for f in doomed]
+    tracked = set(subprocess.run(["git", "-C", str(REPO), "ls-files", "-z", "--", *rels], capture_output=True,
+                                 text=True, check=True).stdout.split("\0")) - {""}
+    if tracked:
+        subprocess.run(["git", "-C", str(REPO), "rm", "-q", *sorted(tracked)], check=True)
+    for f in doomed:
+        f.unlink(missing_ok=True)  # untracked runs of this session
+    print(f"done: {len(tracked)} git rm, {len(doomed) - len(tracked)} untracked deleted")

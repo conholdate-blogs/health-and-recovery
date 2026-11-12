@@ -1,16 +1,16 @@
 {
  "windows": {
   "current": [
-   "2026-10-12",
-   "2026-11-08"
+   "2026-10-13",
+   "2026-11-09"
   ],
   "previous": [
-   "2026-09-14",
-   "2026-10-11"
+   "2026-09-15",
+   "2026-10-12"
   ],
   "six_months_ago": [
-   "2026-04-13",
-   "2026-05-10"
+   "2026-04-14",
+   "2026-05-11"
   ]
  },
  "hosts": {},
@@ -24,13 +24,13 @@
    },
    "previous": {
     "clicks": 2,
-    "impressions": 304,
+    "impressions": 305,
     "pages": 46
    },
    "six_months_ago": {
     "clicks": 1,
-    "impressions": 85,
-    "pages": 22
+    "impressions": 92,
+    "pages": 23
    }
   }
  }

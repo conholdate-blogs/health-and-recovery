@@ -1,14 +1,14 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "ai-audit",
-  "run_id": 35,
+  "run_id": 53,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
     ]
   },
-  "requests": 18,
-  "duration_s": 17.1,
+  "requests": 22,
+  "duration_s": 21.1,
   "stopped_early": false,
   "summary": {
     "blog.conholdate.cloud": {
@@ -19,7 +19,7 @@
       "firewall_training": {},
       "llms": {
         "state": "ok",
-        "note": "7 links, 1,428 characters",
+        "note": "30 links, 2,722 characters",
         "url": "https://blog.conholdate.cloud/llms.txt"
       },
       "sections": 0,
@@ -39,19 +39,42 @@
       "firewall": {
         "url": "https://blog.conholdate.cloud/",
         "baseline": 200,
-        "bytes": 23264,
+        "bytes": 23276,
         "blocked": {}
       },
       "llms": {
         "url": "https://blog.conholdate.cloud/llms.txt",
         "state": "ok",
-        "note": "7 links, 1,428 characters",
+        "note": "30 links, 2,722 characters",
         "links": [
           "https://blog.conholdate.cloud/total/insert-header-footer-in-pdf/",
           "https://blog.conholdate.cloud/total/merge-pdf-documents-using-java-cloud-api/",
           "https://blog.conholdate.cloud/total/manipulate-excel-spreadsheets/",
           "https://blog.conholdate.cloud/total/convert-html-files/",
           "https://blog.conholdate.cloud/total/manipulate-pdf-documents/",
+          "https://blog.conholdate.cloud/",
+          "https://blog.conholdate.cloud/ar/",
+          "https://blog.conholdate.cloud/cs/",
+          "https://blog.conholdate.cloud/de/",
+          "https://blog.conholdate.cloud/es/",
+          "https://blog.conholdate.cloud/fa/",
+          "https://blog.conholdate.cloud/fr/",
+          "https://blog.conholdate.cloud/he/",
+          "https://blog.conholdate.cloud/id/",
+          "https://blog.conholdate.cloud/it/",
+          "https://blog.conholdate.cloud/ja/",
+          "https://blog.conholdate.cloud/ko/",
+          "https://blog.conholdate.cloud/nl/",
+          "https://blog.conholdate.cloud/pl/",
+          "https://blog.conholdate.cloud/pt/",
+          "https://blog.conholdate.cloud/ru/",
+          "https://blog.conholdate.cloud/sv/",
+          "https://blog.conholdate.cloud/th/",
+          "https://blog.conholdate.cloud/tr/",
+          "https://blog.conholdate.cloud/uk/",
+          "https://blog.conholdate.cloud/vi/",
+          "https://blog.conholdate.cloud/zh/",
+          "https://blog.conholdate.cloud/zh-hant/",
           "https://blog.conholdate.cloud/sitemap.xml",
           "https://blog.conholdate.cloud/categories/conholdate.total-cloud-product-family/"
         ]

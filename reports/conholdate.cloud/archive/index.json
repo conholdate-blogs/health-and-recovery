@@ -178,5 +178,11 @@
     "date": "2026-11-11 (3)",
     "label": "Health 100: titles and descriptions, search/archive noindex, llms.txt (agent fixes)",
     "runs": "discovery run 8, crawl audit run 34, speed audit run 36, AI audit run 35, text check run 37, link check run 38, repo file check run 39"
+  },
+  {
+    "file": "2026-11-12.html",
+    "date": "2026-11-12",
+    "label": "Audit of the auditors: full crawl, 11 new checks (untranslated titles, RTL, stale translations, \u2026)",
+    "runs": "discovery run 9, crawl audit run 58, speed audit run 54, AI audit run 53, text check run 55, link check run 56, repo file check run 57"
   }
 ]

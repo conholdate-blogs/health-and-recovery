@@ -50,6 +50,34 @@ and after (`scripts/ops/build_diff.py`), `commit_check.py` PASSED, screenshots d
 | 11 Nov (after deploy 2) | 7, 28–33 | 94 (100 / 99 / 100 / 95) | x-default resolved; snapshot "Fixes live: …" |
 | 11 Nov (after deploy 3) | 8, 34–39 | **100** (all 100) | 0 open; snapshot "Health 100: …"; speed not scored (no real-user data) |
 
+## 12 Nov: audit of the auditors, rescan (health 100 → 94, all real)
+
+SK: "audit our auditors and improve them". Every problem found by hand on 11 Nov became a check; the rescan then
+found problems nobody had seen.
+
+| New in our audit | Found here |
+|---|---|
+| Full crawl of hosts with ≤ 500 sitemap URLs (139 of 139 pages, was ~15 sampled) | Text check saw every page → the next row |
+| Crawl `title_untranslated` / `description_untranslated` | **22 translated home pages keep the English `<title>` and description** (config sets them once); de section page description; vi post title |
+| Repo `post_text_untranslated` (every translation file) | 4 files: vi seoTitle (PDF), vi title (Excel), ar title (HTML), fr description (HTML) |
+| Repo `rtl_direction_missing` | ar, fa, he without `languageDirection: rtl` (`dir=auto` live) |
+| Repo `slash_redirect_temporary` (live) | no-slash URLs answer 302 (CDN) |
+| LLM text check (now on all pages) | he H1 " manipulat גליונות…", it H1 "Manipula" (→ "Manipola") |
+| Repo `post_title_length`, `post_description_length`, `post_outside_main_sections`, `translation_stale`, `section_index_untranslated`, `language_name_wrong`, `category_page_unused` | 0 here (fixed 11 Nov: F2, F6, F7, F10, F12) |
+
+Scan 12 Nov: discovery 9, crawl 58, AI 53, speed 54, text 55, links 56, repo 57; snapshot 2026-11-12. Open: 6
+issue types, 9 items. The two LLM home-page answers ("a different product") are recorded as reviewed in the tenant
+YAML: real, but counted by `title_untranslated`.
+
+### Proposed fixes (need SK's approval per push)
+
+| # | Fix | Where | Deploy |
+|---|---|---|---|
+| F13 | Home `<title>` + description per language (`languages.<lang>.title`, `.params.description`), 22 languages | config.yml | yes |
+| F14 | Translate 4 front-matter values; he and it H1 typos | 6 post files | yes |
+| F15 | `languageDirection: rtl` for ar, fa, he; check PaperMod's RTL layout (screenshots) | config.yml | yes |
+| F16 | 301 instead of 302 for no-slash URLs | CloudFront (not the repo) | infra |
+
 ## Decisions by SK (11 Nov)
 
 - Thin tags: an issue only if posts could share better tags; with 5 posts they cannot → noindex (F3); retag later.
@@ -73,7 +101,7 @@ and after (`scripts/ops/build_diff.py`), `commit_check.py` PASSED, screenshots d
 
 - Retag posts to 2–3 broad tags (SK: later; tag pages are noindex meanwhile).
 - The Java merge post has no translations (SK's translation agent).
-- Arabic, Persian, Hebrew pages render left-to-right (theme; site-wide, pre-existing).
+- Arabic, Persian, Hebrew pages render left-to-right: now a check (`rtl_direction_missing`), fix F15 proposed.
 - Host forwards no-slash → slash with 302 instead of 301 (CDN).
 
 ## Learned here

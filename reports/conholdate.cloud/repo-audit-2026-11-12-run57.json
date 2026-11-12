@@ -1,0 +1,324 @@
+{
+  "tenant": "conholdate.cloud",
+  "auditor": "repo-audit",
+  "run_id": 57,
+  "params": {
+    "hosts": [
+      "blog.conholdate.cloud"
+    ],
+    "sample": 40
+  },
+  "requests": 5,
+  "duration_s": 4.2,
+  "stopped_early": false,
+  "summary": {
+    "blog.conholdate.cloud": {
+      "commit": "6217d42 2026-11-11 Language menu: correct language names",
+      "posts": 93,
+      "entries": 3,
+      "invalid": null,
+      "broke_it": null,
+      "live": {
+        "eligible": 3,
+        "sampled": 3,
+        "other": 1,
+        "redirected": 2
+      },
+      "by_check": {
+        "post_text_untranslated": 4,
+        "rtl_direction_missing": 3,
+        "slash_redirect_temporary": 2
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "intl-0001",
+      "tenant": "conholdate.cloud",
+      "subdomain": "blog.conholdate.cloud",
+      "template": "post",
+      "dimension": "intl",
+      "check": "post_text_untranslated",
+      "type": "incorrect",
+      "title": "Translations that keep the English title or description",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.cloud/vi/total/manipulate-pdf-documents/",
+          "https://blog.conholdate.cloud/ar/total/convert-html-files/",
+          "https://blog.conholdate.cloud/fr/total/convert-html-files/",
+          "https://blog.conholdate.cloud/vi/total/manipulate-excel-spreadsheets/"
+        ],
+        "observed": "4 entries or files; seoTitle in English: 'Manipulate PDF Documents using Conholdate.Cloud REST API': 1, title in English: 'Convert HTML Files using Conholdate.Cloud': 1, description in English: 'Explore how to convert HTML files to various formats such as': 1, title in English: 'Manipulate Excel Spreadsheets using Conholdate.Cloud': 1",
+        "expected": "A translation's seoTitle, title and description are in its own language",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.cloud/vi/total/manipulate-pdf-documents/",
+            "file": "content/Conholdate.Cloud/total/2025-07-08-manipulate-pdf-documents/index.vi.md",
+            "line": 1,
+            "note": "seoTitle in English: 'Manipulate PDF Documents using Conholdate.Cloud REST API'",
+            "fix": "translate seoTitle",
+            "commit": "16b6a14 2026-11-11 Titles and descriptions within search-result length; Excel translations follow the current English"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.cloud/ar/total/convert-html-files/",
+            "file": "content/Conholdate.Cloud/total/2025-07-09-convert-html-files/index.ar.md",
+            "line": 1,
+            "note": "title in English: 'Convert HTML Files using Conholdate.Cloud'",
+            "fix": "translate title",
+            "commit": "bbe3a99 2026-11-11 One category for all posts; Arabic posts link to Arabic pages"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.cloud/fr/total/convert-html-files/",
+            "file": "content/Conholdate.Cloud/total/2025-07-09-convert-html-files/index.fr.md",
+            "line": 1,
+            "note": "description in English: 'Explore how to convert HTML files to various formats such as'",
+            "fix": "translate description",
+            "commit": "16b6a14 2026-11-11 Titles and descriptions within search-result length; Excel translations follow the current English"
+          },
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.cloud/vi/total/manipulate-excel-spreadsheets/",
+            "file": "content/Conholdate.Cloud/total/2025-07-14-manipulate-excel-files/index.vi.md",
+            "line": 1,
+            "note": "title in English: 'Manipulate Excel Spreadsheets using Conholdate.Cloud'",
+            "fix": "translate title",
+            "commit": "16b6a14 2026-11-11 Titles and descriptions within search-result length; Excel translations follow the current English"
+          }
+        ]
+      },
+      "affected_pages": 4,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "M",
+      "fix_tier": 3,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-12"
+    },
+    {
+      "id": "intl-0002",
+      "tenant": "conholdate.cloud",
+      "subdomain": "blog.conholdate.cloud",
+      "template": "config",
+      "dimension": "intl",
+      "check": "rtl_direction_missing",
+      "type": "improvable",
+      "title": "Right-to-left languages render left to right",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.cloud/ar/",
+          "https://blog.conholdate.cloud/fa/",
+          "https://blog.conholdate.cloud/he/"
+        ],
+        "observed": "3 entries or files; ar: languageDirection not set: 1, fa: languageDirection not set: 1, he: languageDirection not set: 1",
+        "expected": "Arabic, Persian, Hebrew (and other RTL languages) set languageDirection: rtl",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.cloud/ar/",
+            "file": "config.yml",
+            "line": 0,
+            "note": "ar: languageDirection not set",
+            "fix": "languageDirection: rtl",
+            "commit": null
+          },
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.cloud/fa/",
+            "file": "config.yml",
+            "line": 0,
+            "note": "fa: languageDirection not set",
+            "fix": "languageDirection: rtl",
+            "commit": null
+          },
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.cloud/he/",
+            "file": "config.yml",
+            "line": 0,
+            "note": "he: languageDirection not set",
+            "fix": "languageDirection: rtl",
+            "commit": null
+          }
+        ]
+      },
+      "affected_pages": 3,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-12"
+    },
+    {
+      "id": "crawl-0001",
+      "tenant": "conholdate.cloud",
+      "subdomain": "blog.conholdate.cloud",
+      "template": "host",
+      "dimension": "crawl",
+      "check": "slash_redirect_temporary",
+      "type": "improvable",
+      "title": "URLs without the trailing slash forward with a 302",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.cloud/total/convert-html-files",
+          "https://blog.conholdate.cloud/tags"
+        ],
+        "observed": "2 entries or files; 302 to https://blog.conholdate.cloud/total/convert-html-files/: 1, 302 to https://blog.conholdate.cloud/tags/: 1",
+        "expected": "A URL without its trailing slash answers a permanent redirect (301/308)",
+        "locations": [
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.cloud/total/convert-html-files",
+            "file": "(host)",
+            "line": 0,
+            "note": "302 to https://blog.conholdate.cloud/total/convert-html-files/",
+            "fix": "301 to the URL with /",
+            "commit": null
+          },
+          {
+            "role": "file",
+            "url": "https://blog.conholdate.cloud/tags",
+            "file": "(host)",
+            "line": 0,
+            "note": "302 to https://blog.conholdate.cloud/tags/",
+            "fix": "301 to the URL with /",
+            "commit": null
+          }
+        ]
+      },
+      "affected_pages": 2,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 3,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-12"
+    }
+  ],
+  "hosts": {
+    "blog.conholdate.cloud": {
+      "commit": "6217d42 2026-11-11 Language menu: correct language names",
+      "posts": 93,
+      "redirects": {
+        "present": true,
+        "entries": 3,
+        "invalid": null,
+        "broke_it": null,
+        "live": {
+          "eligible": 3,
+          "sampled": 3,
+          "other": 1,
+          "redirected": 2,
+          "failed": []
+        }
+      },
+      "issues": [
+        {
+          "check": "post_text_untranslated",
+          "file": "content/Conholdate.Cloud/total/2025-07-08-manipulate-pdf-documents/index.vi.md",
+          "line": 1,
+          "link": null,
+          "page": "https://blog.conholdate.cloud/vi/total/manipulate-pdf-documents/",
+          "fix": "translate seoTitle",
+          "note": "seoTitle in English: 'Manipulate PDF Documents using Conholdate.Cloud REST API'",
+          "commit": "16b6a14 2026-11-11 Titles and descriptions within search-result length; Excel translations follow the current English"
+        },
+        {
+          "check": "post_text_untranslated",
+          "file": "content/Conholdate.Cloud/total/2025-07-09-convert-html-files/index.ar.md",
+          "line": 1,
+          "link": null,
+          "page": "https://blog.conholdate.cloud/ar/total/convert-html-files/",
+          "fix": "translate title",
+          "note": "title in English: 'Convert HTML Files using Conholdate.Cloud'",
+          "commit": "bbe3a99 2026-11-11 One category for all posts; Arabic posts link to Arabic pages"
+        },
+        {
+          "check": "post_text_untranslated",
+          "file": "content/Conholdate.Cloud/total/2025-07-09-convert-html-files/index.fr.md",
+          "line": 1,
+          "link": null,
+          "page": "https://blog.conholdate.cloud/fr/total/convert-html-files/",
+          "fix": "translate description",
+          "note": "description in English: 'Explore how to convert HTML files to various formats such as'",
+          "commit": "16b6a14 2026-11-11 Titles and descriptions within search-result length; Excel translations follow the current English"
+        },
+        {
+          "check": "post_text_untranslated",
+          "file": "content/Conholdate.Cloud/total/2025-07-14-manipulate-excel-files/index.vi.md",
+          "line": 1,
+          "link": null,
+          "page": "https://blog.conholdate.cloud/vi/total/manipulate-excel-spreadsheets/",
+          "fix": "translate title",
+          "note": "title in English: 'Manipulate Excel Spreadsheets using Conholdate.Cloud'",
+          "commit": "16b6a14 2026-11-11 Titles and descriptions within search-result length; Excel translations follow the current English"
+        },
+        {
+          "check": "rtl_direction_missing",
+          "file": "config.yml",
+          "line": 0,
+          "link": "ar",
+          "page": "https://blog.conholdate.cloud/ar/",
+          "fix": "languageDirection: rtl",
+          "note": "ar: languageDirection not set",
+          "commit": null
+        },
+        {
+          "check": "rtl_direction_missing",
+          "file": "config.yml",
+          "line": 0,
+          "link": "fa",
+          "page": "https://blog.conholdate.cloud/fa/",
+          "fix": "languageDirection: rtl",
+          "note": "fa: languageDirection not set",
+          "commit": null
+        },
+        {
+          "check": "rtl_direction_missing",
+          "file": "config.yml",
+          "line": 0,
+          "link": "he",
+          "page": "https://blog.conholdate.cloud/he/",
+          "fix": "languageDirection: rtl",
+          "note": "he: languageDirection not set",
+          "commit": null
+        },
+        {
+          "check": "slash_redirect_temporary",
+          "file": "(host)",
+          "line": 0,
+          "link": "/total/convert-html-files",
+          "page": "https://blog.conholdate.cloud/total/convert-html-files",
+          "fix": "301 to the URL with /",
+          "note": "302 to https://blog.conholdate.cloud/total/convert-html-files/",
+          "commit": null
+        },
+        {
+          "check": "slash_redirect_temporary",
+          "file": "(host)",
+          "line": 0,
+          "link": "/tags",
+          "page": "https://blog.conholdate.cloud/tags",
+          "fix": "301 to the URL with /",
+          "note": "302 to https://blog.conholdate.cloud/tags/",
+          "commit": null
+        }
+      ]
+    }
+  }
+}

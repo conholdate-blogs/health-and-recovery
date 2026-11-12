@@ -1,9 +1,9 @@
 {
  "tenant": "conholdate.cloud",
- "date": "2026-11-11",
+ "date": "2026-11-12",
  "search_window": [
-  "2026-10-12",
-  "2026-11-08"
+  "2026-10-13",
+  "2026-11-09"
  ],
  "hosts": {
   "blog.conholdate.cloud": {
@@ -63,7 +63,7 @@
    "tag_listing_pages": 555,
    "pages_beyond_cap": 0,
    "cap": 50,
-   "discovery_run": 8,
+   "discovery_run": 9,
    "sitemap_urls": 139,
    "sitemap_tag_urls": 0,
    "search": {

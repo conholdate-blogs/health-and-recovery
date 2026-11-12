@@ -15,6 +15,17 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Start here (session handoff, 2026-11-12)
+
+**Audit of the auditors (SK: "audit our auditors and improve them"), then rescan of blog.conholdate.cloud:**
+11 new checks + full crawl for hosts with ≤ 500 sitemap URLs (commits 073d772 … this one; details in
+[docs/playbook.md](docs/playbook.md) "Rules for our own audit" and the blog log). blog.conholdate.cloud **100 → 94,
+all real**: 22 translated home pages keep the English `<title>`/description, 4 English front-matter values in
+translations, RTL off for ar/fa/he, 2 H1 typos, no-slash 302. Fixes F13–F16 proposed in
+[docs/blogs/blog.conholdate.cloud.md](docs/blogs/blog.conholdate.cloud.md), **waiting for SK's approval**. Dry run
+on blog.conholdate.com: 3,638 stale translations, 239 untranslated, 5 wrong language names (in its log).
+`scripts/ops/prune_runs.py` now deletes untracked runs too. Our repo: committed, **not pushed** (asks).
+
 ## Start here (session handoff, 2026-11-11, evening)
 
 **blog.conholdate.cloud: scanned and fixed (11 Nov), health 84 → 94 → 100** (0 open findings; later fixes: titles/descriptions in range, `/search/` + `/archives/` noindex and out of sitemaps, `llms.txt`; 10 agent-fixes rows). Details in

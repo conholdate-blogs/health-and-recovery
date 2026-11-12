@@ -80,7 +80,8 @@ Playbook fix catalogue rows; check each here before B3/B4. Facts seen from the b
 | 6 home H1 | Not checked yet | After SK sees blog.conholdate.cloud's result |
 | 7 llms.txt | Not checked yet | Small |
 | 9 mainSections / stray categories | Not checked yet | With B4 |
-| 11 language names | Not checked yet (`languageName` in config) | Small |
+| 11 language names | **5 wrong** (ja 日本, ko 한국인, nl "Dutch", …; repo check 12 Nov, dry run) | Small |
+| new 12 Nov | Dry run of the new repo checks: **3,638 stale translations** (English titles rewritten by the Blog Optimization Agent, Mar 2026), 239 translations with English text, 17 section `_index` missing per language, 1,802 titles + 5,070 descriptions out of range, ar/fa without RTL, no-slash 302 | Next full scan records them |
 
 ## Scan 11 Nov (after A1–A5)
 

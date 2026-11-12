@@ -198,6 +198,79 @@
     "notes": []
   },
   {
+    "id": "crawl-261112-1",
+    "key": "crawl/slash_redirect_temporary/blog.conholdate.cloud/host",
+    "source": "repo-audit",
+    "tenant": "conholdate.cloud",
+    "subdomain": "blog.conholdate.cloud",
+    "template": "host",
+    "dimension": "crawl",
+    "type": "improvable",
+    "title": "URLs without the trailing slash forward with a 302",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.cloud/total/convert-html-files",
+        "https://blog.conholdate.cloud/tags"
+      ],
+      "observed": "2 entries or files; 302 to https://blog.conholdate.cloud/total/convert-html-files/: 1, 302 to https://blog.conholdate.cloud/tags/: 1",
+      "expected": "A URL without its trailing slash answers a permanent redirect (301/308)",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.cloud/total/convert-html-files",
+          "file": "(host)",
+          "line": 0,
+          "note": "302 to https://blog.conholdate.cloud/total/convert-html-files/",
+          "fix": "301 to the URL with /",
+          "commit": null
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.cloud/tags",
+          "file": "(host)",
+          "line": 0,
+          "note": "302 to https://blog.conholdate.cloud/tags/",
+          "fix": "301 to the URL with /",
+          "commit": null
+        }
+      ]
+    },
+    "affected_pages": 2,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 0,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-14",
+        "2026-05-11"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-13",
+        "2026-11-09"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 3,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-12",
+    "first_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run57",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "slash_redirect_temporary",
+    "notes": []
+  },
+  {
     "id": "intl-0001",
     "key": "intl/hreflang_no_xdefault/blog.conholdate.cloud/page",
     "source": "crawl-audit",
@@ -370,6 +443,430 @@
     "resolved_run": "link-audit-run26",
     "resolved_at": "2026-11-11T13:39:12+00:00",
     "check": "link_wrong_language",
+    "notes": []
+  },
+  {
+    "id": "intl-261112-1",
+    "key": "intl/rtl_direction_missing/blog.conholdate.cloud/config",
+    "source": "repo-audit",
+    "tenant": "conholdate.cloud",
+    "subdomain": "blog.conholdate.cloud",
+    "template": "config",
+    "dimension": "intl",
+    "type": "improvable",
+    "title": "Right-to-left languages render left to right",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.cloud/ar/",
+        "https://blog.conholdate.cloud/fa/",
+        "https://blog.conholdate.cloud/he/"
+      ],
+      "observed": "3 entries or files; ar: languageDirection not set: 1, fa: languageDirection not set: 1, he: languageDirection not set: 1",
+      "expected": "Arabic, Persian, Hebrew (and other RTL languages) set languageDirection: rtl",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.cloud/ar/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "ar: languageDirection not set",
+          "fix": "languageDirection: rtl",
+          "commit": null
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.cloud/fa/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "fa: languageDirection not set",
+          "fix": "languageDirection: rtl",
+          "commit": null
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.cloud/he/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "he: languageDirection not set",
+          "fix": "languageDirection: rtl",
+          "commit": null
+        }
+      ]
+    },
+    "affected_pages": 3,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 0,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-14",
+        "2026-05-11"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-13",
+        "2026-11-09"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-12",
+    "first_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run57",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "rtl_direction_missing",
+    "notes": []
+  },
+  {
+    "id": "intl-261112-2",
+    "key": "intl/description_untranslated/blog.conholdate.cloud/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.cloud",
+    "subdomain": "blog.conholdate.cloud",
+    "template": "page",
+    "dimension": "intl",
+    "type": "incorrect",
+    "title": "Translated pages keep the English meta description",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.cloud/zh-hant/",
+        "https://blog.conholdate.cloud/ru/",
+        "https://blog.conholdate.cloud/it/",
+        "https://blog.conholdate.cloud/pt/",
+        "https://blog.conholdate.cloud/ko/",
+        "https://blog.conholdate.cloud/zh/",
+        "https://blog.conholdate.cloud/es/",
+        "https://blog.conholdate.cloud/he/",
+        "https://blog.conholdate.cloud/id/",
+        "https://blog.conholdate.cloud/cs/"
+      ],
+      "observed": "24 of 139 pages (every sitemap URL crawled) (by template: category 1/23, home 22/23, post 1/93). e.g. https://blog.conholdate.cloud/zh-hant/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'; https://blog.conholdate.cloud/ru/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'; https://blog.conholdate.cloud/it/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'; https://blog.conholdate.cloud/pt/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'; https://blog.conholdate.cloud/ko/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'",
+      "expected": "the meta description in the page's language",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/zh-hant/",
+          "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/ru/",
+          "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/it/",
+          "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/pt/",
+          "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/ko/",
+          "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.cloud/zh-hant/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.cloud/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.cloud/ru/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.cloud/it/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.cloud/pt/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.cloud/ko/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "category": [
+          1,
+          23
+        ],
+        "home": [
+          22,
+          23
+        ],
+        "post": [
+          1,
+          93
+        ]
+      }
+    },
+    "affected_pages": 24,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 82,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 64,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-14",
+        "2026-05-11"
+      ],
+      "scored_on": "at stake",
+      "score": 4,
+      "window": [
+        "2026-10-13",
+        "2026-11-09"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-12",
+    "first_seen_run": "crawl-audit-run46",
+    "last_seen_run": "crawl-audit-run58",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "description_untranslated",
+    "notes": []
+  },
+  {
+    "id": "intl-261112-3",
+    "key": "intl/title_untranslated/blog.conholdate.cloud/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.cloud",
+    "subdomain": "blog.conholdate.cloud",
+    "template": "page",
+    "dimension": "intl",
+    "type": "incorrect",
+    "title": "Translated pages keep the English title",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.cloud/zh-hant/",
+        "https://blog.conholdate.cloud/ru/",
+        "https://blog.conholdate.cloud/it/",
+        "https://blog.conholdate.cloud/pt/",
+        "https://blog.conholdate.cloud/ko/",
+        "https://blog.conholdate.cloud/zh/",
+        "https://blog.conholdate.cloud/es/",
+        "https://blog.conholdate.cloud/he/",
+        "https://blog.conholdate.cloud/id/",
+        "https://blog.conholdate.cloud/cs/"
+      ],
+      "observed": "23 of 139 pages (every sitemap URL crawled) (by template: home 22/23, post 1/93). e.g. https://blog.conholdate.cloud/zh-hant/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'; https://blog.conholdate.cloud/ru/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'; https://blog.conholdate.cloud/it/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'; https://blog.conholdate.cloud/pt/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'; https://blog.conholdate.cloud/ko/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'",
+      "expected": "the title in the page's language",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/zh-hant/",
+          "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/ru/",
+          "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/it/",
+          "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/pt/",
+          "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/ko/",
+          "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.cloud/zh-hant/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.cloud/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.cloud/ru/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.cloud/it/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.cloud/pt/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.cloud/ko/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "home": [
+          22,
+          23
+        ],
+        "post": [
+          1,
+          93
+        ]
+      }
+    },
+    "affected_pages": 23,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 82,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 64,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-14",
+        "2026-05-11"
+      ],
+      "scored_on": "at stake",
+      "score": 4,
+      "window": [
+        "2026-10-13",
+        "2026-11-09"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-12",
+    "first_seen_run": "crawl-audit-run46",
+    "last_seen_run": "crawl-audit-run58",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "title_untranslated",
+    "notes": []
+  },
+  {
+    "id": "intl-261112-4",
+    "key": "intl/post_text_untranslated/blog.conholdate.cloud/post",
+    "source": "repo-audit",
+    "tenant": "conholdate.cloud",
+    "subdomain": "blog.conholdate.cloud",
+    "template": "post",
+    "dimension": "intl",
+    "type": "incorrect",
+    "title": "Translations that keep the English title or description",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.cloud/vi/total/manipulate-pdf-documents/",
+        "https://blog.conholdate.cloud/ar/total/convert-html-files/",
+        "https://blog.conholdate.cloud/fr/total/convert-html-files/",
+        "https://blog.conholdate.cloud/vi/total/manipulate-excel-spreadsheets/"
+      ],
+      "observed": "4 entries or files; seoTitle in English: 'Manipulate PDF Documents using Conholdate.Cloud REST API': 1, title in English: 'Convert HTML Files using Conholdate.Cloud': 1, description in English: 'Explore how to convert HTML files to various formats such as': 1, title in English: 'Manipulate Excel Spreadsheets using Conholdate.Cloud': 1",
+      "expected": "A translation's seoTitle, title and description are in its own language",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.cloud/vi/total/manipulate-pdf-documents/",
+          "file": "content/Conholdate.Cloud/total/2025-07-08-manipulate-pdf-documents/index.vi.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Manipulate PDF Documents using Conholdate.Cloud REST API'",
+          "fix": "translate seoTitle",
+          "commit": "16b6a14 2026-11-11 Titles and descriptions within search-result length; Excel translations follow the current English"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.cloud/ar/total/convert-html-files/",
+          "file": "content/Conholdate.Cloud/total/2025-07-09-convert-html-files/index.ar.md",
+          "line": 1,
+          "note": "title in English: 'Convert HTML Files using Conholdate.Cloud'",
+          "fix": "translate title",
+          "commit": "bbe3a99 2026-11-11 One category for all posts; Arabic posts link to Arabic pages"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.cloud/fr/total/convert-html-files/",
+          "file": "content/Conholdate.Cloud/total/2025-07-09-convert-html-files/index.fr.md",
+          "line": 1,
+          "note": "description in English: 'Explore how to convert HTML files to various formats such as'",
+          "fix": "translate description",
+          "commit": "16b6a14 2026-11-11 Titles and descriptions within search-result length; Excel translations follow the current English"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.cloud/vi/total/manipulate-excel-spreadsheets/",
+          "file": "content/Conholdate.Cloud/total/2025-07-14-manipulate-excel-files/index.vi.md",
+          "line": 1,
+          "note": "title in English: 'Manipulate Excel Spreadsheets using Conholdate.Cloud'",
+          "fix": "translate title",
+          "commit": "16b6a14 2026-11-11 Titles and descriptions within search-result length; Excel translations follow the current English"
+        }
+      ]
+    },
+    "affected_pages": 4,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 0,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-14",
+        "2026-05-11"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-13",
+        "2026-11-09"
+      ]
+    },
+    "effort": "M",
+    "fix_tier": 3,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-12",
+    "first_seen_run": "repo-audit-run57",
+    "last_seen_run": "repo-audit-run57",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "post_text_untranslated",
     "notes": []
   },
   {
@@ -685,6 +1182,146 @@
     "resolved_run": "crawl-audit-run34",
     "resolved_at": "2026-11-11T14:18:16+00:00",
     "check": "title_length",
+    "notes": []
+  },
+  {
+    "id": "onpage-261112-1",
+    "key": "onpage/text_topic_mismatch/blog.conholdate.cloud/page",
+    "source": "text-audit",
+    "tenant": "conholdate.cloud",
+    "subdomain": "blog.conholdate.cloud",
+    "template": "page",
+    "dimension": "onpage",
+    "type": "incorrect",
+    "title": "Title or description is about a different product",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.cloud/uk/",
+        "https://blog.conholdate.cloud/ja/"
+      ],
+      "observed": "2 of 139 checked pages: /uk/ title: 'File Format and Document Processing APIs | Conholdate Cloud' → 'Блог Conholdate Cloud'; /uk/ meta description: 'File Format and Document Processing APIs for document automation of almost all the popular file formats.' → 'Блог Conholdate Cloud – новости и статьи о работе с документами'; /ja/ title: 'File Format and Document Processing APIs | Conholdate Cloud' → 'Conholdate Cloud ブログ'; /ja/ meta description: 'File Format and Document Processing APIs for document automation of almost all the popular file formats.' → 'Conholdate Cloud ブログ – ドキュメント自動化に関する記事やニュース'",
+      "expected": "Title and meta description describe the page's own product, like its H1",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/uk/",
+          "note": "title: 'File Format and Document Processing APIs | Conholdate Cloud' → 'Блог Conholdate Cloud'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/uk/",
+          "note": "meta description: 'File Format and Document Processing APIs for document automation of almost all the popular file formats.' → 'Блог Conholdate Cloud – новости и статьи о работе с документами'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/ja/",
+          "note": "title: 'File Format and Document Processing APIs | Conholdate Cloud' → 'Conholdate Cloud ブログ'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/ja/",
+          "note": "meta description: 'File Format and Document Processing APIs for document automation of almost all the popular file formats.' → 'Conholdate Cloud ブログ – ドキュメント自動化に関する記事やニュース'"
+        }
+      ]
+    },
+    "affected_pages": 2,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 3,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 6,
+      "lost_clicks": 0,
+      "lost_impressions": 3,
+      "past_window": [
+        "2026-04-14",
+        "2026-05-11"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-13",
+        "2026-11-09"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "resolved",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-12",
+    "first_seen_run": "text-audit-run43",
+    "last_seen_run": "text-audit-run43",
+    "resolved_run": "text-audit-run49",
+    "resolved_at": "2026-11-12T06:10:02+00:00",
+    "check": "text_topic_mismatch",
+    "notes": []
+  },
+  {
+    "id": "onpage-261112-2",
+    "key": "onpage/text_typo/blog.conholdate.cloud/page",
+    "source": "text-audit",
+    "tenant": "conholdate.cloud",
+    "subdomain": "blog.conholdate.cloud",
+    "template": "page",
+    "dimension": "onpage",
+    "type": "improvable",
+    "title": "Typos in titles, headings or descriptions",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.cloud/he/total/manipulate-excel-spreadsheets/",
+        "https://blog.conholdate.cloud/it/total/manipulate-excel-spreadsheets/"
+      ],
+      "observed": "2 of 139 checked pages: /he/total/manipulate-excel-spreadsheets/ H1: 'manipulat' → 'Manipule'; /it/total/manipulate-excel-spreadsheets/ H1: 'Manipula' → 'Manipola'",
+      "expected": "Correctly spelled titles, H1s and meta descriptions",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/he/total/manipulate-excel-spreadsheets/",
+          "note": "H1: 'manipulat' → 'Manipule'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.cloud/it/total/manipulate-excel-spreadsheets/",
+          "note": "H1: 'Manipula' → 'Manipola'"
+        }
+      ]
+    },
+    "affected_pages": 2,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 1,
+      "lost_clicks": 0,
+      "lost_impressions": 1,
+      "past_window": [
+        "2026-04-14",
+        "2026-05-11"
+      ],
+      "scored_on": "lost",
+      "score": 0,
+      "window": [
+        "2026-10-13",
+        "2026-11-09"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-12",
+    "first_seen_run": "text-audit-run43",
+    "last_seen_run": "text-audit-run55",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "text_typo",
     "notes": []
   }
 ]

@@ -48,6 +48,9 @@ Hugo/PaperMod blogs share these problems. Check each blog for every row; commits
 | 8 | **Wrong-language links** (`link_wrong_language`) | Replace in the translated file (fix list CSV from the link check) | Built page links `/<lang>/…` | SK: fix from here, not by the translation agent |
 | 9 | **Category / section structure**: duplicate categories, a post folder outside `mainSections` (never on the home page), stray `content/categories/*/_index.md` | One category name in all files; move the post folder (its `url` keeps the URL); delete stray files | `build_diff.py`: only the intended pages gone; home lists every post | Check `params.mainSections` against `content/` folders |
 | 10 | **Redirects.json leftovers** (WordPress-template keys) | Keep only keys with a purpose; keys match exactly (`/category` ≠ `/category/`) | curl each key | The host forwards no-slash → slash (302) only for real folders; CloudFront caches redirect answers (query string ignored) |
+| 12 | **English home title on translated pages** (`title_untranslated`, `description_untranslated`) | `languages.<lang>.title` and `languages.<lang>.params.description` in `config.yml` | Each language home has its own `<title>` | PaperMod builds the home `<title>` from the site title: localizing the H1 (row 6) leaves it English |
+| 13 | **Translations that keep English text** (`post_text_untranslated`) | Translate the seoTitle/title/description in the file | Repo check 0 | The translation agent sometimes leaves one field English |
+| 14 | **RTL languages left to right** (`rtl_direction_missing`) | `languageDirection: rtl` per language | `<html dir=rtl>`; screenshot the RTL layout | Not yet proven on a blog (12 Nov) |
 | 11 | **Language menu names** (`languageName` in `config.yml`) | Native names (日本語, 한국어, 繁體中文, Bahasa Indonesia, Nederlands, ไทย, עברית) | Switcher shows them | blog.conholdate.cloud had "日本" (Japan), "한국인" (a Korean person), "中國傳統的" |
 
 Per blog, before fixing: Redirects.json live or at deploy (blog.conholdate.cloud and blog.aspose.com live,
@@ -66,6 +69,13 @@ blog.conholdate.com at deploy); `mainSections`; which pages are translated (the 
 - **Target = 100 in Google's eyes too (SK, 2026-11-11):** never relax a check to raise a score; fix the site. A rule
   change is right only when the old rule was wrong about what search engines see (e.g. thin tags that are noindex).
 - `commit_check.py` reports only problems a commit range adds (old damage in touched files is not blamed).
+- **Audit the auditors after each blog (SK, 2026-11-12):** every problem found by hand becomes a check (or a
+  seed finding), then rescan. 12 Nov added 11 checks (repo: title/description length on every file, stale and
+  untranslated translations, sections outside `mainSections`, English-only section `_index.md`, language names,
+  RTL, unused categories, no-slash 302; crawl: untranslated title/description) and a full crawl for hosts with
+  ≤ 500 sitemap URLs (`audit.full_crawl_max_urls`); the full crawl alone surfaced 22 English home titles.
+- An LLM answer that is a real problem under a wrong label: record it as reviewed in `audit.text.ignore` with the
+  reason, and count it with a deterministic check instead.
 
 ## URL rules (SK, 2026-11-11)
 
