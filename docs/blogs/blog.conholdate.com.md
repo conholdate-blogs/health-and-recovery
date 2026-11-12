@@ -81,6 +81,7 @@ Playbook fix catalogue rows; check each here before B3/B4. Facts seen from the b
 | 7 llms.txt | Not checked yet | Small |
 | 9 mainSections / stray categories | Not checked yet | With B4 |
 | 11 language names | **5 wrong** (ja 日本, ko 한국인, nl "Dutch", …; repo check 12 Nov, dry run) | Small |
+| 15 company menu id | **vi, th, tr have no `dynamicmenuid`**: the English company bar shows on those pages (repo check `menu_id_missing`, 12 Nov) | Small config fix (check the menu service has conholdate/vi, th, tr) |
 | new 12 Nov | Dry run of the new repo checks: **3,638 stale translations** (English titles rewritten by the Blog Optimization Agent, Mar 2026), 239 translations with English text, 17 section `_index` missing per language, 1,802 titles + 5,070 descriptions out of range, ar/fa without RTL, no-slash 302 | Next full scan records them |
 
 ## Scan 11 Nov (after A1–A5)

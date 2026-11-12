@@ -15,7 +15,47 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
-## Start here (session handoff, 2026-11-12)
+## Start here (session handoff, 2026-11-12, end of day)
+
+**Waiting for SK (approve, then push + Deploy Production - AWS on blog.conholdate.cloud):**
+
+| # | What | State |
+|---|---|---|
+| F17 | Company menu bar missing on all /zh-hant/ pages: menu id `conholdatecloud-zh-hant` → `conholdatecloud-zht` | blog commit **39f62ad committed, not pushed**; tested locally (bar renders in Traditional Chinese), commit check PASSED |
+| F18 | The Java post's new translations (SK's translation agent, 1244f92): 9 titles, 9 descriptions too long | proposed: shorten (F10 pattern) or the translation agent redoes them |
+| F19 | `static/llms.txt` calls the Java post "English only" (now translated) | proposed |
+| F16 | No-slash URLs answer 302, not 301 | CDN (CloudFront) setting, not the repo; owner to be named |
+| other blogs | Company menu: blog.aspose.cloud zh-tw and blog.groupdocs.cloud zh-hant have **no bar** (3-part ids; `<venture>-zht` exists); blog.conholdate.com vi/th/tr show the English bar (no id); blog.aspose.com zh-hant shows the Simplified bar (`aspose-zht` exists) | found by the new repo check (dry run); not yet in their reports (next scan) |
+
+**Done 12 Nov (all pushed; our repo at the commit after 1a4a35e plus today's docs commits):**
+- **Audit of the auditors** (SK): 11 + 3 new checks; every hand-found issue became a check (rule AUD-3):
+  repo checks `post_title_length`, `post_description_length`, `post_outside_main_sections`, `translation_stale`
+  (English rewritten, similarity < 0.75), `post_text_untranslated` (keep-in-English terms in
+  `core/audit/keep_terms.py`, from the translation agent), `section_index_untranslated`, `language_name_wrong`,
+  `rtl_direction_missing`, `category_page_unused`, `slash_redirect_temporary` (live), `menu_id_invalid`,
+  `menu_id_missing`, `menu_id_wrong_script`; crawl checks `title_untranslated`, `description_untranslated`.
+- **Crawl sample:** full crawl for hosts ≤ 1,000 sitemap URLs (SK); bigger hosts: half fixed, half rotating
+  (unchecked and newest posts first, dates from the repo), recheck of last run's failing pages; coverage line.
+- **blog.conholdate.cloud:** F13 (home title/description per language + `params.siteName` + opengraph override),
+  F14 (4 untranslated values, 2 H1 typos), F15 (RTL ar/fa/he) pushed by SK, deployed, verified; health 100, 14
+  agent-fix rows; snapshot 2026-11-12-2.
+- **Site:** Issue log per subdomain, Rules page (22 rules), subdomain page rework (one issue/item vocabulary,
+  area cards with their data, graph with health panel and total line, red open rows, Section switch = Blogs only
+  on every page incl. the Issue log), Pages workflow retry for stuck deployments. All documented in
+  [docs/site-pages.md](docs/site-pages.md).
+- **Later plans:** indexed % via URL Inspection (SK: not now).
+
+**Where to look:** [docs/site-pages.md](docs/site-pages.md) (site pages, data files, how to add a fix, note or
+rule), [docs/playbook.md](docs/playbook.md) (fix catalogue rows 1–15, traps, rules for our audit),
+[docs/blogs/blog.conholdate.cloud.md](docs/blogs/blog.conholdate.cloud.md) (F1–F19),
+[docs/blogs/blog.conholdate.com.md](docs/blogs/blog.conholdate.com.md) (next blog, carry-over table),
+`docs/rules.yaml`, `reports/<tenant>/agent-fixes.json`, `reports/<tenant>/issue-notes.json`.
+
+**Next (SK's order):** approve F17–F19; then blog.conholdate.com part B (its log: B1–B6 waiting), first scan with
+the new checks and the rotating sample.
+
+### Detail of 12 Nov (kept for reference)
+
 
 **Later on 12 Nov:** F13–F15 pushed and deployed by SK, verified live, blog.conholdate.cloud **health 100** (open: no-slash
 302, F16, CDN). New site pages: **Issue log** `/<subdomain>/issues/` (findings + `agent-fixes.json` + new

@@ -119,6 +119,13 @@ rules:
     date: 2026-11-11
     checks: [hreflang_no_xdefault, hreflang_no_self, hreflang_missing]
     status: active
+  - id: TPL-3
+    rule: "Every language has a company menu id of exactly two parts, <venture>-<language>, in params.dynamicmenuid; Traditional Chinese is <venture>-zht."
+    why: The menu script draws nothing for a three-part id; zh-hant pages of three blogs had no company bar (12 Nov 2026).
+    set_by: Health and Recovery Agent
+    date: 2026-11-12
+    checks: [menu_id_invalid, menu_id_missing, menu_id_wrong_script]
+    status: active
   - id: AUD-1
     rule: The target is 100 as Google sees the site; never relax a check to raise a score.
     why: The score is only useful if it matches what search engines see.

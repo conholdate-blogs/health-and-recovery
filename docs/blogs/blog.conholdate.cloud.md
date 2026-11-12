@@ -93,6 +93,14 @@ Rescan after the deploy (12 Nov): **health 100**, 1 open issue type: no-slash 30
 One more LLM false positive recorded as reviewed (/fr/ home title and description = tagline, not "a different
 product"). Snapshot 2026-11-12-2. Full-crawl limit raised to 1,000 URLs (SK).
 
+## 12 Nov, later: company menu bar, new translations
+
+| # | Problem | Fix / state |
+|---|---|---|
+| F17 | **No company bar on /zh-hant/** (SK spotted): `params.dynamicmenuid.zh-hant: conholdatecloud-zh-hant`; the menu script (menucdn.containerize.com/core/engine.min.js) splits the id on `-` and accepts exactly two parts, so it drew nothing. The service has Traditional Chinese as `zht` | `conholdatecloud-zht`; blog commit **39f62ad, committed, not pushed (needs SK's approval)**; tested with a local Hugo 0.101 build: bar renders in Traditional Chinese; commit check PASSED. New repo check `menu_id_invalid` (51b22b2). he/nl/sv have no menu JSON on the CDN but render through the service's API fallback (fine) |
+| F18 (proposed) | SK's translation agent added the Java post's 22 translations (1244f92, 12 Nov 09:50 UTC): **9 titles and 9 descriptions too long** (": Schritt-für-Schritt-Anleitung" etc.) | Shorten like F10, or let the translation agent redo them; waiting for SK |
+| F19 (proposed) | `static/llms.txt` still says the Java post is "English only" | Remove "(English only)"; waiting for SK |
+
 ## Decisions by SK (11 Nov)
 
 - Thin tags: an issue only if posts could share better tags; with 5 posts they cannot → noindex (F3); retag later.
