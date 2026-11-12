@@ -28,7 +28,7 @@ a blocked page's noindex is never read). Written 12 Nov 2026 so nothing is lost.
    a card opens its data tables underneath: Crawl = robots.txt and sitemaps, submitted sitemaps, site structure;
    On-page = crawl audit; Languages = sections; AI = AI access; Speed = speed. The lowest area below 100 opens by
    default.
-3. **Fix progress:** agent line ("N fixes by the Health and Recovery Agent · Issue log →"); **graph**: open, fixed
+3. **Fix progress:** agent line ("N fixes by the Health and Recovery Agent" + an "Open the Issue log →" button); **graph**: open, fixed
    (cumulative) and all found (dashed) per day with a recorded run, plus a separate health-score panel on the same
    dates (no dual y-axis; colours validated for colour-blind readers: light #b42318/#17b26a, dark #c01e1e/#17a865);
    per-check item table (open rows red); "Resolved since the last run"; History (5 rows + Show all).

@@ -243,6 +243,11 @@ button.area:focus-visible { outline: 2px solid var(--accent); outline-offset: 2p
 .kpi .up { color: var(--good); font-weight: 600 } .kpi .down { color: var(--broken); font-weight: 600 }
 #history-rows .up { color: var(--good); font-weight: 600 } #history-rows .down { color: var(--broken); font-weight: 600 }
 th { white-space: normal }  /* headers may wrap at spaces when a table would get too wide (SK, 2026-11-11) */
+/* a link that looks like a button (SK, 2026-11-12: Issue log in Fix progress) */
+a.btnlink { display: inline-block; margin-left: 10px; padding: 4px 14px; border: 1px solid var(--accent); border-radius: 999px;
+  color: var(--surface); background: var(--accent); font-size: 13px; font-weight: 600; text-decoration: none }
+a.btnlink:hover { filter: brightness(1.1) } a.btnlink:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+p.agent-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px }
 /* subdomain page, 12 Nov 2026 (SK): red rows for open checks, area cards that open their data, worm graph */
 #fixes tr.openrow td:first-child { box-shadow: inset 3px 0 var(--broken) } #fixes td.n.open { color: var(--broken); font-weight: 700 }
 .acards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-top: 8px }
@@ -1690,7 +1695,7 @@ __METHOD__
       // published subdomain page: one line; the details live in the Issue log (SK, 2026-11-12)
       if (R._page_host && GURL) {
         const ok = AF.filter(x => x.verified).length, wait = AF.length - ok;
-        progress.unshift(`<p class="agent-line"><span class="up">✓</span> <b>${fmt(AF.length)} fix${AF.length === 1 ? "" : "es"} by the Health and Recovery Agent</b> <span class="dim">(${fmt(ok)} verified live${wait ? `, ${fmt(wait)} waiting for deploy` : ""})</span> · <a href="issues/">Issue log →</a></p>`);
+        progress.unshift(`<p class="agent-line"><span class="up">✓</span> <b>${fmt(AF.length)} fix${AF.length === 1 ? "" : "es"} by the Health and Recovery Agent</b> <span class="dim">(${fmt(ok)} verified live${wait ? `, ${fmt(wait)} waiting for deploy` : ""})</span> <a class="btnlink" href="issues/">Open the Issue log →</a></p>`);
       } else progress.unshift(`<h3 style="margin:0 0 6px">Fixed by Health &amp; Recovery Agent</h3>
         <div class="tablewrap" id="agent-fixes"><table><thead><tr><th>Found</th><th>Issue</th><th>Fix</th><th>Status</th></tr></thead><tbody>${AF.map(x => `<tr><td>${esc(day(x.found))}</td><td>${GUIDE[x.check] ? `<a href="${gHref(x.check)}" data-guide="${esc(x.check)}">${esc(GUIDE[x.check].name)}</a><br>` : ""}<span class="dim">${esc(x.issue)}</span></td><td>${commitLinks(x)}<br><span class="dim">${esc(x.repo)}</span></td><td>${status(x)}<br><span class="dim">${esc(x.result)}</span></td></tr>`).join("")}</tbody></table></div>`);
     }
