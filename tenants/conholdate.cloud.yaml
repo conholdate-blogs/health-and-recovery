@@ -33,6 +33,14 @@ audit:
   default_lang: en
   links:                     # link audit (scripts/audit_links.py): commits that count as translation work
     translation_commits: '^(Translate articles for|Daily Blogs Translation)'   # SK's translation agent
+  text:                      # text check (scripts/audit_text.py)
+    ignore:                  # reviewed LLM answers (url, wrong text); reason after each
+      # English home title/description on translated home pages: real, but counted exactly by the crawl checks
+      # title_untranslated / description_untranslated (all 22 languages), not as "a different product"
+      - {url: "https://blog.conholdate.cloud/uk/", wrong: "File Format and Document Processing APIs | Conholdate Cloud"}
+      - {url: "https://blog.conholdate.cloud/uk/", wrong: "File Format and Document Processing APIs for document automation of almost all the popular file formats."}
+      - {url: "https://blog.conholdate.cloud/ja/", wrong: "File Format and Document Processing APIs | Conholdate Cloud"}
+      - {url: "https://blog.conholdate.cloud/ja/", wrong: "File Format and Document Processing APIs for document automation of almost all the popular file formats."}
 
 # URL templates per host, matched in order against the path with the language segment removed.
 url_templates:

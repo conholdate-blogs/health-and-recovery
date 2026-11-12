@@ -52,6 +52,7 @@ GROUPS = {
     **dict.fromkeys(("viewport_missing", "viewport_no_zoom"), "viewport"),
     **dict.fromkeys(("head_closed_early", "social_tags_in_body"), "head order"),
     **dict.fromkeys(("language_name_wrong", "rtl_direction_missing"), "language settings"),
+    **dict.fromkeys(("title_untranslated", "description_untranslated"), "untranslated text"),
     **dict.fromkeys(("lcp_poor", "lcp_needs_work", "inp_poor", "inp_needs_work", "cls_poor", "cls_needs_work",
                      "ttfb_poor", "lab_no_paint", "origin_cwv_poor", "origin_cwv_needs_work"),
                     "speed"),

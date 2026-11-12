@@ -542,6 +542,18 @@ _ROWS = [
      "Set the translation's url to /<lang>/<English url>/ and redirect the old URL to it (the one kind of new "
      "redirect that is wanted). The translation agent should copy the English url and only add the prefix.",
      "The translation is live at /<lang>/<English url>/; the old URL redirects; next repo check has no item."),
+    ("title_untranslated", "Links and translations", "English title on a translated page",
+     "A translated page's <title> is the English page's, word for word; often a site-wide title set once in the "
+     "config instead of per language (home pages, listings).",
+     "Search results in that language show an English title; Google may pick another page or rewrite the title.",
+     "Set the title per language (Hugo: languages.<lang>.title, or the page's front matter).",
+     "Each language page has its own title; next crawl audit has no finding."),
+    ("description_untranslated", "Links and translations", "English description on a translated page",
+     "A translated page's meta description is the English page's, word for word (often params.description set "
+     "once for all languages).",
+     "Results in that language show an English snippet or one Google writes itself.",
+     "Set the description per language (Hugo: languages.<lang>.params.description, or front matter).",
+     "Each language page has its own description; next crawl audit has no finding."),
     ("post_title_length", "Titles & descriptions", "Post title out of range (repo)",
      "A post file's search title (seoTitle, else title) is under 10 or over 70 characters wide; counted on every post "
      "file, not a sample of pages.",

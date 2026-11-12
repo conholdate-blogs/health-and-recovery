@@ -75,6 +75,10 @@ CHECKS = {
                            f"{DESCRIPTION_LEN[0]}-{DESCRIPTION_LEN[1]} characters (CJK count double)", 1, "S"),
     "description_duplicate": ("onpage", "not_optimized", "Different pages share the same meta description",
                               "a unique meta description per page and language", 1, "M"),
+    "title_untranslated": ("intl", "incorrect", "Translated pages keep the English title",
+                           "the title in the page's language", 1, "S"),
+    "description_untranslated": ("intl", "incorrect", "Translated pages keep the English meta description",
+                                 "the meta description in the page's language", 1, "S"),
     "h1_missing": ("onpage", "improvable", "Pages have no H1", "one H1 that states the page topic", 1, "S"),
     "h1_multiple": ("onpage", "improvable", "Pages have more than one H1", "one H1 per page", 1, "S"),
     "hreflang_missing": ("intl", "not_optimized", "Localized pages have no hreflang tags in page HTML",
@@ -246,6 +250,30 @@ def page_issues(rec: dict, facts, localized: bool) -> list[tuple[str, str]]:
             issues.append(("no_structured_data", f"{facts.jsonld_invalid} JSON-LD blocks, none valid"
                            if facts.jsonld_invalid else "no JSON-LD"))
     return issues
+
+
+_LATIN_WORD = re.compile(r"[A-Za-z]{2,}")
+
+
+def untranslated_issues(pages: list[dict], field: str, check: str, default_lang: str = "en") -> None:
+    """Add `check` to translated pages whose title/description is the English page's, word for word (2026-11-12:
+    blog.conholdate.cloud's 22 translated home pages kept the English <title>; the LLM text check noticed 2). The
+    English page is the page's own hreflang entry for the default language (or x-default), when it was crawled.
+    Values of fewer than 3 Latin words (a brand name alone) are left out: they may rightly stay the same."""
+    by_url = {norm_url(p["final_url"] or p["url"]): p for p in pages if p.get("facts") and p["status"] == 200}
+    for p in pages:
+        f = p.get("facts")
+        if not f or p["status"] != 200 or not p["lang"] or p["lang"] == default_lang \
+                or any("noindex" in r for r in f.get("robots") or []):
+            continue
+        refs = {c.lower(): h for c, h in f.get("hreflang") or []}
+        en_url = refs.get(default_lang) or refs.get("x-default")
+        en = by_url.get(norm_url(en_url)) if en_url else None
+        if not en or en is p or not f[field] or not en["facts"][field]:
+            continue
+        value = f[field][0]
+        if value == en["facts"][field][0] and len(_LATIN_WORD.findall(value)) >= 3:
+            p["issues"].append((check, f"same as {en['url']}: '{value[:70]}'"))
 
 
 def duplicate_issues(pages: list[dict], field: str, check: str) -> None:
@@ -462,6 +490,9 @@ class CrawlAudit:
         self._check_canonical_targets()
         duplicate_issues(self.pages, "titles", "title_duplicate")
         duplicate_issues(self.pages, "descriptions", "description_duplicate")
+        default_lang = self.audit_cfg.get("default_lang", "en")
+        untranslated_issues(self.pages, "titles", "title_untranslated", default_lang)
+        untranslated_issues(self.pages, "descriptions", "description_untranslated", default_lang)
         for rec in self.pages:
             self.store.add_page(self.run_id, rec)
 
