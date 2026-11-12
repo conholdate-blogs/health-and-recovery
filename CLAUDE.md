@@ -90,6 +90,14 @@ Planned shape for later, not built: weekly scheduled scan + Issue log, a fixer t
 for proven catalogue fixes with a Hugo build diff, human merge (no auto-merge), rescan marks them verified;
 Redirects/robots/URL changes stay human-only, translation fixes go to the translation agent. Needs Phase 2 + a
 write token per repo. Today: scan and logging run on demand (`run_cycle.py`), no schedule, every fix manual.
+Agreed with SK the same day: (1) write every hand fix down so a script can repeat it (check → script/template
+change → test → live check) in the playbook Fix catalogue, so the hand fixes become the fixer; (2) weekly read-only
+scan on the fixed blogs now (launchd; catches regressions); (3) deploy the commit check (drafts in
+`docs/commit-check/`, needs SK's review + approved pushes); optional: make hand fixes as PRs too (needs `gh`/token).
+Hand-fix order: blog.conholdate.com (waits for SK's 3 decisions in its log) → blog.groupdocs.cloud →
+blog.aspose.cloud → blog.aspose.com (last: live Redirects.json, 9 h scans); blog.groupdocs.com monitor only.
+**Switch rule:** a fix is automated only after it was applied by hand on ≥ 2 blogs, broke nothing after deploy,
+and has a pre-push test and a live check.
 
 **Audit of the auditors (SK: "audit our auditors and improve them"), then rescan of blog.conholdate.cloud:**
 11 new checks + full crawl for hosts with ≤ 500 sitemap URLs (commits 073d772 … this one; details in
