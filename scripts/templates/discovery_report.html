@@ -1526,7 +1526,11 @@ __METHOD__
     if (AF.length) {
       const commitLinks = x => x.commits.map(c => `<a class="mono" href="https://github.com/${esc(x.repo)}/commit/${esc(c)}">${esc(c.slice(0, 8))}</a>`).join(" ");
       const status = x => x.verified ? `<span class="up">✓ verified live ${esc(day(x.verified))}</span>` : `<span style="color:var(--warn, #a16207)">pushed ${esc(day(x.fixed))}, waiting for deploy</span>`;
-      progress.unshift(`<h3 style="margin:0 0 6px">Fixed by Health &amp; Recovery Agent</h3>
+      // published subdomain page: one line; the details live in the Issue log (SK, 2026-11-12)
+      if (R._page_host && GURL) {
+        const ok = AF.filter(x => x.verified).length, wait = AF.length - ok;
+        progress.unshift(`<p class="agent-line"><span class="up">✓</span> <b>${fmt(AF.length)} fix${AF.length === 1 ? "" : "es"} by the Health and Recovery Agent</b> <span class="dim">(${fmt(ok)} verified live${wait ? `, ${fmt(wait)} waiting for deploy` : ""})</span> · <a href="issues/">Issue log →</a></p>`);
+      } else progress.unshift(`<h3 style="margin:0 0 6px">Fixed by Health &amp; Recovery Agent</h3>
         <div class="tablewrap" id="agent-fixes"><table><thead><tr><th>Found</th><th>Issue</th><th>Fix</th><th>Status</th></tr></thead><tbody>${AF.map(x => `<tr><td>${esc(day(x.found))}</td><td>${GUIDE[x.check] ? `<a href="${gHref(x.check)}" data-guide="${esc(x.check)}">${esc(GUIDE[x.check].name)}</a><br>` : ""}<span class="dim">${esc(x.issue)}</span></td><td>${commitLinks(x)}<br><span class="dim">${esc(x.repo)}</span></td><td>${status(x)}<br><span class="dim">${esc(x.result)}</span></td></tr>`).join("")}</tbody></table></div>`);
     }
     $("chg-body").innerHTML = progress.join("");

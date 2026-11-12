@@ -131,8 +131,13 @@ def issue_rows(tenant: str, host: str) -> list[dict]:
                 else ("unknown" if f["status"] == "resolved" else ""),
                 "commits": "; ".join(_commit_links(r) for r in fx),
                 "verified": verified or None,
-                "notes": [r.get("result") for r in fx if r.get("result")]
-                + [f"{day(n.get('date'))} · {who(n.get('by'))}: {n.get('text', '')}" for n in note.get("notes") or []],
+                "notes": [
+                    f"{day(n.get('date'))} · {who(n.get('by'))}: {n.get('text', '')}" for n in note.get("notes") or []
+                ],
+                "results": [r.get("result") for r in fx if r.get("result")],
+                "fix_issues": [r.get("issue") for r in fx if r.get("issue")],
+                "observed": (f.get("evidence") or {}).get("observed") or "",
+                "means": g.get("means") or "",
                 "open": f["status"] in ("open", "unverified"),
             }
         )
@@ -154,8 +159,13 @@ def issue_rows(tenant: str, host: str) -> list[dict]:
                 "by": who(r.get("fixed_by") or DEFAULT_FIXER),
                 "commits": _commit_links(r),
                 "verified": r.get("verified"),
-                "notes": ([r["result"]] if r.get("result") else [])
-                + [f"{day(n.get('date'))} · {who(n.get('by'))}: {n.get('text', '')}" for n in note.get("notes") or []],
+                "notes": [
+                    f"{day(n.get('date'))} · {who(n.get('by'))}: {n.get('text', '')}" for n in note.get("notes") or []
+                ],
+                "results": [r["result"]] if r.get("result") else [],
+                "fix_issues": [],
+                "observed": "",
+                "means": "",
                 "open": False,
             }
         )
@@ -200,6 +210,17 @@ th.sort { cursor: pointer; user-select: none; white-space: nowrap }
 th.sort::after { content: " ↕"; opacity: .4 } th[aria-sort="ascending"]::after { content: " ↑"; opacity: 1 }
 th[aria-sort="descending"]::after { content: " ↓"; opacity: 1 }
 td.st .commits { font-weight: 400; font-size: 13px }
+td.small, th.small { font-size: 12px; color: var(--muted) } td.small small { font-size: 11px }
+td.sev.small { color: var(--sev) } td.name { min-width: 300px }
+td.name .sum { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  font-weight: 400; font-size: 13px; color: var(--muted); margin-top: 2px }
+td.tog { width: 28px; padding-right: 0 } td.tog button { border: 0; background: none; cursor: pointer; font-size: 14px;
+  color: var(--accent); padding: 2px 4px }
+tr.det td { background: var(--tint); font-size: 13px }
+tr.det dl { display: grid; grid-template-columns: 130px 1fr; gap: 6px 14px; margin: 4px 0 }
+tr.det dt { color: var(--muted); font-weight: 600 } tr.det dd { margin: 0 } tr.det ul { margin: 0; padding-left: 16px }
+@media (max-width: 700px) { tr.det dl { grid-template-columns: 1fr } }
+tbody + tbody tr.main td { border-top: 1px solid var(--line) }
 """
 
 
@@ -221,6 +242,7 @@ def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> st
     """The page at /<host>/issues/ (two levels below the site root): tiles and a bar on top, then a sortable table."""
     rows = issue_rows(tenant, host)
     cols = [
+        ("", None),
         ("ID · Area", "s"),
         ("Found", "s"),
         ("Issue", "s"),
@@ -228,34 +250,62 @@ def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> st
         ("Scope", "n"),
         ("Status", "n"),
         ("Fixed by", "s"),
-        ("Notes", None),
     ]
     trs = []
-    for r in rows:
+    for i, r in enumerate(rows):
         issue = esc(r["issue"])
         if r["guide"]:
             issue = f'<a href="../../fix-guide/#g-{esc(r["guide"])}">{issue}</a>'
-        if r["open"] and r["id"] != "–":
-            issue += f' <small>(<a href="../#f-{esc(r["id"])}">evidence</a>)</small>'
+        if r["id"] != "–":
+            summary = (r["fix_issues"] or [r["observed"]])[0]
+        else:
+            summary = (r["results"] or [""])[0]
         sev = r["severity"]
-        notes = "".join(f"<li>{esc(n)}</li>" for n in r["notes"])
         rank = STATUS_ORDER.index(r["status"]) if r["status"] in STATUS_ORDER else 9
         scope_n = int("".join(c for c in r["scope"].split(" ")[0] if c.isdigit()) or 0)
+        det = []  # the expanded row: everything we know about the issue
+        if r["id"] != "–":
+            det.append(("ID · check", f"{esc(r['id'])} · <code>{esc(r['check'])}</code> · {esc(r['area'])}"))
+        else:
+            det.append(("Found", "by hand (no audit check at the time)"))
+        if r["means"]:
+            det.append(("What it means", esc(r["means"])))
+        if r["observed"]:
+            det.append(("Audit saw", esc(r["observed"])))
+        det += [("Issue fixed", esc(x)) for x in r["fix_issues"]]
+        det += [("Result", esc(x)) for x in r["results"]]
+        if r["commits"]:
+            det.append(("Commits", r["commits"]))
+        if r["notes"]:
+            det.append(("Notes", "<ul>" + "".join(f"<li>{esc(x)}</li>" for x in r["notes"]) + "</ul>"))
+        links = []
+        if r["open"] and r["id"] != "–":
+            links.append(f'<a href="../#f-{esc(r["id"])}">Evidence on the report</a>')
+        if r["guide"]:
+            links.append(f'<a href="../../fix-guide/#g-{esc(r["guide"])}">How to fix</a>')
+        if links:
+            det.append(("Links", " · ".join(links)))
+        dl = "".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in det)
+        sev_td = (
+            f'<td class="sev small sev-{esc(sev)}" data-v="{SEV_RANK.get(sev, 9)}"><span class="dot"></span>'
+            f"{SEVERITY.get(sev, sev)}</td>"
+            if sev
+            else '<td class="small" data-v="9">–</td>'
+        )
         trs.append(
-            f'<tr data-status="{esc(r["status"])}" data-area="{esc(r["area"])}">'
-            f'<td class="id" data-v="{esc(r["id"])}">{esc(r["id"])}<small>{esc(r["area"])}</small></td>'
-            f'<td class="num" data-v="{esc(r["found"] or "")}">{day(r["found"])}</td>'
-            f'<td class="name" data-v="{esc(r["issue"])}">{issue}</td>'
-            + (
-                f'<td class="sev sev-{esc(sev)}" data-v="{SEV_RANK.get(sev, 9)}"><span class="dot"></span>'
-                f"{SEVERITY.get(sev, sev)}</td>"
-                if sev
-                else '<td data-v="9">–</td>'
-            )
-            + f'<td class="num" data-v="{scope_n}">{esc(r["scope"])}</td>'
+            f'<tbody data-status="{esc(r["status"])}" data-area="{esc(r["area"])}">'
+            f'<tr class="main"><td class="tog"><button type="button" aria-expanded="false" aria-controls="d{i}" '
+            f'aria-label="Details">▸</button></td>'
+            f'<td class="id small" data-v="{esc(r["id"])}">{esc(r["id"])}<small>{esc(r["area"])}</small></td>'
+            f'<td class="num small" data-v="{esc(r["found"] or "")}">{day(r["found"])}</td>'
+            f'<td class="name" data-v="{esc(r["issue"])}">{issue}'
+            + (f'<span class="sum">{esc(summary)}</span>' if summary else "")
+            + "</td>"
+            + sev_td
+            + f'<td class="num small" data-v="{scope_n}">{esc(r["scope"])}</td>'
             f'<td class="st {_status_cls(r["status"])}" data-v="{rank}">{esc(r["status"])}{_status_detail(r)}</td>'
-            f'<td class="fix" data-v="{esc(r["by"])}">{esc(r["by"]) or "–"}</td>'
-            f'<td class="notes">{f"<ul>{notes}</ul>" if notes else "–"}</td></tr>'
+            f'<td class="fix" data-v="{esc(r["by"])}">{esc(r["by"]) or "–"}</td></tr>'
+            f'<tr class="det" id="d{i}" hidden><td></td><td colspan="7"><dl>{dl}</dl></td></tr></tbody>'
         )
     n = {s: sum(r["status"] == s for r in rows) for s in STATUS_ORDER}
     verified, pushed = n["✓ Verified live"], n["Pushed, waiting for deploy"]
@@ -301,36 +351,45 @@ def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> st
         f'  <div class="filters"><label for="ar">Area</label><select id="ar"><option value="">All</option>{opts}'
         f'</select><span id="shown"></span></div>\n'
         f'  <div class="tablewrap"><table>\n    <thead><tr>{heads}</tr></thead>\n'
-        f"    <tbody>{''.join(trs)}</tbody>\n  </table></div>\n</main>\n" + LOG_JS
+        f"    {''.join(trs)}\n  </table></div>\n</main>\n" + LOG_JS
     )
 
 
 LOG_JS = """<script>
-const tb = document.querySelector("tbody"), tiles = [...document.querySelectorAll(".tile")];
+const table = document.querySelector("table"), groups = () => [...table.tBodies];
+const tiles = [...document.querySelectorAll(".tile")];
 let want = "";
 function filter() {
   const a = ar.value, sts = want ? want.split("|") : null;
   let k = 0;
-  for (const tr of tb.rows) {
-    tr.hidden = (sts && !sts.includes(tr.dataset.status)) || (a && tr.dataset.area !== a);
-    k += !tr.hidden;
+  for (const g of groups()) {
+    g.hidden = (sts && !sts.includes(g.dataset.status)) || (a && g.dataset.area !== a);
+    k += !g.hidden;
   }
-  shown.textContent = `${k} of ${tb.rows.length} shown`;
+  shown.textContent = `${k} of ${groups().length} shown`;
 }
 tiles.forEach(t => t.addEventListener("click", () => {
   want = t.dataset.f; tiles.forEach(x => x.setAttribute("aria-pressed", x === t)); filter();
 }));
 ar.addEventListener("change", filter);
-document.querySelectorAll("th.sort").forEach((th, i) => {
+table.addEventListener("click", e => {
+  const b = e.target.closest("td.tog button");
+  if (!b) return;
+  const open = b.getAttribute("aria-expanded") !== "true";
+  b.setAttribute("aria-expanded", open); b.textContent = open ? "▾" : "▸";
+  document.getElementById(b.getAttribute("aria-controls")).hidden = !open;
+});
+document.querySelectorAll("th.sort").forEach(th => {
+  const i = th.cellIndex;
   const go = () => {
     const asc = th.getAttribute("aria-sort") !== "ascending", num = th.dataset.t === "n";
     document.querySelectorAll("th.sort").forEach(x => x.removeAttribute("aria-sort"));
     th.setAttribute("aria-sort", asc ? "ascending" : "descending");
-    const v = tr => tr.cells[i].dataset.v || "";
-    [...tb.rows].sort((x, y) => {
+    const v = g => g.rows[0].cells[i].dataset.v || "";
+    groups().sort((x, y) => {
       const c = num ? Number(v(x)) - Number(v(y)) : v(x).localeCompare(v(y));
       return asc ? c : -c;
-    }).forEach(tr => tb.appendChild(tr));
+    }).forEach(g => table.appendChild(g));
   };
   th.addEventListener("click", go);
   th.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
