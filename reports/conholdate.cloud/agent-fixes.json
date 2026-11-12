@@ -256,5 +256,19 @@
    "0fd019b7c750e1856342884da907c5818d8ddac0"
   ],
   "result": "On GitHub: how to add an article (English only, folder, front matter) and the 22 supported translations"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-12",
+  "found_by": "Health and Recovery Agent",
+  "check": "llms_txt_charset",
+  "issue": "llms.txt served as text/plain without charset=utf-8: browsers garbled the language names (العربية shown as Ø¹Ø±Ø¨ÙŠ) and every /<lang>/llms.txt",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "commits": [
+   "32f3330d4e08b17c56b62e0999e18b8c6b57ff65"
+  ],
+  "fixed": "2026-11-12",
+  "verified": null,
+  "result": "Committed: hugo deploy sets text/plain; charset=utf-8 for *.txt. Waiting for push and Deploy Production - AWS"
  }
 ]
