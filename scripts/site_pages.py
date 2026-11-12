@@ -172,19 +172,64 @@ def _status_cls(status: str) -> str:
     return "st-open" if status == "Open" else "st-ok" if status.startswith("✓") else ""
 
 
+SEV_RANK = {"broken": 0, "incorrect": 1, "not_optimized": 2, "improvable": 3}
+# summary tiles and bar: (label, statuses counted, css class); "Fixed" = verified live + pushed (SK, 2026-11-12)
+TILES = [
+    ("Open", ["Open"], "t-open"),
+    ("Fixed", ["✓ Verified live", "Pushed, waiting for deploy"], "t-fixed"),
+    ("Resolved", ["Resolved"], "t-res"),
+    ("Reviewed", ["Reviewed", "Won't fix"], "t-rev"),
+]
+
+LOG_CSS = """
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px;
+  text-align: left; font: inherit; color: inherit; cursor: pointer; display: flex; flex-direction: column;
+  justify-content: flex-start }
+.tile[aria-pressed="true"] { outline: 2px solid var(--accent) }
+.tile b { display: block; font-size: 26px; line-height: 1.2 } .tile small { color: var(--muted) }
+.tile span { font-size: 13px; font-weight: 600 }
+.t-open b { color: var(--broken) } .t-fixed b { color: #067647 } .t-res b, .t-rev b { color: var(--muted) }
+@media (prefers-color-scheme: dark) { .t-fixed b { color: #47cd89 } }
+.bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: var(--line); gap: 2px }
+.bar i { display: block } i.t-open { background: var(--broken) } i.t-fixed { background: #12b76a }
+i.t-pushed { background: #a6f4c5 } i.t-res { background: #98a2b3 } i.t-rev { background: #d0d5dd }
+.legend { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 14px }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px }
+th.sort { cursor: pointer; user-select: none; white-space: nowrap }
+th.sort::after { content: " ↕"; opacity: .4 } th[aria-sort="ascending"]::after { content: " ↑"; opacity: 1 }
+th[aria-sort="descending"]::after { content: " ↓"; opacity: 1 }
+td.st .commits { font-weight: 400; font-size: 13px }
+"""
+
+
+def _status_detail(r: dict) -> str:
+    """Date and commits under the status (SK, 2026-11-12: commits here, only the name in Fixed by)."""
+    st, commits = r["status"], r["commits"]
+    if st.startswith("✓"):
+        lines = [day(r["verified"]) if r["verified"] else "", commits]
+    elif st.startswith("Pushed"):
+        lines = [f"pushed {day(r['fixed'])}" if r["fixed"] else "", commits]
+    elif st == "Resolved":
+        lines = [f"gone {day(r['fixed'])}" if r["fixed"] else ""]
+    else:
+        lines = []
+    return "".join(f'<small class="{"commits" if x == commits else ""}">{x}</small>' for x in lines if x)
+
+
 def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> str:
-    """The page at /<host>/issues/ (two levels below the site root)."""
+    """The page at /<host>/issues/ (two levels below the site root): tiles and a bar on top, then a sortable table."""
     rows = issue_rows(tenant, host)
-    cols = (
-        "ID · Area",
-        "Found",
-        "Issue",
-        "Severity",
-        "Scope",
-        "Status",
-        "Fixed · by · commit",
-        "Notes",
-    )
+    cols = [
+        ("ID · Area", "s"),
+        ("Found", "s"),
+        ("Issue", "s"),
+        ("Severity", "n"),
+        ("Scope", "n"),
+        ("Status", "n"),
+        ("Fixed by", "s"),
+        ("Notes", None),
+    ]
     trs = []
     for r in rows:
         issue = esc(r["issue"])
@@ -193,45 +238,107 @@ def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> st
         if r["open"] and r["id"] != "–":
             issue += f' <small>(<a href="../#f-{esc(r["id"])}">evidence</a>)</small>'
         sev = r["severity"]
-        fixed = " · ".join(x for x in (day(r["fixed"]) if r["fixed"] else "", r["by"], r["commits"]) if x) or "–"
         notes = "".join(f"<li>{esc(n)}</li>" for n in r["notes"])
+        rank = STATUS_ORDER.index(r["status"]) if r["status"] in STATUS_ORDER else 9
+        scope_n = int("".join(c for c in r["scope"].split(" ")[0] if c.isdigit()) or 0)
         trs.append(
             f'<tr data-status="{esc(r["status"])}" data-area="{esc(r["area"])}">'
-            f'<td class="id">{esc(r["id"])}<small>{esc(r["area"])}</small></td>'
-            f'<td class="num">{day(r["found"])}</td><td class="name">{issue}</td>'
+            f'<td class="id" data-v="{esc(r["id"])}">{esc(r["id"])}<small>{esc(r["area"])}</small></td>'
+            f'<td class="num" data-v="{esc(r["found"] or "")}">{day(r["found"])}</td>'
+            f'<td class="name" data-v="{esc(r["issue"])}">{issue}</td>'
             + (
-                f'<td class="sev sev-{esc(sev)}"><span class="dot"></span>{SEVERITY.get(sev, sev)}</td>'
+                f'<td class="sev sev-{esc(sev)}" data-v="{SEV_RANK.get(sev, 9)}"><span class="dot"></span>'
+                f"{SEVERITY.get(sev, sev)}</td>"
                 if sev
-                else "<td>–</td>"
+                else '<td data-v="9">–</td>'
             )
-            + f'<td class="num">{esc(r["scope"])}</td>'
-            f'<td class="st {_status_cls(r["status"])}">{esc(r["status"])}'
-            + (f"<small>{day(r['verified'])}</small>" if r["status"].startswith("✓") and r["verified"] else "")
-            + f'</td><td class="fix">{fixed}</td>'
+            + f'<td class="num" data-v="{scope_n}">{esc(r["scope"])}</td>'
+            f'<td class="st {_status_cls(r["status"])}" data-v="{rank}">{esc(r["status"])}{_status_detail(r)}</td>'
+            f'<td class="fix" data-v="{esc(r["by"])}">{esc(r["by"]) or "–"}</td>'
             f'<td class="notes">{f"<ul>{notes}</ul>" if notes else "–"}</td></tr>'
         )
-    statuses = [s for s in STATUS_ORDER if any(r["status"] == s for r in rows)]
+    n = {s: sum(r["status"] == s for r in rows) for s in STATUS_ORDER}
+    verified, pushed = n["✓ Verified live"], n["Pushed, waiting for deploy"]
+    tiles = [
+        f'<button type="button" class="tile" data-f="" aria-pressed="true"><span>Total</span><b>{len(rows)}</b>'
+        f"<small>issues found</small></button>"
+    ]
+    sub = {
+        "Open": "to fix",
+        "Fixed": f"{verified} verified live · {pushed} waiting for deploy",
+        "Resolved": "gone, no fix recorded",
+        "Reviewed": "false or relabelled findings, decisions",
+    }
+    for label, sts, cls in TILES:
+        tiles.append(
+            f'<button type="button" class="tile {cls}" data-f="{esc("|".join(sts))}" aria-pressed="false">'
+            f"<span>{label}</span><b>{sum(n[s] for s in sts)}</b><small>{esc(sub[label])}</small></button>"
+        )
+    segs = [
+        ("t-open", n["Open"], "Open"),
+        ("t-fixed", verified, "Verified live"),
+        ("t-pushed", pushed, "Waiting for deploy"),
+        ("t-res", n["Resolved"], "Resolved"),
+        ("t-rev", n["Reviewed"] + n["Won't fix"], "Reviewed"),
+    ]
+    total = max(len(rows), 1)
+    bar = "".join(f'<i class="{c}" style="flex:{k}" title="{t}: {k}"></i>' for c, k, t in segs if k)
+    legend = "".join(f'<span><i class="{c}"></i>{t} {k} ({100 * k / total:.0f}%)</span>' for c, k, t in segs if k)
     areas = sorted({r["area"] for r in rows})
-    counts = " · ".join(f"{sum(r['status'] == s for r in rows)} {s.lower()}" for s in statuses)
-    opts = lambda vals: "".join(f'<option value="{esc(v)}">{esc(v)}</option>' for v in vals)  # noqa: E731
+    opts = "".join(f'<option value="{esc(v)}">{esc(v)}</option>' for v in areas)
+    heads = "".join(f'<th class="sort" data-t="{t}" tabindex="0">{c}</th>' if t else f"<th>{c}</th>" for c, t in cols)
     return (
-        head + f"<title>Issue log: {esc(host)}</title>\n<style>{css}{EXTRA_CSS}</style>\n<main>\n"
+        head + f"<title>Issue log: {esc(host)}</title>\n<style>{css}{EXTRA_CSS}{LOG_CSS}</style>\n<main>\n"
         f'  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">All domains</a> › '
         f'<a href="../../{esc(tenant)}/">{esc(tenant)}</a> › <a href="../">{esc(host)}</a> › <b>Issue log</b></nav>\n'
         f"  <h1>{logo}Issue log</h1>\n"
-        f"  <p>Every issue the audits identified on {esc(host)}, open and closed, with who fixed it, the commit, "
-        f"when the fix was verified live, and notes and decisions. Open issues first, then newest. Issues found by "
-        f"hand and fixed by the agent are listed too.</p>\n"
-        f'  <div class="filters"><label for="st">Status</label><select id="st"><option value="">All</option>'
-        f'{opts(statuses)}</select><label for="ar">Area</label><select id="ar"><option value="">All</option>'
-        f"{opts(areas)}</select><span>{len(rows)} issues · {counts}</span></div>\n"
-        f'  <div class="tablewrap"><table>\n    <thead><tr>{"".join(f"<th>{c}</th>" for c in cols)}</tr></thead>\n'
-        f"    <tbody>{''.join(trs)}</tbody>\n  </table></div>\n</main>\n"
-        "<script>\nconst f = () => { const s = st.value, a = ar.value;\n"
-        "  for (const tr of document.querySelectorAll('tbody tr')) tr.hidden = (s && tr.dataset.status !== s) || "
-        "(a && tr.dataset.area !== a); };\nst.addEventListener('change', f); ar.addEventListener('change', f);\n"
-        "</script>\n</html>\n"
+        f"  <p>Every issue the audits identified on {esc(host)}, open and closed: status with the date and commits, "
+        f"who fixed it, and notes and decisions. Issues found by hand and fixed are listed too. Click a tile to "
+        f"filter, a column header to sort.</p>\n"
+        f'  <div class="tiles">{"".join(tiles)}</div>\n'
+        f'  <div class="bar" role="img" aria-label="Issues by status">{bar}</div>\n'
+        f'  <div class="legend">{legend}</div>\n'
+        f'  <div class="filters"><label for="ar">Area</label><select id="ar"><option value="">All</option>{opts}'
+        f'</select><span id="shown"></span></div>\n'
+        f'  <div class="tablewrap"><table>\n    <thead><tr>{heads}</tr></thead>\n'
+        f"    <tbody>{''.join(trs)}</tbody>\n  </table></div>\n</main>\n" + LOG_JS
     )
+
+
+LOG_JS = """<script>
+const tb = document.querySelector("tbody"), tiles = [...document.querySelectorAll(".tile")];
+let want = "";
+function filter() {
+  const a = ar.value, sts = want ? want.split("|") : null;
+  let k = 0;
+  for (const tr of tb.rows) {
+    tr.hidden = (sts && !sts.includes(tr.dataset.status)) || (a && tr.dataset.area !== a);
+    k += !tr.hidden;
+  }
+  shown.textContent = `${k} of ${tb.rows.length} shown`;
+}
+tiles.forEach(t => t.addEventListener("click", () => {
+  want = t.dataset.f; tiles.forEach(x => x.setAttribute("aria-pressed", x === t)); filter();
+}));
+ar.addEventListener("change", filter);
+document.querySelectorAll("th.sort").forEach((th, i) => {
+  const go = () => {
+    const asc = th.getAttribute("aria-sort") !== "ascending", num = th.dataset.t === "n";
+    document.querySelectorAll("th.sort").forEach(x => x.removeAttribute("aria-sort"));
+    th.setAttribute("aria-sort", asc ? "ascending" : "descending");
+    const v = tr => tr.cells[i].dataset.v || "";
+    [...tb.rows].sort((x, y) => {
+      const c = num ? Number(v(x)) - Number(v(y)) : v(x).localeCompare(v(y));
+      return asc ? c : -c;
+    }).forEach(tr => tb.appendChild(tr));
+  };
+  th.addEventListener("click", go);
+  th.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+});
+filter();
+</script>
+</html>
+"""
 
 
 def load_rules() -> dict:

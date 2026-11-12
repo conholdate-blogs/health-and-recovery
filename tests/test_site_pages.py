@@ -115,5 +115,6 @@ def test_fixer_names_and_verified_date_in_status(tmp_path, monkeypatch):
     rows = {r["check"]: r for r in site_pages.issue_rows("t", "b.example.com")}
     assert rows["x"]["by"] == "Health and Recovery Agent" and rows["y"]["by"] == "Translation Agent"
     html_ = site_pages.issue_log_page("t", "b.example.com", "", "", "")
-    assert "Verified live<small>12 Nov 2026</small>" in html_ and "<th>Verified live</th>" not in html_
+    assert "Verified live<small class=\"\">12 Nov 2026</small>" in html_ and ">Verified live</th>" not in html_
+    assert ">Fixed by</th>" in html_ and 'class="tile t-fixed"' in html_
     assert site_pages.who("SK") == "Shoaib Khan"
