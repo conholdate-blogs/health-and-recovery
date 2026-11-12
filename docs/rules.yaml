@@ -10,6 +10,7 @@ areas:
   TD: Titles and descriptions
   IDX: Indexing
   TPL: Templates
+  AI: AI readiness
   AUD: Our audit
   PROC: Process
 
@@ -174,4 +175,11 @@ rules:
     set_by: Shoaib Khan
     date: 2026-11-12
     checks: []
+    status: active
+  - id: AI-1
+    rule: llms.txt is built from the content on every deploy (Hugo output format and template), never edited by hand; it lists the newest posts.
+    why: Posts, translations and optimised titles land daily; a hand-made file went stale within a day (12 Nov 2026).
+    set_by: Shoaib Khan
+    date: 2026-11-12
+    checks: [llms_txt_missing, llms_txt_outdated]
     status: active

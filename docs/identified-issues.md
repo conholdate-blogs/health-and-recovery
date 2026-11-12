@@ -16,7 +16,7 @@ otherwise. When a blog is scanned, its report and Issue log take over; tick the 
 | Tags: 27 tags, all with one post | 27 | SK: retag later (tag pages noindex meanwhile) |
 | English H2s in translated post bodies (e.g. "Convert HTML to DOCX" on /ar/) | seen by hand | not a check yet (body text); for the translation agent |
 | Header label "Home" in English on every language | site-wide | small config change (`params.label.text` per language) |
-| llms.txt maintained by hand (goes stale as posts and translations land daily) | file | proposed: generate at build (Hugo output format), pilot here (SK, 12 Nov) |
+| llms.txt maintained by hand (goes stale as posts and translations land daily) | file | F20: generated at build, blog commit 7bf0f7b, **push + deploy waiting**; then carry to the other blogs |
 
 ## blog.conholdate.com (next blog; plan B1–B6 in its log)
 

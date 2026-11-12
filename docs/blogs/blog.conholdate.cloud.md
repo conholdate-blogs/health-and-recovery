@@ -105,9 +105,7 @@ Rescan after the deploy (12 Nov, evening): discovery 11, crawl 72 (161 pages, ev
 translations), AI 73, speed 74, text 75, links 76 (207 links), repo 78: **health 100**, open only F16 (no-slash 302,
 CDN). 17 agent-fix rows, all verified; F17 found by Shoaib Khan (`found_by`). Snapshot 2026-11-12-3.
 
-Next proposed (SK, 12 Nov: llms.txt needs regular updates as posts, translations and optimisations land daily):
-generate llms.txt with a Hugo output format and template at build time instead of a hand-made `static/llms.txt`;
-pilot here, then the other blogs; plus an audit guard (sitemap articles missing from llms.txt, dead links in it).
+| F20 | llms.txt hand-made, stale within a day (SK: "LLM.txt update task would be regular") | **Generated at build**: output format `llms` + `layouts/index.llms.txt`, `static/llms.txt` removed; blog commit **7bf0f7b, committed, not pushed**; build before/after: only llms.txt (+22 language files) changed, all links exist; commit check PASSED. Audit guard `llms_txt_outdated` (6f910c0) |
 
 ## Decisions by SK (11 Nov)
 
