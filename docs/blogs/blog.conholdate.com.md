@@ -52,7 +52,23 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 Before pushing B1/B2: commit check with Hugo 0.101 (`--base 9cc26f48`), a sample build showing a French page at its new
 URL; after the deploy: new URLs 200, old ones 404; the link check then lists internal links to the old French URLs (B5).
 
-## Plan (agreed 11 Nov)
+## Next session (SK, 12 Nov: continue here on 13 Nov)
+
+1. **Full scan first** with everything built on 12 Nov (new repo checks, crawl checks for untranslated titles,
+   rotating sample + recheck + coverage line): `caffeinate -i .venv/bin/python scripts/run_cycle.py conholdate.com`
+   (~6 min on 11 Nov; more now: the repo check reads 10,000+ files), review, snapshot. Expect health to drop: the
+   12 Nov dry run found 5,070 + 1,802 lengths, 3,638 stale, 198 untranslated, 17 section indexes, 5 language names,
+   2 RTL, 3 menu ids.
+2. **Decisions to ask SK first:** B2 redirects (recommended: no); B5 who fixes links (recommended: the agent for
+   wrong-language and damaged links, the translation agent for anything needing translation).
+3. **Order proposed:** B1 + B2 (one deploy; note: Redirects.json applies only at deploy here) → B3 + B7–B9
+   (config/templates, one deploy) → B4 → B6 → B5 and B10 in batches → C.
+4. Carry over from blog.conholdate.cloud (playbook fix catalogue rows 1–15; commits there F1–F22): head order,
+   x-default, tag noindex, utility pages noindex, home title/description per language (+ `params.siteName` and the
+   opengraph override), RTL, language names, company menu ids, llms.txt generated at build + `.txt` as UTF-8
+   (deployment matcher; hugo deploy re-uploads only changed files), README for new developers.
+
+## Plan (agreed 11 Nov; B7–B10 added 12 Nov)
 
 | Step | What | State |
 |---|---|---|
@@ -64,6 +80,10 @@ URL; after the deploy: new URLs 200, old ones 404; the link check then lists int
 | B4 | Tag + pagination pilot | Waiting |
 | B5 | Link fixes | Waiting (SK: agent directly or translation agent) |
 | B6 | Commit check on conholdate-blog + workflows | Waiting |
+| B7 | Company menu ids for vi, th, tr (English bar today; `menu_id_missing`) | New 12 Nov |
+| B8 | Language names (ja 日本, ko 한국인, nl "Dutch", …) and RTL for ar, fa | New 12 Nov |
+| B9 | Home title/description per language; llms.txt generated at build; `.txt` served as UTF-8; README | New 12 Nov |
+| B10 | Titles/descriptions out of range (6,872), stale translations (3,638), English text in translations (198) | New 12 Nov; batches, partly the translation agent (which now keeps lengths itself) |
 | C | Re-scan, fix progress, snapshot | After B |
 
 ## Carry over from blog.conholdate.cloud (same theme; fixed there 11 Nov, 84 → 100)

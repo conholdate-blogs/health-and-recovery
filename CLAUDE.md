@@ -17,6 +17,10 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 
 ## Start here (session handoff, 2026-11-12, end of day)
 
+**Next session (13 Nov): blog.conholdate.com.** Start with [docs/blogs/blog.conholdate.com.md](docs/blogs/blog.conholdate.com.md)
+"Next session": full scan with the new checks, ask SK the B2 and B5 decisions, then B1–B10 in the proposed order.
+blog.conholdate.cloud is done (health 100, F1–F22, only F16 open: waits for the Ceph move). Everything is pushed.
+
 **State at end of 12 Nov:** blog.conholdate.cloud **health 100**; F20 llms.txt generated at build, F21 README, F22 llms.txt as UTF-8 (all verified live, 20 agent-fix rows); F17 (company menu on /zh-hant/, found by Shoaib
 Khan), F18 (Java translation lengths), F19 (llms.txt) pushed, deployed by SK and verified live; 17 agent-fix rows, all
 verified; snapshot 2026-11-12-3. Translation agent now keeps titles/descriptions in range (423a608, GitHub only; its
