@@ -1,9 +1,9 @@
 {
- "crawl-261111-1": {"notes": [{"date": "2026-11-11", "by": "SK", "text": "Thin only if posts could share better tags; with 5 posts they cannot: noindex now, retag later."}]},
- "onpage-0002": {"notes": [{"date": "2026-11-11", "by": "SK", "text": "Pilot here; wording \"Articles\", brand without the dot (\"Conholdate Cloud\"); compact hero; translations by Claude."}]},
- "intl-0002": {"notes": [{"date": "2026-11-11", "by": "SK", "text": "Fix from here, not by the translation agent."}]},
- "intl-0001": {"notes": [{"date": "2026-11-11", "by": "SK", "text": "Keep x-default: it states the fallback Google would mostly guess."}]},
- "crawl-261112-1": {"notes": [{"date": "2026-11-12", "by": "Agent", "text": "CDN setting (F16), not the repo: a CloudFront function should answer 301. Owner to be named."}]},
- "onpage-261112-1": {"status": "Reviewed", "notes": [{"date": "2026-11-12", "by": "Agent", "text": "LLM label \"a different product\": on uk/ja home pages a real problem (English title), counted by title_untranslated; on /fr/ a false positive (tagline vs blog name)."}]},
- "intl-261112-3": {"notes": [{"date": "2026-11-12", "by": "Agent", "text": "Found by the full crawl; the LLM text check had noticed 2 of the 22 pages."}]}
+ "crawl-261111-1": {"notes": [{"date": "2026-11-11", "by": "Shoaib Khan", "text": "Thin only if posts could share better tags; with 5 posts they cannot: noindex now, retag later."}]},
+ "onpage-0002": {"notes": [{"date": "2026-11-11", "by": "Shoaib Khan", "text": "Pilot here; wording \"Articles\", brand without the dot (\"Conholdate Cloud\"); compact hero; translations by Claude."}]},
+ "intl-0002": {"notes": [{"date": "2026-11-11", "by": "Shoaib Khan", "text": "Fix from here, not by the translation agent."}]},
+ "intl-0001": {"notes": [{"date": "2026-11-11", "by": "Shoaib Khan", "text": "Keep x-default: it states the fallback Google would mostly guess."}]},
+ "crawl-261112-1": {"notes": [{"date": "2026-11-12", "by": "Health and Recovery Agent", "text": "CDN setting (F16), not the repo: a CloudFront function should answer 301. Owner to be named."}]},
+ "onpage-261112-1": {"status": "Reviewed", "notes": [{"date": "2026-11-12", "by": "Health and Recovery Agent", "text": "LLM label \"a different product\": on uk/ja home pages a real problem (English title), counted by title_untranslated; on /fr/ a false positive (tagline vs blog name)."}]},
+ "intl-261112-3": {"notes": [{"date": "2026-11-12", "by": "Health and Recovery Agent", "text": "Found by the full crawl; the LLM text check had noticed 2 of the 22 pages."}]}
 }

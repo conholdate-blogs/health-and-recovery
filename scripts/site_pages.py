@@ -26,6 +26,23 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 RULES_FILE = REPO_ROOT / "docs" / "rules.yaml"
 SEVERITY = {"broken": "Broken", "incorrect": "Incorrect", "not_optimized": "Not optimized", "improvable": "Improvable"}
 AREA_NAMES = {"crawl": "Crawl", "onpage": "On-page", "intl": "Languages", "ai": "AI", "perf": "Speed", "ux": "UX"}
+# Who fixed an issue or set a rule, as shown on the pages (SK, 2026-11-12). Data files may use the short keys.
+FIXERS = ["Health and Recovery Agent", "Translation Agent", "Blog Team Platform", "Shoaib Khan"]
+WHO = {
+    "SK": "Shoaib Khan",
+    "Agent": "Health and Recovery Agent",
+    "Translation agent": "Translation Agent",
+    "translation agent": "Translation Agent",
+    "Platform": "Blog Team Platform",
+}
+TEAM = {"Shoaib Khan": "Blogs Team"}  # shown under the name on the Rules page
+DEFAULT_FIXER = "Health and Recovery Agent"  # agent-fixes.json rows without `fixed_by`
+
+
+def who(name) -> str:
+    return WHO.get(str(name or "").strip(), str(name or "").strip())
+
+
 STATUS_ORDER = ["Open", "Pushed, waiting for deploy", "✓ Verified live", "Resolved", "Reviewed", "Won't fix"]
 ITEM_SOURCES = {"repo-audit": "items", "link-audit": "links", "discovery": "URLs"}
 
@@ -33,6 +50,7 @@ EXTRA_CSS = """
 td.id { white-space: nowrap; font-size: 13px } td.id small { display: block; color: var(--muted) }
 td.st { white-space: nowrap; font-weight: 600 } .st-open { color: var(--broken) } .st-ok { color: #067647 }
 @media (prefers-color-scheme: dark) { .st-ok { color: #47cd89 } }
+td.st small { display: block; font-weight: 400; color: var(--muted) }
 td.fix, td.notes { font-size: 13px } td.notes ul { margin: 0; padding-left: 16px } td.notes li + li { margin-top: 4px }
 td.notes small, td.fix small { color: var(--muted) } td.num { white-space: nowrap }
 .rule { font-weight: 600; min-width: 260px } code { font-size: 13px }
@@ -108,11 +126,13 @@ def issue_rows(tenant: str, host: str) -> list[dict]:
                 "fixed": max((r.get("fixed") or "" for r in fx), default="")
                 or (f.get("resolved_at") or "")[:10]
                 or None,
-                "by": "Agent" if fx else ("unknown" if f["status"] == "resolved" else ""),
+                "by": ", ".join(dict.fromkeys(who(r.get("fixed_by") or DEFAULT_FIXER) for r in fx))
+                if fx
+                else ("unknown" if f["status"] == "resolved" else ""),
                 "commits": "; ".join(_commit_links(r) for r in fx),
                 "verified": verified or None,
                 "notes": [r.get("result") for r in fx if r.get("result")]
-                + [f"{day(n.get('date'))} · {n.get('by', '')}: {n.get('text', '')}" for n in note.get("notes") or []],
+                + [f"{day(n.get('date'))} · {who(n.get('by'))}: {n.get('text', '')}" for n in note.get("notes") or []],
                 "open": f["status"] in ("open", "unverified"),
             }
         )
@@ -131,11 +151,11 @@ def issue_rows(tenant: str, host: str) -> list[dict]:
                 "status": note.get("status")
                 or ("✓ Verified live" if r.get("verified") else "Pushed, waiting for deploy"),
                 "fixed": r.get("fixed"),
-                "by": "Agent",
+                "by": who(r.get("fixed_by") or DEFAULT_FIXER),
                 "commits": _commit_links(r),
                 "verified": r.get("verified"),
                 "notes": ([r["result"]] if r.get("result") else [])
-                + [f"{day(n.get('date'))} · {n.get('by', '')}: {n.get('text', '')}" for n in note.get("notes") or []],
+                + [f"{day(n.get('date'))} · {who(n.get('by'))}: {n.get('text', '')}" for n in note.get("notes") or []],
                 "open": False,
             }
         )
@@ -163,7 +183,6 @@ def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> st
         "Scope",
         "Status",
         "Fixed · by · commit",
-        "Verified live",
         "Notes",
     )
     trs = []
@@ -186,8 +205,9 @@ def issue_log_page(tenant: str, host: str, css: str, head: str, logo: str) -> st
                 else "<td>–</td>"
             )
             + f'<td class="num">{esc(r["scope"])}</td>'
-            f'<td class="st {_status_cls(r["status"])}">{esc(r["status"])}</td>'
-            f'<td class="fix">{fixed}</td><td class="num">{day(r["verified"])}</td>'
+            f'<td class="st {_status_cls(r["status"])}">{esc(r["status"])}'
+            + (f"<small>{day(r['verified'])}</small>" if r["status"].startswith("✓") and r["verified"] else "")
+            + f'</td><td class="fix">{fixed}</td>'
             f'<td class="notes">{f"<ul>{notes}</ul>" if notes else "–"}</td></tr>'
         )
     statuses = [s for s in STATUS_ORDER if any(r["status"] == s for r in rows)]
@@ -251,13 +271,15 @@ def rules_page(css: str, head: str, logo: str) -> str:
             )
             trs.append(
                 f'<tr id="{esc(r["id"])}"><td class="id">{esc(r["id"])}</td><td class="rule">{esc(r["rule"])}</td>'
-                f'<td>{esc(r.get("why"))}</td><td class="num">{esc(r.get("set_by"))}<br><small>'
+                f'<td>{esc(r.get("why"))}</td><td class="num">{esc(who(r.get("set_by")))}'
+                + (f"<br><small>({esc(TEAM[who(r.get('set_by'))])})</small>" if who(r.get("set_by")) in TEAM else "")
+                + f"<br><small>"
                 f'{day(r.get("date"))}</small></td><td class="fix">{checks}</td>'
                 f'<td class="st {"st-ok" if r.get("status") == "active" else ""}">{esc(r.get("status"))}</td></tr>'
             )
         body.append(
             f'<tbody><tr class="area"><th colspan="6" scope="colgroup">{esc(name)}'
-            f'<small>{len(rules)} rule{"s" if len(rules) != 1 else ""}'
+            f"<small>{len(rules)} rule{'s' if len(rules) != 1 else ''}"
             f"</small></th></tr>{''.join(trs)}</tbody>"
         )
     n = len(data.get("rules") or [])

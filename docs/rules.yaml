@@ -17,147 +17,147 @@ rules:
   - id: URL-1
     rule: Every post URL is English; a translation is published at /<lang>/<English url>/.
     why: Language versions pair by URL; translated slugs broke internal links and hreflang pairs.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-11
     checks: [translated_url_mismatch, post_url_relative]
     status: active
   - id: URL-2
     rule: A URL without its trailing slash answers a permanent redirect (301) to the slash form.
     why: A temporary redirect (302) does not state which URL is the real one.
-    set_by: Agent
+    set_by: Health and Recovery Agent
     date: 2026-11-12
     checks: [slash_redirect_temporary]
     status: active
   - id: RED-1
     rule: "No redirect entries for junk URLs: gist placeholders, a host in the key, # fragments, double slashes, non-English slugs."
     why: Such keys never match a real request or are not real blog URLs; they only grow the file.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-11
     checks: [redirect_key_malformed]
     status: active
   - id: RED-2
     rule: Redirects.json is valid JSON at every commit; the one wanted new redirect is old URL -> corrected URL when a post's URL is fixed.
     why: An invalid file stopped every redirect of blog.aspose.com on 2 Nov 2026.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-03
     checks: [redirect_file_invalid, redirect_not_working, redirect_self_loop, redirect_target_bad]
     status: active
   - id: TR-1
     rule: Never translate product and brand names (e.g. Conholdate.Total for .NET), code, URLs, file and image paths, variable names, API endpoints, file formats and abbreviations.
     why: The blog translation agent's rule (translator.py, quality_validator.py); our untranslated checks skip these words.
-    set_by: Translation agent
+    set_by: Translation Agent
     date: 2026-11-12
     checks: [post_text_untranslated, title_untranslated, description_untranslated]
     status: active
   - id: TR-2
     rule: A short title left in English counts as untranslated, e.g. "Convert CDR to PSD in C#" on a German page (3 or more translatable words).
     why: The searcher sees an English title; the verbs carry the meaning.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-12
     checks: [post_text_untranslated, title_untranslated]
     status: active
   - id: TR-3
     rule: When the English title or description is rewritten, the translations follow.
     why: blog.conholdate.com has 3,638 translations with titles from before an English rewrite (March 2026).
-    set_by: Agent
+    set_by: Health and Recovery Agent
     date: 2026-11-12
     checks: [translation_stale]
     status: active
   - id: TR-4
     rule: Every translated page has its title and description in its own language, including home and listing pages (Hugo languages.<lang>.title and params.description).
     why: 22 translated home pages of blog.conholdate.cloud showed the English title.
-    set_by: Agent
+    set_by: Health and Recovery Agent
     date: 2026-11-12
     checks: [title_untranslated, description_untranslated, section_index_untranslated]
     status: active
   - id: TR-5
     rule: Language menu names are each language's own name (日本語, 한국어, 繁體中文); Arabic, Persian and Hebrew render right to left.
     why: Readers look for their language in its own script; RTL text rendered left to right is hard to read.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-11
     checks: [language_name_wrong, rtl_direction_missing]
     status: active
   - id: TD-1
     rule: Search titles 10-70 characters wide, descriptions 50-170 (CJK characters count double), on every post file.
     why: Google cuts longer ones and rewrites very short ones.
-    set_by: Agent
+    set_by: Health and Recovery Agent
     date: 2026-10-20
     checks: [title_length, description_length, post_title_length, post_description_length]
     status: active
   - id: IDX-1
     rule: Tag pages are noindex, follow and out of the sitemaps while most tags hold one post; robots.txt does not block them.
     why: Thin tag pages outnumber posts and compete with them; a blocked page's noindex is never read.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-11
     checks: [tag_pages_thin, sitemap_lists_tag_pages, robots_blocked]
     status: active
   - id: IDX-2
     rule: Utility pages (/search/, /archives/) are noindex, follow and out of the sitemaps.
     why: Thin pages with one-word titles; Google advises against indexing internal search pages.
-    set_by: Agent
+    set_by: Health and Recovery Agent
     date: 2026-11-11
     checks: []
     status: active
   - id: IDX-3
     rule: Every post is under a section listed in params.mainSections, so the home page lists it.
     why: A post outside mainSections never appeared on blog.conholdate.cloud's home page.
-    set_by: Agent
+    set_by: Health and Recovery Agent
     date: 2026-11-12
     checks: [post_outside_main_sections, category_page_unused]
     status: active
   - id: TPL-1
     rule: "Nothing renders an element such as a <div> in <head> before the SEO tags: extend_head.html is the last include."
     why: On 3 Nov 2026 a language-switcher div pushed title, canonical and hreflang of blog.aspose.com into <body>.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-07
     checks: [head_closed_early, social_tags_in_body]
     status: active
   - id: TPL-2
     rule: Every translated page lists all its language versions with hreflang, including itself and an x-default.
     why: States the fallback page and keeps language versions paired.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-11
     checks: [hreflang_no_xdefault, hreflang_no_self, hreflang_missing]
     status: active
   - id: AUD-1
     rule: The target is 100 as Google sees the site; never relax a check to raise a score.
     why: The score is only useful if it matches what search engines see.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-11
     checks: []
     status: active
   - id: AUD-2
     rule: Hosts with up to 1,000 sitemap URLs are crawled in full; bigger ones keep a fixed half and a rotating half of the sample (unchecked and newest posts first) and recheck every page that failed last run.
     why: Exact counts on small blogs; growing coverage and verified fixes on big ones.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-12
     checks: []
     status: active
   - id: AUD-3
     rule: Every issue found by hand becomes a check (tested, tried on a second blog), then the blog is rescanned.
     why: Hand-found issues otherwise return unseen.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-12
     checks: []
     status: active
   - id: AUD-4
     rule: A false finding that was published is deleted, never marked fixed; an LLM answer that is real but mislabelled is recorded as reviewed and counted by a deterministic check.
     why: The report must never claim a fix that did not happen.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-10-20
     checks: []
     status: active
   - id: PROC-1
     rule: "Each push to a blog repo is approved by SK at that time; the commit says what and why, how it was tested, and ends with \"Fixed by Health and Recovery Agent\"."
     why: Phase 1 is audit only; fixes happen one approval at a time.
-    set_by: SK
+    set_by: Shoaib Khan
     date: 2026-11-03
     checks: []
     status: active
   - id: PROC-2
     rule: Template changes are tested with the deploy's Hugo version (full build before/after on small blogs) and the commit check before the push; verified live after the deploy.
     why: The 3 Nov head bug showed only on translated pages and touched no post.
-    set_by: Agent
+    set_by: Health and Recovery Agent
     date: 2026-11-11
     checks: []
     status: active

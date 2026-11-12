@@ -75,8 +75,45 @@ def test_issue_log_status_and_hand_found_rows(tmp_path, monkeypatch):
         json.dumps({"a": {"notes": [{"date": "2026-11-12", "by": "SK", "text": "later"}]}})
     )
     rows = {r["id"] if r["id"] != "–" else r["check"]: r for r in site_pages.issue_rows("t", "b.example.com")}
-    assert rows["a"]["status"] == "Open" and "SK: later" in rows["a"]["notes"][0]
+    assert rows["a"]["status"] == "Open" and "Shoaib Khan: later" in rows["a"]["notes"][0]
     assert rows["b"]["status"] == "✓ Verified live" and "abc1234" in rows["b"]["commits"]
     assert rows["c"]["status"] == "Resolved" and rows["c"]["by"] == "unknown"
     assert rows["language_names"]["status"] == "Pushed, waiting for deploy"
     assert list(rows)[0] == "a"  # open first
+
+
+def test_fixer_names_and_verified_date_in_status(tmp_path, monkeypatch):
+    class P:
+        reports = tmp_path
+        findings_export = tmp_path / "findings.json"
+
+    monkeypatch.setattr(site_pages, "tenant_paths", lambda t: P)
+    P.findings_export.write_text("[]")
+    (tmp_path / "agent-fixes.json").write_text(
+        json.dumps(
+            [
+                {
+                    "host": "b.example.com",
+                    "check": "x",
+                    "found": "2026-11-11",
+                    "issue": "a",
+                    "fixed": "2026-11-11",
+                    "verified": "2026-11-12",
+                },
+                {
+                    "host": "b.example.com",
+                    "check": "y",
+                    "found": "2026-11-11",
+                    "issue": "b",
+                    "fixed_by": "Translation Agent",
+                    "fixed": "2026-11-11",
+                    "verified": "2026-11-12",
+                },
+            ]
+        )
+    )
+    rows = {r["check"]: r for r in site_pages.issue_rows("t", "b.example.com")}
+    assert rows["x"]["by"] == "Health and Recovery Agent" and rows["y"]["by"] == "Translation Agent"
+    html_ = site_pages.issue_log_page("t", "b.example.com", "", "", "")
+    assert "Verified live<small>12 Nov 2026</small>" in html_ and "<th>Verified live</th>" not in html_
+    assert site_pages.who("SK") == "Shoaib Khan"
