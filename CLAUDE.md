@@ -84,6 +84,12 @@ sitemaps, site structure; On-page = crawl audit; Languages = sections; AI = AI a
 rotating sample; a sitemap count gap vs Search Console is information. Host pages are not snapshotted (by design).
 **Later plans:** indexed % per blog via URL Inspection (all URLs on small blogs, rotating sample on big ones; 2,000
 checks per property per day) as a finding source and a number on the Crawl card (SK, 12 Nov: later, not now).
+**Autonomy decision (SK, 12 Nov):** fix at least 3–4 blog repos by hand first (scan → fix → verify, as on
+blog.conholdate.cloud) to build a large set of resolved issues and proven fixes; only then try autonomous runs.
+Planned shape for later, not built: weekly scheduled scan + Issue log, a fixer that opens PRs (not direct pushes)
+for proven catalogue fixes with a Hugo build diff, human merge (no auto-merge), rescan marks them verified;
+Redirects/robots/URL changes stay human-only, translation fixes go to the translation agent. Needs Phase 2 + a
+write token per repo. Today: scan and logging run on demand (`run_cycle.py`), no schedule, every fix manual.
 
 **Audit of the auditors (SK: "audit our auditors and improve them"), then rescan of blog.conholdate.cloud:**
 11 new checks + full crawl for hosts with ≤ 500 sitemap URLs (commits 073d772 … this one; details in
