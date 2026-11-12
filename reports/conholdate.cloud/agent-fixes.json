@@ -228,5 +228,33 @@
   ],
   "result": "Live: llms.txt lists the Java merge post without 'English only'",
   "found_by": "Health and Recovery Agent"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-12",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-12",
+  "verified": "2026-11-12",
+  "check": "llms_txt_outdated",
+  "found_by": "Shoaib Khan",
+  "issue": "llms.txt was written by hand and went stale as posts, translations and optimisations landed daily",
+  "commits": [
+   "7bf0f7b18cd18132fea1d6e1ad59f8a9b5f56040"
+  ],
+  "result": "Live: /llms.txt and 22 /<lang>/llms.txt are built from the content on every deploy (5 articles, 23 languages, 30 links all answering); repo check llms_txt_outdated guards it"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-12",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-12",
+  "verified": "2026-11-12",
+  "check": "readme_outdated",
+  "found_by": "Shoaib Khan",
+  "issue": "README listed 21 languages (Swedish missing) and nothing on how to add an article",
+  "commits": [
+   "0fd019b7c750e1856342884da907c5818d8ddac0"
+  ],
+  "result": "On GitHub: how to add an article (English only, folder, front matter) and the 22 supported translations"
  }
 ]

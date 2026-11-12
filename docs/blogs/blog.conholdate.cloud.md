@@ -105,7 +105,8 @@ Rescan after the deploy (12 Nov, evening): discovery 11, crawl 72 (161 pages, ev
 translations), AI 73, speed 74, text 75, links 76 (207 links), repo 78: **health 100**, open only F16 (no-slash 302,
 CDN). 17 agent-fix rows, all verified; F17 found by Shoaib Khan (`found_by`). Snapshot 2026-11-12-3.
 
-| F20 | llms.txt hand-made, stale within a day (SK: "LLM.txt update task would be regular") | **Generated at build**: output format `llms` + `layouts/index.llms.txt`, `static/llms.txt` removed; blog commit **7bf0f7b, committed, not pushed**; build before/after: only llms.txt (+22 language files) changed, all links exist; commit check PASSED. Audit guard `llms_txt_outdated` (6f910c0) |
+| F20 | llms.txt hand-made, stale within a day (SK: "LLM.txt update task would be regular") | **Generated at build**: output format `llms` + `layouts/index.llms.txt`, `static/llms.txt` removed; blog commit **7bf0f7b, deployed and verified live 12 Nov** (23 files, 30 links answer); build before/after: only llms.txt (+22 language files) changed, all links exist; commit check PASSED. Audit guard `llms_txt_outdated` (6f910c0) |
+| F21 | README was junk (5 lines, 21 languages; SK) | Short README for new developers: add articles in English only (folder, front matter), translation agent does the rest, 22 supported languages; blog commit 0fd019b, on GitHub (no deploy needed) |
 
 ## Decisions by SK (11 Nov)
 
