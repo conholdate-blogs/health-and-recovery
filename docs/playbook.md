@@ -104,3 +104,4 @@ blog.conholdate.com at deploy); `mainSections`; which pages are translated (the 
 | `file://` screenshots lose the CSS (absolute, integrity-checked stylesheet) | Same: serve the build locally |
 | SK may push blog commits himself between messages | `git fetch` before reporting what is pushed |
 | Local Python `urllib` fails TLS (no CA bundle) | Use `requests` (certifi) |
+| conholdate-blogs Pages deploy refused: "due to in progress deployment. Please cancel <sha> first", while cancelling that sha says "it's finished" (12 Nov 2026, twice) | A GitHub-side stuck record: the workflow's cancel + retry cannot clear it. SK re-runs the failed job after ~30 min (cleared both times); else Settings → Pages → Source off and on. The shoaibkhan copy keeps deploying meanwhile |
