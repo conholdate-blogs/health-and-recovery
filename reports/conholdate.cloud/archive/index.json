@@ -184,5 +184,11 @@
     "date": "2026-11-12",
     "label": "Audit of the auditors: full crawl, 11 new checks (untranslated titles, RTL, stale translations, \u2026)",
     "runs": "discovery run 9, crawl audit run 58, speed audit run 54, AI audit run 53, text check run 55, link check run 56, repo file check run 57"
+  },
+  {
+    "file": "2026-11-12-2.html",
+    "date": "2026-11-12 (2)",
+    "label": "Fixes live: home titles per language, RTL, translations (agent fixes)",
+    "runs": "discovery run 10, crawl audit run 59, speed audit run 61, AI audit run 60, text check run 68, link check run 69, repo file check run 70"
   }
 ]

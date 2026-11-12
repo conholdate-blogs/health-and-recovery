@@ -1,13 +1,13 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "crawl-audit",
-  "run_id": 58,
+  "run_id": 59,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
     ],
     "sections": null,
-    "inventory_run": 9,
+    "inventory_run": 10,
     "per_template": 2,
     "other_langs": 2,
     "max_per_host": null,
@@ -15,7 +15,7 @@
   },
   "canonical_targets": {},
   "requests": 140,
-  "duration_s": 139.7,
+  "duration_s": 141.2,
   "pages_planned": 139,
   "stopped_early": false,
   "summary": {
@@ -26,214 +26,10 @@
       "redirected": 0,
       "blocked": 0,
       "ignored": 0,
-      "issues": {
-        "description_untranslated": 24,
-        "title_untranslated": 23
-      }
+      "issues": {}
     }
   },
-  "findings": [
-    {
-      "id": "intl-0001",
-      "tenant": "conholdate.cloud",
-      "subdomain": "blog.conholdate.cloud",
-      "template": "page",
-      "dimension": "intl",
-      "check": "description_untranslated",
-      "type": "incorrect",
-      "title": "Translated pages keep the English meta description",
-      "evidence": {
-        "urls": [
-          "https://blog.conholdate.cloud/zh-hant/",
-          "https://blog.conholdate.cloud/ru/",
-          "https://blog.conholdate.cloud/it/",
-          "https://blog.conholdate.cloud/pt/",
-          "https://blog.conholdate.cloud/ko/",
-          "https://blog.conholdate.cloud/zh/",
-          "https://blog.conholdate.cloud/es/",
-          "https://blog.conholdate.cloud/he/",
-          "https://blog.conholdate.cloud/id/",
-          "https://blog.conholdate.cloud/cs/"
-        ],
-        "observed": "24 of 139 pages (every sitemap URL crawled) (by template: category 1/23, home 22/23, post 1/93). e.g. https://blog.conholdate.cloud/zh-hant/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'; https://blog.conholdate.cloud/ru/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'; https://blog.conholdate.cloud/it/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'; https://blog.conholdate.cloud/pt/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'; https://blog.conholdate.cloud/ko/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'",
-        "expected": "the meta description in the page's language",
-        "locations": [
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/zh-hant/",
-            "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/ru/",
-            "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/it/",
-            "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/pt/",
-            "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/ko/",
-            "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/zh-hant/sitemap.xml"
-          },
-          {
-            "role": "sitemap index",
-            "url": "https://blog.conholdate.cloud/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/ru/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/it/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/pt/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/ko/sitemap.xml"
-          }
-        ],
-        "sample": {
-          "category": [
-            1,
-            23
-          ],
-          "home": [
-            22,
-            23
-          ],
-          "post": [
-            1,
-            93
-          ]
-        }
-      },
-      "affected_pages": 24,
-      "impact": {
-        "clicks_28d": 0,
-        "impressions_28d": 0,
-        "score": 0
-      },
-      "effort": "S",
-      "fix_tier": 1,
-      "fix_channel": "git-pr",
-      "status": "open",
-      "detected_at": "2026-11-12"
-    },
-    {
-      "id": "intl-0002",
-      "tenant": "conholdate.cloud",
-      "subdomain": "blog.conholdate.cloud",
-      "template": "page",
-      "dimension": "intl",
-      "check": "title_untranslated",
-      "type": "incorrect",
-      "title": "Translated pages keep the English title",
-      "evidence": {
-        "urls": [
-          "https://blog.conholdate.cloud/zh-hant/",
-          "https://blog.conholdate.cloud/ru/",
-          "https://blog.conholdate.cloud/it/",
-          "https://blog.conholdate.cloud/pt/",
-          "https://blog.conholdate.cloud/ko/",
-          "https://blog.conholdate.cloud/zh/",
-          "https://blog.conholdate.cloud/es/",
-          "https://blog.conholdate.cloud/he/",
-          "https://blog.conholdate.cloud/id/",
-          "https://blog.conholdate.cloud/cs/"
-        ],
-        "observed": "23 of 139 pages (every sitemap URL crawled) (by template: home 22/23, post 1/93). e.g. https://blog.conholdate.cloud/zh-hant/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'; https://blog.conholdate.cloud/ru/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'; https://blog.conholdate.cloud/it/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'; https://blog.conholdate.cloud/pt/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'; https://blog.conholdate.cloud/ko/: same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'",
-        "expected": "the title in the page's language",
-        "locations": [
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/zh-hant/",
-            "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/ru/",
-            "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/it/",
-            "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/pt/",
-            "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-          },
-          {
-            "role": "page",
-            "url": "https://blog.conholdate.cloud/ko/",
-            "note": "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/zh-hant/sitemap.xml"
-          },
-          {
-            "role": "sitemap index",
-            "url": "https://blog.conholdate.cloud/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/ru/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/it/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/pt/sitemap.xml"
-          },
-          {
-            "role": "listed in",
-            "url": "https://blog.conholdate.cloud/ko/sitemap.xml"
-          }
-        ],
-        "sample": {
-          "home": [
-            22,
-            23
-          ],
-          "post": [
-            1,
-            93
-          ]
-        }
-      },
-      "affected_pages": 23,
-      "impact": {
-        "clicks_28d": 0,
-        "impressions_28d": 0,
-        "score": 0
-      },
-      "effort": "S",
-      "fix_tier": 1,
-      "fix_channel": "git-pr",
-      "status": "open",
-      "detected_at": "2026-11-12"
-    }
-  ],
+  "findings": [],
   "pages": [
     {
       "url": "https://blog.conholdate.cloud/total/manipulate-excel-spreadsheets/",
@@ -253,7 +49,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 486,
       "facts": {
         "titles": [
           "Excel Convert, Merge & Split API – Conholdate.Cloud"
@@ -399,11 +195,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 37784,
+      "bytes": 37796,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 593,
       "facts": {
         "titles": [
           "API do konwersji, scalania i dzielenia Excela – Conholdate.Cloud"
@@ -553,7 +349,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 51,
+      "elapsed_ms": 477,
       "facts": {
         "titles": [
           "Insert PDF Headers and Footers using Conholdate.Cloud"
@@ -699,11 +495,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38289,
+      "bytes": 38290,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 429,
       "facts": {
         "titles": [
           "Manipuleer PDF-documenten met de Conholdate.Cloud REST API"
@@ -853,7 +649,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 512,
       "facts": {
         "titles": [
           "Converter arquivos HTML usando a API REST do Conholdate.Cloud"
@@ -999,11 +795,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 39092,
+      "bytes": 39087,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 643,
       "facts": {
         "titles": [
           "Convertire file HTML utilizzando l'API REST di Conholdate.Cloud"
@@ -1149,11 +945,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 48850,
+      "bytes": 48848,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 487,
       "facts": {
         "titles": [
           "Sisipkan Header dan Footer PDF menggunakan Conholdate.Cloud"
@@ -1299,11 +1095,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 46327,
+      "bytes": 46366,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 708,
       "facts": {
         "titles": [
           "API для конвертації, об'єднання та розділення Excel – Conholdate.Cloud"
@@ -1449,11 +1245,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 46953,
+      "bytes": 46944,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 594,
       "facts": {
         "titles": [
           "使用 Conholdate.Cloud 插入 PDF 頁眉和頁腳"
@@ -1599,11 +1395,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 50325,
+      "bytes": 50326,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 548,
       "facts": {
         "titles": [
           "Conholdate.Cloud kullanarak PDF Başlık ve Altbilgileri Ekleme"
@@ -1749,11 +1545,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38532,
+      "bytes": 38527,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 60,
+      "elapsed_ms": 593,
       "facts": {
         "titles": [
           "Manipolare documenti PDF utilizzando l'API REST Conholdate.Cloud"
@@ -1899,17 +1695,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 18929,
+      "bytes": 18841,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 476,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "檔案格式與文件處理 API | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "檔案格式與文件處理 API，可自動處理幾乎所有常用檔案格式的文件。"
         ],
         "h1": [
           "Conholdate Cloud 部落格"
@@ -2032,16 +1828,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/he/conholdate.cloud/",
@@ -2057,17 +1844,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19463,
+      "bytes": 19632,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 442,
       "facts": {
         "titles": [
           "הבלוג של Conholdate Cloud"
         ],
         "descriptions": [
-          "הבלוג של Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "הבלוג של Conholdate Cloud - ממשקי API לעיבוד מסמכים ופורמטים של קבצים | Conholdate Cloud"
         ],
         "h1": [
           "הבלוג של Conholdate Cloud"
@@ -2210,7 +1997,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 636,
       "facts": {
         "titles": [
           "Convert HTML Files using Conholdate.Cloud REST API"
@@ -2360,7 +2147,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 647,
       "facts": {
         "titles": [
           "API para converter, mesclar e dividir Excel – Conholdate.Cloud"
@@ -2506,17 +2293,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 20402,
+      "bytes": 20801,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 459,
       "facts": {
         "titles": [
           "บล็อก Conholdate Cloud"
         ],
         "descriptions": [
-          "บล็อก Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "บล็อก Conholdate Cloud - API ประมวลผลเอกสารและรูปแบบไฟล์ | Conholdate Cloud"
         ],
         "h1": [
           "บล็อก Conholdate Cloud"
@@ -2655,11 +2442,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 56985,
+      "bytes": 57025,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 482,
       "facts": {
         "titles": [
           "إدراج رؤوس وتذييلات PDF باستخدام Conholdate.Cloud"
@@ -2805,17 +2592,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 20089,
+      "bytes": 20673,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 503,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API для обработки документов и форматов файлов | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API для обработки форматов файлов и документов: автоматизация работы почти со всеми популярными форматами файлов."
         ],
         "h1": [
           "Блог Conholdate Cloud"
@@ -2938,16 +2725,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/it/",
@@ -2967,13 +2745,13 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 51,
+      "elapsed_ms": 526,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API per formati di file e documenti | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API per formati di file ed elaborazione di documenti: automatizza quasi tutti i formati di file più diffusi."
         ],
         "h1": [
           "Blog di Conholdate Cloud"
@@ -3096,16 +2874,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/he/total/manipulate-excel-spreadsheets/",
@@ -3121,11 +2890,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 40552,
+      "bytes": 40753,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 677,
       "facts": {
         "titles": [
           "API להמרה, מיזוג ופיצול של Excel – Conholdate.Cloud"
@@ -3134,7 +2903,7 @@
           "המרה, מיזוג ופיצול של קובצי Excel בביצועים גבוהים עם Conholdate.Cloud REST API. תמיכה ב-PDF, PNG, JPG, DOCX, JSON ועוד."
         ],
         "h1": [
-          "manipulat גליונות Excel באמצעות Conholdate.Cloud"
+          "עיבוד גיליונות Excel באמצעות Conholdate.Cloud"
         ],
         "canonicals": [
           "https://blog.conholdate.cloud/he/total/manipulate-excel-spreadsheets/"
@@ -3271,11 +3040,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 41208,
+      "bytes": 41243,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 763,
       "facts": {
         "titles": [
           "המרת קבצי HTML באמצעות REST API של Conholdate.Cloud"
@@ -3421,11 +3190,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 39704,
+      "bytes": 39711,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 51,
+      "elapsed_ms": 487,
       "facts": {
         "titles": [
           "HTML Dateien mit der Conholdate.Cloud REST API konvertieren"
@@ -3571,17 +3340,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 18986,
+      "bytes": 19050,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 41,
+      "elapsed_ms": 595,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "APIs de formatos de arquivo e documentos | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "APIs de formatos de arquivo e processamento de documentos para automatizar quase todos os formatos de arquivo populares."
         ],
         "h1": [
           "Blog do Conholdate Cloud"
@@ -3704,16 +3473,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/zh-hant/conholdate.cloud/",
@@ -3729,17 +3489,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19006,
+      "bytes": 18971,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 619,
       "facts": {
         "titles": [
           "Conholdate Cloud 部落格"
         ],
         "descriptions": [
-          "Conholdate Cloud 部落格 - File Format and Document Processing APIs | Conholdate Cloud"
+          "Conholdate Cloud 部落格 - 檔案格式與文件處理 API | Conholdate Cloud"
         ],
         "h1": [
           "Conholdate Cloud 部落格"
@@ -3878,11 +3638,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 36633,
+      "bytes": 36624,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 741,
       "facts": {
         "titles": [
           "Excel 轉換、合併與分割 API – Conholdate.Cloud"
@@ -4028,11 +3788,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 39864,
+      "bytes": 39866,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 659,
       "facts": {
         "titles": [
           "Manipuler des documents PDF à l'aide de l'API REST Conholdate.Cloud"
@@ -4178,17 +3938,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19254,
+      "bytes": 19258,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 574,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "파일 형식 및 문서 처리 API | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "거의 모든 주요 파일 형식의 문서 자동화를 위한 파일 형식 및 문서 처리 API입니다."
         ],
         "h1": [
           "Conholdate Cloud 블로그"
@@ -4311,16 +4071,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/sv/total/convert-html-files/",
@@ -4336,11 +4087,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38744,
+      "bytes": 38748,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 811,
       "facts": {
         "titles": [
           "Konvertera HTML-filer med Conholdate.Cloud REST API"
@@ -4486,11 +4237,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 39632,
+      "bytes": 39803,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 452,
       "facts": {
         "titles": [
           "API chuyển đổi, hợp nhất và tách Excel – Conholdate.Cloud"
@@ -4499,7 +4250,7 @@
           "Chuyển đổi, hợp nhất và tách Excel hiệu năng cao qua Conholdate.Cloud REST API. Hỗ trợ PDF, PNG, JPG, DOCX, JSON và nhiều định dạng khác."
         ],
         "h1": [
-          "Manipulate Excel Spreadsheets using Conholdate.Cloud"
+          "Xử lý bảng tính Excel bằng Conholdate.Cloud"
         ],
         "canonicals": [
           "https://blog.conholdate.cloud/vi/total/manipulate-excel-spreadsheets/"
@@ -4636,11 +4387,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 37743,
+      "bytes": 37738,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 86,
       "facts": {
         "titles": [
           "API per convertire, unire e dividere Excel – Conholdate.Cloud"
@@ -4649,7 +4400,7 @@
           "Converti, unisci e dividi file Excel ad alte prestazioni con l'API REST di Conholdate.Cloud. Supporta PDF, PNG, JPG, DOCX, JSON e altro."
         ],
         "h1": [
-          "Manipula fogli di calcolo Excel utilizzando Conholdate.Cloud"
+          "Manipola fogli di calcolo Excel utilizzando Conholdate.Cloud"
         ],
         "canonicals": [
           "https://blog.conholdate.cloud/it/total/manipulate-excel-spreadsheets/"
@@ -4786,11 +4537,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 50106,
+      "bytes": 50151,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 68,
+      "elapsed_ms": 461,
       "facts": {
         "titles": [
           "จัดการเอกสาร PDF โดยใช้ Conholdate.Cloud REST API"
@@ -4936,17 +4687,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 18813,
+      "bytes": 18725,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 832,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "文件格式与文档处理 API | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "文件格式与文档处理 API，可自动处理几乎所有常用文件格式的文档。"
         ],
         "h1": [
           "Conholdate Cloud 博客"
@@ -5069,16 +4820,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/id/total/manipulate-pdf-documents/",
@@ -5094,11 +4836,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38125,
+      "bytes": 38123,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 690,
       "facts": {
         "titles": [
           "Manipulasi Dokumen PDF menggunakan API REST Conholdate.Cloud"
@@ -5244,11 +4986,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 39095,
+      "bytes": 39096,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 53,
+      "elapsed_ms": 439,
       "facts": {
         "titles": [
           "Converteer HTML-bestanden met de Conholdate.Cloud REST API"
@@ -5394,11 +5136,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 40268,
+      "bytes": 40269,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 53,
+      "elapsed_ms": 626,
       "facts": {
         "titles": [
           "HTML Dosyalarını Conholdate.Cloud REST API kullanarak Dönüştürün"
@@ -5544,11 +5286,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 47843,
+      "bytes": 47886,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 572,
       "facts": {
         "titles": [
           "Манипулируйте PDF-документами с помощью REST API Conholdate.Cloud"
@@ -5694,11 +5436,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38876,
+      "bytes": 38874,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 459,
       "facts": {
         "titles": [
           "Konversi Berkas HTML menggunakan REST API Conholdate.Cloud"
@@ -5844,11 +5586,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 39663,
+      "bytes": 39658,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 999,
       "facts": {
         "titles": [
           "Excel 변환, 병합 및 분할 API – Conholdate.Cloud"
@@ -5994,17 +5736,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19074,
+      "bytes": 19130,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 848,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API de formatos de archivo y documentos | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API de formatos de archivo y procesamiento de documentos para automatizar casi todos los formatos de archivo populares."
         ],
         "h1": [
           "Blog de Conholdate Cloud"
@@ -6127,16 +5869,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/sv/conholdate.cloud/",
@@ -6152,17 +5885,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19035,
+      "bytes": 19045,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 42,
+      "elapsed_ms": 571,
       "facts": {
         "titles": [
           "Conholdate Cloud-bloggen"
         ],
         "descriptions": [
-          "Conholdate Cloud-bloggen - File Format and Document Processing APIs | Conholdate Cloud"
+          "Conholdate Cloud-bloggen - API:er för filformat och dokumentbehandling | Conholdate Cloud"
         ],
         "h1": [
           "Conholdate Cloud-bloggen"
@@ -6301,11 +6034,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 39028,
+      "bytes": 39030,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 573,
       "facts": {
         "titles": [
           "API Excel : convertir, fusionner et diviser – Conholdate.Cloud"
@@ -6451,11 +6184,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 48859,
+      "bytes": 48904,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 565,
       "facts": {
         "titles": [
           "API แปลง รวม และแยกไฟล์ Excel – Conholdate.Cloud"
@@ -6601,11 +6334,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38886,
+      "bytes": 38898,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 448,
       "facts": {
         "titles": [
           "Konwertuj pliki HTML za pomocą REST API Conholdate.Cloud"
@@ -6751,11 +6484,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38770,
+      "bytes": 38769,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 429,
       "facts": {
         "titles": [
           "Manipular documentos PDF utilizando la API REST de Conholdate.Cloud"
@@ -6901,11 +6634,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 54523,
+      "bytes": 54531,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 518,
       "facts": {
         "titles": [
           "Chèn tiêu đề và chân trang PDF bằng Conholdate.Cloud"
@@ -7051,17 +6784,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19380,
+      "bytes": 19780,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 644,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "ממשקי API לעיבוד מסמכים ופורמטים של קבצים | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "ממשקי API לעיבוד פורמטים של קבצים ומסמכים, לאוטומציה של עבודה עם כמעט כל פורמטי הקבצים הנפוצים."
         ],
         "h1": [
           "הבלוג של Conholdate Cloud"
@@ -7184,16 +6917,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/id/",
@@ -7209,17 +6933,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19000,
+      "bytes": 18980,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 43,
+      "elapsed_ms": 493,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API Format File dan Pemrosesan Dokumen | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API format file dan pemrosesan dokumen untuk otomatisasi dokumen di hampir semua format file populer."
         ],
         "h1": [
           "Blog Conholdate Cloud"
@@ -7342,16 +7066,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/cs/",
@@ -7367,17 +7082,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19026,
+      "bytes": 19146,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 756,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API pro formáty souborů a zpracování dokumentů | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API pro formáty souborů a zpracování dokumentů k automatizaci práce s téměř všemi oblíbenými formáty souborů."
         ],
         "h1": [
           "Blog Conholdate Cloud"
@@ -7500,16 +7215,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/he/total/insert-header-footer-in-pdf/",
@@ -7525,11 +7231,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 56283,
+      "bytes": 56318,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 51,
+      "elapsed_ms": 696,
       "facts": {
         "titles": [
           "הוספת כותרות ותחתיות PDF באמצעות Conholdate.Cloud"
@@ -7675,11 +7381,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 57446,
+      "bytes": 57455,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 901,
       "facts": {
         "titles": [
           "Conholdate.Cloud を使用して PDF のヘッダーとフッターを挿入する"
@@ -7825,11 +7531,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 37710,
+      "bytes": 37711,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 567,
       "facts": {
         "titles": [
           "Excel converteren, samenvoegen en splitsen – Conholdate.Cloud"
@@ -7975,17 +7681,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19076,
+      "bytes": 19125,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 564,
       "facts": {
         "titles": [
           "Blog Conholdate Cloud"
         ],
         "descriptions": [
-          "Blog Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "Blog Conholdate Cloud - API pro formáty souborů a zpracování dokumentů | Conholdate Cloud"
         ],
         "h1": [
           "Blog Conholdate Cloud"
@@ -8124,11 +7830,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 42387,
+      "bytes": 42396,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 570,
       "facts": {
         "titles": [
           "Conholdate.Cloud REST APIを使用してHTMLファイルを変換する"
@@ -8278,7 +7984,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 602,
       "facts": {
         "titles": [
           "File Format and Document Processing APIs | Conholdate Cloud"
@@ -8423,11 +8129,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 50842,
+      "bytes": 50887,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 51,
+      "elapsed_ms": 562,
       "facts": {
         "titles": [
           "แปลงไฟล์ HTML โดยใช้ Conholdate.Cloud REST API"
@@ -8573,17 +8279,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19213,
+      "bytes": 19224,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 724,
       "facts": {
         "titles": [
           "Conholdate Cloud Blogu"
         ],
         "descriptions": [
-          "Conholdate Cloud Blogu - File Format and Document Processing APIs | Conholdate Cloud"
+          "Conholdate Cloud Blogu - Dosya Formatı ve Belge İşleme API'leri | Conholdate Cloud"
         ],
         "h1": [
           "Conholdate Cloud Blogu"
@@ -8722,11 +8428,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 36555,
+      "bytes": 36546,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 73,
+      "elapsed_ms": 788,
       "facts": {
         "titles": [
           "Excel 转换、合并和拆分 API – Conholdate.Cloud"
@@ -8872,11 +8578,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 47357,
+      "bytes": 47396,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 430,
       "facts": {
         "titles": [
           "Конвертуйте HTML файли за допомогою REST API Conholdate.Cloud"
@@ -9022,17 +8728,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19098,
+      "bytes": 19139,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 512,
       "facts": {
         "titles": [
           "Conholdate Cloud-blog"
         ],
         "descriptions": [
-          "Conholdate Cloud-blog - File Format and Document Processing APIs | Conholdate Cloud"
+          "Conholdate Cloud-blog - API's voor bestandsformaten en documenten | Conholdate Cloud"
         ],
         "h1": [
           "Conholdate Cloud-blog"
@@ -9171,17 +8877,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 18975,
+      "bytes": 19003,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 58,
+      "elapsed_ms": 443,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API:er för filformat och dokumentbehandling | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API:er för filformat och dokumentbehandling som automatiserar dokument i nästan alla populära filformat."
         ],
         "h1": [
           "Conholdate Cloud-bloggen"
@@ -9304,16 +9010,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/uk/total/insert-header-footer-in-pdf/",
@@ -9329,11 +9026,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 67376,
+      "bytes": 67415,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 653,
       "facts": {
         "titles": [
           "Вставка заголовків і колонтитулів у PDF за допомогою Conholdate.Cloud"
@@ -9479,11 +9176,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 41725,
+      "bytes": 41734,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 556,
       "facts": {
         "titles": [
           "Conholdate.Cloud REST APIを使用してPDFドキュメントを操作する"
@@ -9629,17 +9326,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19963,
+      "bytes": 20258,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 482,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "APIهای پردازش اسناد و فرمت‌های فایل | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "APIهای پردازش فرمت فایل و اسناد برای خودکارسازی کار با تقریباً همه فرمت‌های رایج فایل."
         ],
         "h1": [
           "وبلاگ Conholdate Cloud"
@@ -9762,16 +9459,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/zh-hant/total/manipulate-pdf-documents/",
@@ -9787,11 +9475,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 37216,
+      "bytes": 37207,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 586,
       "facts": {
         "titles": [
           "使用 Conholdate.Cloud REST API 操作 PDF 文件"
@@ -9937,11 +9625,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 41527,
+      "bytes": 41559,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 563,
       "facts": {
         "titles": [
           "מניפולציה של מסמכי PDF באמצעות Conholdate.Cloud REST API"
@@ -10087,11 +9775,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 51565,
+      "bytes": 51572,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 560,
       "facts": {
         "titles": [
           "PDF-Header und -Footer einfügen mit Conholdate.Cloud"
@@ -10237,17 +9925,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19579,
+      "bytes": 20052,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 74,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "واجهات برمجة لمعالجة المستندات وصيغ الملفات | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "واجهات برمجة تطبيقات لمعالجة صيغ الملفات والمستندات لأتمتة العمل مع معظم صيغ الملفات الشائعة."
         ],
         "h1": [
           "مدونة Conholdate Cloud"
@@ -10370,16 +10058,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/fa/total/convert-html-files/",
@@ -10395,11 +10074,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 45557,
+      "bytes": 45579,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 525,
       "facts": {
         "titles": [
           "فایل‌های HTML را با استفاده از REST API Conholdate.Cloud تبدیل کنید."
@@ -10545,11 +10224,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 46661,
+      "bytes": 46652,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 596,
       "facts": {
         "titles": [
           "使用 Conholdate.Cloud 插入 PDF 页眉和页脚"
@@ -10695,11 +10374,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38430,
+      "bytes": 38429,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 573,
       "facts": {
         "titles": [
           "API para convertir, combinar y dividir Excel – Conholdate.Cloud"
@@ -10845,17 +10524,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19198,
+      "bytes": 19231,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 442,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "Dosya Formatı ve Belge İşleme API'leri | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "Neredeyse tüm popüler dosya formatlarında belge otomasyonu için dosya formatı ve belge işleme API'leri."
         ],
         "h1": [
           "Conholdate Cloud Blogu"
@@ -10978,16 +10657,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/nl/",
@@ -11003,17 +10673,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19072,
+      "bytes": 19165,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 596,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API's voor bestandsformaten en documenten | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API's voor bestandsformaten en documentverwerking om documenten in vrijwel alle populaire bestandsformaten te automatiseren."
         ],
         "h1": [
           "Conholdate Cloud-blog"
@@ -11136,16 +10806,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/ru/total/insert-header-footer-in-pdf/",
@@ -11161,11 +10822,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 69677,
+      "bytes": 69720,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 570,
       "facts": {
         "titles": [
           "Вставка колонтитулов в PDF с помощью Conholdate.Cloud"
@@ -11311,14 +10972,14 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 40738,
+      "bytes": 40748,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 494,
       "facts": {
         "titles": [
-          "Manipulate PDF Documents using Conholdate.Cloud REST API"
+          "Xử lý tài liệu PDF bằng Conholdate.Cloud REST API"
         ],
         "descriptions": [
           "Tìm hiểu cách xử lý tài liệu PDF với Conholdate.Cloud. Chuyển PDF sang Word, Excel hoặc PowerPoint, và hợp nhất hoặc tách PDF qua REST API."
@@ -11445,12 +11106,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/total/manipulate-pdf-documents/: 'Manipulate PDF Documents using Conholdate.Cloud REST API'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/pt/total/manipulate-pdf-documents/",
@@ -11470,7 +11126,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 600,
       "facts": {
         "titles": [
           "Manipule PDFs usando a API REST Conholdate.Cloud"
@@ -11616,17 +11272,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 20125,
+      "bytes": 20358,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 543,
       "facts": {
         "titles": [
           "Блог Conholdate Cloud"
         ],
         "descriptions": [
-          "Блог Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "Блог Conholdate Cloud - API для обробки документів і форматів файлів | Conholdate Cloud"
         ],
         "h1": [
           "Блог Conholdate Cloud"
@@ -11769,7 +11425,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 639,
       "facts": {
         "titles": [
           "Conholdate Cloud Blog"
@@ -11914,11 +11570,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 52609,
+      "bytes": 52604,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 467,
       "facts": {
         "titles": [
           "Inserisci intestazioni e piè di pagina PDF usando Conholdate.Cloud"
@@ -12064,17 +11720,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19056,
+      "bytes": 19048,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 428,
       "facts": {
         "titles": [
           "Blog Conholdate Cloud"
         ],
         "descriptions": [
-          "Blog Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "Blog Conholdate Cloud - API Format File dan Pemrosesan Dokumen | Conholdate Cloud"
         ],
         "h1": [
           "Blog Conholdate Cloud"
@@ -12213,11 +11869,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 43962,
+      "bytes": 43984,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 76,
+      "elapsed_ms": 540,
       "facts": {
         "titles": [
           "API تبدیل، ادغام و تقسیم Excel – Conholdate.Cloud"
@@ -12363,17 +12019,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19064,
+      "bytes": 19116,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 52,
+      "elapsed_ms": 438,
       "facts": {
         "titles": [
           "Blog Conholdate Cloud"
         ],
         "descriptions": [
-          "Blog Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "Blog Conholdate Cloud - API do formatów plików i przetwarzania dokumentów | Conholdate Cloud"
         ],
         "h1": [
           "Blog Conholdate Cloud"
@@ -12512,11 +12168,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 45946,
+      "bytes": 45989,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 613,
       "facts": {
         "titles": [
           "API для конвертации, объединения и разделения Excel – Conholdate.Cloud"
@@ -12662,11 +12318,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 37874,
+      "bytes": 37865,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 70,
+      "elapsed_ms": 568,
       "facts": {
         "titles": [
           "使用 Conholdate.Cloud REST API 转换 HTML 文件"
@@ -12812,11 +12468,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38516,
+      "bytes": 38528,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 582,
       "facts": {
         "titles": [
           "Manipuluj dokumentami PDF za pomocą API REST Conholdate.Cloud"
@@ -12962,11 +12618,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38736,
+      "bytes": 38737,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 460,
       "facts": {
         "titles": [
           "Excel Dönüştürme, Birleştirme ve Bölme API'si – Conholdate.Cloud"
@@ -13112,17 +12768,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 40144,
+      "bytes": 40090,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 55,
+      "elapsed_ms": 126,
       "facts": {
         "titles": [
           "Convertir des fichiers HTML avec l'API REST de Conholdate.Cloud"
         ],
         "descriptions": [
-          "Explore how to convert HTML files to various formats such as PDF, DOCX, Markdown, GIF, JPG, TIFF, PNG, and XPS using Conholdate.Cloud."
+          "Découvrez comment convertir des fichiers HTML en PDF, DOCX, Markdown, GIF, JPG, TIFF, PNG et XPS avec Conholdate.Cloud."
         ],
         "h1": [
           "Convertir des fichiers HTML en utilisant Conholdate.Cloud"
@@ -13246,12 +12902,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/total/convert-html-files/: 'Explore how to convert HTML files to various formats such as PDF, DOCX'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/pl/",
@@ -13267,17 +12918,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 18999,
+      "bytes": 19127,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 615,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API do formatów plików i przetwarzania dokumentów | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API do formatów plików i przetwarzania dokumentów, które automatyzują pracę z niemal wszystkimi popularnymi formatami."
         ],
         "h1": [
           "Blog Conholdate Cloud"
@@ -13400,16 +13051,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/ar/total/convert-html-files/",
@@ -13425,11 +13067,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 42500,
+      "bytes": 43314,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 661,
       "facts": {
         "titles": [
           "تحويل ملفات HTML باستخدام واجهة برمجة تطبيقات Conholdate.Cloud REST"
@@ -13438,7 +13080,7 @@
           "استكشف كيفية تحويل ملفات HTML إلى تنسيقات مختلفة مثل PDF و DOCX و Markdown و GIF و JPG و TIFF و PNG و XPS باستخدام Conholdate.Cloud."
         ],
         "h1": [
-          "Convert HTML Files using Conholdate.Cloud"
+          "تحويل ملفات HTML باستخدام Conholdate.Cloud"
         ],
         "canonicals": [
           "https://blog.conholdate.cloud/ar/total/convert-html-files/"
@@ -13575,17 +13217,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19461,
+      "bytes": 19576,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 580,
       "facts": {
         "titles": [
           "Conholdate Cloud ブログ"
         ],
         "descriptions": [
-          "Conholdate Cloud ブログ - File Format and Document Processing APIs | Conholdate Cloud"
+          "Conholdate Cloud ブログ - ファイル形式・ドキュメント処理 API | Conholdate Cloud"
         ],
         "h1": [
           "Conholdate Cloud ブログ"
@@ -13728,7 +13370,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 463,
       "facts": {
         "titles": [
           "Manipulate PDF Documents using Conholdate.Cloud REST API"
@@ -13874,11 +13516,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 36935,
+      "bytes": 36926,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 455,
       "facts": {
         "titles": [
           "使用 Conholdate.Cloud REST API 操作 PDF 文档"
@@ -14024,11 +13666,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38492,
+      "bytes": 38503,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 641,
       "facts": {
         "titles": [
           "Manipulujte PDF dokumenty pomocí rozhraní REST API Conholdate.Cloud"
@@ -14174,11 +13816,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 37986,
+      "bytes": 37977,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 592,
       "facts": {
         "titles": [
           "使用 Conholdate.Cloud REST API 轉換 HTML 文件"
@@ -14324,11 +13966,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 41089,
+      "bytes": 41084,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 681,
       "facts": {
         "titles": [
           "HTML 파일을 Conholdate.Cloud REST API를 사용하여 변환하세요."
@@ -14474,11 +14116,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 43819,
+      "bytes": 43878,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 445,
       "facts": {
         "titles": [
           "معالجة مستندات PDF باستخدام Conholdate.Cloud REST API"
@@ -14624,11 +14266,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 52160,
+      "bytes": 52159,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 579,
       "facts": {
         "titles": [
           "Insertar encabezados y pies de página PDF usando Conholdate.Cloud"
@@ -14774,17 +14416,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19107,
+      "bytes": 19203,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 737,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "APIs für Dateiformate und Dokumentverarbeitung | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "APIs für Dateiformate und Dokumentverarbeitung zur Automatisierung von Dokumenten in fast allen gängigen Dateiformaten."
         ],
         "h1": [
           "Conholdate Cloud Blog"
@@ -14907,16 +14549,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/it/conholdate.cloud/",
@@ -14932,17 +14565,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19165,
+      "bytes": 19170,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 43,
+      "elapsed_ms": 554,
       "facts": {
         "titles": [
           "Blog di Conholdate Cloud"
         ],
         "descriptions": [
-          "Blog di Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "Blog di Conholdate Cloud - API per formati di file e documenti | Conholdate Cloud"
         ],
         "h1": [
           "Blog di Conholdate Cloud"
@@ -15081,11 +14714,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 42402,
+      "bytes": 42461,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 53,
+      "elapsed_ms": 695,
       "facts": {
         "titles": [
           "واجهة API لتحويل ملفات Excel ودمجها وتقسيمها – Conholdate.Cloud"
@@ -15231,17 +14864,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19134,
+      "bytes": 19175,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 43,
+      "elapsed_ms": 552,
       "facts": {
         "titles": [
           "Conholdate Cloud Blog"
         ],
         "descriptions": [
-          "Conholdate Cloud Blog - File Format and Document Processing APIs | Conholdate Cloud"
+          "Conholdate Cloud Blog - APIs für Dateiformate und Dokumentverarbeitung | Conholdate Cloud"
         ],
         "h1": [
           "Conholdate Cloud Blog"
@@ -15364,12 +14997,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/conholdate.cloud/: 'Conholdate Cloud Blog - File Format and Document Processing APIs | Con'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/th/",
@@ -15385,17 +15013,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 20369,
+      "bytes": 21257,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 816,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API ประมวลผลเอกสารและรูปแบบไฟล์ | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API สำหรับประมวลผลรูปแบบไฟล์และเอกสาร เพื่อทำงานกับเอกสารอัตโนมัติในรูปแบบไฟล์ยอดนิยมเกือบทั้งหมด"
         ],
         "h1": [
           "บล็อก Conholdate Cloud"
@@ -15518,16 +15146,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/ru/conholdate.cloud/",
@@ -15543,17 +15162,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 20108,
+      "bytes": 20357,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 43,
+      "elapsed_ms": 428,
       "facts": {
         "titles": [
           "Блог Conholdate Cloud"
         ],
         "descriptions": [
-          "Блог Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "Блог Conholdate Cloud - API для обработки документов и форматов файлов | Conholdate Cloud"
         ],
         "h1": [
           "Блог Conholdate Cloud"
@@ -15692,11 +15311,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 39294,
+      "bytes": 39295,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 79,
+      "elapsed_ms": 542,
       "facts": {
         "titles": [
           "PDF Belgelerini Conholdate.Cloud REST API kullanarak manipüle edin"
@@ -15842,11 +15461,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 45247,
+      "bytes": 45269,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 522,
       "facts": {
         "titles": [
           "مدیریت اسناد PDF با استفاده از API REST Conholdate.Cloud"
@@ -15992,11 +15611,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 50572,
+      "bytes": 50573,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 686,
       "facts": {
         "titles": [
           "PDF‑koppen en -voetteksten invoegen met Conholdate.Cloud"
@@ -16146,7 +15765,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 63,
+      "elapsed_ms": 500,
       "facts": {
         "titles": [
           "Inserir cabeçalhos e rodapés de PDF usando Conholdate.Cloud"
@@ -16292,11 +15911,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 37720,
+      "bytes": 37731,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 607,
       "facts": {
         "titles": [
           "API pro převod, slučování a dělení Excelu – Conholdate.Cloud"
@@ -16442,17 +16061,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19366,
+      "bytes": 19560,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 55,
+      "elapsed_ms": 440,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API xử lý tài liệu và định dạng tệp | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API xử lý định dạng tệp và tài liệu giúp tự động hóa công việc với hầu hết các định dạng tệp phổ biến."
         ],
         "h1": [
           "Blog Conholdate Cloud"
@@ -16575,16 +16194,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/id/total/manipulate-excel-spreadsheets/",
@@ -16600,11 +16210,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 37484,
+      "bytes": 37482,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 666,
       "facts": {
         "titles": [
           "API Konversi, Gabung & Pisah Excel – Conholdate.Cloud"
@@ -16750,17 +16360,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19056,
+      "bytes": 19088,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 43,
+      "elapsed_ms": 581,
       "facts": {
         "titles": [
           "Blog do Conholdate Cloud"
         ],
         "descriptions": [
-          "Blog do Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "Blog do Conholdate Cloud - APIs de formatos de arquivo e documentos | Conholdate Cloud"
         ],
         "h1": [
           "Blog do Conholdate Cloud"
@@ -16899,11 +16509,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 74411,
+      "bytes": 74456,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 456,
       "facts": {
         "titles": [
           "แทรกส่วนหัวและส่วนท้ายของ PDF ด้วย Conholdate.Cloud"
@@ -17049,11 +16659,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 61797,
+      "bytes": 61819,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 620,
       "facts": {
         "titles": [
           "درج سرصفحه‌ها و پاورقی‌های PDF با استفاده از Conholdate.Cloud"
@@ -17199,11 +16809,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 37110,
+      "bytes": 37114,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 538,
       "facts": {
         "titles": [
           "Konvertera, slå ihop och dela Excel via API – Conholdate.Cloud"
@@ -17349,17 +16959,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 20103,
+      "bytes": 20647,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 558,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API для обробки документів і форматів файлів | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API для обробки форматів файлів і документів: автоматизація роботи майже з усіма популярними форматами файлів."
         ],
         "h1": [
           "Блог Conholdate Cloud"
@@ -17482,16 +17092,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/fa/conholdate.cloud/",
@@ -17507,17 +17108,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 20006,
+      "bytes": 20130,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 640,
       "facts": {
         "titles": [
           "وبلاگ Conholdate Cloud"
         ],
         "descriptions": [
-          "وبلاگ Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "وبلاگ Conholdate Cloud - APIهای پردازش اسناد و فرمت‌های فایل | Conholdate Cloud"
         ],
         "h1": [
           "وبلاگ Conholdate Cloud"
@@ -17656,17 +17257,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19326,
+      "bytes": 19333,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 43,
+      "elapsed_ms": 570,
       "facts": {
         "titles": [
           "Conholdate Cloud 블로그"
         ],
         "descriptions": [
-          "Conholdate Cloud 블로그 - File Format and Document Processing APIs | Conholdate Cloud"
+          "Conholdate Cloud 블로그 - 파일 형식 및 문서 처리 API | Conholdate Cloud"
         ],
         "h1": [
           "Conholdate Cloud 블로그"
@@ -17805,11 +17406,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 53853,
+      "bytes": 53855,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 516,
       "facts": {
         "titles": [
           "Insérer des en-têtes et pieds de page PDF à l'aide de Conholdate.Cloud"
@@ -17955,11 +17556,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 41176,
+      "bytes": 41185,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 1765,
       "facts": {
         "titles": [
           "Excel の変換・結合・分割 API – Conholdate.Cloud"
@@ -18105,11 +17706,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 39261,
+      "bytes": 39260,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 51,
+      "elapsed_ms": 437,
       "facts": {
         "titles": [
           "Convertir archivos HTML utilizando la API REST de Conholdate.Cloud"
@@ -18259,7 +17860,7 @@
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 528,
       "facts": {
         "titles": [
           "Merge PDF Documents Using Java Cloud API: Step-by-Step Guide"
@@ -18317,11 +17918,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 49781,
+      "bytes": 49785,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 432,
       "facts": {
         "titles": [
           "Infoga PDF‑sidhuvuden och sidfötter med Conholdate.Cloud"
@@ -18467,17 +18068,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19305,
+      "bytes": 19343,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 50,
+      "elapsed_ms": 590,
       "facts": {
         "titles": [
           "Blog Conholdate Cloud"
         ],
         "descriptions": [
-          "Blog Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "Blog Conholdate Cloud - API de formats de fichiers et de documents | Conholdate Cloud"
         ],
         "h1": [
           "Blog Conholdate Cloud"
@@ -18616,11 +18217,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 42017,
+      "bytes": 42025,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 666,
       "facts": {
         "titles": [
           "Chuyển đổi tệp HTML bằng API REST Conholdate.Cloud"
@@ -18766,17 +18367,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19138,
+      "bytes": 19167,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 52,
+      "elapsed_ms": 573,
       "facts": {
         "titles": [
           "Blog de Conholdate Cloud"
         ],
         "descriptions": [
-          "Blog de Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "Blog de Conholdate Cloud - API de formatos de archivo y documentos | Conholdate Cloud"
         ],
         "h1": [
           "Blog de Conholdate Cloud"
@@ -18915,11 +18516,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38713,
+      "bytes": 38720,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 451,
       "facts": {
         "titles": [
           "Manipulieren Sie PDF Dokumente mit der Conholdate.Cloud REST API"
@@ -19065,11 +18666,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 46800,
+      "bytes": 46839,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 59,
+      "elapsed_ms": 646,
       "facts": {
         "titles": [
           "Маніпулюйте PDF документами за допомогою REST API Conholdate.Cloud"
@@ -19215,17 +18816,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19391,
+      "bytes": 19639,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 74,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "ファイル形式・ドキュメント処理 API | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "ほぼすべての一般的なファイル形式に対応した、ドキュメント自動化のためのファイル形式・ドキュメント処理 API。"
         ],
         "h1": [
           "Conholdate Cloud ブログ"
@@ -19348,16 +18949,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/de/total/manipulate-excel-spreadsheets/",
@@ -19373,11 +18965,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38177,
+      "bytes": 38184,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 441,
       "facts": {
         "titles": [
           "Excel-API: Konvertieren, Zusammenführen, Teilen – Conholdate.Cloud"
@@ -19523,17 +19115,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19404,
+      "bytes": 19491,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 63,
+      "elapsed_ms": 527,
       "facts": {
         "titles": [
           "Blog Conholdate Cloud"
         ],
         "descriptions": [
-          "Blog Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "Blog Conholdate Cloud - API xử lý tài liệu và định dạng tệp | Conholdate Cloud"
         ],
         "h1": [
           "Blog Conholdate Cloud"
@@ -19672,11 +19264,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 50532,
+      "bytes": 50544,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 52,
+      "elapsed_ms": 617,
       "facts": {
         "titles": [
           "Wstaw nagłówki i stopki PDF przy użyciu Conholdate.Cloud"
@@ -19822,11 +19414,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 47953,
+      "bytes": 47996,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 553,
       "facts": {
         "titles": [
           "Конвертировать HTML файлы с использованием REST API Conholdate.Cloud"
@@ -19972,17 +19564,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19637,
+      "bytes": 19851,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 44,
+      "elapsed_ms": 561,
       "facts": {
         "titles": [
           "مدونة Conholdate Cloud"
         ],
         "descriptions": [
-          "مدونة Conholdate Cloud - File Format and Document Processing APIs | Conholdate Cloud"
+          "مدونة Conholdate Cloud - واجهات برمجة لمعالجة المستندات وصيغ الملفات | Conholdate Cloud"
         ],
         "h1": [
           "مدونة Conholdate Cloud"
@@ -20121,11 +19713,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38881,
+      "bytes": 38892,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 46,
+      "elapsed_ms": 608,
       "facts": {
         "titles": [
           "Převeďte soubory HTML pomocí rozhraní API REST Conholdate.Cloud"
@@ -20271,11 +19863,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 50431,
+      "bytes": 50442,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 544,
       "facts": {
         "titles": [
           "Vložte záhlaví a zápatí PDF pomocí Conholdate.Cloud"
@@ -20421,17 +20013,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 18877,
+      "bytes": 18842,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 45,
+      "elapsed_ms": 566,
       "facts": {
         "titles": [
           "Conholdate Cloud 博客"
         ],
         "descriptions": [
-          "Conholdate Cloud 博客 - File Format and Document Processing APIs | Conholdate Cloud"
+          "Conholdate Cloud 博客 - 文件格式与文档处理 API | Conholdate Cloud"
         ],
         "h1": [
           "Conholdate Cloud 博客"
@@ -20570,17 +20162,17 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 19258,
+      "bytes": 19338,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 72,
       "facts": {
         "titles": [
-          "File Format and Document Processing APIs | Conholdate Cloud"
+          "API de formats de fichiers et de documents | Conholdate Cloud"
         ],
         "descriptions": [
-          "File Format and Document Processing APIs for document automation of almost all the popular file formats."
+          "API de traitement de formats de fichiers et de documents pour automatiser presque tous les formats de fichiers populaires."
         ],
         "h1": [
           "Blog Conholdate Cloud"
@@ -20703,16 +20295,7 @@
         "body_social_tags": []
       },
       "ignored": null,
-      "issues": [
-        [
-          "title_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs | Conholdate Cloud'"
-        ],
-        [
-          "description_untranslated",
-          "same as https://blog.conholdate.cloud/: 'File Format and Document Processing APIs for document automation of al'"
-        ]
-      ]
+      "issues": []
     },
     {
       "url": "https://blog.conholdate.cloud/ko/total/manipulate-pdf-documents/",
@@ -20728,11 +20311,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 39759,
+      "bytes": 39754,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 53,
+      "elapsed_ms": 608,
       "facts": {
         "titles": [
           "Conholdate.Cloud REST API를 사용하여 PDF 문서 조작하기"
@@ -20878,11 +20461,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 38161,
+      "bytes": 38165,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 49,
+      "elapsed_ms": 589,
       "facts": {
         "titles": [
           "Manipulera PDF-dokument med Conholdate.Cloud REST API"
@@ -21028,11 +20611,11 @@
       "redirects": [],
       "redirect_statuses": [],
       "content_type": "text/html",
-      "bytes": 52995,
+      "bytes": 52990,
       "truncated": 0,
       "blocked": 0,
       "error": null,
-      "elapsed_ms": 48,
+      "elapsed_ms": 796,
       "facts": {
         "titles": [
           "Conholdate.Cloud를 사용하여 PDF 머리글 및 바닥글 삽입"

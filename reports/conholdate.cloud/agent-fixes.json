@@ -147,5 +147,44 @@
   "fixed": "2026-11-11",
   "verified": "2026-11-11",
   "result": "Live: the menu shows 日本語, 한국어, 繁體中文, Bahasa Indonesia, Nederlands, ไทย, עברית"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-12",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-12",
+  "verified": "2026-11-12",
+  "check": "title_untranslated",
+  "issue": "22 translated home pages showed the English <title> and meta description",
+  "commits": [
+   "5ec289028dd1a653597bba028667cc246bbe3272"
+  ],
+  "result": "Live: each language home has its own title and description (e.g. /fr/ 'API de formats de fichiers et de documents | Conholdate Cloud'); og:site_name stays 'Conholdate Cloud'"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-12",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-12",
+  "verified": "2026-11-12",
+  "check": "post_text_untranslated",
+  "issue": "English seoTitle/title/description left in 4 translations; H1 typos on he and it Excel posts",
+  "commits": [
+   "8b0b5e7958cc3b6033d4a9be2102ebc7eb851f85"
+  ],
+  "result": "Live: vi, ar, fr values translated; it H1 'Manipola…', he H1 'עיבוד…'"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "found": "2026-11-12",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-12",
+  "verified": "2026-11-12",
+  "check": "rtl_direction_missing",
+  "issue": "Arabic, Persian and Hebrew pages rendered left to right (dir=auto)",
+  "commits": [
+   "21c934768eed48f6db2d4c769e80ce85997c527c"
+  ],
+  "result": "Live: <html dir=rtl> on ar, fa, he pages; layout checked desktop and 390 px"
  }
 ]

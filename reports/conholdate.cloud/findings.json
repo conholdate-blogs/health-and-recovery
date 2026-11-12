@@ -212,26 +212,20 @@
         "https://blog.conholdate.cloud/total/convert-html-files",
         "https://blog.conholdate.cloud/tags"
       ],
-      "observed": "2 entries or files; 302 to https://blog.conholdate.cloud/total/convert-html-files/: 1, 302 to https://blog.conholdate.cloud/tags/: 1",
+      "observed": "Live test (CDN, not a repo file): https://blog.conholdate.cloud/total/convert-html-files answers 302 to https://blog.conholdate.cloud/total/convert-html-files/; https://blog.conholdate.cloud/tags answers 302 to https://blog.conholdate.cloud/tags/",
       "expected": "A URL without its trailing slash answers a permanent redirect (301/308)",
       "locations": [
         {
-          "role": "file",
+          "role": "live test",
           "url": "https://blog.conholdate.cloud/total/convert-html-files",
-          "file": "(host)",
-          "line": 0,
-          "note": "302 to https://blog.conholdate.cloud/total/convert-html-files/",
-          "fix": "301 to the URL with /",
-          "commit": null
+          "note": "answers 302 to https://blog.conholdate.cloud/total/convert-html-files/; try: curl -I https://blog.conholdate.cloud/total/convert-html-files",
+          "fix": "301 to the URL with /"
         },
         {
-          "role": "file",
+          "role": "live test",
           "url": "https://blog.conholdate.cloud/tags",
-          "file": "(host)",
-          "line": 0,
-          "note": "302 to https://blog.conholdate.cloud/tags/",
-          "fix": "301 to the URL with /",
-          "commit": null
+          "note": "answers 302 to https://blog.conholdate.cloud/tags/; try: curl -I https://blog.conholdate.cloud/tags",
+          "fix": "301 to the URL with /"
         }
       ]
     },
@@ -264,7 +258,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-12",
     "first_seen_run": "repo-audit-run45",
-    "last_seen_run": "repo-audit-run57",
+    "last_seen_run": "repo-audit-run70",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -517,14 +511,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-12",
     "first_seen_run": "repo-audit-run45",
     "last_seen_run": "repo-audit-run57",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run64",
+    "resolved_at": "2026-11-12T07:18:26+00:00",
     "check": "rtl_direction_missing",
     "notes": []
   },
@@ -643,14 +637,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-12",
     "first_seen_run": "crawl-audit-run46",
     "last_seen_run": "crawl-audit-run58",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run59",
+    "resolved_at": "2026-11-12T07:17:02+00:00",
     "check": "description_untranslated",
     "notes": []
   },
@@ -765,14 +759,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-12",
     "first_seen_run": "crawl-audit-run46",
     "last_seen_run": "crawl-audit-run58",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run59",
+    "resolved_at": "2026-11-12T07:17:02+00:00",
     "check": "title_untranslated",
     "notes": []
   },
@@ -858,14 +852,14 @@
     "effort": "M",
     "fix_tier": 3,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-12",
     "first_seen_run": "repo-audit-run57",
     "last_seen_run": "repo-audit-run57",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run64",
+    "resolved_at": "2026-11-12T07:18:26+00:00",
     "check": "post_text_untranslated",
     "notes": []
   },
@@ -1196,44 +1190,28 @@
     "title": "Title or description is about a different product",
     "evidence": {
       "urls": [
-        "https://blog.conholdate.cloud/uk/",
-        "https://blog.conholdate.cloud/ja/"
+        "https://blog.conholdate.cloud/fr/"
       ],
-      "observed": "2 of 139 checked pages: /uk/ title: 'File Format and Document Processing APIs | Conholdate Cloud' → 'Блог Conholdate Cloud'; /uk/ meta description: 'File Format and Document Processing APIs for document automation of almost all the popular file formats.' → 'Блог Conholdate Cloud – новости и статьи о работе с документами'; /ja/ title: 'File Format and Document Processing APIs | Conholdate Cloud' → 'Conholdate Cloud ブログ'; /ja/ meta description: 'File Format and Document Processing APIs for document automation of almost all the popular file formats.' → 'Conholdate Cloud ブログ – ドキュメント自動化に関する記事やニュース'",
+      "observed": "1 of 139 checked pages: /fr/ meta description: 'API de traitement de formats de fichiers et de documents pour automatiser presque tous les formats de fichiers populaires.' → 'Blog Conholdate Cloud - dernières actualités et articles'",
       "expected": "Title and meta description describe the page's own product, like its H1",
       "locations": [
         {
           "role": "page",
-          "url": "https://blog.conholdate.cloud/uk/",
-          "note": "title: 'File Format and Document Processing APIs | Conholdate Cloud' → 'Блог Conholdate Cloud'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.conholdate.cloud/uk/",
-          "note": "meta description: 'File Format and Document Processing APIs for document automation of almost all the popular file formats.' → 'Блог Conholdate Cloud – новости и статьи о работе с документами'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.conholdate.cloud/ja/",
-          "note": "title: 'File Format and Document Processing APIs | Conholdate Cloud' → 'Conholdate Cloud ブログ'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.conholdate.cloud/ja/",
-          "note": "meta description: 'File Format and Document Processing APIs for document automation of almost all the popular file formats.' → 'Conholdate Cloud ブログ – ドキュメント自動化に関する記事やニュース'"
+          "url": "https://blog.conholdate.cloud/fr/",
+          "note": "meta description: 'API de traitement de formats de fichiers et de documents pour automatiser presque tous les formats de fichiers populaires.' → 'Blog Conholdate Cloud - dernières actualités et articles'"
         }
       ]
     },
-    "affected_pages": 2,
+    "affected_pages": 1,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 3,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 6,
+      "past_impressions": 5,
       "lost_clicks": 0,
-      "lost_impressions": 3,
+      "lost_impressions": 2,
       "past_window": [
         "2026-04-14",
         "2026-05-11"
@@ -1253,9 +1231,9 @@
     "superseded_by": null,
     "detected_at": "2026-11-12",
     "first_seen_run": "text-audit-run43",
-    "last_seen_run": "text-audit-run43",
-    "resolved_run": "text-audit-run49",
-    "resolved_at": "2026-11-12T06:10:02+00:00",
+    "last_seen_run": "text-audit-run65",
+    "resolved_run": "text-audit-run68",
+    "resolved_at": "2026-11-12T07:20:05+00:00",
     "check": "text_topic_mismatch",
     "notes": []
   },
@@ -1313,14 +1291,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-12",
     "first_seen_run": "text-audit-run43",
     "last_seen_run": "text-audit-run55",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "text-audit-run62",
+    "resolved_at": "2026-11-12T07:18:19+00:00",
     "check": "text_typo",
     "notes": []
   }

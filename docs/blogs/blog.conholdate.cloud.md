@@ -78,7 +78,7 @@ YAML: real, but counted by `title_untranslated`.
 | F15 | `languageDirection: rtl` for ar, fa, he; check PaperMod's RTL layout (screenshots) | config.yml | yes |
 | F16 | 301 instead of 302 for no-slash URLs | CloudFront (not the repo) | infra |
 
-SK approved F13–F15 (12 Nov). Committed on `main`, **not pushed yet**: 8b0b5e7 (F14), 5ec2890 (F13: also
+SK approved F13–F15 (12 Nov); SK pushed and deployed them the same day, **verified live** (agent-fixes rows 12–14): 8b0b5e7 (F14), 5ec2890 (F13: also
 `params.siteName` + `layouts/partials/templates/opengraph.html`, because Hugo 0.101 copies a language-level `title`
 into `params.title`, which PaperMod uses for og:site_name), 21c9347 (F15). Tested: full build before/after (no English
 page changed, sitemaps same URLs/hreflang), commit check PASSED (835 pages), RTL screenshots desktop + 390 px.
@@ -88,6 +88,10 @@ Seen while testing, not fixed: English H2s in translated post bodies ("Convert H
 Our audit, same day: the untranslated checks follow the translation agent's rules (`core/audit/keep_terms.py`:
 product/brand names by shape, formats, abbreviations, platforms, code, URLs, the host's labels do not count);
 blog.conholdate.com 239 → 198. The no-slash finding now shows the URL to try (curl -I), not a "file".
+
+Rescan after the deploy (12 Nov): **health 100**, 1 open issue type: no-slash 302 (F16, CDN, 2 items, improvable).
+One more LLM false positive recorded as reviewed (/fr/ home title and description = tagline, not "a different
+product"). Snapshot 2026-11-12-2. Full-crawl limit raised to 1,000 URLs (SK).
 
 ## Decisions by SK (11 Nov)
 

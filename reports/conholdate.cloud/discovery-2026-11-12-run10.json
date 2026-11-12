@@ -1,6 +1,6 @@
 {
   "tenant": "conholdate.cloud",
-  "run_id": 9,
+  "run_id": 10,
   "hosts": {
     "blog.conholdate.cloud": {
       "robots": {
@@ -434,7 +434,7 @@
     "max_sitemaps": null
   },
   "requests": 25,
-  "duration_s": 24.6,
+  "duration_s": 24.7,
   "not_fetched": [],
   "findings": [],
   "items": {

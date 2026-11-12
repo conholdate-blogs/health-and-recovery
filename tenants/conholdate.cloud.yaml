@@ -41,6 +41,9 @@ audit:
       - {url: "https://blog.conholdate.cloud/uk/", wrong: "File Format and Document Processing APIs for document automation of almost all the popular file formats."}
       - {url: "https://blog.conholdate.cloud/ja/", wrong: "File Format and Document Processing APIs | Conholdate Cloud"}
       - {url: "https://blog.conholdate.cloud/ja/", wrong: "File Format and Document Processing APIs for document automation of almost all the popular file formats."}
+      # home title = the site's tagline, H1 = the blog name (same as the English home): not a different product
+      - {url: "https://blog.conholdate.cloud/fr/", wrong: "API de formats de fichiers et de documents | Conholdate Cloud"}
+      - {url: "https://blog.conholdate.cloud/fr/", wrong: "API de traitement de formats de fichiers et de documents pour automatiser presque tous les formats de fichiers populaires."}
 
 # URL templates per host, matched in order against the path with the language segment removed.
 url_templates:

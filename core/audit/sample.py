@@ -17,7 +17,7 @@ import heapq
 from collections import defaultdict
 from dataclasses import dataclass
 
-FULL_MAX = 500  # hosts with at most this many sitemap URLs are crawled in full
+FULL_MAX = 1000  # hosts with at most this many sitemap URLs are crawled in full
 
 
 @dataclass(frozen=True)

@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "perf-audit",
-  "run_id": 54,
+  "run_id": 61,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
@@ -12,7 +12,7 @@
     "max_pages": null
   },
   "requests": 8,
-  "duration_s": 24.2,
+  "duration_s": 26.5,
   "pages_planned": 8,
   "stopped_early": false,
   "incomplete": false,
@@ -24,7 +24,7 @@
       "not_loaded": 0,
       "field": 0,
       "issues": {},
-      "median_score": 84
+      "median_score": 78
     }
   },
   "findings": [],
@@ -40,22 +40,22 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 84,
+      "lab_score": 75,
       "lab": {
-        "lcp": 4466.89537957065,
-        "tbt": 76,
+        "lcp": 4890.30213937677,
+        "tbt": 75.5,
         "cls": 0,
-        "fcp": 1522.9680095706503,
-        "si": 1522.9680095706503
+        "fcp": 3276.6047384383846,
+        "si": 3276.6047384383846
       },
       "savings": [
         [
           "Reduce unused JavaScript",
-          750
+          600
         ],
         [
           "Render-blocking requests",
-          750
+          150
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/ar/conholdate.cloud/",
@@ -75,22 +75,26 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 81,
+      "lab_score": 78,
       "lab": {
-        "lcp": 4991.394224290396,
-        "tbt": 64,
+        "lcp": 5410.485541661933,
+        "tbt": 121.72071229048333,
         "cls": 0,
-        "fcp": 1546.5226392903955,
-        "si": 1546.5226392903955
+        "fcp": 1555.8284166619337,
+        "si": 2933.9449506643177
       },
       "savings": [
         [
           "Render-blocking requests",
-          1000
+          1050
         ],
         [
           "Reduce unused JavaScript",
           750
+        ],
+        [
+          "Use efficient cache lifetimes",
+          450
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/conholdate.cloud/",
@@ -110,13 +114,13 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 74,
+      "lab_score": 73,
       "lab": {
-        "lcp": 5310.694202126557,
-        "tbt": 270,
+        "lcp": 5271.184941859417,
+        "tbt": 72,
         "cls": 0,
-        "fcp": 1528.5004221265567,
-        "si": 1671.8409628902295
+        "fcp": 3283.4889846797087,
+        "si": 3283.4889846797087
       },
       "savings": [
         [
@@ -124,8 +128,12 @@
           750
         ],
         [
-          "Render-blocking requests",
-          750
+          "Use efficient cache lifetimes",
+          150
+        ],
+        [
+          "Improve image delivery",
+          150
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/",
@@ -145,22 +153,26 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 75,
+      "lab_score": 72,
       "lab": {
-        "lcp": 4725.394224480044,
-        "tbt": 324,
+        "lcp": 5911.957334271818,
+        "tbt": 234,
         "cls": 0,
-        "fcp": 1543.1355294800437,
-        "si": 1779.1910857327236
+        "fcp": 1551.3100092718175,
+        "si": 4184.922477752574
       },
       "savings": [
         [
-          "Render-blocking requests",
-          1000
+          "Reduce unused JavaScript",
+          1050
         ],
         [
-          "Reduce unused JavaScript",
+          "Render-blocking requests",
           750
+        ],
+        [
+          "Use efficient cache lifetimes",
+          150
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/ar/",
@@ -180,18 +192,18 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 99,
+      "lab_score": 97,
       "lab": {
-        "lcp": 1549.0331327094113,
-        "tbt": 44.5,
+        "lcp": 1527.0794043861324,
+        "tbt": 175,
         "cls": 0,
-        "fcp": 1549.0331327094113,
-        "si": 1549.0331327094113
+        "fcp": 1527.0794043861324,
+        "si": 1527.0794043861324
       },
       "savings": [
         [
           "Render-blocking requests",
-          1050
+          750
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/archives/",
@@ -211,22 +223,26 @@
       "strategy": "mobile",
       "field": null,
       "origin": null,
-      "lab_score": 79,
+      "lab_score": 70,
       "lab": {
-        "lcp": 5069.954139447271,
-        "tbt": 156,
+        "lcp": 5672.240526901554,
+        "tbt": 381,
         "cls": 0,
-        "fcp": 1549.9203644472707,
-        "si": 1714.087801098803
+        "fcp": 1528.4399619015544,
+        "si": 2097.427292881826
       },
       "savings": [
         [
-          "Render-blocking requests",
-          1050
+          "Reduce unused JavaScript",
+          900
         ],
         [
-          "Reduce unused JavaScript",
-          600
+          "Render-blocking requests",
+          750
+        ],
+        [
+          "Use efficient cache lifetimes",
+          150
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/ko/search/",
@@ -248,16 +264,16 @@
       "origin": null,
       "lab_score": 99,
       "lab": {
-        "lcp": 1543.743369343124,
-        "tbt": 85.5,
+        "lcp": 1529.7059445431103,
+        "tbt": 88.5,
         "cls": 0,
-        "fcp": 1543.743369343124,
-        "si": 1793.1107236613598
+        "fcp": 1529.7059445431103,
+        "si": 1839.4383998716778
       },
       "savings": [
         [
           "Render-blocking requests",
-          1000
+          750
         ]
       ],
       "final_url": "https://blog.conholdate.cloud/fa/total/insert-header-footer-in-pdf/",
@@ -279,11 +295,11 @@
       "origin": null,
       "lab_score": 100,
       "lab": {
-        "lcp": 1522.0700821262812,
-        "tbt": 24,
+        "lcp": 1524.0103821317894,
+        "tbt": 47.5,
         "cls": 0.01215066828675577,
-        "fcp": 1522.0700821262812,
-        "si": 1522.0700821262812
+        "fcp": 1524.0103821317894,
+        "si": 1563.3332508422748
       },
       "savings": [
         [

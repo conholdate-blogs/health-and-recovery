@@ -1,7 +1,7 @@
 {
   "tenant": "conholdate.cloud",
   "auditor": "link-audit",
-  "run_id": 56,
+  "run_id": 69,
   "params": {
     "hosts": [
       "blog.conholdate.cloud"
@@ -15,8 +15,8 @@
   "summary": {
     "blog.conholdate.cloud": {
       "repo": {
-        "commit": "6217d42",
-        "date": "2026-11-11",
+        "commit": "21c9347",
+        "date": "2026-11-12",
         "stale": false
       },
       "posts": 93,
@@ -35,13 +35,13 @@
     "blog.conholdate.cloud": {
       "repo": {
         "path": "/Users/Apple/Work/Aspose/GitHub/blog.conholdate.cloud-PROD/blog.conholdate.cloud",
-        "commit": "6217d42",
-        "date": "2026-11-11",
-        "subject": "Language menu: correct language names",
-        "age_days": 0.7,
+        "commit": "21c9347",
+        "date": "2026-11-12",
+        "subject": "Arabic, Persian and Hebrew pages right to left (languageDirection: rtl)",
+        "age_days": 0.0,
         "stale": false
       },
-      "discovery_run": 9,
+      "discovery_run": 10,
       "sitemap_paths": 139,
       "posts": 93,
       "posts_without_url": [],
