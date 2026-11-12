@@ -26,6 +26,16 @@ their rules); builder `scripts/site_pages.py`. Crawl sample: full crawl ≤ 1,00
 Untranslated checks follow the translation agent's keep-in-English rules (`core/audit/keep_terms.py`); TR-2 (short
 English titles count) confirmed by SK. LLM: internal OpenAI-compatible endpoint, model `gpt-oss` (borrowed
 translation-agent key). Every site page stays `noindex, nofollow` (checked: 136 of 136).
+**Subdomain page reworked (12 Nov, SK):** one vocabulary (issue = Issue log row, item = page/link/file; tiles "Issues"
+and "Items", History columns "Open issues"/"Open items"); Fix progress = agent line, worm graph (open/fixed issues
+per run day + a separate health-score panel on the same dates, never two y-scales; colours validated with the dataviz
+validator: light #b42318/#17b26a, dark #c01e1e/#17a865), per-check item table (open rows red), History; five area
+cards replace "Health by area" and open their data tables (formerly Reference: Crawl = robots/sitemaps, submitted
+sitemaps, site structure; On-page = crawl audit; Languages = sections; AI = AI access; Speed = speed); lowest area
+<100 opens by default; filters hidden under 6 issues; header run line hidden; crawl text says full crawl or fixed +
+rotating sample; a sitemap count gap vs Search Console is information. Host pages are not snapshotted (by design).
+**Later plans:** indexed % per blog via URL Inspection (all URLs on small blogs, rotating sample on big ones; 2,000
+checks per property per day) as a finding source and a number on the Crawl card (SK, 12 Nov: later, not now).
 
 **Audit of the auditors (SK: "audit our auditors and improve them"), then rescan of blog.conholdate.cloud:**
 11 new checks + full crawl for hosts with ≤ 500 sitemap URLs (commits 073d772 … this one; details in
