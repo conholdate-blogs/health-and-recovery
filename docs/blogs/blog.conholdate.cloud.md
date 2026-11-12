@@ -133,7 +133,7 @@ CDN). 17 agent-fix rows, all verified; F17 found by Shoaib Khan (`found_by`). Sn
 - Retag posts to 2–3 broad tags (SK: later; tag pages are noindex meanwhile).
 - The Java merge post has no translations (SK's translation agent).
 - Arabic, Persian, Hebrew pages render left-to-right: now a check (`rtl_direction_missing`), fix F15 proposed.
-- Host forwards no-slash → slash with 302 instead of 301 (CDN).
+- Host forwards no-slash → slash with 302 instead of 301: Amazon S3's own redirect; SK (12 Nov): wait for the move to Ceph, where nginx-redirector adds the slash.
 
 ## Learned here
 

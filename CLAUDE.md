@@ -27,7 +27,7 @@ GitLab main is on another commit). Issues found by hand and fixed are logged wit
 | What | State |
 |---|---|
 | F20 llms.txt generated at build (output format `llms` + `layouts/index.llms.txt`, `static/llms.txt` removed) | blog commit **7bf0f7b deployed and verified live** (23 files, all links answer); guard `llms_txt_outdated` (6f910c0); rule AI-1; then the other blogs |
-| F16 no-slash 302 | CDN setting; owner to be named |
+| F16 no-slash 302 | Amazon S3 answers it; **wait for the Ceph move** (soon; nginx-redirector normalizes the slash) — SK, 12 Nov |
 | Company menu on the other blogs (aspose.cloud zh-tw and groupdocs.cloud zh-hant: no bar; conholdate.com vi/th/tr English bar; aspose.com zh-hant Simplified) | in [docs/identified-issues.md](docs/identified-issues.md); counted in their reports at their next scan |
 | blog.conholdate.com part B | waiting (its log) |
 
