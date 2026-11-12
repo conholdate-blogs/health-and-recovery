@@ -5,6 +5,9 @@ findings. Per group: `per_template` URLs in the default language (no language se
 plus one URL in each of up to `other_langs` other languages; `per_template_by_host` overrides `per_template`
 for single hosts (e.g. a forum with one template and many pages). URLs are ranked by a hash of the URL, so the
 same inventory always gives the same sample and findings stay comparable between runs.
+
+A host with at most `full_max` URLs is crawled in full (every URL; 2026-11-12, after a 120-URL blog showed 2 long
+titles in the sample while 45 posts had one): its findings then count pages exactly instead of extrapolating.
 """
 
 from __future__ import annotations
@@ -13,6 +16,8 @@ import hashlib
 import heapq
 from collections import defaultdict
 from dataclasses import dataclass
+
+FULL_MAX = 500  # hosts with at most this many sitemap URLs are crawled in full
 
 
 @dataclass(frozen=True)
@@ -41,8 +46,13 @@ def group_langs(db, run_id: int, sectioned_hosts: set[str]) -> dict[tuple[str, s
 
 def sample_inventory(db, run_id: int, hosts: list[str], sectioned_hosts: set[str], sections: list[str] | None = None,
                      per_template: int = 2, other_langs: int = 2, default_lang: str = "en",
-                     max_per_host: int | None = None, per_template_by_host: dict | None = None) -> list[SampledUrl]:
+                     max_per_host: int | None = None, per_template_by_host: dict | None = None,
+                     full_max: int = FULL_MAX) -> list[SampledUrl]:
     marks = ", ".join("?" * len(hosts))
+    sizes = dict(db.execute(f"SELECT host, COUNT(*) FROM urls WHERE run_id = ? AND host IN ({marks}) GROUP BY host",
+                            [run_id, *hosts]).fetchall())
+    full = {h for h, n in sizes.items() if n <= full_max}
+    whole: list[SampledUrl] = []
     rows = db.execute("SELECT url, host, section, lang, template, sitemap FROM urls "
                       f"WHERE run_id = ? AND host IN ({marks})", [run_id, *hosts])
     default: dict = defaultdict(list)  # group -> heap of (-rank, url, lang, sitemap): the lowest ranks
@@ -54,6 +64,9 @@ def sample_inventory(db, run_id: int, hosts: list[str], sectioned_hosts: set[str
             continue  # a section filter narrows only hosts with sections; other hosts are sampled in full
         group = (host, sec, template)
         counts[group] += 1
+        if host in full:
+            whole.append((url, host, sec, lang, template, sitemap))
+            continue
         rank = _rank(url)
         if lang is None or lang == default_lang:
             heap = default[group]
@@ -78,7 +91,8 @@ def sample_inventory(db, run_id: int, hosts: list[str], sectioned_hosts: set[str
         by_host[host].append([SampledUrl(url, host, sec, lang, template, counts[group], sitemap=sm)
                               for url, lang, sm in picks])
 
-    out: list[SampledUrl] = []
+    out: list[SampledUrl] = [SampledUrl(url, host, sec, lang, template, counts[(host, sec, template)], sitemap=sm)
+                             for url, host, sec, lang, template, sm in sorted(whole, key=lambda r: (r[1], _rank(r[0])))]
     for host in sorted(by_host):
         groups = by_host[host]
         taken = []

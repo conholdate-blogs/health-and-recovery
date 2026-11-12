@@ -5,6 +5,12 @@ Redirects.json was found invalid), and whether its redirects work on the live si
   (with the commit that broke it), redirect keys that cannot match a request, self-redirects, bad targets, post
   files whose front matter does not parse, post urls without a leading slash (Hugo publishes them under a doubled
   language).
+- Exact, added 2026-11-12 from what the blog.conholdate.cloud session found by hand (the crawl only samples pages):
+  search title and description length on every post file, posts outside `params.mainSections` (never on the home
+  page), translations older than the English title or description (stale), sections whose `_index.md` exists in
+  English only (Hugo builds unlinked stand-ins for the other languages), wrong `languageName` values, right-to-left
+  languages without `languageDirection: rtl`, category pages no post uses, and URLs without the trailing slash
+  that forward with a temporary (302/307) redirect.
 - Sampled, finding level only: redirect_not_working, a live test of well-formed redirect sources. One 404 without a
   redirect is a failure; anything else (a working redirect, a real page at that URL, an error) is not.
 
@@ -36,6 +42,22 @@ _PAIR = re.compile(r'^\s*"((?:[^"\\]|\\.)*)"\s*:\s*"((?:[^"\\]|\\.)*)"')
 _FM = re.compile(r"\A---[ \t]*\n(.*?)\n---[ \t]*(?:\n|\Z)", re.S)
 _NAME = re.compile(r"^index(?:\.[A-Za-z]{2,3}(?:-[A-Za-z]+)?)?\.md$")
 _NON_ASCII = re.compile(r"[^\x00-\x7f]")
+_TEXT_KEYS = re.compile(r"^(seoTitle|title|description|summary):")
+TEMPLATES = {"language_name_wrong": "config", "rtl_direction_missing": "config", "slash_redirect_temporary": "host",
+             "section_index_untranslated": "listing", "category_page_unused": "listing"}
+STALE_SIMILARITY = 0.75  # below this the English title or description counts as rewritten, not trimmed
+RTL = {"ar", "fa", "he", "ur", "ps", "yi"}
+# Native language names accepted in a language menu (casefolded); a code not listed here is not checked.
+NATIVE_NAMES = {
+    "en": ["english"], "ar": ["العربية", "عربي"], "bg": ["български"], "cs": ["čeština"], "da": ["dansk"],
+    "de": ["deutsch"], "el": ["ελληνικά"], "es": ["español"], "fa": ["فارسی"], "fi": ["suomi"],
+    "fr": ["français"], "he": ["עברית"], "hi": ["हिन्दी", "हिंदी"], "hu": ["magyar"], "id": ["bahasa indonesia"],
+    "it": ["italiano"], "ja": ["日本語"], "ko": ["한국어"], "ms": ["bahasa melayu"], "nl": ["nederlands"],
+    "no": ["norsk"], "pl": ["polski"], "pt": ["português"], "ro": ["română"], "ru": ["русский"],
+    "sk": ["slovenčina"], "sv": ["svenska"], "th": ["ไทย"], "tr": ["türkçe"], "uk": ["українська"],
+    "vi": ["tiếng việt"], "zh": ["中文", "简体中文", "中文(简体)", "中文（简体）"],
+    "zh-hant": ["繁體中文", "正體中文", "中文(繁體)", "中文（繁體）"], "zh-tw": ["繁體中文", "正體中文"],
+}
 
 # check -> (dimension, type, title, expected, fix_tier, effort)
 CHECKS = {
@@ -60,6 +82,28 @@ CHECKS = {
                                 "Translations published under a different URL than the English post",
                                 "A translation's URL is the English post's URL with only its language prefix added",
                                 3, "M"),
+    "post_title_length": ("onpage", "improvable", "Post search titles too long or too short",
+                          "Every post's search title (seoTitle, else title) is 10-70 characters wide "
+                          "(CJK count double)",
+                          1, "S"),
+    "post_description_length": ("onpage", "improvable", "Post descriptions too long or too short",
+                                "Every post's description (description, else summary) is 50-170 characters wide",
+                                1, "S"),
+    "post_outside_main_sections": ("crawl", "incorrect", "Posts outside the home page's sections",
+                                   "Every post folder is under a section listed in params.mainSections", 1, "S"),
+    "translation_stale": ("intl", "improvable", "Translations older than the English title or description",
+                          "A translation is updated whenever the English title or description changes", 3, "M"),
+    "section_index_untranslated": ("intl", "incorrect", "Section pages with an English-only _index.md",
+                                   "A section with _index.md has _index.<lang>.md for every language it has posts in",
+                                   1, "S"),
+    "language_name_wrong": ("intl", "incorrect", "Language menu shows a wrong language name",
+                            "Each language's languageName is its own name in that language (日本語, not 日本)", 1, "S"),
+    "rtl_direction_missing": ("intl", "improvable", "Right-to-left languages render left to right",
+                              "Arabic, Persian, Hebrew (and other RTL languages) set languageDirection: rtl", 1, "S"),
+    "category_page_unused": ("crawl", "improvable", "Category pages no post uses",
+                             "Every content/categories/<name>/_index.md belongs to a category that posts use", 1, "S"),
+    "slash_redirect_temporary": ("crawl", "improvable", "URLs without the trailing slash forward with a 302",
+                                 "A URL without its trailing slash answers a permanent redirect (301/308)", 3, "S"),
 }
 
 
@@ -187,42 +231,233 @@ class RepoAudit:
                 tally["other"] += 1
         return {"eligible": len(pairs), "sampled": len(chosen), **tally, "failed": failed}
 
+    def file_commits(self, host: str) -> dict[str, tuple[int, str]]:
+        """content file -> (commit time, "sha date message") of its last commit: one git log pass, not one per file."""
+        out: dict[str, tuple[int, str]] = {}
+        cur = None
+        for row in self.git(host, "log", "--format=%x00%ct %h %cs %s", "--name-only", "--", "content").splitlines():
+            if row.startswith("\x00"):
+                t, _, rest = row[1:].partition(" ")
+                cur = (int(t), rest)
+            elif row and cur and row not in out:
+                out[row] = cur
+        return out
+
+    def text_changes(self, host: str) -> dict[str, int]:
+        """English post file -> commit time of the last change to its title, seoTitle, description or summary line."""
+        out: dict[str, int] = {}
+        t = None
+        for row in self.git(host, "log", "-G", _TEXT_KEYS.pattern, "--format=%x00%ct", "--name-only", "--",
+                            "content").splitlines():
+            if row.startswith("\x00"):
+                t = int(row[1:])
+            elif row.endswith("/index.md") and t and row not in out:
+                out[row] = t
+        return out
+
+    def config(self, host: str) -> dict:
+        f = self.repos[host] / "config.yml"
+        try:
+            data = yaml.load(f.read_text("utf-8", "replace"), Loader=_LOADER) if f.is_file() else None
+        except yaml.YAMLError:
+            return {}
+        return data if isinstance(data, dict) else {}
+
     def check_posts(self, host: str) -> tuple[list[dict], int]:
+        from core.audit.crawl import DESCRIPTION_LEN, TITLE_LEN, display_len
+
         repo = self.repos[host]
         issues, posts = [], 0
+        commits = self.file_commits(host)
+        cfg = self.config(host)
+        main = [str(m).strip("/") for m in ((cfg.get("params") or {}).get("mainSections") or [])]
+        langs = cfg.get("languages") if isinstance(cfg.get("languages"), dict) else {}
+        default = str(cfg.get("defaultContentLanguage") or "en")
+
+        def commit(rel):
+            return commits.get(rel, (0, None))[1] or self.last_commit(host, rel)
+
         urls: dict[str, dict[str, tuple[str, str]]] = {}  # post folder -> language ("" = English) -> (url, file)
+        section_langs: dict[str, set] = {}  # top-level and nested content dirs -> languages with posts there
+        stale_candidates = []
+        cats_used: set[str] = set()
         for f in sorted(repo.glob("content/**/index*.md")):
             if not _NAME.match(f.name):
                 continue
             posts += 1
             rel = str(f.relative_to(repo))
-            text = f.read_text("utf-8", "replace").lstrip("﻿").replace("\r\n", "\n").replace("\r", "\n")
+            text = f.read_text("utf-8", "replace").lstrip("\ufeff").replace("\r\n", "\n").replace("\r", "\n")
             m = _FM.match(text)
             if not m:
                 first = text.split("\n", 1)[0][:40]
                 issues.append({"check": "post_front_matter_broken", "file": rel, "line": 1, "link": None, "page": None,
-                               "fix": None, "note": f"no front matter block; line 1: {first!r}",
-                               "commit": self.last_commit(host, rel)})
+                               "fix": None, "note": f"no front matter block; line 1: {first!r}", "commit": commit(rel)})
                 continue
             try:
                 data = yaml.load(m.group(1), Loader=_LOADER)
             except yaml.YAMLError as e:
                 issues.append({"check": "post_front_matter_broken", "file": rel, "line": 1, "link": None, "page": None,
-                               "fix": None, "note": str(e).splitlines()[0][:100],
-                               "commit": self.last_commit(host, rel)})
+                               "fix": None, "note": str(e).splitlines()[0][:100], "commit": commit(rel)})
                 continue
-            url = data.get("url") if isinstance(data, dict) else None
-            if url and not data.get("draft") and not str(url).startswith("/"):
+            if not isinstance(data, dict) or data.get("draft"):
+                continue
+            lang = f.name[len("index."):-len(".md")] if f.name != "index.md" else ""
+            url = data.get("url")
+            if url and not str(url).startswith("/"):
                 issues.append({"check": "post_url_relative", "file": rel, "line": 1, "link": str(url), "fix": f"/{url}",
-                               "page": None, "note": "published under a doubled language",
-                               "commit": self.last_commit(host, rel)})
-            if url and not data.get("draft"):
-                lang = f.name[len("index."):-len(".md")] if f.name != "index.md" else ""
+                               "page": None, "note": "published under a doubled language", "commit": commit(rel)})
+            page = f"https://{host}{url}" if url and str(url).startswith("/") else None
+            if url:
                 urls.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (str(url).strip(), rel)
-        issues += self.check_translated_urls(host, urls)
+            for cat in data.get("categories") or []:
+                cats_used.add(str(cat).strip().lower())
+            title = str(data.get("seoTitle") or data.get("title") or "")
+            desc = str(data.get("description") or data.get("summary") or "")
+            for check, val, (lo, hi) in (("post_title_length", title, TITLE_LEN),
+                                         ("post_description_length", desc, DESCRIPTION_LEN)):
+                w = display_len(val)
+                if not lo <= w <= hi:
+                    issues.append({"check": check, "file": rel, "line": 1, "link": None, "page": page, "fix": None,
+                                   "note": f"{'too long' if w > hi else 'too short'} (width {w}): {val[:80]!r}",
+                                   "commit": commit(rel)})
+            parts = Path(rel).parts[1:-1]  # under content/, without the file
+            if main and parts and parts[0] not in main:
+                issues.append({"check": "post_outside_main_sections", "file": rel, "line": 1, "link": None,
+                               "page": page, "fix": f"move under content/{main[0]}/ (its url keeps the URL)",
+                               "note": f"in content/{parts[0]}/; mainSections: {', '.join(main)}",
+                               "commit": commit(rel)})
+            for i in range(1, len(parts)):
+                section_langs.setdefault("/".join(parts[:i]), set()).add(lang or default)
+            if lang:
+                stale_candidates.append((rel, str(f.parent.relative_to(repo) / "index.md"), page))
+        issues += self.check_translated_urls(host, urls, commit)
+        issues += self.check_stale(host, stale_candidates, commits, commit)
+        issues += self.check_sections(host, section_langs, langs, default, commit)
+        issues += self.check_categories(host, cats_used, commit)
+        issues += self.check_languages(host, langs)
+        issues += self.check_slash(host, urls)
         return issues, posts
 
-    def check_translated_urls(self, host: str, urls: dict[str, dict[str, tuple[str, str]]]) -> list[dict]:
+    def front_matter_at(self, host: str, rev: str, rel: str) -> dict:
+        text = self.git(host, "show", f"{rev}:{rel}").lstrip("\ufeff").replace("\r\n", "\n")
+        m = _FM.match(text)
+        try:
+            data = yaml.load(m.group(1), Loader=_LOADER) if m else None
+        except yaml.YAMLError:
+            return {}
+        return data if isinstance(data, dict) else {}
+
+    def check_stale(self, host, candidates, commits, commit) -> list[dict]:
+        """A translation whose English title or description was rewritten after the translation's last commit (the
+        Blog Optimization Agent rewrote blog.conholdate.com's English titles in March 2026; the translations kept the
+        old ones). The dates only pick candidates; the English values at the translation's last commit are then
+        compared with today's, and only a rewrite counts (similarity below STALE_SIMILARITY), not a trim or a
+        reformatting of the same text."""
+        from difflib import SequenceMatcher
+
+        if not candidates:
+            return []
+        changed = self.text_changes(host)
+        repo, out, now_cache, then_cache = self.repos[host], [], {}, {}
+        for rel, en, page in candidates:
+            en_t, (tr_t, tr_commit) = changed.get(en), commits.get(rel, (0, None))
+            if not (en_t and tr_t and tr_t < en_t and tr_commit):
+                continue
+            sha = tr_commit.split()[0]
+            if en not in now_cache:
+                now_cache[en] = self.front_matter_at(host, "HEAD", en) if (repo / en).is_file() else {}
+            if (sha, en) not in then_cache:
+                then_cache[(sha, en)] = self.front_matter_at(host, sha, en)
+            now, then = now_cache[en], then_cache[(sha, en)]
+            if not then:
+                continue  # the English file did not exist (or sat elsewhere) at the translation's commit
+            rewritten = []
+            for keys in (("seoTitle", "title"), ("description", "summary")):
+                old = str(next((then[k] for k in keys if then.get(k)), "") or "")
+                new = str(next((now[k] for k in keys if now.get(k)), "") or "")
+                if old and new and old != new and SequenceMatcher(None, old, new).ratio() < STALE_SIMILARITY:
+                    rewritten.append(f"{keys[0]}: {old[:50]!r} -> {new[:50]!r}")
+            if rewritten:
+                out.append({"check": "translation_stale", "file": rel, "line": 1, "link": None, "page": page,
+                            "fix": f"re-translate from {en}",
+                            "note": f"English rewritten {time.strftime('%Y-%m-%d', time.gmtime(en_t))} after the "
+                                    f"translation ({time.strftime('%Y-%m-%d', time.gmtime(tr_t))}); "
+                                    + "; ".join(rewritten),
+                            "commit": commit(rel)})
+        return out
+
+    def check_sections(self, host, section_langs, langs, default, commit) -> list[dict]:
+        """A section whose _index.md exists only in English: Hugo builds the other languages' section pages on its own,
+        and those are not linked to the English one as translations (no hreflang, no x-default; blog.conholdate.cloud
+        titled them "Conholdate.Clouds")."""
+        if any(isinstance(v, dict) and v.get("contentDir") for v in langs.values()):
+            return []  # one folder per language: translations pair by path, not by file name
+        repo, out = self.repos[host], []
+        for section, have in sorted(section_langs.items()):
+            d = repo / "content" / section
+            if section.split("/")[0] in ("categories", "tags") or not (d / "_index.md").is_file():
+                continue
+            missing = sorted(lang for lang in have if lang != default and not (d / f"_index.{lang}.md").is_file())
+            for lang in missing:
+                rel = f"content/{section}/_index.md"
+                out.append({"check": "section_index_untranslated", "file": f"content/{section}/_index.{lang}.md",
+                            "line": 0, "link": None, "page": None, "fix": f"add content/{section}/_index.{lang}.md",
+                            "note": f"{lang} posts in a section whose _index.md is English only",
+                            "commit": commit(rel)})
+        return out
+
+    def check_categories(self, host, used, commit) -> list[dict]:
+        out = []
+        for f in sorted((self.repos[host] / "content" / "categories").glob("*/_index*.md")):
+            rel = str(f.relative_to(self.repos[host]))
+            text = f.read_text("utf-8", "replace")
+            m = _FM.match(text.lstrip("\ufeff").replace("\r\n", "\n"))
+            try:
+                title = str((yaml.load(m.group(1), Loader=_LOADER) or {}).get("title") or "") if m else ""
+            except yaml.YAMLError:
+                title = ""
+            names = {f.parent.name.lower(), title.strip().lower(), f.parent.name.lower().replace("-", " ")}
+            if not names & used and not any(n.replace(" ", "-") == f.parent.name.lower() for n in used):
+                out.append({"check": "category_page_unused", "file": rel, "line": 1, "link": None,
+                            "page": f"https://{host}/categories/{f.parent.name}/", "fix": "delete the file",
+                            "note": f"no post has category {title or f.parent.name!r}", "commit": commit(rel)})
+        return out
+
+    def check_languages(self, host, langs) -> list[dict]:
+        out = []
+        for code, v in langs.items():
+            v = v if isinstance(v, dict) else {}
+            code = str(code).lower()
+            name = str(v.get("languageName") or "").strip()
+            accepted = NATIVE_NAMES.get(code)
+            if accepted and name and name.casefold() not in accepted:
+                out.append({"check": "language_name_wrong", "file": "config.yml", "line": 0, "link": code,
+                            "page": None, "fix": accepted[0][:1].upper() + accepted[0][1:],
+                            "note": f"{code}: languageName {name!r}", "commit": None})
+            if code.split("-")[0] in RTL and str(v.get("languageDirection") or "").lower() != "rtl":
+                out.append({"check": "rtl_direction_missing", "file": "config.yml", "line": 0, "link": code,
+                            "page": f"https://{host}/{code}/", "fix": "languageDirection: rtl",
+                            "note": f"{code}: languageDirection {v.get('languageDirection') or 'not set'}",
+                            "commit": None})
+        return out
+
+    def check_slash(self, host: str, urls: dict) -> list[dict]:
+        """A few URLs without their trailing slash (a post, the tags list, a language home): does the host forward
+        them with a permanent redirect? S3 website hosting answers 302 for folders."""
+        en = sorted(u for by in urls.values() if "" in by and (u := by[""][0]).startswith("/") and u != "/")
+        paths = ([en[0]] if en else []) + ["/tags/"]
+        out = []
+        for p in paths:
+            bare = "/" + p.strip("/")
+            res = self.fetcher.get(f"https://{host}{quote(bare, safe='/%-._~')}")
+            codes = res.redirect_statuses
+            if codes and codes[0] in (302, 307) and res.status == 200:
+                out.append({"check": "slash_redirect_temporary", "file": "(host)", "line": 0, "link": bare,
+                            "page": f"https://{host}{bare}", "fix": "301 to the URL with /",
+                            "note": f"{codes[0]} to {res.final_url}", "commit": None})
+        return out
+
+    def check_translated_urls(self, host: str, urls: dict[str, dict[str, tuple[str, str]]], commit=None) -> list[dict]:
         """A translation is published at the English post's URL with only its language prefix added (SK, 2026-11-11:
         every post URL is English; a translated slug or another prefix is an error). Hugo adds the language prefix
         itself to a url without a leading slash, so effective paths are compared, not the raw front matter."""
@@ -253,7 +488,7 @@ class RepoAudit:
                     note = "other"
                 issues.append({"check": "translated_url_mismatch", "file": rel, "line": 1, "link": url,
                                "fix": want + "/", "page": f"https://{host}{got}/", "note": note,
-                               "commit": self.last_commit(host, rel)})
+                               "commit": commit(rel) if commit else self.last_commit(host, rel)})
         return issues
 
     def run(self) -> dict:
@@ -277,7 +512,7 @@ class RepoAudit:
 
     def _finding(self, ids, check, host, urls, observed, locations, affected) -> dict:
         dimension, ftype, title, expected, tier, effort = CHECKS[check]
-        template = REDIRECTS if check.startswith("redirect") else "post"
+        template = (REDIRECTS if check.startswith("redirect") else TEMPLATES.get(check, "post"))
         f = make_finding(ids=ids, tenant=self.tenant.property, subdomain=host, template=template, dimension=dimension,
                          type=ftype, check=check, title=title, urls=urls, observed=observed, expected=expected,
                          affected_pages=affected, effort=effort, fix_tier=tier, fix_channel=self.fix_channels.get(host))

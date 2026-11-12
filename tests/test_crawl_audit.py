@@ -126,18 +126,20 @@ def make_inventory():
 
 def test_sample_is_stable_and_bounded():
     inv, run = make_inventory()
-    s1 = sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"}, per_template=2, other_langs=2)
-    s2 = sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"}, per_template=2, other_langs=2)
+    s1 = sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"}, full_max=0,
+                          per_template=2, other_langs=2)
+    s2 = sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"}, full_max=0,
+                          per_template=2, other_langs=2)
     assert s1 == s2
     tool = [s for s in s1 if s.section == "pdf" and s.template == "tool"]
     assert len(tool) == 4 and len([s for s in tool if s.lang is None]) == 2
     assert len({s.lang for s in tool if s.lang}) == 2 and tool[0].group_urls == 65
-    capped = sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"}, max_per_host=3)
+    capped = sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"}, full_max=0, max_per_host=3)
     assert {(s.section, s.template) for s in capped} == {("pdf", "tool"), ("pdf", "family-hub"), ("omr", "tool")}
-    more = sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"}, other_langs=0,
+    more = sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"}, full_max=0, other_langs=0,
                             per_template_by_host={"app.example.com": 10})
     assert len([s for s in more if (s.section, s.template) == ("pdf", "tool")]) == 10
-    only = sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"}, sections=["omr"])
+    only = sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"}, full_max=0, sections=["omr"])
     assert [s.url for s in only] == ["https://app.example.com/omr/x"]
     assert latest_inventory_run(inv.db) == run
 
@@ -161,7 +163,7 @@ def make_tenant(extra_urls=()):
         "property": "example.com", "excluded_host_patterns": ["*-qa.*"],
         "hosts": [{"host": "www.example.com"}, {"host": "app.example.com", "fix_channel": "git-pr"}],
         "discovery": {"section_sitemaps": {"app.example.com": {"sections": ["pdf", "omr"], "paths": []}}},
-        "audit": {"extra_urls": list(extra_urls)},
+        "audit": {"extra_urls": list(extra_urls), "full_crawl_max_urls": 0},
     }
     return Tenant(property="example.com", gsc_properties=[], ga4_property_id=None, hosts=raw["hosts"],
                   excluded_host_patterns=raw["excluded_host_patterns"], raw=raw)
@@ -351,3 +353,12 @@ def test_social_tags_after_the_div_are_their_own_finding():
     only_ld = parse_page("<html><head><title>t</title></head><body><script type='application/ld+json'>{}</script>"
                          "</body></html>", url)
     assert only_ld.body_social_tags == []
+
+
+def test_small_host_is_crawled_in_full():
+    inv, run = make_inventory()
+    total = inv.db.execute("SELECT COUNT(*) FROM urls WHERE run_id = ? AND host = ?",
+                           (run, "app.example.com")).fetchone()[0]
+    full = sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"})
+    assert len(full) == total and len({s.url for s in full}) == total
+    assert len(sample_inventory(inv.db, run, ["app.example.com"], {"app.example.com"}, full_max=0)) < total

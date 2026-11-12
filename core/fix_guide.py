@@ -542,6 +542,60 @@ _ROWS = [
      "Set the translation's url to /<lang>/<English url>/ and redirect the old URL to it (the one kind of new "
      "redirect that is wanted). The translation agent should copy the English url and only add the prefix.",
      "The translation is live at /<lang>/<English url>/; the old URL redirects; next repo check has no item."),
+    ("post_title_length", "Titles & descriptions", "Post title out of range (repo)",
+     "A post file's search title (seoTitle, else title) is under 10 or over 70 characters wide; counted on every post "
+     "file, not a sample of pages.",
+     "Google cuts long titles in results and may rewrite them; short ones say too little.",
+     "Rewrite the value in the post's front matter (scripts/ops/front_matter_set.py lists and sets them).",
+     "front_matter_set.py --scan shows 0; next repo check has no item."),
+    ("post_description_length", "Titles & descriptions", "Post description out of range (repo)",
+     "A post file's description (description, else summary) is under 50 or over 170 characters wide.",
+     "Long descriptions are cut in results; short ones are often replaced by text Google picks itself.",
+     "Rewrite the value in the post's front matter.",
+     "front_matter_set.py --scan shows 0; next repo check has no item."),
+    ("post_outside_main_sections", "Site structure", "Post outside the home page's sections",
+     "The post folder is not under a section listed in params.mainSections, so the theme never lists it on the home "
+     "page or its pagination.",
+     "The post gets no internal links from the home page; crawlers and readers find it only through the sitemap or "
+     "a tag.",
+     "Move the post folder under a listed section (its url front matter keeps the URL), or add the section.",
+     "The home page lists the post; next repo check has no item."),
+    ("translation_stale", "Links and translations", "Stale translation",
+     "The English title or description changed after the translation's last commit, so the translation still shows "
+     "the old wording.",
+     "Language versions describe different things; search results in that language show an outdated title.",
+     "Re-translate the title and description (and the body if it changed) from the English file.",
+     "The translation's commit is newer than the English change; next repo check has no item."),
+    ("section_index_untranslated", "Links and translations", "Section page in English only",
+     "A section has _index.md but not _index.<lang>.md for a language that has posts there; Hugo builds that "
+     "language's section page itself, unlinked to the English one, with an auto-made title.",
+     "Those section pages have no hreflang pairs and no x-default, and their titles can be wrong "
+     "(\"Conholdate.Clouds\").",
+     "Add _index.<lang>.md with a translated title for each language.",
+     "The section page carries hreflang for every language; next repo check has no item."),
+    ("language_name_wrong", "Links and translations", "Wrong language name in the menu",
+     "config.yml gives a language a languageName that is not its own name (日本 \"Japan\", 한국인 \"a Korean person\", "
+     "an English name).",
+     "Readers looking for their language in the switcher do not find it; it looks machine-made.",
+     "Set languageName to the language's own name (日本語, 한국어, 繁體中文, Bahasa Indonesia).",
+     "The switcher shows the native names; next repo check has no item."),
+    ("rtl_direction_missing", "Links and translations", "Right-to-left language rendered left to right",
+     "Arabic, Persian, Hebrew or another RTL language has no languageDirection: rtl, so pages say dir=auto or ltr.",
+     "Text, lists and code mix directions; pages are hard to read for those readers.",
+     "Set languageDirection: rtl for the language in config.yml; check the theme's RTL styles on one page.",
+     "<html dir=rtl> on those pages; next repo check has no item."),
+    ("category_page_unused", "Site structure", "Unused category page",
+     "content/categories/<name>/_index.md exists for a category no post uses.",
+     "An empty listing page in the site (and often the sitemap).",
+     "Delete the file, or use the category.",
+     "The category URL is gone from the build; next repo check has no item."),
+    ("slash_redirect_temporary", "Crawl & indexing", "No-slash URL forwards with 302",
+     "A URL without its trailing slash answers a temporary redirect (302/307) to the slash form; S3 website hosting "
+     "does this for folders.",
+     "Small: links without the slash pass through a redirect marked temporary; Google usually settles on the target, "
+     "but a permanent redirect states it.",
+     "Answer 301 at the CDN (e.g. a CloudFront function that adds the slash).",
+     "curl -I on a URL without the slash shows 301; next repo check has no item."),
     ("tag_pages_thin", "Site structure", "Thin tag pages",
      "Most tags hold one post, and every tag is a page in every language, so tag pages outnumber posts many times "
      "over while earning almost no search clicks.",

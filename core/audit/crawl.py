@@ -18,7 +18,7 @@ from collections import defaultdict, deque
 from urllib.parse import urlsplit, urlunsplit
 
 from core.audit.page import parse_page
-from core.audit.sample import SampledUrl, group_langs, sample_inventory
+from core.audit.sample import FULL_MAX, SampledUrl, group_langs, sample_inventory
 from core.discovery.classify import LANG_CODES, classify_url, compile_templates
 from core.findings import FindingIds, make_finding
 
@@ -310,7 +310,8 @@ class CrawlAudit:
     def targets(self) -> list[SampledUrl]:
         sample = sample_inventory(self.inventory_db, self.inventory_run, self.hosts, self.sectioned, self.sections,
                                   self.per_template, self.other_langs, self.audit_cfg.get("default_lang", "en"),
-                                  self.max_per_host, self.audit_cfg.get("per_template_by_host"))
+                                  self.max_per_host, self.audit_cfg.get("per_template_by_host"),
+                                  self.audit_cfg.get("full_crawl_max_urls", FULL_MAX))
         seen = {s.url for s in sample}
         extra = [f"https://{h}/" for h in self.hosts]  # homepages always, also with a section filter
         for host, paths in (self.audit_cfg.get("section_urls") or {}).items():

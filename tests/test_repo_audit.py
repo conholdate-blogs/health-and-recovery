@@ -14,6 +14,8 @@ from core.items import counts, in_repo, repo_items, update  # noqa: E402
 from core.tenant import Tenant  # noqa: E402
 
 HOST = "blog.example.com"
+DESC = ("seoTitle: A post title that is long enough\n"
+        "description: A description that is long enough for the search result.\n")
 GOOD = '{\n  "/old/": "https://blog.example.com/new/",\n  "/gone/": "https://blog.example.com/new/"\n}\n'
 BAD = ('{\n  "/old/": "https://blog.example.com/new/",\n  "/gone/": "https://blog.example.com/new/",\n'
        '  "/self/": "https://blog.example.com/self/",\n  "/plain/": "http://blog.example.com/new/",\n'
@@ -32,11 +34,12 @@ def make_repo(tmp: Path, redirects: str = BAD) -> Path:
     post.mkdir(parents=True)
     git(repo.parent, "init", "-q", str(repo))
     (repo / "Redirects.json").write_text(GOOD, encoding="utf-8")
-    (post / "index.md").write_text("---\ntitle: x\nurl: /pdf/a/\n---\nText\n", encoding="utf-8")
-    (post / "index.th.md").write_text("---\ntitle: x\nurl: th/pdf/a/\n---\nText\n", encoding="utf-8")
-    (post / "index.ja.md").write_text("```\n---\ntitle: x\nurl: /ja/pdf/a/\n---\nText\n```\n", encoding="utf-8")
+    (post / "index.md").write_text("---\ntitle: x\n" + DESC + "url: /pdf/a/\n---\nText\n", encoding="utf-8")
+    (post / "index.th.md").write_text("---\ntitle: x\n" + DESC + "url: th/pdf/a/\n---\nText\n", encoding="utf-8")
+    (post / "index.ja.md").write_text("```\n---\ntitle: x\n" + DESC + "url: /ja/pdf/a/\n---\nText\n```\n",
+                                      encoding="utf-8")
     (post / "index.de.md").write_text('---\ntitle: "x\nurl: /de/pdf/a/\n---\nText\n', encoding="utf-8")
-    (post / "index.fr.md").write_bytes("﻿---\ntitle: x\nurl: /fr/pdf/a/\n---\nText\n".encode())
+    (post / "index.fr.md").write_bytes(("﻿---\ntitle: x\n" + DESC + "url: /fr/pdf/a/\n---\nText\n").encode())
     git(repo, "add", "-A")
     git(repo, "commit", "-q", "-m", "first, valid")
     (repo / "Redirects.json").write_text(redirects, encoding="utf-8")
@@ -161,3 +164,56 @@ def test_translated_url_mismatch(tmp_path):
                    "zh-hant": ("language prefix zh-tw on a zh-hant post", "/zh-hant/pdf/b/"),
                    "fa": ("language prefix fr on a fa post", "/fa/pdf/b/"),
                    "id": ("same URL as the English post (no language prefix)", "/id/pdf/b/")}
+
+
+def test_site_checks_found_by_hand_on_a_small_blog(tmp_path):
+    """The blog.conholdate.cloud session (11 Nov) found these by hand; the repo check must find them now."""
+    repo = tmp_path / "repo"
+    git(tmp_path, "init", "-q", str(repo))
+    (repo / "config.yml").write_text(
+        "params:\n  mainSections: [Blog]\nlanguages:\n  en: {languageName: English}\n"
+        "  ja: {languageName: 日本}\n  ar: {languageName: عربي}\n"
+        "  ko: {languageName: 한국어, languageDirection: ltr}\n",
+        encoding="utf-8")
+    ok = "seoTitle: A post title that is long enough\ndescription: " + "d" * 60 + "\n"
+    a = repo / "content/Blog/total/a"
+    a.mkdir(parents=True)
+    (repo / "content/Blog/_index.md").write_text("---\ntitle: Blog\n---\n", encoding="utf-8")
+    (a / "index.md").write_text("---\n" + ok + "url: /total/a/\ncategories: [Family]\n---\n", encoding="utf-8")
+    (a / "index.ja.md").write_text("---\n" + ok + "url: /ja/total/a/\n---\n", encoding="utf-8")
+    b = repo / "content/Other/b"
+    b.mkdir(parents=True)
+    (b / "index.md").write_text("---\nseoTitle: " + "t" * 80 + "\ndescription: short\nurl: /b/\n---\n",
+                                encoding="utf-8")
+    cat = repo / "content/categories/old-family"
+    cat.mkdir(parents=True)
+    (cat / "_index.md").write_text("---\ntitle: Old Family\n---\n", encoding="utf-8")
+    git(repo, "add", "-A")
+    subprocess.run(["git", "-C", str(repo), "-c", "user.name=t", "-c", "user.email=t@example.com", "commit", "-qm",
+                    "first"], check=True, capture_output=True,
+                   env={"GIT_COMMITTER_DATE": "2026-01-01T00:00:00", "PATH": "/usr/bin:/bin:/usr/local/bin"})
+    (a / "index.md").write_text("---\nseoTitle: A new post title that is long enough\ndescription: " + "e" * 60 +
+                                "\nurl: /total/a/\ncategories: [Family]\n---\n", encoding="utf-8")
+    subprocess.run(["git", "-C", str(repo), "-c", "user.name=t", "-c", "user.email=t@example.com", "commit", "-qam",
+                    "rewrite English title"], check=True, capture_output=True,
+                   env={"GIT_COMMITTER_DATE": "2026-07-01T00:00:00", "PATH": "/usr/bin:/bin:/usr/local/bin"})
+
+    class Slash(FakeFetcher):
+        def get(self, url, headers=None):
+            self.requests += 1
+            return FetchResult(url, 200, final_url=url + "/", redirects=[url], redirect_statuses=[302])
+
+    report = run(repo, Slash())
+    by = {}
+    for i in report["hosts"][HOST]["issues"]:
+        by.setdefault(i["check"], []).append(i)
+    assert {i["file"] for i in by["post_title_length"]} == {"content/Other/b/index.md"}
+    assert {i["file"] for i in by["post_description_length"]} == {"content/Other/b/index.md"}
+    assert [i["file"] for i in by["post_outside_main_sections"]] == ["content/Other/b/index.md"]
+    assert [i["file"] for i in by["translation_stale"]] == ["content/Blog/total/a/index.ja.md"]
+    assert [i["file"] for i in by["section_index_untranslated"]] == ["content/Blog/_index.ja.md"]
+    assert [i["link"] for i in by["language_name_wrong"]] == ["ja"]  # عربي is accepted
+    assert [i["link"] for i in by["rtl_direction_missing"]] == ["ar"]
+    assert [i["file"] for i in by["category_page_unused"]] == ["content/categories/old-family/_index.md"]
+    assert {i["link"] for i in by["slash_redirect_temporary"]} == {"/b", "/tags"}
+    assert {f["check"] for f in report["findings"]} >= set(by)
