@@ -5,7 +5,9 @@
   "issue": "Redirects.json held 6 entries for {{ revealButtonHref }} URLs (GitHub's unfilled gist placeholder, harvested by crawlers): 3 raw keys could never match, 3 sent junk URLs to the home page",
   "check": "redirect_key_malformed",
   "repo": "conholdate/conholdate-blog",
-  "commits": ["9cc26f48a45dfd256e84b049a3c9827e6ecd9573"],
+  "commits": [
+   "9cc26f48a45dfd256e84b049a3c9827e6ecd9573"
+  ],
   "fixed": "2026-11-11",
   "verified": "2026-11-11",
   "result": "All 6 removed (1465 -> 1459 entries); after the deploy the placeholder URLs answer 404 and other redirects still answer 301"
@@ -16,9 +18,39 @@
   "issue": "Gist embeds (2,963 in 1,314 post files) left GitHub's {{ revealButtonHref }} placeholder link in every rendered page, which crawlers request under the post URL (404)",
   "check": "redirect_key_malformed",
   "repo": "conholdate/conholdate-blog",
-  "commits": ["065759ab7dc25ffa25961cacbff0b0b9887c096c"],
+  "commits": [
+   "065759ab7dc25ffa25961cacbff0b0b9887c096c"
+  ],
   "fixed": "2026-11-11",
   "verified": "2026-11-11",
   "result": "Live after the deploy: a post with 4 gists renders all 4 and no placeholder link (headless Chrome); same fix as blog.groupdocs.com"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-11",
+  "check": "redirect_key_malformed",
+  "commits": [
+   "2993d49c0346a7180e394b181664d663fae722ff",
+   "940695cf8d93ea3d6a8c69000cc5e9844f7277f6"
+  ],
+  "issue": "Redirects.json held 64 junk entries: 15 non-English slugs, double slashes and a # fragment, 6 upper-case copies of one URL (bot noise), and 43 redirects to the home page (other sites' shop pages, scanner URLs such as /wp-admin, *.iso, *.exe, removed WordPress posts), which search engines treat as soft 404s",
+  "result": "62 entries removed (2 restored as real old URLs in e0e0fe53); live after the deploy: all 62 answer 404 except /page/18/ and /page/19/, which are real listing pages now served (200); /feed, /feed/, /feed.json 301 to /index.xml"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-11",
+  "check": "translated_url_mismatch",
+  "commits": [
+   "24babc50ad758278fce022e91cc66828eedf175c",
+   "e0e0fe5350ca5200700d9cefd0f0e97c949e2119"
+  ],
+  "issue": "15 French posts were published under their own French slug instead of /fr/<English url>/",
+  "result": "Live after the deploy: 15 French posts answer 200 at /fr/<English url>/ (French sitemap lists only the new URLs); their 15 old French-slug URLs and 12 old dated French URLs 301 to the new ones; Redirects.md documents the rules (1459 -> 1412 entries)"
  }
 ]

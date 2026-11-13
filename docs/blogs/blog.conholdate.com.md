@@ -62,6 +62,16 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | B1 + B2 | Prepare and test both commits, **show first**; push decided after review |
 | B5 | Show the link fixes, fix together; **change the translation agent** where it caused them so it does not repeat; find an efficient approval flow (one review table per batch) |
 
+## B1 + B2 verified live (13 Nov, after SK's deploy)
+
+- Pushed by the agent on SK's "push" (e0e0fe53 on `main`), deployed by SK (Deploy Production - AWS).
+- Live: 15 French posts 200 at `/fr/<English url>/` (French sitemap lists only the new URLs); 15 old French-slug
+  keys + 12 retargeted keys (10 dated, 2 restored dated) 301 to the new URLs; `/feed/` → `/index.xml`; 60 of 62
+  removed keys 404. The other 2, `/page/18/` and `/page/19/`, are real Hugo listing pages that the old redirects
+  hid; they now answer 200 (`index, follow`), and B4 makes page 2+ `noindex, follow`.
+- Check script: urllib needs certifi's CA bundle on this Mac (SSL verify error otherwise); curl works.
+- 2 agent-fixes rows (redirect_key_malformed, translated_url_mismatch), verified 13 Nov.
+
 ## B1 + B2 prepared (13 Nov; local branch `hra/b1-b2` in conholdate-blog, NOT pushed, waiting for SK's review)
 
 | Commit | What | Redirects.json |

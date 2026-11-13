@@ -476,10 +476,11 @@ def run_changes_note(runs: str, before: str | None) -> list[str]:
 
 
 def snapshot_labels(history_path: Path) -> dict[str, str]:
-    """runs label -> the newest archive snapshot label with those runs (it says why the score moved)."""
+    """runs label -> the newest archive snapshot label with those runs (it says why the score moved). A downloaded
+    copy of the live page ("downloaded": true) only archives what was live, so it never names a run."""
     index = history_path.parent / "archive" / "index.json"
     entries = json.loads(index.read_text(encoding="utf-8")) if index.is_file() else []
-    return {e["runs"]: e["label"] for e in entries if e.get("runs") and e.get("label")}
+    return {e["runs"]: e["label"] for e in entries if e.get("runs") and e.get("label") and not e.get("downloaded")}
 
 
 def host_history(host: str, history_path: Path) -> list[dict]:
@@ -516,15 +517,19 @@ def issue_log_summary(tenant: str, host: str, history_path: Path) -> dict:
     n = {s: sum(r["status"] == s for r in rows) for s in site_pages.STATUS_ORDER}
     history = json.loads(history_path.read_text(encoding="utf-8")) if history_path.is_file() else []
     days = sorted({h["date"][:10] for h in history if h.get("date") and host in (h.get("hosts") or {})})
-    health = {h["date"][:10]: h["hosts"][host]["health"] for h in history  # the day's last recorded score
-              if h.get("date") and host in (h.get("hosts") or {})}
+    steps: dict[str, list[int]] = {}  # every score recorded on a day, in order (SK, 2026-11-13: show same-day jumps)
+    for h in history:
+        if h.get("date") and host in (h.get("hosts") or {}):
+            steps.setdefault(h["date"][:10], []).append(h["hosts"][host]["health"])
+    health = {d: s[-1] for d, s in steps.items()}  # the day's last recorded score
     fixed_states = ("✓ Verified live", "Pushed, waiting for deploy")
     series = []
     for d in days:
         found = [r for r in rows if (r["found"] or "")[:10] <= d]
         closed = lambda r: not r["open"] and (r["fixed"] or "")[:10] and (r["fixed"] or "")[:10] <= d  # noqa: E731
+        day_steps = [v for i, v in enumerate(steps.get(d, [])) if i == 0 or v != steps[d][i - 1]]
         series.append({"date": d, "open": sum(1 for r in found if not closed(r)), "health": health.get(d),
-                       "total": len(found),
+                       **({"health_steps": day_steps} if len(day_steps) > 1 else {}), "total": len(found),
                        "fixed": sum(1 for r in found if r["status"] in fixed_states and closed(r))})
     return {"total": len(rows), "open": n["Open"], "verified": n["✓ Verified live"],
             "pushed": n["Pushed, waiting for deploy"], "resolved": n["Resolved"],

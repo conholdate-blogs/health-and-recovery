@@ -57,12 +57,19 @@
     "file": "2026-11-13.html",
     "date": "2026-11-13",
     "label": "Live page before the full scan 13 Nov (12 Nov layout)",
-    "runs": "discovery run 3, crawl audit run 16, speed audit run 18, AI audit run 17, text check run 19, link check run 20, repo file check run 21"
+    "runs": "discovery run 3, crawl audit run 16, speed audit run 18, AI audit run 17, text check run 19, link check run 20, repo file check run 21",
+    "downloaded": true
   },
   {
     "file": "2026-11-13-2.html",
     "date": "2026-11-13 (2)",
     "label": "Full scan 13 Nov: untranslated text, lengths, stale translations, language settings",
     "runs": "discovery run 4, crawl audit run 22, speed audit run 24, AI audit run 23, text check run 25, link check run 26, repo file check run 27"
+  },
+  {
+    "file": "2026-11-13-3.html",
+    "date": "2026-11-13 (3)",
+    "label": "B1+B2 verified live: junk redirects out, French URLs fixed (agent fixes)",
+    "runs": "discovery run 5, crawl audit run 28, speed audit run 30, AI audit run 29, text check run 31, link check run 32, repo file check run 33"
   }
 ]
