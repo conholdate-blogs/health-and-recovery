@@ -30,6 +30,7 @@ languages: [en, ar, cs, de, es, fa, fr, he, id, it, ja, ko, nl, pl, pt, ru, sv, 
 translation_languages: [ar, cs, de, es, fa, fr, he, id, it, ja, ko, nl, pl, pt, ru, sv, th, tr, uk, vi, zh, zh-hant]
 
 audit:
+  # no extra_urls for listing pages: 5 posts fit on one page (/page/2/ is a 404), 13 Nov 2026
   default_lang: en
   links:                     # link audit (scripts/audit_links.py): commits that count as translation work
     translation_commits: '^(Translate articles for|Daily Blogs Translation)'   # SK's translation agent

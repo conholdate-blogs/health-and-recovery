@@ -32,6 +32,9 @@ languages: [en, ar, cs, de, es, fa, fr, he, id, it, ja, ko, nl, pl, pt, ru, th, 
 translation_languages: [ar, cs, de, es, fa, fr, he, id, it, ja, ko, nl, pl, pt, ru, th, tr, uk, vi, zh, zh-hant]
 
 audit:
+  extra_urls:                # listing pages 2+ are in no sitemap, so the crawl never sampled them (13 Nov 2026, AUD-3)
+    - https://blog.groupdocs.com/page/2/
+    - https://blog.groupdocs.com/fr/page/2/
   default_lang: en
   per_template_by_host:      # same sample as the .cloud blogs (SK's option A, 2026-10-22); 12.3k sitemap URLs
     blog.groupdocs.com: 20

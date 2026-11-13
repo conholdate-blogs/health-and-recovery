@@ -174,7 +174,9 @@ def page_issues(rec: dict, facts, localized: bool) -> list[tuple[str, str]]:
         issues.append(("head_closed_early", "in <body>: " + ", ".join(facts.body_head_tags + facts.body_social_tags)))
     elif facts.body_social_tags:  # same cause, later in <head>: search tags fine, link previews and template at risk
         issues.append(("social_tags_in_body", "in <body>: " + ", ".join(facts.body_social_tags)))
-    if head and facts.noindex:
+    # as the check says: only a page a sitemap lists, or a homepage, must be indexable (13 Nov: listing pages 2+,
+    # tag and utility pages are noindex on purpose and are sampled through extra_urls or rechecks)
+    if head and facts.noindex and (listed or rec["source"] == "homepage"):
         issues.append(("noindex", f"robots: {'; '.join(facts.robots)}"))
     here = norm_url(rec["final_url"] or rec["url"])
     canon = list(dict.fromkeys(norm_url(c) for c in facts.canonicals))

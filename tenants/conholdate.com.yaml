@@ -30,6 +30,9 @@ languages: [en, ja, ko, es, de, ru, fr, zh, it, pt, nl, vi, th, id, ar, fa, tr, 
 translation_languages: [ar, de, es, fa, fr, id, it, ja, ko, nl, pl, pt, ru, th, tr, vi, zh]
 
 audit:
+  extra_urls:                # listing pages 2+ are in no sitemap, so the crawl never sampled them (13 Nov 2026, AUD-3)
+    - https://blog.conholdate.com/page/2/
+    - https://blog.conholdate.com/fr/page/2/
   default_lang: en
   per_template_by_host:      # same sample as the .cloud blogs (SK's option A, 2026-10-22); 53.5k sitemap URLs
     blog.conholdate.com: 20

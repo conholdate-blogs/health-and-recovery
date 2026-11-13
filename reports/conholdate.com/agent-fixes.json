@@ -52,5 +52,57 @@
   ],
   "issue": "15 French posts were published under their own French slug instead of /fr/<English url>/",
   "result": "Live after the deploy: 15 French posts answer 200 at /fr/<English url>/ (French sitemap lists only the new URLs); their 15 old French-slug URLs and 12 old dated French URLs 301 to the new ones; Redirects.md documents the rules (1459 -> 1412 entries)"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-11",
+  "check": "social_tags_in_body",
+  "commits": [
+   "8a19c16412f3fc73661173283a61d0a9c0a8fc19"
+  ],
+  "issue": "On every translated page (56,721) the language switcher (a div) ended <head> early, so Open Graph, Twitter cards and JSON-LD landed in <body>",
+  "result": "Live after the deploy: German and English posts, home, tag, search and listing pages have Open Graph, Twitter and JSON-LD in <head>, no SEO tag in <body>"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-03",
+  "check": "hreflang_no_xdefault",
+  "commits": [
+   "b0f37c459d40b59c565738a4f97785d37a6d71f0"
+  ],
+  "issue": "Translated pages and sitemaps named every language but no x-default fallback",
+  "result": "Live: x-default (the English page) on translated pages and in the sitemaps (562 entries in the English sitemap)"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-11",
+  "check": "sitemap_lists_tag_pages",
+  "commits": [
+   "70c32c62de2db459a24376bd538f43cf58df8f58"
+  ],
+  "issue": "43,602 tag pages (81% of sitemap URLs; 93% of tags have one post) were in the sitemaps and indexable, while robots.txt blocked the English ones; /search/ and /archives/ were indexable",
+  "result": "Live: tag pages, /search/ and /archives/ answer noindex, follow; sitemaps list posts only (English 563 URLs, 0 tag URLs); robots.txt no longer blocks /tag/ so search engines can read the noindex"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-07",
+  "check": "pagination_canonical_home",
+  "commits": [
+   "0cb83582ad6130d3b00862e06f8ddad5a21fa390"
+  ],
+  "issue": "Listing pages 2+ (home, section) answered index, follow with a canonical to page 1",
+  "result": "Live: /page/2/, /fr/page/2/, /conholdate.total/page/3/ answer noindex, follow with a canonical to themselves"
  }
 ]

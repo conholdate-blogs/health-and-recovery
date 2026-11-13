@@ -31,6 +31,9 @@ languages: [en, ja, ko, es, de, ru, fr, zh, it, pt, ar, vi, zh-hant, tr, id, th,
 translation_languages: [ar, cs, de, es, fa, fr, he, id, it, ja, ko, pl, pt, ru, sv, th, tr, uk, vi, zh, zh-hant]
 
 audit:
+  extra_urls:                # listing pages 2+ are in no sitemap, so the crawl never sampled them (13 Nov 2026, AUD-3)
+    - https://blog.aspose.com/p/2/
+    - https://blog.aspose.com/de/p/2/
   default_lang: en
   per_template_by_host:      # same sample as the .cloud blogs (SK's option A, 2026-10-22); 57.5k sitemap URLs
     blog.aspose.com: 20
