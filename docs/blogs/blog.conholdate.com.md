@@ -62,6 +62,28 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | B1 + B2 | Prepare and test both commits, **show first**; push decided after review |
 | B5 | Show the link fixes, fix together; **change the translation agent** where it caused them so it does not repeat; find an efficient approval flow (one review table per batch) |
 
+## B1 + B2 prepared (13 Nov; local branch `hra/b1-b2` in conholdate-blog, NOT pushed, waiting for SK's review)
+
+| Commit | What | Redirects.json |
+|---|---|---|
+| 2993d49c | B1a: 15 junk keys our check flagged (non-English slug, double slash, # fragment) | 1459 → 1444 |
+| 940695cf | B1b (SK, 13 Nov, after selecting lines in the file): 6 upper-case copies of one URL + 43 keys that send to the home page (other sites' shop pages, scanners `/wp-admin`, `/login`, `*.iso`, `*.exe`, `/notify-one_deny?…`, removed 2019 WordPress posts, `/page/18/`); `/feed`, `/feed/`, `/feed.json` → `/index.xml` (live RSS, 200) | 1444 → 1395 |
+| 24babc50 | B2: `url:` of 15 French files → `/fr/<English url>/`; 10 dated `/fr/YYYY/MM/DD/` keys retargeted to the new URLs (their old targets would 404). No redirects for the old French-slug URLs (SK) | 1395 |
+
+Tests: commit check with Hugo 0.101 PASSED (only the known OG/Twitter-in-body warning, B3); full builds before/after
+(100,533 pages): only the 15 French post folders moved (73 files), sitemaps change only in `/fr/total/` lines (the
+French alternate), canonical and hreflang of the moved pages and the German alternate point at the new URLs. Kept:
+`/about` → `about.conholdate.com` (another site, a real redirect). After deploy: new URLs 200, old French URLs 404,
+removed keys 404, `/feed/` → `/index.xml`.
+
+Our audit (9c5565a): junk rule RED-1 widened (query string, upper-case copy, redirect to the blog's own home page);
+branch has 0 junk. blog.conholdate.cloud's `/feed/` → home is now flagged too (retarget to `/index.xml`, small fix).
+
+**B5 attribution (SK, 13 Nov):** of 77 broken links in translations, 34 already exist in the English original
+(inherited; fix English first), 43 are translation-only; 51 damaged links are translation-only. Many translation-only
+ones come from a 2024 bulk commit "Internal links prefixes updated", not the translation agent. Wrong-language links
+now count 731 (links; 374 on 11 Nov was pages; check in B5).
+
 ## Waiting for SK (paused 11 Nov; answered 13 Nov, see above)
 
 | # | Decision | Recommendation given |
