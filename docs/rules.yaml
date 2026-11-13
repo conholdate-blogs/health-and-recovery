@@ -30,8 +30,8 @@ rules:
     checks: [slash_redirect_temporary]
     status: active
   - id: RED-1
-    rule: "No redirect entries for junk URLs: gist placeholders, a host in the key, # fragments, double slashes, non-English slugs."
-    why: Such keys never match a real request or are not real blog URLs; they only grow the file.
+    rule: "No redirect entries for junk URLs: gist placeholders, a host in the key, # fragments, query strings, double slashes, non-English slugs, upper-case copies of a target; and no redirect to the blog's home page (13 Nov 2026)."
+    why: Such keys never match a real request or are not real blog URLs; they only grow the file. A redirect to the home page is a soft 404 for search engines; a gone URL should answer 404.
     set_by: Shoaib Khan
     date: 2026-11-11
     checks: [redirect_key_malformed]

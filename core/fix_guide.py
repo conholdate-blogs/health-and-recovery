@@ -504,8 +504,9 @@ _ROWS = [
      "Sampled sources answer with a redirect; next repo check has no finding."),
     ("redirect_key_malformed", "Repo files", "Junk redirect entry",
      "A source that is not a real blog URL: GitHub's {{ revealButtonHref }} gist placeholder, a host in the key, a # "
-     "fragment, a double slash or a non-English slug. Real post URLs are English; a translation only adds its "
-     "language prefix.",
+     "fragment, a query string, a double slash or a non-English slug, an upper-case copy of its own target, or any "
+     "entry that sends a URL to the blog's home page (search engines treat that as a soft 404). Real post URLs are "
+     "English; a translation only adds its language prefix.",
      "Junk entries do nothing useful (several can never match) and hide the real problem: a bad link somewhere "
      "keeps producing these URLs. A 404 is the right answer for a URL that never existed.",
      "Remove the entry and fix what produced the URL: for the gist placeholder remove `.gist template` from the "

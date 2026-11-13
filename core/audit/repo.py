@@ -73,7 +73,8 @@ CHECKS = {
     # no redirect for junk URLs; every post URL is English, translations only add a language prefix).
     "redirect_key_malformed": ("crawl", "improvable", "Junk entries in Redirects.json",
                                "Every source is a real blog URL: an English path starting with /, without a host, "
-                               "# fragment, {{ placeholder }}, double slash or non-English slug", 1, "S"),
+                               "# fragment, query string, {{ placeholder }}, double slash or non-English slug, "
+                               "not a redirect to the home page or an upper-case copy of its target", 1, "S"),
     "redirect_self_loop": ("crawl", "incorrect", "Redirects that point at themselves",
                            "A redirect's target differs from its source", 1, "S"),
     "redirect_target_bad": ("crawl", "improvable", "Redirect targets that are empty or not https",
@@ -125,22 +126,33 @@ CHECKS = {
 }
 
 
-def key_problem(key: str) -> str | None:
+def key_problem(key: str, target: str | None = None, host: str | None = None) -> str | None:
     """Why a redirect source is a junk entry, or None (SK, 2026-11-11: junk URLs get no redirect).
 
-    Some can never match a request (placeholder, host, fragment); the others may still redirect (a double slash
-    answers 301 on every blog; non-ASCII slugs do on some), but no real blog URL looks like that. Junk entries are
-    left out of the live redirect sample, so redirect_not_working measures real redirects only."""
+    Some can never match a request (placeholder, host, fragment, query string); the others may still redirect (a
+    double slash answers 301 on every blog; non-ASCII slugs do on some), but no real blog URL looks like that. Junk
+    entries are left out of the live redirect sample, so redirect_not_working measures real redirects only.
+    With the target (SK, 2026-11-13, blog.conholdate.com): a redirect to the home page is a soft 404 for search
+    engines (scanner URLs, other sites' pages, removed posts), and an upper-case copy of its own target is bot noise."""
     if "{{" in unquote(key) or "revealbuttonhref" in key.lower():  # raw or percent-encoded
         return "gist placeholder {{ revealButtonHref }}"
     if not key.startswith("/"):
         return "host or scheme in the key"
     if "#" in key or "%23" in key.lower():
         return "fragment in the key (#, never sent by browsers)"  # e.g. a copied #:~:text= scroll-to-text link
+    if "?" in key:
+        return "query string in the key (redirects match the path only)"
     if "//" in key:
         return "double slash"
     if _NON_ASCII.search(unquote(key)):
         return "non-English slug"
+    if target:
+        parts = urlsplit(target)
+        path, same_site = parts.path, not parts.netloc or not host or parts.netloc == host
+        if key.strip("/") and not path.strip("/") and same_site:  # another site's home page is a real redirect
+            return "redirects to the home page (soft 404)"
+        if key != key.lower() and unquote(key).lower().rstrip("/") == unquote(path).lower().rstrip("/"):
+            return "upper-case copy of its target"
     return None
 
 
@@ -223,14 +235,14 @@ class RepoAudit:
             info["broke_it"] = self.broke_it(host)
             add("redirect_file_invalid", 0, None, f"{error}; since {info['broke_it'] or 'unknown'}")
         for line, src, target in pairs:
-            problem = key_problem(src)
+            problem = key_problem(src, target, host)
             if problem:
                 add("redirect_key_malformed", line, src, problem, target)
             if not target.strip() or not target.startswith("https://"):
                 add("redirect_target_bad", line, src, f"target: {target or 'empty'}")
             elif src.startswith("/") and urlsplit(target).netloc == host and urlsplit(target).path == src:
                 add("redirect_self_loop", line, src, "target is the source")
-        info["live"] = self.live_test(host, [(s, t) for _, s, t in pairs if not key_problem(s)])
+        info["live"] = self.live_test(host, [(s, t) for _, s, t in pairs if not key_problem(s, t, host)])
         return issues, info
 
     def live_test(self, host: str, pairs: list[tuple[str, str]]) -> dict:

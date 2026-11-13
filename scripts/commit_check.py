@@ -37,7 +37,7 @@ import tarfile
 import tempfile
 from collections import defaultdict
 from pathlib import Path
-from urllib.parse import unquote
+from urllib.parse import unquote, urlsplit
 
 import yaml
 from selectolax.lexbor import LexborHTMLParser
@@ -139,19 +139,29 @@ class Result:
         return any(self.levels[c] == FAIL for c in self.items)
 
 
-def key_problem(key: str) -> str | None:
+def key_problem(key: str, target: str | None = None, host: str | None = None) -> str | None:
     """Why a redirect source is a junk entry (same rule as the repo check, SK 2026-11-11: no redirect for junk URLs;
-    post URLs are English and translations only add a language prefix)."""
+    post URLs are English and translations only add a language prefix; 2026-11-13: no redirect to the home page,
+    no upper-case copies of a target)."""
     if "{{" in unquote(key) or "revealbuttonhref" in key.lower():
         return "gist placeholder {{ revealButtonHref }}"
     if not key.startswith("/"):
         return "host or scheme in the key"
     if "#" in key or "%23" in key.lower():
         return "fragment in the key (#, never sent by browsers)"
+    if "?" in key:
+        return "query string in the key (redirects match the path only)"
     if "//" in key:
         return "double slash"
     if re.search(r"[^\x00-\x7f]", unquote(key)):
         return "non-English slug"
+    if target:
+        parts = urlsplit(target)
+        path, same_site = parts.path, not parts.netloc or not host or parts.netloc == host
+        if key.strip("/") and not path.strip("/") and same_site:  # another site's home page is a real redirect
+            return "redirects to the home page (soft 404)"
+        if key != key.lower() and unquote(key).lower().rstrip("/") == unquote(path).lower().rstrip("/"):
+            return "upper-case copy of its target"
     return None
 
 
@@ -192,7 +202,7 @@ def check_redirects(repo: Repo, base: str | None, host: str | None, res: Result)
         if m:
             src, target = m.group(1), m.group(2)
             where = f"{REDIRECTS}:{line} {src}"
-            if problem := key_problem(src):
+            if problem := key_problem(src, target, host):
                 res.add("redirect_key_malformed", f"{where} ({problem})")
             if not target.strip() or not target.startswith("https://"):
                 res.add("redirect_target_bad", f"{where} -> {target or 'empty'}")

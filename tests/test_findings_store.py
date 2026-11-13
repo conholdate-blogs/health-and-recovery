@@ -126,5 +126,5 @@ def test_new_ids_carry_the_day_and_old_ids_stay():
     rows = ids_by_key(s)
     assert rows[finding_key(old)]["id"] == "crawl-0006"  # an existing finding keeps its old id
     assert rows[finding_key(f("empty"))]["id"] == f"crawl-{DAY}-1"
-    assert s._new_id("crawl", date(2026, 11, 13)) == "crawl-261113-1"
-    assert s._new_id("intl", date(2026, 11, 13)) == "intl-261113-1"
+    assert s._new_id("crawl", date(2020, 1, 2)) == "crawl-200102-1"  # a day with no finding yet
+    assert s._new_id("intl", date(2020, 1, 2)) == "intl-200102-1"

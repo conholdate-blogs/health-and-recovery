@@ -91,6 +91,14 @@ def test_key_problem():
     assert key_problem("//a/") == key_problem("/a//b/") == "double slash"  # it redirects, but is junk
     assert key_problem("/2017/07/02/2017年7月aspose/") == "non-English slug"
     assert key_problem("/fr/total/cr%C3%A9ez-votre-application/") == "non-English slug"  # encoded too
+    H = "https://blog.example.com/"
+    assert key_problem("/notify-one_deny?aHR0c", H + "x/").startswith("query string")
+    home = "redirects to the home page (soft 404)"
+    assert key_problem("/login", H) == key_problem("/cart/smart-wagon", "https://blog.example.com") == home
+    assert key_problem("/feed/", H + "index.xml") is None and key_problem("/", H) is None
+    assert key_problem("/about", "https://about.example.com/", "blog.example.com") is None  # another site
+    assert key_problem("/RU/tOTal/Post/", H + "ru/total/post/") == "upper-case copy of its target"
+    assert key_problem("/JPG-Image.jpg", H + "total/a/images/JPG-Image.jpg") is None  # case kept, different path
 
 
 def test_invalid_file_is_still_read_line_by_line():

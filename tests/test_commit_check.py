@@ -146,3 +146,11 @@ def test_key_problem():
     assert cc.key_problem("/2017/07/02/2017年7月/") == "non-English slug"
     assert cc.key_problem("/p/%7B%7B%20revealButtonHref%20%7D%7D").startswith("gist placeholder")
     assert cc.key_problem("/x/%23:~:text=y").startswith("fragment")
+    H = "https://blog.example.com/"
+    assert cc.key_problem("/notify-one_deny?aHR0c", H + "x/").startswith("query string")
+    home = "redirects to the home page (soft 404)"
+    assert cc.key_problem("/login", H) == cc.key_problem("/cart/smart-wagon", "https://blog.example.com") == home
+    assert cc.key_problem("/feed/", H + "index.xml") is None and cc.key_problem("/", H) is None
+    assert cc.key_problem("/about", "https://about.example.com/", "blog.example.com") is None  # another site
+    assert cc.key_problem("/RU/tOTal/Post/", H + "ru/total/post/") == "upper-case copy of its target"
+    assert cc.key_problem("/JPG-Image.jpg", H + "total/a/images/JPG-Image.jpg") is None  # case kept, different path
