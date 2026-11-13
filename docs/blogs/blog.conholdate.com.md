@@ -62,6 +62,21 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | B1 + B2 | Prepare and test both commits, **show first**; push decided after review |
 | B5 | Show the link fixes, fix together; **change the translation agent** where it caused them so it does not repeat; find an efficient approval flow (one review table per batch) |
 
+## B3 + B4 prepared (13 Nov; local `main` of conholdate-blog, 4 commits ahead of origin, NOT pushed)
+
+| Commit | What |
+|---|---|
+| 8a19c164 | B3: `extend_head` last in `head.html` (OG/Twitter/JSON-LD were in `<body>` on 56,721 pages) |
+| b0f37c45 | B3: x-default hreflang in `head.html` and the sitemap template (English as fallback) |
+| 70c32c62 | B4: tag pages, `/search/`, `/archives/` `noindex, follow`; sitemap filter `/tag/` (was `/tags`, so 43,602 tag URLs were listed), search/archives out; `Disallow: /tag/`, `/tags/` removed from robots.txt |
+| 0cb83582 | B4: listing pages 2+ (home, section) `noindex, follow`, canonical to themselves (was page 1); same `.Paginate` input as `list.html` |
+
+Full build before/after (Hugo 0.101, production config, 100,616 pages): robots changed only on 43,728 tag pages, 36
+search/archives, 2,016 listing pages 2+; SEO tags in `<body>` 56,721 → 0; x-default 0 → 55,405 pages (every
+translated page); sitemaps per language ~3,000 → 563 URLs, tag URLs 45,595 → 0; home canonical unchanged; page 2
+canonical `/page/2/`, `/fr/page/2/`. Gotcha: `head.html` has CRLF line endings; a Python text-mode edit rewrote
+all 341 lines (undone; edits now keep line endings).
+
 ## B1 + B2 verified live (13 Nov, after SK's deploy)
 
 - Pushed by the agent on SK's "push" (e0e0fe53 on `main`), deployed by SK (Deploy Production - AWS).
