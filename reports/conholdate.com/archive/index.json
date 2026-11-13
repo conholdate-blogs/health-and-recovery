@@ -71,5 +71,11 @@
     "date": "2026-11-13 (3)",
     "label": "B1+B2 verified live: junk redirects out, French URLs fixed (agent fixes)",
     "runs": "discovery run 5, crawl audit run 28, speed audit run 30, AI audit run 29, text check run 31, link check run 32, repo file check run 33"
+  },
+  {
+    "file": "2026-11-13-4.html",
+    "date": "2026-11-13 (4)",
+    "label": "B3+B4 verified live: head order, x-default, tags/search/page 2+ noindex (agent fixes)",
+    "runs": "discovery run 6, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 49, link check run 50, repo file check run 51"
   }
 ]

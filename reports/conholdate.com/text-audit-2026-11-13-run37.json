@@ -1,0 +1,219 @@
+{
+  "tenant": "conholdate.com",
+  "auditor": "text-audit",
+  "run_id": 37,
+  "params": {
+    "hosts": [
+      "blog.conholdate.com"
+    ],
+    "crawl_runs": [
+      16,
+      22,
+      28,
+      34
+    ],
+    "model": "gpt-oss",
+    "prompt_version": 2
+  },
+  "duration_s": 18.9,
+  "stopped_early": false,
+  "pages_checked": 104,
+  "unchecked": [],
+  "incomplete": false,
+  "llm": {
+    "calls": 2,
+    "prompt_tokens": 4866,
+    "completion_tokens": 1571,
+    "cache_hits": 68
+  },
+  "ignored": 0,
+  "summary": {
+    "blog.conholdate.com": {
+      "checked": 104,
+      "pages_with_issues": 5,
+      "issues": {
+        "text_topic_mismatch": 4,
+        "text_typo": 2
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "onpage-0001",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "text_topic_mismatch",
+      "type": "incorrect",
+      "title": "Title or description is about a different product",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/ru/conholdate.total/",
+          "https://blog.conholdate.com/de/conholdate.total/",
+          "https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/",
+          "https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/"
+        ],
+        "observed": "4 of 104 checked pages: /ru/conholdate.total/ H1: 'Conholdate.Totals' → 'Conholdate.Total'; /de/conholdate.total/ H1: 'Conholdate.Totals' → 'Conholdate.Total'; /tr/tag/hide/unhide-rows-and-columns/ meta description: remove 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java.'; /nl/tag/convert-fbx-to-obj/ meta description: remove 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java.'",
+        "expected": "Title and meta description describe the page's own product, like its H1",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/ru/conholdate.total/",
+            "note": "H1: 'Conholdate.Totals' → 'Conholdate.Total'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/de/conholdate.total/",
+            "note": "H1: 'Conholdate.Totals' → 'Conholdate.Total'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/",
+            "note": "meta description: remove 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java.'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/",
+            "note": "meta description: remove 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java.'"
+          }
+        ]
+      },
+      "affected_pages": 4,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-13"
+    },
+    {
+      "id": "onpage-0002",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "text_typo",
+      "type": "improvable",
+      "title": "Typos in titles, headings or descriptions",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/tag/image-extration-api/"
+        ],
+        "observed": "1 of 104 checked pages: /tag/image-extration-api/ title: 'Extration' → 'Extraction'; /tag/image-extration-api/ H1: 'Extration' → 'Extraction'",
+        "expected": "Correctly spelled titles, H1s and meta descriptions",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/tag/image-extration-api/",
+            "note": "title: 'Extration' → 'Extraction'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/tag/image-extration-api/",
+            "note": "H1: 'Extration' → 'Extraction'"
+          }
+        ]
+      },
+      "affected_pages": 1,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-13"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://blog.conholdate.com/de/conholdate.total/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "de",
+      "issues": [
+        {
+          "field": "h1",
+          "kind": "topic_mismatch",
+          "wrong": "Conholdate.Totals",
+          "fix": "Conholdate.Total",
+          "why": "H1 uses plural product name not matching page path"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "nl",
+      "issues": [
+        {
+          "field": "description",
+          "kind": "topic_mismatch",
+          "wrong": "Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java.",
+          "fix": "",
+          "why": "description unrelated to FBX to OBJ conversion"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/ru/conholdate.total/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "ru",
+      "issues": [
+        {
+          "field": "h1",
+          "kind": "topic_mismatch",
+          "wrong": "Conholdate.Totals",
+          "fix": "Conholdate.Total",
+          "why": "H1 uses plural product name not matching page path"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tag/image-extration-api/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "title",
+          "kind": "misspelling",
+          "wrong": "Extration",
+          "fix": "Extraction",
+          "why": "misspelled word"
+        },
+        {
+          "field": "h1",
+          "kind": "misspelling",
+          "wrong": "Extration",
+          "fix": "Extraction",
+          "why": "misspelled word"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": "tr",
+      "issues": [
+        {
+          "field": "description",
+          "kind": "topic_mismatch",
+          "wrong": "Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java.",
+          "fix": "",
+          "why": "description does not match hide/unhide rows and columns topic"
+        }
+      ]
+    }
+  ]
+}

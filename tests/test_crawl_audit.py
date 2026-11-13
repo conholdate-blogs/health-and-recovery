@@ -433,3 +433,13 @@ def test_duplicates_skip_noindex_pages():
     post = page("https://blog.example.com/a/", [])
     duplicate_issues([home, post], "descriptions", "description_duplicate")
     assert [c for c, _ in post["issues"]] == ["description_duplicate"]
+
+
+def test_noindex_page_skips_hreflang_and_noindex_checks():
+    # 13 Nov 2026: listing page 2 is noindex on purpose (sampled via extra_urls) and repeats page 1's hreflang set
+    url = "https://h.example/page/2/"
+    facts = parse_page(html(canonical=url, robots="noindex, follow",
+                            hreflang=[("en", "https://h.example/"), ("fr", "https://h.example/fr/")]), url)
+    got = checks(page_issues(rec(url, source="extra"), facts, localized=True))
+    assert not got & {"hreflang_no_self", "hreflang_no_xdefault", "noindex"}
+    assert "noindex" in checks(page_issues(rec(url, source="sitemap"), facts, localized=True))  # listed: still flagged

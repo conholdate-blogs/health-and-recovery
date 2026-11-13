@@ -62,6 +62,21 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | B1 + B2 | Prepare and test both commits, **show first**; push decided after review |
 | B5 | Show the link fixes, fix together; **change the translation agent** where it caused them so it does not repeat; find an efficient approval flow (one review table per batch) |
 
+## B3 + B4 verified live (13 Nov, deploy seen 15:53)
+
+- Live: OG/Twitter/JSON-LD in `<head>`, 0 SEO tags in `<body>`; x-default on translated pages (562 in the English
+  sitemap); tags, `/search/`, `/archives/`, listing pages 2+ `noindex, follow` (page 2+ canonical to itself);
+  posts and home unchanged; robots.txt no longer blocks tags; English sitemap 563 URLs, 0 tag URLs. 4 agent-fix rows.
+- Rescan: resolved social_tags_in_body, sitemap_lists_tag_pages, tag_pages_thin, robots_blocked,
+  content_needs_js, description_duplicate. **Health 58 → 72** (snapshot 2026-11-13-4; areas: crawl 88, on-page 92,
+  languages 84, AI 98).
+- Our audit (AUD-3): listing page 2 sampled per blog (`audit.extra_urls`; same problem on aspose.com,
+  groupdocs.com, aspose.cloud, groupdocs.cloud); `noindex` check only on sitemap pages and homepages; duplicates
+  and hreflang checks skip noindex pages (Google ignores them). A false `hreflang_no_self` on page 2 was deleted
+  from the store (backup in the session scratchpad), never published.
+- Still open: x-default on 17 English-only section pages (`_index.<lang>.md` needed); `/conholdate.total/` titled
+  "Conholdate Blog" like the home; home description English on ar/ko/id; broken links (−10); the rest of B5–B10.
+
 ## B3 + B4 prepared (13 Nov; local `main` of conholdate-blog, 4 commits ahead of origin, NOT pushed)
 
 | Commit | What |

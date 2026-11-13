@@ -211,7 +211,8 @@ def page_issues(rec: dict, facts, localized: bool) -> list[tuple[str, str]]:
     elif len(h1) > 1:
         issues.append(("h1_multiple", f"{len(h1)} H1s: " + " | ".join(h[:40] for h in h1[:3])))
 
-    if facts.hreflang:
+    # search engines ignore hreflang on a noindex page (13 Nov 2026: listing pages 2+ repeat page 1's set)
+    if facts.hreflang and not facts.noindex:
         codes = [c for c, _ in facts.hreflang]
         bad = sorted({c for c in codes if not HREFLANG_RE.match(c)})
         if bad:
@@ -231,7 +232,7 @@ def page_issues(rec: dict, facts, localized: bool) -> list[tuple[str, str]]:
     if facts.head_canonicals > 1 or len(facts.hreflang) > len(set(facts.hreflang)):
         issues.append(("head_tags_repeated", f"{facts.head_canonicals} canonical tags, {len(facts.hreflang)} "
                                              f"hreflang tags for {len(set(facts.hreflang))} distinct"))
-    if facts.hreflang:
+    if facts.hreflang and not facts.noindex:
         if not any(c.lower() == "x-default" for c in codes):
             issues.append(("hreflang_no_xdefault", f"{len(codes)} entries: {', '.join(codes[:6])}"))
     elif head and localized and not facts.noindex:

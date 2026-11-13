@@ -63,9 +63,9 @@
    "tag_listing_pages": 43710,
    "pages_beyond_cap": 252,
    "cap": 50,
-   "discovery_run": 5,
-   "sitemap_urls": 53737,
-   "sitemap_tag_urls": 43602,
+   "discovery_run": 6,
+   "sitemap_urls": 10098,
+   "sitemap_tag_urls": 0,
    "search": {
     "clicks": 2804,
     "tag_clicks": 42,
@@ -76,12 +76,24 @@
     "pages": [
      {
       "url": "https://blog.conholdate.com/tags/",
-      "status": null,
-      "blocked": true,
-      "noindex": false
+      "status": 200,
+      "blocked": false,
+      "noindex": true
+     },
+     {
+      "url": "https://blog.conholdate.com/tag/3d-model-conversion/",
+      "status": 200,
+      "blocked": false,
+      "noindex": true
+     },
+     {
+      "url": "https://blog.conholdate.com/tag/3d-model-optimization/",
+      "status": 200,
+      "blocked": false,
+      "noindex": true
      }
     ],
-    "all_noindex": false
+    "all_noindex": true
    }
   }
  }
