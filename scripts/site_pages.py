@@ -462,6 +462,7 @@ filter();
 MATRIX_CSS = """
 table.mx { min-width: 980px } table.mx td, table.mx th { text-align: center } table.mx td.name, table.mx th:first-child { text-align: left }
 table.mx td.name small { display: block; color: var(--muted); font-weight: 400; font-size: 12px }
+table.mx tr.area th { text-align: left; color: var(--sev) } table.mx tr.area th small { color: var(--muted) }
 .mx .c-open { color: var(--broken); font-weight: 700 } .mx .c-ok { color: #067647; font-weight: 700 }
 .mx .c-nf { color: #067647; font-weight: 700; letter-spacing: .03em; font-size: 12px } .mx .c-rev { color: var(--muted) }
 .mx td a { text-decoration: none; color: inherit } .mx td small { display: block; font-weight: 400; color: var(--muted) }
@@ -506,16 +507,24 @@ def matrix_page(members: list[tuple[str, str]], items: dict[str, dict], css: str
         detail = f'<small>{c.get("fixed_pct", 0)}% fixed · {c["open"]:,} open</small>' if c.get("issues") else ""
         return f'<td class="c-open"><a href="{href}">✗ Open{detail}</a></td>'
 
-    keys = sorted(cells, key=lambda k: (-sum(state(k, h) == "open" for h in hosts),
-                                        order.get(meta[k]["severity"], 9), meta[k]["issue"]))
+    # grouped by severity, worst first (SK, 2026-11-13); inside a group, open on the most blogs first
+    keys = sorted(cells, key=lambda k: (order.get(meta[k]["severity"], 9), -sum(state(k, h) == "open" for h in hosts),
+                                        meta[k]["issue"]))
     head_row = "".join(f"<th>{esc(h).replace('.', '.<wbr>')}</th>" for h in hosts)
-    body = []
+    body, group = [], None
     for k in keys:
         m = meta[k]
+        if m["severity"] != group:  # a heading row per severity, with how many issue types are still open somewhere
+            group = m["severity"]
+            ks = [x for x in keys if meta[x]["severity"] == group]
+            n_any = sum(any(state(x, h) == "open" for h in hosts) for x in ks)
+            body.append(f'<tr class="area sev-{esc(group)}"><th colspan="{len(hosts) + 2}"><span class="dot"></span>'
+                        f'{esc(SEVERITY.get(group, group))}<small>{len(ks)} issue type{"" if len(ks) == 1 else "s"} · '
+                        f'{n_any} still open on some blog</small></th></tr>')
         name = f'<a href="../../fix-guide/#g-{esc(k)}">{esc(m["issue"])}</a>' if m.get("guide") else esc(m["issue"])
         n_open = sum(state(k, h) == "open" for h in hosts)
         fixed_on = [h for h in hosts if state(k, h) == "ok"]
-        body.append(f'<tr><td class="name">{name}<small>{esc(m["area"])} · {esc(SEVERITY.get(m["severity"], m["severity"]))}</small></td>'
+        body.append(f'<tr><td class="name">{name}<small>{esc(m["area"])}</small></td>'
                     + "".join(cell(k, h) for h in hosts)
                     + f'<td>{"<b class=c-ok>✓ none open</b>" if not n_open else f"{n_open} open"}'
                     + (f'<small>fixed on {", ".join(esc(h.replace("blog.", "")) for h in fixed_on)}</small>' if fixed_on else "") + "</td></tr>")
@@ -525,7 +534,8 @@ def matrix_page(members: list[tuple[str, str]], items: dict[str, dict], css: str
         + '  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">All domains</a> › <a href="../">Blogs</a> › <b>Issues across blogs</b></nav>\n'
         + f"  <h1>{logo}Issues across blogs</h1>\n"
         + "  <p>Every issue type found on any blog, and its state on each blog: open (with the share of its items fixed), "
-        "fixed, resolved, or NOT FOUND when the audits never saw it there. Issues open on the most blogs come first; "
+        "fixed, resolved, or NOT FOUND when the audits never saw it there. Grouped by severity, worst first; inside a "
+        "group, issues open on the most blogs come first; "
         "a fix proven on one blog shows where to copy it from. Each cell opens that blog's Issue log.</p>\n"
         + f'  <div class="tablewrap"><table class="mx">\n    <thead><tr><th>Issue</th>{head_row}<th>All blogs</th></tr></thead>\n'
         + f"    <tbody>{''.join(body)}</tbody>\n  </table></div>\n</main>\n</html>\n"

@@ -88,6 +88,6 @@ Edit the chart only in the template; keep those blocks self-contained (they need
 `/blogs/issues/` (`site_pages.matrix_page`, built by `build_site` for each collection): one row per issue type
 found on any blog, one column per blog in site order. Cells: ✗ Open (with "% fixed · N open" for item checks),
 ✓ Fixed / ✓ Resolved, Reviewed, or **NOT FOUND** in green when the audits never saw it there; each opens that blog's
-Issue log. Rows: most blogs open first, then severity. Last column: open count and the blogs where it was fixed
+Issue log. Rows grouped by severity (heading row each, worst first), inside a group most blogs open first. Last column: open count and the blogs where it was fixed
 (where to copy the fix from). Linked from the home page's Blogs card ("issues across blogs →").
 
