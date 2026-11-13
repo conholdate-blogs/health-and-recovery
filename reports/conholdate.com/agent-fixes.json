@@ -104,5 +104,83 @@
   ],
   "issue": "Listing pages 2+ (home, section) answered index, follow with a canonical to page 1",
   "result": "Live: /page/2/, /fr/page/2/, /conholdate.total/page/3/ answer noindex, follow with a canonical to themselves"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-12",
+  "check": "menu_id_missing",
+  "commits": [
+   "2dfc443c14de47802229f72b3780b4af00163e64"
+  ],
+  "issue": "Vietnamese, Thai and Turkish pages showed the English company menu (no menu id)",
+  "result": "Live: /vi/, /th/, /tr/ load conholdate-vi, -th, -tr; other languages unchanged"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-12",
+  "check": "language_name_wrong",
+  "commits": [
+   "b4165b88661a97592f517bcd0374b974375217ec"
+  ],
+  "issue": "Language menu showed wrong names: 日本 (Japan), 한국인 (a Korean person), Dutch, Thai, Polish; also bahasa Indonesia, عربي",
+  "result": "Live: 日本語, 한국어, Nederlands, ไทย, Polski, Bahasa Indonesia, العربية"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-12",
+  "check": "rtl_direction_missing",
+  "commits": [
+   "b4165b88661a97592f517bcd0374b974375217ec"
+  ],
+  "issue": "Arabic and Persian pages rendered left to right",
+  "result": "Live: <html dir=rtl> on ar and fa; the styled Arabic post reads right to left (screenshot)"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-13",
+  "check": "description_untranslated",
+  "commits": [
+   "2868d66e4aa3da25e137ee1ab56388b0ee1d01f5"
+  ],
+  "issue": "17 translated home pages showed the English meta description (about 190 characters, too long)",
+  "result": "Live: each home page has its own-language description; English shortened to 152 characters"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-12",
+  "check": "section_index_untranslated",
+  "commits": [
+   "2fb622ec1fbde8935dc37ed8fca1ac0d4d4dc920"
+  ],
+  "issue": "The section had an English-only _index.md: 17 unlinked translations titled 'Conholdate.Totals' without x-default; the English section page shared the home title",
+  "result": "Live: section titled 'Conholdate.Total Articles' and translations (e.g. 'Artikel zu Conholdate.Total'), own description, x-default"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-03",
+  "check": "llms_txt_missing",
+  "commits": [
+   "2383151677a5c9cf760659da02cecf6706035e73"
+  ],
+  "issue": "No llms.txt for AI assistants",
+  "result": "Live: /llms.txt and one per language, generated at build (newest 100 of 561 articles), text/plain; charset=utf-8"
  }
 ]
