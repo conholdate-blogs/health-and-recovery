@@ -58,7 +58,7 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 
 | # | Decision |
 |---|---|
-| B2 | **No redirects** for the 15 old French URLs |
+| B2 | ~~No redirects~~ → **redirects** old → new (SK, 13 Nov, after the agent flagged that a 404 loses the indexed URLs' signals; Google standard over our junk rule) |
 | B1 + B2 | Prepare and test both commits, **show first**; push decided after review |
 | B5 | Show the link fixes, fix together; **change the translation agent** where it caused them so it does not repeat; find an efficient approval flow (one review table per batch) |
 
@@ -69,6 +69,11 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | 2993d49c | B1a: 15 junk keys our check flagged (non-English slug, double slash, # fragment) | 1459 → 1444 |
 | 940695cf | B1b (SK, 13 Nov, after selecting lines in the file): 6 upper-case copies of one URL + 43 keys that send to the home page (other sites' shop pages, scanners `/wp-admin`, `/login`, `*.iso`, `*.exe`, `/notify-one_deny?…`, removed 2019 WordPress posts, `/page/18/`); `/feed`, `/feed/`, `/feed.json` → `/index.xml` (live RSS, 200) | 1444 → 1395 |
 | 24babc50 | B2: `url:` of 15 French files → `/fr/<English url>/`; 10 dated `/fr/YYYY/MM/DD/` keys retargeted to the new URLs (their old targets would 404). No redirects for the old French-slug URLs (SK) | 1395 |
+
+| e0e0fe53 | 15 old `/fr/total/<French slug>/` URLs + 2 old dated French URLs of the same posts (removed in 2993d49c although they answered 301; flagged by the agent) → new URLs, keys percent-encoded (tested live: encoded non-ASCII keys answer 301 here); `Redirects.md` documents rules and groups (JSON has no comments; a "comment" key would be read as a redirect) | 1395 → 1412 |
+
+SK reviews and pushes himself (13 Nov). Our audit: reviewed keep-list `audit.repo.redirect_keep` in the tenant YAML
+(17 keys) so these are not junk; rule RED-1 exception.
 
 Tests: commit check with Hugo 0.101 PASSED (only the known OG/Twitter-in-body warning, B3); full builds before/after
 (100,533 pages): only the 15 French post folders moved (73 files), sitemaps change only in `/fr/total/` lines (the

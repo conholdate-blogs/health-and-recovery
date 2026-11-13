@@ -35,6 +35,25 @@ audit:
     blog.conholdate.com: 20
   links:                     # link audit (scripts/audit_links.py): commits that count as translation work
     translation_commits: '^(Translate articles for|Daily Blogs Translation)'   # SK's translation agent
+  repo:                      # repo file check: reviewed redirect keys that look like junk but really existed
+    redirect_keep:           # SK, 2026-11-13: old URLs of the 15 French posts moved to /fr/<English url>/ (B2)
+      - {key: '/fr/total/créez-votre-propre-application-google-docs-like/', reason: old URL of a moved French post}
+      - {key: '/fr/total/créez-votre-propre-application-google-docs-like-part-two/', reason: old URL of a moved French post}
+      - {key: '/fr/total/offre-rabais-fin-bientôt/', reason: old URL of a moved French post}
+      - {key: '/fr/total/convertir-jpg-en-png-ou-pdf-en-csharp/', reason: old URL of a moved French post}
+      - {key: '/fr/total/générer-des-rapports-à-partir-de-données-excel-dans-csharp/', reason: old URL of a moved French post}
+      - {key: '/fr/total/rechercher-un-mot-dans-pdf-en-utilisant-java/', reason: old URL of a moved French post}
+      - {key: '/fr/total/annoter-les-images-jpg-avec-csharp/', reason: old URL of a moved French post}
+      - {key: '/fr/total/masquer-et-afficher-les-lignes-ou-les-colonnes-dans-excel-en-utilisant-csharp/', reason: old URL of a moved French post}
+      - {key: '/fr/total/comparer-deux-ou-plus-mot-documents-en-utilisant-csharp/', reason: old URL of a moved French post}
+      - {key: '/fr/total/extraire-texte-des-documents-word-en-utilisant-java/', reason: old URL of a moved French post}
+      - {key: '/fr/total/ajouter-texte-ou-image-filigranes-dans-word-documents-using-csharp/', reason: old URL of a moved French post}
+      - {key: '/fr/total/recadrer-et-redimensionner-les-images-jpeg-en-utilisant-csharp/', reason: old URL of a moved French post}
+      - {key: '/fr/total/appliquer-les-formules-les-plus-utilisees-dans-excel-en-utilisant-csharp/', reason: old URL of a moved French post}
+      - {key: '/fr/total/rendre-présentation-powerpoint-en-utilisant-csharp/', reason: old URL of a moved French post}
+      - {key: '/fr/total/extraire-texte-et-images-des-documents-pdf-en-utilisant-java/', reason: old URL of a moved French post}
+      - {key: '/fr/2020/06/29/créez-votre-propre-application-google-docs-like-part-two/', reason: old URL of a moved French post}
+      - {key: '/fr/2022/03/29/rendre-présentation-powerpoint-en-utilisant-csharp/', reason: old URL of a moved French post}
 
 # URL templates per host, matched in order against the path with the language segment removed.
 # Tag pages are /tag/<name>/; they must match before post.

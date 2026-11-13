@@ -276,3 +276,17 @@ def test_llms_txt_missing_the_newest_posts(tmp_path):
     assert [i["link"] for i in items] == [f"https://{HOST}/p2/"]  # lists 2, the newest 2 are p2 and p1
     issues = run(repo, Llms())["hosts"][HOST]["issues"]
     assert [i["check"] for i in issues if i["check"] == "llms_txt_charset"] == ["llms_txt_charset"]
+
+
+def test_reviewed_old_urls_are_not_junk(tmp_path):
+    # SK, 2026-11-13: an old French-slug URL of a moved post really existed; listed in audit.repo.redirect_keep
+    old = "/fr/pdf/cr%C3%A9ez-a/"
+    other = "/fr/pdf/r%C3%A9sum%C3%A9/"
+    entries = {old: f"https://{HOST}/fr/pdf/a/", other: f"https://{HOST}/fr/pdf/a/"}
+    repo = make_repo(tmp_path, "{\n" + ",\n".join(f'  "{k}": "{v}"' for k, v in entries.items()) + "\n}\n")
+    tenant = make_tenant(repo)
+    tenant.raw["audit"]["repo"] = {"redirect_keep": [{"key": "/fr/pdf/créez-a/", "reason": "old URL of a moved post"}]}
+    audit = RepoAudit(tenant, FakeFetcher(), AuditStore(":memory:"), log=None)
+    issues, _ = audit.check_redirects(HOST)
+    junk = [i["link"] for i in issues if i["check"] == "redirect_key_malformed"]
+    assert junk == [other]  # the kept key (raw or encoded spelling) is not junk; the other is

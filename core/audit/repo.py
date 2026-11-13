@@ -177,8 +177,15 @@ class RepoAudit:
         self.repos = {h: Path(repos[h]) for h in self.hosts}
         self.fix_channels = {h["host"]: h.get("fix_channel") for h in tenant.hosts}
         self.log = log or (lambda *_: None)
+        # Reviewed old URLs that look like junk but really existed (tenant audit.repo.redirect_keep: key + reason),
+        # e.g. the old French-slug URLs of posts moved to /fr/<English url>/ (SK, 2026-11-13)
+        keep = (((tenant.raw.get("audit") or {}).get("repo") or {}).get("redirect_keep")) or []
+        self.redirect_keep = {unquote(k["key"] if isinstance(k, dict) else k) for k in keep}
         self.results: dict = {}
         self.run_id: int | None = None
+
+    def junk(self, key: str, target: str, host: str) -> str | None:
+        return None if unquote(key) in self.redirect_keep else key_problem(key, target, host)
 
     def git(self, host: str, *args: str) -> str:
         try:
@@ -235,14 +242,14 @@ class RepoAudit:
             info["broke_it"] = self.broke_it(host)
             add("redirect_file_invalid", 0, None, f"{error}; since {info['broke_it'] or 'unknown'}")
         for line, src, target in pairs:
-            problem = key_problem(src, target, host)
+            problem = self.junk(src, target, host)
             if problem:
                 add("redirect_key_malformed", line, src, problem, target)
             if not target.strip() or not target.startswith("https://"):
                 add("redirect_target_bad", line, src, f"target: {target or 'empty'}")
             elif src.startswith("/") and urlsplit(target).netloc == host and urlsplit(target).path == src:
                 add("redirect_self_loop", line, src, "target is the source")
-        info["live"] = self.live_test(host, [(s, t) for _, s, t in pairs if not key_problem(s, t, host)])
+        info["live"] = self.live_test(host, [(s, t) for _, s, t in pairs if not self.junk(s, t, host)])
         return issues, info
 
     def live_test(self, host: str, pairs: list[tuple[str, str]]) -> dict:
