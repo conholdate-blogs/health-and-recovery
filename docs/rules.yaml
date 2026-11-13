@@ -120,7 +120,7 @@ rules:
     date: 2026-11-13
     checks: [section_lists_home_posts]
     status: active
-  - id: AUD-4
+  - id: AUD-5
     rule: "Checks judge pages as search engines see them: noindex pages are skipped by the duplicate title/description and hreflang checks, and the noindex check covers only sitemap pages and homepages."
     why: Google ignores a noindex page's hreflang and does not index it, so it competes with nothing; flagging it would be a false finding (13 Nov, listing page 2 and tag pages).
     set_by: Shoaib Khan
