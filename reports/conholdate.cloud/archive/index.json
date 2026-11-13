@@ -196,5 +196,18 @@
     "date": "2026-11-12 (3)",
     "label": "Fixes live: company menu on zh-hant, Java translation lengths, llms.txt (agent fixes)",
     "runs": "discovery run 11, crawl audit run 72, speed audit run 74, AI audit run 73, text check run 75, link check run 76, repo file check run 78"
+  },
+  {
+    "file": "2026-11-13.html",
+    "date": "2026-11-13",
+    "label": "Live page before the 13 Nov rescan (13 Nov layout)",
+    "runs": "discovery run 11, crawl audit run 72, speed audit run 74, AI audit run 73, text check run 75, link check run 76, repo file check run 78",
+    "downloaded": true
+  },
+  {
+    "file": "2026-11-13-2.html",
+    "date": "2026-11-13 (2)",
+    "label": "Carry-back from blog.conholdate.com: section page noindex, /feed/ to RSS (agent fixes)",
+    "runs": "discovery run 12, crawl audit run 79, speed audit run 81, AI audit run 80, text check run 82, link check run 83, repo file check run 84"
   }
 ]

@@ -69,6 +69,7 @@ GROUPS = {
                      "redirect_target_bad"), "redirect file"),
     **dict.fromkeys(("post_front_matter_broken", "post_url_relative"), "post files"),
     **dict.fromkeys(("tag_pages_thin", "sitemap_lists_tag_pages"), "tag pages"),
+    "section_lists_home_posts": "listing pages",
 }
 # the one-glance status line on a card: label -> groups it summarizes
 STATUS = {"Sitemap": ("sitemap",), "Pages": ("page errors",), "Canonical": ("canonical",), "hreflang": ("hreflang",)}

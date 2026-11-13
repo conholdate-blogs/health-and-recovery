@@ -240,14 +240,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-14",
-        "2026-05-11"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-13",
-        "2026-11-09"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -258,7 +258,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-12",
     "first_seen_run": "repo-audit-run45",
-    "last_seen_run": "repo-audit-run78",
+    "last_seen_run": "repo-audit-run84",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",

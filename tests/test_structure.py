@@ -80,3 +80,25 @@ def test_tag_robots_blocked_page_is_not_noindex_and_header_counts():
     tr = tag_robots(fake_get(blocked={"https://blog.example.com/tag/a/"})[0], "blog.example.com")
     assert not tr["all_noindex"] and tr["pages"][1]["blocked"]
     assert tag_robots(fake_get(robots="index", header="noindex")[0], "blog.example.com")["all_noindex"]
+
+
+def test_single_main_section_page_must_be_noindex(tmp_path):
+    # 13 Nov 2026: with one main section the section page repeats the home page's list
+    from core.audit.structure import findings, section_robots
+
+    (tmp_path / "config.yml").write_text("params:\n  mainSections:\n  - Conholdate.Total\n", encoding="utf-8")
+    seen = []
+
+    def get(robots):
+        def g(url):
+            seen.append(url)
+            return 200, {}, f'<html><head><meta name="robots" content="{robots}"></head></html>', False
+        return g
+    sec = section_robots(get("index, follow"), "blog.example.com", tmp_path)
+    assert seen == ["https://blog.example.com/conholdate.total/"] and not sec["noindex"]
+    assert [f["check"] for f in findings("t", "blog.example.com", {"section_robots": sec, "languages": 18})] == [
+        "section_lists_home_posts"]
+    sec = section_robots(get("noindex, follow"), "blog.example.com", tmp_path)
+    assert findings("t", "blog.example.com", {"section_robots": sec}) == []
+    (tmp_path / "config.yml").write_text("params:\n  mainSections: [a, b]\n", encoding="utf-8")
+    assert "url" not in section_robots(get("index, follow"), "blog.example.com", tmp_path)  # two sections: no read

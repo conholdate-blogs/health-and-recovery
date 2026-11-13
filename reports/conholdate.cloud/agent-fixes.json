@@ -271,5 +271,31 @@
   "fixed": "2026-11-12",
   "verified": "2026-11-12",
   "result": "Live: llms.txt and every /<lang>/llms.txt served as text/plain; charset=utf-8; Chrome shows the language names correctly. Needed a content change (\"Last updated\" line) because hugo deploy re-uploads only changed files; robots.txt (ASCII) gets the header at its next change"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-13",
+  "check": "redirect_key_malformed",
+  "commits": [
+   "78d92099fac29181e9b399fdd3ba907bd6959542"
+  ],
+  "issue": "Redirects.json sent /feed/ to the home page (a soft 404 for search engines); seen on blog.conholdate.com first",
+  "result": "Live: /feed/ answers 301 to /index.xml (the RSS feed); Redirects.md documents the rules"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "found": "2026-11-13",
+  "check": "section_lists_home_posts",
+  "commits": [
+   "5b4cd9afff6b8683ef7abe9c25c6f86e8f0f8506"
+  ],
+  "issue": "With one main section, the section page /conholdate.cloud/ (23 languages) listed exactly the home page's posts and was indexable: a duplicate listing",
+  "result": "Live: section pages answer noindex, follow and are out of the sitemaps; home pages unchanged"
  }
 ]

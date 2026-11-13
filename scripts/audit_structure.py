@@ -20,7 +20,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
-from core.audit.structure import AUDITOR, findings, scan, search_numbers, tag_robots  # noqa: E402
+from core.audit.structure import AUDITOR, findings, scan, search_numbers, section_robots, tag_robots  # noqa: E402
 from core.discovery.fetch import PoliteFetcher  # noqa: E402
 from core.findings import FindingsStore  # noqa: E402
 from core.paths import tenant_paths  # noqa: E402
@@ -70,7 +70,8 @@ def main(argv: list[str] | None = None) -> int:
             continue
         host = h["host"]
         hosts[host] = {**scan(Path(h["local_path"]), default_lang), **sitemap_numbers(paths.inventory, host),
-                       "search": search_numbers(rows, host), "tag_robots": tag_robots(get, host)}
+                       "search": search_numbers(rows, host), "tag_robots": tag_robots(get, host),
+                       "section_robots": section_robots(get, host, Path(h["local_path"]))}
         s = hosts[host]
         print(f"{host}: {s['posts']:,} posts, {s['tags']:,} tags ({s['tags_one_post']:,} with one post), "
               f"{s['listing_pages']:,} listing pages ({s['tag_listing_pages']:,} tag), "

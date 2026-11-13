@@ -128,6 +128,9 @@ CHECKS = {
                        "stay out of the sitemap", 3, "M"),
     "sitemap_lists_tag_pages": ("crawl", "not_optimized", "Sitemaps list tag pages",
                                 "Sitemaps list posts and real landing pages; tag pages stay out", 3, "S"),
+    "section_lists_home_posts": ("crawl", "not_optimized", "Section page repeats the home page's post list",
+                                 "With one main section, its section page is noindex, follow and out of the sitemap",
+                                 3, "S"),
 }
 
 
@@ -169,6 +172,29 @@ def tag_robots(get, host: str) -> dict:
     return {"pages": pages, "all_noindex": len(pages) > 1 and all(p["noindex"] for p in pages)}
 
 
+def main_sections(repo: Path) -> list[str]:
+    """params.mainSections from the repo's config.yml."""
+    import yaml
+
+    try:
+        cfg = yaml.safe_load((repo / "config.yml").read_text(encoding="utf-8")) or {}
+    except (OSError, yaml.YAMLError):
+        return []
+    return [str(x) for x in ((cfg.get("params") or {}).get("mainSections") or [])]
+
+
+def section_robots(get, host: str, repo: Path) -> dict:
+    """With one main section the section page lists exactly the home page's posts (13 Nov 2026, blog.conholdate.com
+    and blog.conholdate.cloud): read it live and say whether it tells search engines to stay away."""
+    sections = main_sections(repo)
+    if len(sections) != 1:
+        return {"sections": sections}
+    url = f"https://{host}/{sections[0].lower()}/"
+    status, headers, html, blocked = get(url)
+    return {"sections": sections, "url": url, "status": status,
+            "noindex": bool(status == 200 and not blocked and _robots_noindex(headers, html))}
+
+
 def findings(tenant: str, host: str, s: dict, fix_channel: str | None = None) -> list[dict]:
     """Findings for one host from its structure numbers (scan + sitemap + search). Scored on the clicks tag pages
     earn (evidence.traffic), not on their share of the host's URLs."""
@@ -201,4 +227,9 @@ def findings(tenant: str, host: str, s: dict, fix_channel: str | None = None) ->
         add("sitemap_lists_tag_pages", [f"https://{host}/sitemap.xml"],
             f"{listed:,} of {total:,} sitemap URLs ({listed / total:.0%}) are tag pages; {clicks}" if total else
             f"{listed:,} sitemap URLs are tag pages; {clicks}", listed)
+    sec = s.get("section_robots") or {}
+    if sec.get("url") and sec.get("status") == 200 and not sec.get("noindex"):
+        add("section_lists_home_posts", [sec["url"]],
+            f"one main section ({sec['sections'][0]}): {sec['url']} lists the same posts as the home page and is "
+            f"indexable, in {s.get('languages', 1)} languages", s.get("languages", 1))
     return out

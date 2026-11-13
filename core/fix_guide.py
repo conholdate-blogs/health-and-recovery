@@ -645,6 +645,12 @@ _ROWS = [
      "but a permanent redirect states it.",
      "Answer 301 at the CDN (e.g. a CloudFront function that adds the slash).",
      "curl -I on a URL without the slash shows 301; next repo check has no item."),
+    ("section_lists_home_posts", "Site structure", "Section page repeats the home list",
+     "The blog has one main section, so its section page (e.g. /conholdate.total/) lists exactly the posts the home "
+     "page lists, in every language, and both are indexable.",
+     "Two indexable pages with the same list compete for the same searches, and crawlers spend visits on a copy.",
+     "Hugo head.html: noindex, follow when the page is the only main section; leave it out of the sitemap template.",
+     "The section page answers noindex, follow; the next structure step has no finding."),
     ("tag_pages_thin", "Site structure", "Thin tag pages",
      "Most tags hold one post, and every tag is a page in every language, so tag pages outnumber posts many times "
      "over while earning almost no search clicks.",
