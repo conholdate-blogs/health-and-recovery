@@ -62,6 +62,22 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | B1 + B2 | Prepare and test both commits, **show first**; push decided after review |
 | B5 | Show the link fixes, fix together; **change the translation agent** where it caused them so it does not repeat; find an efficient approval flow (one review table per batch) |
 
+## B7 + B8 + B9 prepared (13 Nov; local `main` of conholdate-blog, 5 commits, NOT pushed)
+
+| Commit | Step | What |
+|---|---|---|
+| 2dfc443c | B7 | company menu ids vi, th, tr (CDN JSON exists for all three) |
+| b4165b88 | B8 | native language names (日本語, 한국어, Nederlands, ไทย, Polski, Bahasa Indonesia, العربية); `rtl` for ar, fa |
+| 2868d66e | B9 | home description per language (17 translations), English one 190 → 152 characters |
+| 2fb622ec | B9 | `_index.<lang>.md` for 17 languages: section title "Conholdate.Total Articles" + translations (was "Conholdate.Totals" / the home title), own description |
+| 23831516 | B9 | llms.txt generated at build (newest 100 of 561 posts per language), `*.txt` as UTF-8 (production + staging) |
+
+Build before/after (Hugo 0.101): only llms.txt files added (18); no SEO tag in `<body>`; x-default 55,405 → 56,374
+pages (section pages now linked); vi menu `conholdate-en` → `conholdate-vi`, de unchanged (language params merge);
+`dir=rtl` on ar/fa; all llms.txt links exist; commit check PASSED. Arabic styled layout to check live after deploy.
+Gotchas: the config edit kept LF; a shell `printf` doubled the regex backslashes (fixed; pattern verified).
+Carry-back items for blog.conholdate.cloud are in its log (CB1–CB5).
+
 ## B3 + B4 verified live (13 Nov, deploy seen 15:53)
 
 - Live: OG/Twitter/JSON-LD in `<head>`, 0 SEO tags in `<body>`; x-default on translated pages (562 in the English

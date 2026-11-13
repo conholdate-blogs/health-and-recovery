@@ -143,3 +143,15 @@ CDN). 17 agent-fix rows, all verified; F17 found by Shoaib Khan (`found_by`). Sn
   auto-generated section pages; a post outside `mainSections` never reached the home page.
 - Translations drift: an English title rewritten later leaves 22 stale translated titles.
 - Utility pages (search, archives) cost more than they bring: noindex and out of the sitemap.
+
+## Carry back from blog.conholdate.com (noted 13 Nov; plan, not done)
+
+| # | Item | Seen on blog.conholdate.com | Plan for blog.conholdate.cloud |
+|---|---|---|---|
+| CB1 | `/feed/` → home page in Redirects.json (a soft 404; now flagged by rule RED-1) | removed 43 home redirects, feeds → `/index.xml` | retarget `/feed/` to `/index.xml` (one line; Redirects.json applies live here) |
+| CB2 | Section page title in English on translated pages ("Conholdate Cloud Blog" in every `_index.<lang>.md`) | section pages got translated titles + their own descriptions | translate the 22 titles; give the section a description of its own |
+| CB3 | Section page lists the same posts as the home page (one main section): duplicate listing | same on blog.conholdate.com | **decide with SK**: `noindex, follow` or canonical to home, or keep (both blogs alike) |
+| CB4 | Main menu on translated pages links the English `/categories/`, `/tags/` | same | localize the menu URLs (`/<lang>/categories/`); low priority |
+| CB5 | `Redirects.md` beside Redirects.json (rules + groups; JSON has no comments) | added | add the same short file |
+| — | Listing page 2+, llms.txt cap | needed there | not needed: 5 posts fit on one page; llms.txt lists all 5 |
+
