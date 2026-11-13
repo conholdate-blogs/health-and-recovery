@@ -15,6 +15,21 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Start here (session handoff, 2026-11-13, midday)
+
+**Next: verify blog.conholdate.com B1 + B2 live** (SK started Deploy Production - AWS ~13 Nov midday, ~20 min):
+15 French posts 200 at `/fr/<English url>/`; 17 old French URLs (tenant `audit.repo.redirect_keep`) 301 to them;
+64 removed keys 404; `/feed/` → `/index.xml`. Then an `agent-fixes.json` row, rescan, snapshot. Then B3 + B4 (head order,
+x-default, tags + `/search/`/`/archives/` noindex and out of sitemaps, as blog.conholdate.cloud), B7–B9, B5 (with
+attribution: English original first), B10. Details: [docs/blogs/blog.conholdate.com.md](docs/blogs/blog.conholdate.com.md).
+
+**Done 13 Nov (all pushed):** full scan (health 65 → 58, new checks; snapshot 2026-11-13-2); conholdate-blog
+2993d49c, 940695cf, 24babc50, e0e0fe53 pushed to `main` (Redirects.json 1459 → 1412, `Redirects.md` notes, 15 French
+`url:` fixed); junk rule RED-1 widened (query string, upper-case copy, redirect to own home page) + reviewed keep-list;
+date-bound test fixed. SK's standing rules (memory): target 100 as Google/SEO/AEO/AIO/GEO see it, flag conflicts,
+sites light; bad link inherited from the English post → name the English article first. Open: blog.conholdate.cloud
+`/feed/` → home (retarget to `/index.xml`); dry run found more junk keys on the other blogs (aspose.com 103 etc.).
+
 ## Start here (session handoff, 2026-11-12, end of day)
 
 **Next session (13 Nov): blog.conholdate.com.** Start with [docs/blogs/blog.conholdate.com.md](docs/blogs/blog.conholdate.com.md)
