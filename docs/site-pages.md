@@ -68,3 +68,11 @@ Names on the pages: people and agents in full (`site_pages.WHO` maps old short k
 GitHub Pages of the conholdate-blogs repo twice kept a finished deployment "in progress" and refused the next one
 ("Please cancel <sha> first", while cancelling says "it's finished"). The workflow retries once after cancelling;
 if that fails, SK re-runs the failed job after about 30 minutes (cleared both times on 12 Nov).
+
+## Home page cards (13 Nov 2026, SK)
+
+Each subdomain is a card (`build_site.sub_tile`): health score, a bar and "N% of issues closed" (fixed + resolved +
+reviewed of all Issue log rows), "Open issues: X of Y", "N items still affected" (open ledger items); alerts under
+it. Order everywhere: blog.aspose.com, blog.groupdocs.com, blog.conholdate.com, then the .cloud ones. Three per
+row on desktop, two on tablets, one on phones. Replaces the 6 Nov rule "scores + alerts only".
+

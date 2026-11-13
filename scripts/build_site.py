@@ -50,7 +50,7 @@ LANDING = HEAD + """<title>Site health reports</title>
 * { box-sizing: border-box }
 body { margin: 0; background: var(--bg); color: var(--fg);
   font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif }
-main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; display: grid; gap: 20px }
+main { max-width: 1000px; margin: 0 auto; padding: 32px 16px 64px; display: grid; gap: 20px }
 h1 { margin: 0; font-size: 28px; display: flex; align-items: center; gap: 12px } p { margin: 0; color: var(--muted) }
 a { color: var(--accent) }
 /* Subdomains or Domains, never both (SK, 2026-11-06: the two lists repeated each other) */
@@ -72,6 +72,21 @@ a { color: var(--accent) }
 #v-domains { display: grid; gap: 12px } #v-domains[hidden] { display: none } .subs { display: grid; gap: 8px }
 .g-A, .g-B { --gc: var(--good) } .g-C { --gc: var(--notopt) } .g-D { --gc: var(--incorrect) } .g-F { --gc: var(--broken) }
 @media (max-width: 520px) { .pairs { grid-template-columns: 1fr } }
+/* squarish subdomain cards (SK, 2026-11-13): score, share of issues closed, open issues, items still affected;
+   three per row (.com row, then .cloud row), two on tablets, one on phones */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px }
+.dgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px } .dgrid .cards { grid-template-columns: 1fr }
+@media (max-width: 760px) { .cards, .dgrid { grid-template-columns: 1fr 1fr } }
+@media (max-width: 480px) { .cards, .dgrid { grid-template-columns: 1fr } }
+.card { display: grid; gap: 6px; align-content: start; padding: 12px 14px; border: 1px solid var(--line);
+  border-top: 4px solid var(--gc, var(--line)); border-radius: 8px; background: var(--surface); text-decoration: none; color: var(--fg) }
+.card:hover { border-color: var(--gc); border-top-color: var(--gc) } .card code { font-size: 14px; overflow-wrap: break-word }
+.card .score { display: flex; align-items: baseline; gap: 6px } .card .score b { font-size: 32px; line-height: 1.1; color: var(--gc); font-variant-numeric: tabular-nums }
+.card small, .card .dim { color: var(--muted); font-size: 13px } .card .line { font-size: 14px }
+.card .bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden } .card .bar i { display: block; height: 100%; background: var(--good) }
+.card .pct { font-weight: 700; color: var(--good) } .card .pct.zero { color: var(--muted) }
+.card.alerted { border-color: var(--broken); border-top-color: var(--broken) }
+.card .alert { color: var(--broken); font-size: 13px; font-weight: 600 }
 </style>
 <script>
 // Old links pointed at the first tenant's report on this page (e.g. /#findings): send them there.
@@ -321,13 +336,31 @@ def host_html(host: str) -> str:
     return html.escape(host).replace(".", ".<wbr>")
 
 
-def sub_tile(host: str, scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None) -> str:
-    """A subdomain with its health score, opening its page; alerts, if any, under it."""
+def sub_tile(host: str, scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None,
+             stats: dict[str, dict] | None = None) -> str:
+    """A subdomain card, opening its page: health score, share of its issues closed (fixed, resolved or reviewed),
+    open issues and items still affected (SK, 2026-11-13); alerts, if any, under it."""
     health, grade = scores.get(host, ("–", ""))
     lines = "".join(f'<span class="alert">⚠ {html.escape(a["name"])} · since {day(a["since"])} · last checked '
                     f'{day(a["checked"])}</span>' for a in (alerts or {}).get(host, []))
-    return (f'<a class="sub g-{grade}{" alerted" if lines else ""}" href="{html.escape(host)}/"><code>{host_html(host)}</code>'
-            f'<b>{health}</b>{lines}</a>')
+    st = (stats or {}).get(host) or {}
+    body = ""
+    if st.get("total"):
+        closed = st["total"] - st["open"]
+        pct = round(100 * closed / st["total"])
+        body = (f'<span class="bar" aria-hidden="true"><i style="width:{pct}%"></i></span>'
+                f'<span class="line"><span class="pct{"" if closed else " zero"}">{pct}%</span> of issues closed</span>'
+                f'<span class="line">Open issues: <b>{st["open"]:,}</b> of {st["total"]:,}</span>')
+    if st.get("items_open") is not None:
+        body += f'<span class="dim">{st["items_open"]:,} item{"" if st["items_open"] == 1 else "s"} still affected</span>'
+    return (f'<a class="card g-{grade}{" alerted" if lines else ""}" href="{html.escape(host)}/"><code>{host_html(host)}</code>'
+            f'<span class="score"><b>{health}</b><small>out of 100</small></span>{body}{lines}</a>')
+
+
+def host_stats(tenant: str, host: str, items_open: int | None) -> dict:
+    """Issue log counts of a subdomain for its home page card."""
+    s = build_report.issue_log_summary(tenant, host, tenant_paths(tenant).health_history)
+    return {"total": s["total"], "open": s["open"], "items_open": items_open}
 
 
 def host_scores(tenant: str, hosts: list[str]) -> dict[str, tuple[int, str]]:
@@ -343,22 +376,21 @@ def host_scores(tenant: str, hosts: list[str]) -> dict[str, tuple[int, str]]:
     return out
 
 
-def tenant_item(tenant: str, scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None) -> str:
+def tenant_item(tenant: str, scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None,
+                stats: dict[str, dict] | None = None) -> str:
     """A domain: its name as the heading (opens the domain page), then each of its subdomains with its health
     (SK, 2026-11-06: no counts and no archive link on the home page; the report pages link the archive)."""
     name = html.escape(tenant)
-    tiles = "".join(sub_tile(h, scores, alerts) for h in load_tenant(tenant).host_names)
-    return f'<div class="coll"><div><a href="{name}/"><b>{name}</b></a></div><div class="subs">{tiles}</div></div>'
+    tiles = "".join(sub_tile(h, scores, alerts, stats) for h in load_tenant(tenant).host_names)
+    return f'<div class="coll"><div><a href="{name}/"><b>{name}</b></a></div><div class="cards">{tiles}</div></div>'
 
 
-def domain_block(tenants: list[str], scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None) -> str:
-    """The home page's Domains view: one row per brand, .com before .cloud, like the Blogs section."""
-    rows: dict = {}
-    for t in tenants:
-        rows.setdefault(t.split(".")[0], []).append(t)
-    order = sorted(rows, key=lambda b: (BRANDS.index(b) if b in BRANDS else len(BRANDS), b))
-    return "\n".join(f'    <div class="pairs">{"".join(tenant_item(t, scores, alerts) for t in sorted(rows[b], key=lambda t: (not t.endswith(".com"), t)))}</div>'
-                     for b in order)
+def domain_block(tenants: list[str], scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None,
+                 stats: dict[str, dict] | None = None) -> str:
+    """The home page's Domains view: each domain with its subdomain cards; the .com domains first (aspose, groupdocs,
+    conholdate), then the .cloud ones, as in the subdomain switch (SK, 2026-11-13)."""
+    order = sorted(tenants, key=lambda t: (not t.endswith(".com"), brand_rank(t), t))
+    return '    <div class="dgrid">' + "".join(tenant_item(t, scores, alerts, stats) for t in order) + "</div>"
 
 
 # pages across domains: slug -> name; members come from each tenant's YAML `collections` (SK, 2026-10-27)
@@ -394,15 +426,11 @@ BRANDS = ("aspose", "groupdocs", "conholdate")  # row order of the home page's s
 
 
 def collection_block(slug: str, members: list[tuple[str, str]], scores: dict[str, tuple[int, str]],
-                     alerts: dict[str, list[dict]] | None = None) -> str:
-    """The home page's Subdomains view: the collection's name (opens its page) and each subdomain with its health,
-    one row per brand with .com before .cloud (blog.aspose.com, blog.aspose.cloud)."""
-    rows: dict = {}
-    for _, h in members:
-        rows.setdefault(h.split(".")[1] if h.count(".") > 1 else h, []).append(h)
-    order = sorted(rows, key=lambda b: (BRANDS.index(b) if b in BRANDS else len(BRANDS), b))
-    pairs = "\n".join(f'      <div class="pairs">{"".join(sub_tile(h, scores, alerts) for h in sorted(rows[b], key=lambda h: (not h.endswith(".com"), h)))}</div>'
-                      for b in order)
+                     alerts: dict[str, list[dict]] | None = None, stats: dict[str, dict] | None = None) -> str:
+    """The home page's Subdomains view: the collection's name (opens its page) and a card per subdomain in site order
+    (the .com ones, then the .cloud ones; collection_members sorts them)."""
+    order = sorted((h for _, h in members), key=lambda h: (not h.endswith(".com"), brand_rank(h), h))
+    pairs = '      <div class="cards">' + "".join(sub_tile(h, scores, alerts, stats) for h in order) + "</div>"
     return (f'    <div class="coll"><div><a href="{slug}/"><b>{html.escape(COLLECTIONS[slug])}</b></a>'
             f'<span>{len(members)} subdomains · health out of 100 · <a href="{slug}/">compare all →</a></span></div>\n{pairs}\n    </div>')
 
@@ -438,12 +466,14 @@ def build(out: Path, tenants: list[str]) -> None:
                 raise SystemExit(f"Host page {h} failed")
         n = build_archive.build(out / t / "archive", paths.archive, t)
         print(f"Archive: {n} snapshots for {t}")
-    blocks, scores = [], {}
+    blocks, scores, stats = [], {}, {}
     alerts = {h: a for t in tenants for h, a in host_alerts(t).items()}
     for slug, mem in members.items():  # pages across domains, e.g. /blogs/
         report = build_report.collection_report(COLLECTIONS[slug], slug, mem)
         scores.update({c["host"]: (c["health"], c["grade"]) for c in report["_hosts"]})
-        blocks.append(collection_block(slug, mem, scores, alerts))
+        items = {c["host"]: (c.get("items") or {}).get("open") for c in report["_hosts"]}
+        stats.update({h: host_stats(t, h, items.get(h)) for t, h in mem})
+        blocks.append(collection_block(slug, mem, scores, alerts, stats))
         page = build_report.build(report, [], None,
                                   standalone=True, guide_url=GUIDE_URL, site_tenants=tenants,
                                   site_hosts=[h for _, h in mem], method_url=METHOD_URL,
@@ -466,7 +496,7 @@ def build(out: Path, tenants: list[str]) -> None:
     legacy = LEGACY_TENANT if LEGACY_TENANT in tenants else ""  # its old links lead nowhere while it is not published
     for t in tenants:  # subdomains outside any collection get their score here
         scores.update(host_scores(t, [h for h in hosts[t] if h not in scores]))
-    items = domain_block(tenants, scores, alerts)
+    items = domain_block(tenants, scores, alerts, stats)
     (out / "index.html").write_text(LANDING.replace("__LEGACY__", legacy).replace("__ITEMS__", items)
                                     .replace("__SUBDOMAINS__", "\n".join(blocks)), encoding="utf-8")
     if legacy:  # /archive/ and /archive/<date>/ from before the subfolders

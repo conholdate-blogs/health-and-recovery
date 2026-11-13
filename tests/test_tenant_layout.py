@@ -38,16 +38,19 @@ def test_unpublished_tenant_is_left_off_the_site(monkeypatch):
     assert build_site.site_tenants() == ["aspose.com"]  # tenants/aspose.app.yaml: published: false
 
 
-def test_home_page_pairs_subdomains_by_brand():
+def test_home_page_cards_com_first_then_cloud():
+    # SK, 2026-11-13: squarish cards; .com blogs first (aspose, groupdocs, conholdate), then the .cloud ones
     from scripts.build_site import collection_block
 
     members = [("conholdate.cloud", "blog.conholdate.cloud"), ("aspose.cloud", "blog.aspose.cloud"),
                ("aspose.com", "blog.aspose.com"), ("conholdate.com", "blog.conholdate.com")]
-    block = collection_block("blogs", members, {"blog.aspose.com": (55, "F"), "blog.aspose.cloud": (67, "C")})
-    rows = [r for r in block.splitlines() if 'class="pairs"' in r]
-    assert [[h for h in ("aspose.com", "aspose.cloud", "conholdate.com", "conholdate.cloud") if f"blog.{h}/" in r]
-            for r in rows] == [["aspose.com", "aspose.cloud"], ["conholdate.com", "conholdate.cloud"]]
-    assert '<a class="sub g-F" href="blog.aspose.com/"><code>blog.<wbr>aspose.<wbr>com</code><b>55</b></a>' in block
+    stats = {"blog.aspose.com": {"total": 26, "open": 23, "items_open": 25623}}
+    block = collection_block("blogs", members, {"blog.aspose.com": (55, "F"), "blog.aspose.cloud": (67, "C")}, None, stats)
+    order = [h for h in ("aspose.com", "conholdate.com", "aspose.cloud", "conholdate.cloud")]
+    assert sorted(order, key=lambda h: block.index(f'href="blog.{h}/"')) == order
+    assert '<a class="card g-F" href="blog.aspose.com/"><code>blog.<wbr>aspose.<wbr>com</code>' in block
+    assert "<b>55</b>" in block and ">12%</span> of issues closed" in block and "Open issues: <b>23</b> of 26" in block
+    assert "25,623 items still affected" in block
     assert '<a href="blogs/"><b>Blogs</b></a>' in block
 
 
@@ -78,14 +81,14 @@ def test_home_page_alerts_only_for_broken_now(tmp_path, monkeypatch):
     assert "alert" not in build_site.sub_tile("blog.b.org", {}, alerts)
 
 
-def test_home_page_domains_pair_by_brand(monkeypatch):
+def test_home_page_domains_com_first(monkeypatch):
     from scripts import build_site
 
-    monkeypatch.setattr(build_site, "tenant_item", lambda t, scores, alerts: f"[{t}]")
-    rows = [r for r in build_site.domain_block(["conholdate.cloud", "aspose.cloud", "groupdocs.com", "aspose.com",
-                                                "conholdate.com", "groupdocs.cloud"], {}).splitlines() if "pairs" in r]
-    assert [r.split('">', 1)[1].split("</div>")[0] for r in rows] == [
-        "[aspose.com][aspose.cloud]", "[groupdocs.com][groupdocs.cloud]", "[conholdate.com][conholdate.cloud]"]
+    monkeypatch.setattr(build_site, "tenant_item", lambda t, scores, alerts, stats=None: f"[{t}]")
+    block = build_site.domain_block(["conholdate.cloud", "aspose.cloud", "groupdocs.com", "aspose.com",
+                                     "conholdate.com", "groupdocs.cloud"], {})
+    assert block.split('">', 1)[1].split("</div>")[0] == (
+        "[aspose.com][groupdocs.com][conholdate.com][aspose.cloud][groupdocs.cloud][conholdate.cloud]")
 
 
 def test_property_must_match_file_name(tmp_path):
