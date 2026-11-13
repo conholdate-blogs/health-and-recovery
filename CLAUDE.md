@@ -20,7 +20,7 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 **State:** blog.conholdate.com **health 58 → 85** in one day (B1–B4, B7–B9, CB3 all live and verified, 15 agent-fix
 rows); blog.conholdate.cloud **100** (carry-back CB1, CB3, CB5 live; CB2/CB4 were false premises, dropped). All
 pushed; SK lets me push this repo when needed (memory), blog repos still ask (SK often pushes them himself).
-**Next on blog.conholdate.com:** B5 links (show patterns, approve in batches, English original named first, fix
+**Planned (SK, 13 Nov): replace all old date-based URLs** (links in posts and date `url:`s; keep the Redirects.json keys) on every blog, plan in [docs/identified-issues.md](docs/identified-issues.md). SK continues **Monday 16 Nov**; nothing new started before. **Next on blog.conholdate.com:** B5 links (show patterns, approve in batches, English original named first, fix
 the translation agent where it caused them), B10 lengths/stale/untranslated text, h1_multiple (2 posts), tag typo,
 theme "Home" label. Then the same fixes on the next blog (playbook rows 1–17; the Issues across blogs page
 `/blogs/issues/` shows where each fix is still open). New today: home cards, issue matrix, issues chart on the Issue

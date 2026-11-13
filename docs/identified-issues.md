@@ -4,6 +4,27 @@ Everything found and not yet fixed or not yet in a report, per blog, so nothing 
 identified issues"). Counts from the 12 Nov dry runs of the repo checks (exact, every file) unless a date says
 otherwise. When a blog is scanned, its report and Issue log take over; tick the row here with the scan date.
 
+## All blogs: old date-based URLs (SK, 13 Nov 2026: "these are bugs, replace all date-based URLs"; plan, start Monday)
+
+Old WordPress URLs look like `/2021/12/16/slug/` (sometimes with a language prefix). Counted 13 Nov (repo, every file):
+
+| Where | blog.aspose.com | blog.groupdocs.com | blog.conholdate.com | blog.aspose.cloud | blog.groupdocs.cloud | blog.conholdate.cloud | Action |
+|---|---|---|---|---|---|---|---|
+| 1. Links inside posts to a date URL | 18,120 in 9,692 files | 156 in 21 | 0 | 391 in 254 | 272 in 119 | 0 | **Replace** each with the post's current URL (localized when the translation exists) |
+| 2. Posts whose own `url:` is a date URL | 41 | 0 | 0 | 4 | 0 | 0 | **Change** to the English slug URL; translations follow; one redirect old → new each (rule RED-1) |
+| 3. Redirects.json keys for old date URLs | 15,934 | 2,638 | 1,311 | 943 | 344 | 0 | **Keep** (they catch old links from other sites and search results); only fix keys whose target 404s or chains |
+
+Plan:
+1. New exact checks so every fix counts: `link_date_url` (item per link, with the current URL as `fix`) and
+   `post_url_dated` (item per post). Today such links count only as `link_redirected` / `link_broken`.
+2. Fix list per blog from Redirects.json (date key → target) plus post `url`/aliases; links with no match listed
+   for review (garbled slugs).
+3. Scripted replacement, batch by batch with SK's approval, build diff + commit check per batch; blog.aspose.com
+   last (18k links, live Redirects.json).
+4. Translation agent: never write a date URL (it copies links from English, so fixing English first stops most).
+5. Order with the rest: after B5/B10 on blog.conholdate.com (which has none of these), then blog.groupdocs.cloud →
+   blog.aspose.cloud → blog.aspose.com; blog.groupdocs.com monitor only (report, no fix).
+
 ## blog.conholdate.cloud (health 100, 12 Nov)
 
 | Issue | Count | State |
