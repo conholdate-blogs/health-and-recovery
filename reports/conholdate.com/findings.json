@@ -14,9 +14,10 @@
         "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
         "https://blog.conholdate.com/search/",
         "https://blog.conholdate.com/ar/search/",
+        "https://blog.conholdate.com/ko/search/",
         "https://blog.conholdate.com/ja/search/"
       ],
-      "observed": "4 of 57 sampled pages (by template: generic:/{section}/*/* 1/3, listing 3/4). e.g. https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: 199 characters of main text in the HTML; https://blog.conholdate.com/search/: 114 characters of main text in the HTML; https://blog.conholdate.com/ar/search/: 114 characters of main text in the HTML; https://blog.conholdate.com/ja/search/: 114 characters of main text in the HTML",
+      "observed": "4 of 57 sampled pages (by template: generic:/{section}/*/* 1/3, listing 3/4); 1 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: 199 characters of main text in the HTML; https://blog.conholdate.com/search/: 114 characters of main text in the HTML; https://blog.conholdate.com/ar/search/: 114 characters of main text in the HTML; https://blog.conholdate.com/ko/search/: 114 characters of main text in the HTML; https://blog.conholdate.com/ja/search/: 114 characters of main text in the HTML",
       "expected": "the main text in the HTML itself (at least 250 characters); AI crawlers do not run JavaScript",
       "locations": [
         {
@@ -32,6 +33,11 @@
         {
           "role": "page",
           "url": "https://blog.conholdate.com/ar/search/",
+          "note": "114 characters of main text in the HTML"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ko/search/",
           "note": "114 characters of main text in the HTML"
         },
         {
@@ -54,10 +60,6 @@
         {
           "role": "listed in",
           "url": "https://blog.conholdate.com/ar/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.conholdate.com/ja/sitemap.xml"
         }
       ],
       "sample": {
@@ -82,14 +84,14 @@
       "lost_clicks": 0,
       "lost_impressions": 15,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "M",
@@ -100,7 +102,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run16",
+    "last_seen_run": "crawl-audit-run22",
     "resolved_run": null,
     "resolved_at": null,
     "check": "content_needs_js",
@@ -119,11 +121,13 @@
     "evidence": {
       "urls": [
         "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
-        "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/",
         "https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/",
-        "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/"
+        "https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/",
+        "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/",
+        "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/"
       ],
-      "observed": "4 of 57 sampled pages (by template: generic:/{section}/*/* 2/3, tag 2/22). e.g. https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: no JSON-LD; https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/: no JSON-LD; https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/: no JSON-LD; https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/: no JSON-LD",
+      "observed": "4 of 57 sampled pages (by template: generic:/{section}/*/* 2/3, tag 2/22); 2 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: no JSON-LD; https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/: no JSON-LD; https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/: no JSON-LD; https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/: no JSON-LD; https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/: no JSON-LD",
       "expected": "JSON-LD naming what the page is (e.g. WebApplication, Article, FAQPage) and who publishes it",
       "locations": [
         {
@@ -133,12 +137,17 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
+          "url": "https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/",
           "note": "no JSON-LD"
         },
         {
           "role": "page",
           "url": "https://blog.conholdate.com/it/tag/extract-data-from-pdf-in-c/",
+          "note": "no JSON-LD"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/",
           "note": "no JSON-LD"
         },
         {
@@ -156,7 +165,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/pl/sitemap.xml"
+          "url": "https://blog.conholdate.com/tr/sitemap.xml"
         },
         {
           "role": "listed in",
@@ -178,25 +187,25 @@
         ]
       }
     },
-    "affected_pages": 3974,
+    "affected_pages": 3976,
     "impact": {
       "clicks_28d": 4,
-      "impressions_28d": 422,
+      "impressions_28d": 428,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 18,
-      "past_impressions": 774,
+      "past_impressions": 753,
       "lost_clicks": 14,
-      "lost_impressions": 352,
+      "lost_impressions": 325,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "lost",
       "score": 4,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -207,7 +216,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run16",
+    "last_seen_run": "crawl-audit-run22",
     "resolved_run": null,
     "resolved_at": null,
     "check": "no_structured_data",
@@ -239,23 +248,23 @@
     },
     "affected_pages": 0,
     "impact": {
-      "clicks_28d": 2805,
-      "impressions_28d": 140374,
+      "clicks_28d": 2804,
+      "impressions_28d": 141947,
       "source": "gsc-host",
       "share": 1.0,
-      "past_clicks": 5903,
-      "past_impressions": 165560,
-      "lost_clicks": 3098,
-      "lost_impressions": 25186,
+      "past_clicks": 6018,
+      "past_impressions": 166419,
+      "lost_clicks": 3214,
+      "lost_impressions": 24472,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
-      "score": 14,
+      "score": 15,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -266,7 +275,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "ai-audit-run2",
-    "last_seen_run": "ai-audit-run17",
+    "last_seen_run": "ai-audit-run23",
     "resolved_run": null,
     "resolved_at": null,
     "check": "llms_txt_missing",
@@ -328,22 +337,22 @@
     "affected_pages": 36,
     "impact": {
       "clicks_28d": 2,
-      "impressions_28d": 94,
+      "impressions_28d": 95,
       "source": "gsc-host",
       "share": 0.001,
       "past_clicks": 4,
       "past_impressions": 111,
       "lost_clicks": 2,
-      "lost_impressions": 17,
+      "lost_impressions": 16,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
       "score": 5,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -354,7 +363,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "discovery-run1",
-    "last_seen_run": "discovery-run3",
+    "last_seen_run": "discovery-run4",
     "resolved_run": null,
     "resolved_at": null,
     "check": "dup_in_file",
@@ -383,7 +392,7 @@
         "https://blog.conholdate.com/tag/add-text-watermark-using-csharp/",
         "https://blog.conholdate.com/tag/convert-html-to-pdf/"
       ],
-      "observed": "21 of 57 sampled pages (by template: generic:/{section}/*/* 1/3, tag 20/22). e.g. https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/: disallowed by robots.txt; https://blog.conholdate.com/tag/slides-to-word/: disallowed by robots.txt; https://blog.conholdate.com/tag/pdf-to-jpg/: disallowed by robots.txt; https://blog.conholdate.com/tag/fuzzy-search-in-c/: disallowed by robots.txt; https://blog.conholdate.com/tag/clear-image-background/: disallowed by robots.txt. Exact count from the sitemaps: 2526",
+      "observed": "21 of 57 sampled pages (by template: generic:/{section}/*/* 1/3, tag 20/22). e.g. https://blog.conholdate.com/tag/hide/unhide-rows-and-columns/: disallowed by robots.txt; https://blog.conholdate.com/tag/slides-to-word/: disallowed by robots.txt; https://blog.conholdate.com/tag/pdf-to-jpg/: disallowed by robots.txt; https://blog.conholdate.com/tag/fuzzy-search-in-c/: disallowed by robots.txt; https://blog.conholdate.com/tag/clear-image-background/: disallowed by robots.txt. Exact count from the sitemaps: 2527",
       "expected": "sitemaps list only crawlable pages",
       "locations": [
         {
@@ -431,25 +440,25 @@
         ]
       }
     },
-    "affected_pages": 2526,
+    "affected_pages": 2527,
     "impact": {
-      "clicks_28d": 35,
-      "impressions_28d": 4172,
+      "clicks_28d": 38,
+      "impressions_28d": 4232,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 177,
-      "past_impressions": 7718,
-      "lost_clicks": 142,
-      "lost_impressions": 3546,
+      "past_clicks": 178,
+      "past_impressions": 7510,
+      "lost_clicks": 140,
+      "lost_impressions": 3278,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "lost",
       "score": 27,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -460,7 +469,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run16",
+    "last_seen_run": "crawl-audit-run22",
     "resolved_run": null,
     "resolved_at": null,
     "check": "robots_blocked",
@@ -927,23 +936,23 @@
     },
     "affected_pages": 81,
     "impact": {
-      "clicks_28d": 11,
-      "impressions_28d": 451,
+      "clicks_28d": 12,
+      "impressions_28d": 448,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 5,
-      "past_impressions": 406,
+      "past_clicks": 7,
+      "past_impressions": 385,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
-      "score": 16,
+      "score": 17,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "M",
@@ -954,7 +963,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run20",
+    "last_seen_run": "link-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -1134,14 +1143,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -1152,7 +1161,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run7",
-    "last_seen_run": "repo-audit-run21",
+    "last_seen_run": "repo-audit-run27",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",
@@ -1172,32 +1181,32 @@
       "urls": [
         "https://blog.conholdate.com/tags/"
       ],
-      "observed": "2,341 of 2,526 tags (93%) have one post; 43,602 tag pages in 18 languages; 5.0 tags per post; tag pages earned 39 of 2,805 clicks (28 days)",
+      "observed": "2,338 of 2,527 tags (93%) have one post; 43,620 tag pages in 18 languages; 5.0 tags per post; tag pages earned 42 of 2,804 clicks (28 days)",
       "expected": "Tags group several posts (at most 20% with one post); weak tag pages are noindex, follow and stay out of the sitemap",
       "traffic": {
-        "clicks": 39,
-        "impressions": 4594
+        "clicks": 42,
+        "impressions": 4660
       }
     },
-    "affected_pages": 40409,
+    "affected_pages": 40358,
     "impact": {
-      "clicks_28d": 39,
-      "impressions_28d": 4594,
+      "clicks_28d": 42,
+      "impressions_28d": 4660,
       "source": "gsc-tag-pages",
       "share": null,
-      "past_clicks": 39,
-      "past_impressions": 4594,
+      "past_clicks": 42,
+      "past_impressions": 4660,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
       "score": 5,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "M",
@@ -1208,7 +1217,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-11",
     "first_seen_run": "structure-audit-2026-11-11",
-    "last_seen_run": "structure-audit-2026-11-11",
+    "last_seen_run": "structure-audit-2026-11-13",
     "resolved_run": null,
     "resolved_at": null,
     "check": "tag_pages_thin",
@@ -1228,32 +1237,32 @@
       "urls": [
         "https://blog.conholdate.com/sitemap.xml"
       ],
-      "observed": "43,584 of 53,700 sitemap URLs (81%) are tag pages; tag pages earned 39 of 2,805 clicks (28 days)",
+      "observed": "43,602 of 53,736 sitemap URLs (81%) are tag pages; tag pages earned 42 of 2,804 clicks (28 days)",
       "expected": "Sitemaps list posts and real landing pages; tag pages stay out",
       "traffic": {
-        "clicks": 39,
-        "impressions": 4594
+        "clicks": 42,
+        "impressions": 4660
       }
     },
-    "affected_pages": 43584,
+    "affected_pages": 43602,
     "impact": {
-      "clicks_28d": 39,
-      "impressions_28d": 4594,
+      "clicks_28d": 42,
+      "impressions_28d": 4660,
       "source": "gsc-tag-pages",
       "share": null,
-      "past_clicks": 39,
-      "past_impressions": 4594,
+      "past_clicks": 42,
+      "past_impressions": 4660,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
-      "score": 15,
+      "score": 16,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -1264,10 +1273,207 @@
     "superseded_by": null,
     "detected_at": "2026-11-11",
     "first_seen_run": "structure-audit-2026-11-11",
-    "last_seen_run": "structure-audit-2026-11-11",
+    "last_seen_run": "structure-audit-2026-11-13",
     "resolved_run": null,
     "resolved_at": null,
     "check": "sitemap_lists_tag_pages",
+    "notes": []
+  },
+  {
+    "id": "crawl-261113-1",
+    "key": "crawl/social_tags_in_body/blog.conholdate.com/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "crawl",
+    "type": "not_optimized",
+    "title": "<head> ends early: Open Graph and Twitter tags (and JSON-LD) land in <body>",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/",
+        "https://blog.conholdate.com/archives/",
+        "https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/",
+        "https://blog.conholdate.com/ru/conholdate.total/",
+        "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/ar/",
+        "https://blog.conholdate.com/search/",
+        "https://blog.conholdate.com/total/merge-jpg-images-into-pdf-using-csharp/",
+        "https://blog.conholdate.com/fr/conholdate.total/",
+        "https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/"
+      ],
+      "observed": "35 of 57 sampled pages (by template: category 2/3, generic:/{section}/*/* 2/3, home 3/3, listing 4/4, post 22/22, tag 2/22); 16 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.conholdate.com/archives/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.conholdate.com/ru/conholdate.total/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: in <body>: Open Graph, Twitter card",
+      "expected": "every head tag inside <head>; a <div> (e.g. language switcher) only after them",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/",
+          "note": "in <body>: Open Graph, Twitter card, JSON-LD"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/archives/",
+          "note": "in <body>: Open Graph, Twitter card, JSON-LD"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/",
+          "note": "in <body>: Open Graph, Twitter card, JSON-LD"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ru/conholdate.total/",
+          "note": "in <body>: Open Graph, Twitter card, JSON-LD"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+          "note": "in <body>: Open Graph, Twitter card"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/en/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.com/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ru/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ko/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "category": [
+          2,
+          3
+        ],
+        "generic:/{section}/*/*": [
+          2,
+          3
+        ],
+        "home": [
+          3,
+          3
+        ],
+        "listing": [
+          4,
+          4
+        ],
+        "post": [
+          22,
+          22
+        ],
+        "tag": [
+          2,
+          22
+        ]
+      }
+    },
+    "affected_pages": 14086,
+    "impact": {
+      "clicks_28d": 2766,
+      "impressions_28d": 137715,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 5840,
+      "past_impressions": 158901,
+      "lost_clicks": 3074,
+      "lost_impressions": 21186,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "at stake",
+      "score": 29,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "crawl-audit-run22",
+    "last_seen_run": "crawl-audit-run22",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "social_tags_in_body",
+    "notes": []
+  },
+  {
+    "id": "crawl-261113-2",
+    "key": "crawl/slash_redirect_temporary/blog.conholdate.com/host",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "host",
+    "dimension": "crawl",
+    "type": "improvable",
+    "title": "URLs without the trailing slash forward with a 302",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/total/add-barcode-qr-pdf-csharp",
+        "https://blog.conholdate.com/tags"
+      ],
+      "observed": "Live test (CDN, not a repo file): https://blog.conholdate.com/total/add-barcode-qr-pdf-csharp answers 302 to https://blog.conholdate.com/total/add-barcode-qr-pdf-csharp/; https://blog.conholdate.com/tags answers 302 to https://blog.conholdate.com/tags/",
+      "expected": "A URL without its trailing slash answers a permanent redirect (301/308)",
+      "locations": [
+        {
+          "role": "live test",
+          "url": "https://blog.conholdate.com/total/add-barcode-qr-pdf-csharp",
+          "note": "answers 302 to https://blog.conholdate.com/total/add-barcode-qr-pdf-csharp/; try: curl -I https://blog.conholdate.com/total/add-barcode-qr-pdf-csharp",
+          "fix": "301 to the URL with /"
+        },
+        {
+          "role": "live test",
+          "url": "https://blog.conholdate.com/tags",
+          "note": "answers 302 to https://blog.conholdate.com/tags/; try: curl -I https://blog.conholdate.com/tags",
+          "fix": "301 to the URL with /"
+        }
+      ]
+    },
+    "affected_pages": 2,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 3,
+      "lost_clicks": 0,
+      "lost_impressions": 2,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 3,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "repo-audit-run27",
+    "last_seen_run": "repo-audit-run27",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "slash_redirect_temporary",
     "notes": []
   },
   {
@@ -1291,9 +1497,9 @@
         "https://blog.conholdate.com/ar/",
         "https://blog.conholdate.com/search/",
         "https://blog.conholdate.com/total/merge-jpg-images-into-pdf-using-csharp/",
-        "https://blog.conholdate.com/de/conholdate.total/"
+        "https://blog.conholdate.com/fr/conholdate.total/"
       ],
-      "observed": "36 of 57 sampled pages (by template: category 3/3, generic:/{section}/*/* 2/3, home 3/3, listing 4/4, post 22/22, tag 2/22). e.g. https://blog.conholdate.com/conholdate.total/: 1 entries: en; https://blog.conholdate.com/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/archives/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/ru/conholdate.total/: 17 entries: ja, ko, es, de, ru, fr",
+      "observed": "36 of 57 sampled pages (by template: category 3/3, generic:/{section}/*/* 2/3, home 3/3, listing 4/4, post 22/22, tag 2/22); 16 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/conholdate.total/: 1 entries: en; https://blog.conholdate.com/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/archives/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/total/convert-pptx-to-xml-csharp/: 18 entries: en, ja, ko, es, de, ru; https://blog.conholdate.com/ru/conholdate.total/: 17 entries: ja, ko, es, de, ru, fr",
       "expected": "an x-default entry",
       "locations": [
         {
@@ -1361,25 +1567,25 @@
         ]
       }
     },
-    "affected_pages": 14072,
+    "affected_pages": 14092,
     "impact": {
-      "clicks_28d": 2770,
-      "impressions_28d": 136201,
+      "clicks_28d": 2766,
+      "impressions_28d": 137715,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 5726,
-      "past_impressions": 157834,
-      "lost_clicks": 2956,
-      "lost_impressions": 21633,
+      "past_clicks": 5840,
+      "past_impressions": 158901,
+      "lost_clicks": 3074,
+      "lost_impressions": 21186,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
       "score": 14,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -1390,7 +1596,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run16",
+    "last_seen_run": "crawl-audit-run22",
     "resolved_run": null,
     "resolved_at": null,
     "check": "hreflang_no_xdefault",
@@ -1617,22 +1823,22 @@
     "affected_pages": 20,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 480,
+      "impressions_28d": 481,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 29,
+      "past_impressions": 30,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
       "score": 15,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -1643,7 +1849,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run20",
+    "last_seen_run": "link-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -2084,22 +2290,22 @@
     "affected_pages": 54,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 27,
+      "impressions_28d": 30,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 79,
+      "past_impressions": 74,
       "lost_clicks": 0,
-      "lost_impressions": 52,
+      "lost_impressions": 44,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
       "score": 2,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -2110,7 +2316,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run20",
+    "last_seen_run": "link-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -2870,23 +3076,23 @@
     },
     "affected_pages": 374,
     "impact": {
-      "clicks_28d": 15,
-      "impressions_28d": 964,
+      "clicks_28d": 18,
+      "impressions_28d": 939,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 13,
-      "past_impressions": 429,
+      "past_clicks": 12,
+      "past_impressions": 428,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
       "score": 20,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -2897,7 +3103,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run20",
+    "last_seen_run": "link-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -3069,22 +3275,22 @@
     "affected_pages": 15,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 16,
+      "impressions_28d": 14,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 9,
+      "past_impressions": 7,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
       "score": 1,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "M",
@@ -3095,10 +3301,1324 @@
     "superseded_by": null,
     "detected_at": "2026-11-11",
     "first_seen_run": "repo-audit-run21",
-    "last_seen_run": "repo-audit-run21",
+    "last_seen_run": "repo-audit-run27",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translated_url_mismatch",
+    "notes": []
+  },
+  {
+    "id": "intl-261113-1",
+    "key": "intl/description_untranslated/blog.conholdate.com/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "intl",
+    "type": "incorrect",
+    "title": "Translated pages keep the English meta description",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ar/",
+        "https://blog.conholdate.com/ko/",
+        "https://blog.conholdate.com/id/"
+      ],
+      "observed": "2 of 57 sampled pages (by template: home 2/3); 1 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/ar/: same as https://blog.conholdate.com/: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, Powe'; https://blog.conholdate.com/ko/: same as https://blog.conholdate.com/: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, Powe'; https://blog.conholdate.com/id/: same as https://blog.conholdate.com/: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, Powe'",
+      "expected": "the meta description in the page's language",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ar/",
+          "note": "same as https://blog.conholdate.com/: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, Powe'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ko/",
+          "note": "same as https://blog.conholdate.com/: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, Powe'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/id/",
+          "note": "same as https://blog.conholdate.com/: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, Powe'"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ar/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.com/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ko/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "home": [
+          2,
+          3
+        ]
+      }
+    },
+    "affected_pages": 12,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 8,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 1,
+      "past_impressions": 42,
+      "lost_clicks": 1,
+      "lost_impressions": 34,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "lost",
+      "score": 3,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "crawl-audit-run22",
+    "last_seen_run": "crawl-audit-run22",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "description_untranslated",
+    "notes": []
+  },
+  {
+    "id": "intl-261113-2",
+    "key": "intl/translation_stale/blog.conholdate.com/post",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "intl",
+    "type": "improvable",
+    "title": "Translations older than the English title or description",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ar/total/build-your-own-google-docs-like-app/",
+        "https://blog.conholdate.com/de/total/build-your-own-google-docs-like-app/",
+        "https://blog.conholdate.com/es/total/build-your-own-google-docs-like-app/",
+        "https://blog.conholdate.com/fa/total/build-your-own-google-docs-like-app/",
+        "https://blog.conholdate.com/fr/total/créez-votre-propre-application-google-docs-like/",
+        "https://blog.conholdate.com/id/total/build-your-own-google-docs-like-app/",
+        "https://blog.conholdate.com/it/total/build-your-own-google-docs-like-app/",
+        "https://blog.conholdate.com/ja/total/build-your-own-google-docs-like-app/",
+        "https://blog.conholdate.com/ko/total/build-your-own-google-docs-like-app/",
+        "https://blog.conholdate.com/nl/total/build-your-own-google-docs-like-app/"
+      ],
+      "observed": "3,638 entries or files; English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel': 17, English rewritten 2026-03-24 after the translation (2025-02-11); description: 'Follow this blog post to learn how to achieve Imag' -> 'Learn to convert images (JPEG, PNG, BMP, GIF, TIFF': 17, English rewritten 2026-08-02 after the translation (2025-02-11); description: 'You can easily generate customized reports program' -> 'Step‑by‑step tutorial to generate custom Word repo': 17, English rewritten 2026-04-13 after the translation (2025-02-11); description: 'You can add a custom XMP metadata package to your ' -> 'Learn how to programmatically add, read, and remov': 17",
+      "expected": "A translation is updated whenever the English title or description changes",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.ar.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.de.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.es.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.fa.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/créez-votre-propre-application-google-docs-like/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.fr.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.id.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.it.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.ja.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.ko.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.nl.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.pl.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-06-20); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pt/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.pt.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ru/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.ru.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/th/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.th.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.tr.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/vi/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.vi.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/zh/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.zh.md",
+          "line": 1,
+          "note": "English rewritten 2026-03-15 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App' -> 'How to Build a Google Docs‑Like Real‑Time Editor'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to create a Google Docs‑style real‑time '",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.ar.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.de.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.es.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.fa.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/créez-votre-propre-application-google-docs-like-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.fr.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.id.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.it.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.ja.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.ko.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.nl.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.pl.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-06-20); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pt/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.pt.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ru/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.ru.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/th/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.th.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.tr.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/vi/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.vi.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/zh/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.zh.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Build your own Google Docs like App (Part -II)' -> 'Build a Real‑Time Google Docs‑Style App – Part 2'; description: 'Follow this blog post to learn how to build your o' -> 'Learn how to build a Google Docs‑style web app wit'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.ar.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.de.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.es.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.fa.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.id.md",
+          "line": 1,
+          "note": "English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel'",
+          "fix": "re-translate from content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.md",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        }
+      ]
+    },
+    "affected_pages": 3638,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 18,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 44,
+      "lost_clicks": 0,
+      "lost_impressions": 26,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "M",
+    "fix_tier": 3,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "repo-audit-run27",
+    "last_seen_run": "repo-audit-run27",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "translation_stale",
+    "notes": []
+  },
+  {
+    "id": "intl-261113-3",
+    "key": "intl/post_text_untranslated/blog.conholdate.com/post",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "intl",
+    "type": "incorrect",
+    "title": "Translations that keep the English title or description",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/fa/total/create-asp.net-pdf-editor-with-barcode-features/",
+        "https://blog.conholdate.com/fa/total/discount-offer-ends-soon/",
+        "https://blog.conholdate.com/fr/total/sign-documents-with-digital-signatures-using-java/",
+        "https://blog.conholdate.com/fr/total/rechercher-un-mot-dans-pdf-en-utilisant-java/",
+        "https://blog.conholdate.com/fr/total/export-data-to-excel-in-java/",
+        "https://blog.conholdate.com/fr/total/add-or-remove-custom-xmp-metadata-from-gif-using-java/",
+        "https://blog.conholdate.com/zh/total/how-to-convert-excel-to-xml-in-csharp",
+        "https://blog.conholdate.com/fa/total/extract-table-from-pdf-in-java",
+        "https://blog.conholdate.com/fa/total/convert-word-to-markdown-using-java",
+        "https://blog.conholdate.com/fa/total/unhide-sheets-in-excel-using-nodejs"
+      ],
+      "observed": "198 entries or files; title in English: 'How to Remove a Page from a PDF in Java': 11, title in English: 'Strikethrough Text in C#': 8, title in English: 'Convert PUB to Excel in C#': 5, title in English: 'Online LaTeX Viewer': 5",
+      "expected": "A translation's seoTitle, title and description are in its own language",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/create-asp.net-pdf-editor-with-barcode-features/",
+          "file": "content/Conholdate.Total/total/2020-07-10-create-asp.net-pdf-editor-with-barcode-features/index.fa.md",
+          "line": 1,
+          "note": "title in English: 'Create ASP.NET PDF Editor with Barcode Features'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/discount-offer-ends-soon/",
+          "file": "content/Conholdate.Total/total/2021-01-01-discount-offer-ends-soon/index.fa.md",
+          "line": 1,
+          "note": "title in English: 'Hurry! 25% Off Conholdate.Total Offer Ends Soon'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/sign-documents-with-digital-signatures-using-java/",
+          "file": "content/Conholdate.Total/total/2021-04-23-sign-documents-with-digital-signatures-using-java/index.fr.md",
+          "line": 1,
+          "note": "title in English: 'Sign Documents with Digital Signatures using Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/rechercher-un-mot-dans-pdf-en-utilisant-java/",
+          "file": "content/Conholdate.Total/total/2021-05-11-search-for-a-word-in-pdf-using-java/index.fr.md",
+          "line": 1,
+          "note": "title in English: 'Search for a Word in PDF using Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/export-data-to-excel-in-java/",
+          "file": "content/Conholdate.Total/total/2021-08-27-export-data-to-excel-in-java/index.fr.md",
+          "line": 1,
+          "note": "title in English: 'Export Data to Excel in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/add-or-remove-custom-xmp-metadata-from-gif-using-java/",
+          "file": "content/Conholdate.Total/total/2021-10-21-add-or-remove-custom-xmp-metadata-from-gif-using-java/index.fr.md",
+          "line": 1,
+          "note": "title in English: 'Add or Remove Custom XMP Metadata from GIF using Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/zh/total/how-to-convert-excel-to-xml-in-csharp",
+          "file": "content/Conholdate.Total/total/2022-08-01-how-to-convert-excel-to-xml-in-csharp/index.zh.md",
+          "line": 1,
+          "note": "title in English: 'How to convert Excel to XML in C#'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/extract-table-from-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2022-09-22-extract-table-from-pdf-in-java/index.fa.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Extract Table From PDF in Java | Read Table Data in PDF'; title in English: 'Extract Table From PDF in Java'",
+          "fix": "translate seoTitle, title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/convert-word-to-markdown-using-java",
+          "file": "content/Conholdate.Total/total/2022-10-26-convert-word-to-markdown-using-java/index.fa.md",
+          "line": 1,
+          "note": "title in English: 'Convert Word to Markdown using Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/unhide-sheets-in-excel-using-nodejs",
+          "file": "content/Conholdate.Total/total/2022-11-03-unhide-sheets-in-excel-using-nodejs/index.fa.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Unhide Sheets in Excel using Node.js'",
+          "fix": "translate seoTitle",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/how-to-add-an-image-stamp-in-pdf-using-csharp",
+          "file": "content/Conholdate.Total/total/2023-01-31-how-to-add-an-image-stamp-in-pdf-using-csharp/index.it.md",
+          "line": 1,
+          "note": "title in English: 'How to Add an Image Stamp in PDF using C#'",
+          "fix": "translate title",
+          "commit": "7251c0ec 2025-02-14 Translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/fill-out-a-series-of-cells-in-excel-in-java",
+          "file": "content/Conholdate.Total/total/2023-04-12-fill-out-a-series-of-cells-in-excel-in-java/index.fa.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Java Insert Data in a Range of Cells in Excel(XLSX / XLS) | '",
+          "fix": "translate seoTitle",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/uncompress-rar-files",
+          "file": "content/Conholdate.Total/total/2023-05-25-uncompress-rar-files/index.fa.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Unpack RAR Files | Free RAR Unzipper'",
+          "fix": "translate seoTitle",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/uncompress-rar-files",
+          "file": "content/Conholdate.Total/total/2023-05-25-uncompress-rar-files/index.it.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Unpack RAR Files | Free RAR Unzipper'",
+          "fix": "translate seoTitle",
+          "commit": "7251c0ec 2025-02-14 Translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/document-viewing-with-csharp",
+          "file": "content/Conholdate.Total/total/2023-06-01-document-viewing-with-csharp/index.fa.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Create Document Viewer | C# Document Viewing'",
+          "fix": "translate seoTitle",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/reduce-png-file-size",
+          "file": "content/Conholdate.Total/total/2023-06-06-reduce-png-file-size/index.ar.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Reduce PNG | Compress PNG Image'",
+          "fix": "translate seoTitle",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/annotating-text-in-a-pdf-using-java",
+          "file": "content/Conholdate.Total/total/2023-06-19-annotating-text-in-a-pdf-using-java/index.id.md",
+          "line": 1,
+          "note": "seoTitle in English: 'How to Annotate Text in a PDF in Java | Example of Annotatio'",
+          "fix": "translate seoTitle",
+          "commit": "66eecac3 2025-06-18 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/convert-webp-to-jpg",
+          "file": "content/Conholdate.Total/total/2023-06-20-convert-webp-to-jpg/index.fa.md",
+          "line": 1,
+          "note": "title in English: 'WebP Converter: Change WebP to JPG'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/extract-rich-text-as-markdown-syntax-in-csharp",
+          "file": "content/Conholdate.Total/total/2023-06-22-extract-rich-text-as-markdown-syntax-in-csharp/index.fa.md",
+          "line": 1,
+          "note": "title in English: 'Extract Rich Text as Markdown Syntax in C#'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/how-to-remove-a-page-from-a-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2023-06-26-how-to-remove-a-page-from-a-PDF-in-Java/index.ar.md",
+          "line": 1,
+          "note": "title in English: 'How to Remove a Page from a PDF in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/how-to-remove-a-page-from-a-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2023-06-26-how-to-remove-a-page-from-a-PDF-in-Java/index.de.md",
+          "line": 1,
+          "note": "title in English: 'How to Remove a Page from a PDF in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/how-to-remove-a-page-from-a-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2023-06-26-how-to-remove-a-page-from-a-PDF-in-Java/index.es.md",
+          "line": 1,
+          "note": "title in English: 'How to Remove a Page from a PDF in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/how-to-remove-a-page-from-a-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2023-06-26-how-to-remove-a-page-from-a-PDF-in-Java/index.fr.md",
+          "line": 1,
+          "note": "title in English: 'How to Remove a Page from a PDF in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/how-to-remove-a-page-from-a-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2023-06-26-how-to-remove-a-page-from-a-PDF-in-Java/index.id.md",
+          "line": 1,
+          "note": "title in English: 'How to Remove a Page from a PDF in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/how-to-remove-a-page-from-a-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2023-06-26-how-to-remove-a-page-from-a-PDF-in-Java/index.ja.md",
+          "line": 1,
+          "note": "title in English: 'How to Remove a Page from a PDF in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/how-to-remove-a-page-from-a-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2023-06-26-how-to-remove-a-page-from-a-PDF-in-Java/index.ko.md",
+          "line": 1,
+          "note": "title in English: 'How to Remove a Page from a PDF in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/how-to-remove-a-page-from-a-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2023-06-26-how-to-remove-a-page-from-a-PDF-in-Java/index.nl.md",
+          "line": 1,
+          "note": "title in English: 'How to Remove a Page from a PDF in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pt/total/how-to-remove-a-page-from-a-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2023-06-26-how-to-remove-a-page-from-a-PDF-in-Java/index.pt.md",
+          "line": 1,
+          "note": "title in English: 'How to Remove a Page from a PDF in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ru/total/how-to-remove-a-page-from-a-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2023-06-26-how-to-remove-a-page-from-a-PDF-in-Java/index.ru.md",
+          "line": 1,
+          "note": "title in English: 'How to Remove a Page from a PDF in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/zh/total/how-to-remove-a-page-from-a-pdf-in-java",
+          "file": "content/Conholdate.Total/total/2023-06-26-how-to-remove-a-page-from-a-PDF-in-Java/index.zh.md",
+          "line": 1,
+          "note": "title in English: 'How to Remove a Page from a PDF in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-word-to-excel-online/",
+          "file": "content/Conholdate.Total/total/2024-01-24-convert-word-to-excel-online/index.id.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Online Free Word to Excel Converter | Convert DOCX to XLS XL'; title in English: 'Convert Word to Excel Online'",
+          "fix": "translate seoTitle, title",
+          "commit": "a3cf13cf 2025-02-24 Translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-html-to-pptx-java/",
+          "file": "content/Conholdate.Total/total/2024-03-11-convert-html-to-pptx-java/index.id.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Convert HTML to PowerPoint PPTX in Java | Webpage to Present'",
+          "fix": "translate seoTitle",
+          "commit": "a3cf13cf 2025-02-24 Translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-excel-to-json-csharp",
+          "file": "content/Conholdate.Total/total/2024-03-20-convert-excel-to-json-csharp/index.id.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Convert Excel to JSON in C# | XLS XLSX to JSON Converter'; title in English: 'Convert Excel to JSON in C#'",
+          "fix": "translate seoTitle, title",
+          "commit": "a3cf13cf 2025-02-24 Translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-pdf-to-xml-java",
+          "file": "content/Conholdate.Total/total/2024-03-25-convert-pdf-to-xml-java/index.id.md",
+          "line": 1,
+          "note": "title in English: 'Convert PDF to XML in Java'",
+          "fix": "translate title",
+          "commit": "a3cf13cf 2025-02-24 Translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/th/total/repair-pdf-files-online/",
+          "file": "content/Conholdate.Total/total/2024-04-01-repair-pdf-online/index.th.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Repair PDF Files Online for Free | Fix PDF Recover Corrupted'",
+          "fix": "translate seoTitle",
+          "commit": "a3cf13cf 2025-02-24 Translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-visio-to-image-java/",
+          "file": "content/Conholdate.Total/total/2024-11-18-convert-visio-to-image-java/index.id.md",
+          "line": 1,
+          "note": "title in English: 'Convert Visio to Image in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/convert-fbx-to-stl-csharp/",
+          "file": "content/Conholdate.Total/total/2024-11-21-convert-fbx-to-stl-csharp/index.fa.md",
+          "line": 1,
+          "note": "title in English: 'Convert FBX to STL in C#'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-fbx-to-stl-csharp/",
+          "file": "content/Conholdate.Total/total/2024-11-21-convert-fbx-to-stl-csharp/index.id.md",
+          "line": 1,
+          "note": "title in English: 'Convert FBX to STL in C#'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-dwf-to-pdf-java",
+          "file": "content/Conholdate.Total/total/2024-11-22-convert-dwf-to-pdf-java/index.id.md",
+          "line": 1,
+          "note": "seoTitle in English: 'Convert DWF to PDF in Java | DWF to PDF Converter Guide'",
+          "fix": "translate seoTitle",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/convert-cdr-to-psd-in-csharp/",
+          "file": "content/Conholdate.Total/total/2024-11-29-convert-cdr-to-psd-in-csharp/index.de.md",
+          "line": 1,
+          "note": "title in English: 'Convert CDR to PSD in C#'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        }
+      ]
+    },
+    "affected_pages": 198,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 31,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 1,
+      "past_impressions": 15,
+      "lost_clicks": 1,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "lost",
+      "score": 2,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "M",
+    "fix_tier": 3,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "repo-audit-run27",
+    "last_seen_run": "repo-audit-run27",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "post_text_untranslated",
+    "notes": []
+  },
+  {
+    "id": "intl-261113-4",
+    "key": "intl/section_index_untranslated/blog.conholdate.com/listing",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "listing",
+    "dimension": "intl",
+    "type": "incorrect",
+    "title": "Section pages with an English-only _index.md",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/"
+      ],
+      "observed": "17 entries or files; ar posts in a section whose _index.md is English only: 1, de posts in a section whose _index.md is English only: 1, es posts in a section whose _index.md is English only: 1, fa posts in a section whose _index.md is English only: 1",
+      "expected": "A section with _index.md has _index.<lang>.md for every language it has posts in",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.ar.md",
+          "line": 0,
+          "note": "ar posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.ar.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.de.md",
+          "line": 0,
+          "note": "de posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.de.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.es.md",
+          "line": 0,
+          "note": "es posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.es.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.fa.md",
+          "line": 0,
+          "note": "fa posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.fa.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.fr.md",
+          "line": 0,
+          "note": "fr posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.fr.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.id.md",
+          "line": 0,
+          "note": "id posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.id.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.it.md",
+          "line": 0,
+          "note": "it posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.it.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.ja.md",
+          "line": 0,
+          "note": "ja posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.ja.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.ko.md",
+          "line": 0,
+          "note": "ko posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.ko.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.nl.md",
+          "line": 0,
+          "note": "nl posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.nl.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.pl.md",
+          "line": 0,
+          "note": "pl posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.pl.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.pt.md",
+          "line": 0,
+          "note": "pt posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.pt.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.ru.md",
+          "line": 0,
+          "note": "ru posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.ru.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.th.md",
+          "line": 0,
+          "note": "th posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.th.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.tr.md",
+          "line": 0,
+          "note": "tr posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.tr.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.vi.md",
+          "line": 0,
+          "note": "vi posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.vi.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "content/Conholdate.Total/_index.zh.md",
+          "line": 0,
+          "note": "zh posts in a section whose _index.md is English only",
+          "fix": "add content/Conholdate.Total/_index.zh.md",
+          "commit": "040371bc 2025-07-23 Breadcrumb - Home » Conholdate Blog"
+        }
+      ]
+    },
+    "affected_pages": 17,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 8,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 1,
+      "past_impressions": 40,
+      "lost_clicks": 1,
+      "lost_impressions": 32,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "lost",
+      "score": 3,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "repo-audit-run27",
+    "last_seen_run": "repo-audit-run27",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "section_index_untranslated",
+    "notes": []
+  },
+  {
+    "id": "intl-261113-5",
+    "key": "intl/language_name_wrong/blog.conholdate.com/config",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "config",
+    "dimension": "intl",
+    "type": "incorrect",
+    "title": "Language menu shows a wrong language name",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/"
+      ],
+      "observed": "5 entries or files; ja: languageName '日本': 1, ko: languageName '한국인': 1, nl: languageName 'Dutch': 1, th: languageName 'Thai': 1",
+      "expected": "Each language's languageName is its own name in that language (日本語, not 日本)",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "ja: languageName '日本'",
+          "fix": "日本語",
+          "commit": null
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "ko: languageName '한국인'",
+          "fix": "한국어",
+          "commit": null
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "nl: languageName 'Dutch'",
+          "fix": "Nederlands",
+          "commit": null
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "th: languageName 'Thai'",
+          "fix": "ไทย",
+          "commit": null
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "pl: languageName 'Polish'",
+          "fix": "Polski",
+          "commit": null
+        }
+      ]
+    },
+    "affected_pages": 5,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 8,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 1,
+      "past_impressions": 40,
+      "lost_clicks": 1,
+      "lost_impressions": 32,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "lost",
+      "score": 3,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "repo-audit-run27",
+    "last_seen_run": "repo-audit-run27",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "language_name_wrong",
+    "notes": []
+  },
+  {
+    "id": "intl-261113-6",
+    "key": "intl/rtl_direction_missing/blog.conholdate.com/config",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "config",
+    "dimension": "intl",
+    "type": "improvable",
+    "title": "Right-to-left languages render left to right",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ar/",
+        "https://blog.conholdate.com/fa/"
+      ],
+      "observed": "2 entries or files; ar: languageDirection not set: 1, fa: languageDirection not set: 1",
+      "expected": "Arabic, Persian, Hebrew (and other RTL languages) set languageDirection: rtl",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "ar: languageDirection not set",
+          "fix": "languageDirection: rtl",
+          "commit": null
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "fa: languageDirection not set",
+          "fix": "languageDirection: rtl",
+          "commit": null
+        }
+      ]
+    },
+    "affected_pages": 2,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 1,
+      "lost_clicks": 0,
+      "lost_impressions": 1,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "lost",
+      "score": 0,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "repo-audit-run27",
+    "last_seen_run": "repo-audit-run27",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "rtl_direction_missing",
     "notes": []
   },
   {
@@ -3120,11 +4640,11 @@
         "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
         "https://blog.conholdate.com/ar/",
         "https://blog.conholdate.com/search/",
-        "https://blog.conholdate.com/de/conholdate.total/",
-        "https://blog.conholdate.com/pl/tag/hide/unhide-rows-and-columns/",
-        "https://blog.conholdate.com/id/"
+        "https://blog.conholdate.com/fr/conholdate.total/",
+        "https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/ko/"
       ],
-      "observed": "19 of 57 sampled pages (by template: category 3/3, generic:/{section}/*/* 2/3, home 3/3, listing 4/4, post 5/22, tag 2/22). e.g. https://blog.conholdate.com/conholdate.total/: width 33: 'Conholdate Blog - Conholdate Blog'; https://blog.conholdate.com/: width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'; https://blog.conholdate.com/archives/: width 8: 'archives'; https://blog.conholdate.com/ru/conholdate.total/: width 35: 'Conholdate.Totals - Conholdate Blog'; https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'",
+      "observed": "24 of 57 sampled pages (by template: category 3/3, generic:/{section}/*/* 2/3, home 3/3, listing 4/4, post 10/22, tag 2/22); 8 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/conholdate.total/: width 33: 'Conholdate Blog - Conholdate Blog'; https://blog.conholdate.com/: width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'; https://blog.conholdate.com/archives/: width 8: 'archives'; https://blog.conholdate.com/ru/conholdate.total/: width 35: 'Conholdate.Totals - Conholdate Blog'; https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'",
       "expected": "50-170 characters (CJK count double)",
       "locations": [
         {
@@ -3187,7 +4707,7 @@
           4
         ],
         "post": [
-          5,
+          10,
           22
         ],
         "tag": [
@@ -3196,25 +4716,25 @@
         ]
       }
     },
-    "affected_pages": 6325,
+    "affected_pages": 8613,
     "impact": {
-      "clicks_28d": 632,
-      "impressions_28d": 31299,
+      "clicks_28d": 1259,
+      "impressions_28d": 62843,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 1316,
-      "past_impressions": 36537,
-      "lost_clicks": 684,
-      "lost_impressions": 5238,
+      "past_clicks": 2665,
+      "past_impressions": 72691,
+      "lost_clicks": 1406,
+      "lost_impressions": 9848,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
-      "score": 12,
+      "score": 13,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -3225,7 +4745,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run16",
+    "last_seen_run": "crawl-audit-run22",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -3245,9 +4765,10 @@
       "urls": [
         "https://blog.conholdate.com/",
         "https://blog.conholdate.com/ar/",
+        "https://blog.conholdate.com/ko/",
         "https://blog.conholdate.com/id/"
       ],
-      "observed": "3 of 57 sampled pages (by template: home 3/3). e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/id/: no non-empty <h1>",
+      "observed": "3 of 57 sampled pages (by template: home 3/3); 1 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/ko/: no non-empty <h1>; https://blog.conholdate.com/id/: no non-empty <h1>",
       "expected": "one H1 that states the page topic",
       "locations": [
         {
@@ -3258,6 +4779,11 @@
         {
           "role": "page",
           "url": "https://blog.conholdate.com/ar/",
+          "note": "no non-empty <h1>"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ko/",
           "note": "no non-empty <h1>"
         },
         {
@@ -3279,7 +4805,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/id/sitemap.xml"
+          "url": "https://blog.conholdate.com/ko/sitemap.xml"
         }
       ],
       "sample": {
@@ -3296,18 +4822,18 @@
       "source": "gsc-template",
       "share": null,
       "past_clicks": 1,
-      "past_impressions": 55,
+      "past_impressions": 63,
       "lost_clicks": 1,
-      "lost_impressions": 43,
+      "lost_impressions": 51,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -3318,7 +4844,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run16",
+    "last_seen_run": "crawl-audit-run22",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -3379,18 +4905,18 @@
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 18,
+      "past_impressions": 21,
       "lost_clicks": 0,
-      "lost_impressions": 14,
+      "lost_impressions": 17,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "M",
@@ -3401,7 +4927,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run16",
+    "last_seen_run": "crawl-audit-run22",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_duplicate",
@@ -3422,12 +4948,14 @@
         "https://blog.conholdate.com/archives/",
         "https://blog.conholdate.com/search/",
         "https://blog.conholdate.com/ar/search/",
+        "https://blog.conholdate.com/ko/search/",
+        "https://blog.conholdate.com/es/total/scrub-metadata-online/",
+        "https://blog.conholdate.com/tr/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ja/search/",
-        "https://blog.conholdate.com/total/free-psd-viewer-online/",
         "https://blog.conholdate.com/total/create-and-obtain-form-fields-from-word-documents-with-java/",
-        "https://blog.conholdate.com/es/total/scrub-metadata-online/"
+        "https://blog.conholdate.com/total/free-psd-viewer-online/"
       ],
-      "observed": "7 of 57 sampled pages (by template: listing 4/4, post 3/22). e.g. https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/search/: width 6: 'Search'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/ja/search/: width 4: '探す'; https://blog.conholdate.com/total/free-psd-viewer-online/: width 82: 'Free Adobe PSD Image Viewer Online | View Photoshop PSD File in C# .NET | Open PSD'",
+      "observed": "6 of 57 sampled pages (by template: listing 4/4, post 2/22); 3 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/search/: width 6: 'Search'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/ko/search/: width 4: '검색'; https://blog.conholdate.com/es/total/scrub-metadata-online/: width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'",
       "expected": "10-70 characters (CJK count double)",
       "locations": [
         {
@@ -3447,13 +4975,13 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/ja/search/",
-          "note": "width 4: '探す'"
+          "url": "https://blog.conholdate.com/ko/search/",
+          "note": "width 4: '검색'"
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/total/free-psd-viewer-online/",
-          "note": "width 82: 'Free Adobe PSD Image Viewer Online | View Photoshop PSD File in C# .NET | Open PSD'"
+          "url": "https://blog.conholdate.com/es/total/scrub-metadata-online/",
+          "note": "width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'"
         },
         {
           "role": "listed in",
@@ -3469,7 +4997,11 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/ja/sitemap.xml"
+          "url": "https://blog.conholdate.com/ko/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/es/sitemap.xml"
         }
       ],
       "sample": {
@@ -3478,30 +5010,30 @@
           4
         ],
         "post": [
-          3,
+          2,
           22
         ]
       }
     },
-    "affected_pages": 1403,
+    "affected_pages": 949,
     "impact": {
-      "clicks_28d": 377,
-      "impressions_28d": 18524,
+      "clicks_28d": 251,
+      "impressions_28d": 12490,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 778,
-      "past_impressions": 21438,
-      "lost_clicks": 401,
-      "lost_impressions": 2914,
+      "past_clicks": 529,
+      "past_impressions": 14401,
+      "lost_clicks": 278,
+      "lost_impressions": 1911,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
       "scored_on": "at stake",
-      "score": 11,
+      "score": 10,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -3512,7 +5044,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run16",
+    "last_seen_run": "crawl-audit-run22",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -3531,9 +5063,11 @@
     "evidence": {
       "urls": [
         "https://blog.conholdate.com/ru/conholdate.total/",
-        "https://blog.conholdate.com/de/conholdate.total/"
+        "https://blog.conholdate.com/de/conholdate.total/",
+        "https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/"
       ],
-      "observed": "2 of 36 checked pages: /ru/conholdate.total/ H1: 'Conholdate.Totals' → 'Conholdate.Total'; /de/conholdate.total/ H1: 'Conholdate.Totals' → 'Conholdate.Total'",
+      "observed": "4 of 52 checked pages: /ru/conholdate.total/ H1: 'Conholdate.Totals' → 'Conholdate.Total'; /de/conholdate.total/ H1: 'Conholdate.Totals' → 'Conholdate.Total'; /tr/tag/hide/unhide-rows-and-columns/ meta description: remove 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java.'; /nl/tag/convert-fbx-to-obj/ meta description: remove 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java.'",
       "expected": "Title and meta description describe the page's own product, like its H1",
       "locations": [
         {
@@ -3545,28 +5079,38 @@
           "role": "page",
           "url": "https://blog.conholdate.com/de/conholdate.total/",
           "note": "H1: 'Conholdate.Totals' → 'Conholdate.Total'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/tr/tag/hide/unhide-rows-and-columns/",
+          "note": "meta description: remove 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java.'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/",
+          "note": "meta description: remove 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Visio, Photoshop, 3D, GIS, and more than 100 other file formats using native APIs for .NET & Java.'"
         }
       ]
     },
-    "affected_pages": 2,
+    "affected_pages": 4,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 0,
+      "past_impressions": 1,
       "lost_clicks": 0,
-      "lost_impressions": 0,
+      "lost_impressions": 1,
       "past_window": [
-        "2026-04-13",
-        "2026-05-10"
+        "2026-04-15",
+        "2026-05-12"
       ],
-      "scored_on": "at stake",
+      "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-12",
-        "2026-11-08"
+        "2026-10-14",
+        "2026-11-10"
       ]
     },
     "effort": "S",
@@ -3577,10 +5121,1042 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "text-audit-run4",
-    "last_seen_run": "text-audit-run19",
+    "last_seen_run": "text-audit-run25",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_topic_mismatch",
+    "notes": []
+  },
+  {
+    "id": "onpage-261113-1",
+    "key": "onpage/description_duplicate/blog.conholdate.com/page",
+    "source": "crawl-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "page",
+    "dimension": "onpage",
+    "type": "not_optimized",
+    "title": "Different pages share the same meta description",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+        "https://blog.conholdate.com/ko/",
+        "https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/",
+        "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/"
+      ],
+      "observed": "3 of 57 sampled pages (by template: generic:/{section}/*/* 1/3, home 1/3, tag 1/22); 1 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/: 'Learn how to smartly manipulate File Formats of Word, Excel,' also on https://blog.conholdate.com/ko/; https://blog.conholdate.com/ko/: 'Learn how to smartly manipulate File Formats of Word, Excel,' also on https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/; https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/: 'Learn how to smartly manipulate File Formats of Word, Excel,' also on https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/; https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/: 'Learn how to smartly manipulate File Formats of Word, Excel,' also on https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/",
+      "expected": "a unique meta description per page and language",
+      "locations": [
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/",
+          "note": "'Learn how to smartly manipulate File Formats of Word, Excel,' also on https://blog.conholdate.com/ko/"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ko/",
+          "note": "'Learn how to smartly manipulate File Formats of Word, Excel,' also on https://blog.conholdate.com/ko/tag/hide/unhide-rows-and-columns/"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/",
+          "note": "'Learn how to smartly manipulate File Formats of Word, Excel,' also on https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/nl/tag/presentation-to-excel-conversion/",
+          "note": "'Learn how to smartly manipulate File Formats of Word, Excel,' also on https://blog.conholdate.com/nl/tag/convert-fbx-to-obj/"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ko/sitemap.xml"
+        },
+        {
+          "role": "sitemap index",
+          "url": "https://blog.conholdate.com/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/nl/sitemap.xml"
+        }
+      ],
+      "sample": {
+        "generic:/{section}/*/*": [
+          1,
+          3
+        ],
+        "home": [
+          1,
+          3
+        ],
+        "tag": [
+          1,
+          22
+        ]
+      }
+    },
+    "affected_pages": 1994,
+    "impact": {
+      "clicks_28d": 2,
+      "impressions_28d": 218,
+      "source": "gsc-template",
+      "share": null,
+      "past_clicks": 9,
+      "past_impressions": 397,
+      "lost_clicks": 7,
+      "lost_impressions": 179,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "lost",
+      "score": 4,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "M",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "crawl-audit-run22",
+    "last_seen_run": "crawl-audit-run22",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "description_duplicate",
+    "notes": []
+  },
+  {
+    "id": "onpage-261113-2",
+    "key": "onpage/post_description_length/blog.conholdate.com/post",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "onpage",
+    "type": "improvable",
+    "title": "Post descriptions too long or too short",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/de/total/build-your-own-google-docs-like-app/",
+        "https://blog.conholdate.com/pl/total/build-your-own-google-docs-like-app/",
+        "https://blog.conholdate.com/de/total/build-your-own-google-docs-like-app-part-two/",
+        "https://blog.conholdate.com/pl/total/build-your-own-google-docs-like-app-part-two/",
+        "https://blog.conholdate.com/de/total/create-asp.net-pdf-editor-with-barcode-features/",
+        "https://blog.conholdate.com/es/total/create-asp.net-pdf-editor-with-barcode-features/",
+        "https://blog.conholdate.com/fr/total/create-asp.net-pdf-editor-with-barcode-features/",
+        "https://blog.conholdate.com/it/total/create-asp.net-pdf-editor-with-barcode-features/",
+        "https://blog.conholdate.com/pl/total/create-asp.net-pdf-editor-with-barcode-features/",
+        "https://blog.conholdate.com/tr/total/create-asp.net-pdf-editor-with-barcode-features/"
+      ],
+      "observed": "5,078 entries or files; too short (width 0): '': 3, too long (width 177): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie mithilfe einer einfach zu': 2, too long (width 174): 'Śledź ten post na blogu, aby dowiedzieć się, jak tworzyć własne Dokumenty Google': 2, too long (width 175): 'In diesem Blogbeitrag erfahren Sie, wie Sie HTML in Java in Bilder im JPG oder P': 2",
+      "expected": "Every post's description (description, else summary) is 50-170 characters wide",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.de.md",
+          "line": 1,
+          "note": "too long (width 177): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie mithilfe einer einfach zu'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/build-your-own-google-docs-like-app/",
+          "file": "content/Conholdate.Total/total/2020-06-22-build-your-own-google-docs-like-app/index.pl.md",
+          "line": 1,
+          "note": "too long (width 174): 'Śledź ten post na blogu, aby dowiedzieć się, jak tworzyć własne Dokumenty Google'",
+          "fix": null,
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.de.md",
+          "line": 1,
+          "note": "too long (width 177): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie mithilfe einer einfach zu'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/build-your-own-google-docs-like-app-part-two/",
+          "file": "content/Conholdate.Total/total/2020-06-29-build-your-own-google-docs-like-app-part-two/index.pl.md",
+          "line": 1,
+          "note": "too long (width 174): 'Śledź ten post na blogu, aby dowiedzieć się, jak tworzyć własne Dokumenty Google'",
+          "fix": null,
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/create-asp.net-pdf-editor-with-barcode-features/",
+          "file": "content/Conholdate.Total/total/2020-07-10-create-asp.net-pdf-editor-with-barcode-features/index.de.md",
+          "line": 1,
+          "note": "too long (width 182): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie ASP.NET PDF Editor mit Ba'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/create-asp.net-pdf-editor-with-barcode-features/",
+          "file": "content/Conholdate.Total/total/2020-07-10-create-asp.net-pdf-editor-with-barcode-features/index.es.md",
+          "line": 1,
+          "note": "too long (width 176): 'Siga esta publicación de blog para aprender a crear ASP.NET PDF Editor con carac'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/create-asp.net-pdf-editor-with-barcode-features/",
+          "file": "content/Conholdate.Total/total/2020-07-10-create-asp.net-pdf-editor-with-barcode-features/index.fr.md",
+          "line": 1,
+          "note": "too long (width 178): 'Suivez ce billet de blog pour apprendre à créer ASP.NET PDF Editor avec des fonc'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/create-asp.net-pdf-editor-with-barcode-features/",
+          "file": "content/Conholdate.Total/total/2020-07-10-create-asp.net-pdf-editor-with-barcode-features/index.it.md",
+          "line": 1,
+          "note": "too long (width 178): 'Segui questo post del blog per scoprire come creare un editor PDF ASP.NET con fu'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/create-asp.net-pdf-editor-with-barcode-features/",
+          "file": "content/Conholdate.Total/total/2020-07-10-create-asp.net-pdf-editor-with-barcode-features/index.pl.md",
+          "line": 1,
+          "note": "too long (width 200): 'Postępuj zgodnie z tym postem na blogu, aby dowiedzieć się, jak utworzyć edytor '",
+          "fix": null,
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/create-asp.net-pdf-editor-with-barcode-features/",
+          "file": "content/Conholdate.Total/total/2020-07-10-create-asp.net-pdf-editor-with-barcode-features/index.tr.md",
+          "line": 1,
+          "note": "too long (width 178): 'Kurulumu kolay ve kurumsal düzeyde bir kitaplık kullanarak Barkod Özelliklerine '",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/export-data-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2020-08-10-export-data-to-excel-in-csharp/index.pl.md",
+          "line": 1,
+          "note": "too long (width 183): 'Śledź ten post na blogu, aby dowiedzieć się, jak eksportować dane do programu Ex'",
+          "fix": null,
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.ar.md",
+          "line": 1,
+          "note": "too long (width 461): 'أخبار رائعة! [Conholdate] (https://www.conholdate.com) يقدم خصمًا بنسبة 25٪ على '",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.de.md",
+          "line": 1,
+          "note": "too long (width 570): 'Großartige Neuigkeiten! [Conholdate](https://www.conholdate.com) bietet einen Ra'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.es.md",
+          "line": 1,
+          "note": "too long (width 542): '¡Una gran noticia! [Conholdate](https://www.conholdate.com) ofrece un descuento '",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.fa.md",
+          "line": 1,
+          "note": "too long (width 356): 'خبر خوب! کان هولدیت تخفیف ۲۵٪ بر روی خرید محصول کان هولدیت.توتال برای .NET یا کا'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.fr.md",
+          "line": 1,
+          "note": "too long (width 387): \"Bonne nouvelle! Conholdate offre une remise de 25\\xa0% sur l'achat du produit Conho\"",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.id.md",
+          "line": 1,
+          "note": "too long (width 372): 'Kabar baik! Conholdate menawarkan **diskon 25%** untuk pembelian Conholdate.Tota'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.it.md",
+          "line": 1,
+          "note": "too long (width 542): 'Grandi notizie! [Conholdate](https://www.conholdate.com) offre uno sconto del 25'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.ja.md",
+          "line": 1,
+          "note": "too long (width 434): '素晴らしいニュース！ [Conholdate](https://www.conholdate.com)は、[Conholdate.Total for .NET]'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.ko.md",
+          "line": 1,
+          "note": "too long (width 401): '좋은 소식! [Conholdate](https://www.conholdate.com)에서는 [Conholdate.Total for .NET](h'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.md",
+          "line": 1,
+          "note": "too long (width 362): 'Great News! Conholdate is offering a **discount of 25%** on purchasing Conholdat'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.nl.md",
+          "line": 1,
+          "note": "too long (width 409): 'Geweldig nieuws! Conholdate biedt een **korting van 25%** op de aankoop van Conh'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.pl.md",
+          "line": 1,
+          "note": "too long (width 340): 'Dobre wieści! Conholdate oferuje rabat w wysokości 25% na zakup produktu Conhold'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pt/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.pt.md",
+          "line": 1,
+          "note": "too long (width 510): 'Boas notícias! [Conholdate](https://www.conholdate.com) está oferecendo um desco'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ru/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.ru.md",
+          "line": 1,
+          "note": "too long (width 540): 'Отличные новости! [Conholdate](https://www.conholdate.com) предлагает скидку 25%'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/th/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.th.md",
+          "line": 1,
+          "note": "too long (width 290): 'ข่าวดี! Conholdate เสนอส่วนลด 25% สำหรับการซื้อ Conholdate.Total สำหรับ .NET หรื'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.tr.md",
+          "line": 1,
+          "note": "too long (width 373): 'Harika haber! Conholdate, .NET için Conholdate.Total veya Java için Conholdate.T'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/vi/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.vi.md",
+          "line": 1,
+          "note": "too long (width 331): 'Tin tốt! Conholdate đang giảm giá 25% khi mua Conholdate.Total cho .NET hoặc Con'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/zh/total/conholdate-offers-discount/",
+          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.zh.md",
+          "line": 1,
+          "note": "too long (width 373): '好消息！ [Conholdate](https://www.conholdate.com) 为购买 [Conholdate.Total for .NET](ht'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.ar.md",
+          "line": 1,
+          "note": "too long (width 203): 'في هذه المقالة ، سأشرح كيفية حذف الصفوف والأعمدة الفارغة في ملف Excel باستخدام C'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.de.md",
+          "line": 1,
+          "note": "too long (width 296): 'In diesem Artikel werde ich erklären, wie man leere Zeilen und Spalten in einer '",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.es.md",
+          "line": 1,
+          "note": "too long (width 263): 'En este artículo, explicaré cómo eliminar filas y columnas en blanco en un archi'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.fa.md",
+          "line": 1,
+          "note": "too long (width 257): 'در این مقاله، من توضیح می\\u200cدهم که چگونه می\\u200cتوان سطرها و ستون\\u200cهای خالی را در یک فا'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "too long (width 338): 'Dans cet article, je vais vous expliquer comment supprimer des lignes et des col'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.id.md",
+          "line": 1,
+          "note": "too long (width 266): 'Pada artikel ini, saya akan menjelaskan cara menghapus baris dan kolom kosong di'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.it.md",
+          "line": 1,
+          "note": "too long (width 257): 'In questo articolo, spiegherò come eliminare righe e colonne vuote in un file ex'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.ja.md",
+          "line": 1,
+          "note": "too long (width 209): 'この記事では、C#を使用してExcelファイルの空白の行と列を削除する方法について説明します。また、空白の行と列を削除するときに参照(数式、グラフ、表で使用され'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.ko.md",
+          "line": 1,
+          "note": "too long (width 200): '이 기사에서는 C#을 사용하여 Excel 파일의 빈 행과 열을 삭제하는 방법에 대해 설명합니다. 또한 빈 행과 열을 삭제하는 동안 참조(공식, '",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.nl.md",
+          "line": 1,
+          "note": "too long (width 286): 'In dit artikel leg ik uit hoe je lege rijen en kolommen in een Excel-bestand kun'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/delete-blank-rows-and-columns-in-excel-using-csharp/",
+          "file": "content/Conholdate.Total/total/2020-12-25-delete-blank-rows-and-columns-in-excel-using-csharp/index.pl.md",
+          "line": 1,
+          "note": "too long (width 258): 'W tym artykule wyjaśnię, jak usunąć puste wiersze i kolumny w pliku Excela przy '",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        }
+      ]
+    },
+    "affected_pages": 5078,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 6,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 36,
+      "lost_clicks": 0,
+      "lost_impressions": 30,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "lost",
+      "score": 0,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "repo-audit-run27",
+    "last_seen_run": "repo-audit-run27",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "post_description_length",
+    "notes": []
+  },
+  {
+    "id": "onpage-261113-3",
+    "key": "onpage/post_title_length/blog.conholdate.com/post",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "onpage",
+    "type": "improvable",
+    "title": "Post search titles too long or too short",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/id/total/export-data-to-excel-in-csharp/",
+        "https://blog.conholdate.com/nl/total/export-data-to-excel-in-csharp/",
+        "https://blog.conholdate.com/pl/total/export-data-to-excel-in-csharp/",
+        "https://blog.conholdate.com/th/total/export-data-to-excel-in-csharp/",
+        "https://blog.conholdate.com/tr/total/export-data-to-excel-in-csharp/",
+        "https://blog.conholdate.com/vi/total/export-data-to-excel-in-csharp/",
+        "https://blog.conholdate.com/es/total/discount-offer-ends-soon/",
+        "https://blog.conholdate.com/fr/total/offre-rabais-fin-bientôt/",
+        "https://blog.conholdate.com/nl/total/discount-offer-ends-soon/",
+        "https://blog.conholdate.com/pl/total/discount-offer-ends-soon/"
+      ],
+      "observed": "1,802 entries or files; too long (width 82): 'Remove PDF Pages | Java PDF Page Remover - Java Library & Free Online Tool (Bonu': 11, too long (width 73): 'Redact Excel Files in Java | Remove Sensitive Data from Spreadsheets XLSX': 4, too long (width 75): 'Strikethrough Text in Documents using C# | Strikethrough PDF DOCX Documents': 3, too long (width 87): 'Java Insert Data in a Range of Cells in Excel(XLSX / XLS) | Brief Step-by-Step T': 2",
+      "expected": "Every post's search title (seoTitle, else title) is 10-70 characters wide (CJK count double)",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/export-data-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2020-08-10-export-data-to-excel-in-csharp/index.id.md",
+          "line": 1,
+          "note": "too long (width 95): 'C# Berbagai Cara untuk Mengekspor Data ke Excel (XLSX, XLS) - Panduan Langkah de'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/export-data-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2020-08-10-export-data-to-excel-in-csharp/index.nl.md",
+          "line": 1,
+          "note": "too long (width 101): 'C# Meerdere manieren om gegevens naar Excel te exporteren (XLSX, XLS) - Stap voo'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/export-data-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2020-08-10-export-data-to-excel-in-csharp/index.pl.md",
+          "line": 1,
+          "note": "too long (width 96): 'Eksport do C# Excel: Przewodnik krok po kroku dotyczący eksportowania danych do '",
+          "fix": null,
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/th/total/export-data-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2020-08-10-export-data-to-excel-in-csharp/index.th.md",
+          "line": 1,
+          "note": "too long (width 76): 'C# หลายวิธีในการส่งออกข้อมูลไปยัง Excel (XLSX, XLS) - แนวทางทีละขั้นตอน. NET'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/export-data-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2020-08-10-export-data-to-excel-in-csharp/index.tr.md",
+          "line": 1,
+          "note": "too long (width 82): \"C# Verileri Excel'e Aktarmanın Çoklu Yolları (XLSX, XLS) - Adım Adım .NET Kılavu\"",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/vi/total/export-data-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2020-08-10-export-data-to-excel-in-csharp/index.vi.md",
+          "line": 1,
+          "note": "too long (width 79): 'C# Nhiều cách để xuất dữ liệu sang Excel (XLSX, XLS) - Hướng dẫn từng bước .NET'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/discount-offer-ends-soon/",
+          "file": "content/Conholdate.Total/total/2021-01-01-discount-offer-ends-soon/index.es.md",
+          "line": 1,
+          "note": "too long (width 71): '¡Apuro! 25% de descuento en Conholdate. La oferta total finaliza pronto'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/offre-rabais-fin-bientôt/",
+          "file": "content/Conholdate.Total/total/2021-01-01-discount-offer-ends-soon/index.fr.md",
+          "line": 1,
+          "note": "too long (width 80): \"Se dépêcher! 25\\xa0% de réduction sur Conholdate. L'offre totale se termine bientôt\"",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/discount-offer-ends-soon/",
+          "file": "content/Conholdate.Total/total/2021-01-01-discount-offer-ends-soon/index.nl.md",
+          "line": 1,
+          "note": "too long (width 74): 'Haast je! 25% korting op conholdaat. Totale aanbieding loopt binnenkort af'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/discount-offer-ends-soon/",
+          "file": "content/Conholdate.Total/total/2021-01-01-discount-offer-ends-soon/index.pl.md",
+          "line": 1,
+          "note": "too long (width 77): 'Spieszyć się! 25% zniżki na Conholdate. Całkowita oferta wkrótce się zakończy'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ru/total/discount-offer-ends-soon/",
+          "file": "content/Conholdate.Total/total/2021-01-01-discount-offer-ends-soon/index.ru.md",
+          "line": 1,
+          "note": "too long (width 74): 'Торопиться! Скидка 25% на Conholdate.Total Предложение скоро заканчивается'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/discount-offer-ends-soon/",
+          "file": "content/Conholdate.Total/total/2021-01-01-discount-offer-ends-soon/index.tr.md",
+          "line": 1,
+          "note": "too long (width 72): \"Acele etmek! Conholdate'de %25 İndirim.Toplam Teklif Yakında Sona Eriyor\"",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/image-to-pdf-conversion-using-csharp-net-apis/",
+          "file": "content/Conholdate.Total/total/2021-04-01-image-to-pdf-conversion-using-csharp-net-apis/index.pl.md",
+          "line": 1,
+          "note": "too long (width 73): 'Konwersja obrazu do formatu PDF przy użyciu interfejsu API języka C# .NET'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/render-visio-diagrams-in-html-pdf-and-image-using-java/",
+          "file": "content/Conholdate.Total/total/2021-04-07-render-visio-diagrams-in-html-pdf-and-image-using-java/index.fr.md",
+          "line": 1,
+          "note": "too long (width 73): \"Rendre des diagrammes Visio au format HTML, PDF et image à l'aide de Java\"",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/render-visio-diagrams-in-html-pdf-and-image-using-java/",
+          "file": "content/Conholdate.Total/total/2021-04-07-render-visio-diagrams-in-html-pdf-and-image-using-java/index.it.md",
+          "line": 1,
+          "note": "too long (width 72): 'Rendering di diagrammi di Visio in HTML, PDF e immagine utilizzando Java'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/render-visio-diagrams-in-html-pdf-and-image-using-java/",
+          "file": "content/Conholdate.Total/total/2021-04-07-render-visio-diagrams-in-html-pdf-and-image-using-java/index.ja.md",
+          "line": 1,
+          "note": "too long (width 72): 'Javaを使用してVisioダイアグラムをHTML、PDF、および画像でレンダリングする'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/render-visio-diagrams-in-html-pdf-and-image-using-java/",
+          "file": "content/Conholdate.Total/total/2021-04-07-render-visio-diagrams-in-html-pdf-and-image-using-java/index.pl.md",
+          "line": 1,
+          "note": "too long (width 88): 'Renderuj diagramy programu Visio w formacie HTML, PDF i obrazach przy użyciu jęz'",
+          "fix": null,
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ru/total/render-visio-diagrams-in-html-pdf-and-image-using-java/",
+          "file": "content/Conholdate.Total/total/2021-04-07-render-visio-diagrams-in-html-pdf-and-image-using-java/index.ru.md",
+          "line": 1,
+          "note": "too long (width 76): 'Визуализация диаграмм Visio в HTML, PDF и изображениях с использованием Java'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/compare-pdf-files-and-highlight-differences-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-04-14-compare-pdf-files-and-highlight-differences-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "too long (width 78): \"Comparez des fichiers PDF et mettez en évidence les différences à l'aide de C#\"",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/compare-pdf-files-and-highlight-differences-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-04-14-compare-pdf-files-and-highlight-differences-using-csharp/index.id.md",
+          "line": 1,
+          "note": "too long (width 74): 'Bandingkan Dokumen PDF | Cara Membandingkan dua Dokumen PDF menggunakan C#'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/compare-pdf-files-and-highlight-differences-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-04-14-compare-pdf-files-and-highlight-differences-using-csharp/index.nl.md",
+          "line": 1,
+          "note": "too long (width 74): 'PDF-documenten vergelijken | Hoe twee PDF-documenten te vergelijken met C#'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/compare-pdf-files-and-highlight-differences-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-04-14-compare-pdf-files-and-highlight-differences-using-csharp/index.tr.md",
+          "line": 1,
+          "note": "too long (width 77): 'PDF Belgelerini Karşılaştırın | C# kullanarak iki PDF Belgesini Karşılaştırma'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/add-or-remove-custom-xmp-metadata-from-gif-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-05-05-add-or-remove-custom-xmp-metadata-from-gif-using-csharp/index.de.md",
+          "line": 1,
+          "note": "too long (width 78): 'Hinzufügen oder Entfernen von benutzerdefinierten XMP-Metadaten aus GIF mit C#'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/add-or-remove-custom-xmp-metadata-from-gif-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-05-05-add-or-remove-custom-xmp-metadata-from-gif-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "too long (width 78): \"Ajouter ou supprimer des métadonnées XMP personnalisées de GIF à l'aide de C #\"",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/add-or-remove-custom-xmp-metadata-from-gif-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-05-05-add-or-remove-custom-xmp-metadata-from-gif-using-csharp/index.nl.md",
+          "line": 1,
+          "note": "too long (width 71): 'Aangepaste XMP-metagegevens toevoegen aan of verwijderen uit GIF met C#'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ru/total/add-or-remove-custom-xmp-metadata-from-gif-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-05-05-add-or-remove-custom-xmp-metadata-from-gif-using-csharp/index.ru.md",
+          "line": 1,
+          "note": "too long (width 72): 'Добавить или удалить пользовательские метаданные XMP из GIF с помощью C#'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/compare-word-documents-and-highlight-differences-using-java/",
+          "file": "content/Conholdate.Total/total/2021-08-03-compare-word-documents-and-highlight-differences-using-java/index.fr.md",
+          "line": 1,
+          "note": "too long (width 82): \"Comparer des documents Word et mettre en évidence les différences à l'aide de Ja\"",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/compare-word-documents-and-highlight-differences-using-java/",
+          "file": "content/Conholdate.Total/total/2021-08-03-compare-word-documents-and-highlight-differences-using-java/index.pl.md",
+          "line": 1,
+          "note": "too long (width 75): 'Porównaj dokumenty programu Word i wyróżnij różnice przy użyciu języka Java'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/sign-pdf-with-form-field-signatures-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-08-12-sign-pdf-with-form-field-signatures-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "too long (width 71): \"Signer un PDF avec des signatures de champ de formulaire à l'aide de C#\"",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/sign-pdf-with-form-field-signatures-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-08-12-sign-pdf-with-form-field-signatures-using-csharp/index.pl.md",
+          "line": 1,
+          "note": "too long (width 73): 'Podpisuj plik PDF za pomocą podpisów pól formularza przy użyciu języka C#'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/combine-multiple-excel-files-into-one-using-java/",
+          "file": "content/Conholdate.Total/total/2021-09-02-combine-multiple-excel-files-into-one-using-java/index.fa.md",
+          "line": 1,
+          "note": "too long (width 82): 'ترکیب فایل های اکسل | ادغام فایل های XLSX یا XLS و صفحات گسترده با استفاده از جا'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/combine-multiple-excel-files-into-one-using-java/",
+          "file": "content/Conholdate.Total/total/2021-09-02-combine-multiple-excel-files-into-one-using-java/index.id.md",
+          "line": 1,
+          "note": "too long (width 84): 'Gabungkan File Excel | Gabungkan File dan Spreadsheet XLSX atau XLS menggunakan '",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/combine-multiple-excel-files-into-one-using-java/",
+          "file": "content/Conholdate.Total/total/2021-09-02-combine-multiple-excel-files-into-one-using-java/index.nl.md",
+          "line": 1,
+          "note": "too long (width 87): 'Excel-bestanden combineren | Voeg XLSX- of XLS-bestanden en spreadsheets samen m'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/combine-multiple-excel-files-into-one-using-java/",
+          "file": "content/Conholdate.Total/total/2021-09-02-combine-multiple-excel-files-into-one-using-java/index.pl.md",
+          "line": 1,
+          "note": "too long (width 89): 'Połącz pliki Excel | Scal pliki XLSX lub XLS i arkusze kalkulacyjne za pomocą ję'",
+          "fix": null,
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/combine-multiple-excel-files-into-one-using-java/",
+          "file": "content/Conholdate.Total/total/2021-09-02-combine-multiple-excel-files-into-one-using-java/index.tr.md",
+          "line": 1,
+          "note": "too long (width 100): 'Excel Dosyalarını Birleştir | XLSX veya XLS Dosyalarını ve E-Tablolarını Java ku'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/vi/total/combine-multiple-excel-files-into-one-using-java/",
+          "file": "content/Conholdate.Total/total/2021-09-02-combine-multiple-excel-files-into-one-using-java/index.vi.md",
+          "line": 1,
+          "note": "too long (width 77): 'Kết hợp các tệp Excel | Hợp nhất các tệp và bảng tính XLSX hoặc XLS bằng Java'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/convert-pdf-to-images-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-09-23-convert-pdf-to-images-using-csharp/index.pl.md",
+          "line": 1,
+          "note": "too long (width 71): 'C# Konwertuj pliki PDF na obrazy za pomocą - Ultimate .NET PDF Solution'",
+          "fix": null,
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/convert-pdf-to-images-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-09-23-convert-pdf-to-images-using-csharp/index.tr.md",
+          "line": 1,
+          "note": "too long (width 72): \"C# - Ultimate .NET PDF Çözümünü kullanarak PDF'yi Görüntülere Dönüştürün\"",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/vi/total/convert-pdf-to-images-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-09-23-convert-pdf-to-images-using-csharp/index.vi.md",
+          "line": 1,
+          "note": "too long (width 77): 'C# Chuyển đổi PDF sang hình ảnh bằng cách sử dụng - Giải pháp .NET PDF tối ưu'",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/masquer-et-afficher-les-lignes-ou-les-colonnes-dans-excel-en-utilisant-csharp/",
+          "file": "content/Conholdate.Total/total/2021-09-28-hide-and-show-rows-or-columns-in-excel-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "too long (width 72): \"Masquer et afficher des lignes ou des colonnes dans Excel à l'aide de C#\"",
+          "fix": null,
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        }
+      ]
+    },
+    "affected_pages": 1802,
+    "impact": {
+      "clicks_28d": 2,
+      "impressions_28d": 36,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 2,
+      "past_impressions": 58,
+      "lost_clicks": 0,
+      "lost_impressions": 22,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "at stake",
+      "score": 2,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "repo-audit-run27",
+    "last_seen_run": "repo-audit-run27",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "post_title_length",
+    "notes": []
+  },
+  {
+    "id": "ux-261113-1",
+    "key": "ux/menu_id_missing/blog.conholdate.com/config",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "config",
+    "dimension": "ux",
+    "type": "improvable",
+    "title": "Company menu bar in English on translated pages",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/vi/",
+        "https://blog.conholdate.com/th/",
+        "https://blog.conholdate.com/tr/"
+      ],
+      "observed": "3 entries or files; vi: no menu id, so the English menu is shown: 1, th: no menu id, so the English menu is shown: 1, tr: no menu id, so the English menu is shown: 1",
+      "expected": "Every language has its own menu id in params.dynamicmenuid",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/vi/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "vi: no menu id, so the English menu is shown",
+          "fix": "params.dynamicmenuid.vi: <venture>-vi",
+          "commit": null
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/th/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "th: no menu id, so the English menu is shown",
+          "fix": "params.dynamicmenuid.th: <venture>-th",
+          "commit": null
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/",
+          "file": "config.yml",
+          "line": 0,
+          "note": "tr: no menu id, so the English menu is shown",
+          "fix": "params.dynamicmenuid.tr: <venture>-tr",
+          "commit": null
+        }
+      ]
+    },
+    "affected_pages": 3,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 0,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-15",
+        "2026-05-12"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-13",
+    "first_seen_run": "repo-audit-run27",
+    "last_seen_run": "repo-audit-run27",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "menu_id_missing",
     "notes": []
   }
 ]

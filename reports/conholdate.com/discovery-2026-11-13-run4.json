@@ -1,0 +1,696 @@
+{
+  "tenant": "conholdate.com",
+  "run_id": 4,
+  "hosts": {
+    "blog.conholdate.com": {
+      "robots": {
+        "status": 200,
+        "error": null,
+        "is_html": false,
+        "sitemaps": [
+          "https://blog.conholdate.com/sitemap.xml"
+        ],
+        "disallow_rules": 10,
+        "ai_bots_named": []
+      },
+      "sitemaps_fetched": 19,
+      "sitemaps_ok": 19,
+      "sitemaps_failed": [],
+      "urls": 53736
+    }
+  },
+  "sections": {
+    "blog.conholdate.com": {
+      "": {
+        "urls": 18,
+        "hreflang_urls": 18,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "nl": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "vi": 1,
+          "zh": 1
+        },
+        "templates": {
+          "home": 18
+        }
+      },
+      "archives": {
+        "urls": 18,
+        "hreflang_urls": 18,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "nl": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "vi": 1,
+          "zh": 1
+        },
+        "templates": {
+          "listing": 18
+        }
+      },
+      "conholdate.total": {
+        "urls": 18,
+        "hreflang_urls": 17,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "nl": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "vi": 1,
+          "zh": 1
+        },
+        "templates": {
+          "category": 18
+        }
+      },
+      "search": {
+        "urls": 18,
+        "hreflang_urls": 18,
+        "langs": {
+          "default": 1,
+          "ar": 1,
+          "de": 1,
+          "es": 1,
+          "fa": 1,
+          "fr": 1,
+          "id": 1,
+          "it": 1,
+          "ja": 1,
+          "ko": 1,
+          "nl": 1,
+          "pl": 1,
+          "pt": 1,
+          "ru": 1,
+          "th": 1,
+          "tr": 1,
+          "vi": 1,
+          "zh": 1
+        },
+        "templates": {
+          "listing": 18
+        }
+      },
+      "tag": {
+        "urls": 43620,
+        "hreflang_urls": 43476,
+        "langs": {
+          "default": 2527,
+          "ar": 2389,
+          "de": 2392,
+          "es": 2392,
+          "fa": 2522,
+          "fr": 2393,
+          "id": 2418,
+          "it": 2417,
+          "ja": 2385,
+          "ko": 2391,
+          "nl": 2417,
+          "pl": 2527,
+          "pt": 2392,
+          "ru": 2392,
+          "th": 2425,
+          "tr": 2426,
+          "vi": 2425,
+          "zh": 2390
+        },
+        "templates": {
+          "generic:/{section}/*/*": 18,
+          "tag": 43602
+        }
+      },
+      "total": {
+        "urls": 10044,
+        "hreflang_urls": 10044,
+        "langs": {
+          "default": 558,
+          "ar": 558,
+          "de": 558,
+          "es": 558,
+          "fa": 558,
+          "fr": 558,
+          "id": 558,
+          "it": 558,
+          "ja": 558,
+          "ko": 558,
+          "nl": 558,
+          "pl": 558,
+          "pt": 558,
+          "ru": 558,
+          "th": 558,
+          "tr": 558,
+          "vi": 558,
+          "zh": 558
+        },
+        "templates": {
+          "post": 10044
+        }
+      }
+    }
+  },
+  "gsc_comparison": [
+    {
+      "path": "/sitemap.xml",
+      "url": "https://blog.conholdate.com/sitemap.xml",
+      "gsc_status": "Success",
+      "gsc_discovered": 53533,
+      "live_status": 200,
+      "live_kind": "index",
+      "live_urls": 53736
+    }
+  ],
+  "sitemaps": {
+    "blog.conholdate.com": {
+      "": [
+        {
+          "url": "https://blog.conholdate.com/sitemap.xml",
+          "parent": null,
+          "depth": 0,
+          "status": 200,
+          "kind": "index",
+          "urls": 53736,
+          "children": 18,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/ar/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2951,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/de/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2954,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/en/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 3089,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/es/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2954,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/fa/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 3084,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/fr/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2955,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/id/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2980,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/it/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2979,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/ja/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2947,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/ko/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2953,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/nl/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2979,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/pl/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 3089,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/pt/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2954,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/ru/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2954,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/th/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2987,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/tr/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2988,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/vi/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2987,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        },
+        {
+          "url": "https://blog.conholdate.com/zh/sitemap.xml",
+          "parent": "https://blog.conholdate.com/sitemap.xml",
+          "depth": 1,
+          "status": 200,
+          "kind": "urlset",
+          "urls": 2952,
+          "children": 0,
+          "ok": true,
+          "error": null,
+          "corrected": false
+        }
+      ]
+    }
+  },
+  "new_hosts": {},
+  "sitemaps_fetched": 19,
+  "params": {
+    "hosts": [
+      "blog.conholdate.com"
+    ],
+    "sections": null,
+    "max_sitemaps": null
+  },
+  "requests": 20,
+  "duration_s": 48.8,
+  "not_fetched": [],
+  "findings": [
+    {
+      "id": "crawl-0001",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "sitemap",
+      "dimension": "crawl",
+      "check": "dup_in_file",
+      "type": "not_optimized",
+      "title": "Sitemap lists the same URL more than once",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/en/sitemap.xml",
+          "https://blog.conholdate.com/ja/sitemap.xml",
+          "https://blog.conholdate.com/ko/sitemap.xml",
+          "https://blog.conholdate.com/es/sitemap.xml",
+          "https://blog.conholdate.com/de/sitemap.xml",
+          "https://blog.conholdate.com/ru/sitemap.xml",
+          "https://blog.conholdate.com/fr/sitemap.xml",
+          "https://blog.conholdate.com/zh/sitemap.xml",
+          "https://blog.conholdate.com/it/sitemap.xml",
+          "https://blog.conholdate.com/pt/sitemap.xml"
+        ],
+        "observed": "https://blog.conholdate.com/en/sitemap.xml: 2 URLs, e.g. https://blog.conholdate.com/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/total/convert-html-to-image-java/; https://blog.conholdate.com/ja/sitemap.xml: 2 URLs, e.g. https://blog.conholdate.com/ja/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/ja/total/convert-html-to-image-java/; https://blog.conholdate.com/ko/sitemap.xml: 2 URLs, e.g. https://blog.conholdate.com/ko/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/ko/total/convert-html-to-image-java/; https://blog.conholdate.com/es/sitemap.xml: 2 URLs, e.g. https://blog.conholdate.com/es/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/es/total/convert-html-to-image-java/; https://blog.conholdate.com/de/sitemap.xml: 2 URLs, e.g. https://blog.conholdate.com/de/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/de/total/convert-html-to-image-java/; and 13 more sitemaps",
+        "expected": "each URL listed once",
+        "locations": [
+          {
+            "role": "sitemap",
+            "url": "https://blog.conholdate.com/en/sitemap.xml",
+            "note": "2 URLs, e.g. https://blog.conholdate.com/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/total/convert-html-to-image-java/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.conholdate.com/ja/sitemap.xml",
+            "note": "2 URLs, e.g. https://blog.conholdate.com/ja/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/ja/total/convert-html-to-image-java/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.conholdate.com/ko/sitemap.xml",
+            "note": "2 URLs, e.g. https://blog.conholdate.com/ko/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/ko/total/convert-html-to-image-java/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.conholdate.com/es/sitemap.xml",
+            "note": "2 URLs, e.g. https://blog.conholdate.com/es/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/es/total/convert-html-to-image-java/"
+          },
+          {
+            "role": "sitemap",
+            "url": "https://blog.conholdate.com/de/sitemap.xml",
+            "note": "2 URLs, e.g. https://blog.conholdate.com/de/total/add-barcode-to-pdf-in-java/, https://blog.conholdate.com/de/total/convert-html-to-image-java/"
+          }
+        ]
+      },
+      "affected_pages": 36,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-13"
+    }
+  ],
+  "items": {
+    "blog.conholdate.com": [
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/en/sitemap.xml",
+        "url": "https://blog.conholdate.com/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/en/sitemap.xml",
+        "url": "https://blog.conholdate.com/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/ja/sitemap.xml",
+        "url": "https://blog.conholdate.com/ja/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/ja/sitemap.xml",
+        "url": "https://blog.conholdate.com/ja/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/ko/sitemap.xml",
+        "url": "https://blog.conholdate.com/ko/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/ko/sitemap.xml",
+        "url": "https://blog.conholdate.com/ko/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/es/sitemap.xml",
+        "url": "https://blog.conholdate.com/es/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/es/sitemap.xml",
+        "url": "https://blog.conholdate.com/es/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/de/sitemap.xml",
+        "url": "https://blog.conholdate.com/de/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/de/sitemap.xml",
+        "url": "https://blog.conholdate.com/de/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/ru/sitemap.xml",
+        "url": "https://blog.conholdate.com/ru/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/ru/sitemap.xml",
+        "url": "https://blog.conholdate.com/ru/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/fr/sitemap.xml",
+        "url": "https://blog.conholdate.com/fr/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/fr/sitemap.xml",
+        "url": "https://blog.conholdate.com/fr/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/zh/sitemap.xml",
+        "url": "https://blog.conholdate.com/zh/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/zh/sitemap.xml",
+        "url": "https://blog.conholdate.com/zh/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/it/sitemap.xml",
+        "url": "https://blog.conholdate.com/it/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/it/sitemap.xml",
+        "url": "https://blog.conholdate.com/it/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/pt/sitemap.xml",
+        "url": "https://blog.conholdate.com/pt/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/pt/sitemap.xml",
+        "url": "https://blog.conholdate.com/pt/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/nl/sitemap.xml",
+        "url": "https://blog.conholdate.com/nl/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/nl/sitemap.xml",
+        "url": "https://blog.conholdate.com/nl/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/vi/sitemap.xml",
+        "url": "https://blog.conholdate.com/vi/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/vi/sitemap.xml",
+        "url": "https://blog.conholdate.com/vi/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/th/sitemap.xml",
+        "url": "https://blog.conholdate.com/th/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/th/sitemap.xml",
+        "url": "https://blog.conholdate.com/th/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/id/sitemap.xml",
+        "url": "https://blog.conholdate.com/id/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/id/sitemap.xml",
+        "url": "https://blog.conholdate.com/id/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/ar/sitemap.xml",
+        "url": "https://blog.conholdate.com/ar/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/ar/sitemap.xml",
+        "url": "https://blog.conholdate.com/ar/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/fa/sitemap.xml",
+        "url": "https://blog.conholdate.com/fa/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/fa/sitemap.xml",
+        "url": "https://blog.conholdate.com/fa/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/tr/sitemap.xml",
+        "url": "https://blog.conholdate.com/tr/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/tr/sitemap.xml",
+        "url": "https://blog.conholdate.com/tr/total/convert-html-to-image-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/pl/sitemap.xml",
+        "url": "https://blog.conholdate.com/pl/total/add-barcode-to-pdf-in-java/"
+      },
+      {
+        "check": "dup_in_file",
+        "sitemap": "https://blog.conholdate.com/pl/sitemap.xml",
+        "url": "https://blog.conholdate.com/pl/total/convert-html-to-image-java/"
+      }
+    ]
+  }
+}

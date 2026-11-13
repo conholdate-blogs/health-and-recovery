@@ -41,7 +41,28 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | 2026-11-11 | Wrong-language links 374, broken 81, damaged 54, missing translations 20 | Link fixes from the fix lists (B5) |
 | 2026-11-11 | Open Graph, Twitter and JSON-LD land in `<body>` (home checked live: OG 5, Twitter 3, JSON-LD 1), found during the blog.conholdate.cloud session: language-switcher div ends `<head>` before them, as on blog.aspose.com; our `head_closed_early` does not cover these tags | Proposed: same head-order fix as blog.conholdate.cloud F1 (fold into B3) |
 
-## Waiting for SK (paused 11 Nov; SK continues B later)
+## Scan 13 Nov (all new checks of 12 Nov)
+
+- Full cycle 8 min, all steps OK; clone at aff5ac2b. Runs: discovery 4, crawl 22, speed 24, AI 23, text 25, links 26,
+  repo 27. Crawl: rotating sample (53,736 sitemap URLs; 83 checked over 4 runs, 26 rechecked).
+- **Health 65 → 58** (31 open issue types); the drop comes from new checks, not from new damage. Biggest losses: broken links 10,
+  untranslated home descriptions 5 (ar/ko/id keep the English one), tag/search pages without text 5, robots-blocked
+  sitemap URLs 5, "Conholdate.Totals" H1 typo in ru/de 5, tag pages in sitemaps 4.9.
+- New: OG/Twitter/JSON-LD in `<body>` (crawl-261113-1, ~14k pages), duplicate descriptions (tag pages reuse the home
+  description), 198 untranslated, 1,802 + 5,078 post lengths, 3,638 stale, 17 section indexes, 5 language names,
+  2 RTL, 3 menu ids, slash 302. All spot-checked: real.
+- Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
+- Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
+
+## SK's decisions (13 Nov)
+
+| # | Decision |
+|---|---|
+| B2 | **No redirects** for the 15 old French URLs |
+| B1 + B2 | Prepare and test both commits, **show first**; push decided after review |
+| B5 | Show the link fixes, fix together; **change the translation agent** where it caused them so it does not repeat; find an efficient approval flow (one review table per batch) |
+
+## Waiting for SK (paused 11 Nov; answered 13 Nov, see above)
 
 | # | Decision | Recommendation given |
 |---|---|---|
