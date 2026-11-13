@@ -90,6 +90,20 @@ blog.conholdate.com at deploy); `mainSections`; which pages are translated (the 
 
 ## Traps
 
+- **Line endings (13 Nov):** blog.conholdate.com's `head.html` is CRLF; a Python text-mode edit rewrote all 341 lines.
+  Edit blog files with `scripts/ops/replace_keep_eol.py` (keeps CRLF/LF; each old string must match exactly once).
+- **Shell quoting doubles backslashes:** a `printf`-written `"^.+\\.txt$"` became `\\\\.` and matched nothing;
+  after editing YAML regexes, load the file and test the pattern.
+- **Pages no sitemap lists are never crawled:** listing page 2 (`/page/2/`, `/p/2/` on blog.aspose.com) needs
+  `audit.extra_urls`; the page-2 canonical bug hid there on five blogs.
+- **Front-matter dates come in two formats** (ISO and RFC 2822 "Thu, 25 Jan 2024 …"): parse them
+  (`core/audit/repo.iso_date`), never cut strings.
+- **Hugo prefixes menu URLs with the language** (`/categories/` renders as `/de/categories/`): check the built page
+  before "fixing" config URLs (CB4 was a false premise).
+- **Redirects.json edits:** `scripts/ops/redirects_edit.py` (remove/retarget by key, line by line, keeps the format,
+  JSON validated); before/after builds of any two commits: `scripts/ops/build_pair.sh` (git worktrees, the deploy's
+  Hugo and production config), then `scripts/ops/build_diff.py`.
+
 | Trap | Avoid |
 |---|---|
 | `cd` in a Bash call carries over to later calls | Absolute paths; `git -C <repo>` |

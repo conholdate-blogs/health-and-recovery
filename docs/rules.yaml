@@ -106,6 +106,27 @@ rules:
     date: 2026-11-12
     checks: [post_outside_main_sections, category_page_unused]
     status: active
+  - id: IDX-4
+    rule: Listing pages from page 2 on are noindex, follow with a canonical to themselves (never to page 1).
+    why: They earn no search clicks; a canonical to page 1 on an indexable page 2 sends a mixed signal.
+    set_by: Health and Recovery Agent
+    date: 2026-11-13
+    checks: [canonical_elsewhere]
+    status: active
+  - id: IDX-5
+    rule: When a blog has a single main section, its section page is noindex, follow and out of the sitemaps.
+    why: It lists exactly the home page's posts in every language, a duplicate listing.
+    set_by: Health and Recovery Agent
+    date: 2026-11-13
+    checks: [section_lists_home_posts]
+    status: active
+  - id: AUD-4
+    rule: "Checks judge pages as search engines see them: noindex pages are skipped by the duplicate title/description and hreflang checks, and the noindex check covers only sitemap pages and homepages."
+    why: Google ignores a noindex page's hreflang and does not index it, so it competes with nothing; flagging it would be a false finding (13 Nov, listing page 2 and tag pages).
+    set_by: Shoaib Khan
+    date: 2026-11-13
+    checks: [description_duplicate, title_duplicate, hreflang_no_self, noindex]
+    status: active
   - id: TPL-1
     rule: "Nothing renders an element such as a <div> in <head> before the SEO tags: extend_head.html is the last include."
     why: On 3 Nov 2026 a language-switcher div pushed title, canonical and hreflang of blog.aspose.com into <body>.
