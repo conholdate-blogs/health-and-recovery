@@ -83,3 +83,11 @@ reviewed) on top of `/<host>/issues/`, full width, drawn by the same code: the t
 blocks are cut out and injected with the same `issue_log_summary` series (`wormGraph(…, {issuesOnly: true})`).
 Edit the chart only in the template; keep those blocks self-contained (they need `esc`, `day`, `$`).
 
+## Issues across blogs (13 Nov 2026, SK)
+
+`/blogs/issues/` (`site_pages.matrix_page`, built by `build_site` for each collection): one row per issue type
+found on any blog, one column per blog in site order. Cells: ✗ Open (with "% fixed · N open" for item checks),
+✓ Fixed / ✓ Resolved, Reviewed, or **NOT FOUND** in green when the audits never saw it there; each opens that blog's
+Issue log. Rows: most blogs open first, then severity. Last column: open count and the blogs where it was fixed
+(where to copy the fix from). Linked from the home page's Blogs card ("issues across blogs →").
+

@@ -144,14 +144,14 @@ CDN). 17 agent-fix rows, all verified; F17 found by Shoaib Khan (`found_by`). Sn
 - Translations drift: an English title rewritten later leaves 22 stale translated titles.
 - Utility pages (search, archives) cost more than they bring: noindex and out of the sitemap.
 
-## Carry back from blog.conholdate.com (noted 13 Nov; plan, not done)
+## Carry back from blog.conholdate.com (13 Nov; CB1, CB3, CB5 committed, not pushed)
 
 | # | Item | Seen on blog.conholdate.com | Plan for blog.conholdate.cloud |
 |---|---|---|---|
-| CB1 | `/feed/` → home page in Redirects.json (a soft 404; now flagged by rule RED-1) | removed 43 home redirects, feeds → `/index.xml` | retarget `/feed/` to `/index.xml` (one line; Redirects.json applies live here) |
-| CB2 | Section page title in English on translated pages ("Conholdate Cloud Blog" in every `_index.<lang>.md`) | section pages got translated titles + their own descriptions | translate the 22 titles; give the section a description of its own |
-| CB3 | Section page lists the same posts as the home page (one main section): duplicate listing | same on blog.conholdate.com | **decide with SK**: `noindex, follow` or canonical to home, or keep (both blogs alike) |
-| CB4 | Main menu on translated pages links the English `/categories/`, `/tags/` | same | localize the menu URLs (`/<lang>/categories/`); low priority |
-| CB5 | `Redirects.md` beside Redirects.json (rules + groups; JSON has no comments) | added | add the same short file |
+| CB1 | `/feed/` → home page in Redirects.json (a soft 404; rule RED-1) | removed 43 home redirects, feeds → `/index.xml` | **78d9209**: `/feed/` → `/index.xml` (applies live on push) |
+| CB2 | ~~Section page title in English on translated pages~~ | — | **not needed**: 22 of 23 titles were translated already (German writes "Conholdate Cloud Blog" too); the page is noindex after CB3 |
+| CB3 | Section page lists the same posts as the home page (one main section): duplicate listing | dae84823 there | **5b4cd9a**: `noindex, follow`, out of the sitemaps (23 pages; build diff: only those changed) |
+| CB4 | ~~Menu links the English `/categories/`, `/tags/`~~ | — | **false premise**: Hugo already prefixes menu URLs with the language (built pages link `/zh-hant/categories/`); commits dropped on both blogs |
+| CB5 | `Redirects.md` beside Redirects.json | added | **78d9209**: added |
 | — | Listing page 2+, llms.txt cap | needed there | not needed: 5 posts fit on one page; llms.txt lists all 5 |
 

@@ -432,7 +432,8 @@ def collection_block(slug: str, members: list[tuple[str, str]], scores: dict[str
     order = sorted((h for _, h in members), key=lambda h: (not h.endswith(".com"), brand_rank(h), h))
     pairs = '      <div class="cards">' + "".join(sub_tile(h, scores, alerts, stats) for h in order) + "</div>"
     return (f'    <div class="coll"><div><a href="{slug}/"><b>{html.escape(COLLECTIONS[slug])}</b></a>'
-            f'<span>{len(members)} subdomains · health out of 100 · <a href="{slug}/">compare all →</a></span></div>\n{pairs}\n    </div>')
+            f'<span>{len(members)} subdomains · health out of 100 · <a href="{slug}/">compare all →</a> · '
+            f'<a href="{slug}/issues/">issues across blogs →</a></span></div>\n{pairs}\n    </div>')
 
 
 def site_hosts(tenants: list[str]) -> dict[str, list[str]]:
@@ -473,6 +474,11 @@ def build(out: Path, tenants: list[str]) -> None:
         scores.update({c["host"]: (c["health"], c["grade"]) for c in report["_hosts"]})
         items = {c["host"]: (c.get("items") or {}).get("open") for c in report["_hosts"]}
         stats.update({h: host_stats(t, h, items.get(h)) for t, h in mem})
+        by_check = {c["host"]: (c.get("items") or {}).get("by_check") or {} for c in report["_hosts"]}
+        css_m = GUIDE_PAGE.split("<style>", 1)[1].split("</style>", 1)[0]
+        (out / slug / "issues").mkdir(parents=True, exist_ok=True)  # issue matrix across the collection (SK, 2026-11-13)
+        (out / slug / "issues" / "index.html").write_text(
+            site_pages.matrix_page(mem, by_check, css_m, HEAD, brand.logo(36)), encoding="utf-8")
         blocks.append(collection_block(slug, mem, scores, alerts, stats))
         page = build_report.build(report, [], None,
                                   standalone=True, guide_url=GUIDE_URL, site_tenants=tenants,

@@ -459,6 +459,79 @@ filter();
 """
 
 
+MATRIX_CSS = """
+table.mx { min-width: 980px } table.mx td, table.mx th { text-align: center } table.mx td.name, table.mx th:first-child { text-align: left }
+table.mx td.name small { display: block; color: var(--muted); font-weight: 400; font-size: 12px }
+.mx .c-open { color: var(--broken); font-weight: 700 } .mx .c-ok { color: #067647; font-weight: 700 }
+.mx .c-nf { color: #067647; font-weight: 700; letter-spacing: .03em; font-size: 12px } .mx .c-rev { color: var(--muted) }
+.mx td a { text-decoration: none; color: inherit } .mx td small { display: block; font-weight: 400; color: var(--muted) }
+@media (prefers-color-scheme: dark) { .mx .c-ok, .mx .c-nf { color: #47cd89 } }
+"""
+
+
+def matrix_page(members: list[tuple[str, str]], items: dict[str, dict], css: str, head: str, logo: str) -> str:
+    """/blogs/issues/: every issue type down, every blog across (SK, 2026-11-13): where a fix proven on one blog
+    still waits on another. A blog that never had the issue shows NOT FOUND in green."""
+    hosts = [h for _, h in members]
+    cells: dict = {}  # guide key -> host -> rows
+    meta: dict = {}
+    for t, h in members:
+        for r in issue_rows(t, h):
+            k = r["guide"] or r["check"]
+            cells.setdefault(k, {}).setdefault(h, []).append(r)
+            meta.setdefault(k, r)
+    order = {s: i for i, s in enumerate(["broken", "incorrect", "not_optimized", "improvable"])}
+
+    def state(k, h):
+        rows = cells[k].get(h)
+        if not rows:
+            return "nf"
+        st = {r["status"] for r in rows}
+        if "Open" in st:
+            return "open"
+        if st & {"✓ Verified live", "Pushed, waiting for deploy", "Resolved"}:
+            return "ok"
+        return "rev"
+
+    def cell(k, h):
+        s, href = state(k, h), f"../../{esc(h)}/issues/"
+        if s == "nf":
+            return '<td class="c-nf" title="never found on this blog">NOT FOUND</td>'
+        if s == "ok":
+            fixed = any(r["status"] in ("✓ Verified live", "Pushed, waiting for deploy") for r in cells[k][h])
+            return f'<td class="c-ok"><a href="{href}">✓ {"Fixed" if fixed else "Resolved"}</a></td>'
+        if s == "rev":
+            return f'<td class="c-rev"><a href="{href}">Reviewed</a></td>'
+        c = ((items.get(h) or {}).get(k) or {})
+        detail = f'<small>{c.get("fixed_pct", 0)}% fixed · {c["open"]:,} open</small>' if c.get("issues") else ""
+        return f'<td class="c-open"><a href="{href}">✗ Open{detail}</a></td>'
+
+    keys = sorted(cells, key=lambda k: (-sum(state(k, h) == "open" for h in hosts),
+                                        order.get(meta[k]["severity"], 9), meta[k]["issue"]))
+    head_row = "".join(f"<th>{esc(h).replace('.', '.<wbr>')}</th>" for h in hosts)
+    body = []
+    for k in keys:
+        m = meta[k]
+        name = f'<a href="../../fix-guide/#g-{esc(k)}">{esc(m["issue"])}</a>' if m.get("guide") else esc(m["issue"])
+        n_open = sum(state(k, h) == "open" for h in hosts)
+        fixed_on = [h for h in hosts if state(k, h) == "ok"]
+        body.append(f'<tr><td class="name">{name}<small>{esc(m["area"])} · {esc(SEVERITY.get(m["severity"], m["severity"]))}</small></td>'
+                    + "".join(cell(k, h) for h in hosts)
+                    + f'<td>{"<b class=c-ok>✓ none open</b>" if not n_open else f"{n_open} open"}'
+                    + (f'<small>fixed on {", ".join(esc(h.replace("blog.", "")) for h in fixed_on)}</small>' if fixed_on else "") + "</td></tr>")
+    return (
+        head
+        + f"<title>Issues across blogs</title>\n<style>{css}{EXTRA_CSS}{MATRIX_CSS}</style>\n<main>\n"
+        + '  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">All domains</a> › <a href="../">Blogs</a> › <b>Issues across blogs</b></nav>\n'
+        + f"  <h1>{logo}Issues across blogs</h1>\n"
+        + "  <p>Every issue type found on any blog, and its state on each blog: open (with the share of its items fixed), "
+        "fixed, resolved, or NOT FOUND when the audits never saw it there. Issues open on the most blogs come first; "
+        "a fix proven on one blog shows where to copy it from. Each cell opens that blog's Issue log.</p>\n"
+        + f'  <div class="tablewrap"><table class="mx">\n    <thead><tr><th>Issue</th>{head_row}<th>All blogs</th></tr></thead>\n'
+        + f"    <tbody>{''.join(body)}</tbody>\n  </table></div>\n</main>\n</html>\n"
+    )
+
+
 def load_rules() -> dict:
     return (
         yaml.safe_load(RULES_FILE.read_text(encoding="utf-8")) if RULES_FILE.is_file() else {"areas": {}, "rules": []}
