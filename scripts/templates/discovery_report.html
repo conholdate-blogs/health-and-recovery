@@ -1418,8 +1418,9 @@ __METHOD__
     // issues chart
     const hasT = series.some(p => p.total != null);
     const max = Math.max(1, ...series.map(p => Math.max(p.open, p.fixed, p.total || 0)));
-    const extra = [["resolved", "--improvable", "Resolved (gone without our fix)"], ["reviewed", "--notopt", "Reviewed (accepted)"]]
-      .filter(([k]) => series.some(p => p[k] > 0));  // drawn only when there is something to draw
+    // resolved and reviewed are counted in the tooltip, not drawn: two more lines crowded the chart (SK, 2026-11-13)
+    const extra = [];
+    const rest = series.some(p => p.resolved || p.reviewed);
     const step = max <= 5 ? 1 : max <= 10 ? 2 : max <= 25 ? 5 : max <= 50 ? 10 : Math.ceil(max / 5 / 10) * 10;
     const top = Math.ceil(max / step) * step, y = v => T + (H - T - B) * (1 - v / top);
     const ticks = []; for (let v = 0; v <= top; v += step) ticks.push(v);
@@ -1432,7 +1433,7 @@ __METHOD__
       ends[ends.length - 1].y = Math.min(ends[ends.length - 1].y, H - B + 4);
       for (let i = ends.length - 2; i >= 0; i--) ends[i].y = Math.min(ends[i].y, ends[i + 1].y - 14);
     }
-    const issues = `<div class="worm"><div class="lg"><span><i style="background:var(--w-open)"></i>Open issues</span><span><i style="background:var(--w-fixed)"></i>Fixed issues (total so far)</span>${extra.map(([, c, t]) => `<span><i style="background:var(${c})"></i>${t}</span>`).join("")}${hasT ? `<span><i style="background:repeating-linear-gradient(90deg,var(--muted) 0 5px,transparent 5px 9px)"></i>All issues found</span>` : ""}</div>`
+    const issues = `<div class="worm"><div class="lg"><span><i style="background:var(--w-open)"></i>Open issues</span><span><i style="background:var(--w-fixed)"></i>Fixed issues (total so far)</span>${extra.map(([, c, t]) => `<span><i style="background:var(${c})"></i>${t}</span>`).join("")}${hasT ? `<span><i style="background:repeating-linear-gradient(90deg,var(--muted) 0 5px,transparent 5px 9px)"></i>All issues found${rest ? " (open + fixed + resolved + reviewed)" : ""}</span>` : ""}</div>`
       + svg("Open and fixed issues per day with a recorded run; the same numbers are in History below",
         gridAt(ticks, y) + xl + cross + (hasT ? line("total", "--muted", true) : "") + line("open", "--w-open") + line("fixed", "--w-fixed") + extra.map(([k, c]) => line(k, c)).join("")
         + ends.map(e => `<text x="${lx}" y="${e.y}" font-size="12" fill="var(--fg)">${e.t} ${e.v}</text>`).join("")) + `</div>`;
