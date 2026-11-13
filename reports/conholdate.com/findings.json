@@ -273,14 +273,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "ai-audit-run2",
     "last_seen_run": "ai-audit-run47",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "ai-audit-run53",
+    "resolved_at": "2026-11-13T12:57:15+00:00",
     "check": "llms_txt_missing",
     "notes": []
   },
@@ -340,11 +340,11 @@
     "affected_pages": 36,
     "impact": {
       "clicks_28d": 10,
-      "impressions_28d": 506,
+      "impressions_28d": 507,
       "source": "gsc-host",
       "share": 0.004,
       "past_clicks": 21,
-      "past_impressions": 593,
+      "past_impressions": 594,
       "lost_clicks": 11,
       "lost_impressions": 87,
       "past_window": [
@@ -366,7 +366,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "discovery-run1",
-    "last_seen_run": "discovery-run6",
+    "last_seen_run": "discovery-run7",
     "resolved_run": null,
     "resolved_at": null,
     "check": "dup_in_file",
@@ -966,7 +966,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run50",
+    "last_seen_run": "link-audit-run56",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -1473,7 +1473,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run51",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -1571,14 +1571,14 @@
     "effort": "S",
     "fix_tier": 2,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
     "last_seen_run": "crawl-audit-run46",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run52",
+    "resolved_at": "2026-11-13T12:56:53+00:00",
     "check": "hreflang_no_xdefault",
     "notes": []
   },
@@ -1659,7 +1659,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run50",
+    "last_seen_run": "link-audit-run56",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -2126,7 +2126,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run50",
+    "last_seen_run": "link-audit-run56",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -2913,7 +2913,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run50",
+    "last_seen_run": "link-audit-run56",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -3209,14 +3209,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "crawl-audit-run22",
     "last_seen_run": "crawl-audit-run46",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run52",
+    "resolved_at": "2026-11-13T12:56:53+00:00",
     "check": "description_untranslated",
     "notes": []
   },
@@ -3637,7 +3637,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run51",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -4060,7 +4060,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run51",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -4262,14 +4262,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
     "last_seen_run": "repo-audit-run51",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run57",
+    "resolved_at": "2026-11-13T13:02:15+00:00",
     "check": "section_index_untranslated",
     "notes": []
   },
@@ -4361,14 +4361,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
     "last_seen_run": "repo-audit-run51",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run57",
+    "resolved_at": "2026-11-13T13:02:15+00:00",
     "check": "language_name_wrong",
     "notes": []
   },
@@ -4434,14 +4434,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
     "last_seen_run": "repo-audit-run51",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run57",
+    "resolved_at": "2026-11-13T13:02:15+00:00",
     "check": "rtl_direction_missing",
     "notes": []
   },
@@ -4457,44 +4457,44 @@
     "title": "Meta descriptions are too long or too short",
     "evidence": {
       "urls": [
-        "https://blog.conholdate.com/conholdate.total/",
-        "https://blog.conholdate.com/",
-        "https://blog.conholdate.com/ru/conholdate.total/",
-        "https://blog.conholdate.com/ar/",
-        "https://blog.conholdate.com/pl/conholdate.total/",
-        "https://blog.conholdate.com/it/",
         "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/",
-        "https://blog.conholdate.com/total/scan-barcodes-in-java/",
-        "https://blog.conholdate.com/total/convert-markdown-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/total/convert-xbrl-to-excel-in-csharp/"
+        "https://blog.conholdate.com/total/convert-csv-to-xml-online/",
+        "https://blog.conholdate.com/total/convert-cad-to-pdf-in-csharp/",
+        "https://blog.conholdate.com/es/total/scrub-metadata-online/",
+        "https://blog.conholdate.com/ar/search/",
+        "https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/",
+        "https://blog.conholdate.com/archives/",
+        "https://blog.conholdate.com/ja/search/",
+        "https://blog.conholdate.com/ja/total/convert-pptx-to-markdown-in-java/",
+        "https://blog.conholdate.com/ko/search/"
       ],
-      "observed": "12 of 28 sampled pages (by template: category 3/3, home 3/3, post 6/22); 76 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/conholdate.total/: width 33: 'Conholdate Blog - Conholdate Blog'; https://blog.conholdate.com/: width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'; https://blog.conholdate.com/ru/conholdate.total/: width 35: 'Conholdate.Totals - Conholdate Blog'; https://blog.conholdate.com/ar/: width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'; https://blog.conholdate.com/pl/conholdate.total/: width 35: 'Conholdate.Totals - Conholdate Blog'",
+      "observed": "4 of 25 sampled pages (by template: post 4/22); 39 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/: width 194: 'Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsof'; https://blog.conholdate.com/total/convert-csv-to-xml-online/: width 191: 'Convert CSV to XML online for free with Conholdate’s web-based converter. Learn how to tra'; https://blog.conholdate.com/total/convert-cad-to-pdf-in-csharp/: width 185: 'Learn how to convert CAD files to PDF in C# using Conholdate.Total for .NET. Easily render'; https://blog.conholdate.com/es/total/scrub-metadata-online/: width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'; https://blog.conholdate.com/ar/search/: width 3: 'بحث'",
       "expected": "50-170 characters (CJK count double)",
       "locations": [
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/conholdate.total/",
-          "note": "width 33: 'Conholdate Blog - Conholdate Blog'"
+          "url": "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/",
+          "note": "width 194: 'Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsof'"
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/",
-          "note": "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+          "url": "https://blog.conholdate.com/total/convert-csv-to-xml-online/",
+          "note": "width 191: 'Convert CSV to XML online for free with Conholdate’s web-based converter. Learn how to tra'"
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/ru/conholdate.total/",
-          "note": "width 35: 'Conholdate.Totals - Conholdate Blog'"
+          "url": "https://blog.conholdate.com/total/convert-cad-to-pdf-in-csharp/",
+          "note": "width 185: 'Learn how to convert CAD files to PDF in C# using Conholdate.Total for .NET. Easily render'"
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/ar/",
-          "note": "width 185: 'Learn how to smartly manipulate File Formats of Word, Excel, PDF, PowerPoint, Outlook, Vis'"
+          "url": "https://blog.conholdate.com/es/total/scrub-metadata-online/",
+          "note": "width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'"
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/pl/conholdate.total/",
-          "note": "width 35: 'Conholdate.Totals - Conholdate Blog'"
+          "url": "https://blog.conholdate.com/ar/search/",
+          "note": "width 3: 'بحث'"
         },
         {
           "role": "listed in",
@@ -4506,42 +4506,26 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/ru/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.conholdate.com/ar/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.conholdate.com/pl/sitemap.xml"
+          "url": "https://blog.conholdate.com/es/sitemap.xml"
         }
       ],
       "sample": {
-        "category": [
-          3,
-          3
-        ],
-        "home": [
-          3,
-          3
-        ],
         "post": [
-          6,
+          4,
           22
         ]
       }
     },
-    "affected_pages": 2780,
+    "affected_pages": 1829,
     "impact": {
-      "clicks_28d": 753,
-      "impressions_28d": 37448,
+      "clicks_28d": 502,
+      "impressions_28d": 24957,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 1589,
-      "past_impressions": 43168,
-      "lost_clicks": 836,
-      "lost_impressions": 5720,
+      "past_clicks": 1058,
+      "past_impressions": 28737,
+      "lost_clicks": 556,
+      "lost_impressions": 3780,
       "past_window": [
         "2026-04-15",
         "2026-05-12"
@@ -4561,7 +4545,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run46",
+    "last_seen_run": "crawl-audit-run52",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -4581,16 +4565,16 @@
       "urls": [
         "https://blog.conholdate.com/",
         "https://blog.conholdate.com/ar/",
-        "https://blog.conholdate.com/it/",
+        "https://blog.conholdate.com/tr/",
         "https://blog.conholdate.com/fa/",
         "https://blog.conholdate.com/fr/page/2/",
         "https://blog.conholdate.com/id/",
+        "https://blog.conholdate.com/it/",
         "https://blog.conholdate.com/ja/",
         "https://blog.conholdate.com/ko/",
-        "https://blog.conholdate.com/page/2/",
-        "https://blog.conholdate.com/pt/"
+        "https://blog.conholdate.com/page/2/"
       ],
-      "observed": "3 of 28 sampled pages (by template: home 3/3); 7 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/it/: no non-empty <h1>; https://blog.conholdate.com/fa/: no non-empty <h1>; https://blog.conholdate.com/fr/page/2/: no non-empty <h1>",
+      "observed": "3 of 25 sampled pages (by template: home 3/3); 8 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/tr/: no non-empty <h1>; https://blog.conholdate.com/fa/: no non-empty <h1>; https://blog.conholdate.com/fr/page/2/: no non-empty <h1>",
       "expected": "one H1 that states the page topic",
       "locations": [
         {
@@ -4605,7 +4589,7 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/it/",
+          "url": "https://blog.conholdate.com/tr/",
           "note": "no non-empty <h1>"
         },
         {
@@ -4632,7 +4616,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/it/sitemap.xml"
+          "url": "https://blog.conholdate.com/tr/sitemap.xml"
         }
       ],
       "sample": {
@@ -4671,7 +4655,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run46",
+    "last_seen_run": "crawl-audit-run52",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -4749,14 +4733,14 @@
     "effort": "M",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
     "last_seen_run": "crawl-audit-run46",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run52",
+    "resolved_at": "2026-11-13T12:56:53+00:00",
     "check": "title_duplicate",
     "notes": []
   },
@@ -4773,28 +4757,23 @@
     "evidence": {
       "urls": [
         "https://blog.conholdate.com/es/total/scrub-metadata-online/",
-        "https://blog.conholdate.com/nl/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ar/search/",
         "https://blog.conholdate.com/archives/",
         "https://blog.conholdate.com/ja/search/",
         "https://blog.conholdate.com/ko/search/",
+        "https://blog.conholdate.com/nl/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/pl/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/pt/search/",
         "https://blog.conholdate.com/search/",
         "https://blog.conholdate.com/tag/c#-fuzzy-search/"
       ],
-      "observed": "2 of 28 sampled pages (by template: post 2/22); 13 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/es/total/scrub-metadata-online/: width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'; https://blog.conholdate.com/nl/total/convert-pptx-to-markdown-in-java/: width 73: 'Converteer PPTX naar Markdown in Java | Exporteer PowerPoint als Markdown'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/ja/search/: width 4: '探す'",
+      "observed": "1 of 25 sampled pages (by template: post 1/22); 14 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/es/total/scrub-metadata-online/: width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/ja/search/: width 4: '探す'; https://blog.conholdate.com/ko/search/: width 4: '검색'",
       "expected": "10-70 characters (CJK count double)",
       "locations": [
         {
           "role": "page",
           "url": "https://blog.conholdate.com/es/total/scrub-metadata-online/",
           "note": "width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.conholdate.com/nl/total/convert-pptx-to-markdown-in-java/",
-          "note": "width 73: 'Converteer PPTX naar Markdown in Java | Exporteer PowerPoint als Markdown'"
         },
         {
           "role": "page",
@@ -4812,41 +4791,42 @@
           "note": "width 4: '探す'"
         },
         {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ko/search/",
+          "note": "width 4: '검색'"
+        },
+        {
           "role": "listed in",
           "url": "https://blog.conholdate.com/es/sitemap.xml"
         },
         {
           "role": "sitemap index",
           "url": "https://blog.conholdate.com/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.conholdate.com/nl/sitemap.xml"
         }
       ],
       "sample": {
         "post": [
-          2,
+          1,
           22
         ]
       }
     },
-    "affected_pages": 915,
+    "affected_pages": 457,
     "impact": {
-      "clicks_28d": 251,
-      "impressions_28d": 12479,
+      "clicks_28d": 126,
+      "impressions_28d": 6239,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 529,
-      "past_impressions": 14368,
-      "lost_clicks": 278,
-      "lost_impressions": 1889,
+      "past_clicks": 265,
+      "past_impressions": 7184,
+      "lost_clicks": 139,
+      "lost_impressions": 945,
       "past_window": [
         "2026-04-15",
         "2026-05-12"
       ],
       "scored_on": "at stake",
-      "score": 10,
+      "score": 9,
       "window": [
         "2026-10-14",
         "2026-11-10"
@@ -4860,7 +4840,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run46",
+    "last_seen_run": "crawl-audit-run52",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -4932,14 +4912,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "text-audit-run4",
     "last_seen_run": "text-audit-run49",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "text-audit-run55",
+    "resolved_at": "2026-11-13T12:58:22+00:00",
     "check": "text_topic_mismatch",
     "notes": []
   },
@@ -5466,7 +5446,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run51",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -5889,7 +5869,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run51",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -5910,7 +5890,7 @@
         "https://blog.conholdate.com/total/create-visio-diagram-in-csharp/",
         "https://blog.conholdate.com/total/insert-table-in-onenote-using-java/"
       ],
-      "observed": "0 of 28 sampled pages (by template: -); 2 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/total/create-visio-diagram-in-csharp/: 2 H1s: Create Visio Diagram in C# | Create Visio Diagram in C##; https://blog.conholdate.com/total/insert-table-in-onenote-using-java/: 2 H1s: Insert Table in OneNote using Java | Insert Table in OneNote using Java#",
+      "observed": "0 of 25 sampled pages (by template: -); 2 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/total/create-visio-diagram-in-csharp/: 2 H1s: Create Visio Diagram in C# | Create Visio Diagram in C##; https://blog.conholdate.com/total/insert-table-in-onenote-using-java/: 2 H1s: Insert Table in OneNote using Java | Insert Table in OneNote using Java#",
       "expected": "one H1 per page",
       "locations": [
         {
@@ -5955,7 +5935,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "crawl-audit-run34",
-    "last_seen_run": "crawl-audit-run46",
+    "last_seen_run": "crawl-audit-run52",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_multiple",
@@ -5975,7 +5955,7 @@
       "urls": [
         "https://blog.conholdate.com/tag/image-extration-api/"
       ],
-      "observed": "1 of 130 checked pages: /tag/image-extration-api/ title: 'Extration' → 'Extraction'; /tag/image-extration-api/ H1: 'Extration' → 'Extraction'",
+      "observed": "1 of 142 checked pages: /tag/image-extration-api/ title: 'Extration' → 'Extraction'; /tag/image-extration-api/ H1: 'Extration' → 'Extraction'",
       "expected": "Correctly spelled titles, H1s and meta descriptions",
       "locations": [
         {
@@ -6019,7 +5999,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "text-audit-run37",
-    "last_seen_run": "text-audit-run49",
+    "last_seen_run": "text-audit-run55",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_typo",
@@ -6097,14 +6077,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
     "last_seen_run": "repo-audit-run51",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run57",
+    "resolved_at": "2026-11-13T13:02:15+00:00",
     "check": "menu_id_missing",
     "notes": []
   }

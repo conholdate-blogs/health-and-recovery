@@ -63,8 +63,8 @@
    "tag_listing_pages": 43710,
    "pages_beyond_cap": 252,
    "cap": 50,
-   "discovery_run": 6,
-   "sitemap_urls": 10098,
+   "discovery_run": 7,
+   "sitemap_urls": 10080,
    "sitemap_tag_urls": 0,
    "search": {
     "clicks": 2804,
@@ -94,6 +94,14 @@
      }
     ],
     "all_noindex": true
+   },
+   "section_robots": {
+    "sections": [
+     "Conholdate.Total"
+    ],
+    "url": "https://blog.conholdate.com/conholdate.total/",
+    "status": 200,
+    "noindex": true
    }
   }
  }

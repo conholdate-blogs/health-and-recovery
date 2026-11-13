@@ -162,5 +162,28 @@
     }
    }
   }
+ },
+ {
+  "date": "2026-11-13",
+  "runs": "discovery run 7, crawl audit run 52, speed audit run 54, AI audit run 53, text check run 55, link check run 56, repo file check run 58",
+  "method": 3,
+  "hosts": {
+   "blog.conholdate.com": {
+    "health": 85,
+    "areas": {
+     "crawl": 88,
+     "onpage": 97,
+     "intl": 89,
+     "ai": 100
+    },
+    "stats": {
+     "clicks": 2804,
+     "impressions": 141947,
+     "traffic_to": "2026-11-10",
+     "issue_types": 15,
+     "open_issues": 11616
+    }
+   }
+  }
  }
 ]

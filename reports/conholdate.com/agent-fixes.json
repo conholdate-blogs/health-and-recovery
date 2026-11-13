@@ -182,5 +182,18 @@
   ],
   "issue": "No llms.txt for AI assistants",
   "result": "Live: /llms.txt and one per language, generated at build (newest 100 of 561 articles), text/plain; charset=utf-8"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "found": "2026-11-13",
+  "check": "section_lists_home_posts",
+  "commits": [
+   "dae848238c43d577856fb9461c3555702a1f5d94"
+  ],
+  "fixed": "2026-11-13",
+  "verified": "2026-11-13",
+  "issue": "With one main section, the section page /conholdate.total/ (18 languages) listed exactly the home page's posts and was indexable: a duplicate listing",
+  "result": "Live: section pages answer noindex, follow and are out of the sitemaps; home pages unchanged"
  }
 ]

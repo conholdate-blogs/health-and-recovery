@@ -290,3 +290,12 @@ def test_reviewed_old_urls_are_not_junk(tmp_path):
     issues, _ = audit.check_redirects(HOST)
     junk = [i["link"] for i in issues if i["check"] == "redirect_key_malformed"]
     assert junk == [other]  # the kept key (raw or encoded spelling) is not junk; the other is
+
+
+def test_iso_date_reads_rfc_and_iso_dates():
+    import datetime as dt
+
+    from core.audit.repo import iso_date
+    assert iso_date("Thu, 25 Jan 2024 10:00:00 +0000") == "2024-01-25"  # sorted as "Thu, 25 Ja" before
+    assert iso_date("2026-11-12T08:00:00Z") == "2026-11-12" and iso_date(dt.date(2026, 11, 13)) == "2026-11-13"
+    assert iso_date(dt.datetime(2026, 11, 13, 9, 0)) == "2026-11-13" and iso_date("someday") is None

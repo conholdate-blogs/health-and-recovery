@@ -1,0 +1,108 @@
+{
+  "tenant": "conholdate.com",
+  "auditor": "text-audit",
+  "run_id": 55,
+  "params": {
+    "hosts": [
+      "blog.conholdate.com"
+    ],
+    "crawl_runs": [
+      16,
+      22,
+      28,
+      34,
+      40,
+      46,
+      52
+    ],
+    "model": "gpt-oss",
+    "prompt_version": 2
+  },
+  "duration_s": 23.5,
+  "stopped_early": false,
+  "pages_checked": 142,
+  "unchecked": [],
+  "incomplete": false,
+  "llm": {
+    "calls": 3,
+    "prompt_tokens": 7388,
+    "completion_tokens": 3092,
+    "cache_hits": 83
+  },
+  "ignored": 0,
+  "summary": {
+    "blog.conholdate.com": {
+      "checked": 142,
+      "pages_with_issues": 1,
+      "issues": {
+        "text_typo": 2
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "onpage-0001",
+      "tenant": "conholdate.com",
+      "subdomain": "blog.conholdate.com",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "text_typo",
+      "type": "improvable",
+      "title": "Typos in titles, headings or descriptions",
+      "evidence": {
+        "urls": [
+          "https://blog.conholdate.com/tag/image-extration-api/"
+        ],
+        "observed": "1 of 142 checked pages: /tag/image-extration-api/ title: 'Extration' → 'Extraction'; /tag/image-extration-api/ H1: 'Extration' → 'Extraction'",
+        "expected": "Correctly spelled titles, H1s and meta descriptions",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/tag/image-extration-api/",
+            "note": "title: 'Extration' → 'Extraction'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.conholdate.com/tag/image-extration-api/",
+            "note": "H1: 'Extration' → 'Extraction'"
+          }
+        ]
+      },
+      "affected_pages": 1,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-13"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://blog.conholdate.com/tag/image-extration-api/",
+      "host": "blog.conholdate.com",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "title",
+          "kind": "misspelling",
+          "wrong": "Extration",
+          "fix": "Extraction",
+          "why": "misspelled word"
+        },
+        {
+          "field": "h1",
+          "kind": "misspelling",
+          "wrong": "Extration",
+          "fix": "Extraction",
+          "why": "misspelled word"
+        }
+      ]
+    }
+  ]
+}

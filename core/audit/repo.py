@@ -126,6 +126,24 @@ CHECKS = {
 }
 
 
+def iso_date(value) -> str | None:
+    """YYYY-MM-DD from a front-matter date: a YAML date/datetime, an ISO string or an RFC 2822 string such as
+    'Thu, 25 Jan 2024 10:00:00 +0000' (13 Nov 2026: cutting that to 10 characters gave 'Thu, 25 Ja', which sorted
+    as the newest post)."""
+    import datetime as _dt
+    from email.utils import parsedate_to_datetime
+
+    if isinstance(value, (_dt.date, _dt.datetime)):
+        return value.isoformat()[:10]
+    text = str(value).strip()
+    if re.match(r"^\d{4}-\d{2}-\d{2}", text):
+        return text[:10]
+    try:
+        return parsedate_to_datetime(text).date().isoformat()
+    except (TypeError, ValueError, IndexError):
+        return None
+
+
 def key_problem(key: str, target: str | None = None, host: str | None = None) -> str | None:
     """Why a redirect source is a junk entry, or None (SK, 2026-11-11: junk URLs get no redirect).
 
@@ -369,8 +387,8 @@ class RepoAudit:
                 section_langs.setdefault("/".join(parts[:i]), set()).add(lang or default)
             if lang:
                 stale_candidates.append((rel, str(f.parent.relative_to(repo) / "index.md"), page))
-            elif page and data.get("date"):
-                posts_by_date.append((str(data["date"])[:10], page, rel))
+            elif page and data.get("date") and (d := iso_date(data["date"])):
+                posts_by_date.append((d, page, rel))
             texts.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (
                 {k: str(data.get(k) or "") for k in ("seoTitle", "title", "description")}, rel, page)
         issues += self.check_translated_urls(host, urls, commit)

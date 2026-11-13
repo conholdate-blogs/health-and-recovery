@@ -62,6 +62,19 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | B1 + B2 | Prepare and test both commits, **show first**; push decided after review |
 | B5 | Show the link fixes, fix together; **change the translation agent** where it caused them so it does not repeat; find an efficient approval flow (one review table per batch) |
 
+## B7 + B8 + B9 + CB3 verified live (13 Nov evening)
+
+- Deploys seen 17:39 (B7–B9) and ~21:15 (CB3, dae84823). Live: vi/th/tr menus; native language names; `dir=rtl`
+  on ar/fa (styled Arabic page checked); home descriptions per language; section pages translated, x-default,
+  then `noindex, follow` and out of the sitemaps (CB3); llms.txt per language as UTF-8. 7 agent-fix rows.
+- Rescan: **health 72 → 85** (crawl 88, on-page 97, languages 89, AI 100; 15 open issue types; snapshot
+  2026-11-13-5). A false `llms_txt_outdated` (our check cut RFC dates like "Thu, 25 Jan 2024" to "Thu, 25 Ja"
+  and sorted them as newest) was fixed in `core/audit/repo.iso_date` and deleted from the store (backup in the
+  session scratchpad), never published.
+- New, real: 2 posts repeat their title as a `#` heading (h1_multiple); tag "image-extration-api" typo.
+- Left: links (B5: 81 broken, 54 damaged, 374 wrong-language, 3 missing translation); lengths and stale or
+  untranslated text (B10); sitemap duplicates (36); no-slash 302 (CDN); theme "Home" label in English.
+
 ## B7 + B8 + B9 prepared (13 Nov; local `main` of conholdate-blog, 5 commits, NOT pushed)
 
 | Commit | Step | What |

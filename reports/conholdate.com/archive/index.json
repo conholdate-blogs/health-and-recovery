@@ -77,5 +77,18 @@
     "date": "2026-11-13 (4)",
     "label": "B3+B4 verified live: head order, x-default, tags/search/page 2+ noindex (agent fixes)",
     "runs": "discovery run 6, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 49, link check run 50, repo file check run 51"
+  },
+  {
+    "file": "2026-11-13-6.html",
+    "date": "2026-11-13 (6)",
+    "label": "Live page before the B7-B9 rescan (downloaded)",
+    "runs": "discovery run 6, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 49, link check run 50, repo file check run 51",
+    "downloaded": true
+  },
+  {
+    "file": "2026-11-13-5.html",
+    "date": "2026-11-13 (5)",
+    "label": "B7-B9 and section page live: menus, language names, RTL, descriptions, llms.txt (agent fixes)",
+    "runs": "discovery run 7, crawl audit run 52, speed audit run 54, AI audit run 53, text check run 55, link check run 56, repo file check run 58"
   }
 ]
