@@ -378,7 +378,16 @@ def collection_members(tenants: list[str]) -> dict[str, list[tuple[str, str]]]:
                 if h not in tenant.host_names:
                     raise SystemExit(f"tenants/{t}.yaml: collection {slug} lists {h}, which is not one of its hosts")
                 out[slug].append((t, h))
+    # SK, 2026-11-13: the .com blogs first (aspose, groupdocs, conholdate), then the .cloud ones in the same brand order
+    for members in out.values():
+        members.sort(key=lambda m: (not m[1].endswith(".com"), brand_rank(m[1]), m[1]))
     return {slug: members for slug, members in out.items() if members}
+
+
+def brand_rank(host: str) -> int:
+    parts = host.split(".")
+    brand = parts[1] if len(parts) > 2 else parts[0]
+    return BRANDS.index(brand) if brand in BRANDS else len(BRANDS)
 
 
 BRANDS = ("aspose", "groupdocs", "conholdate")  # row order of the home page's subdomain pairs (SK, 2026-11-06)

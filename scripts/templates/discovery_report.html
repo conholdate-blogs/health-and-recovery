@@ -135,7 +135,7 @@ th { font: 600 12px var(--body); letter-spacing: .04em; text-transform: uppercas
 td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--mono); font-size: 13px }
 tr:last-child td { border-bottom: 0 }
 .bar { display: inline-block; height: 8px; background: var(--accent); border-radius: 2px; vertical-align: middle; opacity: .7 }
-.ok { color: var(--good) } .bad { color: var(--broken) } .warn { color: var(--notopt) } .dim { color: var(--muted) }
+.ok { color: var(--good) } .bad { color: var(--broken) } .kpi .pct { font-size: 1.3em } .warn { color: var(--notopt) } .dim { color: var(--muted) }
 .mono { font-family: var(--mono); font-size: 13px }
 .score { font: 600 13px var(--mono); font-variant-numeric: tabular-nums; min-width: 2.6em; text-align: center; padding: 2px 6px; border-radius: 4px; background: var(--tint); color: var(--fg) }
 .score.hi { background: var(--broken); color: var(--surface) } .score.mid { background: var(--notopt); color: var(--surface) }
@@ -1250,6 +1250,7 @@ __METHOD__
     // on its own line under the value, so the columns stay narrow (SK, 2026-11-13)
     const move = (r, older, get, moreIsWorse) => { const a = get(r), b = older && get(older);
       return a == null || b == null || a === b ? "" : `<br><small class="${(a > b) !== !!moreIsWorse ? "up" : "down"}">${a > b ? "+" : "−"}${fmt(Math.abs(a - b))}</small>`; };
+    const full = v => `<b class="ok">${v}</b>`;  // a perfect score stands out in bold green (SK, 2026-11-13)
     const HIST_SHOWN = 5;  // like the other Reference tables (SK, 2026-11-11)
     const table = $("history-rows"), btn = document.createElement("button");
     btn.type = "button"; btn.className = "more"; table.closest(".tablewrap").after(btn);
@@ -1258,10 +1259,10 @@ __METHOD__
       const shown = all ? HIST : HIST.slice(0, HIST_SHOWN);
       table.innerHTML = `<thead><tr><th>Date</th><th class="n">Score</th><th class="n">Clicks<br>28 days</th><th class="n">Impressions</th><th class="n">Open<br>issues</th>${withItems ? `<th class="n">Open<br>items</th>` : ""}${AREA_COLS.map(([, n]) => `<th class="n">${n}</th>`).join("")}<th>Note</th></tr></thead><tbody>`
         + shown.map((r, i) => { const older = HIST[HIST.indexOf(r) + 1];
-          return `<tr><td>${esc(day(r.date))}</td><td class="n"><b>${r.health}</b>${move(r, older, x => x.health)}</td>`
+          return `<tr><td>${esc(day(r.date))}</td><td class="n">${r.health === 100 ? full(100) : `<b>${r.health}</b>`}${move(r, older, x => x.health)}</td>`
             + `<td class="n">${fmt(r.clicks)}${r.traffic_to ? `<br><small class="dim">to ${esc(day(r.traffic_to))}</small>` : ""}</td><td class="n">${compact(r.impressions)}</td>`
             + `<td class="n">${fmt(r.issue_types)}${move(r, older, x => x.issue_types, true)}</td>${withItems ? `<td class="n">${fmt(r.open_issues)}${move(r, older, x => x.open_issues, true)}</td>` : ""}`
-            + AREA_COLS.map(([k]) => `<td class="n">${r.areas[k] == null ? "–" : r.areas[k]}${move(r, older, x => x.areas[k])}</td>`).join("")
+            + AREA_COLS.map(([k]) => `<td class="n">${r.areas[k] == null ? "–" : r.areas[k] === 100 ? full(100) : r.areas[k]}${move(r, older, x => x.areas[k])}</td>`).join("")
             // the snapshot label says why; the short note what ran; run numbers on hover (SK, 2026-11-11: no sideways scroll)
             + `<td class="note" title="${esc(r.runs || "")}">${r.label ? esc(r.label) : ""}`
             + `${r.note.length ? (r.label ? `<small>${esc(r.note.join(" · "))}</small>` : esc(r.note.join(" · "))) : (r.label ? "" : '<span class="dim">–</span>')}</td></tr>`; }).join("") + `</tbody>`;
@@ -1417,23 +1418,34 @@ __METHOD__
     // issues chart
     const hasT = series.some(p => p.total != null);
     const max = Math.max(1, ...series.map(p => Math.max(p.open, p.fixed, p.total || 0)));
+    const extra = [["resolved", "--improvable", "Resolved (gone without our fix)"], ["reviewed", "--notopt", "Reviewed (accepted)"]]
+      .filter(([k]) => series.some(p => p[k] > 0));  // drawn only when there is something to draw
     const step = max <= 5 ? 1 : max <= 10 ? 2 : max <= 25 ? 5 : max <= 50 ? 10 : Math.ceil(max / 5 / 10) * 10;
     const top = Math.ceil(max / step) * step, y = v => T + (H - T - B) * (1 - v / top);
     const ticks = []; for (let v = 0; v <= top; v += step) ticks.push(v);
     const line = (k, c, dash) => `<polyline fill="none" stroke="var(${c})" stroke-width="2" stroke-linejoin="round"${dash ? ' stroke-dasharray="5 4"' : ""} points="${series.map((p, i) => `${x(i)},${y(p[k])}`).join(" ")}"/>`
       + series.map((p, i) => `<circle cx="${x(i)}" cy="${y(p[k])}" r="4" fill="var(${c})" stroke="var(--surface)" stroke-width="2"/>`).join("");
-    const ends = [["Open", last.open], ["Fixed", last.fixed], ...(hasT ? [["Total", last.total]] : [])]
+    const ends = [["Open", last.open], ["Fixed", last.fixed], ...extra.map(([k]) => [k[0].toUpperCase() + k.slice(1), last[k] || 0]), ...(hasT ? [["Total", last.total]] : [])]
       .map(([t, v]) => ({ t, v, y: y(v) + 4 })).sort((a, b) => a.y - b.y);  // end labels pushed apart
     for (let i = 1; i < ends.length; i++) if (ends[i].y - ends[i - 1].y < 14) ends[i].y = ends[i - 1].y + 14;
-    const issues = `<div class="worm"><div class="lg"><span><i style="background:var(--w-open)"></i>Open issues</span><span><i style="background:var(--w-fixed)"></i>Fixed issues (total so far)</span>${hasT ? `<span><i style="background:repeating-linear-gradient(90deg,var(--muted) 0 5px,transparent 5px 9px)"></i>All issues found</span>` : ""}</div>`
+    if (ends.length) {  // keep the lowest labels above the dates, moving up only those that crowd at the bottom
+      ends[ends.length - 1].y = Math.min(ends[ends.length - 1].y, H - B + 4);
+      for (let i = ends.length - 2; i >= 0; i--) ends[i].y = Math.min(ends[i].y, ends[i + 1].y - 14);
+    }
+    const issues = `<div class="worm"><div class="lg"><span><i style="background:var(--w-open)"></i>Open issues</span><span><i style="background:var(--w-fixed)"></i>Fixed issues (total so far)</span>${extra.map(([, c, t]) => `<span><i style="background:var(${c})"></i>${t}</span>`).join("")}${hasT ? `<span><i style="background:repeating-linear-gradient(90deg,var(--muted) 0 5px,transparent 5px 9px)"></i>All issues found</span>` : ""}</div>`
       + svg("Open and fixed issues per day with a recorded run; the same numbers are in History below",
-        gridAt(ticks, y) + xl + cross + (hasT ? line("total", "--muted", true) : "") + line("open", "--w-open") + line("fixed", "--w-fixed")
+        gridAt(ticks, y) + xl + cross + (hasT ? line("total", "--muted", true) : "") + line("open", "--w-open") + line("fixed", "--w-fixed") + extra.map(([k, c]) => line(k, c)).join("")
         + ends.map(e => `<text x="${lx}" y="${e.y}" font-size="12" fill="var(--fg)">${e.t} ${e.v}</text>`).join("")) + `</div>`;
-    // health chart: full 0-100 scale; a day with several scans that moved the score draws each at the same x (SK, 2026-11-13)
-    const hasH = series.some(p => p.health != null), hy = v => T + (H - T - B) * (1 - v / 100);
-    const health = !hasH ? "" : `<div class="worm"><div class="lg"><span><i style="background:var(--accent)"></i>Health score (0–100)</span></div>`
+    // health chart; a day with several scans that moved the score draws each at the same x (SK, 2026-11-13)
+    // y axis from a round step below the lowest score to 100 (SK, 2026-11-13: lowest 50 -> 40 to 100); lines may start above 0
+    const hasH = series.some(p => p.health != null);
+    const lowest = Math.min(100, ...series.flatMap(p => p.health == null ? [] : (p.health_steps || [p.health])));
+    const lo = Math.max(0, Math.floor((lowest - 5) / 10) * 10), hstep = 100 - lo > 50 ? 20 : 10;
+    const hy = v => T + (H - T - B) * (1 - (v - lo) / (100 - lo));
+    const hticks = []; for (let v = 100; v >= lo; v -= hstep) hticks.unshift(v); if (hticks[0] !== lo) hticks.unshift(lo);
+    const health = !hasH ? "" : `<div class="worm"><div class="lg"><span><i style="background:var(--accent)"></i>Health score${lo ? ` (axis from ${lo})` : " (0–100)"}</span></div>`
       + svg("Health score per day with a recorded run; the same numbers are in History below",
-        gridAt([0, 25, 50, 75, 100], hy) + xl + cross
+        gridAt(hticks, hy) + xl + cross
         + `<polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" points="${series.map((p, i) => p.health == null ? "" : (p.health_steps || [p.health]).map(v => `${x(i)},${hy(v)}`).join(" ")).filter(Boolean).join(" ")}"/>`
         + series.map((p, i) => p.health == null ? "" : (p.health_steps || []).slice(0, -1).map(v => `<circle cx="${x(i)}" cy="${hy(v)}" r="2.5" fill="var(--accent)"/>`).join("")
           + `<circle cx="${x(i)}" cy="${hy(p.health)}" r="4" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`).join("")
@@ -1445,7 +1457,7 @@ __METHOD__
     const show = r => {
       const i = +r.dataset.i, p = series[i], b = r.getBBox(), cx = b.x + b.width / 2, svg = r.ownerSVGElement;
       svgs.forEach(s => { const l = s.querySelector(".wx"); l.setAttribute("x1", cx); l.setAttribute("x2", cx); l.setAttribute("visibility", "visible"); });
-      tip.innerHTML = `<b>${esc(day(p.date))}</b><br>${p.total != null ? `Found ${p.total} · ` : ""}Open ${p.open} · Fixed ${p.fixed}${p.health != null ? `<br>Health ${p.health_steps ? `${p.health_steps.join(" → ")} (${p.health_steps.length} scans that day)` : p.health}` : ""}`; tip.hidden = false;
+      tip.innerHTML = `<b>${esc(day(p.date))}</b><br>${p.total != null ? `Found ${p.total} · ` : ""}Open ${p.open} · Fixed ${p.fixed}${p.resolved ? ` · Resolved ${p.resolved}` : ""}${p.reviewed ? ` · Reviewed ${p.reviewed}` : ""}${p.health != null ? `<br>Health ${p.health_steps ? `${p.health_steps.join(" → ")} (${p.health_steps.length} scans that day)` : p.health}` : ""}`; tip.hidden = false;
       const k = svg.clientWidth / svg.viewBox.baseVal.width, br = box.getBoundingClientRect(), sr = svg.getBoundingClientRect();
       tip.style.left = `${Math.min(Math.max(sr.left - br.left + cx * k, 90), br.width - 90)}px`; tip.style.top = `${sr.top - br.top + 14 * k}px`;
     };
@@ -1526,10 +1538,6 @@ __METHOD__
     };
     const signed = n => `<span class="${n > 0 ? "up" : n < 0 ? "down" : ""}">${n > 0 ? "+" : n < 0 ? "−" : "±"}${Math.abs(n)}</span>`;
     const trendOf = h => (R._host_trends || {})[h] || [];
-    const spark = pts => {  // score on a fixed 0-100 scale, so small moves look small
-      const w = 160, h = 28, x = i => 4 + i * (w - 8) / (pts.length - 1), y = v => h - 3 - v / 100 * (h - 6);
-      return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="currentColor" stroke-width="2" points="${pts.map((p, i) => `${x(i)},${y(p.health)}`).join(" ")}"/></svg>`;
-    };
     const count = (list, t) => list.filter(f => f.type === t).length;
     const changesOf = h => ({ add: (CH.new || []).filter(id => (byId[id] || {}).subdomain === h).length,
                               gone: (CH.resolved || []).filter(f => f.subdomain === h).length });
@@ -1547,7 +1555,8 @@ __METHOD__
     const issuesLabel = `Issues ${ask(ISSUES_NOTE)}`;
     const itemsLabel = `${LOG ? "Items" : "Open issues"} ${ask(ITEMS_NOTE)}`, typesLabel = `Issue types ${ask(TYPES_NOTE)}`;
     const itemsNum = I => `${fmt(I.open)} <small>${LOG ? "open " : ""}of ${fmt(I.issues)}</small>`;
-    const itemsSub = I => `<span class="${I.fixed ? "up" : ""}">${fmt(I.fixed)} fixed</span>${I.fixed_pct == null ? "" : ` · ${I.fixed_pct}%`}`;
+    // the fixed share stands out (SK, 2026-11-13): bigger, bold, green once something is fixed
+    const itemsSub = I => `<span class="${I.fixed ? "up" : ""}">${fmt(I.fixed)} fixed</span>${I.fixed_pct == null ? "" : ` · <b class="pct${I.fixed ? " ok" : ""}">${I.fixed_pct}%</b>`}`;
     const changesSub = (ch, before) => before ? `${ch.gone} resolved · ${ch.add} new since ${esc(day(before.date))}` : "no earlier run to compare";
     // how old the data is: managers must not read a two-week-old crawl as today's state
     const dates = (R._dates || [R._run_date, A && A.date, R._perf && R._perf.date, R._ai && R._ai.date, R._text && R._text.date, R._links && R._links.date]).filter(Boolean).sort();
@@ -1574,7 +1583,7 @@ __METHOD__
       const TR = trendOf(H.host), before = TR.length > 1 ? TR[TR.length - 2] : null;
       $("kpis").innerHTML = [
         `<div class="kpi g-${H.grade}"><span class="kl">Health score ${info("Health score", H)}</span><span class="kv">${H.health} <small>out of 100</small></span>${sbar(H.health, H.grade, "big")}`
-          + (before ? `${spark(TR)}<span class="ks">${signed(H.health - before.health)} since ${esc(day(before.date))}</span>` : `<span class="ks">trend from the next run</span>`)+ `</div>`,
+          + (before ? `<span class="ks">${signed(H.health - before.health)} since ${esc(day(before.date))}</span>` : `<span class="ks">trend from the next run</span>`)+ `</div>`,
         t.source === "gsc"
           ? `<div class="kpi"><span class="kl">Search clicks</span><span class="kv">${fmt(cur.clicks)} <small>28 days</small></span><span class="ks">${delta(cur.clicks, prev.clicks, "previous 28 days")}</span><span class="ks">${delta(cur.clicks, six.clicks, "six months ago")}</span></div>
              <div class="kpi"><span class="kl">Search impressions</span><span class="kv">${compact(cur.impressions)} <small>28 days</small></span><span class="ks">${delta(cur.impressions, prev.impressions, "previous 28 days")}</span><span class="ks">${delta(cur.impressions, six.impressions, "six months ago")}</span></div>`

@@ -530,7 +530,10 @@ def issue_log_summary(tenant: str, host: str, history_path: Path) -> dict:
         day_steps = [v for i, v in enumerate(steps.get(d, [])) if i == 0 or v != steps[d][i - 1]]
         series.append({"date": d, "open": sum(1 for r in found if not closed(r)), "health": health.get(d),
                        **({"health_steps": day_steps} if len(day_steps) > 1 else {}), "total": len(found),
-                       "fixed": sum(1 for r in found if r["status"] in fixed_states and closed(r))})
+                       "fixed": sum(1 for r in found if r["status"] in fixed_states and closed(r)),
+                       # the rest of the count, so open + fixed + resolved + reviewed = all found (SK, 2026-11-13)
+                       "resolved": sum(1 for r in found if r["status"] == "Resolved" and closed(r)),
+                       "reviewed": sum(1 for r in found if r["status"] in ("Reviewed", "Won't fix") and closed(r))})
     return {"total": len(rows), "open": n["Open"], "verified": n["✓ Verified live"],
             "pushed": n["Pushed, waiting for deploy"], "resolved": n["Resolved"],
             "reviewed": n["Reviewed"] + n["Won't fix"], "series": series}

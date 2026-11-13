@@ -31,7 +31,10 @@ a blocked page's noindex is never read). Written 12 Nov 2026 so nothing is lost.
 3. **Fix progress:** agent line ("N fixes by the Health and Recovery Agent" + an "Open the Issue log →" button); **graph**: open, fixed
    (cumulative) and all found (dashed) per day with a recorded run, plus a separate health-score chart (0–100) on the
    same dates: side by side from 760 px, stacked below; hovering a day marks it in both, one tooltip (13 Nov); a day
-   with several scans that moved the score draws each at the same x, a vertical jump (no dual y-axis; colours
+   with several scans that moved the score draws each at the same x, a vertical jump; health axis from a round step
+   below the lowest score to 100; Resolved and Reviewed lines only when > 0, so open + fixed + resolved + reviewed =
+   all found (13 Nov); Health card without trend line, Items card fixed % bold green; History 100s bold green;
+   subdomain switch order .com (aspose, groupdocs, conholdate) then .cloud (no dual y-axis; colours
    validated for colour-blind readers: light #b42318/#17b26a, dark #c01e1e/#17a865); per-check item table (open rows
    red); "Resolved since the last run"; History (5 rows + Show all; changes on their own line under the value).
 4. **Issues and fixes:** open findings ranked by score with evidence; filters hidden under 6 issues.
