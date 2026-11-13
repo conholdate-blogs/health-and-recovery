@@ -76,3 +76,10 @@ reviewed of all Issue log rows), "Open issues: X of Y", "N items still affected"
 it. Order everywhere: blog.aspose.com, blog.groupdocs.com, blog.conholdate.com, then the .cloud ones. Three per
 row on desktop, two on tablets, one on phones. Replaces the 6 Nov rule "scores + alerts only".
 
+## Issues chart on the Issue log (13 Nov 2026, SK)
+
+`site_pages.issues_chart` puts the subdomain page's issues chart (open, fixed, all found; tooltip with resolved and
+reviewed) on top of `/<host>/issues/`, full width, drawn by the same code: the template's `worm-css` and `worm-js`
+blocks are cut out and injected with the same `issue_log_summary` series (`wormGraph(…, {issuesOnly: true})`).
+Edit the chart only in the template; keep those blocks self-contained (they need `esc`, `day`, `$`).
+

@@ -267,6 +267,7 @@ button.acard:focus-visible { outline: 2px solid var(--accent); outline-offset: 2
 #area-data { display: grid; gap: 12px; margin-top: 12px } #area-data:empty { display: none }
 #area-data .ahead { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap }
 #changes, #chg-body, #chg-body > *, #sum-areas, #area-data, #area-data > * { min-width: 0 }  /* wide tables scroll inside */
+/* worm-css:start (also used by the Issue log page, scripts/site_pages.py) */
 .worm { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin: 0 0 14px }
 .worms { position: relative; display: grid; grid-template-columns: 1fr; gap: 14px; margin: 0 0 14px } .worms.side { grid-template-columns: 1fr 1fr }
 .worms .worm { margin: 0; min-width: 0 }
@@ -274,6 +275,7 @@ button.acard:focus-visible { outline: 2px solid var(--accent); outline-offset: 2
 .worm .lg i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px }
 .worms .tip { position: absolute; pointer-events: none; background: var(--fg); color: var(--bg); font-size: 12px; padding: 6px 8px;
   border-radius: 6px; white-space: nowrap; transform: translate(-50%, -110%) }
+/* worm-css:end */
 /* Fixed % as a bar (SK, 2026-11-11); the number stays beside it */
 .pbar { display: inline-block; width: 64px; height: 6px; border-radius: 3px; background: var(--line); vertical-align: middle; overflow: hidden }
 .pbar i { display: block; height: 100%; background: var(--good); border-radius: 3px }
@@ -1403,10 +1405,11 @@ __METHOD__
   // Subdomain page layout (SK, 2026-11-12): the worm graph and History in Fix progress; five area cards replace
   // "Health by area" and each opens its data tables (formerly Reference); no run line in the header; no filters
   // on a short list of issues.
-  function wormGraph(series, width) {
+  // worm-js:start (also used by the Issue log page, scripts/site_pages.py: keep it self-contained, needs esc, day, $)
+  function wormGraph(series, width, opts = {}) {
     // two charts with the same days (SK, 2026-11-13): issues and health score side by side on desktop, stacked below
     // 760 px; never two y-scales on one plot (SK, 2026-11-12); hovering a day marks it in both
-    const side = width >= 760, CW = Math.max(300, Math.round(side ? (width - 14) / 2 - 26 : width - 26));
+    const side = !opts.issuesOnly && width >= 760, CW = Math.max(300, Math.round(side ? (width - 14) / 2 - 26 : width - 26));
     const H = 200, L = 34, Rm = 80, T = 14, B = 26, n = series.length, span = CW - L - Rm;
     const x = i => L + (n === 1 ? 0 : i * span / (n - 1));
     const every = Math.ceil(n / 7), last = series[n - 1], lx = x(n - 1) + 10;
@@ -1439,7 +1442,7 @@ __METHOD__
         + ends.map(e => `<text x="${lx}" y="${e.y}" font-size="12" fill="var(--fg)">${e.t} ${e.v}</text>`).join("")) + `</div>`;
     // health chart; a day with several scans that moved the score draws each at the same x (SK, 2026-11-13)
     // y axis from a round step below the lowest score to 100 (SK, 2026-11-13: lowest 50 -> 40 to 100); lines may start above 0
-    const hasH = series.some(p => p.health != null);
+    const hasH = !opts.issuesOnly && series.some(p => p.health != null);
     const lowest = Math.min(100, ...series.flatMap(p => p.health == null ? [] : (p.health_steps || [p.health])));
     const lo = Math.max(0, Math.floor((lowest - 5) / 10) * 10), hstep = 100 - lo > 50 ? 20 : 10;
     const hy = v => T + (H - T - B) * (1 - (v - lo) / (100 - lo));
@@ -1465,6 +1468,7 @@ __METHOD__
     box.querySelectorAll("rect.hit").forEach(r => { r.addEventListener("mouseenter", () => show(r)); r.addEventListener("click", () => show(r)); });
     box.addEventListener("mouseleave", () => { tip.hidden = true; box.querySelectorAll(".wx").forEach(l => l.setAttribute("visibility", "hidden")); });
   }
+  // worm-js:end
   function subdomainLayout() {
     $("meta").hidden = true;  // the Overview line says how old the data is; run numbers are in the footer
     const body = $("chg-body"), LOG = R._issue_log;

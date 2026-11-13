@@ -418,3 +418,18 @@ def test_rechecked_pages_do_not_count_in_the_sample_share():
                    mk("https://app.example.com/pdf/tool9", "recheck", [("h1_missing", "no H1")])]
     f = next(x for x in audit.findings() if x["check"] == "h1_missing")
     assert f["affected_pages"] == 1 and "rechecked" in f["evidence"]["observed"]
+
+
+def test_duplicates_skip_noindex_pages():
+    # 13 Nov 2026: noindex tag pages reusing the home description compete with nothing in the index
+    from core.audit.crawl import duplicate_issues
+
+    def page(url, robots):
+        return {"url": url, "final_url": url, "status": 200, "host": "blog.example.com", "lang": "", "issues": [],
+                "facts": {"descriptions": ["Same text"], "canonicals": [url], "robots": robots}}
+    home, tag = page("https://blog.example.com/", []), page("https://blog.example.com/tag/x/", ["noindex, follow"])
+    duplicate_issues([home, tag], "descriptions", "description_duplicate")
+    assert home["issues"] == [] and tag["issues"] == []
+    post = page("https://blog.example.com/a/", [])
+    duplicate_issues([home, post], "descriptions", "description_duplicate")
+    assert [c for c, _ in post["issues"]] == ["description_duplicate"]

@@ -369,11 +369,48 @@ def issue_log_page(
         f"  <p>Every issue the audits identified on {esc(host)}, open and closed: status with the date and commits, "
         f"who fixed it, and notes and decisions. Issues found by hand and fixed are listed too. Click a status row "
         f"to filter, a column header to sort.</p>\n"
-        f'  <div class="sbars">{"".join(srows)}</div>\n'
+        + issues_chart(tenant, host)
+        + f'  <div class="sbars">{"".join(srows)}</div>\n'
         f'  <div class="filters"><label for="ar">Area</label><select id="ar"><option value="">All</option>{opts}'
         f'</select><span id="shown"></span></div>\n'
         f'  <div class="tablewrap"><table>\n    <thead><tr>{heads}</tr></thead>\n'
         f"    {''.join(trs)}\n  </table></div>\n</main>\n" + LOG_JS
+    )
+
+
+def issues_chart(tenant: str, host: str) -> str:
+    """The subdomain page's issues chart (open, fixed, all found per run day) on top of the Issue log (SK, 2026-11-13),
+    drawn by the same code: the template's worm-css and worm-js blocks, with the same series."""
+    import json as _json
+
+    try:
+        from scripts import build_report
+    except ImportError:  # run as scripts/site_pages.py
+        import build_report
+    from core.paths import tenant_paths
+
+    series = build_report.issue_log_summary(tenant, host, tenant_paths(tenant).health_history)["series"]
+    if len(series) < 2:
+        return ""
+    tpl = (Path(__file__).parent / "templates" / "discovery_report.html").read_text(encoding="utf-8")
+    cut = lambda a, b: tpl.split(a, 1)[1].split(b, 1)[0]  # noqa: E731
+    css = cut("/* worm-css:start", "/* worm-css:end */").split("*/", 1)[1]
+    js = cut("// worm-js:start", "// worm-js:end").split("\n", 1)[1]
+    data = _json.dumps(series).replace("</", "<\\/")
+    return (
+        f"<style>{css}\n:root {{ --w-open: #b42318; --w-fixed: #17b26a }}\n"
+        "@media (prefers-color-scheme: dark) { :root { --w-open: #c01e1e; --w-fixed: #17a865 } }</style>\n"
+        '  <div id="chart-wrap"></div>\n<script>\n(() => {\n'
+        "  const $ = id => document.getElementById(id);\n"
+        '  const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", \'"\': "&quot;" }[c]));\n'
+        '  const MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" ");\n'
+        "  const day = d => { const m = /^(\\d{4})-(\\d{2})-(\\d{2})/.exec(d || \"\"); return m ? `${Number(m[3])} ${MONTHS[Number(m[2]) - 1]} ${m[1]}` : d || \"\"; };\n"
+        f"{js}\n  const S = {data}, wrap = $(\"chart-wrap\");\n"
+        "  const draw = () => { wrap.innerHTML = wormGraph(S, wrap.clientWidth, { issuesOnly: true }); wireWorm(S); };\n"
+        "  draw(); let last = wrap.clientWidth, t = 0;\n"
+        "  window.addEventListener(\"resize\", () => { clearTimeout(t); t = setTimeout(() => {\n"
+        "    if (Math.abs(wrap.clientWidth - last) < 8) return; last = wrap.clientWidth; draw(); }, 150); });\n"
+        "})();\n</script>\n"
     )
 
 

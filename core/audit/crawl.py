@@ -283,11 +283,14 @@ def untranslated_issues(pages: list[dict], field: str, check: str, default_lang:
 
 def duplicate_issues(pages: list[dict], field: str, check: str) -> None:
     """Add `check` to pages that share a title/description with another page of the same host and language.
-    Pages that canonicalize to the same URL are not duplicates of each other."""
+    Pages that canonicalize to the same URL are not duplicates of each other, and a noindex page is in no search
+    index, so it competes with nothing (13 Nov 2026: blog.conholdate.com's tag pages, noindex, reuse the home
+    description)."""
     seen: dict = defaultdict(list)
     for p in pages:
         f = p.get("facts")
-        if not f or p["status"] != 200 or any(c == "soft_404" for c, _ in p["issues"]) or not f[field]:
+        if not f or p["status"] != 200 or any(c == "soft_404" for c, _ in p["issues"]) or not f[field] \
+                or any("noindex" in r for r in f.get("robots") or []):
             continue
         value = f[field][0]
         target = norm_url(f["canonicals"][0]) if f["canonicals"] else norm_url(p["final_url"] or p["url"])
