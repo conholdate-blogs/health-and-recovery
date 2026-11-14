@@ -87,12 +87,12 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
   <header>
     <div class="eyebrow">Site Health &amp; Recovery · Phase 1, audit only</div>
     <h1>Site Health Architecture</h1>
-    <p class="lede">How the audit runs today, per tenant (aspose.app and the blogs of aspose.cloud, groupdocs.cloud, conholdate.cloud, aspose.com, groupdocs.com, conholdate.com): seven read-only steps on the Mac collect sitemaps, page checks, AI crawler access, page speed, an LLM proofread of the page text, the internal links of every blog post and search traffic into one findings store per tenant, and every push to GitHub rebuilds the published reports. Dashed parts are planned and not built yet.</p>
+    <p class="lede">How the audit runs today, per tenant (aspose.app and the blogs of aspose.cloud, groupdocs.cloud, conholdate.cloud, aspose.com, groupdocs.com, conholdate.com): eight read-only steps on the Mac (one command, <code>run_cycle.py</code>) collect sitemaps, page checks, AI crawler access, page speed, an LLM proofread of the page text, the links, redirects and files of every blog repo, search traffic and the site structure into one findings store per tenant; an item ledger counts every link and file one by one, and agent fixes are logged with their commits. Every push to GitHub rebuilds the published reports. Dashed parts are planned and not built yet.</p>
   </header>
 
   <figure>
     <div class="scroll">
-      <svg viewBox="0 0 1292 750" role="img" aria-label="Data flow: live sites, PageSpeed Insights, an internal LLM, the blogs' source repos, Search Console and GA4 feed seven steps on the Mac (discover, crawl audit, AI audit, speed audit, text check, link and repo file checks, prioritize); their findings go into one findings store, which is exported to the reports folder in git; a push to GitHub triggers GitHub Actions to rebuild and publish the site health reports on GitHub Pages. Planned auditors and Phase 2 fixer servers are drawn dashed.">
+      <svg viewBox="0 0 1292 820" role="img" aria-label="Data flow: live sites, PageSpeed Insights, an internal LLM, the blogs' source repos, Search Console and GA4 feed eight steps on the Mac (discover, crawl audit, AI audit, speed audit, text check, link and repo file checks, prioritize, site structure); their findings go into one findings store, which is exported to the reports folder in git; a push to GitHub triggers GitHub Actions to rebuild and publish the site health reports on GitHub Pages. Planned auditors and Phase 2 fixer servers are drawn dashed.">
         <defs>
           <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head"/></marker>
           <marker id="ahk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head key"/></marker>
@@ -151,7 +151,7 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
 
         <rect class="d-box" x="316" y="212" width="216" height="44" rx="6"/>
         <text class="d-t" x="328" y="232">2  audit_crawl.py</text>
-        <text class="d-s" x="328" y="249">33 checks per page</text>
+        <text class="d-s" x="328" y="249">37 checks, full or sampled</text>
 
         <rect class="d-box" x="316" y="262" width="216" height="44" rx="6"/>
         <text class="d-t" x="328" y="282">3  audit_ai.py</text>
@@ -167,71 +167,80 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
 
         <rect class="d-box" x="316" y="412" width="216" height="44" rx="6"/>
         <text class="d-t" x="328" y="432">6  audit_links, audit_repo</text>
-        <text class="d-s" x="328" y="449">links, redirects, post files</text>
+        <text class="d-s" x="328" y="449">links, redirects, files</text>
 
         <rect class="d-box" x="316" y="462" width="216" height="44" rx="6"/>
         <text class="d-t" x="328" y="482">7  prioritize.py</text>
         <text class="d-s" x="328" y="499">traffic + score</text>
 
-        <rect class="d-box" x="316" y="548" width="216" height="48" rx="6"/>
-        <text class="d-t" x="328" y="569">gsc MCP server</text>
-        <text class="d-s" x="328" y="586">read-only tools</text>
+        <rect class="d-box" x="316" y="512" width="216" height="44" rx="6"/>
+        <text class="d-t" x="328" y="532">8  audit_structure.py</text>
+        <text class="d-s" x="328" y="549">tags, listings, rescore</text>
 
-        <rect class="d-box" x="316" y="620" width="216" height="48" rx="6"/>
-        <text class="d-t" x="328" y="641">Claude Code</text>
-        <text class="d-s" x="328" y="658">asks ad-hoc questions</text>
+        <rect class="d-box" x="316" y="576" width="216" height="44" rx="6"/>
+        <text class="d-t" x="328" y="596">gsc MCP server</text>
+        <text class="d-s" x="328" y="613">read-only tools</text>
+
+        <rect class="d-box" x="316" y="636" width="216" height="44" rx="6"/>
+        <text class="d-t" x="328" y="656">Claude Code</text>
+        <text class="d-s" x="328" y="673">ad-hoc questions, hand fixes</text>
 
         <!-- stores -->
-        <rect class="d-key" x="644" y="148" width="220" height="352" rx="8"/>
-        <text class="d-t" x="658" y="172">Findings store</text>
-        <text class="d-s" x="658" y="191">findings.sqlite</text>
-        <text class="d-l" x="658" y="222">one permanent id each</text>
-        <text class="d-l" x="658" y="242">first / last seen, resolved</text>
-        <text class="d-l" x="658" y="262">evidence + locations</text>
-        <text class="d-l" x="658" y="282">impact + score</text>
-        <text class="d-l" x="658" y="302">notes from manual review</text>
-        <text class="d-s" x="658" y="474">key: dimension/check/</text>
-        <text class="d-s" x="658" y="488">host/template</text>
+        <rect class="d-key" x="644" y="96" width="220" height="460" rx="8"/>
+        <text class="d-t" x="658" y="122">Findings store</text>
+        <text class="d-s" x="658" y="141">findings.sqlite</text>
+        <text class="d-l" x="658" y="170">one permanent id each</text>
+        <text class="d-l" x="658" y="190">first / last seen, resolved</text>
+        <text class="d-l" x="658" y="210">evidence + locations</text>
+        <text class="d-l" x="658" y="230">impact + score</text>
+        <text class="d-l" x="658" y="250">notes from manual review</text>
+        <text class="d-l" x="658" y="280">item ledger: every link,</text>
+        <text class="d-l" x="658" y="300">file, URL fixed or open</text>
+        <text class="d-l" x="658" y="330">agent fixes: commit,</text>
+        <text class="d-l" x="658" y="350">verified live, who fixed</text>
+        <text class="d-s" x="658" y="530">key: dimension/check/</text>
+        <text class="d-s" x="658" y="544">host/template</text>
 
-        <rect class="d-store" x="644" y="520" width="220" height="212" rx="6"/>
-        <text class="d-t" x="658" y="542">reports/&lt;tenant&gt;/ · in git</text>
-        <text class="d-s" x="658" y="560">discovery-runN.json</text>
-        <text class="d-s" x="658" y="576">crawl-audit-runN.json</text>
-        <text class="d-s" x="658" y="592">ai-audit-runN.json</text>
-        <text class="d-s" x="658" y="608">perf-audit-runN.json</text>
-        <text class="d-s" x="658" y="624">text-audit-runN.json</text>
-        <text class="d-s" x="658" y="640">link-,repo-audit-N.json,.csv</text>
-        <text class="d-s" x="658" y="656">findings.json</text>
-        <text class="d-s" x="658" y="672">traffic-summary.json</text>
-        <text class="d-s" x="658" y="688">archive/, health history</text>
-        <text class="d-s" x="658" y="714">run files from steps 1-7</text>
+        <rect class="d-store" x="644" y="576" width="220" height="214" rx="6"/>
+        <text class="d-t" x="658" y="598">reports/&lt;tenant&gt;/ · in git</text>
+        <text class="d-s" x="658" y="616">discovery-runN.json</text>
+        <text class="d-s" x="658" y="632">crawl-audit-runN.json</text>
+        <text class="d-s" x="658" y="648">ai-audit-runN.json</text>
+        <text class="d-s" x="658" y="664">perf-audit-runN.json</text>
+        <text class="d-s" x="658" y="680">text-audit-runN.json</text>
+        <text class="d-s" x="658" y="696">link-,repo-audit-N.json,.csv</text>
+        <text class="d-s" x="658" y="712">structure-date.json</text>
+        <text class="d-s" x="658" y="728">findings.json, items.json</text>
+        <text class="d-s" x="658" y="744">traffic-summary.json</text>
+        <text class="d-s" x="658" y="760">agent-fixes, issue-notes.json</text>
+        <text class="d-s" x="658" y="776">archive/, health history</text>
 
         <!-- planned and phase 2 -->
         <rect class="d-plan" x="976" y="56" width="300" height="176" rx="6"/>
-        <text class="d-pt" x="990" y="79">Planned · priorities 3-4</text>
-        <text class="d-ps" x="990" y="106">AI answers: citations, content (LLM)</text>
-        <text class="d-ps" x="990" y="128">Functional auditor (postponed)</text>
+        <text class="d-pt" x="990" y="79">Planned</text>
+        <text class="d-ps" x="990" y="106">Commit check on blog repos (drafts built)</text>
+        <text class="d-ps" x="990" y="128">Weekly read-only scans (launchd)</text>
         <text class="d-ps" x="990" y="150">crawl + findings MCP servers</text>
-        <text class="d-ps" x="990" y="172">LangGraph run, scheduled runs</text>
-        <text class="d-ps" x="990" y="194">CrUX history (speed trends)</text>
+        <text class="d-ps" x="990" y="172">AI answers: citations (LLM)</text>
+        <text class="d-ps" x="990" y="194">Indexed % via URL Inspection</text>
 
         <rect class="d-plan" x="976" y="262" width="300" height="92" rx="6"/>
         <text class="d-pt" x="990" y="285">Phase 2 · not built</text>
-        <text class="d-ps" x="990" y="310">Fixer MCP servers (write access)</text>
-        <text class="d-ps" x="990" y="332">git, WordPress, Discourse</text>
+        <text class="d-ps" x="990" y="310">Fixer: PRs for proven fixes, human merge</text>
+        <text class="d-ps" x="990" y="332">after 3-4 blogs fixed by hand (today)</text>
 
         <!-- publish -->
-        <rect class="d-box" x="976" y="500" width="300" height="52" rx="6"/>
-        <text class="d-t" x="990" y="522">GitHub repo</text>
-        <text class="d-s" x="990" y="540">public · master</text>
+        <rect class="d-box" x="976" y="576" width="300" height="52" rx="6"/>
+        <text class="d-t" x="990" y="598">GitHub repo</text>
+        <text class="d-s" x="990" y="616">public · master · 3 remotes</text>
 
-        <rect class="d-box" x="976" y="584" width="300" height="60" rx="6"/>
-        <text class="d-t" x="990" y="607">GitHub Actions</text>
-        <text class="d-s" x="990" y="626">build_site.py · per tenant</text>
+        <rect class="d-box" x="976" y="660" width="300" height="60" rx="6"/>
+        <text class="d-t" x="990" y="683">GitHub Actions</text>
+        <text class="d-s" x="990" y="702">build_site.py · per tenant</text>
 
-        <rect class="d-key" x="976" y="676" width="300" height="56" rx="8"/>
-        <text class="d-t" x="990" y="699">Site health reports</text>
-        <text class="d-s" x="990" y="718">Pages · /&lt;tenant&gt;/, /&lt;host&gt;/, fix guide</text>
+        <rect class="d-key" x="976" y="752" width="300" height="56" rx="8"/>
+        <text class="d-t" x="990" y="775">Site health reports</text>
+        <text class="d-s" x="990" y="794">home, /&lt;host&gt;/ + Issue log, matrix</text>
 
         <!-- arrows: sources to steps -->
         <line class="d-a" x1="192" y1="88" x2="314" y2="88" marker-end="url(#ah)"/>
@@ -257,20 +266,20 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
         <polyline class="d-a" points="192,540 270,540 270,500 314,500" marker-end="url(#ah)"/>
         <text class="d-lab" x="231" y="534" text-anchor="middle">clicks</text>
 
-        <line class="d-a" x1="192" y1="572" x2="314" y2="572" marker-end="url(#ah)"/>
-        <text class="d-lab" x="254" y="566" text-anchor="middle">on demand</text>
+        <line class="d-a" x1="192" y1="580" x2="314" y2="580" marker-end="url(#ah)"/>
+        <text class="d-lab" x="254" y="574" text-anchor="middle">on demand</text>
 
         <!-- arrows: within the steps column -->
         <line class="d-a" x1="424" y1="120" x2="424" y2="146" marker-end="url(#ah)"/>
         <text class="d-lab" x="432" y="138">writes URLs</text>
         <line class="d-a" x1="424" y1="196" x2="424" y2="210" marker-end="url(#ah)"/>
         <text class="d-lab" x="432" y="207">sample per template</text>
-        <line class="d-a" x1="424" y1="596" x2="424" y2="618" marker-end="url(#ah)"/>
-        <text class="d-lab" x="432" y="612">tools over stdio</text>
+        <line class="d-a" x1="424" y1="620" x2="424" y2="634" marker-end="url(#ah)"/>
+        <text class="d-lab" x="432" y="631">tools over stdio</text>
 
         <!-- arrows: steps to findings store -->
-        <polyline class="d-a key" points="532,100 588,100 588,172 642,172" marker-end="url(#ahk)"/>
-        <text class="d-lab" x="616" y="164" text-anchor="middle">findings</text>
+        <line class="d-a key" x1="532" y1="108" x2="642" y2="108" marker-end="url(#ahk)"/>
+        <text class="d-lab" x="588" y="100" text-anchor="middle">findings</text>
         <line class="d-a key" x1="532" y1="234" x2="642" y2="234" marker-end="url(#ahk)"/>
         <text class="d-lab" x="588" y="226" text-anchor="middle">findings</text>
         <line class="d-a key" x1="532" y1="284" x2="642" y2="284" marker-end="url(#ahk)"/>
@@ -284,19 +293,21 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
         <line class="d-a key" x1="534" y1="484" x2="642" y2="484" marker-start="url(#ahk)" marker-end="url(#ahk)"/>
         <text class="d-lab" x="588" y="476" text-anchor="middle">reads findings,</text>
         <text class="d-lab" x="588" y="500" text-anchor="middle">writes score</text>
+        <line class="d-a key" x1="532" y1="534" x2="642" y2="534" marker-end="url(#ahk)"/>
+        <text class="d-lab" x="588" y="528" text-anchor="middle">findings</text>
 
-        <polyline class="d-a" points="192,704 600,704 600,510 720,510 720,502" marker-end="url(#ah)"/>
+        <polyline class="d-a" points="192,704 600,704 600,566 720,566 720,558" marker-end="url(#ah)"/>
         <text class="d-lab" x="420" y="696" text-anchor="middle">imported on every run</text>
 
         <!-- store to reports to publish -->
-        <line class="d-a key" x1="800" y1="500" x2="800" y2="518" marker-end="url(#ahk)"/>
-        <text class="d-lab" x="808" y="514">export</text>
-        <line class="d-a key" x1="864" y1="536" x2="974" y2="536" marker-end="url(#ahk)"/>
-        <text class="d-lab" x="920" y="528" text-anchor="middle">git push</text>
-        <line class="d-a key" x1="1126" y1="552" x2="1126" y2="582" marker-end="url(#ahk)"/>
-        <text class="d-lab" x="1134" y="572">on push</text>
-        <line class="d-a key" x1="1126" y1="644" x2="1126" y2="674" marker-end="url(#ahk)"/>
-        <text class="d-lab" x="1134" y="664">deploy</text>
+        <line class="d-a key" x1="800" y1="556" x2="800" y2="574" marker-end="url(#ahk)"/>
+        <text class="d-lab" x="808" y="570">export</text>
+        <line class="d-a key" x1="864" y1="602" x2="974" y2="602" marker-end="url(#ahk)"/>
+        <text class="d-lab" x="920" y="594" text-anchor="middle">git push</text>
+        <line class="d-a key" x1="1126" y1="628" x2="1126" y2="658" marker-end="url(#ahk)"/>
+        <text class="d-lab" x="1134" y="648">on push</text>
+        <line class="d-a key" x1="1126" y1="720" x2="1126" y2="750" marker-end="url(#ahk)"/>
+        <text class="d-lab" x="1134" y="740">deploy</text>
 
         <!-- planned links -->
         <polyline class="d-a plan" points="976,180 920,180 920,210 866,210" marker-end="url(#ahp)"/>
@@ -305,7 +316,7 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
         <text class="d-lab" x="920" y="302" text-anchor="middle">approved fixes</text>
       </svg>
     </div>
-    <figcaption>Everything left of the findings store runs on the Mac with read-only access: sites are fetched with GET only (PageSpeed Insights loads each sampled page once from Google's servers), and Google data comes through read-only scopes. The internal LLM receives only the public title, H1 and meta description of pages the crawl audit already fetched. The link check reads the blogs' source repos from local clones and never pulls or writes to them; it records the commit id, date and message of each issue, never the author. The repo file check reads the same clones. The findings store is the single place every step reports to. Its export, with the run files, is committed to <code>reports/&lt;tenant&gt;/</code>, which is all the GitHub build needs. Writing to any site happens only in Phase 2, through separate fixer servers; the one exception so far is a single fix SK approved by hand on 2026-11-03 (blog.aspose.com's <code>Redirects.json</code>).</figcaption>
+    <figcaption>Everything left of the findings store runs on the Mac with read-only access: sites are fetched with GET only (PageSpeed Insights loads each sampled page once from Google's servers), and Google data comes through read-only scopes. The internal LLM receives only the public title, H1 and meta description of pages the crawl audit already fetched. The link check reads the blogs' source repos from local clones and never pulls or writes to them; it records the commit id, date and message of each issue, never the author. The repo file check reads the same clones. The findings store is the single place every step reports to. Its export, with the run files, is committed to <code>reports/&lt;tenant&gt;/</code>, which is all the GitHub build needs. Writing to any site happens only in Phase 2, through separate fixer servers. Until then every fix is made by hand in Claude Code and each push to a blog repo is approved by SK (by 13 Nov 2026: blog.aspose.com 2, blog.conholdate.cloud 22, blog.conholdate.com 15 agent fixes, all verified live and logged in <code>agent-fixes.json</code>).</figcaption>
     <div class="legend">
       <span><i class="sw"></i>Step or service</span>
       <span><i class="sw store"></i>Data or config</span>
@@ -321,15 +332,17 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
         <thead><tr><th></th><th>Command</th><th>Reads</th><th>Writes</th><th>Time</th></tr></thead>
         <tbody>
           <tr><td class="step">1</td><td><code>python scripts/discover.py</code></td><td>robots.txt and every sitemap on the tenant's hosts (aspose.app: 11)</td><td>URL inventory (<code>data/&lt;tenant&gt;/inventory.sqlite</code>), sitemap findings, <code>reports/&lt;tenant&gt;/discovery-runN.json</code></td><td>15 min</td></tr>
-          <tr><td class="step">2</td><td><code>python scripts/audit_crawl.py</code></td><td>the inventory (2 English + 2 translated pages per template), each host's homepage, family hubs; top Search Console pages for families with no sitemap</td><td>page checks (<code>data/&lt;tenant&gt;/audit.sqlite</code>), page findings with evidence locations, <code>reports/&lt;tenant&gt;/crawl-audit-runN.json</code></td><td>25 min</td></tr>
+          <tr><td class="step">2</td><td><code>python scripts/audit_crawl.py</code></td><td>every sitemap URL when a host has at most 1,000; else a fixed half and a rotating half of the inventory (unseen and newest posts first) plus last run's failing pages; each host's homepage, listing page 2 (<code>audit.extra_urls</code>), family hubs; top Search Console pages for families with no sitemap</td><td>page checks (<code>data/&lt;tenant&gt;/audit.sqlite</code>), page findings with evidence locations, <code>reports/&lt;tenant&gt;/crawl-audit-runN.json</code></td><td>25 min</td></tr>
           <tr><td class="step">3</td><td><code>python scripts/audit_ai.py</code></td><td>each host's robots.txt (rules for AI search and training crawlers), its homepage as each AI crawler, /llms.txt per host and per product family</td><td>AI access findings (AI search crawlers blocked by robots.txt or the firewall, missing or broken llms.txt), <code>reports/&lt;tenant&gt;/ai-audit-runN.json</code></td><td>5 min</td></tr>
           <tr><td class="step">4</td><td><code>python scripts/audit_perf.py</code></td><td>PageSpeed Insights for the 2 most-visited pages of each crawl-audit template (mobile): Core Web Vitals from real Chrome users (28 days, 75th percentile) and a Lighthouse lab run</td><td>speed findings (real-user LCP, INP, CLS, TTFB; pages that do not load or paint nothing; whole-host Core Web Vitals), <code>reports/&lt;tenant&gt;/perf-audit-runN.json</code></td><td>40 min</td></tr>
           <tr><td class="step">5</td><td><code>python scripts/audit_text.py</code></td><td>title, H1 and meta description of every crawl-audit page (no requests to the sites), proofread by the internal LLM in each page's language; answers cached per page text</td><td>wording findings (typos; placeholder or garbled words; a title about a different product), each quoting the page, <code>reports/&lt;tenant&gt;/text-audit-runN.json</code></td><td>5 min</td></tr>
           <tr><td class="step">6</td><td><code>python scripts/audit_links.py</code></td><td>blogs with a local source repo only: every internal link in every post (outside code), checked against the discovery inventory, else fetched once from the live site; translation sets from the sitemaps; <code>git blame</code> for the commit of each issue</td><td>link and translation findings (link to a translation that does not exist, damaged or broken link, link in the wrong language, partial translation set, unsupported language), <code>reports/&lt;tenant&gt;/link-audit-runN.json</code> and the full fix list <code>link-audit-…-issues.csv</code></td><td>20 min</td></tr>
-          <tr><td class="step">6</td><td><code>python scripts/audit_repo.py</code></td><td>blogs with a local source repo only: <code>Redirects.json</code> and every post file; a fixed sample of 40 redirects fetched from the live site</td><td>invalid <code>Redirects.json</code> and the commit that broke it, malformed redirect sources, self-redirects, bad targets, broken front matter, post urls without a leading slash (items in the fix ledger), redirects not working live (finding level), <code>reports/&lt;tenant&gt;/repo-audit-runN.json</code> and <code>repo-audit-…-issues.csv</code></td><td>5 min</td></tr>
+          <tr><td class="step">6</td><td><code>python scripts/audit_repo.py</code></td><td>blogs with a local source repo only: <code>Redirects.json</code> and every post file; a fixed sample of 40 redirects fetched from the live site</td><td>invalid <code>Redirects.json</code> and the commit that broke it, junk redirect entries (rule RED-1), self-redirects, bad targets, broken front matter, translated URLs, title/description lengths, stale or untranslated translations, language settings, company menu ids, llms.txt freshness and charset, no-slash 302 (23 checks; items in the fix ledger), redirects not working live, <code>reports/&lt;tenant&gt;/repo-audit-runN.json</code> and <code>repo-audit-…-issues.csv</code></td><td>5 min</td></tr>
+          <tr><td class="step">6</td><td><code>python scripts/track_items.py</code></td><td>the items of the link check, the repo file check and discovery</td><td>the item ledger <code>reports/&lt;tenant&gt;/items.json</code>: each link, file or URL as open, fixed (still in a post that exists), removed (post deleted) or changed (moved to another check)</td><td>seconds</td></tr>
           <tr><td class="step">7</td><td><code>python scripts/prioritize.py</code></td><td>Search Console page clicks (now, previous 28 days, six months ago), GA4 organic sessions for hosts without Search Console</td><td>impact, traffic lost since six months ago and score on every finding, <code>reports/&lt;tenant&gt;/findings.json</code>, <code>reports/&lt;tenant&gt;/traffic-summary.json</code></td><td>1 min</td></tr>
-          <tr><td class="step">8</td><td><code>python scripts/build_report.py --snapshot "…"</code></td><td>the run files, findings and traffic summary</td><td>the local report, a frozen copy in <code>reports/&lt;tenant&gt;/archive/</code>, family health in <code>reports/&lt;tenant&gt;/health-history.json</code></td><td>seconds</td></tr>
-          <tr><td class="step">9</td><td><code>git push origin master</code>, <code>shoaibkhan</code>, <code>gitlab</code></td><td>the committed <code>reports/&lt;tenant&gt;/</code> files</td><td>GitHub Actions runs <code>build_site.py</code>: a home page (each blog's score, alerts when one is broken now); per published tenant the domain page at <code>/&lt;tenant&gt;/</code> with its archive; one page per subdomain at <code>/&lt;host&gt;/</code>; the Blogs page; one shared fix guide and method page (all noindex). Tenants with <code>published: false</code> (aspose.app) are left out</td><td>1 min</td></tr>
+          <tr><td class="step">8</td><td><code>python scripts/audit_structure.py</code>, then <code>rescore</code></td><td>blogs only: tags, categories and listing pages from the repo; tag pages, listing pages and the single main section page read live (are they noindex?); the traffic cache</td><td>structure findings (thin tag pages, tag pages in sitemaps, section page repeating the home list), <code>reports/&lt;tenant&gt;/structure-&lt;date&gt;.json</code>; scores again with the new findings</td><td>seconds</td></tr>
+          <tr><td class="step">9</td><td><code>python scripts/build_report.py --snapshot "…"</code></td><td>the run files, findings and traffic summary</td><td>the local report, a frozen copy in <code>reports/&lt;tenant&gt;/archive/</code> (the live page is archived first), health per host and area plus stats in <code>reports/&lt;tenant&gt;/health-history.json</code></td><td>seconds</td></tr>
+          <tr><td class="step">10</td><td><code>git push origin master</code>, <code>shoaibkhan</code>, <code>gitlab</code></td><td>the committed <code>reports/&lt;tenant&gt;/</code> files</td><td>GitHub Actions runs <code>build_site.py</code>: a home page with a card per blog (score, share of issues closed, open issues, items affected, alerts); per published tenant the domain page at <code>/&lt;tenant&gt;/</code> with its archive; one page per subdomain at <code>/&lt;host&gt;/</code> (issues and health graphs, Fix progress, History) and its Issue log at <code>/&lt;host&gt;/issues/</code>; the Blogs page and the issue matrix <code>/blogs/issues/</code>; the shared fix guide, method and Rules pages (all noindex). Tenants with <code>published: false</code> (aspose.app) are left out</td><td>1 min</td></tr>
         </tbody>
       </table>
     </div>
@@ -348,8 +361,8 @@ td.step { font: 700 18px var(--display); color: var(--accent); width: 40px }
   <section>
     <h2>Code layout</h2>
     <div class="layout">
-      <div class="dir">core/</div><div>Deterministic logic: discovery, page audit, AI-readiness audit, speed audit (PageSpeed Insights), text check (LLM client), link check and repo file check (blog source repos), findings store, prioritizer, family scorecards, fix guide, report views (confidence, shared problems, top risks, changes), Google clients</div><div><span class="tag built">built</span></div>
-      <div class="dir">scripts/</div><div>The commands (each takes <code>--tenant</code>): discover, audit_crawl, audit_ai, audit_perf, audit_text, audit_links, audit_repo, track_items, run_cycle, prioritize, build_report, build_archive, build_site, findings, check_access</div><div><span class="tag built">built</span></div>
+      <div class="dir">core/</div><div>Deterministic logic: discovery, page audit, AI-readiness audit, speed audit (PageSpeed Insights), text check (LLM client), link check, repo file check and site structure (blog source repos), findings store, item ledger, prioritizer, scorecards, fix guide (112 checks), report views, Google clients</div><div><span class="tag built">built</span></div>
+      <div class="dir">scripts/</div><div>The commands (each takes <code>--tenant</code>): discover, audit_crawl, audit_ai, audit_perf, audit_text, audit_links, audit_repo, track_items, audit_structure, run_cycle, prioritize, build_report, build_archive, build_site, site_pages (Issue log, Rules, issue matrix), commit_check, findings, check_access; <code>scripts/ops/</code> holds the helpers for hand fixes (build_pair, build_diff, live_head, replace_keep_eol, redirects_edit, front_matter_set, …)</div><div><span class="tag built">built</span></div>
       <div class="dir">mcp_servers/</div><div><code>gsc</code> is built; <code>crawl</code>, <code>findings</code>, <code>ga4</code>, <code>pagespeed</code> are next; fixers in Phase 2</div><div><span class="tag part">partly</span></div>
       <div class="dir">agents/</div><div>LangGraph agents that call the MCP servers: diagnosis, content checks, reporting</div><div><span class="tag planned">planned</span></div>
       <div class="dir">tenants/</div><div>One YAML per property, plus its manual findings</div><div><span class="tag built">built</span></div>
