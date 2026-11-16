@@ -61,6 +61,11 @@ blog.conholdate.com at deploy); `mainSections`; which pages are translated (the 
 
 ## Rules for our own audit
 
+- A fix that renames or removes a page must be able to resolve the findings on it: the crawl rechecks pages flagged
+  by its own last run and by the last text check; a rechecked page gone from the sitemaps that 404s is no error
+  (16 Nov, renamed tag on blog.conholdate.com).
+- New checks are dry-run on the blog being fixed and the blogs already fixed only; waiting blogs get them on their
+  turn (SK, 16 Nov).
 - Before calling something broken, test it live. (The "double slash never matches" rule was wrong: 46 false
   issues.)
 - A false finding that was published is **deleted** from the findings store and the item ledger
@@ -90,6 +95,10 @@ blog.conholdate.com at deploy); `mainSections`; which pages are translated (the 
 
 ## Traps
 
+- Two full Hugo builds of blog.conholdate.com need ~9 GB (4.6 GB each, 1.5 GB of it tag pages); the disk filled on
+  16 Nov. Build old, delete its `*/tag/*` folders except the ones the change touches, then build new.
+- `requests` decodes these blogs' HTML as Latin-1 (Content-Type has no charset; pages declare UTF-8 in a meta tag):
+  decode `r.content` as UTF-8 in live checks. System Python's urllib has no CA bundle here: use `requests`.
 - **Line endings (13 Nov):** blog.conholdate.com's `head.html` is CRLF; a Python text-mode edit rewrote all 341 lines.
   Edit blog files with `scripts/ops/replace_keep_eol.py` (keeps CRLF/LF; each old string must match exactly once).
 - **Shell quoting doubles backslashes:** a `printf`-written `"^.+\\.txt$"` became `\\\\.` and matched nothing;

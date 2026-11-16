@@ -15,6 +15,19 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Start here (session handoff, 2026-11-16)
+
+**State:** blog.conholdate.com **health 85**, 14 open issue types (snapshot 2026-11-16). Small fixes S1–S3 (one H1
+per page, tag typo, translated "Home" label and menu names; conholdate-blog 002a0dcd, 15837896, f34e3da0) pushed,
+deployed by SK, **verified live**, 3 agent-fix rows. New repo checks `post_url_duplicate` (rule URL-3; open here:
+2 URLs claimed by 2 posts each, **the blog developer checks which stays**, SK 16 Nov) and `post_body_h1` (TD-2).
+Audit fixes: crawl rechecks pages the last text check flagged; a rechecked page gone from the sitemaps that 404s is
+no http_error. Home cards: two lines (issues open of all · % closed, items open of all · % fixed); shares never
+read 0% while something is fixed ("<1%"). **SK's rule (16 Nov): work on the blog being fixed only; new checks are
+dry-run there and on already-fixed blogs, never on waiting blogs.** **Next:** B5 internal link fixes on
+blog.conholdate.com (show patterns, approve per batch, English original named first, fix the translation agent
+where it caused them), then B10, B6. Details: [docs/blogs/blog.conholdate.com.md](docs/blogs/blog.conholdate.com.md).
+
 ## Start here (session handoff, 2026-11-13, evening)
 
 **State:** blog.conholdate.com **health 58 → 85** in one day (B1–B4, B7–B9, CB3 all live and verified, 15 agent-fix

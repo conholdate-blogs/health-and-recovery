@@ -205,7 +205,9 @@
   "commits": [
    "002a0dcd81a2acc87c4a3adc7e55f1f1f91aefb3"
   ],
-  "issue": "2 posts repeat their title as a '# ' heading in all 18 languages (2 H1s per page); one Arabic heading lost 'C#' and became an H1"
+  "issue": "2 posts repeat their title as a '# ' heading in all 18 languages (2 H1s per page); one Arabic heading lost 'C#' and became an H1",
+  "verified": "2026-11-16",
+  "result": "Live: both posts have 1 H1 in every language checked (en, de, ja); Arabic heading 'تثبيت C#:' is an h3"
  },
  {
   "host": "blog.conholdate.com",
@@ -216,7 +218,9 @@
   "commits": [
    "158378969ba1b7d9840db1a6ed6efb56c7315f74"
   ],
-  "issue": "Tag typo 'Image Extration API' (one post, 18 languages)"
+  "issue": "Tag typo 'Image Extration API' (one post, 18 languages)",
+  "verified": "2026-11-16",
+  "result": "Live: /tag/image-extraction-api/ 200, old /tag/image-extration-api/ 404 (tag pages are noindex), post links the new tag"
  },
  {
   "host": "blog.conholdate.com",
@@ -228,6 +232,8 @@
   "commits": [
    "f34e3da05bad2436007521bb85facdf45e9be7c2"
   ],
-  "issue": "Header label 'Home' in English on every language; Search/Archive/Tags menu names machine-translated as verbs or wrong words in 10 languages"
+  "issue": "Header label 'Home' in English on every language; Search/Archive/Tags menu names machine-translated as verbs or wrong words in 10 languages",
+  "verified": "2026-11-16",
+  "result": "Live: header and menu translated, e.g. ja ホーム/検索/アーカイブ, ar الرئيسية/بحث, fr Accueil/Rechercher/Archives, zh 首页/归档"
  }
 ]

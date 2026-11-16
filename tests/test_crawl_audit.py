@@ -420,6 +420,27 @@ def test_rechecked_pages_do_not_count_in_the_sample_share():
     assert f["affected_pages"] == 1 and "rechecked" in f["evidence"]["observed"]
 
 
+def test_pages_flagged_by_the_text_check_are_rechecked():
+    # 16 Nov 2026: a renamed tag page left the sample; its typo finding stayed open on 13 Nov's crawl of the page
+    store = AuditStore(":memory:")
+    inv, run = make_inventory()
+    audit = CrawlAudit(make_tenant(), FakeFetcher({}), inv.db, run, store, log=None)
+    rid = store.start_run(audit.tenant.property, "text-audit", {})
+    store.finish_run(rid, {"flagged": [{"url": "https://app.example.com/pdf/old-tag/", "host": "app.example.com"},
+                                       {"url": "https://other.example.org/x/", "host": "other.example.org"}]})
+    assert audit.text_issue_urls() == {"https://app.example.com/pdf/old-tag/"}
+    assert audit.recheck_urls() == ["https://app.example.com/pdf/old-tag/"]  # also with no earlier crawl run
+
+
+def test_recheck_of_a_page_gone_from_the_sitemaps_is_no_http_error():
+    from core.audit.crawl import page_issues
+    rec = {"source": "recheck", "listed_in": None, "blocked": False, "status": 404, "error": None,
+           "redirect_statuses": [], "redirects": [], "final_url": "https://b.example.com/tag/old/", "content_type": ""}
+    assert page_issues(rec, None, False) == []  # renamed or removed on purpose
+    assert [c for c, _ in page_issues({**rec, "listed_in": "https://b.example.com/sitemap.xml"}, None, False)] \
+        == ["http_error"]  # still listed: a real error
+
+
 def test_duplicates_skip_noindex_pages():
     # 13 Nov 2026: noindex tag pages reusing the home description compete with nothing in the index
     from core.audit.crawl import duplicate_issues

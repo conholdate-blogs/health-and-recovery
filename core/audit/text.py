@@ -224,6 +224,8 @@ class TextAudit:
                   "llm": {**self.llm.usage.as_dict(), "cache_hits": hits}, "ignored": suppressed,
                   "summary": summarize(results, by_url)}
         report["findings"] = self.findings(results, by_url)
+        # flagged pages, so the next crawl rechecks them (CrawlAudit.text_issue_urls; 16 Nov 2026)
+        report["flagged"] = [{"url": u, "host": by_url[u]["host"]} for u, iss in sorted(results.items()) if iss]
         self.store.finish_run(self.run_id, {k: v for k, v in report.items() if k != "findings"})
         report["pages"] = [{"url": u, "host": by_url[u]["host"], "section": by_url[u]["section"],
                             "lang": by_url[u].get("lang"), "issues": iss} for u, iss in sorted(results.items()) if iss]

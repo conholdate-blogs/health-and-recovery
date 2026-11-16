@@ -54,7 +54,20 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
-## 16 Nov: rescan + small fixes S1–S3 (pushed to `main` 16 Nov, f34e3da0; waiting for Deploy Production - AWS)
+## 16 Nov: S1–S3 verified live (SK deployed the same evening)
+
+- Live: both posts 1 H1 (en, de, ja); Arabic heading `تثبيت C#:`; `/tag/image-extraction-api/` 200, old tag 404;
+  header/menu translated (ja ホーム 検索 アーカイブ, ar الرئيسية بحث, fr Accueil Rechercher Archives, zh 首页 归档).
+  3 agent-fix rows verified.
+- Rescan: h1_multiple and text_typo resolved; post_url_duplicate open (2 URLs, waiting for the blog developer).
+  **14 open issue types, health 85**; snapshot 2026-11-16 "Small fixes S1-S3 live; duplicate-URL and body-H1 checks".
+- **Our audit fixed on the way** (both from the renamed tag): (1) the text check reads the newest crawl of each page,
+  so a page that left the sample kept its typo finding forever: the crawl now rechecks the pages the last text
+  check flagged (`text_issue_urls`; the text run stores `flagged`); (2) a rechecked page that no sitemap lists any
+  more and answers 404 is no `http_error` (it was renamed or removed on purpose). The false http_error finding
+  (crawl-261116-2) was never published and was deleted from the store (rule AUD-4; backup in the session scratchpad).
+
+## 16 Nov: rescan + small fixes S1–S3 (pushed to `main` 16 Nov, f34e3da0)
 
 - **Rescan** (full cycle 8 min, runs 8 and 59–64; clone still at dae84823, no blog commits since 13 Nov): same 15
   open issue types, health 85. Not snapshotted yet (nothing changed; snapshot after the fixes are live).

@@ -90,5 +90,11 @@
     "date": "2026-11-13 (5)",
     "label": "B7-B9 and section page live: menus, language names, RTL, descriptions, llms.txt (agent fixes)",
     "runs": "discovery run 7, crawl audit run 52, speed audit run 54, AI audit run 53, text check run 55, link check run 56, repo file check run 58"
+  },
+  {
+    "file": "2026-11-16.html",
+    "date": "2026-11-16",
+    "label": "Small fixes S1-S3 live; duplicate-URL and body-H1 checks",
+    "runs": "discovery run 8, crawl audit run 85, speed audit run 87, AI audit run 86, text check run 88, link check run 89, repo file check run 90"
   }
 ]

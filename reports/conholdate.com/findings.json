@@ -966,7 +966,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run63",
+    "last_seen_run": "link-audit-run89",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -1473,7 +1473,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run65",
+    "last_seen_run": "repo-audit-run90",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -1896,7 +1896,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-16",
     "first_seen_run": "repo-audit-run65",
-    "last_seen_run": "repo-audit-run65",
+    "last_seen_run": "repo-audit-run90",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_url_duplicate",
@@ -2082,7 +2082,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run63",
+    "last_seen_run": "link-audit-run89",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -2549,7 +2549,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run63",
+    "last_seen_run": "link-audit-run89",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -3247,7 +3247,7 @@
           "url": "https://blog.conholdate.com/total/compare-csv-files-in-java/",
           "page": "https://blog.conholdate.com/ar/total/create-visio-diagram-in-csharp/",
           "file": "content/Conholdate.Total/total/2025-09-26-create-visio-diagram-in-csharp/index.ar.md",
-          "line": 89,
+          "line": 87,
           "fix": "https://blog.conholdate.com/ar/total/compare-csv-files-in-java/",
           "commit": "0ce48c7e 2025-09-30: translations"
         },
@@ -3256,7 +3256,7 @@
           "url": "https://blog.conholdate.com/total/convert-psd-to-jpg-in-csharp/",
           "page": "https://blog.conholdate.com/ar/total/create-visio-diagram-in-csharp/",
           "file": "content/Conholdate.Total/total/2025-09-26-create-visio-diagram-in-csharp/index.ar.md",
-          "line": 90,
+          "line": 88,
           "fix": "https://blog.conholdate.com/ar/total/convert-psd-to-jpg-in-csharp/",
           "commit": "0ce48c7e 2025-09-30: translations"
         },
@@ -3336,7 +3336,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run63",
+    "last_seen_run": "link-audit-run89",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -4060,7 +4060,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run65",
+    "last_seen_run": "repo-audit-run90",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -4483,7 +4483,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run65",
+    "last_seen_run": "repo-audit-run90",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -4882,16 +4882,16 @@
       "urls": [
         "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/es/total/scrub-metadata-online/",
-        "https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/",
+        "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ar/search/",
         "https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/archives/",
+        "https://blog.conholdate.com/fa/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ja/search/",
         "https://blog.conholdate.com/ja/total/convert-pptx-to-markdown-in-java/",
-        "https://blog.conholdate.com/ko/search/",
-        "https://blog.conholdate.com/nl/total/convert-pptx-to-markdown-in-java/"
+        "https://blog.conholdate.com/ko/search/"
       ],
-      "observed": "3 of 25 sampled pages (by template: post 3/22); 41 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/: width 194: 'Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsof'; https://blog.conholdate.com/es/total/scrub-metadata-online/: width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'; https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/: width 235: 'Học cách chuyển đổi PPTX sang Markdown trong Java bằng Conholdate.Total for Java SDK. Chuy'; https://blog.conholdate.com/ar/search/: width 3: 'بحث'; https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/: width 174: 'تعلم كيفية تحويل ملفات PPTX إلى Markdown في Java باستخدام Conholdate.Total for Java SDK. ح'",
+      "observed": "3 of 25 sampled pages (by template: post 3/22); 47 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/: width 194: 'Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsof'; https://blog.conholdate.com/es/total/scrub-metadata-online/: width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'; https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/: width 268: 'Erfahren Sie, wie Sie PPTX in Markdown in Java mit dem Conholdate.Total for Java SDK konve'; https://blog.conholdate.com/ar/search/: width 3: 'بحث'; https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/: width 174: 'تعلم كيفية تحويل ملفات PPTX إلى Markdown في Java باستخدام Conholdate.Total for Java SDK. ح'",
       "expected": "50-170 characters (CJK count double)",
       "locations": [
         {
@@ -4906,8 +4906,8 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/",
-          "note": "width 235: 'Học cách chuyển đổi PPTX sang Markdown trong Java bằng Conholdate.Total for Java SDK. Chuy'"
+          "url": "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
+          "note": "width 268: 'Erfahren Sie, wie Sie PPTX in Markdown in Java mit dem Conholdate.Total for Java SDK konve'"
         },
         {
           "role": "page",
@@ -4933,7 +4933,11 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/vi/sitemap.xml"
+          "url": "https://blog.conholdate.com/de/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/ar/sitemap.xml"
         }
       ],
       "sample": {
@@ -4972,7 +4976,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run59",
+    "last_seen_run": "crawl-audit-run85",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -4992,16 +4996,16 @@
       "urls": [
         "https://blog.conholdate.com/",
         "https://blog.conholdate.com/ar/",
-        "https://blog.conholdate.com/vi/",
+        "https://blog.conholdate.com/zh/",
+        "https://blog.conholdate.com/es/",
         "https://blog.conholdate.com/fa/",
+        "https://blog.conholdate.com/fr/",
         "https://blog.conholdate.com/fr/page/2/",
         "https://blog.conholdate.com/id/",
         "https://blog.conholdate.com/it/",
-        "https://blog.conholdate.com/ja/",
-        "https://blog.conholdate.com/ko/",
-        "https://blog.conholdate.com/page/2/"
+        "https://blog.conholdate.com/ja/"
       ],
-      "observed": "3 of 25 sampled pages (by template: home 3/3); 9 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/vi/: no non-empty <h1>; https://blog.conholdate.com/fa/: no non-empty <h1>; https://blog.conholdate.com/fr/page/2/: no non-empty <h1>",
+      "observed": "3 of 25 sampled pages (by template: home 3/3); 13 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/zh/: no non-empty <h1>; https://blog.conholdate.com/es/: no non-empty <h1>; https://blog.conholdate.com/fa/: no non-empty <h1>",
       "expected": "one H1 that states the page topic",
       "locations": [
         {
@@ -5016,17 +5020,17 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/vi/",
+          "url": "https://blog.conholdate.com/zh/",
+          "note": "no non-empty <h1>"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/es/",
           "note": "no non-empty <h1>"
         },
         {
           "role": "page",
           "url": "https://blog.conholdate.com/fa/",
-          "note": "no non-empty <h1>"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.conholdate.com/fr/page/2/",
           "note": "no non-empty <h1>"
         },
         {
@@ -5043,7 +5047,15 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/vi/sitemap.xml"
+          "url": "https://blog.conholdate.com/zh/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/es/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/fa/sitemap.xml"
         }
       ],
       "sample": {
@@ -5082,7 +5094,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run59",
+    "last_seen_run": "crawl-audit-run85",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -5184,17 +5196,17 @@
     "evidence": {
       "urls": [
         "https://blog.conholdate.com/es/total/scrub-metadata-online/",
-        "https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/",
+        "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ar/search/",
         "https://blog.conholdate.com/archives/",
+        "https://blog.conholdate.com/fa/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ja/search/",
         "https://blog.conholdate.com/ko/search/",
         "https://blog.conholdate.com/nl/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/pl/total/convert-pptx-to-markdown-in-java/",
-        "https://blog.conholdate.com/pt/search/",
-        "https://blog.conholdate.com/search/"
+        "https://blog.conholdate.com/pt/search/"
       ],
-      "observed": "2 of 25 sampled pages (by template: post 2/22); 14 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/es/total/scrub-metadata-online/: width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'; https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/: width 77: 'Chuyển đổi PPTX sang Markdown trong Java | Xuất PowerPoint dưới dạng Markdown'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/ja/search/: width 4: '探す'",
+      "observed": "2 of 25 sampled pages (by template: post 2/22); 17 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/es/total/scrub-metadata-online/: width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'; https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/: width 77: 'PPTX nach Markdown in Java konvertieren | PowerPoint als Markdown exportieren'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/fa/total/convert-pptx-to-markdown-in-java/: width 81: 'PPTX را به Markdown در Java تبدیل کنید | PowerPoint را به صورت Markdown صادر کنید'",
       "expected": "10-70 characters (CJK count double)",
       "locations": [
         {
@@ -5204,8 +5216,8 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/",
-          "note": "width 77: 'Chuyển đổi PPTX sang Markdown trong Java | Xuất PowerPoint dưới dạng Markdown'"
+          "url": "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
+          "note": "width 77: 'PPTX nach Markdown in Java konvertieren | PowerPoint als Markdown exportieren'"
         },
         {
           "role": "page",
@@ -5219,8 +5231,8 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/ja/search/",
-          "note": "width 4: '探す'"
+          "url": "https://blog.conholdate.com/fa/total/convert-pptx-to-markdown-in-java/",
+          "note": "width 81: 'PPTX را به Markdown در Java تبدیل کنید | PowerPoint را به صورت Markdown صادر کنید'"
         },
         {
           "role": "listed in",
@@ -5232,7 +5244,11 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/vi/sitemap.xml"
+          "url": "https://blog.conholdate.com/de/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/fa/sitemap.xml"
         }
       ],
       "sample": {
@@ -5271,7 +5287,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run59",
+    "last_seen_run": "crawl-audit-run85",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -5877,7 +5893,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run65",
+    "last_seen_run": "repo-audit-run90",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -6300,7 +6316,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run65",
+    "last_seen_run": "repo-audit-run90",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -6361,14 +6377,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "crawl-audit-run34",
     "last_seen_run": "crawl-audit-run59",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run66",
+    "resolved_at": "2026-11-16T14:06:12+00:00",
     "check": "h1_multiple",
     "notes": []
   },
@@ -6386,7 +6402,7 @@
       "urls": [
         "https://blog.conholdate.com/tag/image-extration-api/"
       ],
-      "observed": "1 of 144 checked pages: /tag/image-extration-api/ title: 'Extration' → 'Extraction'; /tag/image-extration-api/ H1: 'Extration' → 'Extraction'",
+      "observed": "1 of 155 checked pages: /tag/image-extration-api/ title: 'Extration' → 'Extraction'; /tag/image-extration-api/ H1: 'Extration' → 'Extraction'",
       "expected": "Correctly spelled titles, H1s and meta descriptions",
       "locations": [
         {
@@ -6425,14 +6441,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "text-audit-run37",
-    "last_seen_run": "text-audit-run62",
-    "resolved_run": null,
-    "resolved_at": null,
+    "last_seen_run": "text-audit-run78",
+    "resolved_run": "text-audit-run82",
+    "resolved_at": "2026-11-16T14:24:16+00:00",
     "check": "text_typo",
     "notes": []
   },

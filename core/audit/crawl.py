@@ -149,6 +149,8 @@ def page_issues(rec: dict, facts, localized: bool) -> list[tuple[str, str]]:
         if temporary:
             issues.append(("redirect_temporary", f"HTTP {temporary[0]} -> {rec['final_url']}"))
     if rec["status"] >= 400:
+        if rec["source"] == "recheck" and not rec.get("listed_in"):
+            return issues  # rechecked page no sitemap lists any more: removed or renamed (16 Nov 2026, a renamed tag)
         return [*issues, ("http_error", f"HTTP {rec['status']}" + (f" at {rec['final_url']}" if hops else ""))]
     if rec["status"] != 200 or facts is None:
         return issues
@@ -342,7 +344,12 @@ class CrawlAudit:
     def _classified(self, url: str, source: str) -> SampledUrl:
         host = urlsplit(url).netloc.lower()
         c = classify_url(url, self.templates.get(host, ()), self.lang_codes)
-        return SampledUrl(url, host, self._section(host, c.section), c.lang, c.template, 1, source)
+        sitemap = None
+        if source == "recheck":  # still listed? a recheck that is gone from the sitemaps and 404s was removed on purpose
+            row = self.inventory_db.execute("SELECT sitemap FROM urls WHERE run_id = ? AND url = ? LIMIT 1",
+                                            (self.inventory_run, url)).fetchone()
+            sitemap = row[0] if row else None
+        return SampledUrl(url, host, self._section(host, c.section), c.lang, c.template, 1, source, sitemap)
 
     def targets(self) -> list[SampledUrl]:
         sample = sample_inventory(self.inventory_db, self.inventory_run, self.hosts, self.sectioned, self.sections,
@@ -393,11 +400,22 @@ class CrawlAudit:
         """Pages of this run's hosts that had an issue in the previous run (crawled again, not counted in the sample
         share: a page picked because it failed would inflate the estimate)."""
         runs = self._previous_runs(1)
-        if not runs:
-            return []
         rows = self.store.db.execute("SELECT url, host FROM pages WHERE run_id = ? AND issues NOT IN ('[]', 'null') "
-                                     "AND (ignored IS NULL OR ignored = '')", runs).fetchall()
-        return sorted(u for u, h in rows if h in self.hosts)
+                                     "AND (ignored IS NULL OR ignored = '')", runs).fetchall() if runs else []
+        urls = {u for u, h in rows if h in self.hosts}
+        return sorted(urls | self.text_issue_urls())
+
+    def text_issue_urls(self) -> set[str]:
+        """Pages the newest text check flagged. The text check reads the newest crawl of each page, so a page that left
+        the sample (or now answers 404) kept its old text and its finding forever (16 Nov 2026: a renamed tag page)."""
+        row = self.store.db.execute("SELECT summary FROM runs WHERE tenant = ? AND auditor = 'text-audit' "
+                                    "AND finished_at IS NOT NULL ORDER BY id DESC LIMIT 1",
+                                    (self.tenant.property,)).fetchone()
+        try:
+            pages = (json.loads(row[0]) if row and row[0] else {}).get("flagged") or []
+        except (TypeError, ValueError):
+            return set()
+        return {p["url"] for p in pages if p.get("url") and p.get("host") in self.hosts}
 
     def post_dates(self) -> dict[str, str]:
         from pathlib import Path
