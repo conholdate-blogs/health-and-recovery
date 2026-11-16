@@ -1523,8 +1523,7 @@ __METHOD__
       for (const k of ["f-src", "f-type", "f-host", "f-fam"]) $(k).value = "";
       $("f-dim").value = l.dataset.dim; showAll = true; renderFindings(); $("s-find").scrollIntoView({ behavior: "smooth" });
     }, true);
-    const low = AH.areas.filter(a => a.state === "scored" && a.health < 100 && panelsOf(a.dimension).length).sort((a, b) => a.health - b.health)[0];
-    if (low) open(low.dimension);
+    // every area card starts closed (SK, 2026-11-16); a card opens its data only when selected
     // what is left in Reference
     if (![...$("reference").querySelectorAll("details")].some(el => !el.hidden)) {
       $("reference").hidden = true; document.querySelector('.toc a[href="#reference"]').hidden = true;

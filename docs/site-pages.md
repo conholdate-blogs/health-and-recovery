@@ -26,8 +26,8 @@ a blocked page's noindex is never read). Written 12 Nov 2026 so nothing is lost.
    resolved, reviewed, link) · **Items** (pages/links/files: open of total, fixed %). Then five **area cards**
    (Crawl & indexing, On-page, Languages, AI readiness, Speed) with score, bar, issues and a "Show data ▼" button;
    a card opens its data tables underneath: Crawl = robots.txt and sitemaps, submitted sitemaps, site structure;
-   On-page = crawl audit; Languages = sections; AI = AI access; Speed = speed. The lowest area below 100 opens by
-   default.
+   On-page = crawl audit; Languages = sections; AI = AI access; Speed = speed. All cards start closed (SK, 16 Nov;
+   until then the lowest area below 100 opened by default).
 3. **Fix progress:** agent line ("N fixes by the Health and Recovery Agent" + an "Open the Issue log →" button); **graph**: open, fixed
    (cumulative) and all found (dashed) per day with a recorded run, plus a separate health-score chart (0–100) on the
    same dates: side by side from 760 px, stacked below; hovering a day marks it in both, one tooltip (13 Nov); a day
