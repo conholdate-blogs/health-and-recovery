@@ -1473,10 +1473,433 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run64",
+    "last_seen_run": "repo-audit-run65",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
+    "notes": []
+  },
+  {
+    "id": "crawl-261116-1",
+    "key": "crawl/post_url_duplicate/blog.conholdate.com/post",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "crawl",
+    "type": "broken",
+    "title": "Two posts published under the same URL",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ar/total/add-barcode-to-pdf-in-java/",
+        "https://blog.conholdate.com/ar/total/add-barcode-to-pdf-in-java/",
+        "https://blog.conholdate.com/ar/total/convert-html-to-image-java/",
+        "https://blog.conholdate.com/ar/total/convert-html-to-image-java/",
+        "https://blog.conholdate.com/de/total/add-barcode-to-pdf-in-java/",
+        "https://blog.conholdate.com/de/total/add-barcode-to-pdf-in-java/",
+        "https://blog.conholdate.com/de/total/convert-html-to-image-java/",
+        "https://blog.conholdate.com/de/total/convert-html-to-image-java/",
+        "https://blog.conholdate.com/es/total/add-barcode-to-pdf-in-java/",
+        "https://blog.conholdate.com/es/total/add-barcode-to-pdf-in-java/"
+      ],
+      "observed": "72 entries or files; same URL as 2026-05-08-add-barcode-to-pdf-in-java: 18, same URL as 2026-04-22-add-barcode-to-pdf-in-java: 18, same URL as 2024-06-03-convert-html-to-image-java: 18, same URL as 2023-06-03-convert-html-to-image-java: 18",
+      "expected": "Every post folder has its own URL in every language",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-04-22-add-barcode-to-pdf-in-java/index.ar.md",
+          "line": 1,
+          "note": "same URL as 2026-05-08-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "a09f7cfd 2026-04-23 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-05-08-add-barcode-to-pdf-in-java/index.ar.md",
+          "line": 1,
+          "note": "same URL as 2026-04-22-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "6ead0a74 2026-05-09 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2023-06-03-convert-html-to-image-java/index.ar.md",
+          "line": 1,
+          "note": "same URL as 2024-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2024-06-03-convert-html-to-image-java/index.ar.md",
+          "line": 1,
+          "note": "same URL as 2023-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-04-22-add-barcode-to-pdf-in-java/index.de.md",
+          "line": 1,
+          "note": "same URL as 2026-05-08-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "a09f7cfd 2026-04-23 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-05-08-add-barcode-to-pdf-in-java/index.de.md",
+          "line": 1,
+          "note": "same URL as 2026-04-22-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "6ead0a74 2026-05-09 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2023-06-03-convert-html-to-image-java/index.de.md",
+          "line": 1,
+          "note": "same URL as 2024-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2024-06-03-convert-html-to-image-java/index.de.md",
+          "line": 1,
+          "note": "same URL as 2023-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-04-22-add-barcode-to-pdf-in-java/index.es.md",
+          "line": 1,
+          "note": "same URL as 2026-05-08-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "a09f7cfd 2026-04-23 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-05-08-add-barcode-to-pdf-in-java/index.es.md",
+          "line": 1,
+          "note": "same URL as 2026-04-22-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "6ead0a74 2026-05-09 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2023-06-03-convert-html-to-image-java/index.es.md",
+          "line": 1,
+          "note": "same URL as 2024-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2024-06-03-convert-html-to-image-java/index.es.md",
+          "line": 1,
+          "note": "same URL as 2023-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-04-22-add-barcode-to-pdf-in-java/index.fa.md",
+          "line": 1,
+          "note": "same URL as 2026-05-08-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "a09f7cfd 2026-04-23 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-05-08-add-barcode-to-pdf-in-java/index.fa.md",
+          "line": 1,
+          "note": "same URL as 2026-04-22-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "6ead0a74 2026-05-09 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2023-06-03-convert-html-to-image-java/index.fa.md",
+          "line": 1,
+          "note": "same URL as 2024-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2024-06-03-convert-html-to-image-java/index.fa.md",
+          "line": 1,
+          "note": "same URL as 2023-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-04-22-add-barcode-to-pdf-in-java/index.fr.md",
+          "line": 1,
+          "note": "same URL as 2026-05-08-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "a09f7cfd 2026-04-23 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-05-08-add-barcode-to-pdf-in-java/index.fr.md",
+          "line": 1,
+          "note": "same URL as 2026-04-22-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "6ead0a74 2026-05-09 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2023-06-03-convert-html-to-image-java/index.fr.md",
+          "line": 1,
+          "note": "same URL as 2024-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2024-06-03-convert-html-to-image-java/index.fr.md",
+          "line": 1,
+          "note": "same URL as 2023-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-04-22-add-barcode-to-pdf-in-java/index.id.md",
+          "line": 1,
+          "note": "same URL as 2026-05-08-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "a09f7cfd 2026-04-23 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-05-08-add-barcode-to-pdf-in-java/index.id.md",
+          "line": 1,
+          "note": "same URL as 2026-04-22-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "6ead0a74 2026-05-09 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2023-06-03-convert-html-to-image-java/index.id.md",
+          "line": 1,
+          "note": "same URL as 2024-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2024-06-03-convert-html-to-image-java/index.id.md",
+          "line": 1,
+          "note": "same URL as 2023-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-04-22-add-barcode-to-pdf-in-java/index.it.md",
+          "line": 1,
+          "note": "same URL as 2026-05-08-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "a09f7cfd 2026-04-23 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-05-08-add-barcode-to-pdf-in-java/index.it.md",
+          "line": 1,
+          "note": "same URL as 2026-04-22-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "6ead0a74 2026-05-09 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2023-06-03-convert-html-to-image-java/index.it.md",
+          "line": 1,
+          "note": "same URL as 2024-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2024-06-03-convert-html-to-image-java/index.it.md",
+          "line": 1,
+          "note": "same URL as 2023-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-04-22-add-barcode-to-pdf-in-java/index.ja.md",
+          "line": 1,
+          "note": "same URL as 2026-05-08-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "a09f7cfd 2026-04-23 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-05-08-add-barcode-to-pdf-in-java/index.ja.md",
+          "line": 1,
+          "note": "same URL as 2026-04-22-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "6ead0a74 2026-05-09 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2023-06-03-convert-html-to-image-java/index.ja.md",
+          "line": 1,
+          "note": "same URL as 2024-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2024-06-03-convert-html-to-image-java/index.ja.md",
+          "line": 1,
+          "note": "same URL as 2023-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-04-22-add-barcode-to-pdf-in-java/index.ko.md",
+          "line": 1,
+          "note": "same URL as 2026-05-08-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "a09f7cfd 2026-04-23 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-05-08-add-barcode-to-pdf-in-java/index.ko.md",
+          "line": 1,
+          "note": "same URL as 2026-04-22-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "6ead0a74 2026-05-09 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2023-06-03-convert-html-to-image-java/index.ko.md",
+          "line": 1,
+          "note": "same URL as 2024-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2024-06-03-convert-html-to-image-java/index.ko.md",
+          "line": 1,
+          "note": "same URL as 2023-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-04-22-add-barcode-to-pdf-in-java/index.nl.md",
+          "line": 1,
+          "note": "same URL as 2026-05-08-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "a09f7cfd 2026-04-23 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/add-barcode-to-pdf-in-java/",
+          "file": "content/Conholdate.Total/total/2026-05-08-add-barcode-to-pdf-in-java/index.nl.md",
+          "line": 1,
+          "note": "same URL as 2026-04-22-add-barcode-to-pdf-in-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "6ead0a74 2026-05-09 Daily Blogs Translation: blog.conholdate.com"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2023-06-03-convert-html-to-image-java/index.nl.md",
+          "line": 1,
+          "note": "same URL as 2024-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "4b9a76d1 2025-06-20 localized internal link FIX"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/convert-html-to-image-java/",
+          "file": "content/Conholdate.Total/total/2024-06-03-convert-html-to-image-java/index.nl.md",
+          "line": 1,
+          "note": "same URL as 2023-06-03-convert-html-to-image-java",
+          "fix": "keep one post (delete or give the other its own url)",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        }
+      ]
+    },
+    "affected_pages": 72,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 36,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 4,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-18",
+        "2026-05-15"
+      ],
+      "scored_on": "at stake",
+      "score": 3,
+      "window": [
+        "2026-10-17",
+        "2026-11-13"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-16",
+    "first_seen_run": "repo-audit-run65",
+    "last_seen_run": "repo-audit-run65",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "post_url_duplicate",
     "notes": []
   },
   {
@@ -3243,7 +3666,7 @@
         "https://blog.conholdate.com/nl/total/build-your-own-google-docs-like-app/",
         "https://blog.conholdate.com/pl/total/build-your-own-google-docs-like-app/"
       ],
-      "observed": "3,631 entries or files; English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel': 17, English rewritten 2026-03-24 after the translation (2025-02-11); description: 'Follow this blog post to learn how to achieve Imag' -> 'Learn to convert images (JPEG, PNG, BMP, GIF, TIFF': 17, English rewritten 2026-04-13 after the translation (2025-02-11); description: 'You can add a custom XMP metadata package to your ' -> 'Learn how to programmatically add, read, and remov': 17, English rewritten 2026-03-26 after the translation (2025-02-11); description: 'Easily extract text from Word or PDF documents pro' -> 'Programmatically extract text from Word (DOC/DOCX)': 17",
+      "observed": "3,614 entries or files; English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel': 17, English rewritten 2026-03-24 after the translation (2025-02-11); description: 'Follow this blog post to learn how to achieve Imag' -> 'Learn to convert images (JPEG, PNG, BMP, GIF, TIFF': 17, English rewritten 2026-04-13 after the translation (2025-02-11); description: 'You can add a custom XMP metadata package to your ' -> 'Learn how to programmatically add, read, and remov': 17, English rewritten 2026-03-26 after the translation (2025-02-11); description: 'Easily extract text from Word or PDF documents pro' -> 'Programmatically extract text from Word (DOC/DOCX)': 17",
       "expected": "A translation is updated whenever the English title or description changes",
       "locations": [
         {
@@ -3608,7 +4031,7 @@
         }
       ]
     },
-    "affected_pages": 3631,
+    "affected_pages": 3614,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 18,
@@ -3637,7 +4060,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run64",
+    "last_seen_run": "repo-audit-run65",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -3811,7 +4234,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Reduce PNG | Compress PNG Image'",
           "fix": "translate seoTitle",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "002a0dcd 2026-11-16 One H1 per page: drop the '# Title' line repeating the title in 2 posts (all 18 languages); Arabic 'C# Installation' heading back to ###"
         },
         {
           "role": "file",
@@ -4060,7 +4483,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run64",
+    "last_seen_run": "repo-audit-run65",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -5454,7 +5877,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run64",
+    "last_seen_run": "repo-audit-run65",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -5877,7 +6300,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run64",
+    "last_seen_run": "repo-audit-run65",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
