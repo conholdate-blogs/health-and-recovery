@@ -54,7 +54,7 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
-## 16 Nov: rescan + small fixes S1–S3 (local branch `hra/small-fixes` of conholdate-blog, NOT pushed)
+## 16 Nov: rescan + small fixes S1–S3 (pushed to `main` 16 Nov, f34e3da0; waiting for Deploy Production - AWS)
 
 - **Rescan** (full cycle 8 min, runs 8 and 59–64; clone still at dae84823, no blog commits since 13 Nov): same 15
   open issue types, health 85. Not snapshotted yet (nothing changed; snapshot after the fixes are live).
@@ -80,8 +80,12 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 | `/total/add-barcode-to-pdf-in-java/` | 2026-04-22 and 2026-05-08 (auto-merge 7afc0803), two different articles, same title | 05-08 | keep 05-08, delete 04-22 (SK decides: content removal) |
 | `/total/convert-html-to-image-java/` | 2023-06-03 and 2024-06-03 (added fb943ef0 "Restructured category", 2025-02-11); English identical, translations from different runs | identical | delete the 2024 copy |
 
-  Becomes a repo check (rule AUD-3): `post_url_duplicate`. Also proposed: repo check `post_body_h1` (exact; the
-  crawl's `h1_multiple` only samples).
+  **SK (16 Nov):** the blog developer checks both pairs (proposal: keep 05-08, delete 04-22; delete the 2024 copy);
+  else we do it later as proposed.
+- **New repo checks (rule AUD-3, built 16 Nov):** `post_url_duplicate` (broken; item per file, rule URL-3) and
+  `post_body_h1` (improvable; `# ` or `<h1>` outside code, rule TD-2). Dry run: here 72 items (2 URLs × 18 languages
+  × 2 posts) and 0 body H1s (S1); blog.conholdate.cloud 0 and 0. Only the current and already-fixed blogs are dry-run
+  (SK, 16 Nov: waiting blogs get every check on their turn).
 - **Also noted, not fixed:** Categories and Tags menu items link to the English `/categories/` and `/tags/` from
   every language.
 

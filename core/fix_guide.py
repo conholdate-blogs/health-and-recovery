@@ -572,6 +572,19 @@ _ROWS = [
      "Long descriptions are cut in results; short ones are often replaced by text Google picks itself.",
      "Rewrite the value in the post's front matter.",
      "front_matter_set.py --scan shows 0; next repo check has no item."),
+    ("post_url_duplicate", "Site structure", "Two posts on one URL",
+     "Post files of two different folders set the same URL (in one or more languages); Hugo writes only one of them, "
+     "and which one can change between languages and builds. Counted on every post file.",
+     "One article is never published, and the page under that URL can swap content between deploys, which search "
+     "engines see as an unstable page; two posts on one topic also compete with each other.",
+     "Keep one post: delete the other folder, or give it its own url (and a redirect if it was ever live).",
+     "Each URL belongs to one post folder; next repo check has no item."),
+    ("post_body_h1", "Headings", "H1 heading in the post body",
+     "The post body has a '# ' heading (or an <h1> tag) outside code, so the page shows two H1s: the title the "
+     "theme renders and this one. Often the title repeated, then copied into every translation.",
+     "A second H1 blurs the page's main topic for search engines and screen readers.",
+     "Remove the line when it repeats the title, else make it ##; fix the English file first, translations follow.",
+     "The page has one H1; next repo check has no item."),
     ("post_outside_main_sections", "Site structure", "Post outside the home page's sections",
      "The post folder is not under a section listed in params.mainSections, so the theme never lists it on the home "
      "page or its pagination.",

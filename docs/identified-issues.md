@@ -56,8 +56,8 @@ Plan:
 | No-slash 302 | host |
 | Head bug: OG/Twitter/JSON-LD in `<body>`; no x-default; tag pages in sitemaps | template (B3, B4) |
 | Links: wrong language 374, broken 81, damaged 54, missing translations 20 (11 Nov scan) | B5 |
-| **Two URLs claimed by two posts each** (`/total/add-barcode-to-pdf-in-java/`, `/total/convert-html-to-image-java/`; 18 languages; one post of each pair never published) — found by hand 16 Nov | 2 URLs; SK decides which post stays; check `post_url_duplicate` to build |
-| Body `# Title` H1 (2 posts × 18) + Arabic `# التثبيت #:`; tag typo "Image Extration API"; "Home" label and wrong menu names | S1–S3 prepared 16 Nov (branch `hra/small-fixes`), not pushed |
+| **Two URLs claimed by two posts each** (`/total/add-barcode-to-pdf-in-java/`, `/total/convert-html-to-image-java/`; 18 languages; one post of each pair never published) — found by hand 16 Nov | 2 URLs; the blog developer checks which post stays (SK, 16 Nov); check `post_url_duplicate` built 16 Nov |
+| Body `# Title` H1 (2 posts × 18) + Arabic `# التثبيت #:`; tag typo "Image Extration API"; "Home" label and wrong menu names | S1–S3 pushed 16 Nov (f34e3da0), waiting for deploy; check `post_body_h1` built |
 | Categories / Tags menu link to English `/categories/`, `/tags/` from every language | site-wide; small, not planned |
 
 ## blog.aspose.cloud

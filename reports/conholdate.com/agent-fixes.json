@@ -195,5 +195,39 @@
   "verified": "2026-11-13",
   "issue": "With one main section, the section page /conholdate.total/ (18 languages) listed exactly the home page's posts and was indexable: a duplicate listing",
   "result": "Live: section pages answer noindex, follow and are out of the sitemaps; home pages unchanged"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-16",
+  "found": "2026-11-13",
+  "check": "h1_multiple",
+  "commits": [
+   "002a0dcd81a2acc87c4a3adc7e55f1f1f91aefb3"
+  ],
+  "issue": "2 posts repeat their title as a '# ' heading in all 18 languages (2 H1s per page); one Arabic heading lost 'C#' and became an H1"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-16",
+  "found": "2026-11-13",
+  "check": "text_typo",
+  "commits": [
+   "158378969ba1b7d9840db1a6ed6efb56c7315f74"
+  ],
+  "issue": "Tag typo 'Image Extration API' (one post, 18 languages)"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-16",
+  "found": "2026-11-16",
+  "found_by": "Agent",
+  "check": "theme_labels",
+  "commits": [
+   "f34e3da05bad2436007521bb85facdf45e9be7c2"
+  ],
+  "issue": "Header label 'Home' in English on every language; Search/Archive/Tags menu names machine-translated as verbs or wrong words in 10 languages"
  }
 ]

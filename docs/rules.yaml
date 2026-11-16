@@ -127,6 +127,20 @@ rules:
     date: 2026-11-13
     checks: [description_duplicate, title_duplicate, hreflang_no_self, noindex]
     status: active
+  - id: URL-3
+    rule: Every post folder has its own URL in every language; two posts never share one.
+    why: Hugo publishes only one of them, and which one can change by language and build (blog.conholdate.com, 16 Nov 2026).
+    set_by: Health and Recovery Agent
+    date: 2026-11-16
+    checks: [post_url_duplicate]
+    status: active
+  - id: TD-2
+    rule: "One H1 per page: the title the theme renders; post bodies start their headings at ##."
+    why: Two posts on blog.conholdate.com repeated their title as '# ' in all 18 languages (13-16 Nov 2026).
+    set_by: Health and Recovery Agent
+    date: 2026-11-16
+    checks: [post_body_h1, h1_multiple]
+    status: active
   - id: TPL-1
     rule: "Nothing renders an element such as a <div> in <head> before the SEO tags: extend_head.html is the last include."
     why: On 3 Nov 2026 a language-switcher div pushed title, canonical and hreflang of blog.aspose.com into <body>.
@@ -163,8 +177,8 @@ rules:
     checks: []
     status: active
   - id: AUD-3
-    rule: Every issue found by hand becomes a check (tested, tried on a second blog), then the blog is rescanned.
-    why: Hand-found issues otherwise return unseen.
+    rule: Every issue found by hand becomes a check (tested, tried on the blog being fixed and the blogs already fixed, never on blogs still waiting their turn), then the blog is rescanned.
+    why: Hand-found issues otherwise return unseen; waiting blogs get every check on their turn (16 Nov).
     set_by: Shoaib Khan
     date: 2026-11-12
     checks: []

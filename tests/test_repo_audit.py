@@ -175,6 +175,26 @@ def test_translated_url_mismatch(tmp_path):
                    "id": ("same URL as the English post (no language prefix)", "/id/pdf/b/")}
 
 
+def test_two_posts_on_one_url_and_body_h1(tmp_path):
+    # blog.conholdate.com, 16 Nov 2026: two folders with the same url (one never published); '# Title' in the body
+    repo = make_repo(tmp_path)
+    for folder, body in (("2025-01-01-c", "# Same Title\n\nText\n```\n# a shell comment\n```\n    # indented code\n"),
+                         ("2026-01-01-c", "Text\n\n## Fine\n<h1 class=x>Also an H1</h1>\n")):
+        post = repo / "content/Blog/pdf" / folder
+        post.mkdir(parents=True)
+        (post / "index.md").write_text(f"---\ntitle: c\nurl: /pdf/c/\n---\n{body}", encoding="utf-8")
+        (post / "index.de.md").write_text("---\ntitle: c\nurl: /de/pdf/c/\n---\nText\n", encoding="utf-8")
+    audit = RepoAudit(make_tenant(repo), FakeFetcher(), AuditStore(":memory:"), sample=0, log=None)
+    issues = audit.check_posts(HOST)[0]
+    dup = [(i["file"], i["link"], i["note"]) for i in issues if i["check"] == "post_url_duplicate"]
+    assert dup == [("content/Blog/pdf/2025-01-01-c/index.de.md", "/de/pdf/c/", "same URL as 2026-01-01-c"),
+                   ("content/Blog/pdf/2026-01-01-c/index.de.md", "/de/pdf/c/", "same URL as 2025-01-01-c"),
+                   ("content/Blog/pdf/2025-01-01-c/index.md", "/pdf/c/", "same URL as 2026-01-01-c"),
+                   ("content/Blog/pdf/2026-01-01-c/index.md", "/pdf/c/", "same URL as 2025-01-01-c")]
+    h1 = [(i["file"].split("/")[-2], i["line"], i["note"]) for i in issues if i["check"] == "post_body_h1"]
+    assert h1 == [("2025-01-01-c", 5, "# Same Title"), ("2026-01-01-c", 8, "<h1 class=x>Also an H1</h1>")]
+
+
 def test_site_checks_found_by_hand_on_a_small_blog(tmp_path):
     """The blog.conholdate.cloud session (11 Nov) found these by hand; the repo check must find them now."""
     repo = tmp_path / "repo"

@@ -48,7 +48,7 @@ GROUPS = {
                     "titles"),
     **dict.fromkeys(("description_missing", "description_length", "description_duplicate",
                      "post_description_length"), "descriptions"),
-    **dict.fromkeys(("h1_missing", "h1_multiple"), "headings"),
+    **dict.fromkeys(("h1_missing", "h1_multiple", "post_body_h1"), "headings"),
     **dict.fromkeys(("viewport_missing", "viewport_no_zoom"), "viewport"),
     **dict.fromkeys(("head_closed_early", "social_tags_in_body"), "head order"),
     **dict.fromkeys(("language_name_wrong", "rtl_direction_missing"), "language settings"),
@@ -67,7 +67,7 @@ GROUPS = {
                      "section_index_untranslated"), "translations"),
     **dict.fromkeys(("redirect_file_invalid", "redirect_not_working", "redirect_key_malformed", "redirect_self_loop",
                      "redirect_target_bad"), "redirect file"),
-    **dict.fromkeys(("post_front_matter_broken", "post_url_relative"), "post files"),
+    **dict.fromkeys(("post_front_matter_broken", "post_url_relative", "post_url_duplicate"), "post files"),
     **dict.fromkeys(("tag_pages_thin", "sitemap_lists_tag_pages"), "tag pages"),
     "section_lists_home_posts": "listing pages",
 }

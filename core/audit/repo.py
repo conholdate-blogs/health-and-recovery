@@ -83,6 +83,12 @@ CHECKS = {
                                  "Every post file starts with a valid front matter block", 1, "S"),
     "post_url_relative": ("crawl", "incorrect", "Post urls without a leading slash",
                           "A post's url starts with /", 1, "S"),
+    # found by hand on blog.conholdate.com, 16 Nov 2026: two posts on one URL, Hugo publishes only one of them
+    "post_url_duplicate": ("crawl", "broken", "Two posts published under the same URL",
+                           "Every post folder has its own URL in every language", 1, "S"),
+    # found on blog.conholdate.com, 13-16 Nov 2026: a '# Title' line under the title the theme already renders as H1
+    "post_body_h1": ("onpage", "improvable", "Post bodies with their own H1 heading",
+                     "A post body starts its headings at ## (the theme renders the title as the only H1)", 1, "S"),
     "translated_url_mismatch": ("intl", "incorrect",
                                 "Translations published under a different URL than the English post",
                                 "A translation's URL is the English post's URL with only its language prefix added",
@@ -124,6 +130,33 @@ CHECKS = {
     "slash_redirect_temporary": ("crawl", "improvable", "URLs without the trailing slash forward with a 302",
                                  "A URL without its trailing slash answers a permanent redirect (301/308)", 3, "S"),
 }
+
+
+def effective_path(url: str, lang: str) -> str:
+    """The path Hugo publishes a post under: a url without a leading slash gets the language prefix added."""
+    p = url if url.startswith("/") else (f"/{lang}/" if lang else "/") + url
+    return "/" + p.strip("/")
+
+
+_FENCE = re.compile(r"^\s*(```|~~~)")
+_MD_H1 = re.compile(r"^#[ \t]+\S")
+_HTML_H1 = re.compile(r"<h1[\s>]", re.I)
+
+
+def body_h1(body: str) -> list[tuple[int, str]]:
+    """(line within the body, heading) of every H1 a post body adds: '# ' lines and <h1> tags outside code fences
+    and indented code. Line 1 is the first line after the front matter."""
+    out, fence = [], None
+    for n, ln in enumerate(body.split("\n"), 1):
+        f = _FENCE.match(ln)
+        if f:
+            fence = None if fence == f[1] else (fence or f[1])
+            continue
+        if fence or ln.startswith(("    ", "\t")):
+            continue
+        if _MD_H1.match(ln) or _HTML_H1.search(ln):
+            out.append((n, ln.strip()))
+    return out
 
 
 def iso_date(value) -> str | None:
@@ -364,6 +397,11 @@ class RepoAudit:
                 issues.append({"check": "post_url_relative", "file": rel, "line": 1, "link": str(url), "fix": f"/{url}",
                                "page": None, "note": "published under a doubled language", "commit": commit(rel)})
             page = f"https://{host}{url}" if url and str(url).startswith("/") else None
+            fm_lines = m.group(0).count("\n")
+            for n, head in body_h1(text[m.end():]):
+                issues.append({"check": "post_body_h1", "file": rel, "line": fm_lines + n, "link": None, "page": page,
+                               "fix": "make it ## or remove it when it repeats the title", "note": head[:80],
+                               "commit": commit(rel)})
             if url:
                 urls.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (str(url).strip(), rel)
             for cat in data.get("categories") or []:
@@ -392,6 +430,7 @@ class RepoAudit:
             texts.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (
                 {k: str(data.get(k) or "") for k in ("seoTitle", "title", "description")}, rel, page)
         issues += self.check_translated_urls(host, urls, commit)
+        issues += self.check_duplicate_urls(host, urls, commit)
         issues += self.check_stale(host, stale_candidates, commits, commit)
         issues += self.check_untranslated(host, texts, commit)
         issues += self.check_sections(host, section_langs, langs, default, commit)
@@ -597,14 +636,30 @@ class RepoAudit:
                             "note": f"{codes[0]} to {res.final_url}", "commit": None})
         return out
 
+    def check_duplicate_urls(self, host: str, urls: dict[str, dict[str, tuple[str, str]]], commit=None) -> list[dict]:
+        """Post files of different folders published under one path: Hugo writes only one of them, and which one can
+        differ by language and build (blog.conholdate.com, 16 Nov 2026). One item per file, naming the other folder."""
+        by_path: dict[str, list[tuple[str, str]]] = {}
+        for folder, by in urls.items():
+            for lang, (url, rel) in by.items():
+                by_path.setdefault(effective_path(url, lang), []).append((folder, rel))
+        issues = []
+        for p, files in sorted(by_path.items()):
+            if len({f for f, _ in files}) < 2:
+                continue
+            for folder, rel in sorted(files, key=lambda x: x[1]):
+                others = sorted({f.rsplit("/", 1)[-1] for f, _ in files if f != folder})
+                issues.append({"check": "post_url_duplicate", "file": rel, "line": 1, "link": p + "/",
+                               "fix": "keep one post (delete or give the other its own url)",
+                               "page": f"https://{host}{p}/", "note": "same URL as " + ", ".join(others),
+                               "commit": commit(rel) if commit else self.last_commit(host, rel)})
+        return issues
+
     def check_translated_urls(self, host: str, urls: dict[str, dict[str, tuple[str, str]]], commit=None) -> list[dict]:
         """A translation is published at the English post's URL with only its language prefix added (SK, 2026-11-11:
         every post URL is English; a translated slug or another prefix is an error). Hugo adds the language prefix
         itself to a url without a leading slash, so effective paths are compared, not the raw front matter."""
-        def path(url: str, lang: str) -> str:
-            p = url if url.startswith("/") else (f"/{lang}/" if lang else "/") + url
-            return "/" + p.strip("/")
-
+        path = effective_path
         issues = []
         for folder in sorted(urls):
             by = urls[folder]
