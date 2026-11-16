@@ -1,9 +1,9 @@
 {
  "tenant": "conholdate.com",
- "date": "2026-11-13",
+ "date": "2026-11-16",
  "search_window": [
-  "2026-10-14",
-  "2026-11-10"
+  "2026-10-17",
+  "2026-11-13"
  ],
  "hosts": {
   "blog.conholdate.com": {
@@ -63,14 +63,14 @@
    "tag_listing_pages": 43710,
    "pages_beyond_cap": 252,
    "cap": 50,
-   "discovery_run": 7,
+   "discovery_run": 8,
    "sitemap_urls": 10080,
    "sitemap_tag_urls": 0,
    "search": {
-    "clicks": 2804,
-    "tag_clicks": 42,
-    "tag_impressions": 4660,
-    "tag_pages_with_clicks": 27
+    "clicks": 2761,
+    "tag_clicks": 37,
+    "tag_impressions": 4671,
+    "tag_pages_with_clicks": 25
    },
    "tag_robots": {
     "pages": [

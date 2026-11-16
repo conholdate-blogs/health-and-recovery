@@ -340,22 +340,22 @@
     "affected_pages": 36,
     "impact": {
       "clicks_28d": 10,
-      "impressions_28d": 507,
+      "impressions_28d": 515,
       "source": "gsc-host",
       "share": 0.004,
       "past_clicks": 21,
-      "past_impressions": 594,
+      "past_impressions": 595,
       "lost_clicks": 11,
-      "lost_impressions": 87,
+      "lost_impressions": 80,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
       "score": 10,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -366,7 +366,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "discovery-run1",
-    "last_seen_run": "discovery-run7",
+    "last_seen_run": "discovery-run8",
     "resolved_run": null,
     "resolved_at": null,
     "check": "dup_in_file",
@@ -939,23 +939,23 @@
     },
     "affected_pages": 81,
     "impact": {
-      "clicks_28d": 12,
-      "impressions_28d": 448,
+      "clicks_28d": 13,
+      "impressions_28d": 461,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 7,
-      "past_impressions": 385,
+      "past_clicks": 10,
+      "past_impressions": 393,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
       "score": 17,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "M",
@@ -966,7 +966,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run56",
+    "last_seen_run": "link-audit-run63",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -1455,14 +1455,14 @@
       "lost_clicks": 0,
       "lost_impressions": 2,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -1473,7 +1473,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run64",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -1641,14 +1641,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -1659,7 +1659,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run56",
+    "last_seen_run": "link-audit-run63",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -2104,18 +2104,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 74,
+      "past_impressions": 72,
       "lost_clicks": 0,
-      "lost_impressions": 44,
+      "lost_impressions": 42,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
       "score": 2,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -2126,7 +2126,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run56",
+    "last_seen_run": "link-audit-run63",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -2886,23 +2886,23 @@
     },
     "affected_pages": 374,
     "impact": {
-      "clicks_28d": 18,
-      "impressions_28d": 939,
+      "clicks_28d": 19,
+      "impressions_28d": 886,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 12,
-      "past_impressions": 428,
+      "past_clicks": 14,
+      "past_impressions": 422,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
       "score": 20,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -2913,7 +2913,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run56",
+    "last_seen_run": "link-audit-run63",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -3615,18 +3615,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 44,
+      "past_impressions": 49,
       "lost_clicks": 0,
-      "lost_impressions": 26,
+      "lost_impressions": 31,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "M",
@@ -3637,7 +3637,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run64",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -4034,22 +4034,22 @@
     "affected_pages": 198,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 31,
+      "impressions_28d": 32,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 1,
-      "past_impressions": 15,
+      "past_impressions": 13,
       "lost_clicks": 1,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "lost",
       "score": 2,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "M",
@@ -4060,7 +4060,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run64",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -4458,17 +4458,17 @@
     "evidence": {
       "urls": [
         "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/",
-        "https://blog.conholdate.com/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/total/convert-cad-to-pdf-in-csharp/",
         "https://blog.conholdate.com/es/total/scrub-metadata-online/",
+        "https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ar/search/",
         "https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/archives/",
         "https://blog.conholdate.com/ja/search/",
         "https://blog.conholdate.com/ja/total/convert-pptx-to-markdown-in-java/",
-        "https://blog.conholdate.com/ko/search/"
+        "https://blog.conholdate.com/ko/search/",
+        "https://blog.conholdate.com/nl/total/convert-pptx-to-markdown-in-java/"
       ],
-      "observed": "4 of 25 sampled pages (by template: post 4/22); 39 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/: width 194: 'Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsof'; https://blog.conholdate.com/total/convert-csv-to-xml-online/: width 191: 'Convert CSV to XML online for free with Conholdate’s web-based converter. Learn how to tra'; https://blog.conholdate.com/total/convert-cad-to-pdf-in-csharp/: width 185: 'Learn how to convert CAD files to PDF in C# using Conholdate.Total for .NET. Easily render'; https://blog.conholdate.com/es/total/scrub-metadata-online/: width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'; https://blog.conholdate.com/ar/search/: width 3: 'بحث'",
+      "observed": "3 of 25 sampled pages (by template: post 3/22); 41 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/: width 194: 'Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsof'; https://blog.conholdate.com/es/total/scrub-metadata-online/: width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'; https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/: width 235: 'Học cách chuyển đổi PPTX sang Markdown trong Java bằng Conholdate.Total for Java SDK. Chuy'; https://blog.conholdate.com/ar/search/: width 3: 'بحث'; https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/: width 174: 'تعلم كيفية تحويل ملفات PPTX إلى Markdown في Java باستخدام Conholdate.Total for Java SDK. ح'",
       "expected": "50-170 characters (CJK count double)",
       "locations": [
         {
@@ -4478,23 +4478,23 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/total/convert-csv-to-xml-online/",
-          "note": "width 191: 'Convert CSV to XML online for free with Conholdate’s web-based converter. Learn how to tra'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.conholdate.com/total/convert-cad-to-pdf-in-csharp/",
-          "note": "width 185: 'Learn how to convert CAD files to PDF in C# using Conholdate.Total for .NET. Easily render'"
-        },
-        {
-          "role": "page",
           "url": "https://blog.conholdate.com/es/total/scrub-metadata-online/",
           "note": "width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'"
         },
         {
           "role": "page",
+          "url": "https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/",
+          "note": "width 235: 'Học cách chuyển đổi PPTX sang Markdown trong Java bằng Conholdate.Total for Java SDK. Chuy'"
+        },
+        {
+          "role": "page",
           "url": "https://blog.conholdate.com/ar/search/",
           "note": "width 3: 'بحث'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/",
+          "note": "width 174: 'تعلم كيفية تحويل ملفات PPTX إلى Markdown في Java باستخدام Conholdate.Total for Java SDK. ح'"
         },
         {
           "role": "listed in",
@@ -4507,34 +4507,38 @@
         {
           "role": "listed in",
           "url": "https://blog.conholdate.com/es/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/vi/sitemap.xml"
         }
       ],
       "sample": {
         "post": [
-          4,
+          3,
           22
         ]
       }
     },
-    "affected_pages": 1829,
+    "affected_pages": 1372,
     "impact": {
-      "clicks_28d": 502,
-      "impressions_28d": 24957,
+      "clicks_28d": 371,
+      "impressions_28d": 19037,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 1058,
-      "past_impressions": 28737,
-      "lost_clicks": 556,
-      "lost_impressions": 3780,
+      "past_clicks": 795,
+      "past_impressions": 21647,
+      "lost_clicks": 424,
+      "lost_impressions": 2610,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
-      "score": 12,
+      "score": 11,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -4545,7 +4549,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run52",
+    "last_seen_run": "crawl-audit-run59",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -4565,7 +4569,7 @@
       "urls": [
         "https://blog.conholdate.com/",
         "https://blog.conholdate.com/ar/",
-        "https://blog.conholdate.com/tr/",
+        "https://blog.conholdate.com/vi/",
         "https://blog.conholdate.com/fa/",
         "https://blog.conholdate.com/fr/page/2/",
         "https://blog.conholdate.com/id/",
@@ -4574,7 +4578,7 @@
         "https://blog.conholdate.com/ko/",
         "https://blog.conholdate.com/page/2/"
       ],
-      "observed": "3 of 25 sampled pages (by template: home 3/3); 8 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/tr/: no non-empty <h1>; https://blog.conholdate.com/fa/: no non-empty <h1>; https://blog.conholdate.com/fr/page/2/: no non-empty <h1>",
+      "observed": "3 of 25 sampled pages (by template: home 3/3); 9 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/vi/: no non-empty <h1>; https://blog.conholdate.com/fa/: no non-empty <h1>; https://blog.conholdate.com/fr/page/2/: no non-empty <h1>",
       "expected": "one H1 that states the page topic",
       "locations": [
         {
@@ -4589,7 +4593,7 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/tr/",
+          "url": "https://blog.conholdate.com/vi/",
           "note": "no non-empty <h1>"
         },
         {
@@ -4616,7 +4620,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/tr/sitemap.xml"
+          "url": "https://blog.conholdate.com/vi/sitemap.xml"
         }
       ],
       "sample": {
@@ -4633,18 +4637,18 @@
       "source": "gsc-template",
       "share": null,
       "past_clicks": 1,
-      "past_impressions": 63,
+      "past_impressions": 75,
       "lost_clicks": 1,
-      "lost_impressions": 51,
+      "lost_impressions": 63,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -4655,7 +4659,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run52",
+    "last_seen_run": "crawl-audit-run59",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -4757,6 +4761,7 @@
     "evidence": {
       "urls": [
         "https://blog.conholdate.com/es/total/scrub-metadata-online/",
+        "https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ar/search/",
         "https://blog.conholdate.com/archives/",
         "https://blog.conholdate.com/ja/search/",
@@ -4764,16 +4769,20 @@
         "https://blog.conholdate.com/nl/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/pl/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/pt/search/",
-        "https://blog.conholdate.com/search/",
-        "https://blog.conholdate.com/tag/c#-fuzzy-search/"
+        "https://blog.conholdate.com/search/"
       ],
-      "observed": "1 of 25 sampled pages (by template: post 1/22); 14 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/es/total/scrub-metadata-online/: width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/ja/search/: width 4: '探す'; https://blog.conholdate.com/ko/search/: width 4: '검색'",
+      "observed": "2 of 25 sampled pages (by template: post 2/22); 14 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/es/total/scrub-metadata-online/: width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'; https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/: width 77: 'Chuyển đổi PPTX sang Markdown trong Java | Xuất PowerPoint dưới dạng Markdown'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/ja/search/: width 4: '探す'",
       "expected": "10-70 characters (CJK count double)",
       "locations": [
         {
           "role": "page",
           "url": "https://blog.conholdate.com/es/total/scrub-metadata-online/",
           "note": "width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/vi/total/convert-pptx-to-markdown-in-java/",
+          "note": "width 77: 'Chuyển đổi PPTX sang Markdown trong Java | Xuất PowerPoint dưới dạng Markdown'"
         },
         {
           "role": "page",
@@ -4791,45 +4800,44 @@
           "note": "width 4: '探す'"
         },
         {
-          "role": "page",
-          "url": "https://blog.conholdate.com/ko/search/",
-          "note": "width 4: '검색'"
-        },
-        {
           "role": "listed in",
           "url": "https://blog.conholdate.com/es/sitemap.xml"
         },
         {
           "role": "sitemap index",
           "url": "https://blog.conholdate.com/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.conholdate.com/vi/sitemap.xml"
         }
       ],
       "sample": {
         "post": [
-          1,
+          2,
           22
         ]
       }
     },
-    "affected_pages": 457,
+    "affected_pages": 915,
     "impact": {
-      "clicks_28d": 126,
-      "impressions_28d": 6239,
+      "clicks_28d": 248,
+      "impressions_28d": 12692,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 265,
-      "past_impressions": 7184,
-      "lost_clicks": 139,
-      "lost_impressions": 945,
+      "past_clicks": 530,
+      "past_impressions": 14431,
+      "lost_clicks": 282,
+      "lost_impressions": 1739,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
-      "score": 9,
+      "score": 10,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -4840,7 +4848,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run52",
+    "last_seen_run": "crawl-audit-run59",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -5424,18 +5432,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 36,
+      "past_impressions": 41,
       "lost_clicks": 0,
-      "lost_impressions": 30,
+      "lost_impressions": 35,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -5446,7 +5454,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run64",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -5843,22 +5851,22 @@
     "affected_pages": 1802,
     "impact": {
       "clicks_28d": 2,
-      "impressions_28d": 36,
+      "impressions_28d": 39,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 2,
-      "past_impressions": 58,
-      "lost_clicks": 0,
-      "lost_impressions": 22,
+      "past_clicks": 3,
+      "past_impressions": 53,
+      "lost_clicks": 1,
+      "lost_impressions": 14,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
       "score": 2,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -5869,7 +5877,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run64",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -5909,22 +5917,22 @@
     "affected_pages": 2,
     "impact": {
       "clicks_28d": 1,
-      "impressions_28d": 28,
+      "impressions_28d": 29,
       "source": "gsc-host",
       "share": 0.0,
       "past_clicks": 1,
       "past_impressions": 33,
       "lost_clicks": 0,
-      "lost_impressions": 5,
+      "lost_impressions": 4,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
       "score": 1,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -5935,7 +5943,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "crawl-audit-run34",
-    "last_seen_run": "crawl-audit-run52",
+    "last_seen_run": "crawl-audit-run59",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_multiple",
@@ -5955,7 +5963,7 @@
       "urls": [
         "https://blog.conholdate.com/tag/image-extration-api/"
       ],
-      "observed": "1 of 142 checked pages: /tag/image-extration-api/ title: 'Extration' → 'Extraction'; /tag/image-extration-api/ H1: 'Extration' → 'Extraction'",
+      "observed": "1 of 144 checked pages: /tag/image-extration-api/ title: 'Extration' → 'Extraction'; /tag/image-extration-api/ H1: 'Extration' → 'Extraction'",
       "expected": "Correctly spelled titles, H1s and meta descriptions",
       "locations": [
         {
@@ -5981,14 +5989,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-15",
-        "2026-05-12"
+        "2026-04-18",
+        "2026-05-15"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-14",
-        "2026-11-10"
+        "2026-10-17",
+        "2026-11-13"
       ]
     },
     "effort": "S",
@@ -5999,7 +6007,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "text-audit-run37",
-    "last_seen_run": "text-audit-run55",
+    "last_seen_run": "text-audit-run62",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_typo",

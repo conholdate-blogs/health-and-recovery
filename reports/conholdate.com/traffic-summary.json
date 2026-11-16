@@ -1,16 +1,16 @@
 {
  "windows": {
   "current": [
-   "2026-10-14",
-   "2026-11-10"
+   "2026-10-17",
+   "2026-11-13"
   ],
   "previous": [
-   "2026-09-16",
-   "2026-10-13"
+   "2026-09-19",
+   "2026-10-16"
   ],
   "six_months_ago": [
-   "2026-04-15",
-   "2026-05-12"
+   "2026-04-18",
+   "2026-05-15"
   ]
  },
  "hosts": {},
@@ -18,19 +18,19 @@
   "blog.conholdate.com": {
    "source": "gsc",
    "current": {
-    "clicks": 2804,
-    "impressions": 141947,
-    "pages": 4611
+    "clicks": 2761,
+    "impressions": 144303,
+    "pages": 4544
    },
    "previous": {
-    "clicks": 2616,
-    "impressions": 110068,
-    "pages": 4308
+    "clicks": 2660,
+    "impressions": 113819,
+    "pages": 4358
    },
    "six_months_ago": {
-    "clicks": 6018,
-    "impressions": 166419,
-    "pages": 4455
+    "clicks": 6011,
+    "impressions": 166698,
+    "pages": 4388
    }
   }
  }

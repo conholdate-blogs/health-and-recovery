@@ -54,6 +54,37 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 16 Nov: rescan + small fixes S1–S3 (local branch `hra/small-fixes` of conholdate-blog, NOT pushed)
+
+- **Rescan** (full cycle 8 min, runs 8 and 59–64; clone still at dae84823, no blog commits since 13 Nov): same 15
+  open issue types, health 85. Not snapshotted yet (nothing changed; snapshot after the fixes are live).
+- **Fixes prepared** (3 commits on dae84823, each with the agent credit line):
+
+| Step | Commit | What | Files |
+|---|---|---|---|
+| S1 One H1 per page | `002a0dcd` | `# Title` line repeating the title removed from 2 English posts (create-visio-diagram-in-csharp, insert-table-in-onenote-using-java; written that way in English, the translations copied it); Arabic `# التثبيت #:` (English "### C# Installation:", C# lost in translation) back to `### تثبيت C#:` | 37 |
+| S2 Tag typo | `15837896` | "Image Extration API" → "Image Extraction API" (one post, 18 languages); tag pages are noindex, so no redirect | 18 |
+| S3 Theme labels | `f34e3da0` | Header label "Home" per language (`languages.<lang>.params.label.text`); wrong menu names: ja 探す→検索, 記録→アーカイブ; fr Chercher→Rechercher, Archiver→Archives; pt Procurar→Pesquisar; nl Zoekopdracht→Zoeken; id Mencari→Cari; ar يبحث→بحث; fa جستجو کردن→جستجو; vi lưu trữ/thẻ capitalised; th คลังเก็บเอกสารสำคัญ→คลังบทความ; zh 档案→归档 | config.yml |
+
+- **Tested:** full builds before/after with Hugo 0.101 + production config (both OK). Repo scan: no other body `# `
+  headings. Every changed page differs only in header/menu, except: tag lists (renamed tag), reading time
+  4 → 3 min on listings (OneNote post shorter), and the duplicate-URL pages below (not from these commits). Fixed
+  posts have 1 H1 in all languages; header shows ホーム / الرئيسية / Accueil …; post links `/tag/image-extraction-api/`.
+- **Disk:** two full builds need ~9 GB (4.6 GB each, tag pages 1.5 GB); the first attempt filled the disk. Trim
+  `*/tag/*` from the old build before building the new one.
+- **New finding (by hand): two URLs claimed by two posts each**, all 18 languages; Hugo publishes one of each pair,
+  and which one can differ by language and build:
+
+| URL | Posts | Live (English, 16 Nov) | Proposed |
+|---|---|---|---|
+| `/total/add-barcode-to-pdf-in-java/` | 2026-04-22 and 2026-05-08 (auto-merge 7afc0803), two different articles, same title | 05-08 | keep 05-08, delete 04-22 (SK decides: content removal) |
+| `/total/convert-html-to-image-java/` | 2023-06-03 and 2024-06-03 (added fb943ef0 "Restructured category", 2025-02-11); English identical, translations from different runs | identical | delete the 2024 copy |
+
+  Becomes a repo check (rule AUD-3): `post_url_duplicate`. Also proposed: repo check `post_body_h1` (exact; the
+  crawl's `h1_multiple` only samples).
+- **Also noted, not fixed:** Categories and Tags menu items link to the English `/categories/` and `/tags/` from
+  every language.
+
 ## SK's decisions (13 Nov)
 
 | # | Decision |
