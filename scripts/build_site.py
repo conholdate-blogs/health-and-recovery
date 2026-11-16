@@ -339,7 +339,8 @@ def host_html(host: str) -> str:
 def sub_tile(host: str, scores: dict[str, tuple[int, str]], alerts: dict[str, list[dict]] | None = None,
              stats: dict[str, dict] | None = None) -> str:
     """A subdomain card, opening its page: health score, share of its issues closed (fixed, resolved or reviewed),
-    open issues and items still affected (SK, 2026-11-13); alerts, if any, under it."""
+    open issues and items still affected (SK, 2026-11-13); since 16 Nov two lines: issues open of all · % closed,
+    items open of all · % fixed; alerts, if any, under it."""
     health, grade = scores.get(host, ("–", ""))
     lines = "".join(f'<span class="alert">⚠ {html.escape(a["name"])} · since {day(a["since"])} · last checked '
                     f'{day(a["checked"])}</span>' for a in (alerts or {}).get(host, []))
@@ -348,15 +349,14 @@ def sub_tile(host: str, scores: dict[str, tuple[int, str]], alerts: dict[str, li
     if st.get("total"):
         closed = st["total"] - st["open"]
         pct = round(100 * closed / st["total"])
+        # one line each for issues and items, "open of all · share" (SK, 2026-11-16: four lines were too many)
         body = (f'<span class="bar" aria-hidden="true"><i style="width:{pct}%"></i></span>'
-                f'<span class="line"><span class="pct{"" if closed else " zero"}">{share(closed, st["total"])}</span> of issues closed</span>'
-                f'<span class="line">Open issues: <b>{st["open"]:,}</b> of {st["total"]:,}</span>')
-    if st.get("items_open") is not None:
-        body += f'<span class="dim">{st["items_open"]:,} item{"" if st["items_open"] == 1 else "s"} still affected</span>'
-    if st.get("items_total"):  # items fixed and their share (SK, 2026-11-16), as on the subdomain page's Items tile
+                f'<span class="line">Issues: <b>{st["open"]:,}</b> open of {st["total"]:,} · '
+                f'<span class="pct{"" if closed else " zero"}">{share(closed, st["total"])}</span> closed</span>')
+    if st.get("items_total"):
         fx = st.get("items_fixed") or 0
-        body += (f'<span class="dim">{fx:,} item{"" if fx == 1 else "s"} fixed · '
-                 f'<span class="pct{"" if fx else " zero"}">{share(fx, st["items_total"])}</span></span>')
+        body += (f'<span class="dim">Items: {st["items_open"]:,} open of {st["items_total"]:,} · '
+                 f'<span class="pct{"" if fx else " zero"}">{share(fx, st["items_total"])}</span> fixed</span>')
     return (f'<a class="card g-{grade}{" alerted" if lines else ""}" href="{html.escape(host)}/"><code>{host_html(host)}</code>'
             f'<span class="score"><b>{health}</b><small>out of 100</small></span>{body}{lines}</a>')
 

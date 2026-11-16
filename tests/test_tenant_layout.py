@@ -44,13 +44,14 @@ def test_home_page_cards_com_first_then_cloud():
 
     members = [("conholdate.cloud", "blog.conholdate.cloud"), ("aspose.cloud", "blog.aspose.cloud"),
                ("aspose.com", "blog.aspose.com"), ("conholdate.com", "blog.conholdate.com")]
-    stats = {"blog.aspose.com": {"total": 26, "open": 23, "items_open": 25623}}
+    stats = {"blog.aspose.com": {"total": 26, "open": 23, "items_open": 25623, "items_total": 25670, "items_fixed": 47}}
     block = collection_block("blogs", members, {"blog.aspose.com": (55, "F"), "blog.aspose.cloud": (67, "C")}, None, stats)
     order = [h for h in ("aspose.com", "conholdate.com", "aspose.cloud", "conholdate.cloud")]
     assert sorted(order, key=lambda h: block.index(f'href="blog.{h}/"')) == order
     assert '<a class="card g-F" href="blog.aspose.com/"><code>blog.<wbr>aspose.<wbr>com</code>' in block
-    assert "<b>55</b>" in block and ">12%</span> of issues closed" in block and "Open issues: <b>23</b> of 26" in block
-    assert "25,623 items still affected" in block
+    # SK, 2026-11-16: one line for issues, one for items, each "open of all · share"
+    assert "<b>55</b>" in block and "Issues: <b>23</b> open of 26 · " in block and ">12%</span> closed" in block
+    assert "Items: 25,623 open of 25,670 · " in block and ">0.2%</span> fixed" in block
     assert '<a href="blogs/"><b>Blogs</b></a>' in block
 
 
