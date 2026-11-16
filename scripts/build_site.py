@@ -362,11 +362,11 @@ def sub_tile(host: str, scores: dict[str, tuple[int, str]], alerts: dict[str, li
 
 
 def share(part: int, whole: int) -> str:
-    """A percentage that never reads 0% while something is fixed: one decimal below 10%, '<0.1%' when tinier."""
+    """A whole percentage that never reads 0% while something is fixed ('<1%'), nor 100% while something is open."""
     if not whole or not part:
         return "0%"
     p = 100 * part / whole
-    return "<0.1%" if p < 0.1 else f"{p:.1f}%" if p < 10 else f"{round(p)}%"
+    return "&lt;1%" if p < 1 else "&gt;99%" if p > 99 and part < whole else f"{round(p)}%"  # HTML
 
 
 def host_stats(tenant: str, host: str, items: dict | None) -> dict:

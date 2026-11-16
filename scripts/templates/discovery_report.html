@@ -1561,8 +1561,8 @@ __METHOD__
     const itemsLabel = `${LOG ? "Items" : "Open issues"} ${ask(ITEMS_NOTE)}`, typesLabel = `Issue types ${ask(TYPES_NOTE)}`;
     const itemsNum = I => `${fmt(I.open)} <small>${LOG ? "open " : ""}of ${fmt(I.issues)}</small>`;
     // the fixed share stands out (SK, 2026-11-13): bigger, bold, green once something is fixed
-    // a share that never reads 0% while something is fixed (SK, 2026-11-16): one decimal below 10%, "<0.1%" when tinier
-    const share = (part, whole) => !whole || !part ? "0%" : (p => p < 0.1 ? "<0.1%" : p < 10 ? `${p.toFixed(1)}%` : `${Math.round(p)}%`)(100 * part / whole);
+    // a whole share that never reads 0% while something is fixed ("<1%"), nor 100% while something is open (SK, 2026-11-16)
+    const share = (part, whole) => !whole || !part ? "0%" : (p => p < 1 ? "&lt;1%" : p > 99 && part < whole ? "&gt;99%" : `${Math.round(p)}%`)(100 * part / whole);
     const itemsSub = I => `<span class="${I.fixed ? "up" : ""}">${fmt(I.fixed)} fixed</span>${I.fixed_pct == null ? "" : ` · <b class="pct${I.fixed ? " ok" : ""}">${share(I.fixed, I.fixed + I.open)}</b>`}`;
     const changesSub = (ch, before) => before ? `${ch.gone} resolved · ${ch.add} new since ${esc(day(before.date))}` : "no earlier run to compare";
     // how old the data is: managers must not read a two-week-old crawl as today's state
