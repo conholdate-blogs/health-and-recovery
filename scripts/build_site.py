@@ -349,18 +349,32 @@ def sub_tile(host: str, scores: dict[str, tuple[int, str]], alerts: dict[str, li
         closed = st["total"] - st["open"]
         pct = round(100 * closed / st["total"])
         body = (f'<span class="bar" aria-hidden="true"><i style="width:{pct}%"></i></span>'
-                f'<span class="line"><span class="pct{"" if closed else " zero"}">{pct}%</span> of issues closed</span>'
+                f'<span class="line"><span class="pct{"" if closed else " zero"}">{share(closed, st["total"])}</span> of issues closed</span>'
                 f'<span class="line">Open issues: <b>{st["open"]:,}</b> of {st["total"]:,}</span>')
     if st.get("items_open") is not None:
         body += f'<span class="dim">{st["items_open"]:,} item{"" if st["items_open"] == 1 else "s"} still affected</span>'
+    if st.get("items_total"):  # items fixed and their share (SK, 2026-11-16), as on the subdomain page's Items tile
+        fx = st.get("items_fixed") or 0
+        body += (f'<span class="dim">{fx:,} item{"" if fx == 1 else "s"} fixed · '
+                 f'<span class="pct{"" if fx else " zero"}">{share(fx, st["items_total"])}</span></span>')
     return (f'<a class="card g-{grade}{" alerted" if lines else ""}" href="{html.escape(host)}/"><code>{host_html(host)}</code>'
             f'<span class="score"><b>{health}</b><small>out of 100</small></span>{body}{lines}</a>')
 
 
-def host_stats(tenant: str, host: str, items_open: int | None) -> dict:
-    """Issue log counts of a subdomain for its home page card."""
+def share(part: int, whole: int) -> str:
+    """A percentage that never reads 0% while something is fixed: one decimal below 10%, '<0.1%' when tinier."""
+    if not whole or not part:
+        return "0%"
+    p = 100 * part / whole
+    return "<0.1%" if p < 0.1 else f"{p:.1f}%" if p < 10 else f"{round(p)}%"
+
+
+def host_stats(tenant: str, host: str, items: dict | None) -> dict:
+    """Issue log counts of a subdomain for its home page card, plus its items (open, all, fixed)."""
     s = build_report.issue_log_summary(tenant, host, tenant_paths(tenant).health_history)
-    return {"total": s["total"], "open": s["open"], "items_open": items_open}
+    items = items or {}
+    return {"total": s["total"], "open": s["open"], "items_open": items.get("open"),
+            "items_total": items.get("issues"), "items_fixed": items.get("fixed")}
 
 
 def host_scores(tenant: str, hosts: list[str]) -> dict[str, tuple[int, str]]:
@@ -472,7 +486,7 @@ def build(out: Path, tenants: list[str]) -> None:
     for slug, mem in members.items():  # pages across domains, e.g. /blogs/
         report = build_report.collection_report(COLLECTIONS[slug], slug, mem)
         scores.update({c["host"]: (c["health"], c["grade"]) for c in report["_hosts"]})
-        items = {c["host"]: (c.get("items") or {}).get("open") for c in report["_hosts"]}
+        items = {c["host"]: c.get("items") for c in report["_hosts"]}
         stats.update({h: host_stats(t, h, items.get(h)) for t, h in mem})
         by_check = {c["host"]: (c.get("items") or {}).get("by_check") or {} for c in report["_hosts"]}
         css_m = GUIDE_PAGE.split("<style>", 1)[1].split("</style>", 1)[0]

@@ -1561,7 +1561,9 @@ __METHOD__
     const itemsLabel = `${LOG ? "Items" : "Open issues"} ${ask(ITEMS_NOTE)}`, typesLabel = `Issue types ${ask(TYPES_NOTE)}`;
     const itemsNum = I => `${fmt(I.open)} <small>${LOG ? "open " : ""}of ${fmt(I.issues)}</small>`;
     // the fixed share stands out (SK, 2026-11-13): bigger, bold, green once something is fixed
-    const itemsSub = I => `<span class="${I.fixed ? "up" : ""}">${fmt(I.fixed)} fixed</span>${I.fixed_pct == null ? "" : ` · <b class="pct${I.fixed ? " ok" : ""}">${I.fixed_pct}%</b>`}`;
+    // a share that never reads 0% while something is fixed (SK, 2026-11-16): one decimal below 10%, "<0.1%" when tinier
+    const share = (part, whole) => !whole || !part ? "0%" : (p => p < 0.1 ? "<0.1%" : p < 10 ? `${p.toFixed(1)}%` : `${Math.round(p)}%`)(100 * part / whole);
+    const itemsSub = I => `<span class="${I.fixed ? "up" : ""}">${fmt(I.fixed)} fixed</span>${I.fixed_pct == null ? "" : ` · <b class="pct${I.fixed ? " ok" : ""}">${share(I.fixed, I.fixed + I.open)}</b>`}`;
     const changesSub = (ch, before) => before ? `${ch.gone} resolved · ${ch.add} new since ${esc(day(before.date))}` : "no earlier run to compare";
     // how old the data is: managers must not read a two-week-old crawl as today's state
     const dates = (R._dates || [R._run_date, A && A.date, R._perf && R._perf.date, R._ai && R._ai.date, R._text && R._text.date, R._links && R._links.date]).filter(Boolean).sort();
@@ -1595,7 +1597,8 @@ __METHOD__
           : t.source === "ga4"
           ? `<div class="kpi"><span class="kl">Organic sessions</span><span class="kv">${fmt(cur.sessions)} <small>28 days, GA4</small></span><span class="ks">${delta(cur.sessions, prev.sessions, "previous 28 days")}</span></div>`
           : `<div class="kpi"><span class="kl">Search traffic</span><span class="kv">–</span><span class="ks">no Search Console or GA4 data</span></div>`,
-        LOG ? `<div class="kpi"><span class="kl">${issuesLabel}</span><span class="kv">${fmt(LOG.open)} <small>open of ${fmt(LOG.total)}</small></span><span class="ks"><span class="${LOG.verified + LOG.pushed ? "up" : ""}">${fmt(LOG.verified + LOG.pushed)} fixed</span> · ${fmt(LOG.resolved)} resolved${LOG.reviewed ? ` · ${fmt(LOG.reviewed)} reviewed` : ""}</span>`
+        LOG ? `<div class="kpi"><span class="kl">${issuesLabel}</span><span class="kv">${fmt(LOG.open)} <small>open of ${fmt(LOG.total)}</small></span><span class="ks"><span class="${LOG.verified + LOG.pushed ? "up" : ""}">${fmt(LOG.verified + LOG.pushed)} fixed</span> · ${fmt(LOG.resolved)} resolved${LOG.reviewed ? ` · ${fmt(LOG.reviewed)} reviewed` : ""}`
+          + ` · <b class="pct${LOG.total - LOG.open ? " ok" : ""}">${share(LOG.total - LOG.open, LOG.total)}</b> closed</span>`
           + `<span class="ks">${GURL ? `<a href="issues/">Issue log →</a>` : ""}</span></div>` :
         `<div class="kpi"><span class="kl">${typesLabel}</span><span class="kv">${findings.length}</span><span class="ks"><span class="down">${byType.broken} broken</span> · ${byType.incorrect} incorrect · ${byType.not_optimized + byType.improvable} minor</span>`
           + `<span class="ks">${!before ? "no earlier run to compare" : (CH.resolved || []).length  // resolved ones are named in Fix progress; new ones are tagged in the list
