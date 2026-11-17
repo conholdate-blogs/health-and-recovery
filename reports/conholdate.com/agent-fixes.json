@@ -235,5 +235,47 @@
   "issue": "Header label 'Home' in English on every language; Search/Archive/Tags menu names machine-translated as verbs or wrong words in 10 languages",
   "verified": "2026-11-16",
   "result": "Live: header and menu translated, e.g. ja ホーム/検索/アーカイブ, ar الرئيسية/بحث, fr Accueil/Rechercher/Archives, zh 首页/归档"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-17",
+  "verified": "2026-11-17",
+  "found": "2026-11-11",
+  "found_by": "Agent",
+  "check": "link_damaged",
+  "commits": [
+   "f7e49738a2b7c6aa73181ac38ab899b4c48060c2"
+  ],
+  "issue": "54 internal links with a double slash (https://blog.conholdate.com//total/…) in 3 posts, English + 17 translations",
+  "result": "Live: convert-mpp-to-csv-in-java → /total/convert-mpp-to-excel-in-java/, redact-excel-in-java → /total/convert-pptx-to-xml-csharp/, fuzzy-search-in-csharp → /total/edit-image-metadata-online/; translations link the page in their own language; all 54 targets 200 with self canonical"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-17",
+  "verified": "2026-11-17",
+  "found": "2026-11-11",
+  "found_by": "Agent",
+  "check": "link_broken",
+  "commits": [
+   "3e221884a6958198680139b39adab2ba76709a6e"
+  ],
+  "issue": "64 internal links to posts that do not exist (wrong slugs) in 5 posts",
+  "result": "Live: convert-html-to-xps-csharp: convert-excel-to-pdf-in-java → convert-excel-to-pdf-using-java (English + 17); add-table-of-contents-to-word-document-in-java: add-a-table-of-contents-in-word-using-csharp → add-table-of-contents-in-word-using-csharp (English + 17); convert-word-to-image-in-java: convert-word-to-pdf-in-java → convert-word-to-pdf-using-java (English + 17); convert-html-to-pdf-online: create-ms-PDF-documents-in-csharp → create-ms-word-documents-in-csharp, as the English post links (9 translations); view-stl-files-online: find-synonym-in-java → find-synonyms-in-java (English only; its translations are queued for retranslation)"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-17",
+  "verified": "2026-11-17",
+  "found": "2026-11-17",
+  "found_by": "Agent",
+  "check": "post_shortcode_as_text",
+  "commits": [
+   "5707bb852a8b40df8daf6cf2db584eaf7809a67c"
+  ],
+  "issue": "4 English posts showed 11 shortcodes as text ({{ gist … }}, {{ figure … }}): no cover image, no code examples (optimizer escaped < >, Jun 2026; a hand fix dropped them)",
+  "result": "Live: view-stl-files-online, convert-svg-to-image-csharp, convert-eml-to-pst-java, convert-image-to-html-csharp show 0 raw shortcodes, cover images and 6 code examples; fixed before their queued retranslation copied the damage into 68 pages"
  }
 ]
