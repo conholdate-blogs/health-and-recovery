@@ -30,6 +30,15 @@ has its own log in [blogs/](blogs/) with its facts, findings, decisions and fixe
 - Redirects.json: change line by line, parse before and after, check that every other entry is unchanged.
 - After the push: verify live (curl, headless Chrome). If the blog applies changes at deploy, ask SK to run the
   production deploy (or wait for the cron).
+- **Before editing translation files, read the translation agent's scan sheet** (`1FK2GWKyPuUyeCjJ7nDZNQIvP8jtwQcvSwig1KtXLnF0`,
+  tab = blog host, read-only via the service account; columns Blog Post Directory, Issue, Target Translations).
+  Since 17 Nov the scanner queues **OUTDATED → Retranslate** when `index.md` was committed after `index.<lang>.md`.
+  - Translation queued for retranslation: do **not** edit it (it gets overwritten, and our commit would make it
+    newer than the English post, so the scanner drops it from the queue). Fix only the English post if it has the bug.
+  - Fixing a link in an English post that is not queued: change its translations **in the same commit**; an
+    English-only commit makes all its translations OUTDATED and costs a full retranslation.
+  - Known gap, accepted by SK (17 Nov): a commit touching every language (bulk link prefix, folder move, our tag
+    fix) resets the dates, so older English rewrites are not seen as OUTDATED.
 
 ## Fix catalogue (proven on blog.conholdate.cloud, 11 Nov 2026: 84 → 100 with real fixes only)
 

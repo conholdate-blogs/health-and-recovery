@@ -54,6 +54,24 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 17 Nov: B5 checked against the translation agent's queue
+
+- The translation agent's scanner now queues **OUTDATED → Retranslate** (English `index.md` committed after the
+  translation). Scan sheet tab blog.conholdate.com (read 17 Nov): 222 rows, all OUTDATED, 17 languages each,
+  none started; mostly English "Optimized Blog Posts" edits of 2 Nov.
+- Of the open B5 link issues, these are in translations queued for retranslation, so **we leave them alone**:
+  238 wrong-language links (7 posts of Aug–Sep 2025: merge-docx-to-pdf-java, convert-pdf-to-grayscale-in-csharp,
+  convert-xbrl-to-pdf-online, convert-txt-to-json-in-java, convert-xbrl-to-excel-in-csharp,
+  convert-markdown-to-word-in-csharp, convert-pub-to-pptx-in-csharp) and 17 broken links in view-stl-files-online.
+  view-stl-files-online's English post has the broken link (find-synonym-in-java): fix the English post only, before
+  the retranslation runs, so the new translations copy the fixed link. Check after the retranslation that the links
+  are localized.
+- English posts with bad links that are not queued (damaged: 3, broken: 3): fix the English post and its
+  translations in one commit, so the scanner does not queue a full retranslation.
+- The extract-text-and-images-from-pdf post is not queued (bulk commits reset the dates; SK: accept that gap), so
+  B5 batch 3 stays a link fix in th/tr/vi.
+- Rule written to the playbook (Rules for every change on a blog repo).
+
 ## 17 Nov: link check shows origin and fixes (before B5)
 
 - Report: a link the English post has and its translations copied is one entry ("The English post has this link;
