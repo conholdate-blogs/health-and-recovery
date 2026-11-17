@@ -61,6 +61,11 @@
     "date": "2026-11-16",
     "by": "SK",
     "text": "The blog developer checks both URLs (proposal: keep add-barcode-to-pdf-in-java of 2026-05-08 and delete the 2026-04-22 post; delete the 2024 copy of convert-html-to-image-java); otherwise we do it later as proposed."
+   },
+   {
+    "date": "2026-11-17",
+    "by": "Agent",
+    "text": "The blog developer moved the 2026-05-08 add-barcode-to-pdf-in-java post to embed-barcode-into-pdf-in-java (52d70c5a, 16 Nov) and deleted its translations for retranslation (f0826572). convert-html-to-image-java still open. Checked at the next scan."
    }
   ]
  },
