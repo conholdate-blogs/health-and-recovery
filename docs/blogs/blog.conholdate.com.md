@@ -64,6 +64,13 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
   hand-made B5 table. Word order matters: the first version matched convert-pdf-to-word for convert-word-to-pdf.
 - An old English slug in a translation follows its redirect: the 3 th/tr/vi links are now `link_redirected`
   (crawl-261117-1) with `/<lang>/total/jpg-text-scanner/`; intl-0002 shows resolved, noted as reclassified.
+- **History for links only translations have** (SK): when did the English post get its current link (`git log -S`,
+  following renames) vs when was the translation made? "The translation introduced this link" or "the English post
+  got its link later: the translation is out of date". git blame was tried first and was wrong: an optimizer commit
+  re-wrote identical lines, so blame dated the English link 2026 (8 false "out of date"). Results here: th/tr/vi old
+  slug out of date (English fixed 2023-12-13, translated 2023-10-18); create-ms-PDF and all 40 English-link entries
+  introduced by the translations. My earlier note blaming the 2024 prefix commit for create-ms-PDF was wrong
+  (corrected in the Issue log).
 
 ## 16 Nov: S1–S3 verified live (SK deployed the same evening)
 

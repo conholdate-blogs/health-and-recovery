@@ -95,6 +95,8 @@ blog.conholdate.com at deploy); `mainSections`; which pages are translated (the 
 
 ## Traps
 
+- "Last changed" (git blame) is the last commit on a line, not where a link came from: bulk prefix commits and
+  optimizers that re-write identical lines take the blame. To date a link, use `git log --follow -S <url> -- <file>`.
 - Two full Hugo builds of blog.conholdate.com need ~9 GB (4.6 GB each, 1.5 GB of it tag pages); the disk filled on
   16 Nov. Build old, delete its `*/tag/*` folders except the ones the change touches, then build new.
 - `requests` decodes these blogs' HTML as Latin-1 (Content-Type has no charset; pages declare UTF-8 in a meta tag):

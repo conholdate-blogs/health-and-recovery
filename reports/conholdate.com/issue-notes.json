@@ -24,6 +24,11 @@
     "date": "2026-11-17",
     "by": "Agent",
     "text": "The link check now suggests a fix for every broken link it can match with certainty (an existing post with the same words in order, or the page the English post links), in the translation's own language when that exists; the report marks it 'Suggested fix, check before applying'."
+   },
+   {
+    "date": "2026-11-17",
+    "by": "Agent",
+    "text": "Correction: the create-ms-PDF links came from the first translations (2023-03-06, 'Added Multilingual'); the English post has linked create-ms-word since 2023-03-03. The 2024 commit 96c6e6d4 only added the language prefix ('Last changed' shows the last commit on a line, not where a link came from)."
    }
   ]
  },
@@ -65,6 +70,11 @@
     "date": "2026-11-17",
     "by": "Agent",
     "text": "extract-text-and-images-from-pdf (th, tr, vi) links the old slug /<lang>/total/jpg-to-readable-text-ocr-full-form/. Fix: /<lang>/total/jpg-text-scanner/, as the English post has it (B5 batch 3, waiting for approval)."
+   },
+   {
+    "date": "2026-11-17",
+    "by": "Agent",
+    "text": "Translations out of date: the English post got jpg-text-scanner on 2023-12-13 ('Fixed Broken Links'), after the th/tr/vi translations (2023-10-18)."
    }
   ]
  }

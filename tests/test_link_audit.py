@@ -200,6 +200,43 @@ def test_old_english_slug_in_a_translation_follows_the_redirect(tmp_path):
         "link_missing_translation", "/pdf/new-slug/", "no ru translation of /pdf/new-slug/")
 
 
+def test_history_tells_translation_introduced_it_or_is_out_of_date(tmp_path):
+    # SK, 2026-11-17: for a bad link only translations have, was the English post changed after the translation?
+    import os
+    import subprocess
+
+    from core.audit.links import Post
+
+    repo = tmp_path / "r"
+    (repo / "content/p").mkdir(parents=True)
+
+    def commit(msg, date):
+        env = {**os.environ, "GIT_AUTHOR_DATE": date, "GIT_COMMITTER_DATE": date}
+        for args in (["add", "-A"], ["-c", "user.name=t", "-c", "user.email=t@e.x", "commit", "-qm", msg]):
+            subprocess.run(["git", "-C", str(repo), *args], check=True, capture_output=True, env=env)
+
+    subprocess.run(["git", "init", "-q", str(repo)], check=True)
+    en, ru = repo / "content/p/index.md", repo / "content/p/index.ru.md"
+    en.write_text("---\nurl: /p/\n---\n[1]: /pdf/right/\n[2]: /pdf/old/\n", encoding="utf-8")
+    commit("english", "2023-03-03T10:00:00")
+    ru.write_text("---\nurl: /ru/p/\n---\n[1]: /ru/pdf/wrong/\n[2]: /ru/pdf/old/\n", encoding="utf-8")
+    commit("translation", "2023-03-06T10:00:00")
+    en.write_text("---\nurl: /p/\n---\n[1]: /pdf/right/\n[2]: /pdf/new/\n", encoding="utf-8")
+    commit("english link changed", "2024-01-01T10:00:00")
+    a = LinkAudit(make_tenant(repo), FakeFetcher({}), AuditStore(":memory:"), inventory([]), log=None)
+    posts = {lg: Post(f, f"content/p/{f.name}", "content/p", lg, "/", f.read_text(encoding="utf-8"), 0)
+             for lg, f in (("en", en), ("ru", ru))}
+    issues = [{"check": "link_broken", "lang": "ru", "file": "content/p/index.ru.md", "link": "/ru/pdf/wrong/",
+               "fix": f"https://{HOST}/ru/pdf/right/"},
+              {"check": "link_broken", "lang": "ru", "file": "content/p/index.ru.md", "link": "/ru/pdf/old/",
+               "fix": f"https://{HOST}/ru/pdf/new/"}]
+    a.add_history(HOST, issues, {"content/p": posts})
+    assert issues[0]["history"]["english_newer"] is False  # English line older: the translation introduced it
+    assert issues[0]["history"]["translated"] == "2023-03-06"
+    assert issues[1]["history"]["english_newer"] is True  # English changed later: translation out of date
+    assert issues[1]["history"]["english_line"] == "2024-01-01"
+
+
 def test_live_200_outside_the_sitemap_is_fine(tmp_path):
     _, report, _ = run_audit(tmp_path, live={f"https://{HOST}/pdf/removed-post/": 200,
                                              f"https://{HOST}/ru/pdf/removed-post/": 200})

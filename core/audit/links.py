@@ -251,6 +251,60 @@ class LinkAudit:
                 lines[cur["line"]] = dict(cur)
         return lines
 
+    def created_on(self, host: str, rel: str) -> str | None:
+        """Date the file was first committed, following renames (a translation's 'translated on' date)."""
+        try:
+            out = subprocess.run(["git", "-C", str(self.repos[host]), "log", "--follow", "--format=%as", "--", rel],
+                                 capture_output=True, text=True, check=True).stdout.split()
+        except (OSError, subprocess.CalledProcessError):
+            return None
+        return out[-1] if out else None
+
+    def link_added_on(self, host: str, rel: str, text: str) -> dict | None:
+        """The newest commit that added or removed `text` in the file (git log -S, following renames): when the
+        English post got its current link. Unlike blame, a commit that rewrites the line unchanged does not count."""
+        try:
+            out = subprocess.run(["git", "-C", str(self.repos[host]), "log", "--follow", "-S", text,
+                                  "--format=%h%x09%as%x09%s", "--", rel], capture_output=True, text=True,
+                                 check=True).stdout.splitlines()
+        except (OSError, subprocess.CalledProcessError):
+            return None
+        if not out:
+            return None
+        sha, date, summary = (out[0].split("\t") + ["", ""])[:3]
+        return {"commit": sha, "date": date, "summary": summary}
+
+    def add_history(self, host: str, issues: list[dict], by_folder: dict) -> None:
+        """For a bad link only translations have (SK, 2026-11-17): did the English post get its current link after
+        the translation was made (translation out of date), or did it have it already (the translation introduced
+        the bad link)? Compares when the English post last added that link (git log -S) with the translation's
+        creation date."""
+        def path_of(url):
+            return self.split_lang(urlsplit(url).path if url.startswith("http") else url)[1].rstrip("/")
+
+        en_has = {(i["file"].rsplit("/", 1)[0], path_of(i["link"])) for i in issues if i["lang"] == self.default_lang}
+        added, created = {}, {}
+        folder_of = {p.rel: files for files in by_folder.values() for p in files.values()}
+        for i in issues:
+            folder_rel = i["file"].rsplit("/", 1)[0]
+            if i["lang"] == self.default_lang or (folder_rel, path_of(i["link"])) in en_has:
+                continue
+            en = (folder_of.get(i["file"]) or {}).get(self.default_lang)
+            if not en:
+                continue
+            wanted = [w for w in (path_of(i["fix"]) if i["fix"] else None, path_of(i["link"])) if w and len(w) > 1]
+            w = next((w for w in wanted if w + "/" in en.text or w + ")" in en.text or w + "\n" in en.text), None)
+            if not w:
+                continue
+            if (en.rel, w) not in added:
+                added[(en.rel, w)] = self.link_added_on(host, en.rel, w)
+            if i["file"] not in created:
+                created[i["file"]] = self.created_on(host, i["file"])
+            b, made = added[(en.rel, w)], created[i["file"]]
+            if b and b.get("date") and made:
+                i["history"] = {"english_line": b["date"], "english_commit": f"{b['commit']} {b['date']}: "
+                                f"{b['summary']}", "translated": made, "english_newer": b["date"] > made}
+
     # ---- checks ----
 
     def split_lang(self, path: str) -> tuple[str | None, str]:
@@ -377,6 +431,7 @@ class LinkAudit:
                         # no author: reports name issues, never people; the commit id finds it in git
                         i["commit"] = f"{b['commit']} {b.get('date')}: {b.get('summary', '')}"
                         i["by_translation_commit"] = bool(self.agent_rx and self.agent_rx.search(b.get("summary", "")))
+            self.add_history(host, issues, by_folder)
         sets = self.translation_sets(host, by_folder, sitemap_langs)
         live = Counter(v == "not checked" for u, v in self.live.items() if urlsplit(u).netloc == host)
         return {"repo": self.repo_state(host), "discovery_run": run, "sitemap_paths": len(known),
@@ -456,6 +511,8 @@ class LinkAudit:
                        and self.split_lang(urlsplit(i["fix"]).path)[0] is None]
             if missing:
                 loc["no_translation"] = missing
+            if head.get("history"):  # only translations have it: introduced by them, or English changed later?
+                loc["history"] = head["history"]
             locs.append(loc)
         return sorted(locs, key=lambda x: (x["page"], x["line"]))
 

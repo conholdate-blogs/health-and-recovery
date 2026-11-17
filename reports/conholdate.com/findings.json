@@ -595,7 +595,13 @@
             "ru",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2023-03-03",
+            "english_commit": "8317c227 2023-03-03: Added convert HTML to PDF",
+            "translated": "2023-03-06",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -752,7 +758,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run97",
+    "last_seen_run": "link-audit-run101",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -1259,7 +1265,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run98",
+    "last_seen_run": "repo-audit-run102",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -1682,7 +1688,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-16",
     "first_seen_run": "repo-audit-run65",
-    "last_seen_run": "repo-audit-run98",
+    "last_seen_run": "repo-audit-run102",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_url_duplicate",
@@ -1720,7 +1726,13 @@
             "tr",
             "vi"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2023-12-13",
+            "english_commit": "f81481aa 2023-12-13: Fixed Broken Links",
+            "translated": "2023-10-18",
+            "english_newer": true
+          }
         }
       ]
     },
@@ -1753,7 +1765,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-17",
     "first_seen_run": "link-audit-run97",
-    "last_seen_run": "link-audit-run97",
+    "last_seen_run": "link-audit-run101",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_redirected",
@@ -2129,7 +2141,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run97",
+    "last_seen_run": "link-audit-run101",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -2552,7 +2564,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-10-03",
+            "english_commit": "483aa84c 2025-10-03: autofit excel",
+            "translated": "2025-10-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2581,7 +2599,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-10-03",
+            "english_commit": "483aa84c 2025-10-03: autofit excel",
+            "translated": "2025-10-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2610,7 +2634,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-15",
+            "english_commit": "2c7199fc 2025-08-15: cad to pdf",
+            "translated": "2025-08-29",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2639,7 +2669,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-15",
+            "english_commit": "2c7199fc 2025-08-15: cad to pdf",
+            "translated": "2025-08-29",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2668,7 +2704,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-19",
+            "english_commit": "15c2a6ca 2025-08-19: csv to xml",
+            "translated": "2025-08-29",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2697,7 +2739,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-19",
+            "english_commit": "15c2a6ca 2025-08-19: csv to xml",
+            "translated": "2025-08-29",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2726,7 +2774,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-10-20",
+            "english_commit": "e9654347 2025-10-20: html to bmp",
+            "translated": "2025-12-01",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2755,7 +2809,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-10-20",
+            "english_commit": "e9654347 2025-10-20: html to bmp",
+            "translated": "2025-12-01",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2784,7 +2844,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-26",
+            "english_commit": "49ab955e 2025-09-26: latex to pdf",
+            "translated": "2025-10-15",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2813,7 +2879,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-26",
+            "english_commit": "49ab955e 2025-09-26: latex to pdf",
+            "translated": "2025-10-15",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2842,7 +2914,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-08",
+            "english_commit": "81489b53 2025-09-08: svg to png",
+            "translated": "2025-10-15",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2871,7 +2949,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-08",
+            "english_commit": "81489b53 2025-09-08: svg to png",
+            "translated": "2025-10-15",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2900,7 +2984,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-10-13",
+            "english_commit": "9f8786b4 2025-10-13: mpp to mpx",
+            "translated": "2025-10-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2929,7 +3019,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-10-13",
+            "english_commit": "9f8786b4 2025-10-13: mpp to mpx",
+            "translated": "2025-10-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2958,7 +3054,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-19",
+            "english_commit": "15c2a6ca 2025-08-19: csv to xml",
+            "translated": "2025-08-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -2987,7 +3089,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-19",
+            "english_commit": "15c2a6ca 2025-08-19: csv to xml",
+            "translated": "2025-08-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3016,7 +3124,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2023-12-07",
+            "english_commit": "6246b5fd 2023-12-07: PPTX to DOCX",
+            "translated": "2023-12-07",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3045,7 +3159,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-10-08",
+            "english_commit": "e7240748 2025-10-08: added schema partial for SEO",
+            "translated": "2025-10-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3074,7 +3194,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-10-08",
+            "english_commit": "e7240748 2025-10-08: added schema partial for SEO",
+            "translated": "2025-10-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3103,7 +3229,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-30",
+            "english_commit": "f309f505 2025-09-30: create visio",
+            "translated": "2025-09-30",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3132,7 +3264,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-30",
+            "english_commit": "f309f505 2025-09-30: create visio",
+            "translated": "2025-09-30",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3161,7 +3299,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-19",
+            "english_commit": "8c29780f 2025-09-19: pub to docx",
+            "translated": "2025-09-30",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3190,7 +3334,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-19",
+            "english_commit": "8c29780f 2025-09-19: pub to docx",
+            "translated": "2025-09-30",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3219,7 +3369,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-01",
+            "english_commit": "6d4ccf19 2025-09-01: xbrl to excel",
+            "translated": "2025-09-24",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3248,7 +3404,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-01",
+            "english_commit": "6d4ccf19 2025-09-01: xbrl to excel",
+            "translated": "2025-09-24",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3277,7 +3439,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-08",
+            "english_commit": "4d81c77f 2025-08-08: merge docx to pdf",
+            "translated": "2025-08-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3306,7 +3474,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-08",
+            "english_commit": "4d81c77f 2025-08-08: merge docx to pdf",
+            "translated": "2025-08-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3335,7 +3509,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-02",
+            "english_commit": "85690a6f 2025-09-02: text to qr",
+            "translated": "2025-09-24",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3364,7 +3544,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-02",
+            "english_commit": "85690a6f 2025-09-02: text to qr",
+            "translated": "2025-09-24",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3393,7 +3579,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-26",
+            "english_commit": "238275be 2025-08-26: flip image",
+            "translated": "2025-08-29",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3422,7 +3614,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-26",
+            "english_commit": "238275be 2025-08-26: flip image",
+            "translated": "2025-08-29",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3451,7 +3649,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-10-17",
+            "english_commit": "521fb6c3 2025-10-17: xps to bmp",
+            "translated": "2025-12-01",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3480,7 +3684,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-10-17",
+            "english_commit": "521fb6c3 2025-10-17: xps to bmp",
+            "translated": "2025-12-01",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3509,7 +3719,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-30",
+            "english_commit": "f309f505 2025-09-30: create visio",
+            "translated": "2025-09-30",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3538,7 +3754,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-30",
+            "english_commit": "f309f505 2025-09-30: create visio",
+            "translated": "2025-09-30",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3567,7 +3789,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-26",
+            "english_commit": "238275be 2025-08-26: flip image",
+            "translated": "2025-08-29",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3596,7 +3824,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-26",
+            "english_commit": "238275be 2025-08-26: flip image",
+            "translated": "2025-08-29",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3625,7 +3859,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-08",
+            "english_commit": "4d81c77f 2025-08-08: merge docx to pdf",
+            "translated": "2025-08-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3654,7 +3894,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-08-08",
+            "english_commit": "4d81c77f 2025-08-08: merge docx to pdf",
+            "translated": "2025-08-22",
+            "english_newer": false
+          }
         },
         {
           "role": "link",
@@ -3683,7 +3929,13 @@
             "vi",
             "zh"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "history": {
+            "english_line": "2025-09-16",
+            "english_commit": "b8b97f12 2025-09-16: merge excel",
+            "translated": "2025-10-15",
+            "english_newer": false
+          }
         }
       ]
     },
@@ -3716,7 +3968,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run97",
+    "last_seen_run": "link-audit-run101",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -4440,7 +4692,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run98",
+    "last_seen_run": "repo-audit-run102",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -4863,7 +5115,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run98",
+    "last_seen_run": "repo-audit-run102",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -6273,7 +6525,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run98",
+    "last_seen_run": "repo-audit-run102",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -6696,7 +6948,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run98",
+    "last_seen_run": "repo-audit-run102",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
