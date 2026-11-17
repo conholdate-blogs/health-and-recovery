@@ -254,6 +254,8 @@ p.agent-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px }
 .acard { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; text-align: left;
   font: inherit; color: inherit; cursor: pointer; display: flex; flex-direction: column; gap: 4px }
 .acard[aria-expanded="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) }
+.checked-by { flex-basis: 100%; margin-top: 2px; font-size: 13px; color: var(--muted) } .checked-by ul { margin: 2px 0 0; padding-left: 18px }
+.checked-by b { color: var(--text, inherit); font-weight: 600 }
 .acard small.when { font-size: 11px } .acard small.when.old { color: var(--incorrect); font-weight: 600 }
 .acard small + .open, .acard svg + .open { margin-top: auto } .acard .an { font-weight: 600 } .acard b { font-size: 24px; line-height: 1.1 } .acard small { color: var(--muted); font-size: 12px }
 /* the card opens its data: a clear button-like marker (SK, 2026-11-12) */
@@ -1532,7 +1534,7 @@ __METHOD__
       const s = scansOf(dim); if (!s.length) return null;
       const ds = s.map(x => x.date).sort(), age = Math.floor((Date.now() - Date.parse(ds[0])) / 864e5);
       return { text: `checked ${dayRange(ds[0], ds[ds.length - 1], false)}`, old: age > 14,
-        list: s.map(x => `${x.name} ${day(x.date)}`).join(" · ") };
+        scans: s, list: "Checked by:\n" + s.map(x => `• ${x.name}: ${day(x.date)}`).join("\n") };
     };
     const card = a => {
       const n = Object.values(a.counts || {}).reduce((x, v) => x + v, 0), b = (a.counts || {}).broken || 0, has = panelsOf(a.dimension).length;
@@ -1557,7 +1559,7 @@ __METHOD__
       if (!dim) return;
       const a = AH.areas.find(x => x.dimension === dim), n = findings.filter(f => f.dimension === dim).length;
       const c = checked(dim);
-      data.insertAdjacentHTML("beforeend", `<div class="ahead"><b>${esc(a ? a.name : dim)}: data</b>${n ? ` <a href="#findings" data-dim="${esc(dim)}">its ${n} issue${n === 1 ? "" : "s"} →</a>` : ""}${c ? `<br><small class="dim">Checked by: ${esc(c.list)}</small>` : ""}</div>`);
+      data.insertAdjacentHTML("beforeend", `<div class="ahead"><b>${esc(a ? a.name : dim)}: data</b>${n ? ` <a href="#findings" data-dim="${esc(dim)}">its ${n} issue${n === 1 ? "" : "s"} →</a>` : ""}${c ? `<div class="checked-by">Checked by:<ul>${c.scans.map(x => `<li><b>${esc(x.name)}:</b> ${esc(day(x.date))}</li>`).join("")}</ul></div>` : ""}</div>`);
       panelsOf(dim).forEach(el => data.append(el));
     };
     $("sum-areas").addEventListener("click", e => {
