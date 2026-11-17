@@ -585,6 +585,14 @@ _ROWS = [
      "A second H1 blurs the page's main topic for search engines and screen readers.",
      "Remove the line when it repeats the title, else make it ##; fix the English file first, translations follow.",
      "The page has one H1; next repo check has no item."),
+    ("post_shortcode_as_text", "Repo files", "Shortcode shown as text",
+     "A post writes a shortcode as {{ gist … }} or {{&lt; figure … &gt;}} instead of {{< … >}}, so Hugo prints it as "
+     "text: no cover image, no code example, no banner. Seen after an optimizer escaped < and > and a hand fix "
+     "dropped them.",
+     "Readers see template code instead of the image or the code sample; the post looks broken and loses its examples.",
+     "Write it {{< name … >}} again (the version before the edit in git history is the safest source); fix the "
+     "English file before it is translated.",
+     "The live page shows the image or code; next repo check has no item."),
     ("post_outside_main_sections", "Site structure", "Post outside the home page's sections",
      "The post folder is not under a section listed in params.mainSections, so the theme never lists it on the home "
      "page or its pagination.",

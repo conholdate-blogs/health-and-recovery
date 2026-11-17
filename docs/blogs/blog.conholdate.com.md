@@ -54,6 +54,24 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 17 Nov: B5 batches 1–2 pushed; shortcodes shown as text (found and fixed)
+
+| Commit (conholdate-blog) | What | State |
+|---|---|---|
+| f7e49738 | Batch 1: 54 double-slash links (3 posts, English + 17) | pushed; deploy run by SK |
+| 3e221884 | Batch 2: 64 links to wrong slugs (view-stl-files-online English only: its translations are queued) | pushed; needs a deploy |
+| 5707bb85 | 11 shortcodes restored in 4 English posts (view-stl-files-online, convert-svg-to-jpg-png-csharp, convert-eml-to-pst-java, convert-image-to-html-csharp) | pushed; needs a deploy |
+
+- Every link target checked before the push: file in the repo, 200 live, canonical = the link (SK asked).
+- Shortcodes: the optimizer escaped `{{< >}}` to `{{&lt; &gt;}}` (261f41ee, 775963f0, Jun 2026); a hand fix
+  (cd798646, 10 Jun) dropped `&lt;`/`&gt;`, so the pages printed `{{ gist … }}`: no cover image, no code examples.
+  All 4 posts were queued for retranslation, which would have copied the damage into 68 pages. Restored lines are
+  identical to the versions before the optimizer; Hugo 0.101 build: 0 raw shortcodes, images and gists render.
+- New check `post_shortcode_as_text` (repo audit, rule TD-3) and `shortcode_as_text` (commit check, warn; only what
+  a range adds). Commit check on cd798646 warns on all 11; dry run on blog.conholdate.com and blog.conholdate.cloud:
+  0 after the fix. Tell the optimizer agent's owner: it escapes < and > inside shortcodes.
+- The blog developer resolved both duplicate URLs (52d70c5a + f0826572, 947c4056).
+
 ## 17 Nov: B5 checked against the translation agent's queue
 
 - The translation agent's scanner now queues **OUTDATED → Retranslate** (English `index.md` committed after the

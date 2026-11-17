@@ -58,6 +58,7 @@ LEVEL = {
     "front_matter_broken": WARN,
     "url_relative": WARN,
     "shortcode_damaged": FAIL,
+    "shortcode_as_text": WARN,
     "code_fence_mismatch": WARN,
 }
 TITLE = {
@@ -73,6 +74,7 @@ TITLE = {
     "front_matter_broken": "Changed post: front matter does not parse",
     "url_relative": "Changed post: url without a leading slash",
     "shortcode_damaged": "Changed post: Hugo shortcode damaged (breaks the build)",
+    "shortcode_as_text": "Changed post: shortcode written {{ x }} or {{&lt; x &gt;}}, shown as text (no image/code)",
     "code_fence_mismatch": "Changed translation: code fences differ from the English post",
 }
 # Shortcode damage seen in LLM translations (blog-translation-agent, translator._shortcode_syntax_corrupted, c261e54)
@@ -254,6 +256,36 @@ def _shortcode_problems(text: str, en: str | None) -> tuple[list[str], str | Non
     return list(dict.fromkeys(problems)), fences
 
 
+# Same rule as core/audit/repo.shortcodes_as_text (this script stays standalone). Found 17 Nov 2026 on
+# blog.conholdate.com: an optimizer escaped {{< >}} to {{&lt; &gt;}}, a hand fix dropped the brackets.
+HUGO_SHORTCODES = {"figure", "gist", "youtube", "vimeo", "tweet", "x", "instagram", "highlight", "param", "ref",
+                   "relref", "qr"}
+_FENCE = re.compile(r"^\s*(```|~~~)")
+_INLINE_CODE = re.compile(r"`[^`]*`")
+
+
+def shortcode_names(repo: Repo) -> set[str]:
+    out = repo.git("ls-tree", "-r", "--name-only", repo.rev, "--", "layouts/shortcodes", "themes", check=False)
+    return HUGO_SHORTCODES | {Path(p).stem for p in out.splitlines()
+                              if p.endswith(".html") and Path(p).parent.name == "shortcodes"}
+
+
+def shortcodes_as_text(text: str, names: set[str]) -> list[str]:
+    alt = "|".join(sorted(map(re.escape, names), key=len, reverse=True))
+    pat = re.compile(r"\{\{(?:\s*|&lt;\s*|&#60;\s*)(?:" + alt + r")(?=[\s}])")
+    out, fence = [], None
+    for ln in text.split("\n"):
+        f = _FENCE.match(ln)
+        if f:
+            fence = None if fence == f[1] else (fence or f[1])
+            continue
+        if fence or ln.startswith(("    ", "\t")):
+            continue
+        if pat.search(_INLINE_CODE.sub("", ln)):
+            out.append(ln.strip()[:80])
+    return out
+
+
 def check_shortcodes(repo: Repo, changed: list[str], res: Result, base: str | None = None) -> None:
     """Every changed post file, no cap: shortcode delimiters balanced; a translation keeps the English post's shortcode
     and code-fence counts and has no damage pattern the English post lacks (code can contain =\\" legitimately).
@@ -261,6 +293,7 @@ def check_shortcodes(repo: Repo, changed: list[str], res: Result, base: str | No
     with =\\" in translations, which Hugo builds) is left out, so a commit touching such a file is not blamed."""
     old = Repo(repo.path, base) if base else None
     english: dict[tuple[str, str], str | None] = {}
+    names = shortcode_names(repo)
 
     def en_of(r: Repo, folder: str) -> str | None:
         if (r.rev, folder) not in english:
@@ -285,6 +318,12 @@ def check_shortcodes(repo: Repo, changed: list[str], res: Result, base: str | No
             res.add("code_fence_mismatch", f"{rel}: {fences}")
         if problems:
             res.add("shortcode_damaged", f"{rel}: {'; '.join(problems)}")
+        as_text = shortcodes_as_text(text, names)
+        if as_text and old:
+            was = set(shortcodes_as_text(old.show(rel) or "", names))
+            as_text = [s for s in as_text if s not in was]
+        for s in as_text:
+            res.add("shortcode_as_text", f"{rel}: {s}")
 
 
 def choose_sample(repo: Repo, changed: list[str], res: Result) -> list[str]:

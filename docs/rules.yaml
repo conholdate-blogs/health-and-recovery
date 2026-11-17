@@ -141,6 +141,13 @@ rules:
     date: 2026-11-16
     checks: [post_body_h1, h1_multiple]
     status: active
+  - id: TD-3
+    rule: "Shortcodes are written {{< name … >}} (or {{% … %}}); tools that edit posts never escape or strip < and >."
+    why: "On blog.conholdate.com 4 English posts showed {{ gist … }} as text, without images and code (an optimizer escaped them, Jun 2026; a hand fix dropped the brackets). Found 17 Nov 2026 before they were retranslated."
+    set_by: Health and Recovery Agent
+    date: 2026-11-17
+    checks: [post_shortcode_as_text]
+    status: active
   - id: TPL-1
     rule: "Nothing renders an element such as a <div> in <head> before the SEO tags: extend_head.html is the last include."
     why: On 3 Nov 2026 a language-switcher div pushed title, canonical and hreflang of blog.aspose.com into <body>.

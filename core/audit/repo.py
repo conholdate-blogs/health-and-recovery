@@ -89,6 +89,11 @@ CHECKS = {
     # found on blog.conholdate.com, 13-16 Nov 2026: a '# Title' line under the title the theme already renders as H1
     "post_body_h1": ("onpage", "improvable", "Post bodies with their own H1 heading",
                      "A post body starts its headings at ## (the theme renders the title as the only H1)", 1, "S"),
+    # found on blog.conholdate.com, 17 Nov 2026: an optimizer escaped {{< >}} to {{&lt; &gt;}}, a hand fix then dropped
+    # the brackets; the pages showed '{{ gist … }}' as text, no images and no code examples
+    "post_shortcode_as_text": ("onpage", "broken", "Shortcodes shown as text instead of images or code",
+                               "Every shortcode is written {{< name … >}} (or {{% … %}}), never {{ name … }} or "
+                               "{{&lt; … &gt;}}", 1, "S"),
     "translated_url_mismatch": ("intl", "incorrect",
                                 "Translations published under a different URL than the English post",
                                 "A translation's URL is the English post's URL with only its language prefix added",
@@ -156,6 +161,38 @@ def body_h1(body: str) -> list[tuple[int, str]]:
             continue
         if _MD_H1.match(ln) or _HTML_H1.search(ln):
             out.append((n, ln.strip()))
+    return out
+
+
+HUGO_SHORTCODES = {"figure", "gist", "youtube", "vimeo", "tweet", "x", "instagram", "highlight", "param", "ref",
+                   "relref", "qr"}
+_INLINE_CODE = re.compile(r"`[^`]*`")
+
+
+def shortcode_names(repo: Path) -> set[str]:
+    """Hugo's built-in shortcodes plus every layouts/shortcodes/<name>.html of the site and its themes."""
+    names = set(HUGO_SHORTCODES)
+    for p in list(repo.glob("layouts/shortcodes/*.html")) + list(repo.glob("themes/*/layouts/shortcodes/*.html")):
+        names.add(p.stem)
+    return names
+
+
+def shortcodes_as_text(body: str, names: set[str]) -> list[tuple[int, str]]:
+    """(line within the body, text) of every shortcode Hugo would print as text: '{{ name …}}' or '{{&lt; name …'
+    for a known shortcode name, outside code fences, indented code and `inline code`."""
+    alt = "|".join(sorted(map(re.escape, names), key=len, reverse=True))
+    pat = re.compile(r"\{\{(?:\s*|&lt;\s*|&#60;\s*)(?:" + alt + r")(?=[\s}])")
+    out, fence = [], None
+    for n, ln in enumerate(body.split("\n"), 1):
+        f = _FENCE.match(ln)
+        if f:
+            fence = None if fence == f[1] else (fence or f[1])
+            continue
+        if fence or ln.startswith(("    ", "\t")):
+            continue
+        m = pat.search(_INLINE_CODE.sub("", ln))
+        if m:
+            out.append((n, ln.strip()[:100]))
     return out
 
 
@@ -371,6 +408,7 @@ class RepoAudit:
         posts_by_date: list[tuple[str, str, str]] = []  # English posts: (date, page, file), for the llms.txt check
         texts: dict[str, dict[str, tuple[dict, str, str | None]]] = {}  # folder -> language -> (values, file, page)
         cats_used: set[str] = set()
+        sc_names = shortcode_names(repo)
         for f in sorted(repo.glob("content/**/index*.md")):
             if not _NAME.match(f.name):
                 continue
@@ -402,6 +440,9 @@ class RepoAudit:
                 issues.append({"check": "post_body_h1", "file": rel, "line": fm_lines + n, "link": None, "page": page,
                                "fix": "make it ## or remove it when it repeats the title", "note": head[:80],
                                "commit": commit(rel)})
+            for n, line in shortcodes_as_text(text[m.end():], sc_names):
+                issues.append({"check": "post_shortcode_as_text", "file": rel, "line": fm_lines + n, "link": None,
+                               "page": page, "fix": "write it {{< … >}}", "note": line, "commit": commit(rel)})
             if url:
                 urls.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (str(url).strip(), rel)
             for cat in data.get("categories") or []:

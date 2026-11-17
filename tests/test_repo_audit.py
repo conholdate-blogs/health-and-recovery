@@ -319,3 +319,22 @@ def test_iso_date_reads_rfc_and_iso_dates():
     assert iso_date("Thu, 25 Jan 2024 10:00:00 +0000") == "2024-01-25"  # sorted as "Thu, 25 Ja" before
     assert iso_date("2026-11-12T08:00:00Z") == "2026-11-12" and iso_date(dt.date(2026, 11, 13)) == "2026-11-13"
     assert iso_date(dt.datetime(2026, 11, 13, 9, 0)) == "2026-11-13" and iso_date("someday") is None
+
+
+def test_shortcode_shown_as_text(tmp_path):
+    # blog.conholdate.com, 17 Nov 2026: '{{ gist … }}' and '{{&lt; figure … &gt;}}' render as text
+    from core.audit.repo import shortcodes_as_text
+
+    names = {"figure", "gist", "img_a_blank"}
+    body = ('{{< figure src="a.jpg" >}}\n{{ gist org abc "x.cs" }}\n{{&lt; figure src="b.jpg" &gt;}}\n'
+            '{{figure src="c.jpg"}}\n```\n{{ gist inside code }}\n```\n`{{ gist inline }}`\n'
+            '{{ .Title }} and {{ unknown thing }}\n{{% img_a_blank "u" %}}\n')
+    assert [n for n, _ in shortcodes_as_text(body, names)] == [2, 3, 4]
+    repo = make_repo(tmp_path)
+    post = repo / "content/Blog/pdf/2025-01-01-s"
+    post.mkdir(parents=True)
+    (post / "index.md").write_text('---\ntitle: s\nurl: /pdf/s/\n---\nText\n{{ gist org abc "x.cs" }}\n',
+                                   encoding="utf-8")
+    audit = RepoAudit(make_tenant(repo), FakeFetcher(), AuditStore(":memory:"), sample=0, log=None)
+    found = [(i["file"], i["line"]) for i in audit.check_posts(HOST)[0] if i["check"] == "post_shortcode_as_text"]
+    assert found == [("content/Blog/pdf/2025-01-01-s/index.md", 6)]
