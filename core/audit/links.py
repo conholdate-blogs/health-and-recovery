@@ -158,6 +158,7 @@ class LinkAudit:
         self.log = log or (lambda *_: None)
         self.live: dict[str, int | str] = {}  # url -> status (int) or error text
         self.moved: dict[str, str] = {}  # url -> normalized path it redirects to on the same host (old URLs)
+        self._index_of, self._index = None, {}  # suggest(): English paths by (section, content words)
         self.live_requests = 0
         self.results: dict = {}
         self.run_id: int | None = None
@@ -281,12 +282,60 @@ class LinkAudit:
                 return "link_wrong_language", own, f"the {page_lang} page exists"
             return None
         if link_lang == page_lang != self.default_lang and (rest in known or self.live_status(host, rest) == 200):
+            moved = self.moved.get(f"https://{host}{rest}")  # an old English slug: its current page may be translated
+            if moved:
+                current = self.split_lang(moved)[1]
+                own = self.localized(page_lang, current)
+                if own in known:
+                    return "link_redirected", own, f"old URL; {rest} redirects to {current}"
+                return "link_missing_translation", current, f"no {page_lang} translation of {current}"
             return "link_missing_translation", rest, f"no {page_lang} translation of {rest}"
         repaired = self.repair(path, rest, page_lang, known, en_links)
         if repaired:
             return "link_damaged", repaired, "damaged URL"
         copied = rest in {self.split_lang(p)[1] for p in en_links} and page_lang != self.default_lang
-        return "link_broken", None, "same broken link in the original post" if copied else "page does not exist"
+        note = "same broken link in the original post" if copied else "page does not exist"
+        guess, how = self.suggest(rest, page_lang, known, en_links)
+        if guess:
+            if page_lang != self.default_lang and self.split_lang(guess)[0] is None:
+                how += f"; no {page_lang} translation of it, so the English page"
+            return "link_broken", guess, f"{note}; suggested fix ({how}), check before applying"
+        return "link_broken", None, note
+
+    _FILLER = frozenset("a an the in on of to for with by and or using via from".split())
+
+    def _words(self, path: str) -> tuple:
+        """Content words of a slug in order: filler words dropped, plurals folded (find-synonyms-in-java =
+        find-synonym-in-java); the order counts (convert-word-to-pdf is not convert-pdf-to-word)."""
+        slug = path.strip("/").rsplit("/", 1)[-1].lower()
+        return tuple(w[:-1] if len(w) > 3 and w.endswith("s") else w
+                     for w in re.split(r"[-_]+", slug) if w and w not in self._FILLER)
+
+    def suggest(self, rest: str, lang: str, known: set[str], en_links: list[str]) -> tuple[str | None, str]:
+        """A likely target for a broken link (16-17 Nov 2026, blog.conholdate.com: wrong slugs in English posts).
+        1. exactly one existing English post with the same content words in the same section;
+        2. in a translation: the English original links a very similar existing page (a word changed in translation).
+        Anything less certain gives no suggestion: a wrong 'fix' is worse than none."""
+        import difflib
+
+        if self._index_of is not known:  # English paths by (section, content words), built once per host
+            self._index_of, self._index = known, defaultdict(set)
+            for p in known:
+                if self.split_lang(p)[0] is None:
+                    self._index[(p.strip("/").split("/")[0], self._words(p))].add(p)
+        section = rest.strip("/").split("/")[0]
+        hits = self._index.get((section, self._words(rest)), set()) - {rest}
+        if len(hits) == 1:
+            target = next(iter(hits))
+            own = self.localized(lang, target)
+            return (own if own in known else target), "existing post with the same words"
+        if lang != self.default_lang:
+            scored = sorted(((difflib.SequenceMatcher(None, rest.lower(), self.split_lang(p)[1].lower()).ratio(),
+                              self.split_lang(p)[1]) for p in en_links if self.split_lang(p)[1] in known), reverse=True)
+            if scored and scored[0][0] >= 0.9 and (len(scored) == 1 or scored[1][0] < scored[0][0] - 0.05):
+                own = self.localized(lang, scored[0][1])
+                return (own if own in known else scored[0][1]), "the English post links this page"
+        return None, ""
 
     def repair(self, path: str, rest: str, lang: str, known: set[str], en_links: list[str]) -> str | None:
         candidates = []
@@ -396,9 +445,17 @@ class LinkAudit:
             loc = {"role": "link", "url": head["link"] if head["link"].startswith("http") else f"https://{host}{head['link']}",
                    "page": head["page"], "file": head["file"], "line": head["line"], "fix": head["fix"],
                    "commit": head.get("commit")}
+            if head["fix"] and "suggested fix" in head["note"]:
+                loc["suggested"] = head["note"].split("suggested fix (", 1)[1].split(")", 1)[0]
             if rest:
                 loc.update(copies=len(rest), copy_langs=[i["lang"] for i in rest],
                            origin="english" if head["lang"] == self.default_lang else "translations")
+            # SK's rule: a translation links the target in its own language when it exists, else the English page,
+            # and the missing translation is named (17 Nov 2026)
+            missing = [i["lang"] for i in members if i["fix"] and i["lang"] != self.default_lang
+                       and self.split_lang(urlsplit(i["fix"]).path)[0] is None]
+            if missing:
+                loc["no_translation"] = missing
             locs.append(loc)
         return sorted(locs, key=lambda x: (x["page"], x["line"]))
 

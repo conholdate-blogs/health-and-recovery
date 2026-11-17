@@ -54,6 +54,17 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 17 Nov: link check shows origin and fixes (before B5)
+
+- Report: a link the English post has and its translations copied is one entry ("The English post has this link;
+  17 translations copied it"); a link only translations share is one entry too (SK).
+- Broken links get a **suggested fix** when certain: one existing post with the same content words in order
+  (filler words, plurals ignored), or, in a translation, the page the English post links; localized when the
+  translation exists, else the English page with the missing translation named (SK's rule). All 81 here match the
+  hand-made B5 table. Word order matters: the first version matched convert-pdf-to-word for convert-word-to-pdf.
+- An old English slug in a translation follows its redirect: the 3 th/tr/vi links are now `link_redirected`
+  (crawl-261117-1) with `/<lang>/total/jpg-text-scanner/`; intl-0002 shows resolved, noted as reclassified.
+
 ## 16 Nov: S1–S3 verified live (SK deployed the same evening)
 
 - Live: both posts 1 H1 (en, de, ja); Arabic heading `تثبيت C#:`; `/tag/image-extraction-api/` 200, old tag 404;

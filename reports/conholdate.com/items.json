@@ -2061,6 +2061,8 @@
    "removed": null
   },
   "link_missing_translation|blog.conholdate.com|content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.th.md|https://blog.conholdate.com/th/total/jpg-to-readable-text-ocr-full-form/|1": {
+   "became": "link_redirected",
+   "changed": "2026-11-17",
    "check": "link_missing_translation",
    "file": "content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.th.md",
    "first_seen": "2026-11-02",
@@ -2072,6 +2074,8 @@
    "removed": null
   },
   "link_missing_translation|blog.conholdate.com|content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.tr.md|https://blog.conholdate.com/tr/total/jpg-to-readable-text-ocr-full-form/|1": {
+   "became": "link_redirected",
+   "changed": "2026-11-17",
    "check": "link_missing_translation",
    "file": "content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.tr.md",
    "first_seen": "2026-11-02",
@@ -2083,6 +2087,8 @@
    "removed": null
   },
   "link_missing_translation|blog.conholdate.com|content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.vi.md|https://blog.conholdate.com/vi/total/jpg-to-readable-text-ocr-full-form/|1": {
+   "became": "link_redirected",
+   "changed": "2026-11-17",
    "check": "link_missing_translation",
    "file": "content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.vi.md",
    "first_seen": "2026-11-02",
@@ -2201,6 +2207,39 @@
    "last_seen": "2026-11-13",
    "link": "https://blog.conholdate.com/fr/total/apply-the-most-used-formulas-in-excel-using-csharp/",
    "page": "https://blog.conholdate.com/fr/total/insert-the-current-date-and-time-in-cell-a1/",
+   "removed": null
+  },
+  "link_redirected|blog.conholdate.com|content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.th.md|https://blog.conholdate.com/th/total/jpg-to-readable-text-ocr-full-form/|1": {
+   "check": "link_redirected",
+   "file": "content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.th.md",
+   "first_seen": "2026-11-17",
+   "fixed": null,
+   "host": "blog.conholdate.com",
+   "last_seen": "2026-11-17",
+   "link": "https://blog.conholdate.com/th/total/jpg-to-readable-text-ocr-full-form/",
+   "page": "https://blog.conholdate.com/th/total/extract-text-and-images-from-pdf-documents-using-java/",
+   "removed": null
+  },
+  "link_redirected|blog.conholdate.com|content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.tr.md|https://blog.conholdate.com/tr/total/jpg-to-readable-text-ocr-full-form/|1": {
+   "check": "link_redirected",
+   "file": "content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.tr.md",
+   "first_seen": "2026-11-17",
+   "fixed": null,
+   "host": "blog.conholdate.com",
+   "last_seen": "2026-11-17",
+   "link": "https://blog.conholdate.com/tr/total/jpg-to-readable-text-ocr-full-form/",
+   "page": "https://blog.conholdate.com/tr/total/extract-text-and-images-from-pdf-documents-using-java/",
+   "removed": null
+  },
+  "link_redirected|blog.conholdate.com|content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.vi.md|https://blog.conholdate.com/vi/total/jpg-to-readable-text-ocr-full-form/|1": {
+   "check": "link_redirected",
+   "file": "content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.vi.md",
+   "first_seen": "2026-11-17",
+   "fixed": null,
+   "host": "blog.conholdate.com",
+   "last_seen": "2026-11-17",
+   "link": "https://blog.conholdate.com/vi/total/jpg-to-readable-text-ocr-full-form/",
+   "page": "https://blog.conholdate.com/vi/total/extract-text-and-images-from-pdf-documents-using-java/",
    "removed": null
   },
   "link_wrong_language|blog.conholdate.com|content/Conholdate.Total/total/2023-12-05-convert-pptx-to-docx-java/index.ar.md|/total/convert-pptx-to-xlsx-java|1": {
@@ -140438,6 +140477,12 @@
   "link-audit-run89",
   "repo-audit-run90",
   "link-audit-run91",
-  "repo-audit-run92"
+  "repo-audit-run92",
+  "link-audit-run93",
+  "repo-audit-run94",
+  "link-audit-run95",
+  "repo-audit-run96",
+  "link-audit-run97",
+  "repo-audit-run98"
  ]
 }

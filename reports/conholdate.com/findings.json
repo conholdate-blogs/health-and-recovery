@@ -581,8 +581,9 @@
           "page": "https://blog.conholdate.com/ar/total/convert-html-to-pdf-online/",
           "file": "content/Conholdate.Total/total/2023-03-03-convert-html-to-pdf-online/index.ar.md",
           "line": 119,
-          "fix": null,
+          "fix": "https://blog.conholdate.com/ar/total/create-ms-word-documents-in-csharp/",
           "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated",
+          "suggested": "the English post links this page",
           "copies": 8,
           "copy_langs": [
             "de",
@@ -602,8 +603,9 @@
           "page": "https://blog.conholdate.com/total/add-table-of-contents-to-word-document-in-java/",
           "file": "content/Conholdate.Total/total/2026-07-28-add-table-of-contents-to-word-document-in-java/index.md",
           "line": 200,
-          "fix": null,
+          "fix": "https://blog.conholdate.com/total/add-table-of-contents-in-word-using-csharp/",
           "commit": "c17c68db 2026-08-12: Reviewed and updated Add Table of Contents blog post",
+          "suggested": "existing post with the same words",
           "copies": 17,
           "copy_langs": [
             "ar",
@@ -632,8 +634,9 @@
           "page": "https://blog.conholdate.com/total/convert-html-to-xps-in-csharp/",
           "file": "content/Conholdate.Total/total/2026-03-02-convert-html-to-xps-csharp/index.md",
           "line": 81,
-          "fix": null,
+          "fix": "https://blog.conholdate.com/total/convert-excel-to-pdf-using-java/",
           "commit": "04898de2 2026-03-11: PPTX to MD",
+          "suggested": "existing post with the same words",
           "copies": 17,
           "copy_langs": [
             "ar",
@@ -662,8 +665,9 @@
           "page": "https://blog.conholdate.com/total/convert-word-to-image-in-java/",
           "file": "content/Conholdate.Total/total/2026-08-19-convert-word-to-image-in-java/index.md",
           "line": 217,
-          "fix": null,
+          "fix": "https://blog.conholdate.com/total/convert-word-to-pdf-using-java/",
           "commit": "e6566d6b 2026-08-19: Auto-merge: 2026-08-19-convert-word-to-image-in-java",
+          "suggested": "existing post with the same words",
           "copies": 17,
           "copy_langs": [
             "ar",
@@ -692,8 +696,9 @@
           "page": "https://blog.conholdate.com/total/view-stl-files-online/",
           "file": "content/Conholdate.Total/total/2025-07-02-view-stl-files-online/index.md",
           "line": 82,
-          "fix": null,
+          "fix": "https://blog.conholdate.com/total/find-synonyms-in-java/",
           "commit": "167991f0 2025-07-07: view stl files",
+          "suggested": "existing post with the same words",
           "copies": 17,
           "copy_langs": [
             "ar",
@@ -747,7 +752,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run91",
+    "last_seen_run": "link-audit-run97",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -1254,7 +1259,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run92",
+    "last_seen_run": "repo-audit-run98",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -1677,10 +1682,81 @@
     "superseded_by": null,
     "detected_at": "2026-11-16",
     "first_seen_run": "repo-audit-run65",
-    "last_seen_run": "repo-audit-run92",
+    "last_seen_run": "repo-audit-run98",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_url_duplicate",
+    "notes": []
+  },
+  {
+    "id": "crawl-261117-1",
+    "key": "crawl/link_redirected/blog.conholdate.com/post",
+    "source": "link-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "crawl",
+    "type": "improvable",
+    "title": "Posts link to old URLs that redirect",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/th/total/extract-text-and-images-from-pdf-documents-using-java/",
+        "https://blog.conholdate.com/tr/total/extract-text-and-images-from-pdf-documents-using-java/",
+        "https://blog.conholdate.com/vi/total/extract-text-and-images-from-pdf-documents-using-java/"
+      ],
+      "observed": "3 links on 3 pages (3 distinct targets); by language: th 1, tr 1, vi 1; 0 written by translation commits",
+      "expected": "Every internal link points at the page's current URL, not one that redirects",
+      "locations": [
+        {
+          "role": "link",
+          "url": "https://blog.conholdate.com/th/total/jpg-to-readable-text-ocr-full-form/",
+          "page": "https://blog.conholdate.com/th/total/extract-text-and-images-from-pdf-documents-using-java/",
+          "file": "content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java/index.th.md",
+          "line": 271,
+          "fix": "https://blog.conholdate.com/th/total/jpg-text-scanner/",
+          "commit": "96c6e6d4 2024-05-23: Internal links prefixes updated",
+          "copies": 2,
+          "copy_langs": [
+            "tr",
+            "vi"
+          ],
+          "origin": "translations"
+        }
+      ]
+    },
+    "affected_pages": 3,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 0,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-19",
+        "2026-05-16"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-18",
+        "2026-11-14"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-17",
+    "first_seen_run": "link-audit-run97",
+    "last_seen_run": "link-audit-run97",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "link_redirected",
     "notes": []
   },
   {
@@ -1818,7 +1894,12 @@
             "tr",
             "vi"
           ],
-          "origin": "translations"
+          "origin": "translations",
+          "no_translation": [
+            "th",
+            "tr",
+            "vi"
+          ]
         }
       ]
     },
@@ -1846,14 +1927,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run91",
-    "resolved_run": null,
-    "resolved_at": null,
+    "last_seen_run": "link-audit-run95",
+    "resolved_run": "link-audit-run97",
+    "resolved_at": "2026-11-17T09:00:55+00:00",
     "check": "link_missing_translation",
     "notes": []
   },
@@ -2048,7 +2129,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run91",
+    "last_seen_run": "link-audit-run97",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -3635,7 +3716,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run91",
+    "last_seen_run": "link-audit-run97",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -4359,7 +4440,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run92",
+    "last_seen_run": "repo-audit-run98",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -4782,7 +4863,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run92",
+    "last_seen_run": "repo-audit-run98",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -6192,7 +6273,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run92",
+    "last_seen_run": "repo-audit-run98",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -6615,7 +6696,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run92",
+    "last_seen_run": "repo-audit-run98",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",

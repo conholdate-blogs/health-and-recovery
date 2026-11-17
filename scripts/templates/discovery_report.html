@@ -1110,8 +1110,9 @@ __METHOD__
     const total = f.evidence.locations.reduce((n, l) => n + 1 + (l.copies || 0), 0);
     return `<div class="lkpages">${[...pages].map(([p, ls]) => `<div class="lkpage"><a href="${esc(p)}" target="_blank" rel="noopener">${esc(shortUrls(p, f) || p)}</a>${ls.map(l => `
       <dl class="lk"><dt>Link</dt><dd class="bad">${esc(shortUrls(l.url, f))}</dd>
-        ${l.fix ? `<dt>Replace with</dt><dd><a class="ok" href="${esc(l.fix)}" target="_blank" rel="noopener">${esc(shortUrls(l.fix, f))}</a>${l.copies ? ` <span class="dim">(each translation: the same in its own language)</span>` : ""}</dd>` : ""}
+        ${l.fix ? `<dt>${l.suggested ? "Suggested fix" : "Replace with"}</dt><dd><a class="ok" href="${esc(l.fix)}" target="_blank" rel="noopener">${esc(shortUrls(l.fix, f))}</a>${l.suggested ? ` <span class="dim">(${esc(l.suggested)}; check before applying)</span>` : ""}${l.copies ? ` <span class="dim">(each translation: the same in its own language)</span>` : ""}</dd>` : ""}
         ${origin(l)}
+        ${(l.no_translation || []).length ? `<dt>Translation missing</dt><dd>The target has no ${esc(l.no_translation.join(", "))} version yet, so ${l.no_translation.length === 1 ? "that page links" : "those pages link"} the English page until it is translated.</dd>` : ""}
         <dt>Source file</dt><dd class="mono">${esc(l.file)}, line ${esc(l.line)}</dd>
         ${l.commit ? `<dt title="the commit that last changed this line (git blame)">Last changed</dt><dd>${commit(l.commit)}${l.origin === "english" ? " <span class=\"dim\">(English post)</span>" : ""}</dd>` : ""}</dl>`).join("")}</div>`).join("")}
       <span class="obs-sub">${total > f.evidence.locations.length

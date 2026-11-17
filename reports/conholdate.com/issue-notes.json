@@ -1,13 +1,71 @@
 {
- "intl-0003": {"notes": [
-  {"date": "2026-11-16", "by": "Agent", "text": "3 English posts link https://blog.conholdate.com//total/… (double slash): convert-mpp-to-csv-in-java, redact-excel-in-java, fuzzy-search-in-csharp; their 17 translations copied it (/ar//total/…). Fix: one slash (B5 batch 1, waiting for approval)."}]},
- "crawl-0003": {"notes": [
-  {"date": "2026-11-16", "by": "Agent", "text": "4 English posts link a wrong slug and their translations copied it: view-stl-files-online (find-synonym-in-java → find-synonyms-in-java), convert-html-to-xps-csharp (convert-excel-to-pdf-in-java → convert-excel-to-pdf-using-java), add-table-of-contents-to-word-document-in-java (add-a-table-of-contents-in-word-using-csharp → add-table-of-contents-in-word-using-csharp), convert-word-to-image-in-java (convert-word-to-pdf-in-java → convert-word-to-pdf-using-java)."},
-  {"date": "2026-11-16", "by": "Agent", "text": "convert-html-to-pdf-online: 9 translations link create-ms-PDF-documents-in-csharp (the English post links create-ms-word-documents-in-csharp), changed by the bulk commit 96c6e6d4 of 2024-05-23. Fix: the English target with the language prefix (B5 batch 2, waiting for approval). Prevention: the commit check (B6) flags broken links in new English posts before they are translated."}]},
- "intl-0002": {"notes": [
-  {"date": "2026-11-16", "by": "Agent", "text": "extract-text-and-images-from-pdf (th, tr, vi) links the old slug /<lang>/total/jpg-to-readable-text-ocr-full-form/ (Redirects.json covers only en and ru). Fix: /<lang>/total/jpg-text-scanner/, as the English post has it (B5 batch 3, waiting for approval)."}]},
- "intl-0004": {"notes": [
-  {"date": "2026-11-16", "by": "Agent", "text": "22 posts × 17 languages: reference links keep the English URL although the page exists in that language. Cause: manual 'translations' commits of Aug–Dec 2025, not the translation agent (its 2026 translations have none). Fix: add the language prefix (B5 batch 4, waiting for approval); no agent change needed."}]},
- "crawl-261116-1": {"notes": [
-  {"date": "2026-11-16", "by": "SK", "text": "The blog developer checks both URLs (proposal: keep add-barcode-to-pdf-in-java of 2026-05-08 and delete the 2026-04-22 post; delete the 2024 copy of convert-html-to-image-java); otherwise we do it later as proposed."}]}
+ "intl-0003": {
+  "notes": [
+   {
+    "date": "2026-11-16",
+    "by": "Agent",
+    "text": "3 English posts link https://blog.conholdate.com//total/… (double slash): convert-mpp-to-csv-in-java, redact-excel-in-java, fuzzy-search-in-csharp; their 17 translations copied it (/ar//total/…). Fix: one slash (B5 batch 1, waiting for approval)."
+   }
+  ]
+ },
+ "crawl-0003": {
+  "notes": [
+   {
+    "date": "2026-11-16",
+    "by": "Agent",
+    "text": "4 English posts link a wrong slug and their translations copied it: view-stl-files-online (find-synonym-in-java → find-synonyms-in-java), convert-html-to-xps-csharp (convert-excel-to-pdf-in-java → convert-excel-to-pdf-using-java), add-table-of-contents-to-word-document-in-java (add-a-table-of-contents-in-word-using-csharp → add-table-of-contents-in-word-using-csharp), convert-word-to-image-in-java (convert-word-to-pdf-in-java → convert-word-to-pdf-using-java)."
+   },
+   {
+    "date": "2026-11-16",
+    "by": "Agent",
+    "text": "convert-html-to-pdf-online: 9 translations link create-ms-PDF-documents-in-csharp (the English post links create-ms-word-documents-in-csharp), changed by the bulk commit 96c6e6d4 of 2024-05-23. Fix: the English target with the language prefix (B5 batch 2, waiting for approval). Prevention: the commit check (B6) flags broken links in new English posts before they are translated."
+   },
+   {
+    "date": "2026-11-17",
+    "by": "Agent",
+    "text": "The link check now suggests a fix for every broken link it can match with certainty (an existing post with the same words in order, or the page the English post links), in the translation's own language when that exists; the report marks it 'Suggested fix, check before applying'."
+   }
+  ]
+ },
+ "intl-0002": {
+  "notes": [
+   {
+    "date": "2026-11-16",
+    "by": "Agent",
+    "text": "extract-text-and-images-from-pdf (th, tr, vi) links the old slug /<lang>/total/jpg-to-readable-text-ocr-full-form/ (Redirects.json covers only en and ru). Fix: /<lang>/total/jpg-text-scanner/, as the English post has it (B5 batch 3, waiting for approval)."
+   },
+   {
+    "date": "2026-11-17",
+    "by": "Agent",
+    "text": "Not fixed: reclassified on 17 Nov as crawl-261117-1 (old URL). The English slug jpg-to-readable-text-ocr-full-form redirects to jpg-text-scanner, which exists in th, tr and vi, so the link check now follows the redirect."
+   }
+  ]
+ },
+ "intl-0004": {
+  "notes": [
+   {
+    "date": "2026-11-16",
+    "by": "Agent",
+    "text": "22 posts × 17 languages: reference links keep the English URL although the page exists in that language. Cause: manual 'translations' commits of Aug–Dec 2025, not the translation agent (its 2026 translations have none). Fix: add the language prefix (B5 batch 4, waiting for approval); no agent change needed."
+   }
+  ]
+ },
+ "crawl-261116-1": {
+  "notes": [
+   {
+    "date": "2026-11-16",
+    "by": "SK",
+    "text": "The blog developer checks both URLs (proposal: keep add-barcode-to-pdf-in-java of 2026-05-08 and delete the 2026-04-22 post; delete the 2024 copy of convert-html-to-image-java); otherwise we do it later as proposed."
+   }
+  ]
+ },
+ "crawl-261117-1": {
+  "notes": [
+   {
+    "date": "2026-11-17",
+    "by": "Agent",
+    "text": "extract-text-and-images-from-pdf (th, tr, vi) links the old slug /<lang>/total/jpg-to-readable-text-ocr-full-form/. Fix: /<lang>/total/jpg-text-scanner/, as the English post has it (B5 batch 3, waiting for approval)."
+   }
+  ]
+ }
 }

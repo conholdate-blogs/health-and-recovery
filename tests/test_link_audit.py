@@ -165,6 +165,41 @@ def test_copied_broken_link_is_one_location_under_the_english_post(tmp_path):
     assert locs[0]["file"].endswith("/index.md")
 
 
+def test_broken_link_suggestions_only_when_certain(tmp_path):
+    # 17 Nov 2026, blog.conholdate.com: wrong slugs in English posts, copied by 17 translations
+    a = LinkAudit(make_tenant(tmp_path), FakeFetcher({}), AuditStore(":memory:"), inventory([]), blame=False, log=None)
+    known = {"/total/find-synonyms-in-java/", "/total/find-synonym-in-csharp/", "/total/convert-excel-to-pdf-using-java/",
+             "/total/convert-xml-to-pdf-in-java/", "/ru/total/find-synonyms-in-java/",
+             "/total/create-ms-word-documents-in-csharp/", "/total/a-b-in-java/", "/total/a-b-using-java/"}
+    assert a.suggest("/total/find-synonym-in-java/", "en", known, []) == (
+        "/total/find-synonyms-in-java/", "existing post with the same words")
+    assert a.suggest("/total/find-synonym-in-java/", "ru", known, [])[0] == "/ru/total/find-synonyms-in-java/"
+    assert a.suggest("/total/convert-excel-to-pdf-in-java/", "en", known, [])[0] == \
+        "/total/convert-excel-to-pdf-using-java/"  # never the xml post: other words
+    assert a.suggest("/total/a-b-for-java/", "en", known, []) == (None, "")  # two posts with the same words: no guess
+    assert a.suggest("/total/convert-pdf-to-excel-in-java/", "en", known, []) == (None, "")  # other order
+    assert a.suggest("/total/find-synonym-in-java/", "de", known, [])[0] == "/total/find-synonyms-in-java/"  # no de
+    assert a.suggest("/total/never-existed/", "en", known, []) == (None, "")
+    # a translation changed a word: the English original links the right page
+    assert a.suggest("/total/create-ms-PDF-documents-in-csharp/", "de", known,
+                     ["/total/create-ms-word-documents-in-csharp/"]) == (
+        "/total/create-ms-word-documents-in-csharp/", "the English post links this page")
+
+
+def test_old_english_slug_in_a_translation_follows_the_redirect(tmp_path):
+    # 17 Nov 2026: th/tr/vi linked /<lang>/total/<old slug>/; the English old slug redirects to a page that IS translated
+    from core.audit.links import Post
+    old, new = f"https://{HOST}/pdf/old-slug/", "https://blog.example.cloud/pdf/new-slug/"
+    a = LinkAudit(make_tenant(tmp_path), FakeFetcher({old: new}), AuditStore(":memory:"), inventory([]), blame=False,
+                  log=None)
+    p = Post(Path("x"), "x", "f", "ru", "/ru/pdf/a/", "", 0)
+    assert a.classify(HOST, p, "/ru/pdf/old-slug/", {"/pdf/new-slug/", "/ru/pdf/new-slug/"}, []) == (
+        "link_redirected", "/ru/pdf/new-slug/", "old URL; /pdf/old-slug/ redirects to /pdf/new-slug/")
+    # not translated yet: the English current page, and the missing translation is named
+    assert a.classify(HOST, p, "/ru/pdf/old-slug/", {"/pdf/new-slug/"}, []) == (
+        "link_missing_translation", "/pdf/new-slug/", "no ru translation of /pdf/new-slug/")
+
+
 def test_live_200_outside_the_sitemap_is_fine(tmp_path):
     _, report, _ = run_audit(tmp_path, live={f"https://{HOST}/pdf/removed-post/": 200,
                                              f"https://{HOST}/ru/pdf/removed-post/": 200})
