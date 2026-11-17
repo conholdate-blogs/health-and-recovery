@@ -66,6 +66,11 @@
     "date": "2026-11-17",
     "by": "Agent",
     "text": "The blog developer moved the 2026-05-08 add-barcode-to-pdf-in-java post to embed-barcode-into-pdf-in-java (52d70c5a, 16 Nov) and deleted its translations for retranslation (f0826572). convert-html-to-image-java still open. Checked at the next scan."
+   },
+   {
+    "date": "2026-11-17",
+    "by": "Agent",
+    "text": "Second duplicate resolved by the blog developer: the 2023-06-03 convert-html-to-image-java folder deleted (947c4056, 17 Nov); the other post keeps the URL. Both duplicates now gone in the repo; the next repo scan should resolve this issue."
    }
   ]
  },
