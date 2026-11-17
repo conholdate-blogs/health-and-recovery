@@ -254,6 +254,7 @@ p.agent-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px }
 .acard { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; text-align: left;
   font: inherit; color: inherit; cursor: pointer; display: flex; flex-direction: column; gap: 4px }
 .acard[aria-expanded="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) }
+.acard small.when { font-size: 11px } .acard small.when.old { color: var(--incorrect); font-weight: 600 }
 .acard small + .open, .acard svg + .open { margin-top: auto } .acard .an { font-weight: 600 } .acard b { font-size: 24px; line-height: 1.1 } .acard small { color: var(--muted); font-size: 12px }
 /* the card opens its data: a clear button-like marker (SK, 2026-11-12) */
 .acard .open { align-self: flex-start; margin-top: auto; font-size: 0; border: 1px solid var(--accent); border-radius: 999px;
@@ -599,6 +600,16 @@ __METHOD__
   const readable = t => String(t || "").replace(/(?<![\w\/-])(\d{4}-\d{2}-\d{2})(?![\w\/-])/g, d => day(d));
   // "9 Sep 2026 to 6 Oct 2026 (28 days)": both ends count
   const span = w => `${day(w[0])} to ${day(w[1])} (${Math.round((Date.parse(w[1]) - Date.parse(w[0])) / 864e5) + 1} days)`;
+  // "16 Nov" (no year), and a compact range of two ISO dates: "16 Nov 2026", "3–16 Nov 2026", "28 Oct – 16 Nov 2026"
+  const dShort = d => day(d).replace(/ \d{4}$/, "");
+  const dayRange = (a, b, year = true) => {
+    const Y = d => year ? day(d) : dShort(d);
+    if (!a || !b || a.slice(0, 10) === b.slice(0, 10)) return Y(a || b);
+    if (a.slice(0, 4) !== b.slice(0, 4)) return `${day(a)} – ${day(b)}`;
+    if (a.slice(5, 7) !== b.slice(5, 7)) return `${dShort(a)} – ${Y(b)}`;
+    return `${Number(a.slice(8, 10))}–${Y(b)}`;
+  };
+  const nOf = (n, w) => `${fmt(n)} ${w}${n === 1 ? "" : "s"}`;  // "1 page", "180 pages"
   const tmplName = (t, f) => t.startsWith("generic:")
     ? t.slice(8).replace("{section}", f._family || "…").replace(/\*/g, "…") || "/"
     : t;
@@ -1221,7 +1232,9 @@ __METHOD__
     const st = $(statusId);
     st.className = need ? "need" : "fine";
     // one row (a one-subdomain page): plain status, no "1 of 1" (SK, 2026-11-11)
-    st.textContent = rows.length === 1 ? (bad ? "· broken" : need ? "· needs attention" : "· fine")
+    // a row may carry `why` ("2 pages with errors"), so a one-row status says what is broken, not just "broken"
+    const why = rows.length === 1 && rows[0].why ? `: ${rows[0].why}` : "";
+    st.textContent = rows.length === 1 ? (bad ? `· broken${why}` : need ? `· needs attention${why}` : "· fine")
       : need ? `· ${need} of ${rows.length} ${noun} need attention${bad ? ` (${bad} broken)` : ""}` : `· all ${rows.length} fine`;
     // a one-row table on a one-subdomain page: the Subdomain column only repeats the page's subdomain
     if (rows.length === 1 && noun === "subdomains") {
@@ -1289,7 +1302,10 @@ __METHOD__
   if (A) {
     $("audit").hidden = false;
     const runs = A.runs || [{ run_id: A.run_id }];
-    $("audit-meta").textContent = `${runs.length > 1 ? "runs " + runs.map(r => r.run_id).join(", ") : "run " + A.run_id}${A.date ? " · " + day(A.date) : ""} · ${fmt(A.pages)} pages · ${fmt(A.requests)} requests`;
+    // plain words in the header; run numbers and request counts only on hover (SK, 2026-11-17)
+    const rd = runs.map(r => r.date).filter(Boolean).sort();
+    $("audit-meta").textContent = `· ${nOf(A.pages, "page")} checked${runs.length > 1 ? ` in ${runs.length} scans, ${dayRange(rd[0], rd[rd.length - 1])}` : A.date ? ` on ${day(A.date)}` : ""}`;
+    $("audit-meta").title = `Crawl audit run${runs.length > 1 ? "s" : ""} ${runs.map(r => r.run_id).join(", ")} · ${fmt(A.requests)} requests${runs.length > 1 ? " · a page checked in more than one scan shows its newest result" : ""}`;
     const p = A.params;
     const secs = Object.entries(A.sections || {}).filter(([, v]) => v.length);
     $("audit-scope").innerHTML = [
@@ -1302,7 +1318,10 @@ __METHOD__
       Object.entries(A.summary).map(([h, s]) => {
         const st = s.errors ? "bad" : (s.redirected || s.blocked || s.ignored) ? "warn" : "ok";
         const top = Object.entries(s.issues).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([c, n]) => `<b>${esc(CHECK(c))}</b> ${n}`).join(" · ");
-        return { st, w: s.pages, html: `<tr><td class="mono">${mk(st)}${esc(h)}</td><td class="n">${fmt(s.pages)}${s.ignored ? ` <span class="dim" title="Skipped by a tenant rule (e.g. private pages)">(${s.ignored} ignored)</span>` : ""}</td><td class="n">${fmt(s.ok_html)}</td><td class="n ${s.errors ? "bad" : ""}">${fmt(s.errors)}</td><td class="n ${s.redirected ? "warn" : ""}">${fmt(s.redirected)}</td><td class="n">${auditFindings.filter(f => f.subdomain === h).length}</td><td class="issues">${top || '<span class="ok">none</span>'}</td></tr>` };
+        // broken = page errors only; redirected, blocked and ignored pages make a row "needs attention"
+        const why = s.errors ? `${nOf(s.errors, "page")} with errors` : [s.redirected && `${fmt(s.redirected)} redirected`,
+          s.blocked && `${fmt(s.blocked)} blocked by robots.txt`, s.ignored && `${fmt(s.ignored)} ignored`].filter(Boolean).join(", ");
+        return { st, why, w: s.pages, html: `<tr><td class="mono">${mk(st)}${esc(h)}</td><td class="n">${fmt(s.pages)}${s.ignored ? ` <span class="dim" title="Skipped by a tenant rule (e.g. private pages)">(${s.ignored} ignored)</span>` : ""}</td><td class="n">${fmt(s.ok_html)}</td><td class="n ${s.errors ? "bad" : ""}">${fmt(s.errors)}</td><td class="n ${s.redirected ? "warn" : ""}">${fmt(s.redirected)}</td><td class="n">${auditFindings.filter(f => f.subdomain === h).length}</td><td class="issues">${top || '<span class="ok">none</span>'}</td></tr>` };
       }), "audit-st", "subdomains");
   }
 
@@ -1310,7 +1329,8 @@ __METHOD__
   const P = R._perf || null;
   if (P) {
     $("speed").hidden = false;
-    $("speed-meta").textContent = `run ${P.run_id}${P.date ? " · " + day(P.date) : ""} · ${fmt(P.pages)} pages · ${esc(P.params.strategy)}`;
+    $("speed-meta").textContent = `· ${nOf(P.pages, "page")} measured (${P.params.strategy})${P.date ? ` on ${day(P.date)}` : ""}`;
+    $("speed-meta").title = `Speed audit run ${P.run_id}`;
     const TH = { lcp: [2500, 4000], inp: [200, 500], cls: [0.1, 0.25] };
     const rate = (k, v) => v <= TH[k][0] ? "ok" : v > TH[k][1] ? "bad" : "warn";
     const val = (k, v) => k === "cls" ? v.toFixed(2) : v >= 1000 ? (v / 1000).toFixed(1) + " s" : Math.round(v) + " ms";
@@ -1321,7 +1341,9 @@ __METHOD__
         const rates = ["lcp", "inp", "cls"].filter(k => m[k] != null).map(k => rate(k, m[k]));
         const st = s.not_loaded || rates.includes("bad") ? "bad" : rates.includes("warn") ? "warn" : "ok";
         const origin = ["lcp", "inp", "cls"].filter(k => m[k] != null).map(k => `<span class="${rate(k, m[k]) === "ok" ? "" : rate(k, m[k])}">${k.toUpperCase()} ${val(k, m[k])}</span>`).join(" · ");
-        return { st, w: s.pages, html: `<tr><td class="mono">${mk(st)}${esc(h)}</td><td>${origin || '<span class="dim">too few visits for host data</span>'}</td><td class="n">${fmt(s.pages)}</td><td class="n">${fmt(s.field)}</td><td class="n ${s.not_loaded ? "bad" : ""}">${fmt(s.not_loaded || 0)}</td><td class="n">${s.median_score == null ? "–" : s.median_score}</td><td class="n">${perfFindings.filter(f => f.subdomain === h).length}</td></tr>` };
+        const why = [s.not_loaded && `${nOf(s.not_loaded, "page")} not loaded`,
+          ...["lcp", "inp", "cls"].filter(k => m[k] != null && rate(k, m[k]) !== "ok").map(k => `${k.toUpperCase()} ${rate(k, m[k]) === "bad" ? "poor" : "needs work"}`)].filter(Boolean).join(", ");
+        return { st, why, w: s.pages, html: `<tr><td class="mono">${mk(st)}${esc(h)}</td><td>${origin || '<span class="dim">too few visits for host data</span>'}</td><td class="n">${fmt(s.pages)}</td><td class="n">${fmt(s.field)}</td><td class="n ${s.not_loaded ? "bad" : ""}">${fmt(s.not_loaded || 0)}</td><td class="n">${s.median_score == null ? "–" : s.median_score}</td><td class="n">${perfFindings.filter(f => f.subdomain === h).length}</td></tr>` };
       }), "speed-st", "subdomains");
   }
 
@@ -1329,7 +1351,8 @@ __METHOD__
   const AI = R._ai || null;
   if (AI) {
     $("ai").hidden = false;
-    $("ai-meta").textContent = `run ${AI.run_id}${AI.date ? " · " + day(AI.date) : ""}`;
+    $("ai-meta").textContent = AI.date ? `· checked on ${day(AI.date)}` : "";
+    $("ai-meta").title = `AI audit run ${AI.run_id}`;
     const aiFindings = findings.filter(f => f.source === "ai-audit");
     const list = xs => xs.length > 3 ? `${xs.slice(0, 3).map(esc).join(", ")} +${xs.length - 3}` : xs.map(esc).join(", ");
     semi("ai-hosts", `<thead><tr><th>Subdomain</th><th>robots.txt (AI search)</th><th>Firewall (AI search)</th><th>Training crawlers blocked</th><th>llms.txt</th><th class="n">Families covered</th><th class="n">Findings</th></tr></thead>`,
@@ -1341,7 +1364,10 @@ __METHOD__
         const st = s.answer_blocked.length || fwAnswer.length || l.state === "invalid" ? "bad"
           : l.state === "missing" || (s.sections && s.sections_covered < s.sections) ? "warn" : "ok";
         const fam = s.sections ? `<span class="${s.sections_covered < s.sections ? "warn" : "ok"}">${s.sections_covered} / ${s.sections}</span>${s.section_files.length ? ` <span class="dim">(own file: ${list(s.section_files)})</span>` : ""}` : "–";
-        return { st, w: s.sections || 1, html: `<tr><td class="mono">${mk(st)}${esc(h)}</td><td>${s.answer_blocked.length ? `<span class="bad">blocks ${list(s.answer_blocked)}</span>` : `<span class="ok">allowed</span>${s.robots === 200 ? "" : ` <span class="dim">(no robots.txt: ${esc(s.robots)})</span>`}`}</td><td>${fwAnswer.length ? `<span class="bad">blocks ${list(fwAnswer)}</span>` : `<span class="ok">allowed</span>`}</td><td>${s.training_blocked.length ? list(s.training_blocked) : '<span class="dim">none</span>'}${fwTraining.length ? ` <span class="dim">(firewall: ${list(fwTraining)})</span>` : ""}</td><td>${llms}</td><td class="n">${fam}</td><td class="n">${aiFindings.filter(f => f.subdomain === h).length}</td></tr>` };
+        const why = [s.answer_blocked.length && `robots.txt blocks ${s.answer_blocked.join(", ")}`, fwAnswer.length && `firewall blocks ${fwAnswer.join(", ")}`,
+          l.state === "invalid" && "llms.txt invalid", l.state === "missing" && "no llms.txt",
+          s.sections && s.sections_covered < s.sections && `llms.txt covers ${s.sections_covered} of ${s.sections} sections`].filter(Boolean).join(", ");
+        return { st, why, w: s.sections || 1, html: `<tr><td class="mono">${mk(st)}${esc(h)}</td><td>${s.answer_blocked.length ? `<span class="bad">blocks ${list(s.answer_blocked)}</span>` : `<span class="ok">allowed</span>${s.robots === 200 ? "" : ` <span class="dim">(no robots.txt: ${esc(s.robots)})</span>`}`}</td><td>${fwAnswer.length ? `<span class="bad">blocks ${list(fwAnswer)}</span>` : `<span class="ok">allowed</span>`}</td><td>${s.training_blocked.length ? list(s.training_blocked) : '<span class="dim">none</span>'}${fwTraining.length ? ` <span class="dim">(firewall: ${list(fwTraining)})</span>` : ""}</td><td>${llms}</td><td class="n">${fam}</td><td class="n">${aiFindings.filter(f => f.subdomain === h).length}</td></tr>` };
       }), "ai-st", "subdomains");
   }
 
@@ -1358,7 +1384,10 @@ __METHOD__
       const nf = findings.filter(f => f.subdomain === name).length;
       const r = h.robots;
       const st = (r.error || r.is_html || h.sitemaps_failed.length) ? "bad" : (r.status !== 200 || !r.sitemaps.length) ? "warn" : "ok";
-      return { st, w: h.urls, html: `<tr><td class="mono">${mk(st)}${esc(name)}</td><td>${robotsCell(h.robots)}</td><td class="n">${fmt(h.sitemaps_ok)}</td><td class="n ${h.sitemaps_failed.length ? "bad" : ""}">${fmt(h.sitemaps_failed.length)}</td><td class="n">${fmt(h.urls)}</td><td class="n">${pct(hl, h.urls)}</td><td class="n">${nf}</td></tr>` };
+      const why = [r.error && `robots.txt: ${r.error}`, r.is_html && "robots.txt is an HTML page", !r.error && !r.is_html && r.status !== 200 && `robots.txt ${r.status}`,
+        r.status === 200 && !r.is_html && !r.sitemaps.length && "robots.txt has no Sitemap: line",
+        h.sitemaps_failed.length && `${nOf(h.sitemaps_failed.length, "sitemap")} failed`].filter(Boolean).join(", ");
+      return { st, why, w: h.urls, html: `<tr><td class="mono">${mk(st)}${esc(name)}</td><td>${robotsCell(h.robots)}</td><td class="n">${fmt(h.sitemaps_ok)}</td><td class="n ${h.sitemaps_failed.length ? "bad" : ""}">${fmt(h.sitemaps_failed.length)}</td><td class="n">${fmt(h.urls)}</td><td class="n">${pct(hl, h.urls)}</td><td class="n">${nf}</td></tr>` };
     }), "hosts-st", "subdomains");
 
   // sections: the host with the most sections that have real volume (product families)
@@ -1492,14 +1521,30 @@ __METHOD__
     const PANELS = { crawl: ["hosts-st", "gsc-st", "structure-st"], onpage: ["audit-st"], intl: ["sections-st"], ai: ["ai-st"], perf: ["speed-st"] };
     const panelsOf = d => (PANELS[d] || []).map(id => $(id) && $(id).closest("details")).filter(el => el && !el.hidden);
     const data = document.createElement("div"); data.id = "area-data";
+    // when each area was last checked: the scans whose findings land in it (sources per dimension, 17 Nov 2026)
+    const SCANS = { discovery: ["Sitemap scan", R._run_date], crawl: ["Crawl audit", A && A.date], repo: ["Repo check", R._repo && R._repo.date],
+      links: ["Link check", R._links && R._links.date], structure: ["Site structure", R._structure && R._structure.date],
+      text: ["Text check", R._text && R._text.date], ai: ["AI audit", R._ai && R._ai.date], perf: ["Speed audit", R._perf && R._perf.date] };
+    const AREA_SCANS = { crawl: ["discovery", "crawl", "repo", "links", "structure"], onpage: ["crawl", "text", "repo"],
+      intl: ["discovery", "crawl", "links", "repo"], ai: ["crawl", "ai"], perf: ["perf"], ux: ["crawl", "repo"] };
+    const scansOf = dim => (AREA_SCANS[dim] || []).map(k => SCANS[k]).filter(s => s[1]).map(([name, d]) => ({ name, date: d.slice(0, 10) }));
+    const checked = dim => {
+      const s = scansOf(dim); if (!s.length) return null;
+      const ds = s.map(x => x.date).sort(), age = Math.floor((Date.now() - Date.parse(ds[0])) / 864e5);
+      return { text: `checked ${dayRange(ds[0], ds[ds.length - 1], false)}`, old: age > 14,
+        list: s.map(x => `${x.name} ${day(x.date)}`).join(" · ") };
+    };
     const card = a => {
       const n = Object.values(a.counts || {}).reduce((x, v) => x + v, 0), b = (a.counts || {}).broken || 0, has = panelsOf(a.dimension).length;
       const scored = a.state === "scored";
       const sub = a.state === "not checked" ? "not checked in this run" : a.state === "no data" ? `no real-user data · lab median ${a.lab_median ?? "–"}`
         : !n ? "no issues" : (b ? `<span class="down">${b} broken</span> · ` : "") + `${n - b ? `${n - b} issue${n - b === 1 ? "" : "s"}` : ""}`;
-      const inner = `<span class="an">${esc(a.name)}</span><b>${scored ? a.health : "–"}</b>${sbar(scored ? a.health : null, a.grade)}<small>${sub}</small>${has ? `<span class="open">Data</span>` : ""}`;
-      return has ? `<button type="button" class="acard${scored ? " g-" + a.grade : ""}" data-dim="${esc(a.dimension)}" aria-expanded="false" aria-controls="area-data">${inner}</button>`
-        : `<div class="acard${scored ? " g-" + a.grade : ""}">${inner}</div>`;
+      const c = a.state === "not checked" ? null : checked(a.dimension);
+      const when = c ? `<small class="when${c.old ? " old" : ""}">${esc(c.text)}</small>` : "";
+      const tip = c ? ` title="${esc(c.list)}"` : "";
+      const inner = `<span class="an">${esc(a.name)}</span><b>${scored ? a.health : "–"}</b>${sbar(scored ? a.health : null, a.grade)}<small>${sub}</small>${when}${has ? `<span class="open">Data</span>` : ""}`;
+      return has ? `<button type="button" class="acard${scored ? " g-" + a.grade : ""}" data-dim="${esc(a.dimension)}" aria-expanded="false" aria-controls="area-data"${tip}>${inner}</button>`
+        : `<div class="acard${scored ? " g-" + a.grade : ""}"${tip}>${inner}</div>`;
     };
     $("sum-areas").innerHTML = `<span class="dim">Health by area · select an area to see its data</span><div class="acards">${AH.areas.map(card).join("")}</div>`;
     $("sum-areas").append(data);
@@ -1511,7 +1556,8 @@ __METHOD__
       $("sum-areas").querySelectorAll(".acard[data-dim]").forEach(c => c.setAttribute("aria-expanded", c.dataset.dim === dim));
       if (!dim) return;
       const a = AH.areas.find(x => x.dimension === dim), n = findings.filter(f => f.dimension === dim).length;
-      data.insertAdjacentHTML("beforeend", `<div class="ahead"><b>${esc(a ? a.name : dim)}: data</b>${n ? ` <a href="#findings" data-dim="${esc(dim)}">its ${n} issue${n === 1 ? "" : "s"} →</a>` : ""}</div>`);
+      const c = checked(dim);
+      data.insertAdjacentHTML("beforeend", `<div class="ahead"><b>${esc(a ? a.name : dim)}: data</b>${n ? ` <a href="#findings" data-dim="${esc(dim)}">its ${n} issue${n === 1 ? "" : "s"} →</a>` : ""}${c ? `<br><small class="dim">Checked by: ${esc(c.list)}</small>` : ""}</div>`);
       panelsOf(dim).forEach(el => data.append(el));
     };
     $("sum-areas").addEventListener("click", e => {
