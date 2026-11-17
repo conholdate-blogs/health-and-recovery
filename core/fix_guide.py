@@ -472,6 +472,14 @@ _ROWS = [
      "Point the link at the current URL of the post (or remove it); add a redirect for old URL patterns that "
      "many posts use. Fix the original post first, then its translations.",
      "Every listed link returns 200; next link audit has no finding."),
+    ("link_differs_from_original", "Links and translations", "Translation links another page than the original",
+     "A reference link [n] in a translation points at a different page than [n] in the English post, although "
+     "that link works (e.g. 'Extract Text from Word' pointing at the JPG-to-text post). Often a hand fix in the "
+     "translations that shifted a link, or a translation made before the English post changed.",
+     "Readers and crawlers land on an unrelated page; the anchor text and the target disagree.",
+     "Point it at the English post's target with the language prefix (the fix list gives it); when many links "
+     "differ, retranslate the post instead.",
+     "Every listed reference matches the English post; next link audit has no finding."),
     ("link_redirected", "Links and translations", "Internal link to an old URL",
      "A post links to an old URL of the same blog that redirects to the current page (usually through "
      "Redirects.json), e.g. a WordPress date URL. The link works only while the redirect works.",

@@ -63,7 +63,7 @@ GROUPS = {
                      "llms_txt_outdated", "llms_txt_charset", "ai_bot_blocked", "ai_bot_firewalled"), "ai"),
     **dict.fromkeys(("text_typo", "text_leftover", "text_topic_mismatch"), "wording"),
     **dict.fromkeys(("link_missing_translation", "link_damaged", "link_wrong_language", "link_broken",
-                     "link_redirected"), "internal links"),
+                     "link_redirected", "link_differs_from_original"), "internal links"),
     **dict.fromkeys(("translation_partial", "language_unsupported", "translated_url_mismatch", "translation_stale",
                      "section_index_untranslated"), "translations"),
     **dict.fromkeys(("redirect_file_invalid", "redirect_not_working", "redirect_key_malformed", "redirect_self_loop",

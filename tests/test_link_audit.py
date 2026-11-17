@@ -58,7 +58,7 @@ def make_repo(tmp: Path) -> Path:
          "[gone](/pdf/removed-post/).\n```\nhttps://blog.example.cloud/pdf/in-code/\n```")
     post(c / "pdf/2026-new", "index.ru.md", "/ru/pdf/new-post/",
          "См. [old](https://blog.example.cloud/ru/pdf/old-post/), [other](/words/other-post/), "
-         "[cut](https://blog.example.cloud/ru/pdf/convert-excel-to-csv-in-/) и [gone](/ru/pdf/removed-post/).\n"
+         "[cut](https://blog.example.cloud/ru/pdf/convert-excel-to-csv-in-/) и [gone](/ru/pdf/removed-post/) [d][9].\n"
          "[9]: https://blog.example.cloud/ru//pdf/old-post/\n![img](/ru/pdf/new-post/image.png)")
     post(c / "pdf/2026-new", "index.de.md", "/de/pdf/new-post/", "[ok](/de/words/other-post/)", eol="\r")
     # old post: English only (deliberately not translated)
@@ -109,7 +109,7 @@ def test_read_post_normalizes_cr_line_endings(tmp_path):
 
 def test_links_skip_code_files_and_other_hosts():
     text = ("---\nurl: /a/\n---\n[a](https://blog.example.cloud/x/) [b](https://other.com/y/) `[c](/code/)`\n"
-            "```\n[d](/in-fence/)\n```\n[e](/pic.png) <a href=\"/html-link\">h</a>\n[1]: /ref-link/ \"T\"\n"
+            "```\n[d](/in-fence/)\n```\n[e](/pic.png) <a href=\"/html-link\">h</a> [r][1]\n[1]: /ref-link/ \"T\"\n"
             "[f](/a/images/result.csv) [g](/b/input.TSV) [h](/c/run-in-node.js/) [i](/d/words-for-.net)\n")
     links = [p for _, p, _ in internal_links(text, text.index("---\n", 4) + 4, HOST)]
     assert links == ["/x/", "/html-link/", "/ref-link/", "/c/run-in-node.js/", "/d/words-for-.net/"]
@@ -322,3 +322,30 @@ def test_link_that_redirects_is_an_old_url_with_the_target_as_fix(tmp_path):
     assert [f["check"] for f in report["findings"] if f["check"] == "link_redirected"] == ["link_redirected"]
     _, report, _ = run_audit(tmp_path / "b", live={f"https://{HOST}/pdf/removed-post/": "https://other.com/x/"})
     assert not [i for i in report["hosts"][HOST]["issues"] if i["link"] == "/pdf/removed-post/"]
+
+
+def test_unused_reference_skipped_and_reference_differs_from_original():
+    # blog.conholdate.com, 17 Nov 2026: '[15]: …' defined but never used; th '[27]' pointed at another post than English
+    from core.audit.links import internal_links, reference_links, used_labels
+
+    body = "See [one][1], [two][2] and [Three][]\n\n[1]: https://h.com/a/\n[2]: https://h.com/b/\n" \
+           "[15]: https://h.com/unused/\n[three]: https://h.com/c/\n"
+    assert used_labels(body) == {"1", "2", "three"}
+    assert [x[1] for x in internal_links(body, 0, "h.com")] == ["/a/", "/b/", "/c/"]
+    assert sorted(reference_links(body, 0, "h.com")) == ["1", "2", "three"]
+
+
+def test_reference_differs_from_original(tmp_path):
+    from core.audit.links import Post
+
+    en_text = "---\nurl: /p/\n---\nSee [w][27] and [j][28]\n[27]: https://blog.example.cloud/total/word/\n" \
+              "[28]: https://blog.example.cloud/total/jpg/\n"
+    ru_text = "---\nurl: /ru/p/\n---\nСм. [w][27] и [j][28]\n[27]: https://blog.example.cloud/ru/total/jpg/\n" \
+              "[28]: https://blog.example.cloud/ru/total/jpg/\n"
+    a = LinkAudit(make_tenant(tmp_path), FakeFetcher({}), AuditStore(":memory:"), inventory([]), log=None)
+    en = Post(tmp_path / "index.md", "c/p/index.md", "c/p", "en", "/p/", en_text, en_text.index("See"))
+    ru = Post(tmp_path / "index.ru.md", "c/p/index.ru.md", "c/p", "ru", "/ru/p/", ru_text, ru_text.index("См."))
+    known = {"/total/word/", "/total/jpg/", "/ru/total/word/", "/ru/total/jpg/"}
+    out = a.differs_from_original(HOST, ru, en, known, [])
+    assert [(i["line"], i["fix"]) for i in out] == [(5, f"https://{HOST}/ru/total/word/")]
+    assert a.differs_from_original(HOST, ru, en, known, [{"file": "c/p/index.ru.md", "line": 5}]) == []

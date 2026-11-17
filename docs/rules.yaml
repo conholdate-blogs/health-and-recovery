@@ -141,6 +141,13 @@ rules:
     date: 2026-11-16
     checks: [post_body_h1, h1_multiple]
     status: active
+  - id: TR-6
+    rule: "A translation links the same pages as its English post (language prefix added where the translation exists); unused reference definitions do not count."
+    why: "blog.conholdate.com, 17 Nov 2026: th/tr/vi '[27] Extract Text from Word' pointed at the JPG post; it worked, so no link check saw it. A '[15]' that no text used was counted as a broken link although it is never on the page."
+    set_by: Health and Recovery Agent
+    date: 2026-11-17
+    checks: [link_differs_from_original]
+    status: active
   - id: TD-3
     rule: "Shortcodes are written {{< name … >}} (or {{% … %}}); tools that edit posts never escape or strip < and >."
     why: "On blog.conholdate.com 4 English posts showed {{ gist … }} as text, without images and code (an optimizer escaped them, Jun 2026; a hand fix dropped the brackets). Found 17 Nov 2026 before they were retranslated."

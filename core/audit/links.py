@@ -19,6 +19,9 @@
   link_redirected          the link works only through a redirect to another page of the blog (an old URL); the
                            fix is the redirect's target, in the page's language when that exists (SK, 2026-11-06:
                            a 404 link that starts redirecting is not fixed, the post still holds the old URL)
+  link_differs_from_original  a translation's reference [n] points at another page than [n] in the default-language
+                           post, although it works (only references the text uses; unused definitions are never
+                           rendered and are skipped by every check)
 - Translation sets (only with `translation_languages` in the tenant YAML): translation_partial = a post translated
   into some supported languages but not all; language_unsupported = the sitemaps publish a language that is not
   supported (its pages are listed with no translated posts behind them).
@@ -59,6 +62,9 @@ CHECKS = {
                     "Every internal link points at a live page", 1, "M"),
     "link_redirected": ("crawl", "improvable", "Posts link to old URLs that redirect",
                         "Every internal link points at the page's current URL, not one that redirects", 1, "S"),
+    "link_differs_from_original": ("intl", "incorrect", "Translations link another page than the English post",
+                                   "Each reference link of a translation points at the same page as in the English "
+                                   "post, in the translation's language when that exists", 1, "S"),
     "translation_partial": ("intl", "incorrect", "Posts translated into only some supported languages",
                             "A translated post exists in every supported language", 1, "S"),
     "language_unsupported": ("intl", "improvable", "Sitemaps publish languages that are not supported",
@@ -105,26 +111,71 @@ def mask_code(text: str) -> str:
     return _INLINE_CODE.sub(blank, _FENCE.sub(blank, text))
 
 
+_REF_DEF = re.compile(r"^[ \t]{0,3}\[([^\]\n]+)\]:[ \t]*<?(\S+?)>?(?:[ \t]+[\"'(].*)?$", re.M)
+_REF_USE = re.compile(r"\]\[([^\]\n]*)\]|\[([^\]\n]+)\](?![\[(:])")
+
+
+def used_labels(body: str) -> set[str]:
+    """Reference labels the text uses: [text][label], [label][] and the shortcut [label] (lower case, as Markdown
+    matches them). A definition nobody uses is never rendered, so its link is not on the page (17 Nov 2026,
+    blog.conholdate.com: a '[15]: …' left over in a post and all its translations)."""
+    body = _REF_DEF.sub("", body)
+    out = set()
+    for m in _REF_USE.finditer(body):
+        if m.group(1) is not None:
+            if m.group(1):
+                out.add(m.group(1).strip().lower())
+            else:  # [label][]: the label is the preceding [..]
+                pre = body.rfind("[", 0, m.start())
+                if pre >= 0:
+                    out.add(body[pre + 1:m.start()].strip().lower())
+        else:
+            out.add(m.group(2).strip().lower())
+    return out
+
+
+def _host_path(raw: str, host: str) -> str | None:
+    if raw.startswith(("http://", "https://")):
+        parts = urlsplit(raw)
+        if parts.netloc.lower() != host:
+            return None
+        path = parts.path or "/"
+    elif raw.startswith("/") and not raw.startswith("//"):
+        path = raw
+    else:
+        return None
+    return None if _FILE_EXT.search(path.split("#", 1)[0].split("?", 1)[0]) else path
+
+
 def internal_links(text: str, start: int, host: str) -> list[tuple[str, str, int]]:
-    """(raw link, path, line) for every link to `host` in the body (text[start:])."""
+    """(raw link, path, line) for every link to `host` in the body (text[start:]); reference definitions only when
+    the text uses their label."""
     body = mask_code(text)
+    used = used_labels(body[start:])
     out = []
-    for rx in _LINKS:
+    for i, rx in enumerate(_LINKS):
         for m in rx.finditer(body, start):
-            raw = m.group(1).strip()
-            if raw.startswith(("http://", "https://")):
-                parts = urlsplit(raw)
-                if parts.netloc.lower() != host:
-                    continue
-                path = parts.path or "/"
-            elif raw.startswith("/") and not raw.startswith("//"):
-                path = raw
-            else:
+            if i == 1 and m.group(0).strip()[1:].split("]", 1)[0].strip().lower() not in used:
                 continue
-            if _FILE_EXT.search(path.split("#", 1)[0].split("?", 1)[0]):
+            raw = m.group(1).strip()
+            path = _host_path(raw, host)
+            if path is None:
                 continue
             out.append((raw, norm_path(path), text.count("\n", 0, m.start(1)) + 1))
     return sorted(set(out), key=lambda x: (x[2], x[1], x[0]))
+
+
+def reference_links(text: str, start: int, host: str) -> dict[str, tuple[str, str, int]]:
+    """label -> (raw link, path, line) of the used reference definitions that point at `host`."""
+    body = mask_code(text)
+    used = used_labels(body[start:])
+    out = {}
+    for m in _REF_DEF.finditer(body, start):
+        label = m.group(1).strip().lower()
+        path = _host_path(m.group(2).strip(), host)
+        if label in used and path is not None and label not in out:
+            out[label] = (m.group(2).strip(), norm_path(path), text.count("\n", 0, m.start(2)) + 1)
+    return out
 
 
 @dataclass
@@ -422,6 +473,8 @@ class LinkAudit:
                     issues.append({"check": check, "lang": p.lang, "page": f"https://{host}{p.path}",
                                    "file": p.rel, "line": line, "link": raw,
                                    "fix": f"https://{host}{fix}" if fix else None, "note": note})
+            if original and p is not original:
+                issues += self.differs_from_original(host, p, original, known, issues)
         if self.blame:
             for rel in sorted({i["file"] for i in issues}):
                 lines = self.blame_lines(host, rel)
@@ -437,6 +490,29 @@ class LinkAudit:
         return {"repo": self.repo_state(host), "discovery_run": run, "sitemap_paths": len(known),
                 "posts": len(posts), "posts_without_url": skipped, "links": counts["links"],
                 "live_checked": live[False], "not_checked": live[True], "issues": issues, **sets}
+
+    def differs_from_original(self, host: str, p: Post, original: Post, known: set[str], issues: list[dict]
+                              ) -> list[dict]:
+        """A translation's reference [n] that points at another page than the English post's [n] (17 Nov 2026,
+        blog.conholdate.com: '[27] Extract Text from Word…' pointed at the JPG post in th/tr/vi; the link works, so
+        no other check saw it). Reported only when the English target exists and the line has no other issue."""
+        flagged = {i["line"] for i in issues if i["file"] == p.rel}
+        en_refs = reference_links(original.text, original.body_start, host)
+        out = []
+        for label, (raw, path, line) in reference_links(p.text, p.body_start, host).items():
+            if label not in en_refs or line in flagged:
+                continue
+            en_rest = self.split_lang(en_refs[label][1])[1]
+            if self.split_lang(path)[1] == en_rest:
+                continue
+            if en_rest not in known and self.live_status(host, en_rest) != 200:
+                continue
+            own = self.localized(p.lang, en_rest)
+            fix = own if own in known else en_rest
+            out.append({"check": "link_differs_from_original", "lang": p.lang, "page": f"https://{host}{p.path}",
+                        "file": p.rel, "line": line, "link": raw, "fix": f"https://{host}{fix}",
+                        "note": f"[{label}] in the English post links {en_rest}"})
+        return out
 
     def translation_sets(self, host: str, by_folder: dict, sitemap_langs: Counter) -> dict:
         if not self.supported:
