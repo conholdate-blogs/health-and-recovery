@@ -155,6 +155,16 @@ def test_classifies_every_kind(tmp_path):
     assert len(fetcher.asked) == len(set(fetcher.asked))  # each target fetched once
 
 
+def test_copied_broken_link_is_one_location_under_the_english_post(tmp_path):
+    # SK, 2026-11-17: say the English post has the bad link and N translations copied it
+    _, report, _ = run_audit(tmp_path)
+    f = next(f for f in report["findings"] if f["check"] == "link_broken")
+    locs = [loc for loc in f["evidence"]["locations"] if "removed-post" in loc["url"]]
+    assert len(locs) == 1
+    assert locs[0]["origin"] == "english" and locs[0]["copies"] == 1 and locs[0]["copy_langs"] == ["ru"]
+    assert locs[0]["file"].endswith("/index.md")
+
+
 def test_live_200_outside_the_sitemap_is_fine(tmp_path):
     _, report, _ = run_audit(tmp_path, live={f"https://{HOST}/pdf/removed-post/": 200,
                                              f"https://{HOST}/ru/pdf/removed-post/": 200})

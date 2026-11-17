@@ -1103,12 +1103,20 @@ __METHOD__
     for (const l of f.evidence.locations) { if (!pages.has(l.page)) pages.set(l.page, []); pages.get(l.page).push(l); }
     const commit = c => { const m = /^(\S+) (\d{4}-\d{2}-\d{2}): (.*)$/.exec(c || "");
       return m ? `<span class="mono">${esc(m[1])}</span> · ${esc(day(m[2]))} · <span class="msg">“${esc(m[3])}”</span>` : esc(c); };
+    // where the bad link comes from (SK, 2026-11-17): the English post first, then how many translations copied it
+    const origin = l => !l.copies ? "" : l.origin === "english"
+      ? `<dt>Origin</dt><dd><b>The English post has this link</b>; ${l.copies} translation${l.copies === 1 ? "" : "s"} copied it <span class="dim">(${esc(l.copy_langs.join(", "))})</span>. Fix the English post first.</dd>`
+      : `<dt>Origin</dt><dd>The English post is fine; <b>${l.copies + 1} translations</b> have this link <span class="dim">(this one and ${esc(l.copy_langs.join(", "))})</span>.</dd>`;
+    const total = f.evidence.locations.reduce((n, l) => n + 1 + (l.copies || 0), 0);
     return `<div class="lkpages">${[...pages].map(([p, ls]) => `<div class="lkpage"><a href="${esc(p)}" target="_blank" rel="noopener">${esc(shortUrls(p, f) || p)}</a>${ls.map(l => `
       <dl class="lk"><dt>Link</dt><dd class="bad">${esc(shortUrls(l.url, f))}</dd>
-        ${l.fix ? `<dt>Replace with</dt><dd><a class="ok" href="${esc(l.fix)}" target="_blank" rel="noopener">${esc(shortUrls(l.fix, f))}</a></dd>` : ""}
+        ${l.fix ? `<dt>Replace with</dt><dd><a class="ok" href="${esc(l.fix)}" target="_blank" rel="noopener">${esc(shortUrls(l.fix, f))}</a>${l.copies ? ` <span class="dim">(each translation: the same in its own language)</span>` : ""}</dd>` : ""}
+        ${origin(l)}
         <dt>Source file</dt><dd class="mono">${esc(l.file)}, line ${esc(l.line)}</dd>
-        ${l.commit ? `<dt title="the commit that last changed this line (git blame)">Last changed</dt><dd>${commit(l.commit)}</dd>` : ""}</dl>`).join("")}</div>`).join("")}
-      <span class="obs-sub">${f.evidence.locations.length} links shown on ${pages.size} pages; the link check's fix list (CSV) has every one.</span></div>`;
+        ${l.commit ? `<dt title="the commit that last changed this line (git blame)">Last changed</dt><dd>${commit(l.commit)}${l.origin === "english" ? " <span class=\"dim\">(English post)</span>" : ""}</dd>` : ""}</dl>`).join("")}</div>`).join("")}
+      <span class="obs-sub">${total > f.evidence.locations.length
+        ? `${total} links shown in ${pages.size} posts (translations that copied a link are counted under its original)`
+        : `${total} links shown on ${pages.size} pages`}; the link check's fix list (CSV) has every one.</span></div>`;
   };
   const PAGE = 10;
   let showAll = false;

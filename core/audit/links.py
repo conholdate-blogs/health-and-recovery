@@ -376,6 +376,32 @@ class LinkAudit:
         f["evidence"]["locations"] = locations[:MAX_LOCATIONS]
         return f
 
+    def grouped_locations(self, host: str, items: list[dict]) -> list[dict]:
+        """One location per post and link target (SK, 2026-11-17: say clearly that the English post has the bad link
+        and its translations copied it, instead of 18 rows that each show a translation commit). When the English
+        post has the issue, the location is the English line (page, file, commit) with `copies` and `copy_langs`;
+        when only translations share it, the first translation stands for the group (`origin: translations`)."""
+        def target(i):
+            path = urlsplit(i["link"]).path if i["link"].startswith("http") else i["link"]
+            return self.split_lang(path)[1].rstrip("/")
+
+        groups: dict[tuple, list[dict]] = defaultdict(list)
+        for i in items:
+            groups[(i["file"].rsplit("/", 1)[0], target(i))].append(i)
+        locs = []
+        for members in groups.values():
+            members.sort(key=lambda i: (i["lang"] != self.default_lang, i["lang"], i["line"]))
+            head, rest = members[0], members[1:]
+            # separate fields, so the report can lay out page, link, fix, file and commit on their own lines
+            loc = {"role": "link", "url": head["link"] if head["link"].startswith("http") else f"https://{host}{head['link']}",
+                   "page": head["page"], "file": head["file"], "line": head["line"], "fix": head["fix"],
+                   "commit": head.get("commit")}
+            if rest:
+                loc.update(copies=len(rest), copy_langs=[i["lang"] for i in rest],
+                           origin="english" if head["lang"] == self.default_lang else "translations")
+            locs.append(loc)
+        return sorted(locs, key=lambda x: (x["page"], x["line"]))
+
     def findings(self) -> list[dict]:
         ids = FindingIds()
         out = []
@@ -400,11 +426,7 @@ class LinkAudit:
                     copied = sum(1 for i in items if i["note"].startswith("same broken"))
                     if copied:
                         observed += f"; {copied:,} copied from the original post"
-                # separate fields, so the report can lay out page, link, fix, file and commit on their own lines
-                locs = [{"role": "link", "url": i["link"] if i["link"].startswith("http") else f"https://{host}{i['link']}",
-                         "page": i["page"], "file": i["file"], "line": i["line"], "fix": i["fix"],
-                         "commit": i.get("commit")}
-                        for i in sorted(items, key=lambda i: (i["page"], i["line"]))]
+                locs = self.grouped_locations(host, items)
                 out.append(self._finding(ids, check, host, pages, observed, locs, len(pages)))
             if r["partial"]:
                 missing = Counter(lg for p in r["partial"] for lg in p["missing"])
