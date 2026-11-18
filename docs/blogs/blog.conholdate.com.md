@@ -54,6 +54,31 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 18 Nov (evening): fix here, not retranslate (SK)
+
+SK: fix here what can be fixed here; only articles that surely need it go to retranslation. The queue is being
+rebuilt by SK (translation agent reset), so these fixes touch only translations that are up to date with their
+English post (never a queued one: our commit would drop it from the queue).
+
+| Commit (conholdate-blog) | What | State |
+|---|---|---|
+| 777e7263 | Batch 4: 493 links in 255 current translations to the translated post instead of the English one (14 posts Aug–Oct 2025 × 2 "See also" links × 17 languages, + convert-pptx-to-docx-java); live sample of new targets 40/40 200 | local, waits for SK's push + deploy |
+| 1f806a91 | 7 values that were an LLM answer / garbage (ko dwf, html-to-bmp; tr stl, mpp + its seoTitle, xps; pl merge-pdf; nl 3mf description) replaced by a real translation (own commit, SK) | local, waits for SK's push + deploy |
+| c49b7358 | 151 values left in English in 125 current translations (title 65, seoTitle 66, description 20) translated by hand in each language's style. Each file re-parsed: only those fields changed, lengths within 70/170 | local, waits for SK's push + deploy |
+
+- Rescan before (repo + link runs 103/104): resolved `link_damaged`, `link_redirected`, `post_url_duplicate`. Left
+  broken: 17 `link_broken` = view-stl-files-online translations (`find-synonym-in-java`), which are behind a real
+  optimizer rewrite (seoTitle, description, summary, headings, Jun/Sep 2026); decide after the queue reset (fix the
+  link + an ISSUE row).
+- Outdated translations here: 3,767; English changes since: body > 20 lines 168 posts / 2,849 translations, 6–20
+  lines 28 / 476, 1–5 lines or front matter only 26 / 442 (candidates to fix here), our fixes only 2 / 34.
+- Not a defect: 5,855 translations in 395 posts carry the gist code inline (translated comments) instead of
+  `{{< gist >}}`; the older pipeline's convention. The commit check's code-fence warning on such files is expected.
+- Next found, not fixed: many translated titles are half English ("Convert LaTeX zu PDF in Java", id "Convert PUB
+  ke Word…", pl "Convert LaTeX do PDF"); `post_text_untranslated` sees only exact English. Candidate check + fix.
+- Retranslation candidates CSV: the 7 garbled rows are fixed here and no longer needed as ISSUE rows; the 4 queued
+  garbled files and the 2 posts wait for the new queue.
+
 ## 18 Nov (later): queue model, Markdown in front matter, garbled translations
 
 - **Queue model (SK):** the sheet holds only missing translations, optimizer-changed posts, our `AUDIT` records and
