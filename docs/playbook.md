@@ -41,9 +41,20 @@ has its own log in [blogs/](blogs/) with its facts, findings, decisions and fixe
     fix) resets the dates, so older English rewrites are not seen as OUTDATED.
   - **A translation with more or fewer references than the English post is usually an outdated copy, not a link
     bug** (SK, 18 Nov): compare `git log --follow` of `index.md` with the translation's first commit. If the English
-    changed after it, do not patch links (the text stays incomplete); make a small real fix in the English post
-    only (e.g. literal `**` in a description, unused reference definitions), as the **last** commit on that post,
-    so the scanner queues all its translations. Example: blog.conholdate.com 3f942379.
+    changed after it, do not patch links (the text stays incomplete); queue the post for retranslation. Until the
+    scanner keeps hand-added rows this was done with a small real English fix as the last commit (blog.conholdate.com
+    3f942379); from then on it is a sheet record (below).
+  - **Queue model (SK, 18 Nov; SK is changing the scanner):** the queue holds only (a) missing translations,
+    (b) posts whose `index.md` the optimization agent changed, (c) translations we find with several considerable
+    issues (Issue `AUDIT`, with evidence in Notes), (d) low-quality translations from the quality agent (`QUALITY`).
+    The scanner updates rows instead of rewriting the tab. Everything else we fix in place: links, `**`, shortcodes,
+    tags, front matter, English and its current translations in one commit. Candidates for (c) go to
+    `reports/<tenant>/retranslate-candidates.csv`; SK adds the rows (our service account reads the sheet only).
+    Considerable = an LLM answer, code or garbage instead of a translated title/description (`translation_text_garbled`),
+    or a translation older than an English rewrite with a different structure (headings, references).
+  - **Markup-only fixes (`**` etc., rule TD-4) never queue a retranslation:** fix current translations in the same
+    commit, leave queued (OUTDATED) translations alone, and wait with English-only changes that would mark clean
+    current translations OUTDATED until only optimizer commits count.
 
 ## Fix catalogue (proven on blog.conholdate.cloud, 11 Nov 2026: 84 → 100 with real fixes only)
 

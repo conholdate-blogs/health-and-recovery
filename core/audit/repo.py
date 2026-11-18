@@ -94,6 +94,16 @@ CHECKS = {
     "post_shortcode_as_text": ("onpage", "broken", "Shortcodes shown as text instead of images or code",
                                "Every shortcode is written {{< name … >}} (or {{% … %}}), never {{ name … }} or "
                                "{{&lt; … &gt;}}", 1, "S"),
+    # found on blog.conholdate.com, 18 Nov 2026: '**' in descriptions, shown as is in the meta description, Open Graph,
+    # JSON-LD and RSS (front matter is plain text; Hugo renders no Markdown there)
+    "post_front_matter_markup": ("onpage", "improvable", "Markdown in post titles or descriptions",
+                                 "title, seoTitle, description and summary are plain text: no **, __, ` or [x](url)",
+                                 1, "S"),
+    # found on blog.conholdate.com, 18 Nov 2026: 10 translated titles were the LLM's answer ("You can follow these steps
+    # to convert …: 1. …", code), one description ran into hundreds of zero-width characters
+    "translation_text_garbled": ("intl", "incorrect", "Translations whose title or description is not a translation",
+                                 "A translation's title, seoTitle and description are one line about as long as the "
+                                 "English value (not an answer, code, steps or repeated characters)", 3, "M"),
     "translated_url_mismatch": ("intl", "incorrect",
                                 "Translations published under a different URL than the English post",
                                 "A translation's URL is the English post's URL with only its language prefix added",
@@ -194,6 +204,49 @@ def shortcodes_as_text(body: str, names: set[str]) -> list[tuple[int, str]]:
         if m:
             out.append((n, ln.strip()[:100]))
     return out
+
+
+FM_TEXT_FIELDS = ("title", "seoTitle", "description", "summary")
+_FM_MARKUP = (("**", re.compile(r"\*\*")), ("__", re.compile(r"(?<![\w])__\w|\w__(?![\w])")),
+              ("`", re.compile(r"`")), ("[x](url)", re.compile(r"\[[^\]]+\]\([^)]+\)")))
+
+
+def front_matter_markup(data: dict) -> list[tuple[str, str, str]]:
+    """(field, markup, value) for each plain-text front-matter field that carries Markdown. Hugo puts these values into
+    the meta description, Open Graph, JSON-LD and RSS as they are, so '**' shows up in search snippets. Single * and
+    _ are left out (C*, file_name)."""
+    out = []
+    for field in FM_TEXT_FIELDS:
+        val = data.get(field)
+        if not isinstance(val, str):
+            continue
+        marks = [name for name, pat in _FM_MARKUP if pat.search(val)]
+        if marks:
+            out.append((field, ", ".join(marks), val))
+    return out
+
+
+GARBLED_RATIO = 6  # translation width / English width; real translations stay under 4 (blog.conholdate.com, 18 Nov)
+_ZERO_WIDTH_RUN = re.compile(r"[​-‍⁠﻿]{5,}")
+
+
+def garbled_text(value: str, english: str) -> str | None:
+    """Why a translated title or description is not a translation, or None: a line break the English value does not
+    have (the LLM answered with steps or code), a run of zero-width characters, or a width >= GARBLED_RATIO times the
+    English one."""
+    from core.audit.crawl import display_len
+
+    v, e = value.strip(), english.strip()
+    if not v or not e:
+        return None
+    if "\n" in v and "\n" not in e:
+        return "several lines (an answer, steps or code instead of a translation)"
+    if _ZERO_WIDTH_RUN.search(v):
+        return "a run of zero-width characters"
+    ratio = display_len(v) / max(display_len(e), 1)
+    if ratio >= GARBLED_RATIO:
+        return f"{ratio:.0f}x as long as the English value"
+    return None
 
 
 def iso_date(value) -> str | None:
@@ -443,6 +496,10 @@ class RepoAudit:
             for n, line in shortcodes_as_text(text[m.end():], sc_names):
                 issues.append({"check": "post_shortcode_as_text", "file": rel, "line": fm_lines + n, "link": None,
                                "page": page, "fix": "write it {{< … >}}", "note": line, "commit": commit(rel)})
+            for field, marks, val in front_matter_markup(data):
+                issues.append({"check": "post_front_matter_markup", "file": rel, "line": 1, "link": None,
+                               "page": page, "fix": f"remove {marks} from {field}",
+                               "note": f"{field}: {val[:90]!r}", "commit": commit(rel)})
             if url:
                 urls.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (str(url).strip(), rel)
             for cat in data.get("categories") or []:
@@ -549,6 +606,12 @@ class RepoAudit:
                     out.append({"check": "post_text_untranslated", "file": rel, "line": 1, "link": None, "page": page,
                                 "fix": f"translate {', '.join(same)}",
                                 "note": "; ".join(f"{k} in English: {vals[k][:60]!r}" for k in same),
+                                "commit": commit(rel)})
+                bad = [(k, why) for k, v in vals.items() if (why := garbled_text(v, en.get(k) or ""))]
+                if bad:
+                    out.append({"check": "translation_text_garbled", "file": rel, "line": 1, "link": None,
+                                "page": page, "fix": "retranslate the post (queue it in the translation sheet)",
+                                "note": "; ".join(f"{k}: {why}: {vals[k][:60]!r}" for k, why in bad),
                                 "commit": commit(rel)})
         return out
 

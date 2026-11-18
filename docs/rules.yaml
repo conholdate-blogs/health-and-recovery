@@ -155,6 +155,20 @@ rules:
     date: 2026-11-17
     checks: [post_shortcode_as_text]
     status: active
+  - id: TD-4
+    rule: "Front-matter titles and descriptions are plain text: no **, __, backticks or [text](url); a markup-only fix changes English and translations in one commit, so nothing is retranslated for it."
+    why: "blog.conholdate.com, 18 Nov 2026: 989 post files carried ** in title, description or summary, shown as is in meta descriptions, social cards, JSON-LD and RSS. Shoaib Khan: '** is not a reason to send files for translation; it can be fixed here.'"
+    set_by: Shoaib Khan
+    date: 2026-11-18
+    checks: [post_front_matter_markup]
+    status: active
+  - id: TR-7
+    rule: "A translated title or description is a translation: one line, about as long as the English value; an LLM answer, steps, code or repeated characters send the post back for retranslation (a sheet record), not a hand patch."
+    why: "blog.conholdate.com, 18 Nov 2026: 10 translated titles were the LLM's answer ('You can follow these steps to convert STL to PDF in C#: 1. …', code), one Dutch description ran into hundreds of zero-width characters."
+    set_by: Health and Recovery Agent
+    date: 2026-11-18
+    checks: [translation_text_garbled]
+    status: active
   - id: TPL-1
     rule: "Nothing renders an element such as a <div> in <head> before the SEO tags: extend_head.html is the last include."
     why: On 3 Nov 2026 a language-switcher div pushed title, canonical and hreflang of blog.aspose.com into <body>.

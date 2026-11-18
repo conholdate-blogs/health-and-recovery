@@ -601,6 +601,21 @@ _ROWS = [
      "Write it {{< name … >}} again (the version before the edit in git history is the safest source); fix the "
      "English file before it is translated.",
      "The live page shows the image or code; next repo check has no item."),
+    ("translation_text_garbled", "Links and translations","Translated title or description is not a translation",
+     "A translation's title, seoTitle or description is an LLM answer (\"You can follow these steps …: 1. …\", code), "
+     "runs into repeated or zero-width characters, or is many times longer than the English value.",
+     "That text becomes the page title and search snippet in that language: the page looks broken and ranks for "
+     "nothing useful.",
+     "Queue the post for retranslation in the translation sheet; a hand patch of one field leaves the rest of that "
+     "output unchecked.",
+     "Next repo check has no item for the file."),
+    ("post_front_matter_markup", "Repo files", "Markdown in title or description",
+     "A post's title, seoTitle, description or summary carries Markdown such as **bold**, `code` or [text](url). "
+     "Front matter is plain text: Hugo puts it into the meta description, Open Graph, JSON-LD and RSS as it is.",
+     "Search results, social cards and AI answers can show the literal ** or brackets; the snippet looks broken.",
+     "Remove the markup from the value. Fix English and its translations in one commit so no translation is "
+     "queued for retranslation for a cosmetic change.",
+     "The live meta description has no markup; next repo check has no item."),
     ("post_outside_main_sections", "Site structure", "Post outside the home page's sections",
      "The post folder is not under a section listed in params.mainSections, so the theme never lists it on the home "
      "page or its pagination.",

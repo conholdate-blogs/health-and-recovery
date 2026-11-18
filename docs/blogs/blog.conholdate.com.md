@@ -54,12 +54,34 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 18 Nov (later): queue model, Markdown in front matter, garbled translations
+
+- **Queue model (SK):** the sheet holds only missing translations, optimizer-changed posts, our `AUDIT` records and
+  the quality agent's; the scanner updates rows instead of rewriting; SK changes the translation agent himself.
+  Everything else we fix in place (playbook, scan-sheet rules).
+- **New check `post_front_matter_markup`** (rule TD-4): `**`, `__`, backticks, `[x](url)` in title, seoTitle,
+  description, summary. Dry run: here 1,876 values in 1,013 files, 230 posts (150 with it in English; mostly `**` in
+  summary/description, 8 translations with Markdown links in a discount post, backticks used as an apostrophe in
+  tr/fr/nl); blog.conholdate.cloud 24 summaries with `` `/cells` `` (English + 23, code-like, low value; noted, not fixed).
+- **Fix d7387d38 (local, waits for SK's push; needs a deploy):** 43 files = 34 English posts whose translations are all
+  already OUTDATED + 9 current translations of posts with clean English. YAML re-parsed per file: only the four fields
+  changed, as expected. Commit check PASSED. Left: 329 + 78 OUTDATED translations with markup (rebuilt from the clean
+  English); **116 English posts (443 current translations with markup) wait for the scanner change**: an English
+  commit today would mark their 1,529 clean current translations OUTDATED.
+- **New check `translation_text_garbled`** (rule TR-7): translated title/seoTitle/description with a line break the
+  English lacks, a run of zero-width characters, or ≥ 6× the English width (real translations stay under 4×). Here 10
+  files (7 Korean/Turkish/Polish titles that are the LLM's answer with steps or code, 1 one-sentence answer, 1 Dutch
+  description of zero-width characters); found by hand: 1 more (tr XPS title, a one-line answer at 3×).
+  blog.conholdate.cloud 0. Made 2025 by the older pipeline (farhan "translations"), 1 by the translation agent (Jan 2026).
+  4 are already OUTDATED; all 11 + the 2 posts above are in `reports/conholdate.com/retranslate-candidates.csv` for
+  SK to add as `AUDIT` rows.
+
 ## 18 Nov: batch 3 verified; new check link_differs_from_original finds 2 posts
 
 | Step | Commit (conholdate-blog) | State |
 |---|---|---|
 | Batch 3: th/tr/vi of extract-text-and-images-from-pdf, [27]/[28] as English (first draft duplicated jpg-text-scanner, corrected after SK's review) | f6ec92b6 | **live, verified 18 Nov** (agent-fixes row) |
-| Both posts: retranslation instead of link patches (see below). English-only fixes: extract-text description/summary showed literal `**` in the live meta description; convert-webp-to-jpg 8 unused reference definitions (left from the QR code post it was copied from) | 3f942379 | committed locally, waits for SK's push; then the scanner marks 17 + 17 translations OUTDATED |
+| Both posts: retranslation instead of link patches (see below). English-only fixes: extract-text description/summary showed literal `**` in the live meta description; convert-webp-to-jpg 8 unused reference definitions (left from the QR code post it was copied from) | 3f942379 | **pushed** (on origin before the agent's 763d3601, 7e347952); today's scanner marks 17 + 17 translations OUTDATED; also in `retranslate-candidates.csv` in case the new scanner rule drops them |
 
 - Found by the new link check (health-and-recovery 222e8c2): unused reference definitions skipped (4,082 here, 23 on
   blog.conholdate.cloud); `link_differs_from_original` (rule TR-6) = 34 links in these 2 posts, 0 on blog.conholdate.cloud.

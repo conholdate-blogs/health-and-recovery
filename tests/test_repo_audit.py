@@ -321,6 +321,31 @@ def test_iso_date_reads_rfc_and_iso_dates():
     assert iso_date(dt.datetime(2026, 11, 13, 9, 0)) == "2026-11-13" and iso_date("someday") is None
 
 
+def test_front_matter_markup():
+    # blog.conholdate.com, 18 Nov 2026: '**' in descriptions shows as is in the meta description
+    from core.audit.repo import front_matter_markup
+
+    data = {"title": "Convert **PDF** to Word", "seoTitle": "C* and file_name are fine",
+            "description": "Use `Document` and [docs](https://x.y/)", "summary": "__init__ stays? no: __bold__",
+            "url": "/a/**/"}
+    found = {(f, m) for f, m, _ in front_matter_markup(data)}
+    assert found == {("title", "**"), ("description", "`, [x](url)"), ("summary", "__")}
+    assert front_matter_markup({"title": "Plain", "description": None}) == []
+
+
+def test_garbled_translation_text():
+    # blog.conholdate.com, 18 Nov 2026: titles that are the LLM's answer, a description of zero-width characters
+    from core.audit.repo import garbled_text
+
+    en = "Convert STL to PDF in C#"
+    assert garbled_text("STL'yi PDF'ye dönüştürmek için adımlar:\n1. STL dosyasını yükleyin", en).startswith("several")
+    assert garbled_text("Converteer STL" + "​" * 8, en) == "a run of zero-width characters"
+    assert "as long" in garbled_text("x" * 150, en)
+    assert garbled_text("STL'yi C#'ta PDF'ye Dönüştürün", en) is None
+    assert garbled_text("C# で STL を PDF に変換する", en) is None  # CJK counts double, still well under 6x
+    assert garbled_text("", en) is None and garbled_text("abc", "") is None
+
+
 def test_shortcode_shown_as_text(tmp_path):
     # blog.conholdate.com, 17 Nov 2026: '{{ gist … }}' and '{{&lt; figure … &gt;}}' render as text
     from core.audit.repo import shortcodes_as_text

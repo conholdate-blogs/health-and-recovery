@@ -15,6 +15,16 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Start here (session handoff, 2026-11-18)
+
+**Translation queue model (SK, 18 Nov; SK changes the translation agent himself):** the sheet holds only missing
+translations, optimizer-changed posts, our `AUDIT` records (candidates in `reports/<tenant>/retranslate-candidates.csv`,
+SK adds them) and the quality agent's; the scanner updates rows instead of rewriting. Everything else is fixed in
+place (playbook). New repo checks `post_front_matter_markup` (TD-4) and `translation_text_garbled` (TR-7).
+blog.conholdate.com: batch 3 live and verified; 3f942379 pushed; **d7387d38 (Markdown in 43 front matters) local,
+waits for SK's push + deploy**; 116 English posts with `**` wait for the scanner change. **Next:** batch 4 (493
+English links in translations, queued posts excluded), rescan, B10, B6. Details in the blog log.
+
 ## Start here (session handoff, 2026-11-16)
 
 **State:** blog.conholdate.com **health 85**, 14 open issue types (snapshot 2026-11-16). Small fixes S1–S3 (one H1
