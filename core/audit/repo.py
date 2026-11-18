@@ -213,12 +213,16 @@ _FM_MARKUP = (("**", re.compile(r"\*\*")), ("__", re.compile(r"(?<![\w])__\w|\w_
 
 def front_matter_markup(data: dict) -> list[tuple[str, str, str]]:
     """(field, markup, value) for each plain-text front-matter field that carries Markdown. Hugo puts these values into
-    the meta description, Open Graph, JSON-LD and RSS as they are, so '**' shows up in search snippets. Single * and
-    _ are left out (C*, file_name)."""
+    the meta description, Open Graph, JSON-LD and RSS as they are, so '**' shows up in search snippets. summary counts
+    only without a description: the theme falls back to it there, and renders it as Markdown on list cards (18 Nov,
+    blog.conholdate.cloud: `/cells` in a summary showed as <code>, harmless). Single * and _ are left out (C*,
+    file_name)."""
     out = []
     for field in FM_TEXT_FIELDS:
         val = data.get(field)
         if not isinstance(val, str):
+            continue
+        if field == "summary" and str(data.get("description") or "").strip():
             continue
         marks = [name for name, pat in _FM_MARKUP if pat.search(val)]
         if marks:

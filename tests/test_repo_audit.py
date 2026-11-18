@@ -326,10 +326,11 @@ def test_front_matter_markup():
     from core.audit.repo import front_matter_markup
 
     data = {"title": "Convert **PDF** to Word", "seoTitle": "C* and file_name are fine",
-            "description": "Use `Document` and [docs](https://x.y/)", "summary": "__init__ stays? no: __bold__",
+            "description": "Use `Document` and [docs](https://x.y/)", "summary": "**shown as bold on cards**",
             "url": "/a/**/"}
     found = {(f, m) for f, m, _ in front_matter_markup(data)}
-    assert found == {("title", "**"), ("description", "`, [x](url)"), ("summary", "__")}
+    assert found == {("title", "**"), ("description", "`, [x](url)")}  # summary only counts without a description
+    assert [f for f, _, _ in front_matter_markup({"summary": "a __bold__ word"})] == ["summary"]
     assert front_matter_markup({"title": "Plain", "description": None}) == []
 
 

@@ -21,8 +21,10 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 translations, optimizer-changed posts, our `AUDIT` records (candidates in `reports/<tenant>/retranslate-candidates.csv`,
 SK adds them) and the quality agent's; the scanner updates rows instead of rewriting. Everything else is fixed in
 place (playbook). New repo checks `post_front_matter_markup` (TD-4) and `translation_text_garbled` (TR-7).
-blog.conholdate.com: batch 3 live and verified; 3f942379 pushed; **d7387d38 (Markdown in 43 front matters) local,
-waits for SK's push + deploy**; 116 English posts with `**` wait for the scanner change. **Next:** batch 4 (493
+blog.conholdate.com: batch 3 live and verified; 3f942379, d7387d38 pushed; **82e16439 (`**` in 77 translated
+descriptions) local, waits for SK's push + deploy**; 78 English posts with `**` in the description wait for SK's
+choice (OUTDATED still counts every English commit). `post_front_matter_markup` counts summary only without a
+description (theme falls back to it). 7 `ISSUE` rows for SK to add with `queue_add.py` (candidates CSV). **Next:** batch 4 (493
 English links in translations, queued posts excluded), rescan, B10, B6. Details in the blog log.
 
 ## Start here (session handoff, 2026-11-16)

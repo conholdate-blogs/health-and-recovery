@@ -46,10 +46,13 @@ has its own log in [blogs/](blogs/) with its facts, findings, decisions and fixe
     3f942379); from then on it is a sheet record (below).
   - **Queue model (SK, 18 Nov; SK is changing the scanner):** the queue holds only (a) missing translations,
     (b) posts whose `index.md` the optimization agent changed, (c) translations we find with several considerable
-    issues (Issue `AUDIT`, with evidence in Notes), (d) low-quality translations from the quality agent (`QUALITY`).
-    The scanner updates rows instead of rewriting the tab. Everything else we fix in place: links, `**`, shortcodes,
-    tags, front matter, English and its current translations in one commit. Candidates for (c) go to
-    `reports/<tenant>/retranslate-candidates.csv`; SK adds the rows (our service account reads the sheet only).
+    issues, (d) low-quality translations from the quality agent. Built by SK 18 Nov (translation agent 9ce1431,
+    b6b85e7): the domain tab is a persistent queue; (c) and (d) are `ISSUE` rows added with
+    `tools/translation_agent/queue_add.py --domain … --post <product>/<folder> --langs … --reason … --source "Health and
+    Recovery Agent"` (dry run first; languages an open row already covers are skipped). OUTDATED still counts every
+    English commit. Everything else we fix in place: links, `**`, shortcodes, tags, front matter, English and its
+    current translations in one commit. Candidates for (c) go to `reports/<tenant>/retranslate-candidates.csv`; SK
+    runs `queue_add.py` (it needs the write key; our service account reads the sheet only).
     Considerable = an LLM answer, code or garbage instead of a translated title/description (`translation_text_garbled`),
     or a translation older than an English rewrite with a different structure (headings, references).
   - **Markup-only fixes (`**` etc., rule TD-4) never queue a retranslation:** fix current translations in the same

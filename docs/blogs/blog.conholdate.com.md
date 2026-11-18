@@ -60,21 +60,30 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
   the quality agent's; the scanner updates rows instead of rewriting; SK changes the translation agent himself.
   Everything else we fix in place (playbook, scan-sheet rules).
 - **New check `post_front_matter_markup`** (rule TD-4): `**`, `__`, backticks, `[x](url)` in title, seoTitle,
-  description, summary. Dry run: here 1,876 values in 1,013 files, 230 posts (150 with it in English; mostly `**` in
-  summary/description, 8 translations with Markdown links in a discount post, backticks used as an apostrophe in
-  tr/fr/nl); blog.conholdate.cloud 24 summaries with `` `/cells` `` (English + 23, code-like, low value; noted, not fixed).
-- **Fix d7387d38 (local, waits for SK's push; needs a deploy):** 43 files = 34 English posts whose translations are all
-  already OUTDATED + 9 current translations of posts with clean English. YAML re-parsed per file: only the four fields
-  changed, as expected. Commit check PASSED. Left: 329 + 78 OUTDATED translations with markup (rebuilt from the clean
-  English); **116 English posts (443 current translations with markup) wait for the scanner change**: an English
-  commit today would mark their 1,529 clean current translations OUTDATED.
+  description, and summary **only when the post has no description**. Corrected the same day (SK asked for samples):
+  the theme (PaperMod head.html, rss.xml) uses `description` for meta, Open Graph, JSON-LD and RSS and falls back to
+  `.Summary` only without one; list cards render the summary as Markdown (blog.conholdate.cloud: `` `/cells` `` showed
+  as `<code>`). First count 1,013 files / 230 posts (here) and 24 (blog.conholdate.cloud) was mostly harmless summaries;
+  corrected: here 927 files, 206 posts, 78 English (all `description`); blog.conholdate.cloud 0. Live proof:
+  `/id/total/how-to-convert-visio-to-pdf-in-java/` meta, og and JSON-LD description start with `**Ubah Visio…**`.
+- d7387d38 (43 files, pushed by SK before the correction): 41 of its changes are such summaries (no visible effect,
+  harmless), 2 descriptions real.
+- **Fix 82e16439 (local, waits for SK's push; needs a deploy):** `**` out of the descriptions of 77 current
+  translations whose English post is clean (nothing queued). YAML re-parsed per file, commit check PASSED.
+  **Left: 78 English posts with `**` in the description**: the scanner (new version 9ce1431/b6b85e7) still counts
+  every English commit as OUTDATED, so an English-only fix would queue their 961 clean current translations. Options
+  for SK: English + all current translations in one commit (fix only where they have it, the rest stays untouched and
+  becomes OUTDATED), or wait for an optimizer-only OUTDATED rule. Root cause in translations: 484 have `**` the English
+  lacks (the LLM keeps or adds it; the translator has no front-matter markup guard).
 - **New check `translation_text_garbled`** (rule TR-7): translated title/seoTitle/description with a line break the
   English lacks, a run of zero-width characters, or ≥ 6× the English width (real translations stay under 4×). Here 10
   files (7 Korean/Turkish/Polish titles that are the LLM's answer with steps or code, 1 one-sentence answer, 1 Dutch
   description of zero-width characters); found by hand: 1 more (tr XPS title, a one-line answer at 3×).
   blog.conholdate.cloud 0. Made 2025 by the older pipeline (farhan "translations"), 1 by the translation agent (Jan 2026).
-  4 are already OUTDATED; all 11 + the 2 posts above are in `reports/conholdate.com/retranslate-candidates.csv` for
-  SK to add as `AUDIT` rows.
+  4 are already OUTDATED; all 11 + the 2 posts above are in `reports/conholdate.com/retranslate-candidates.csv`.
+  The new agent (b6b85e7) takes them as `ISSUE` rows via `tools/translation_agent/queue_add.py --source "Health and
+  Recovery Agent"` (dry run tested); 7 still need a row (column `queued_now` = no), SK runs it (write key).
+  The translator (current version) has no guard for this: `_fit_length` would shorten such a title, not reject it.
 
 ## 18 Nov: batch 3 verified; new check link_differs_from_original finds 2 posts
 

@@ -1,14 +1,14 @@
-post_folder,languages,issue,evidence,queued_today,found
-content/Conholdate.Total/total/2024-11-22-convert-dwf-to-pdf-java,ko,AUDIT,"title is the LLM's answer (several lines: 'There are various libraries and methods in Java to convert DWF to PDF…')",no,2026-11-18
-content/Conholdate.Total/total/2024-11-29-convert-cdr-to-psd-in-csharp,ko,AUDIT,"title is the LLM's answer with a C# code block",yes (English changed 2026-08-08),2026-11-18
-content/Conholdate.Total/total/2024-12-16-convert-stl-to-pdf-in-csharp,tr,AUDIT,"title is the LLM's answer ('You can follow these steps…: 1. Load the STL file…')",no,2026-11-18
-content/Conholdate.Total/total/2025-01-03-merge-pdf-java,pl,AUDIT,"title is an English LLM answer ('Scalaj is a popular library for handling PDF manipulation in Java…')",no,2026-11-18
-content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java,ko,AUDIT,"title is the LLM's answer listing Pandoc, Apache FOP, MarkdownJ",yes (English changed 2026-08-20),2026-11-18
-content/Conholdate.Total/total/2025-08-27-convert-txt-to-json-in-java,ko,AUDIT,"title is the LLM's answer (several lines)",yes (English changed 2026-04-04),2026-11-18
-content/Conholdate.Total/total/2025-09-15-convert-pub-to-pptx-in-csharp,tr,AUDIT,"title is the LLM's answer ('…follow these steps: 1. Install the required libraries…')",yes (English changed 2026-11-02),2026-11-18
-content/Conholdate.Total/total/2025-10-10-convert-mpp-to-mpx-in-csharp,tr,AUDIT,"title is a one-sentence LLM answer, 6x as long as the English title",no,2026-11-18
-content/Conholdate.Total/total/2025-10-15-convert-xps-to-bmp-in-csharp,tr,AUDIT,"title is a one-line LLM answer ('You can follow the steps below to convert XPS to BMP in C#'); found by hand, under the check's 6x limit",no,2026-11-18
-content/Conholdate.Total/total/2025-10-17-convert-html-to-bmp-in-java,ko,AUDIT,"title is the LLM's answer ('Below is a basic overview…: 1. HTML parsing…')",no,2026-11-18
-content/Conholdate.Total/total/2025-10-28-convert-3mf-to-stl-in-java,nl,AUDIT,"description runs into hundreds of zero-width characters, then repeats half in English",no,2026-11-18
-content/Conholdate.Total/total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java,"ar,de,es,fr,id,it,ja,ko,nl,pt,ru,zh",AUDIT,"translations made before a 2023 English rewrite: missing headings and a 'See also' line, 27 of 28 references",yes (English fix 3f942379; drops out if only optimizer commits count),2026-11-18
-content/Conholdate.Total/total/2023-06-20-convert-webp-to-jpg,"ar,de,es,fr,id,ja,ko,nl,pt,ru,zh",AUDIT,"translations made before the English rewrite: intro links and 'See also' references point at other pages",yes (English fix 3f942379; drops out if only optimizer commits count),2026-11-18
+post,langs,reason,queued_now,found
+total/2024-11-22-convert-dwf-to-pdf-java,ko,"Title is the LLM's answer (several lines: 'There are various libraries and methods in Java to convert DWF to PDF…')",no,2026-11-18
+total/2024-11-29-convert-cdr-to-psd-in-csharp,ko,"Title is the LLM's answer with a C# code block",OUTDATED row (English changed 2026-08-08),2026-11-18
+total/2024-12-16-convert-stl-to-pdf-in-csharp,tr,"Title is the LLM's answer ('You can follow these steps…: 1. Load the STL file…')",no,2026-11-18
+total/2025-01-03-merge-pdf-java,pl,"Title is an English LLM answer ('Scalaj is a popular library for handling PDF manipulation in Java…')",no,2026-11-18
+total/2025-07-15-convert-markdown-to-pdf-java,ko,"Title is the LLM's answer listing Pandoc, Apache FOP, MarkdownJ",OUTDATED row (English changed 2026-08-20),2026-11-18
+total/2025-08-27-convert-txt-to-json-in-java,ko,"Title is the LLM's answer (several lines)",OUTDATED row (English changed 2026-04-04),2026-11-18
+total/2025-09-15-convert-pub-to-pptx-in-csharp,tr,"Title is the LLM's answer ('…follow these steps: 1. Install the required libraries…')",OUTDATED row (English changed 2026-11-02),2026-11-18
+total/2025-10-10-convert-mpp-to-mpx-in-csharp,tr,"Title is a one-sentence LLM answer, 6x as long as the English title",no,2026-11-18
+total/2025-10-15-convert-xps-to-bmp-in-csharp,tr,"Title is a one-line LLM answer ('You can follow the steps below to convert XPS to BMP in C#')",no,2026-11-18
+total/2025-10-17-convert-html-to-bmp-in-java,ko,"Title is the LLM's answer ('Below is a basic overview…: 1. HTML parsing…')",no,2026-11-18
+total/2025-10-28-convert-3mf-to-stl-in-java,nl,"Description runs into hundreds of zero-width characters, then repeats half in English",no,2026-11-18
+total/2022-04-12-extract-text-and-images-from-pdf-documents-using-java,"ar,de,es,fr,id,it,ja,ko,nl,pt,ru,zh","Made before a 2023 English rewrite: missing headings and a 'See also' line, 27 of 28 references",OUTDATED row (English fix 3f942379),2026-11-18
+total/2023-06-20-convert-webp-to-jpg,"ar,de,es,fr,id,ja,ko,nl,pt,ru,zh","Made before the English rewrite: intro links and 'See also' references point at other pages",OUTDATED row (English fix 3f942379),2026-11-18
