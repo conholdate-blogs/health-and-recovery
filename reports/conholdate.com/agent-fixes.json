@@ -277,5 +277,19 @@
   ],
   "issue": "4 English posts showed 11 shortcodes as text ({{ gist … }}, {{ figure … }}): no cover image, no code examples (optimizer escaped < >, Jun 2026; a hand fix dropped them)",
   "result": "Live: view-stl-files-online, convert-svg-to-image-csharp, convert-eml-to-pst-java, convert-image-to-html-csharp show 0 raw shortcodes, cover images and 6 code examples; fixed before their queued retranslation copied the damage into 68 pages"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-17",
+  "verified": "2026-11-18",
+  "found": "2026-11-17",
+  "found_by": "Agent",
+  "check": "link_broken",
+  "commits": [
+   "f6ec92b6aa9761e15dc673d6ce019c40d38f3a19"
+  ],
+  "issue": "th, tr, vi of extract-text-and-images-from-pdf-documents-using-java: \"See also\" [28] linked to a post that does not exist (jpg-to-readable-text-ocr-full-form, 404) and [27] \"Extract Text from Word\" pointed at jpg-text-scanner",
+  "result": "Live: [27] → extract-text-from-word-documents-using-java, [28] → jpg-text-scanner in th, tr, vi, as the English post; both targets 200 (first draft duplicated jpg-text-scanner, corrected after Shoaib Khan's review)"
  }
 ]

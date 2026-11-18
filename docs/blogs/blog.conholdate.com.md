@@ -54,6 +54,27 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 18 Nov: batch 3 verified; new check link_differs_from_original finds 2 posts
+
+| Step | Commit (conholdate-blog) | State |
+|---|---|---|
+| Batch 3: th/tr/vi of extract-text-and-images-from-pdf, [27]/[28] as English (first draft duplicated jpg-text-scanner, corrected after SK's review) | f6ec92b6 | **live, verified 18 Nov** (agent-fixes row) |
+| Both posts: retranslation instead of link patches (see below). English-only fixes: extract-text description/summary showed literal `**` in the live meta description; convert-webp-to-jpg 8 unused reference definitions (left from the QR code post it was copied from) | 3f942379 | committed locally, waits for SK's push; then the scanner marks 17 + 17 translations OUTDATED |
+
+- Found by the new link check (health-and-recovery 222e8c2): unused reference definitions skipped (4,082 here, 23 on
+  blog.conholdate.cloud); `link_differs_from_original` (rule TR-6) = 34 links in these 2 posts, 0 on blog.conholdate.cloud.
+- **Why the references differ (SK asked: English 28 references, 12 translations 27):** the translations are older
+  copies. extract-text: ar, de, es, fr, id, it, ja, ko, nl, pt, ru, zh were made 2022 (de 6 Jul 2022); the English
+  changed afterwards (15 May 2023 seoTitle, alt, 2 headings; 17 May 2023 second "See also" line [28]; Dec 2023 link
+  fixes). th/tr/vi (Oct 2023) and fa/pl are current. convert-webp-to-jpg: 11 translations made 22 Jun 2023 10:15, the
+  English fixed 48 min later (intro links, "See also", the copied "C# QR Code Detector library" sentence).
+- First attempt patched only links (batch 3b and a webp link fix, local commits 2e0c77b5, 8c559c1e); SK: not a proper
+  fix, the translations stay incomplete. Dropped unpushed; replaced by 3f942379 so the agent retranslates.
+- The scanner missed both: the bulk commits (restructure Feb 2025, link prefixes May 2024) gave the translations newer
+  dates than the English rewrites (gap SK accepted 17 Nov). `link_differs_from_original` catches some of these cases.
+- Learned: an extra or missing reference in a translation usually means an outdated translation, not a link bug:
+  compare the English history with the translation's creation date before patching (playbook).
+
 ## 17 Nov: B5 batches 1–2 pushed; shortcodes shown as text (found and fixed)
 
 | Commit (conholdate-blog) | What | State |

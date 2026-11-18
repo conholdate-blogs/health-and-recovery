@@ -39,6 +39,11 @@ has its own log in [blogs/](blogs/) with its facts, findings, decisions and fixe
     English-only commit makes all its translations OUTDATED and costs a full retranslation.
   - Known gap, accepted by SK (17 Nov): a commit touching every language (bulk link prefix, folder move, our tag
     fix) resets the dates, so older English rewrites are not seen as OUTDATED.
+  - **A translation with more or fewer references than the English post is usually an outdated copy, not a link
+    bug** (SK, 18 Nov): compare `git log --follow` of `index.md` with the translation's first commit. If the English
+    changed after it, do not patch links (the text stays incomplete); make a small real fix in the English post
+    only (e.g. literal `**` in a description, unused reference definitions), as the **last** commit on that post,
+    so the scanner queues all its translations. Example: blog.conholdate.com 3f942379.
 
 ## Fix catalogue (proven on blog.conholdate.cloud, 11 Nov 2026: 84 → 100 with real fixes only)
 
