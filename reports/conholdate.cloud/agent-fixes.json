@@ -297,5 +297,17 @@
   ],
   "issue": "With one main section, the section page /conholdate.cloud/ (23 languages) listed exactly the home page's posts and was indexable: a duplicate listing",
   "result": "Live: section pages answer noindex, follow and are out of the sitemaps; home pages unchanged"
+ },
+ {
+  "host": "blog.conholdate.cloud",
+  "repo": "conholdate-cloud/blog.conholdate.cloud",
+  "fixed": "2026-11-19",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "check": "post_cover_lost",
+  "commits": [
+   "69e4ab9627bfc3094fb37b1786f11d2c98c1f489"
+  ],
+  "issue": "F23: 62 translations of 3 posts without cover image (cover block written flat, caption keys translated, 7 \\\"…\\\" values; nl named a non-existent image)"
  }
 ]

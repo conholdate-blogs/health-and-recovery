@@ -348,5 +348,29 @@
   ],
   "issue": "151 titles, seoTitles and descriptions left in English in 125 current translations",
   "result": "Live: e.g. /de/total/convert-cdr-to-psd-in-java/ H1 \"CDR in PSD konvertieren in Java\", /fa/total/split-pdf-files-in-java/ H1 in Persian"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-19",
+  "found": "2026-11-19",
+  "found_by": "Shoaib Khan",
+  "check": "post_cover_lost",
+  "commits": [
+   "3832d94d55aaa0b606f9ba2c6e1ae46fc3075b63"
+  ],
+  "issue": "238 translations without cover image (cover block written flat, caption keys translated) and \\\"…\\\" values in 306 files (shown in <title>, e.g. /ko/ and /ja/total/convert-html-to-bmp-in-java/)"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-19",
+  "found": "2026-11-02",
+  "found_by": "Agent",
+  "check": "link_broken",
+  "commits": [
+   "638cf070220d369381e9e6b441f85d3d81a56371"
+  ],
+  "issue": "17 translations of view-stl-files-online linked find-synonym-in-java (404) instead of find-synonyms-in-java"
  }
 ]

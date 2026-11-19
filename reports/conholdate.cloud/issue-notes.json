@@ -67,5 +67,15 @@
     "text": "Found by the full crawl; the LLM text check had noticed 2 of the 22 pages."
    }
   ]
+ },
+ "post_cover_lost": {
+  "notes": [
+   {
+    "date": "2026-11-19",
+    "by": "Health and Recovery Agent",
+    "text": "F23: found by the new check's dry run (from blog.conholdate.com's 19 Nov finds): 62 translations of 3 posts without cover image, 7 with \\\"…\\\" caption values; fixed in 69e4ab9 before a scan recorded it (waits for deploy)."
+   }
+  ],
+  "status": "Reviewed"
  }
 }

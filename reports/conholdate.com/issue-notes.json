@@ -29,6 +29,11 @@
     "date": "2026-11-17",
     "by": "Agent",
     "text": "Correction: the create-ms-PDF links came from the first translations (2023-03-06, 'Added Multilingual'); the English post has linked create-ms-word since 2023-03-03. The 2024 commit 96c6e6d4 only added the language prefix ('Last changed' shows the last commit on a line, not where a link came from)."
+   },
+   {
+    "date": "2026-11-19",
+    "by": "Health and Recovery Agent",
+    "text": "Last 17 broken links (view-stl-files-online translations, find-synonym-in-java) fixed in 638cf070 (waits for deploy); ISSUE row for the optimizer rewrite the translations still miss (SK adds it with queue_add.py)."
    }
   ]
  },
@@ -52,8 +57,14 @@
     "date": "2026-11-16",
     "by": "Agent",
     "text": "22 posts × 17 languages: reference links keep the English URL although the page exists in that language. Cause: manual 'translations' commits of Aug–Dec 2025, not the translation agent (its 2026 translations have none). Fix: add the language prefix (B5 batch 4, waiting for approval); no agent change needed."
+   },
+   {
+    "date": "2026-11-19",
+    "by": "Health and Recovery Agent",
+    "text": "493 links in current translations fixed in 777e7263 (live); the 119 left are in queued translations and get fixed by retranslation."
    }
-  ]
+  ],
+  "status": "Reviewed"
  },
  "crawl-261116-1": {
   "notes": [
@@ -87,5 +98,50 @@
     "text": "Translations out of date: the English post got jpg-text-scanner on 2023-12-13 ('Fixed Broken Links'), after the th/tr/vi translations (2023-10-18)."
    }
   ]
+ },
+ "onpage-261119-2": {
+  "notes": [
+   {
+    "date": "2026-11-19",
+    "by": "Shoaib Khan",
+    "text": "Found on /ko/ and /ja/total/convert-html-to-bmp-in-java/ (\\\"…\\\" in the title); the agent then found the flat cover block: 424 translations without cover image."
+   },
+   {
+    "date": "2026-11-19",
+    "by": "Health and Recovery Agent",
+    "text": "238 current translations fixed in 3832d94d (pushed with SK's approval, waits for deploy); the 186 left are queued and get rebuilt by retranslation. Tool scripts/ops/fm_cover_repair.py."
+   }
+  ],
+  "status": "Reviewed"
+ },
+ "onpage-261119-1": {
+  "notes": [
+   {
+    "date": "2026-11-19",
+    "by": "Health and Recovery Agent",
+    "text": "\\\"…\\\" values (shown in <title>, og:title, captions; no build error): 306 current files fixed in 3832d94d; the 187 left are queued translations."
+   }
+  ],
+  "status": "Reviewed"
+ },
+ "onpage-261118-1": {
+  "notes": [
+   {
+    "date": "2026-11-19",
+    "by": "Health and Recovery Agent",
+    "text": "Summary counts only without a description (the theme falls back to it; cards render Markdown). 77 translations fixed in 82e16439 (live). 78 English posts wait for SK: an English-only fix would queue 961 clean translations."
+   }
+  ],
+  "status": "Reviewed"
+ },
+ "intl-261118-1": {
+  "notes": [
+   {
+    "date": "2026-11-19",
+    "by": "Health and Recovery Agent",
+    "text": "7 current files fixed here in 1f806a91 (live, own commit as SK asked); the 4 left are queued translations (cdr-to-psd, markdown-to-pdf, txt-to-json ko; pub-to-pptx tr)."
+   }
+  ],
+  "status": "Reviewed"
  }
 }

@@ -1085,7 +1085,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run110",
+    "last_seen_run": "repo-audit-run111",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -2953,7 +2953,7 @@
         "https://blog.conholdate.com/nl/total/build-your-own-google-docs-like-app/",
         "https://blog.conholdate.com/pl/total/build-your-own-google-docs-like-app/"
       ],
-      "observed": "3,563 entries or files; English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel': 17, English rewritten 2026-03-24 after the translation (2025-02-11); description: 'Follow this blog post to learn how to achieve Imag' -> 'Learn to convert images (JPEG, PNG, BMP, GIF, TIFF': 17, English rewritten 2026-04-13 after the translation (2025-02-11); description: 'You can add a custom XMP metadata package to your ' -> 'Learn how to programmatically add, read, and remov': 17, English rewritten 2026-03-26 after the translation (2025-02-11); description: 'Easily extract text from Word or PDF documents pro' -> 'Programmatically extract text from Word (DOC/DOCX)': 17",
+      "observed": "3,546 entries or files; English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel': 17, English rewritten 2026-03-24 after the translation (2025-02-11); description: 'Follow this blog post to learn how to achieve Imag' -> 'Learn to convert images (JPEG, PNG, BMP, GIF, TIFF': 17, English rewritten 2026-04-13 after the translation (2025-02-11); description: 'You can add a custom XMP metadata package to your ' -> 'Learn how to programmatically add, read, and remov': 17, English rewritten 2026-03-26 after the translation (2025-02-11); description: 'Easily extract text from Word or PDF documents pro' -> 'Programmatically extract text from Word (DOC/DOCX)': 17",
       "expected": "A translation is updated whenever the English title or description changes",
       "locations": [
         {
@@ -3318,7 +3318,7 @@
         }
       ]
     },
-    "affected_pages": 3563,
+    "affected_pages": 3546,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 20,
@@ -3347,7 +3347,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run110",
+    "last_seen_run": "repo-audit-run111",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -3770,7 +3770,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run110",
+    "last_seen_run": "repo-audit-run111",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -4242,7 +4242,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-18",
     "first_seen_run": "repo-audit-run103",
-    "last_seen_run": "repo-audit-run110",
+    "last_seen_run": "repo-audit-run111",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_text_garbled",
@@ -5437,7 +5437,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run110",
+    "last_seen_run": "repo-audit-run111",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -5860,7 +5860,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run110",
+    "last_seen_run": "repo-audit-run111",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -6413,10 +6413,856 @@
     "superseded_by": null,
     "detected_at": "2026-11-18",
     "first_seen_run": "repo-audit-run103",
-    "last_seen_run": "repo-audit-run110",
+    "last_seen_run": "repo-audit-run111",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_markup",
+    "notes": []
+  },
+  {
+    "id": "onpage-261119-1",
+    "key": "onpage/post_front_matter_escaped/blog.conholdate.com/post",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "onpage",
+    "type": "incorrect",
+    "title": "Front-matter values wrapped in \\\" … \\\"",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ar/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/de/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/es/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/fa/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/fr/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/id/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/it/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/ja/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/ko/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/nl/total/convert-markdown-to-pdf-java/"
+      ],
+      "observed": "187 entries or files; alt, caption: '\\\\\"Markdown to PDF Java\\\\\"': 8, alt, caption: '\\\\\"Metadata Scrubber Online\\\\\"': 5, alt, caption: '\\\\\"TXT to JSON in Java\\\\\"': 5, alt: '\\\\\"Markdown to PDF Java\\\\\"': 2",
+      "expected": "Front-matter strings are quoted \"…\" (or plain), never \\\"…\\\"",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.ar.md",
+          "line": 1,
+          "note": "alt: '\\\\\"Markdown to PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.de.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown zu PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.es.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown a PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.fa.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown to PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.fr.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown to PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.id.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown ke PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.it.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown to PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.ja.md",
+          "line": 1,
+          "note": "alt, キャプション: '\\\\\"Markdown to PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.ko.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown to PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.nl.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown naar PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.pl.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown do PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pt/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.pt.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown para PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ru/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.ru.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown to PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/th/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.th.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown to PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.tr.md",
+          "line": 1,
+          "note": "alt: '\\\\\"Markdown to PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/vi/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.vi.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown to PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/zh/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.zh.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Markdown to PDF Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.ar.md",
+          "line": 1,
+          "note": "alt: '\\\\\"مدقق بيانات الإنترنت\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.de.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Metadaten Entferner Online\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.es.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Limpiador de Metadatos en Línea\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.fa.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"پاک\\u200cکننده متادیتا آنلاین\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.fr.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Nettoyeur de Métriques en Ligne\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.id.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Metadata Scrubber Online\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.it.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Pulitore di Metadata Online\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.ja.md",
+          "line": 1,
+          "note": "alt, キャプション: '\\\\\"メタデータスクラバーオンライン\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.ko.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"메타데이터 스크러버 온라인\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.nl.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Metadata Scrubber Online\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.pl.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Metadata Scrubber Online\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pt/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.pt.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Removedor de Metadados Online\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ru/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.ru.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Metadata Scrubber Online\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/th/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.th.md",
+          "line": 1,
+          "note": "alt: '\\\\\"Metadata Scrubber Online\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.tr.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Metadata Scrubber Online\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/vi/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.vi.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Trình Xóa Siêu Dữ Liệu Trực Tuyến\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/zh/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.zh.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"元数据清理工具在线\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.ar.md",
+          "line": 1,
+          "note": "alt: '\\\\\"استخراج الصور من EPUB جافا\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.de.md",
+          "line": 1,
+          "note": "alt: '\\\\\"Bilder aus EPUB Java extrahieren\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.es.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Extraer imágenes de EPUB Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.fa.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"استخراج تصاویر از EPUB جاوا\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.fr.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Extraire des images de l\\'EPUB Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.id.md",
+          "line": 1,
+          "note": "alt, caption: '\\\\\"Ekstrak Gambar dari EPUB Java\\\\\"'",
+          "fix": "write the value as \"…\"",
+          "commit": "7a541185 2025-08-12 translations"
+        }
+      ]
+    },
+    "affected_pages": 187,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 3,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 1,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-21",
+        "2026-05-18"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-20",
+        "2026-11-16"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-19",
+    "first_seen_run": "repo-audit-run111",
+    "last_seen_run": "repo-audit-run111",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "post_front_matter_escaped",
+    "notes": []
+  },
+  {
+    "id": "onpage-261119-2",
+    "key": "onpage/post_cover_lost/blog.conholdate.com/post",
+    "source": "repo-audit",
+    "tenant": "conholdate.com",
+    "subdomain": "blog.conholdate.com",
+    "template": "post",
+    "dimension": "onpage",
+    "type": "incorrect",
+    "title": "Translations without the English post's cover image",
+    "evidence": {
+      "urls": [
+        "https://blog.conholdate.com/ar/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/de/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/es/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/fa/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/fr/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/id/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/it/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/ja/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/ko/total/convert-markdown-to-pdf-java/",
+        "https://blog.conholdate.com/nl/total/convert-markdown-to-pdf-java/"
+      ],
+      "observed": "186 entries or files; no cover image; the English post has one: 186",
+      "expected": "A translation keeps the English cover block: cover: with image, alt, caption indented under it, keys in English",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.ar.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.de.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.es.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.fa.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.fr.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.id.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.it.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.ja.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.ko.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.nl.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.pl.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pt/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.pt.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ru/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.ru.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/th/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.th.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.tr.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/vi/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.vi.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/zh/total/convert-markdown-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-07-15-convert-markdown-to-pdf-java/index.zh.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/convert-markdown-to-pdf-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.ar.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.de.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.es.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.fa.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.fr.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.id.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.it.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ja/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.ja.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ko/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.ko.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.nl.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.pl.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pt/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.pt.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ru/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.ru.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/th/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.th.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/tr/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.tr.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/vi/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.vi.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/zh/total/scrub-metadata-online/",
+          "file": "content/Conholdate.Total/total/2025-07-21-scrub-metadata-online/index.zh.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/metadata-scrubber-online.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/ar/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.ar.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/extract-images-from-epub-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.de.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/extract-images-from-epub-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.es.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/extract-images-from-epub-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.fa.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/extract-images-from-epub-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.fr.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/extract-images-from-epub-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/extract-images-from-epub-java/",
+          "file": "content/Conholdate.Total/total/2025-07-25-extract-images-from-epub-java/index.id.md",
+          "line": 1,
+          "note": "no cover image; the English post has one",
+          "fix": "cover: with image: images/extract-images-from-epub-java.jpg (and alt, caption) indented under it",
+          "commit": "7a541185 2025-08-12 translations"
+        }
+      ]
+    },
+    "affected_pages": 186,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 3,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 1,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-21",
+        "2026-05-18"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-20",
+        "2026-11-16"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-19",
+    "first_seen_run": "repo-audit-run111",
+    "last_seen_run": "repo-audit-run111",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "post_cover_lost",
     "notes": []
   },
   {
