@@ -59,6 +59,8 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - 9ee68667, adc1337b, 752c021d, ef8be14d pushed by SK and **verified live** (zip post and python post have their
   restored sections, google-docs shows `<input>`, webp title shortened, compress-csv sentence fixed, `**` gone).
   Every agent-fix row of this blog is verified.
+- SK, 19 Nov: raised the queue priority of the 3 restored posts; told the optimizer's owner (5 cut posts, escaped
+  shortcodes); added the view-stl-files-online ISSUE row by hand (17 languages, row values from `HEADERS_QUEUE`).
 - Final full scan: **health 92** (crawl 100, on-page 98, languages 94, AI 100); snapshot 2026-11-19-6 (live page
   archived first as 2026-11-19-5). No broken item.
 - `scripts/ops/translation_queue_report.py` (new, read-only, 15 s): 3,682 queued translations, 24 fix-here posts,

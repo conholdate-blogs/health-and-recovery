@@ -34,6 +34,11 @@
     "date": "2026-11-19",
     "by": "Health and Recovery Agent",
     "text": "Last 17 broken links (view-stl-files-online translations, find-synonym-in-java) fixed in 638cf070 (waits for deploy); ISSUE row for the optimizer rewrite the translations still miss (SK adds it with queue_add.py)."
+   },
+   {
+    "date": "2026-11-19",
+    "by": "Shoaib Khan",
+    "text": "ISSUE row added to the blog.conholdate.com queue for view-stl-files-online (17 languages, Source: Health and Recovery Agent): the optimizer rewrite of Jun/Sep 2026 gets retranslated although the link fix 638cf070 made the translations newer than the English post."
    }
   ]
  },
