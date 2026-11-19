@@ -1,0 +1,317 @@
+{
+  "tenant": "conholdate.cloud",
+  "auditor": "perf-audit",
+  "run_id": 88,
+  "params": {
+    "hosts": [
+      "blog.conholdate.cloud"
+    ],
+    "sections": null,
+    "per_template": 2,
+    "strategy": "mobile",
+    "max_pages": null
+  },
+  "requests": 8,
+  "duration_s": 33.3,
+  "pages_planned": 8,
+  "stopped_early": false,
+  "incomplete": false,
+  "origins": {},
+  "summary": {
+    "blog.conholdate.cloud": {
+      "pages": 8,
+      "errors": 0,
+      "not_loaded": 0,
+      "field": 0,
+      "issues": {},
+      "median_score": 80
+    }
+  },
+  "findings": [],
+  "pages": [
+    {
+      "url": "https://blog.conholdate.cloud/ar/conholdate.cloud/",
+      "host": "blog.conholdate.cloud",
+      "section": "",
+      "template": "category",
+      "group_urls": 24,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 80,
+      "lab": {
+        "lcp": 5137.943997989136,
+        "tbt": 91.5,
+        "cls": 0,
+        "fcp": 1536.6879279891355,
+        "si": 2352.303749173014
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          750
+        ],
+        [
+          "Render-blocking requests",
+          750
+        ],
+        [
+          "Use efficient cache lifetimes",
+          450
+        ]
+      ],
+      "final_url": "https://blog.conholdate.cloud/ar/conholdate.cloud/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.cloud/conholdate.cloud/",
+      "host": "blog.conholdate.cloud",
+      "section": "",
+      "template": "category",
+      "group_urls": 24,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 70,
+      "lab": {
+        "lcp": 5396.537796111758,
+        "tbt": 26.5,
+        "cls": 0,
+        "fcp": 3196.008864305879,
+        "si": 5341.237544150007
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          600
+        ],
+        [
+          "Render-blocking requests",
+          150
+        ]
+      ],
+      "final_url": "https://blog.conholdate.cloud/conholdate.cloud/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.cloud/",
+      "host": "blog.conholdate.cloud",
+      "section": "",
+      "template": "home",
+      "group_urls": 23,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 80,
+      "lab": {
+        "lcp": 5028.629937095229,
+        "tbt": 116,
+        "cls": 0,
+        "fcp": 1556.58524209523,
+        "si": 2132.6905428085506
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1000
+        ],
+        [
+          "Reduce unused JavaScript",
+          600
+        ]
+      ],
+      "final_url": "https://blog.conholdate.cloud/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.cloud/ar/",
+      "host": "blog.conholdate.cloud",
+      "section": "",
+      "template": "home",
+      "group_urls": 23,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 79,
+      "lab": {
+        "lcp": 5286.9436025362575,
+        "tbt": 138,
+        "cls": 0,
+        "fcp": 1528.6483025362577,
+        "si": 1690.7155270187054
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ],
+        [
+          "Reduce unused JavaScript",
+          750
+        ],
+        [
+          "Use efficient cache lifetimes",
+          450
+        ]
+      ],
+      "final_url": "https://blog.conholdate.cloud/ar/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.cloud/archives/",
+      "host": "blog.conholdate.cloud",
+      "section": "",
+      "template": "listing",
+      "group_urls": 46,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 100,
+      "lab": {
+        "lcp": 1525.314648407289,
+        "tbt": 24.5,
+        "cls": 0,
+        "fcp": 1525.314648407289,
+        "si": 1690.1168349637446
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.conholdate.cloud/archives/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.cloud/ko/search/",
+      "host": "blog.conholdate.cloud",
+      "section": "",
+      "template": "listing",
+      "group_urls": 46,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 78,
+      "lab": {
+        "lcp": 5090.846043899852,
+        "tbt": 191,
+        "cls": 0,
+        "fcp": 1554.0080038998515,
+        "si": 1853.7607356943033
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1050
+        ],
+        [
+          "Reduce unused JavaScript",
+          600
+        ],
+        [
+          "Use efficient cache lifetimes",
+          150
+        ]
+      ],
+      "final_url": "https://blog.conholdate.cloud/ko/search/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.cloud/fa/total/insert-header-footer-in-pdf/",
+      "host": "blog.conholdate.cloud",
+      "section": "",
+      "template": "post",
+      "group_urls": 115,
+      "clicks": 2.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 99,
+      "lab": {
+        "lcp": 1563.0550043676112,
+        "tbt": 27,
+        "cls": 0,
+        "fcp": 1563.0550043676112,
+        "si": 2351.259531649979
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1050
+        ]
+      ],
+      "final_url": "https://blog.conholdate.cloud/fa/total/insert-header-footer-in-pdf/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.conholdate.cloud/ar/total/convert-html-files/",
+      "host": "blog.conholdate.cloud",
+      "section": "",
+      "template": "post",
+      "group_urls": 115,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 79,
+      "lab": {
+        "lcp": 3454.533621722109,
+        "tbt": 174,
+        "cls": 0,
+        "fcp": 3454.533621722109,
+        "si": 5022.210383281817
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          750
+        ],
+        [
+          "Render-blocking requests",
+          150
+        ]
+      ],
+      "final_url": "https://blog.conholdate.cloud/ar/total/convert-html-files/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    }
+  ]
+}

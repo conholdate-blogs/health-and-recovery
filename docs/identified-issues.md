@@ -39,7 +39,7 @@ Plan:
 | Header label "Home" in English on every language | site-wide | small config change (`params.label.text` per language) |
 | llms.txt without charset=utf-8 (garbled in browsers) | header | F22: ✓ verified live 12 Nov (32f3330 + f83b80c) |
 | llms.txt maintained by hand (goes stale as posts and translations land daily) | file | F20: ✓ verified live 12 Nov (generated at build); next: the other blogs |
-| Translations without cover image / `\"…\"` values (`post_cover_lost`, `post_front_matter_escaped`) | 62 + 7 files | F23 fix 69e4ab9: local, waits for SK's push + deploy (19 Nov) |
+| Translations without cover image / `\"…\"` values (`post_cover_lost`, `post_front_matter_escaped`) | 62 + 7 files | F23 fix 69e4ab9: ✓ verified live 19 Nov |
 
 ## blog.conholdate.com (next blog; plan B1–B6 in its log)
 
@@ -60,8 +60,8 @@ Plan:
 | **Two URLs claimed by two posts each** (`/total/add-barcode-to-pdf-in-java/`, `/total/convert-html-to-image-java/`; 18 languages; one post of each pair never published) — found by hand 16 Nov | 2 URLs; the blog developer checks which post stays (SK, 16 Nov); check `post_url_duplicate` built 16 Nov |
 | Body `# Title` H1 (2 posts × 18) + Arabic `# التثبيت #:`; tag typo "Image Extration API"; "Home" label and wrong menu names | S1–S3 ✓ verified live 16 Nov (f34e3da0); check `post_body_h1` built |
 | Categories / Tags menu link to English `/categories/`, `/tags/` from every language | site-wide; small, not planned |
-| **State 19 Nov (scan after deploy, health 87):** links wrong language 731 → 119 (rest in queued translations), broken 81 → 17 → 0 after 638cf070, damaged 54 → 0; untranslated 198 → 71 (queued); garbled 11 → 4 (queued) | see log 19 Nov |
-| Translations without cover image / `\"…\"` values | 424 / ~490: 238 + 306 files fixed in 3832d94d (local, waits for push); 186 queued left to retranslation |
+| **State 19 Nov (scan after deploy, health 87):** links wrong language 731 → 119 (rest in queued translations), broken 81 → 17 → 0 (638cf070 ✓ verified live 19 Nov, health 92), damaged 54 → 0; untranslated 198 → 71 (queued); garbled 11 → 4 (queued) | see log 19 Nov |
+| Translations without cover image / `\"…\"` values | 424 / ~490: 238 + 306 files fixed in 3832d94d (✓ verified live 19 Nov); 186 / 187 queued left to retranslation |
 | English posts with `**` in the description | 78: an English-only fix queues 961 clean translations; waits for SK (fix English + current translations, or optimizer-only OUTDATED rule) |
 | Half-translated titles ("Convert LaTeX zu PDF in Java", "Convert PUB ke Word…", pl "Convert LaTeX do PDF") | not counted yet; candidate check, fix here |
 | 26 posts (442 translations) behind small English changes (≤ 5 body lines or front matter) | fix here by translating the changed lines (rule TR-9); after the queue reset |

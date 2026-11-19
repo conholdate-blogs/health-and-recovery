@@ -359,7 +359,9 @@
   "commits": [
    "3832d94d55aaa0b606f9ba2c6e1ae46fc3075b63"
   ],
-  "issue": "238 translations without cover image (cover block written flat, caption keys translated) and \\\"…\\\" values in 306 files (shown in <title>, e.g. /ko/ and /ja/total/convert-html-to-bmp-in-java/)"
+  "issue": "238 translations without cover image (cover block written flat, caption keys translated) and \\\"…\\\" values in 306 files (shown in <title>, e.g. /ko/ and /ja/total/convert-html-to-bmp-in-java/)",
+  "verified": "2026-11-19",
+  "result": "Live: cover image back on translated pages (sample of 7 from the commit: all show entry-cover, e.g. /ja/total/merge-excel-files-in-csharp/); ko and ja convert-html-to-bmp-in-java <title> without \\\"; 186 queued translations left to retranslation"
  },
  {
   "host": "blog.conholdate.com",
@@ -371,6 +373,8 @@
   "commits": [
    "638cf070220d369381e9e6b441f85d3d81a56371"
   ],
-  "issue": "17 translations of view-stl-files-online linked find-synonym-in-java (404) instead of find-synonyms-in-java"
+  "issue": "17 translations of view-stl-files-online linked find-synonym-in-java (404) instead of find-synonyms-in-java",
+  "verified": "2026-11-19",
+  "result": "Live: de, ja, ar view-stl-files-online link find-synonyms-in-java; all 17 targets 200"
  }
 ]

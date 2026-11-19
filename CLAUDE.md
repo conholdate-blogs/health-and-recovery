@@ -17,7 +17,7 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 
 ## Start here (session handoff, 2026-11-19)
 
-**State:** blog.conholdate.com **health 87** (scan 19 Nov after SK's deploy of 82e16439, 777e7263, 1f806a91, c49b7358,
+**Update 19 Nov, later:** 3832d94d, 638cf070 and blog.conholdate.cloud 69e4ab9 pushed, deployed, **verified live**; rescan: blog.conholdate.com **health 92, no broken item** (rest in queued translations), blog.conholdate.cloud 100. ISSUE row for view-stl: SK. **State before:** blog.conholdate.com **health 87** (scan 19 Nov after SK's deploy of 82e16439, 777e7263, 1f806a91, c49b7358,
 all verified live, 4 agent-fix rows). **Local, waiting for SK's push + deploy:** conholdate-blog **3832d94d** (cover
 image restored in 238 translations, `\"` removed in 306 files) and **638cf070** (last broken item: 17 view-stl links;
 then SK adds the ISSUE row, command in the blog log); blog.conholdate.cloud **69e4ab9** (F23: cover image in 62

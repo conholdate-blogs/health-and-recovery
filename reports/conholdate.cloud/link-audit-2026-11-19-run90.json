@@ -1,0 +1,56 @@
+{
+  "tenant": "conholdate.cloud",
+  "auditor": "link-audit",
+  "run_id": 90,
+  "params": {
+    "hosts": [
+      "blog.conholdate.cloud"
+    ],
+    "max_live": 5000,
+    "blame": true
+  },
+  "requests": 0,
+  "duration_s": 0.1,
+  "stopped_early": false,
+  "summary": {
+    "blog.conholdate.cloud": {
+      "repo": {
+        "commit": "69e4ab9",
+        "date": "2026-11-19",
+        "stale": false
+      },
+      "posts": 115,
+      "links": 184,
+      "live_checked": 0,
+      "not_checked": 0,
+      "by_check": {},
+      "by_translation_commit": 0,
+      "partial": 0,
+      "unsupported": [],
+      "posts_without_url": 0
+    }
+  },
+  "findings": [],
+  "hosts": {
+    "blog.conholdate.cloud": {
+      "repo": {
+        "path": "/Users/Apple/Work/Aspose/GitHub/blog.conholdate.cloud-PROD/blog.conholdate.cloud",
+        "commit": "69e4ab9",
+        "date": "2026-11-19",
+        "subject": "Translations: cover image restored in 62 translations of 3 posts (cover block written flat, caption keys translated)",
+        "age_days": 0.0,
+        "stale": false
+      },
+      "discovery_run": 13,
+      "sitemap_paths": 138,
+      "posts": 115,
+      "posts_without_url": [],
+      "links": 184,
+      "live_checked": 0,
+      "not_checked": 0,
+      "issues": [],
+      "partial": [],
+      "unsupported": {}
+    }
+  }
+}

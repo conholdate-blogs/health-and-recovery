@@ -54,6 +54,17 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 19 Nov (later): 3832d94d, 638cf070 verified live, health 87 → 92, no broken item left
+
+- Live: sample of 7 pages from 3832d94d all show their cover; ko/ja html-to-bmp `<title>` without `\"`; de/ja/ar
+  view-stl link find-synonyms-in-java. (pt pub-to-pptx still has no cover: queued translation, left on purpose.)
+- Full scan: **health 92** (crawl 100, on-page 98, languages 94, AI 100); snapshot 2026-11-19-4 (live archived first
+  as 2026-11-19-3). Lost: 5.0 wrong-language links (119, all in queued translations; same scoring group as the
+  broken links, so they counted only once before: the "~97" estimate was wrong), 1.0 description lengths, 0.7 stale
+  translations, 0.5 H1, 0.5 titles, 0.4 `\"` values (187 queued), 0.2 untranslated (71 queued).
+- Everything open that is incorrect sits in queued translations; it goes with retranslation, or with fixes here
+  after the queue reset (rule TR-9).
+
 ## 19 Nov: deploy verified, health 85 → 87, cover images, last broken item
 
 | Commit (conholdate-blog) | What | State |

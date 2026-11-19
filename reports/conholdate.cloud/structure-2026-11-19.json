@@ -1,9 +1,9 @@
 {
  "tenant": "conholdate.cloud",
- "date": "2026-11-13",
+ "date": "2026-11-19",
  "search_window": [
-  "2026-10-14",
-  "2026-11-10"
+  "2026-10-20",
+  "2026-11-16"
  ],
  "hosts": {
   "blog.conholdate.cloud": {
@@ -63,13 +63,13 @@
    "tag_listing_pages": 621,
    "pages_beyond_cap": 0,
    "cap": 50,
-   "discovery_run": 12,
+   "discovery_run": 13,
    "sitemap_urls": 138,
    "sitemap_tag_urls": 0,
    "search": {
-    "clicks": 2,
+    "clicks": 3,
     "tag_clicks": 0,
-    "tag_impressions": 33,
+    "tag_impressions": 36,
     "tag_pages_with_clicks": 0
    },
    "tag_robots": {
@@ -94,6 +94,14 @@
      }
     ],
     "all_noindex": true
+   },
+   "section_robots": {
+    "sections": [
+     "Conholdate.Cloud"
+    ],
+    "url": "https://blog.conholdate.cloud/conholdate.cloud/",
+    "status": 200,
+    "noindex": true
    }
   }
  }

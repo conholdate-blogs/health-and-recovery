@@ -308,6 +308,8 @@
   "commits": [
    "69e4ab9627bfc3094fb37b1786f11d2c98c1f489"
   ],
-  "issue": "F23: 62 translations of 3 posts without cover image (cover block written flat, caption keys translated, 7 \\\"…\\\" values; nl named a non-existent image)"
+  "issue": "F23: 62 translations of 3 posts without cover image (cover block written flat, caption keys translated, 7 \\\"…\\\" values; nl named a non-existent image)",
+  "verified": "2026-11-19",
+  "result": "Live: /fr/total/manipulate-pdf-documents/ shows its cover; nl convert-html-files uses convert-html-files.jpg"
  }
 ]

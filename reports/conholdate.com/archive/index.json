@@ -108,5 +108,17 @@
     "date": "2026-11-19 (2)",
     "label": "Full scan 19 Nov: batch 3-4, front matter, translated titles, garbled titles live",
     "runs": "discovery run 9, crawl audit run 105, speed audit run 107, AI audit run 106, text check run 108, link check run 109, repo file check run 110"
+  },
+  {
+    "file": "2026-11-19-3.html",
+    "date": "2026-11-19 (3)",
+    "label": "Live page before the scan after the 19 Nov deploy (downloaded)",
+    "runs": "as live on 19 Nov"
+  },
+  {
+    "file": "2026-11-19-4.html",
+    "date": "2026-11-19 (4)",
+    "label": "Scan after the 19 Nov deploy: last broken links, cover images, escaped values fixed",
+    "runs": "discovery run 10, crawl audit run 112, speed audit run 114, AI audit run 113, text check run 115, link check run 116, repo file check run 117"
   }
 ]

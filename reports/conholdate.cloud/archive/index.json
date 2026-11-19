@@ -209,5 +209,17 @@
     "date": "2026-11-13 (2)",
     "label": "Carry-back from blog.conholdate.com: section page noindex, /feed/ to RSS (agent fixes)",
     "runs": "discovery run 12, crawl audit run 79, speed audit run 81, AI audit run 80, text check run 82, link check run 83, repo file check run 84"
+  },
+  {
+    "file": "2026-11-19.html",
+    "date": "2026-11-19",
+    "label": "Live page before the scan after the 19 Nov deploy (downloaded)",
+    "runs": "as live on 19 Nov"
+  },
+  {
+    "file": "2026-11-19-2.html",
+    "date": "2026-11-19 (2)",
+    "label": "Scan after the 19 Nov deploy: cover images in 62 translations (F23); new checks",
+    "runs": "discovery run 13, crawl audit run 86, speed audit run 88, AI audit run 87, text check run 89, link check run 90, repo file check run 91"
   }
 ]

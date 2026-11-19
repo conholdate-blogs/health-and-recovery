@@ -113,7 +113,7 @@ CDN). 17 agent-fix rows, all verified; F17 found by Shoaib Khan (`found_by`). Sn
 
 | # | Problem | Fix / state |
 |---|---|---|
-| F23 | **No cover image on 62 translated pages** (`post_cover_lost`): manipulate-excel-files (22), convert-html-files (22), manipulate-pdf-documents (18), all Jul 2025: `cover:` written flat, caption keys translated (キャプション, légende, chú thích, כיתוב, Arabic) with `\"…\"` values (7 files, `post_front_matter_escaped`); nl convert-html-files named a non-existent `convert-html-bestanden.jpg`. Live before: `/fr/total/manipulate-pdf-documents/` has no `entry-cover`, English has | Blog commit **69e4ab9** (`scripts/ops/fm_cover_repair.py`), local, **waits for SK's push + deploy**; then live check, agent-fixes row, rescan |
+| F23 | **No cover image on 62 translated pages** (`post_cover_lost`): manipulate-excel-files (22), convert-html-files (22), manipulate-pdf-documents (18), all Jul 2025: `cover:` written flat, caption keys translated (キャプション, légende, chú thích, כיתוב, Arabic) with `\"…\"` values (7 files, `post_front_matter_escaped`); nl convert-html-files named a non-existent `convert-html-bestanden.jpg`. Live before: `/fr/total/manipulate-pdf-documents/` has no `entry-cover`, English has | Blog commit **69e4ab9** (`scripts/ops/fm_cover_repair.py`): **verified live 19 Nov** (/fr/total/manipulate-pdf-documents/ shows its cover); rescan health 100, snapshot 2026-11-19-2 |
 
 Found while dry-running the checks made from blog.conholdate.com's 19 Nov finds (SK's rule: new checks dry-run on
 already-fixed blogs). `post_front_matter_markup` here: 0 after the summary rule (24 `` `/cells` `` summaries render as code).
