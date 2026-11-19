@@ -144,6 +144,8 @@ GUIDE_PAGE = HEAD + """<title>Fix guide</title>
 body { margin: 0; background: var(--bg); color: var(--fg);
   font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif }
 main { max-width: 1180px; margin: 0 auto; padding: 32px 16px 64px; display: grid; gap: 18px }
+/* the table fits the page width: long words wrap instead of widening the page (19 Nov) */
+main { grid-template-columns: minmax(0, 1fr) } td { overflow-wrap: anywhere }
 h1 { margin: 0; font-size: 28px; display: flex; align-items: center; gap: 12px }
 p { margin: 0; color: var(--muted); max-width: 80ch }
 a { color: var(--accent) }
@@ -178,6 +180,7 @@ abbr.term { text-decoration: underline dotted; cursor: help }
 </style>
 <main>
   <nav class="crumbs" aria-label="Breadcrumb"><a href="../">All domains</a> › <b>Fix guide</b></nav>
+__PNAV__
   <h1>""" + brand.logo(36) + """Fix guide</h1>
   <p>One row per check the audits run: what a finding means, why it matters, how to fix it and how to verify the
   fix. Every site health report links here. "Open findings" counts the open findings per report today.</p>
@@ -246,7 +249,8 @@ def guide_page(tenants: list[str]) -> str:
     options = "".join(f'<option value="{html.escape(a)}">{html.escape(a)}</option>' for a in AREAS)
     count = f"{len(GUIDE)} checks · {len(used)} with open findings"
     return (GUIDE_PAGE.replace("__OPTIONS__", options).replace("__COUNT__", count)
-            .replace("__COLUMNS__", GUIDE_COLUMNS).replace("__BODY__", "\n".join(body)))
+            .replace("__COLUMNS__", GUIDE_COLUMNS).replace("__BODY__", "\n".join(body))
+            .replace("__PNAV__", site_pages.pages_nav("../", "fix-guide")))
 
 
 METHOD_URL = "../method/"  # from a tenant report at <out>/<tenant>/
@@ -268,6 +272,7 @@ a { color: var(--accent) }
 </style>
 <main id="method">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="../">All domains</a> › <b>How this audit works</b></nav>
+__PNAV__
   <h1>""" + brand.logo(36) + """How this audit works</h1>
   <p>What each audit checks, how health and the priority score are calculated, and the terms the reports use.
   Every site health report links here. See also the <a href="../fix-guide/">fix guide</a>.</p>
@@ -279,7 +284,7 @@ __METHOD__</main>
 def method_page() -> str:
     """The shared "How this audit works" page; the area-scores note is shown here because a report uses it."""
     body = build_report.method_html().replace(' id="method-areas" hidden', "")
-    return METHOD_PAGE.replace("__METHOD__", body)
+    return METHOD_PAGE.replace("__METHOD__", body).replace("__PNAV__", site_pages.pages_nav("../", "method"))
 
 
 def redirect_page(target: str) -> str:

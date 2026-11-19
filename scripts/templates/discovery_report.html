@@ -1213,6 +1213,12 @@ __METHOD__
 
   // fix guide: the published site keeps it on one shared page; every "How to fix" link and the menu go there
   if (GURL) {
+    // remember this report, so the shared pages offer a way back and this blog's Issue log (SK, 19 Nov)
+    if (!R._snapshot) try {
+      const one = R._page_host || ((R._hosts || []).length === 1 && !R._collection ? R._hosts[0].host : null);
+      const iss = !one ? null : new URL(R._page_host ? "issues/" : `../${one}/issues/`, location.href).pathname;
+      localStorage.setItem("hr-last", JSON.stringify({ path: location.pathname, label: R._page_host || (R._collection ? "Blogs" : R.tenant), host: one, issues: iss }));
+    } catch (e) { /* storage blocked: the bar just has no way back */ }
     $("fix-guide").hidden = true;
     $("toc-guide").href = $("lede-guide").href = GURL;
     $("toc-rules").href = GURL.replace("fix-guide/", "rules/");  // shared rules page (SK, 2026-11-12)

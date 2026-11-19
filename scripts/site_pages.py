@@ -62,6 +62,42 @@ def esc(s) -> str:
     return html.escape(str(s if s is not None else ""))
 
 
+# One link bar on every shared page, as on the reports (SK, 19 Nov: "hard to move to other page, it required a back").
+# The reports remember the last report page in the browser (localStorage "hr-last"); the bar then offers a way back
+# to it and that blog's Issue log. Without it, Issue log opens Issues across blogs.
+PAGES = [("issues", "Issue log", "Every issue found on a blog: status, fix commits, verified live"),
+         ("check-sheet", "Check sheet", "What we check on English and translated post pages"),
+         ("fix-guide", "Fix guide", "What each check means and how to fix it"),
+         ("rules", "Rules", "The SEO, URL and translation rules the blogs follow"),
+         ("method", "Method", "How health and priority scores are calculated")]
+PNAV_CSS = """
+.pnav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding-bottom: 10px; border-bottom: 1px solid var(--line, #dde2e9) }
+.pnav a { font: 500 13px system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--fg, #18202b); text-decoration: none;
+  border: 1px solid var(--line, #dde2e9); border-radius: 999px; padding: 3px 12px; background: var(--surface, #fff) }
+.pnav a:hover, .pnav a:focus-visible { border-color: var(--accent, #1f5f8b); color: var(--accent, #1f5f8b); outline: none }
+.pnav a[aria-current="page"] { background: var(--accent, #1f5f8b); border-color: var(--accent, #1f5f8b); color: var(--surface, #fff) }
+.pnav a.pback { margin-right: auto; color: var(--accent, #1f5f8b); border-color: var(--accent, #1f5f8b) }
+"""
+
+
+def pages_nav(prefix: str, current: str, back: tuple[str, str] | None = None, issues: str | None = None) -> str:
+    """The shared link bar. prefix: path from this page to the site root ("../" or "../../"); current: a PAGES key;
+    back: (label, href) of the report this page belongs to (Issue log pages); issues: this blog's Issue log href."""
+    links = []
+    for key, label, title in PAGES:
+        href = issues if key == "issues" and issues else f"{prefix}blogs/issues/" if key == "issues" else f"{prefix}{key}/"
+        cur = ' aria-current="page"' if key == current else ""
+        links.append(f'<a href="{esc(href)}" title="{esc(title)}"{cur} data-k="{key}">{esc(label)}</a>')
+    back_a = (f'<a class="pback" href="{esc(back[1])}">← {esc(back[0])}</a>' if back
+              else '<a class="pback" id="pback" hidden></a>')
+    js = "" if back else (
+        "<script>(()=>{let L;try{L=JSON.parse(localStorage.getItem('hr-last')||'null')}catch(e){}if(!L||!L.path)return;"
+        "const b=document.getElementById('pback');b.href=L.path;b.textContent='← '+L.label;b.hidden=false;"
+        "if(L.issues){const i=document.querySelector('.pnav a[data-k=issues]');if(i&&!i.hasAttribute('aria-current')){"
+        "i.href=L.issues;i.title='Issue log of '+L.host}}})()</script>")
+    return f'  <style>{PNAV_CSS}</style><nav class="pnav" aria-label="Site pages">{back_a}{"".join(links)}</nav>{js}\n'
+
+
 def day(iso: str | None) -> str:
     if not iso:
         return "–"
@@ -365,7 +401,8 @@ def issue_log_page(
         + section_switch(host, section_hosts or [], "issues/")
         + f'  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">All domains</a> › '
         f'<a href="../../{esc(tenant)}/">{esc(tenant)}</a> › <a href="../">{esc(host)}</a> › <b>Issue log</b></nav>\n'
-        f"  <h1>{logo}Issue log</h1>\n"
+        + pages_nav("../../", "issues", back=(host, "../"), issues="./")
+        + f"  <h1>{logo}Issue log</h1>\n"
         f"  <p>Every issue the audits identified on {esc(host)}, open and closed: status with the date and commits, "
         f"who fixed it, and notes and decisions. Issues found by hand and fixed are listed too. Click a status row "
         f"to filter, a column header to sort.</p>\n"
@@ -532,6 +569,7 @@ def matrix_page(members: list[tuple[str, str]], items: dict[str, dict], css: str
         head
         + f"<title>Issues across blogs</title>\n<style>{css}{EXTRA_CSS}{MATRIX_CSS}</style>\n<main>\n"
         + '  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">All domains</a> › <a href="../">Blogs</a> › <b>Issues across blogs</b></nav>\n'
+        + pages_nav("../../", "issues", back=("Blogs", "../"))
         + f"  <h1>{logo}Issues across blogs</h1>\n"
         + "  <p>Every issue type found on any blog, and its state on each blog: open (with the share of its items fixed), "
         "fixed, resolved, or NOT FOUND when the audits never saw it there. Grouped by severity, worst first; inside a "
@@ -598,6 +636,7 @@ def rules_page(css: str, head: str, logo: str) -> str:
     return (
         head + "<title>Rules</title>\n" + f"<style>{css}{EXTRA_CSS}</style>\n<main>\n"
         '  <nav class="crumbs" aria-label="Breadcrumb"><a href="../">All domains</a> › <b>Rules</b></nav>\n'
+        + pages_nav("../", "rules") +
         f"  <h1>{logo}Rules</h1>\n"
         "  <p>The rules the audits check and the fixes follow: who set each one and when, and the checks that "
         "enforce it (each links to its Fix guide entry). Rules are revised here; a changed rule keeps its ID. "
@@ -680,5 +719,6 @@ def check_sheet_page(css: str, head: str, logo: str) -> str:
     return (
         head + "<title>Check sheet</title>\n" + f"<style>{css}{EXTRA_CSS}</style>\n<main>\n"
         '  <nav class="crumbs" aria-label="Breadcrumb"><a href="../">All domains</a> › <b>Check sheet</b></nav>\n'
+        + pages_nav("../", "check-sheet") +
         f"  <h1>{logo}Check sheet</h1>\n" + "".join(html_parts) + "</main>\n</html>\n"
     )
