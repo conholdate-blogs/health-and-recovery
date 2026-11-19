@@ -609,6 +609,20 @@ _ROWS = [
      "Queue the post for retranslation in the translation sheet; a hand patch of one field leaves the rest of that "
      "output unchecked.",
      "Next repo check has no item for the file."),
+    ("post_cover_lost", "Repo files", "Translation without cover image",
+     "The English post has a cover image, the translation has none: its front matter writes cover: with image, alt "
+     "and caption not indented under it (or with a translated key such as capa:, キャプション:), so cover is empty.",
+     "The translated page shows no cover image and shares without a picture; it looks unfinished next to the English "
+     "page.",
+     "Indent image, alt, caption (and hidden) under cover: as in the English file and rename translated keys back to "
+     "English; image is the English value, alt and caption stay translated.",
+     "The live translated page shows the cover image; next repo check has no item."),
+    ("post_front_matter_escaped", "Repo files", "Front-matter value wrapped in \\\"…\\\"",
+     "A value is written title: \\\"…\\\" instead of title: \"…\". YAML reads it as a plain string that starts with a "
+     "backslash, so the page title, description or image caption shows \\\"…\\\".",
+     "Search results and social cards show the backslashes and quotes around the title.",
+     "Write the value in normal double quotes; fix every key of the file in one go.",
+     "The live <title> has no backslash; next repo check has no item."),
     ("post_front_matter_markup", "Repo files", "Markdown in title or description",
      "A post's title, seoTitle, description or summary carries Markdown such as **bold**, `code` or [text](url). "
      "Front matter is plain text: Hugo puts it into the meta description, Open Graph, JSON-LD and RSS as it is.",

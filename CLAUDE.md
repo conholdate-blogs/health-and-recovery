@@ -15,6 +15,19 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Start here (session handoff, 2026-11-19)
+
+**State:** blog.conholdate.com **health 87** (scan 19 Nov after SK's deploy of 82e16439, 777e7263, 1f806a91, c49b7358,
+all verified live, 4 agent-fix rows). **Local, waiting for SK's push + deploy:** conholdate-blog **3832d94d** (cover
+image restored in 238 translations, `\"` removed in 306 files) and **638cf070** (last broken item: 17 view-stl links;
+then SK adds the ISSUE row, command in the blog log); blog.conholdate.cloud **69e4ab9** (F23: cover image in 62
+translations). After the deploy: live check (`entry-cover` on /fr/… pages, no `\"` in ko/ja html-to-bmp `<title>`),
+agent-fix rows, rescan (expected ~97). **SK's rule TR-9 (19 Nov): fix here, retranslate only what surely needs it**
+(playbook "Fix here or retranslate", catalogue rows 18–22). New checks `post_cover_lost`, `post_front_matter_escaped`
+(TR-8); tools `scripts/ops/fm_cover_repair.py`, `fm_markup_fix.py`. **Next:** after the queue reset: 26 posts with
+small English changes (fix here), the 2 posts with outdated references, 78 English `**` posts (SK's choice),
+half-translated titles (new check). Register: [docs/identified-issues.md](docs/identified-issues.md).
+
 ## Start here (session handoff, 2026-11-18)
 
 **Translation queue model (SK, 18 Nov; SK changes the translation agent himself):** the sheet holds only missing

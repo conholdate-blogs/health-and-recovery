@@ -334,6 +334,26 @@ def test_front_matter_markup():
     assert front_matter_markup({"title": "Plain", "description": None}) == []
 
 
+def test_cover_lost_and_escaped_values(tmp_path):
+    # blog.conholdate.com, 19 Nov 2026: flat cover block (no image live) and \"…\" values
+    from core.audit.repo import cover_image, escaped_values
+
+    esc = escaped_values({"title": '\\"Titel\\"', "author": "A", "cover": {"alt": '\\"x\\"'}})
+    assert esc == ["title", "cover.alt"]
+    assert cover_image({"cover": None, "image": "a.jpg"}) is None
+    assert cover_image({"cover": {"image": "a.jpg"}}) == "a.jpg"
+    repo = make_repo(tmp_path)
+    post = repo / "content/Blog/pdf/2025-01-01-c"
+    post.mkdir(parents=True)
+    (post / "index.md").write_text('---\ntitle: c\nurl: /pdf/c/\ncover:\n    image: images/c.jpg\n'
+                                   '    alt: "C"\n---\nT\n', encoding="utf-8")
+    (post / "index.fr.md").write_text('---\ntitle: \\"c fr\\"\nurl: /fr/pdf/c/\ncover:\nimage: images/c.jpg\n'
+                                      'légende: \\"C\\"\n---\nT\n', encoding="utf-8")
+    audit = RepoAudit(make_tenant(repo), FakeFetcher(), AuditStore(":memory:"), sample=0, log=None)
+    found = {i["check"] for i in audit.check_posts(HOST)[0] if i["file"].endswith("index.fr.md")}
+    assert {"post_cover_lost", "post_front_matter_escaped"} <= found
+
+
 def test_garbled_translation_text():
     # blog.conholdate.com, 18 Nov 2026: titles that are the LLM's answer, a description of zero-width characters
     from core.audit.repo import garbled_text

@@ -109,6 +109,15 @@ CDN). 17 agent-fix rows, all verified; F17 found by Shoaib Khan (`found_by`). Sn
 | F22 | llms.txt served without `charset=utf-8`: Chrome garbled its language names and every /<lang>/llms.txt (found when SK asked whether Markdown in a .txt file is OK; the format is right, the header was not) | `deployment.matchers` in config-production.yml and config-staging.yml: `*.txt` → `text/plain; charset=utf-8` (hugo deploy); blog commit **32f3330, committed, not pushed**; check `llms_txt_charset` (cf4fa3d). The Ceph job (`aws s3 sync`) is not covered. Deployed 12 Nov: S3 still served the old header (hugo deploy uploads only files whose content changed). Follow-up f83b80c adds a "Last updated" line (newest post lastmod) so llms.txt is re-uploaded now and with every content change; **deployed and verified live 12 Nov** (charset=utf-8 on all llms.txt files, Chrome shows the names) |
 | F21 | README was junk (5 lines, 21 languages; SK) | Short README for new developers: add articles in English only (folder, front matter), translation agent does the rest, 22 supported languages; blog commit 0fd019b, on GitHub (no deploy needed) |
 
+## 19 Nov: cover images lost in 62 translations (dry run of new checks, rule TR-8)
+
+| # | Problem | Fix / state |
+|---|---|---|
+| F23 | **No cover image on 62 translated pages** (`post_cover_lost`): manipulate-excel-files (22), convert-html-files (22), manipulate-pdf-documents (18), all Jul 2025: `cover:` written flat, caption keys translated (キャプション, légende, chú thích, כיתוב, Arabic) with `\"…\"` values (7 files, `post_front_matter_escaped`); nl convert-html-files named a non-existent `convert-html-bestanden.jpg`. Live before: `/fr/total/manipulate-pdf-documents/` has no `entry-cover`, English has | Blog commit **69e4ab9** (`scripts/ops/fm_cover_repair.py`), local, **waits for SK's push + deploy**; then live check, agent-fixes row, rescan |
+
+Found while dry-running the checks made from blog.conholdate.com's 19 Nov finds (SK's rule: new checks dry-run on
+already-fixed blogs). `post_front_matter_markup` here: 0 after the summary rule (24 `` `/cells` `` summaries render as code).
+
 ## Decisions by SK (11 Nov)
 
 - Thin tags: an issue only if posts could share better tags; with 5 posts they cannot → noindex (F3); retag later.

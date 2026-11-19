@@ -54,6 +54,30 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 19 Nov: deploy verified, health 85 → 87, cover images, last broken item
+
+| Commit (conholdate-blog) | What | State |
+|---|---|---|
+| 82e16439, 777e7263, 1f806a91, c49b7358 | `**` in 77 descriptions; batch 4 (493 links); 7 garbled titles; 151 English values | **live, verified 19 Nov** (id visio meta, ar pptx-to-docx link, ko html-to-bmp og:title, fa/de H1s); agent-fixes rows |
+| 3832d94d | Cover image restored in 238 current translations, `\"` removed in 306 files (found by SK on /ko/ and /ja/total/convert-html-to-bmp-in-java/: `<title>\"…\"`) | local, rebased on the agent's cf59eb3b, c376e833; waits for SK's push + deploy |
+| 638cf070 | Last broken item: view-stl-files-online translations link `find-synonyms-in-java` (17; all targets 200) | local, waits for SK's push + deploy; **ISSUE row for SK** (`queue_add.py … --post total/2025-07-02-view-stl-files-online --source "Health and Recovery Agent"`, dry run tested): the optimizer rewrite still needs translating |
+
+- **Full scan 19 Nov (after the deploy of the four commits): health 87** (crawl 90, on-page 98, languages 94, AI
+  100, speed no field data, lab median 86). Snapshot 2026-11-19-2; live page archived first as 2026-11-19. Lost
+  points: 10 of 13 = the 17 view-stl links (fixed in 638cf070, expected ~97 after deploy and rescan). Resolved
+  since 16 Nov: link_damaged, link_redirected, post_url_duplicate, sitemap duplicates, several crawl/AI/language
+  findings. Open incorrect items are in queued translations (4 garbled, 71 untranslated, 119 wrong-language links,
+  2 posts with outdated references).
+- **Cover images (new checks `post_cover_lost`, `post_front_matter_escaped`, rule TR-8):** the 2025 pipeline wrote
+  `cover:` with image/alt/caption not indented (some keys translated: `capa`, `cobrir`, `キャプション`, `légende`,
+  `заголовок`, Thai/Arabic caption) and values as `\"…\"`. 424 translations here had no cover image live (238
+  current, fixed; 186 queued, left to retranslation). Same on blog.conholdate.cloud: 62 (fixed, its log).
+  Tool: `scripts/ops/fm_cover_repair.py`.
+- `\"` does not break the Hugo build (the site deployed fine); it shows in `<title>`, og:title and captions.
+- Agent retranslations seen 19 Nov (cf59eb3b export-data-to-excel-in-java, c376e833 insert-delete-rows-columns):
+  fr export-data title is French now.
+- Rule TR-9 (SK): fix here, retranslate only what surely needs it (playbook "Fix here or retranslate").
+
 ## 18 Nov (evening): fix here, not retranslate (SK)
 
 SK: fix here what can be fixed here; only articles that surely need it go to retranslation. The queue is being

@@ -169,6 +169,20 @@ rules:
     date: 2026-11-18
     checks: [translation_text_garbled]
     status: active
+  - id: TR-8
+    rule: "A translation keeps the English front-matter structure: same keys in English (cover:, caption:, never capa: or キャプション:), the cover block indented, values quoted \"…\" (never \\\"…\\\"); only the text values are translated."
+    why: "blog.conholdate.com, 19 Nov 2026: the 2025 pipeline flattened the cover block in 424 translations (no cover image live) and wrapped values in \\\"…\\\" (ko/ja convert-html-to-bmp-in-java showed \\\"…\\\" as the Google title). Found by Shoaib Khan."
+    set_by: Shoaib Khan
+    date: 2026-11-19
+    checks: [post_cover_lost, post_front_matter_escaped]
+    status: active
+  - id: TR-9
+    rule: "Fix translations here when the fix is mechanical or small (links, front matter, titles, a few lines); send a post to retranslation only when its English was really rewritten. A fix to a queued translation drops it from the queue, so it needs an ISSUE row when the rewrite still has to be translated."
+    why: "Shoaib Khan, 18-19 Nov 2026: 'instead of putting translation for retranslation, we can resolve many things here.' blog.conholdate.com: 3,767 outdated translations, 442 of them behind small English changes."
+    set_by: Shoaib Khan
+    date: 2026-11-19
+    checks: []
+    status: active
   - id: TPL-1
     rule: "Nothing renders an element such as a <div> in <head> before the SEO tags: extend_head.html is the last include."
     why: On 3 Nov 2026 a language-switcher div pushed title, canonical and hreflang of blog.aspose.com into <body>.

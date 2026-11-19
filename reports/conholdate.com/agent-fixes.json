@@ -291,5 +291,62 @@
   ],
   "issue": "th, tr, vi of extract-text-and-images-from-pdf-documents-using-java: \"See also\" [28] linked to a post that does not exist (jpg-to-readable-text-ocr-full-form, 404) and [27] \"Extract Text from Word\" pointed at jpg-text-scanner",
   "result": "Live: [27] → extract-text-from-word-documents-using-java, [28] → jpg-text-scanner in th, tr, vi, as the English post; both targets 200 (first draft duplicated jpg-text-scanner, corrected after Shoaib Khan's review)"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "verified": "2026-11-19",
+  "fixed": "2026-11-18",
+  "found": "2026-11-18",
+  "found_by": "Agent",
+  "check": "post_front_matter_markup",
+  "commits": [
+   "d7387d381b2b43e4a4f49ce49549b378ab420ec2",
+   "82e164396339f4a358c7d071883210876118bd58"
+  ],
+  "issue": "Markdown (**, a backtick used as apostrophe) in front-matter descriptions: shown as is in the meta description, Open Graph and JSON-LD (e.g. /id/total/how-to-convert-visio-to-pdf-in-java/ started with \"**Ubah Visio…**\")",
+  "result": "Live: meta, og and JSON-LD descriptions without ** in 77 current translations (+ 2 in d7387d38); 78 English posts wait for the scanner decision"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "verified": "2026-11-19",
+  "fixed": "2026-11-18",
+  "found": "2026-11-02",
+  "found_by": "Agent",
+  "check": "link_wrong_language",
+  "commits": [
+   "777e72631dda2e6dc2ceb8ab09946f613051a09e"
+  ],
+  "issue": "493 links in 255 current translations pointed at the English post although the translated post exists (14 posts Aug-Oct 2025 + convert-pptx-to-docx-java)",
+  "result": "Live: e.g. /ar/total/convert-pptx-to-docx-java/ links /ar/total/convert-pptx-to-xlsx-java/; sample of new targets 40/40 200"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "verified": "2026-11-19",
+  "fixed": "2026-11-18",
+  "found": "2026-11-18",
+  "found_by": "Agent",
+  "check": "translation_text_garbled",
+  "commits": [
+   "1f806a91ca3de1af4917684f4652d6f750f67d0a"
+  ],
+  "issue": "7 translated titles/descriptions were the LLM's answer (steps, code, an English answer about 'Scalaj', a Dutch description of zero-width characters)",
+  "result": "Live: e.g. /ko/total/convert-html-to-bmp-in-java/ og:title \"Java에서 HTML을 BMP로 변환하기\" (was a paragraph with numbered steps)"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "verified": "2026-11-19",
+  "fixed": "2026-11-18",
+  "found": "2026-11-13",
+  "found_by": "Agent",
+  "check": "post_text_untranslated",
+  "commits": [
+   "c49b73583ca89fb613aa8512b7b96a6e4a323765"
+  ],
+  "issue": "151 titles, seoTitles and descriptions left in English in 125 current translations",
+  "result": "Live: e.g. /de/total/convert-cdr-to-psd-in-java/ H1 \"CDR in PSD konvertieren in Java\", /fa/total/split-pdf-files-in-java/ H1 in Persian"
  }
 ]

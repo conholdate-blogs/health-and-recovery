@@ -104,6 +104,14 @@ CHECKS = {
     "translation_text_garbled": ("intl", "incorrect", "Translations whose title or description is not a translation",
                                  "A translation's title, seoTitle and description are one line about as long as the "
                                  "English value (not an answer, code, steps or repeated characters)", 3, "M"),
+    # found on blog.conholdate.com, 19 Nov 2026: the 2025 translation pipeline wrote 'cover:' with image/alt/caption
+    # not indented (some keys translated: capa, cobrir, キャプション, légende), so 424 translations had no cover image
+    "post_cover_lost": ("onpage", "incorrect", "Translations without the English post's cover image",
+                        "A translation keeps the English cover block: cover: with image, alt, caption indented under "
+                        "it, keys in English", 1, "S"),
+    # same pipeline: values written as \"…\" (a plain YAML string with backslashes), shown as \"…\" in the page title
+    "post_front_matter_escaped": ("onpage", "incorrect", "Front-matter values wrapped in \\\" … \\\"",
+                                  "Front-matter strings are quoted \"…\" (or plain), never \\\"…\\\"", 1, "S"),
     "translated_url_mismatch": ("intl", "incorrect",
                                 "Translations published under a different URL than the English post",
                                 "A translation's URL is the English post's URL with only its language prefix added",
@@ -228,6 +236,20 @@ def front_matter_markup(data: dict) -> list[tuple[str, str, str]]:
         if marks:
             out.append((field, ", ".join(marks), val))
     return out
+
+
+def escaped_values(data: dict) -> list[str]:
+    """Keys (top level and under cover) whose string value starts with a backslash-quote: written \\"…\\" in YAML."""
+    out = [k for k, v in data.items() if isinstance(v, str) and v.startswith('\\"')]
+    cover = data.get("cover")
+    if isinstance(cover, dict):
+        out += [f"cover.{k}" for k, v in cover.items() if isinstance(v, str) and v.startswith('\\"')]
+    return out
+
+
+def cover_image(data: dict) -> str | None:
+    cover = data.get("cover")
+    return str(cover["image"]) if isinstance(cover, dict) and cover.get("image") else None
 
 
 GARBLED_RATIO = 6  # translation width / English width; real translations stay under 4 (blog.conholdate.com, 18 Nov)
@@ -466,6 +488,7 @@ class RepoAudit:
         texts: dict[str, dict[str, tuple[dict, str, str | None]]] = {}  # folder -> language -> (values, file, page)
         cats_used: set[str] = set()
         sc_names = shortcode_names(repo)
+        covers: dict[str, dict[str, tuple]] = {}  # folder -> language -> (cover image, file, page)
         for f in sorted(repo.glob("content/**/index*.md")):
             if not _NAME.match(f.name):
                 continue
@@ -500,6 +523,13 @@ class RepoAudit:
             for n, line in shortcodes_as_text(text[m.end():], sc_names):
                 issues.append({"check": "post_shortcode_as_text", "file": rel, "line": fm_lines + n, "link": None,
                                "page": page, "fix": "write it {{< … >}}", "note": line, "commit": commit(rel)})
+            esc = escaped_values(data)
+            if esc:
+                issues.append({"check": "post_front_matter_escaped", "file": rel, "line": 1, "link": None,
+                               "page": page, "fix": 'write the value as "…"',
+                               "note": f"{', '.join(esc)}: {str(data.get(esc[0].split('.')[-1]) or '')[:60]!r}",
+                               "commit": commit(rel)})
+            covers.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (cover_image(data), rel, page)
             for field, marks, val in front_matter_markup(data):
                 issues.append({"check": "post_front_matter_markup", "file": rel, "line": 1, "link": None,
                                "page": page, "fix": f"remove {marks} from {field}",
@@ -531,6 +561,13 @@ class RepoAudit:
                 posts_by_date.append((d, page, rel))
             texts.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (
                 {k: str(data.get(k) or "") for k in ("seoTitle", "title", "description")}, rel, page)
+        for _folder, by in sorted(covers.items()):
+            en_img = (by.get("") or (None,))[0]
+            for lang, (img, rel, page) in sorted(by.items()):
+                if lang and en_img and not img:
+                    issues.append({"check": "post_cover_lost", "file": rel, "line": 1, "link": None, "page": page,
+                                   "fix": f"cover: with image: {en_img} (and alt, caption) indented under it",
+                                   "note": "no cover image; the English post has one", "commit": commit(rel)})
         issues += self.check_translated_urls(host, urls, commit)
         issues += self.check_duplicate_urls(host, urls, commit)
         issues += self.check_stale(host, stale_candidates, commits, commit)
