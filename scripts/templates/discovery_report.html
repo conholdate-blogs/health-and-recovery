@@ -208,8 +208,11 @@ header a, .lede a, .mth a, .chg a, #sys-table a, .fixline a, .top .fsub a { colo
 .toc a { flex: none; font: 500 13px var(--body); color: var(--muted); text-decoration: none; padding: 4px 10px; border-radius: 6px }
 .toc a:hover, .toc a:focus-visible { color: var(--accent); background: var(--tint); outline: none }
 /* this page's sections first; the shared Fix guide and Method pages at the end, set apart */
-.toc a.shared { margin-left: auto } .toc a.shared:not([hidden]) ~ a.shared { margin-left: 0 }
-.toc a.shared::after { content: " →" }
+/* shared site pages as outlined pills, set apart on the right (SK, 19 Nov: "these links can be improved") */
+.toc a.shared { margin-left: auto; color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; background: var(--surface) }
+.toc a.shared:not([hidden]) ~ a.shared { margin-left: 6px }
+.toc a.shared:hover, .toc a.shared:focus-visible { border-color: var(--accent); color: var(--accent); background: var(--tint) }
+.toc a.shared::after { content: " →"; color: var(--muted) }
 section { scroll-margin-top: 56px }
 .sumgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px }
 .sumcard { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 10px; align-content: start; min-width: 0 }
@@ -311,6 +314,16 @@ table.acts a { color: var(--fg); text-decoration-color: var(--line); text-underl
 .srow .down { color: var(--broken); font-weight: 600; font-style: normal } .srow .up { color: var(--good); font-weight: 600 }
 .sopen { grid-column: 1; grid-row: 2; align-self: end; justify-self: start; font: 600 14px var(--body); color: var(--accent) }
 button.sopen { background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline }
+/* the whole card opens the subdomain page (SK, 19 Nov); buttons and links inside stay on top and keep their own action */
+.srow.linked { position: relative; transition: box-shadow .15s, border-color .15s }
+.srow.linked:hover { box-shadow: 0 2px 10px rgb(0 0 0 / .08); border-color: var(--accent); border-left-color: var(--gc) }
+a.sopen.btn { padding: 5px 14px; border-radius: 999px; background: var(--accent); color: var(--surface); text-decoration: none; font-size: 13px }
+a.sopen.btn::after { content: ""; position: absolute; inset: 0; border-radius: 8px }
+.srow.linked:hover a.sopen.btn { filter: brightness(1.1) }
+a.sopen.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.srow.linked button, .srow.linked a:not(.sopen), .srow.linked [data-x] { position: relative; z-index: 1 }
+a.pilllink { display: inline-block; margin-top: 4px; padding: 2px 10px; border: 1px solid var(--accent); border-radius: 999px; color: var(--accent); font-weight: 600; text-decoration: none }
+a.pilllink:hover, a.pilllink:focus-visible { background: var(--tint); outline: none }
 .info { background: none; border: 0; padding: 0 2px; font: inherit; color: var(--accent); cursor: help; text-transform: none }
 /* the score explanation panel: a list of points lost with the numbers aligned, and the total */
 abbr.term { text-decoration: underline dotted; text-underline-offset: 3px; cursor: help }
@@ -413,7 +426,7 @@ footer a { color: var(--accent) }
   </header>
 
   <nav class="toc" aria-label="Contents">
-    <a href="#summary">Summary</a><a href="#families" id="toc-fam">Families</a><a href="#host-health" id="toc-host">Subdomains</a><a href="#priorities">Priorities</a><a href="#systemic" id="toc-sys">Shared problems</a><a href="#findings">Issues and fixes</a><a href="#changes">Changes</a><a href="#reference">Reference</a><a href="issues/" id="toc-issues" class="shared" hidden>Issue log</a><a href="#fix-guide" id="toc-guide" class="shared">Fix guide</a><a href="#" id="toc-rules" class="shared" hidden>Rules</a><a href="#method" class="shared">Method</a>
+    <a href="#summary">Summary</a><a href="#families" id="toc-fam">Families</a><a href="#host-health" id="toc-host">Subdomains</a><a href="#priorities">Priorities</a><a href="#systemic" id="toc-sys">Shared problems</a><a href="#findings">Issues and fixes</a><a href="#changes">Changes</a><a href="#reference">Reference</a><a href="issues/" id="toc-issues" class="shared" hidden title="Every issue found on this blog: status, fix commits, verified live">Issue log</a><a href="#" id="toc-sheet" class="shared" hidden title="What we check on English and translated post pages">Check sheet</a><a href="#fix-guide" id="toc-guide" class="shared" title="What each check means and how to fix it">Fix guide</a><a href="#" id="toc-rules" class="shared" hidden title="The SEO, URL and translation rules the blogs follow">Rules</a><a href="#method" class="shared" title="How health and priority scores are calculated">Method</a>
   </nav>
 
   <section aria-labelledby="s-sum" id="summary">
@@ -1204,6 +1217,7 @@ __METHOD__
     $("toc-guide").href = $("lede-guide").href = GURL;
     $("toc-rules").href = GURL.replace("fix-guide/", "rules/");  // shared rules page (SK, 2026-11-12)
     $("toc-rules").hidden = false;
+    $("toc-sheet").href = GURL.replace("fix-guide/", "check-sheet/"); $("toc-sheet").hidden = false;  // SK, 19 Nov
     if (R._page_host && !R._snapshot) $("toc-issues").hidden = false;  // /<subdomain>/issues/
   } else {
     const AREAS = (R._guide && R._guide.areas) || [];
@@ -1663,7 +1677,7 @@ __METHOD__
           : `<div class="kpi"><span class="kl">Search traffic</span><span class="kv">–</span><span class="ks">no Search Console or GA4 data</span></div>`,
         LOG ? `<div class="kpi"><span class="kl">${issuesLabel}</span><span class="kv">${fmt(LOG.open)} <small>open of ${fmt(LOG.total)}</small></span><span class="ks"><span class="${LOG.verified + LOG.pushed ? "up" : ""}">${fmt(LOG.verified + LOG.pushed)} fixed</span> · ${fmt(LOG.resolved)} resolved${LOG.reviewed ? ` · ${fmt(LOG.reviewed)} reviewed` : ""}`
           + ` · <b class="pct${LOG.total - LOG.open ? " ok" : ""}">${share(LOG.total - LOG.open, LOG.total)}</b> closed</span>`
-          + `<span class="ks">${GURL ? `<a href="issues/">Issue log →</a>` : ""}</span></div>` :
+          + `<span class="ks">${GURL ? `<a class="pilllink" href="issues/">Issue log →</a>` : ""}</span></div>` :
         `<div class="kpi"><span class="kl">${typesLabel}</span><span class="kv">${findings.length}</span><span class="ks"><span class="down">${byType.broken} broken</span> · ${byType.incorrect} incorrect · ${byType.not_optimized + byType.improvable} minor</span>`
           + `<span class="ks">${!before ? "no earlier run to compare" : (CH.resolved || []).length  // resolved ones are named in Fix progress; new ones are tagged in the list
             ? `<a href="#changes">${changesSub({ add: (CH.new || []).length, gone: CH.resolved.length }, before)}</a>` : changesSub({ add: (CH.new || []).length, gone: 0 }, before)}</span></div>`,
@@ -1695,12 +1709,12 @@ __METHOD__
           : cell("Search traffic", `<b>–</b><small>no data</small>`) + cell("Impressions", `<b>–</b>`);
         const areas = (H.areas || []).map(areaCell).join("");
         const open = published && SITE_HOSTS.includes(H.host)
-          ? `<a class="sopen" href="../${esc(H.host)}/">Open subdomain page →</a>`
+          ? `<a class="sopen btn" href="../${esc(H.host)}/" aria-label="Full report of ${esc(H.host)}">Full report →</a>`
           : `<button type="button" class="sopen" data-host="${esc(H.host)}">See its ${mine.length} findings →</button>`;
-        return `<article class="srow g-${H.grade}">
+        return `<article class="srow g-${H.grade}${published && SITE_HOSTS.includes(H.host) ? " linked" : ""}">
           <div class="sname"><code>${hostH(H.host)}</code>${R._collection ? `<small class="dim">${esc(H.domain)}</small>` : ""}<span class="sscore"><b>${H.health}</b><span>score ${info("Score", H)}</span></span>${sbar(H.health, H.grade, "big")}${before ? `<small class="dim">${signed(H.health - before.health)} ${since(before.date)}</small>` : ""}</div>
           ${traffic}
-          ${L ? cell(issuesLabel, `<b>${fmt(L.open)} <small>open of ${fmt(L.total)}</small></b><small><span class="${L.verified + L.pushed ? "up" : ""}">${fmt(L.verified + L.pushed)} fixed</span> · <b class="pct${L.total - L.open ? " ok" : ""}">${share(L.total - L.open, L.total)}</b> closed${published && SITE_HOSTS.includes(H.host) ? `<br><a href="../${esc(H.host)}/issues/">Issue log →</a>` : ""}</small>`)
+          ${L ? cell(issuesLabel, `<b>${fmt(L.open)} <small>open of ${fmt(L.total)}</small></b><small><span class="${L.verified + L.pushed ? "up" : ""}">${fmt(L.verified + L.pushed)} fixed</span> · <b class="pct${L.total - L.open ? " ok" : ""}">${share(L.total - L.open, L.total)}</b> closed${published && SITE_HOSTS.includes(H.host) ? `<br><a class="pilllink" href="../${esc(H.host)}/issues/">Issue log →</a>` : ""}</small>`)
             : cell(typesLabel, `<b>${mine.length}</b><small>${b ? `<em class="down">${b} broken</em> · ` : ""}${inc} incorrect<br>${changesSub(ch, before)}</small>`)}
           ${!ANY_ITEMS ? "" : cell(L ? `Items ${ask(ITEMS_NOTE)}` : itemsLabel, H.items ? `<b>${fmt(H.items.open)} <small>${L ? "open " : ""}of ${fmt(H.items.issues)}</small></b><small>${itemsSub(H.items)}</small>` : `<b>–</b><small>no link check (no blog repo configured)</small>`)}
           ${areas ? `<div class="sareas">${areas}</div>` : ""}${open}</article>`;
@@ -1834,7 +1848,18 @@ __METHOD__
     if (f) { showAll = true; renderFindings(); const d = document.getElementById("f-" + f.id); if (d) { d.open = true; d.scrollIntoView(); } }
   }
 
-  $("foot").innerHTML = `<a href="#method">How this audit works</a>${R._collection ? "" : ` · <a href="${ARCHIVE}">Previous versions</a>`}<br>` + esc(R._collection ? "Built from each member domain's latest runs and findings; every row is scored exactly as on its own page. Read-only audit: nothing on any site was changed." : `Generated from discovery run ${R.run_id}${A ? `, crawl audit run ${A.run_id}` : ""}${R._perf ? `, speed audit run ${R._perf.run_id}` : ""}${R._ai ? `, AI audit run ${R._ai.run_id}` : ""}${R._text ? `, text check run ${R._text.run_id}` : ""}${R._links ? `, link check run ${R._links.run_id}` : ""} and the findings store. Read-only audit: nothing on any site was changed. Each finding lists URLs anyone can open to re-check it. For discovery findings "pages" counts URLs in the affected sitemaps; for crawl audit findings it is an estimate from the sample. Impact from Search Console and GA4 is added in the prioritization step.`);
+  // footer: the scans behind this page by date, run numbers on hover only (SK, 19 Nov: "should better show dates")
+  const FOOT_SCANS = [["sitemap scan", R._run_date, R.run_id], ["crawl audit", A && A.date, A && A.run_id],
+    ["speed audit", R._perf && R._perf.date, R._perf && R._perf.run_id], ["AI audit", R._ai && R._ai.date, R._ai && R._ai.run_id],
+    ["text check", R._text && R._text.date, R._text && R._text.run_id], ["link check", R._links && R._links.date, R._links && R._links.run_id],
+    ["repo check", R._repo && R._repo.date, R._repo && (R._repo.run_ids || []).join(", ")],
+    ["site structure", R._structure && R._structure.date, null]].filter(x => x[1]);
+  const byDay = {};
+  for (const [name, d, run] of FOOT_SCANS) (byDay[d.slice(0, 10)] = byDay[d.slice(0, 10)] || []).push(run ? `<span title="run ${esc(String(run))}">${esc(name)}</span>` : esc(name));
+  const scanLine = Object.keys(byDay).sort().reverse().map(d => `<b>${esc(day(d))}</b>: ${byDay[d].join(", ")}`).join(" · ");
+  $("foot").innerHTML = `<a href="#method">How this audit works</a>${R._collection ? "" : ` · <a href="${ARCHIVE}">Previous versions</a>`}<br>`
+    + (R._collection ? esc("Built from each member domain's latest scans; every row is scored exactly as on its own page. Read-only audit: nothing on any site was changed.")
+      : (scanLine ? `Scans behind this page: ${scanLine}.<br>` : "") + esc("Read-only audit: nothing on any site was changed. Each finding lists URLs anyone can open to re-check it."));
   // the method is a shared page on the published site (like the fix guide): point every #method link there
   if (R._method_url) document.querySelectorAll('a[href^="#method"]').forEach(a => { a.href = R._method_url + a.getAttribute("href"); });
 })();
