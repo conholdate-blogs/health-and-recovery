@@ -74,3 +74,13 @@ repo, rule TR-9) or *retranslate* (Translation Agent, via an ISSUE row) or *Engl
    and fixes the findings.
 3. Decide per post (rule TR-9): English body rewritten → retranslate (Translation Agent); front matter or a few
    lines → Health & Recovery Agent.
+
+## 6. After a post is retranslated
+
+1. Every issue we left for retranslation is in `reports/<tenant>/after-retranslation.csv`; after the translation run
+   and a rescan, `scripts/ops/translation_queue_report.py` marks each one *fixed by retranslation* or *still there
+   after retranslation: fix here*.
+2. Still there → the Health & Recovery Agent fixes it here; if the translation agent reproduced it, the agent's owner
+   gets the case for a guard.
+3. Re-run the English and translation rows of this sheet on the retranslated post (new translations bring new
+   defects: lengths, untranslated fields, garbled titles).

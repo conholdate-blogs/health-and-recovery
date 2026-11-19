@@ -54,6 +54,15 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 19 Nov (final, later): items left for retranslation listed per post (rule TR-11)
+
+- `reports/conholdate.com/after-retranslation.csv`: **122 posts, 161 post × check rows, 982 items** in queued
+  translations that our fixes skipped: Markdown in front matter 392, `\"` values 187, lost covers 186,
+  wrong-language links 119, English titles 71, link differs from original 23 (the 2 outdated posts), garbled
+  titles 4. State today: all *waiting for retranslation*.
+- `translation_queue_report.py` section 5 updates each row after a translation run + rescan: *fixed by
+  retranslation* / *still there after retranslation: fix here*. Run it after every rescan of this blog.
+
 ## 19 Nov (final): final scan, health 92, all agent fixes verified
 
 - 9ee68667, adc1337b, 752c021d, ef8be14d pushed by SK and **verified live** (zip post and python post have their

@@ -147,3 +147,7 @@ Fix here (TR-9): posts with 'front matter only' or 'body 1-5':
   - pl 2025-07-21-scrub-metadata-online: alt, caption, hidden, image
 - F7 cover image files that do not exist: 0
 - F15 translations whose tag list differs from the English post: 837
+
+## 5. Items left for retranslation (after-retranslation.csv)
+
+- waiting for retranslation: 161

@@ -60,6 +60,7 @@ Plan:
 | **Two URLs claimed by two posts each** (`/total/add-barcode-to-pdf-in-java/`, `/total/convert-html-to-image-java/`; 18 languages; one post of each pair never published) — found by hand 16 Nov | 2 URLs; the blog developer checks which post stays (SK, 16 Nov); check `post_url_duplicate` built 16 Nov |
 | Body `# Title` H1 (2 posts × 18) + Arabic `# التثبيت #:`; tag typo "Image Extration API"; "Home" label and wrong menu names | S1–S3 ✓ verified live 16 Nov (f34e3da0); check `post_body_h1` built |
 | Categories / Tags menu link to English `/categories/`, `/tags/` from every language | site-wide; small, not planned |
+| **Left for retranslation, per post:** `reports/conholdate.com/after-retranslation.csv` (122 posts, 982 items; checked by `translation_queue_report.py` after each translation run, rule TR-11) | waiting |
 | **State 19 Nov (scan after deploy, health 87):** links wrong language 731 → 119 (rest in queued translations), broken 81 → 17 → 0 (638cf070 ✓ verified live 19 Nov, health 92), damaged 54 → 0; untranslated 198 → 71 (queued); garbled 11 → 4 (queued) | see log 19 Nov |
 | Translations without cover image / `\"…\"` values | 424 / ~490: 238 + 306 files fixed in 3832d94d (✓ verified live 19 Nov); 186 / 187 queued left to retranslation |
 | English posts with `**` in the description | 78 (not queued); `**` in 326 translations (nl, id in all 78), 1,000 without: fixing English + the 326 marks the 1,000 OUTDATED; waits for SK |

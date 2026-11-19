@@ -39,7 +39,8 @@ check-sheet by-hand items) runs in the blog.groupdocs.cloud plan. Open, recorded
 `\"` 187, lost covers 186, English titles 71, garbled 4, 2 outdated posts) go with retranslation or fixes here after
 SK's queue reset; 78 English `**` descriptions wait until the translation agent ignores our English-only fixes;
 half-translated titles (candidate check); 26 posts behind small English changes; translation tag lists differ
-(low); 40 English-body-check findings left (uncertain/minor). Done by SK 19 Nov: queue priority of the 3 restored posts raised, view-stl ISSUE row added, optimizer's owner told
+(low); 40 English-body-check findings left (uncertain/minor). Items left for retranslation: `reports/conholdate.com/after-retranslation.csv` (122 posts, 982 items), re-checked
+by `translation_queue_report.py` after each translation run (TR-11). Done by SK 19 Nov: queue priority of the 3 restored posts raised, view-stl ISSUE row added, optimizer's owner told
 (5 cut posts, TD-5; escaped shortcodes, TD-3).
 
 ## Start here (session handoff, 2026-11-19, day)

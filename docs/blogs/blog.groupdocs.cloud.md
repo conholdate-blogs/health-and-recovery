@@ -70,7 +70,8 @@ titles 68, extra keys 527, missing cover files 71, tag lists differ 531. English
    **English body check** on posts with queued translations (`scripts/ops/english_body_check.py --tenant
    groupdocs.cloud`), review every finding in context (CSV `review` column).
 3. Show SK the findings by type with samples; propose fixes per batch, **English first** for queued posts (TR-10),
-   current translations only otherwise (TR-9), ISSUE rows where a fix drops a needed retranslation.
+   current translations only otherwise (TR-9), ISSUE rows where a fix drops a needed retranslation; every item a
+   fix leaves to retranslation goes to `reports/groupdocs.cloud/after-retranslation.csv` (TR-11).
 4. Carry over the proven fixes: playbook "Fix catalogue" rows 1–24 (template: head order, x-default, tag/search/
    archives noindex, section page noindex, llms.txt at build, menu ids, language names, RTL; content: links,
    front matter, titles, covers, cut posts). Check sheet: `docs/check-sheet.md` (also `/check-sheet/` on the site).

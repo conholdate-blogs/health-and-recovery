@@ -183,6 +183,13 @@ rules:
     date: 2026-11-19
     checks: [post_body_cut_off, post_raw_html_dropped]
     status: active
+  - id: TR-11
+    rule: "Every issue a fix leaves to retranslation is listed per post (after-retranslation.csv) and checked after the post is retranslated: fixed by retranslation, or fixed here."
+    why: "Shoaib Khan, 19 Nov 2026: 'have we logged that if some fix will be done after translation and x posts are in translation queue?' blog.conholdate.com: 982 items in 122 posts left for retranslation."
+    set_by: Shoaib Khan
+    date: 2026-11-19
+    checks: []
+    status: active
   - id: TD-5
     rule: "Tools that edit posts (optimizer, translator) never shorten a post by cutting it: the file still ends with its last section and link definitions, and every code block is closed."
     why: "blog.conholdate.com, 19 Nov 2026: the Blog Optimization Agent cut create-encrypted-zip-files-using-csharp (154 -> 70 lines, ended 'legacy PK'), build-your-own-google-docs-like-app and create-and-read-excel-files-in-python in Feb-Mar 2026; export-data-to-excel-in-java (371 -> 80) and add-footnotes-and-endnotes were cut and later restored."

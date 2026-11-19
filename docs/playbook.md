@@ -55,6 +55,11 @@ has its own log in [blogs/](blogs/) with its facts, findings, decisions and fixe
     runs `queue_add.py` (it needs the write key; our service account reads the sheet only).
     Considerable = an LLM answer, code or garbage instead of a translated title/description (`translation_text_garbled`),
     or a translation older than an English rewrite with a different structure (headings, references).
+  - **Items left for retranslation are listed per post** (SK, 19 Nov): whenever a fix skips queued translations,
+    the item goes to `reports/<tenant>/after-retranslation.csv` (post, check, languages, example, state). After each
+    translation run + rescan, `scripts/ops/translation_queue_report.py` updates the state: *fixed by
+    retranslation*, or *still there after retranslation: fix here* (then the Health & Recovery Agent fixes it, and
+    the translation agent gets a guard when it reproduced the defect). Nothing left for retranslation is forgotten.
   - **Markup-only fixes (`**` etc., rule TD-4) never queue a retranslation:** fix current translations in the same
     commit, leave queued (OUTDATED) translations alone, and wait with English-only changes that would mark clean
     current translations OUTDATED until only optimizer commits count.

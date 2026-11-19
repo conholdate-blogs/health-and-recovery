@@ -11,6 +11,9 @@ Writes reports/<tenant>/queue-report-<date>.md and prints the summary. Sections:
  2. English issues of fully queued posts (from the newest repo and link check CSVs): fix the English first (TR-10).
  3. Optimizer cuts: commits by the optimization agent that removed >= 40 lines of an English post, and whether the
     post still has fewer H2 sections than before the cut (TD-5; post_body_cut_off only sees cuts at the end).
+ 5. Items left for retranslation (reports/<tenant>/after-retranslation.csv: post, check, languages): once a post's
+    translations are no longer queued (retranslated), the newest scan CSVs tell whether the issue is gone; the CSV's
+    state column is updated to 'fixed by retranslation' or 'still there after retranslation: fix here'.
  4. Check-sheet by-hand items: translated titles that start with the English title's first word (half translated,
     F11), translations with front-matter keys the English post does not have (translated keys, F8), cover images
     whose file does not exist (F7), translation tag lists that differ from the English post (F15).
@@ -188,6 +191,49 @@ def main() -> int:
     out.append(f"- F15 translations whose tag list differs from the English post: {tags}")
     summary.update({"F11 half-translated titles?": len(half), "F8 extra keys": len(keys),
                     "F7 missing cover files": len(imgs), "F15 tag lists differ": tags})
+    # 5. items left for retranslation
+    ar = REPO / "reports" / a.tenant / "after-retranslation.csv"
+    if ar.is_file():
+        flagged = set()
+        for pat in ("repo-audit-*-issues.csv", "link-audit-*-issues.csv"):
+            files = sorted(glob.glob(str(REPO / "reports" / a.tenant / pat)))
+            if files:
+                for r in csv.DictReader(open(files[-1], encoding="utf-8")):
+                    flagged.add((r.get("file") or "", r["check"]))
+        items = list(csv.DictReader(open(ar, encoding="utf-8")))
+        states = collections.Counter()
+        for it in items:
+            if it["state"].startswith("fixed"):
+                states[it["state"]] += 1
+                continue
+            d = next((x.parent for x in posts if x.parent.name == it["post"]), None)
+            if d is None:
+                it["state"] = "post gone"
+                states[it["state"]] += 1
+                continue
+            en_t = (hist.get(str((d / "index.md").relative_to(repo))) or [{"t": 0}])[0]["t"]
+            left, still = [], []
+            for lang in it["languages"].split():
+                rel = str((d / f"index.{lang}.md").relative_to(repo))
+                if (hist.get(rel) or [{"t": 0}])[0]["t"] < en_t:
+                    left.append(lang)
+                elif (rel, it["check"]) in flagged:
+                    still.append(lang)
+            if left:
+                it["state"] = "waiting for retranslation" + (f" ({' '.join(left)})" if len(left) < len(
+                    it["languages"].split()) else "")
+            elif still:
+                it["state"] = f"still there after retranslation: fix here ({' '.join(still)})"
+            else:
+                it["state"] = f"fixed by retranslation (checked {dt.date.today()})"
+            states[it["state"].split(" (")[0]] += 1
+        with open(ar, "w", newline="", encoding="utf-8") as fh:
+            w = csv.DictWriter(fh, fieldnames=list(items[0].keys()))
+            w.writeheader()
+            w.writerows(items)
+        out.append("\n## 5. Items left for retranslation (after-retranslation.csv)\n")
+        out += [f"- {k}: {v}" for k, v in states.most_common()]
+        summary["left for retranslation"] = dict(states)
     path = REPO / "reports" / a.tenant / f"queue-report-{dt.date.today()}.md"
     path.write_text(f"# Translation queue report: {host['host'] if 'host' in host else a.tenant}, "
                     f"{dt.date.today()}\n\n" + "\n".join(out) + "\n", encoding="utf-8")
