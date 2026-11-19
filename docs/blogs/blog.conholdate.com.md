@@ -73,7 +73,10 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
   **Tell the optimizer's owner** (it also escaped `<` `>` in shortcodes, TD-3).
 - **78 English posts with `**` in the description** (not queued: all translations current): only nl and id carry
   the `**` in all 78; the other 15 languages dropped it in ~59 posts → 326 translations with `**`, 1,000 without.
-  English + those 326 in one commit would mark the 1,000 clean ones OUTDATED. Waits for SK.
+  English + those 326 in one commit would mark the 1,000 clean ones OUTDATED. **SK chose the recommendation:**
+  ef8be14d fixes 365 current translations (all flagged fields); the 78 English descriptions wait until the agent can
+  ignore our English-only fixes. 9ee68667, adc1337b, 752c021d pushed by SK and live (zip post shows its restored
+  sections); SK raises the queue priority of the 3 restored posts. Check sheet published at `/check-sheet/`.
 
 ## 19 Nov (later): 3832d94d, 638cf070 verified live, health 87 → 92, no broken item left
 

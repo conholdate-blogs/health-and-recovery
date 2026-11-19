@@ -600,8 +600,85 @@ def rules_page(css: str, head: str, logo: str) -> str:
         '  <nav class="crumbs" aria-label="Breadcrumb"><a href="../">All domains</a> › <b>Rules</b></nav>\n'
         f"  <h1>{logo}Rules</h1>\n"
         "  <p>The rules the audits check and the fixes follow: who set each one and when, and the checks that "
-        "enforce it (each links to its Fix guide entry). Rules are revised here; a changed rule keeps its ID.</p>\n"
+        "enforce it (each links to its Fix guide entry). Rules are revised here; a changed rule keeps its ID. "
+        'What we look at on every English and translated post: <a href="../check-sheet/">Check sheet</a>.</p>\n'
         f'  <div class="filters"><span>{n} rules</span></div>\n'
         f'  <div class="tablewrap"><table>\n    <thead><tr>{"".join(f"<th>{c}</th>" for c in cols)}</tr></thead>\n'
         f"    {''.join(body)}\n  </table></div>\n</main>\n</html>\n"
+    )
+
+
+CHECK_SHEET_FILE = REPO_ROOT / "docs" / "check-sheet.md"
+
+
+def _inline(text: str, rule_ids: set[str]) -> str:
+    """Markdown inline -> HTML: `code` (a known check links to its Fix guide entry), **bold**, [text](url) as text,
+    rule ids (TR-8) as links to the Rules page."""
+    import re
+
+    parts = re.split(r"(`[^`]+`)", text)
+    out = []
+    for i, p in enumerate(parts):
+        if i % 2:
+            c = p[1:-1]
+            out.append(f'<a href="../fix-guide/#g-{esc(c)}"><code>{esc(c)}</code></a>' if c in GUIDE
+                       else f"<code>{esc(c)}</code>")
+            continue
+        s = esc(re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", p))
+        s = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", s)
+        s = re.sub(r"(?<![\w*])\*([^*\s][^*]*)\*(?![\w*])", r"<i>\1</i>", s)
+        s = re.sub(r"\b([A-Z]{2,4}-\d+)\b", lambda m: f'<a href="../rules/#{m[1]}">{m[1]}</a>'
+                   if m[1] in rule_ids else m[1], s)
+        out.append(s)
+    return "".join(out)
+
+
+def check_sheet_page(css: str, head: str, logo: str) -> str:
+    """docs/check-sheet.md as a page (SK, 2026-11-19: 'check sheet can be available on the internal site')."""
+    rule_ids = {str(r["id"]) for r in load_rules().get("rules") or []}
+    lines = CHECK_SHEET_FILE.read_text(encoding="utf-8").split("\n") if CHECK_SHEET_FILE.is_file() else []
+    html_parts, table, para, olist = [], [], [], []
+
+    def flush():
+        if para:
+            html_parts.append(f"  <p>{_inline(' '.join(para), rule_ids)}</p>\n")
+            para.clear()
+        if olist:
+            html_parts.append("  <ol>" + "".join(f"<li>{_inline(x, rule_ids)}</li>" for x in olist) + "</ol>\n")
+            olist.clear()
+        if table:
+            rows = [[c.strip() for c in r.strip().strip("|").split("|")] for r in table if not set(r) <= set("|-: ")]
+            head_row = "".join(f"<th>{_inline(c, rule_ids)}</th>" for c in rows[0])
+            body = "".join("<tr>" + "".join(
+                f'<td{" class=id" if j == 0 else ""}>{_inline(c, rule_ids)}</td>' for j, c in enumerate(r)) + "</tr>"
+                for r in rows[1:])
+            html_parts.append(f'  <div class="tablewrap"><table><thead><tr>{head_row}</tr></thead>'
+                              f"<tbody>{body}</tbody></table></div>\n")
+            table.clear()
+
+    for ln in lines[1:]:  # line 0 is the title
+        s = ln.rstrip()
+        if s.startswith("|"):
+            if para or olist:
+                flush()
+            table.append(s)
+            continue
+        if table:
+            flush()
+        if s.startswith("## "):
+            flush()
+            html_parts.append(f"  <h2>{_inline(s[3:], rule_ids)}</h2>\n")
+        elif s[:3] in {f"{n}. " for n in range(1, 10)}:
+            olist.append(s[3:])
+        elif olist and s.startswith("   "):
+            olist[-1] += " " + s.strip()
+        elif not s.strip():
+            flush()
+        else:
+            para.append(s.strip())
+    flush()
+    return (
+        head + "<title>Check sheet</title>\n" + f"<style>{css}{EXTRA_CSS}</style>\n<main>\n"
+        '  <nav class="crumbs" aria-label="Breadcrumb"><a href="../">All domains</a> › <b>Check sheet</b></nav>\n'
+        f"  <h1>{logo}Check sheet</h1>\n" + "".join(html_parts) + "</main>\n</html>\n"
     )

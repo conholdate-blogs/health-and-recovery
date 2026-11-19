@@ -412,5 +412,17 @@
    "752c021d28e2cdc5597635c127004ec178aec156"
   ],
   "issue": "18 text errors in 15 fully queued English posts (sentences copied from other posts, typos, grammar), found by the English body check"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-19",
+  "found": "2026-11-18",
+  "found_by": "Agent",
+  "check": "post_front_matter_markup",
+  "commits": [
+   "ef8be14d6ead65de6466a35a5bdef8d4977fbea5"
+  ],
+  "issue": "** and Markdown links in the front matter of 365 current translations of the 78 English posts with ** in the description (nl and id in all 78); the English descriptions wait"
  }
 ]

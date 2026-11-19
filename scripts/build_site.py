@@ -409,7 +409,7 @@ def domain_block(tenants: list[str], scores: dict[str, tuple[int, str]], alerts:
 
 # pages across domains: slug -> name; members come from each tenant's YAML `collections` (SK, 2026-10-27)
 COLLECTIONS = {"blogs": "Blogs"}
-RESERVED = {"fix-guide", "method", "archive", "rules", *COLLECTIONS}  # site folders that are neither tenants nor hosts
+RESERVED = {"fix-guide", "method", "archive", "rules", "check-sheet", *COLLECTIONS}  # site folders that are neither tenants nor hosts
 
 
 def collection_members(tenants: list[str]) -> dict[str, list[tuple[str, str]]]:
@@ -506,6 +506,9 @@ def build(out: Path, tenants: list[str]) -> None:
     css = GUIDE_PAGE.split("<style>", 1)[1].split("</style>", 1)[0]
     (out / "rules").mkdir(exist_ok=True)
     (out / "rules" / "index.html").write_text(site_pages.rules_page(css, HEAD, brand.logo(36)), encoding="utf-8")
+    (out / "check-sheet").mkdir(exist_ok=True)  # what we check on English and translated posts (SK, 2026-11-19)
+    (out / "check-sheet" / "index.html").write_text(site_pages.check_sheet_page(css, HEAD, brand.logo(36)),
+                                                   encoding="utf-8")
     for t in tenants:  # issue log per subdomain (SK, 2026-11-12)
         for h in hosts[t]:
             (out / h / "issues").mkdir(parents=True, exist_ok=True)

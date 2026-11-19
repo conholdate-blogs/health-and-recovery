@@ -13,6 +13,7 @@ a blocked page's noindex is never read). Written 12 Nov 2026 so nothing is lost.
 | Blogs | `/blogs/` | `build_report.collection_report` | each blog prepared as its own page |
 | Domain | `/<tenant>/` | `build_report.py` | findings, runs, traffic summary; snapshots in `/<tenant>/archive/` |
 | **Subdomain** | `/<host>/` | `build_report.py --host` + `scripts/templates/discovery_report.html` | as domain, filtered; `_issue_log` from `site_pages.issue_rows` |
+| **Check sheet** | `/check-sheet/` | `scripts/site_pages.check_sheet_page` | `docs/check-sheet.md` (rendered as is; check names link to the Fix guide, rule ids to Rules) |
 | **Issue log** | `/<host>/issues/` | `scripts/site_pages.issue_log_page` | `findings.json`, `agent-fixes.json`, `issue-notes.json` |
 | **Rules** | `/rules/` | `scripts/site_pages.rules_page` | `docs/rules.yaml` |
 | Fix guide | `/fix-guide/` | `build_site.guide_page` | `core/fix_guide.py`; rows link their rules |
