@@ -110,6 +110,7 @@ def test_finds_every_kind_and_names_the_commit(tmp_path):
     report = run(make_repo(tmp_path))
     checks = {f["check"]: f for f in report["findings"]}
     checks.pop("post_text_untranslated")  # the fixture's translations copy the English seoTitle: right to flag
+    checks.pop("post_body_cut_off", None)  # fixture bodies are one word without a full stop: right to flag
     assert set(checks) == {"redirect_file_invalid", "redirect_not_working", "redirect_key_malformed",
                            "redirect_self_loop", "redirect_target_bad", "post_front_matter_broken", "post_url_relative"}
     invalid = checks["redirect_file_invalid"]
@@ -332,6 +333,18 @@ def test_front_matter_markup():
     assert found == {("title", "**"), ("description", "`, [x](url)")}  # summary only counts without a description
     assert [f for f, _, _ in front_matter_markup({"summary": "a __bold__ word"})] == ["summary"]
     assert front_matter_markup({"title": "Plain", "description": None}) == []
+
+
+def test_body_cut_off_and_raw_html():
+    # blog.conholdate.com, 19 Nov 2026: optimizer cut posts mid-word; **<input>** renders as an empty bold
+    from core.audit.repo import body_cut_off, raw_html_dropped
+
+    assert body_cut_off("Intro.\n\n  * Traditional — legacy PK") == "ends with '* Traditional — legacy PK'"
+    assert body_cut_off("Text.\n```\ncode {") == "a code block is never closed"
+    assert body_cut_off("Done.\n\n [1]: https://x.y/\n") is None
+    assert body_cut_off("See:\n{{< gist a b >}}\n") is None
+    found = raw_html_dropped("add an **<input>** element\n**`<head>`** ok\n```\n**<b>** in code\n```\n")
+    assert [n for n, _ in found] == [1]
 
 
 def test_cover_lost_and_escaped_values(tmp_path):

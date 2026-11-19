@@ -50,7 +50,7 @@ GROUPS = {
                      "post_description_length"), "descriptions"),
     **dict.fromkeys(("h1_missing", "h1_multiple", "post_body_h1"), "headings"),
     **dict.fromkeys(("post_shortcode_as_text", "post_front_matter_markup", "post_front_matter_escaped",
-                     "post_cover_lost"), "post files"),
+                     "post_cover_lost", "post_body_cut_off", "post_raw_html_dropped"), "post files"),
     **dict.fromkeys(("viewport_missing", "viewport_no_zoom"), "viewport"),
     **dict.fromkeys(("head_closed_early", "social_tags_in_body"), "head order"),
     **dict.fromkeys(("language_name_wrong", "rtl_direction_missing"), "language settings"),

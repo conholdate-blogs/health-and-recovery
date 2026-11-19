@@ -62,7 +62,9 @@ Plan:
 | Categories / Tags menu link to English `/categories/`, `/tags/` from every language | site-wide; small, not planned |
 | **State 19 Nov (scan after deploy, health 87):** links wrong language 731 → 119 (rest in queued translations), broken 81 → 17 → 0 (638cf070 ✓ verified live 19 Nov, health 92), damaged 54 → 0; untranslated 198 → 71 (queued); garbled 11 → 4 (queued) | see log 19 Nov |
 | Translations without cover image / `\"…\"` values | 424 / ~490: 238 + 306 files fixed in 3832d94d (✓ verified live 19 Nov); 186 / 187 queued left to retranslation |
-| English posts with `**` in the description | 78: an English-only fix queues 961 clean translations; waits for SK (fix English + current translations, or optimizer-only OUTDATED rule) |
+| English posts with `**` in the description | 78 (not queued); `**` in 326 translations (nl, id in all 78), 1,000 without: fixing English + the 326 marks the 1,000 OUTDATED; waits for SK |
+| English body check findings left (uncertain / minor) | 40 of 109 (CSV `review` column); for a later pass |
+| Optimizer cut English posts (TD-5) | 3 restored in adc1337b (waits for push); tell the optimizer's owner |
 | Half-translated titles ("Convert LaTeX zu PDF in Java", "Convert PUB ke Word…", pl "Convert LaTeX do PDF") | not counted yet; candidate check, fix here |
 | 26 posts (442 translations) behind small English changes (≤ 5 body lines or front matter) | fix here by translating the changed lines (rule TR-9); after the queue reset |
 | 2 posts with outdated references (extract-text, webp; `link_differs_from_original` 34) | queued by 3f942379; or fix here (translate the missing headings / "See also") |

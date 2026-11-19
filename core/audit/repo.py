@@ -112,6 +112,14 @@ CHECKS = {
     # same pipeline: values written as \"…\" (a plain YAML string with backslashes), shown as \"…\" in the page title
     "post_front_matter_escaped": ("onpage", "incorrect", "Front-matter values wrapped in \\\" … \\\"",
                                   "Front-matter strings are quoted \"…\" (or plain), never \\\"…\\\"", 1, "S"),
+    # found on blog.conholdate.com, 19 Nov 2026: the Blog Optimization Agent cut 3 English posts mid-word (154 -> 70
+    # lines, ...); their queued retranslation would have copied the cut text into every language
+    "post_body_cut_off": ("onpage", "broken", "Posts that end mid-sentence (text cut off)",
+                          "A post ends with a finished sentence, list item, link definition or shortcode, and every "
+                          "code block is closed", 1, "S"),
+    # same day: '**<input>** element' renders as an empty bold, Hugo drops raw HTML outside code (goldmark default)
+    "post_raw_html_dropped": ("onpage", "improvable", "HTML tags in the text that the page does not show",
+                              "An HTML tag meant as text is written in backticks: **`<input>`**", 1, "S"),
     "translated_url_mismatch": ("intl", "incorrect",
                                 "Translations published under a different URL than the English post",
                                 "A translation's URL is the English post's URL with only its language prefix added",
@@ -235,6 +243,35 @@ def front_matter_markup(data: dict) -> list[tuple[str, str, str]]:
         marks = [name for name, pat in _FM_MARKUP if pat.search(val)]
         if marks:
             out.append((field, ", ".join(marks), val))
+    return out
+
+
+_END_OK = re.compile(r"""[.!?:;)\]>}"'`*|。！？]$|^\s*\[[^\]]+\]:\s*\S+$|^\{\{.*\}\}$|^-{3,}$""")
+_BOLD_TAG = re.compile(r"\*\*<[A-Za-z/][^>*]*>\*\*")
+
+
+def body_cut_off(body: str) -> str | None:
+    """Why a post body looks cut off, or None: an unclosed code block, or a last line without an ending (no
+    punctuation, not a list item / link definition / shortcode)."""
+    lines = [ln for ln in body.rstrip().split("\n") if ln.strip()]
+    if not lines:
+        return None
+    if sum(1 for ln in body.split("\n") if _FENCE.match(ln)) % 2:
+        return "a code block is never closed"
+    last = lines[-1].strip()
+    return None if _END_OK.search(last) else f"ends with {last[-60:]!r}"
+
+
+def raw_html_dropped(body: str) -> list[tuple[int, str]]:
+    """(line within the body, text) of bolded raw HTML tags outside code: Hugo drops the tag, an empty bold shows."""
+    out, fence = [], None
+    for n, ln in enumerate(body.split("\n"), 1):
+        f = _FENCE.match(ln)
+        if f:
+            fence = None if fence == f[1] else (fence or f[1])
+            continue
+        if not fence and _BOLD_TAG.search(_INLINE_CODE.sub("", ln)):
+            out.append((n, ln.strip()[:100]))
     return out
 
 
@@ -523,6 +560,15 @@ class RepoAudit:
             for n, line in shortcodes_as_text(text[m.end():], sc_names):
                 issues.append({"check": "post_shortcode_as_text", "file": rel, "line": fm_lines + n, "link": None,
                                "page": page, "fix": "write it {{< … >}}", "note": line, "commit": commit(rel)})
+            body = text[m.end():]
+            if not lang and (why := body_cut_off(body)):
+                issues.append({"check": "post_body_cut_off", "file": rel, "line": text.count("\n") + 1, "link": None,
+                               "page": page, "fix": "restore the rest from the last version before the cut (git log)",
+                               "note": why, "commit": commit(rel)})
+            for n, line in raw_html_dropped(body):
+                issues.append({"check": "post_raw_html_dropped", "file": rel, "line": fm_lines + n, "link": None,
+                               "page": page, "fix": "write the tag in backticks: **`<tag>`**", "note": line,
+                               "commit": commit(rel)})
             esc = escaped_values(data)
             if esc:
                 issues.append({"check": "post_front_matter_escaped", "file": rel, "line": 1, "link": None,

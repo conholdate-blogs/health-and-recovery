@@ -176,6 +176,20 @@ rules:
     date: 2026-11-19
     checks: [post_cover_lost, post_front_matter_escaped]
     status: active
+  - id: TR-10
+    rule: "The English version of every post in the translation queue is perfect before it is retranslated: it passes every English check of the check sheet and the English body check (scripts/ops/english_body_check.py), fixed here first."
+    why: "Shoaib Khan, 19 Nov 2026: 'at least English version of those that are in translation queue should be perfect.' blog.conholdate.com: 3 English posts cut off by the optimizer and 18 text errors (sentences copied from other posts, typos) would have been copied into every language."
+    set_by: Shoaib Khan
+    date: 2026-11-19
+    checks: [post_body_cut_off, post_raw_html_dropped]
+    status: active
+  - id: TD-5
+    rule: "Tools that edit posts (optimizer, translator) never shorten a post by cutting it: the file still ends with its last section and link definitions, and every code block is closed."
+    why: "blog.conholdate.com, 19 Nov 2026: the Blog Optimization Agent cut create-encrypted-zip-files-using-csharp (154 -> 70 lines, ended 'legacy PK'), build-your-own-google-docs-like-app and create-and-read-excel-files-in-python in Feb-Mar 2026; export-data-to-excel-in-java (371 -> 80) and add-footnotes-and-endnotes were cut and later restored."
+    set_by: Health and Recovery Agent
+    date: 2026-11-19
+    checks: [post_body_cut_off]
+    status: active
   - id: TR-9
     rule: "Fix translations here when the fix is mechanical or small (links, front matter, titles, a few lines); send a post to retranslation only when its English was really rewritten. A fix to a queued translation drops it from the queue, so it needs an ISSUE row when the rewrite still has to be translated."
     why: "Shoaib Khan, 18-19 Nov 2026: 'instead of putting translation for retranslation, we can resolve many things here.' blog.conholdate.com: 3,767 outdated translations, 442 of them behind small English changes."

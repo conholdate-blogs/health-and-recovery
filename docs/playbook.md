@@ -59,6 +59,10 @@ has its own log in [blogs/](blogs/) with its facts, findings, decisions and fixe
     commit, leave queued (OUTDATED) translations alone, and wait with English-only changes that would mark clean
     current translations OUTDATED until only optimizer commits count.
 
+
+**Check sheet:** [check-sheet.md](check-sheet.md) lists what to look at on every English and translated post page
+(front matter, body, links, rendered page), the check that covers it or *by hand*, and where it is fixed.
+
 ## Fix catalogue (proven on blog.conholdate.cloud, 11 Nov 2026: 84 → 100 with real fixes only)
 
 Hugo/PaperMod blogs share these problems. Check each blog for every row; commits in
@@ -87,6 +91,8 @@ Hugo/PaperMod blogs share these problems. Check each blog for every row; commits
 | 20 | **Wrong-language links in current translations** (`link_wrong_language`) | Replace each link on its line with the check's `fix` (localized absolute URL) from `link-audit-*-issues.csv`, current translations only | Live sample of the new targets 200; next link check | blog.conholdate.com 777e7263 (493 links, 255 files), 19 Nov |
 | 21 | **Translation without cover image / `\"…\"` values** (`post_cover_lost`, `post_front_matter_escaped`, rule TR-8) | `scripts/ops/fm_cover_repair.py <repo> [--write]`: indents image/alt/caption/hidden under `cover:`, renames translated keys (`capa`, `cobrir`, `キャプション`, `légende`, `chú thích`, `כיתוב`, `заголовок`, Arabic/Thai caption) to English, turns `\"…\"` into `"…"`; current translations only | Re-parse: cover image = the English one, no `\"` left, other keys unchanged; live translated page has `entry-cover` | The 2025 pipeline did it (424 files on blog.conholdate.com, 62 on blog.conholdate.cloud). One nl file named a translated image file that does not exist (`convert-html-bestanden.jpg`): set the English image. Don't rewrite unchanged lines: re-emitting `key: value` broke nested `https:` text in a first draft. 3832d94d (306), 69e4ab9 (62), 19 Nov |
 | 22 | **Broken link in a queued translation** | Fix the link here, then an `ISSUE` row (`queue_add.py --source "Health and Recovery Agent"`) for the English rewrite the translation still misses | Link target 200; the row in the queue | Our commit makes the translation newer than the English post, so the scanner drops it. blog.conholdate.com 638cf070 (view-stl-files-online, 17), 19 Nov |
+| 23 | **English of queued posts first** (rule TR-10, SK 19 Nov) | After each scan list the English issues of posts whose translations are all queued and fix them (free: no new queue rows); run `scripts/ops/english_body_check.py --tenant <t>` (LLM, one call per post, cached) and review every finding in context; record the decision in the CSV's `review` column | Re-check: counts drop; commit check | First run blog.conholdate.com: 217 posts, 109 findings, 27 fixed, 42 false (See also lists, code after a colon, image links emptied by the stripping), 13 uncertain, 27 skipped. 9ee68667 (5 lengths), 752c021d (18 text errors) |
+| 24 | **English post cut off** (`post_body_cut_off`, rule TD-5) | Keep the current text up to the cut, append the rest from the version before the cutting commit (`git log --follow`, line counts per commit); take lost `[n]` definitions from an older healthy version; remove stray `---` | Same H2 set as the healthy version; every `[n]` defined; fences even | The optimizer cut 5 posts (Feb-Mar 2026), 2 restored later by others. A pre-cut version can itself be damaged at its end (truncated definitions): compare with an older one. Current translations of such posts are complete: fix them in the same commit only where the English fix applies. adc1337b, 19 Nov |
 | 11 | **Language menu names** (`languageName` in `config.yml`) | Native names (日本語, 한국어, 繁體中文, Bahasa Indonesia, Nederlands, ไทย, עברית) | Switcher shows them | blog.conholdate.cloud had "日本" (Japan), "한국인" (a Korean person), "中國傳統的" |
 
 Per blog, before fixing: Redirects.json live or at deploy (blog.conholdate.cloud and blog.aspose.com live,
@@ -157,6 +163,11 @@ blog.conholdate.com at deploy); `mainSections`; which pages are translated (the 
   queued file the commit never touched; pick samples with `git show --name-only <commit>`.
 - **Translated YAML keys:** the 2025 pipeline translated keys too (`capa:`, `légende :`, `キャプション:`); Hugo ignores
   them. Look for keys outside the English file's key set when a translated page misses something the English has.
+- **The English body check strips code, links and images:** a colon followed by code, or an image link (`[][5]`),
+  looks broken to the LLM: review each finding in context before fixing. Raw HTML outside backticks is stripped on
+  purpose (Hugo drops it too).
+- **Optimizer edits can cut posts:** compare line counts across `git log --follow` of an English post when its end
+  looks odd; the translations made before the cut still hold the full text.
 - **Gist code inline in translations** (5,855 files on blog.conholdate.com): the older pipeline's convention (comments
   translated), not damage; the commit check's code-fence warning on such files is expected.
 - **The link and repo checks read the local clone:** after local, unpushed commits a scan shows their effect before

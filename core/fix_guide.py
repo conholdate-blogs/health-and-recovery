@@ -609,6 +609,19 @@ _ROWS = [
      "Queue the post for retranslation in the translation sheet; a hand patch of one field leaves the rest of that "
      "output unchecked.",
      "Next repo check has no item for the file."),
+    ("post_body_cut_off", "Repo files", "Post text cut off",
+     "The English post ends mid-sentence or inside an unclosed code block: an edit (seen: the Blog Optimization "
+     "Agent) cut the rest of the file, often sections, the conclusion and link definitions.",
+     "Readers lose part of the article and its examples; a retranslation copies the cut text into every language.",
+     "Restore the rest from the last version before the cut (git log of the file, compare line counts); keep the "
+     "current text up to the cut; check that every [n] reference is defined.",
+     "The post ends properly and has the sections of its healthy version; next repo check has no item."),
+    ("post_raw_html_dropped", "Repo files", "HTML tag in the text not shown",
+     "The text writes an HTML tag in bold, **<input>**, outside backticks. Hugo's Markdown renderer drops raw HTML, "
+     "so the page shows an empty bold: 'add an element of type file'.",
+     "The sentence loses the word it is about; readers cannot follow the instructions.",
+     "Write the tag in backticks: **`<input>`**.",
+     "The live page shows the tag; next repo check has no item."),
     ("post_cover_lost", "Repo files", "Translation without cover image",
      "The English post has a cover image, the translation has none: its front matter writes cover: with image, alt "
      "and caption not indented under it (or with a translated key such as capa:, キャプション:), so cover is empty.",

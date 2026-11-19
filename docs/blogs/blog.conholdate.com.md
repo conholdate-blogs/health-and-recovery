@@ -54,6 +54,27 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 19 Nov (evening): English of queued posts made clean first (SK: rule TR-10), check sheet
+
+| Commit (conholdate-blog) | What | State |
+|---|---|---|
+| 9ee68667 | 2 seoTitles, 3 descriptions shortened in 4 fully queued posts | local, waits for SK's push + deploy |
+| adc1337b | **3 English posts cut off by the optimizer restored** (create-encrypted-zip-files-using-csharp 154→70 lines on 18 Feb, build-your-own-google-docs-like-app 306→214, create-and-read-excel-files-in-python 190→95); lost `[n]` definitions back; bolded HTML tags (`**<input>**` → empty bold live) in backticks (English + current fr) | local, waits for SK's push + deploy |
+| 752c021d | 18 text errors in 15 fully queued English posts (sentences copied from other posts, typos, grammar) from the English body check | local, waits for SK's push + deploy |
+
+- **SK's decisions 19 Nov:** keep a check sheet ([docs/check-sheet.md](../check-sheet.md)); English of queued posts
+  must be perfect before retranslation (TR-10); English body check before the queue processes a post: go.
+- **English body check** (`scripts/ops/english_body_check.py`): 217 posts with queued translations, 212 LLM calls,
+  109 findings in 80 posts; every finding reviewed (column `review` in
+  `reports/conholdate.com/english-body-check-2026-11-19.csv`): 27 fixed, 42 false, 13 uncertain, 27 skipped.
+- **Optimizer cut posts:** 5 big cuts by optimizer-agent (Feb–Mar 2026); export-data-to-excel-in-java (371→80, 8
+  sections lost) and add-footnotes-and-endnotes (3 sections) were restored later by someone; 3 still cut until
+  adc1337b. Their translations kept the full text. New checks `post_body_cut_off` (TD-5), `post_raw_html_dropped`.
+  **Tell the optimizer's owner** (it also escaped `<` `>` in shortcodes, TD-3).
+- **78 English posts with `**` in the description** (not queued: all translations current): only nl and id carry
+  the `**` in all 78; the other 15 languages dropped it in ~59 posts → 326 translations with `**`, 1,000 without.
+  English + those 326 in one commit would mark the 1,000 clean ones OUTDATED. Waits for SK.
+
 ## 19 Nov (later): 3832d94d, 638cf070 verified live, health 87 → 92, no broken item left
 
 - Live: sample of 7 pages from 3832d94d all show their cover; ko/ja html-to-bmp `<title>` without `\"`; de/ja/ar
