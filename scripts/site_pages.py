@@ -71,11 +71,15 @@ PAGES = [("issues", "Issue log", "Every issue found on a blog: status, fix commi
          ("rules", "Rules", "The SEO, URL and translation rules the blogs follow"),
          ("method", "Method", "How health and priority scores are calculated")]
 PNAV_CSS = """
-.pnav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding-bottom: 10px; border-bottom: 1px solid var(--line, #dde2e9) }
-.pnav a { font: 500 13px system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--fg, #18202b); text-decoration: none;
+.pnav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding-bottom: 10px;
+  border-bottom: 1px solid var(--line, #dde2e9) }
+.pnav a { font: 500 13px system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--fg, #18202b);
+  text-decoration: none;
   border: 1px solid var(--line, #dde2e9); border-radius: 999px; padding: 3px 12px; background: var(--surface, #fff) }
-.pnav a:hover, .pnav a:focus-visible { border-color: var(--accent, #1f5f8b); color: var(--accent, #1f5f8b); outline: none }
-.pnav a[aria-current="page"] { background: var(--accent, #1f5f8b); border-color: var(--accent, #1f5f8b); color: var(--surface, #fff) }
+.pnav a:hover, .pnav a:focus-visible { border-color: var(--accent, #1f5f8b); color: var(--accent, #1f5f8b);
+  outline: none }
+.pnav a[aria-current="page"] { background: var(--accent, #1f5f8b); border-color: var(--accent, #1f5f8b);
+  color: var(--surface, #fff) }
 .pnav a.pback { margin-right: auto; color: var(--accent, #1f5f8b); border-color: var(--accent, #1f5f8b) }
 """
 
@@ -85,7 +89,7 @@ def pages_nav(prefix: str, current: str, back: tuple[str, str] | None = None, is
     back: (label, href) of the report this page belongs to (Issue log pages); issues: this blog's Issue log href."""
     links = []
     for key, label, title in PAGES:
-        href = issues if key == "issues" and issues else f"{prefix}blogs/issues/" if key == "issues" else f"{prefix}{key}/"
+        href = (issues or f"{prefix}blogs/issues/") if key == "issues" else f"{prefix}{key}/"
         cur = ' aria-current="page"' if key == current else ""
         links.append(f'<a href="{esc(href)}" title="{esc(title)}"{cur} data-k="{key}">{esc(label)}</a>')
     back_a = (f'<a class="pback" href="{esc(back[1])}">← {esc(back[0])}</a>' if back
