@@ -649,7 +649,7 @@ __METHOD__
   $("h1").textContent = (R._page_host || R.tenant) + " site health";
   if ((R._tenants || []).length || (R._site_hosts || []).length) {  // published: All domains › domain › subdomain
     $("crumbs").hidden = false;
-    $("crumbs").innerHTML = `<a href="../">All domains</a><span>›</span>` + (R._page_host
+    $("crumbs").innerHTML = `<a href="../?view=domains">All domains</a><span>›</span>` + (R._page_host
       ? `<a href="../${esc(R.tenant)}/">${esc(R.tenant)}</a><span>›</span><b aria-current="page">${hostH(R._page_host)}</b>`
       : `<b aria-current="page">${esc(R.tenant)}</b>`);
   } else if (R._page_host) {
@@ -723,7 +723,10 @@ __METHOD__
     $("tenant-sw").innerHTML = `<option value="blogs" selected>${esc(SECTION.name)}</option>`;
     $("tenant-sw").addEventListener("change", () => { location.href = `../blogs/`; });
     $("host-sw-wrap").hidden = false;
-    $("host-sw").innerHTML = `<option value="">All ${esc(SECTION.name.toLowerCase())}</option>` + SECTION.hosts.map(h => `<option value="${esc(h)}"${h === R._page_host ? " selected" : ""}>${esc(h)}</option>`).join("");
+    // a domain page is neither "All blogs" nor one blog: name it, so the switch does not claim another page
+    const onDomain = !R._page_host && !R._collection;
+    $("host-sw").innerHTML = (onDomain ? `<option value="-" selected disabled>${esc(R.tenant)}</option>` : "")
+      + `<option value=""${onDomain ? "" : " selected"}>All ${esc(SECTION.name.toLowerCase())}</option>` + SECTION.hosts.map(h => `<option value="${esc(h)}"${h === R._page_host ? " selected" : ""}>${esc(h)}</option>`).join("");
     $("host-sw").addEventListener("change", e => { location.href = `../${encodeURIComponent(e.target.value || "blogs")}/${location.hash}`; });
   } else if (TENANTS.length > 1 || SITE_HOSTS.length) {
     $("switch").hidden = false;
@@ -1623,7 +1626,9 @@ __METHOD__
     // a whole share that never reads 0% while something is fixed ("<1%"), nor 100% while something is open (SK, 2026-11-16)
     const share = (part, whole) => !whole || !part ? "0%" : (p => p < 1 ? "&lt;1%" : p > 99 && part < whole ? "&gt;99%" : `${Math.round(p)}%`)(100 * part / whole);
     const itemsSub = I => `<span class="${I.fixed ? "up" : ""}">${fmt(I.fixed)} fixed</span>${I.fixed_pct == null ? "" : ` · <b class="pct${I.fixed ? " ok" : ""}">${share(I.fixed, I.fixed + I.open)}</b>`}`;
-    const changesSub = (ch, before) => before ? `${ch.gone} resolved · ${ch.add} new since ${esc(day(before.date))}` : "no earlier run to compare";
+    // a comparison with an earlier scan of the same day reads as that, not "since <today's date>" (SK, 19 Nov)
+    const since = d => (d || "").slice(0, 10) && (d || "").slice(0, 10) === (dates.length ? dates[dates.length - 1].slice(0, 10) : "") ? "since an earlier scan that day" : `since ${esc(day(d))}`;
+    const changesSub = (ch, before) => before ? `${ch.gone} resolved · ${ch.add} new ${since(before.date)}` : "no earlier run to compare";
     // how old the data is: managers must not read a two-week-old crawl as today's state
     const dates = (R._dates || [R._run_date, A && A.date, R._perf && R._perf.date, R._ai && R._ai.date, R._text && R._text.date, R._links && R._links.date]).filter(Boolean).sort();
     if (dates.length) {
@@ -1649,7 +1654,7 @@ __METHOD__
       const TR = trendOf(H.host), before = TR.length > 1 ? TR[TR.length - 2] : null;
       $("kpis").innerHTML = [
         `<div class="kpi g-${H.grade}"><span class="kl">Health score ${info("Health score", H)}</span><span class="kv">${H.health} <small>out of 100</small></span>${sbar(H.health, H.grade, "big")}`
-          + (before ? `<span class="ks">${signed(H.health - before.health)} since ${esc(day(before.date))}</span>` : `<span class="ks">trend from the next run</span>`)+ `</div>`,
+          + (before ? `<span class="ks">${signed(H.health - before.health)} ${since(before.date)}</span>` : `<span class="ks">trend from the next run</span>`)+ `</div>`,
         t.source === "gsc"
           ? `<div class="kpi"><span class="kl">Search clicks</span><span class="kv">${fmt(cur.clicks)} <small>28 days</small></span><span class="ks">${delta(cur.clicks, prev.clicks, "previous 28 days")}</span><span class="ks">${delta(cur.clicks, six.clicks, "six months ago")}</span></div>
              <div class="kpi"><span class="kl">Search impressions</span><span class="kv">${compact(cur.impressions)} <small>28 days</small></span><span class="ks">${delta(cur.impressions, prev.impressions, "previous 28 days")}</span><span class="ks">${delta(cur.impressions, six.impressions, "six months ago")}</span></div>`
@@ -1681,7 +1686,7 @@ __METHOD__
       const row = H => {
         const t = H.traffic || {}, cur = t.current || {}, prev = t.previous || {}, six = t.six_months_ago || {};
         const mine = findings.filter(f => f.subdomain === H.host), b = count(mine, "broken"), inc = count(mine, "incorrect");
-        const TR = trendOf(H.host), before = TR.length > 1 ? TR[TR.length - 2] : null, ch = changesOf(H.host);
+        const TR = trendOf(H.host), before = TR.length > 1 ? TR[TR.length - 2] : null, ch = changesOf(H.host), L = H.issue_log;
         const traffic = t.source === "gsc"
           ? cell("Search clicks · 28 days", `<b>${fmt(cur.clicks)}</b><small>${delta(cur.clicks, prev.clicks, "previous")}<br>${delta(cur.clicks, six.clicks, "six months ago")}</small>`)
             + cell("Impressions · 28 days", `<b>${compact(cur.impressions)}</b><small>${delta(cur.impressions, prev.impressions, "previous")}<br>${delta(cur.impressions, six.impressions, "six months ago")}</small>`)
@@ -1693,10 +1698,11 @@ __METHOD__
           ? `<a class="sopen" href="../${esc(H.host)}/">Open subdomain page →</a>`
           : `<button type="button" class="sopen" data-host="${esc(H.host)}">See its ${mine.length} findings →</button>`;
         return `<article class="srow g-${H.grade}">
-          <div class="sname"><code>${hostH(H.host)}</code>${R._collection ? `<small class="dim">${esc(H.domain)}</small>` : ""}<span class="sscore"><b>${H.health}</b><span>score ${info("Score", H)}</span></span>${sbar(H.health, H.grade, "big")}${before ? `<small class="dim">${signed(H.health - before.health)} since ${esc(day(before.date))}</small>` : ""}</div>
+          <div class="sname"><code>${hostH(H.host)}</code>${R._collection ? `<small class="dim">${esc(H.domain)}</small>` : ""}<span class="sscore"><b>${H.health}</b><span>score ${info("Score", H)}</span></span>${sbar(H.health, H.grade, "big")}${before ? `<small class="dim">${signed(H.health - before.health)} ${since(before.date)}</small>` : ""}</div>
           ${traffic}
-          ${cell(typesLabel, `<b>${mine.length}</b><small>${b ? `<em class="down">${b} broken</em> · ` : ""}${inc} incorrect<br>${changesSub(ch, before)}</small>`)}
-          ${!ANY_ITEMS ? "" : cell(itemsLabel, H.items ?`<b>${itemsNum(H.items)}</b><small>${itemsSub(H.items)}</small>` : `<b>–</b><small>no link check (no blog repo configured)</small>`)}
+          ${L ? cell(issuesLabel, `<b>${fmt(L.open)} <small>open of ${fmt(L.total)}</small></b><small><span class="${L.verified + L.pushed ? "up" : ""}">${fmt(L.verified + L.pushed)} fixed</span> · <b class="pct${L.total - L.open ? " ok" : ""}">${share(L.total - L.open, L.total)}</b> closed${published && SITE_HOSTS.includes(H.host) ? `<br><a href="../${esc(H.host)}/issues/">Issue log →</a>` : ""}</small>`)
+            : cell(typesLabel, `<b>${mine.length}</b><small>${b ? `<em class="down">${b} broken</em> · ` : ""}${inc} incorrect<br>${changesSub(ch, before)}</small>`)}
+          ${!ANY_ITEMS ? "" : cell(L ? `Items ${ask(ITEMS_NOTE)}` : itemsLabel, H.items ? `<b>${fmt(H.items.open)} <small>${L ? "open " : ""}of ${fmt(H.items.issues)}</small></b><small>${itemsSub(H.items)}</small>` : `<b>–</b><small>no link check (no blog repo configured)</small>`)}
           ${areas ? `<div class="sareas">${areas}</div>` : ""}${open}</article>`;
       };
       const SORTS = { name: (a, b) => a.host.localeCompare(b.host), score: (a, b) => a.health - b.health || a.host.localeCompare(b.host),
@@ -1717,8 +1723,16 @@ __METHOD__
       });
       if (published) {  // the details live on the subdomain pages; snapshots keep them here
         for (const id of ["findings", "changes", "reference", "fix-guide"]) if ($(id)) $(id).hidden = true;
-        for (const a of document.querySelectorAll('.toc a[href="#findings"], .toc a[href="#changes"], .toc a[href="#reference"], #toc-guide')) a.hidden = true;
+        // the Fix guide link goes to the shared page, so it stays (SK, 19 Nov: it was hidden with the local section)
+        for (const a of document.querySelectorAll('.toc a[href="#findings"], .toc a[href="#changes"], .toc a[href="#reference"]')) a.hidden = true;
+        // one subdomain: its Issue log is this domain's Issue log
+        if (!R._snapshot && HOSTS.length === 1 && SITE_HOSTS.includes(HOSTS[0].host)) {
+          $("toc-issues").href = `../${HOSTS[0].host}/issues/`; $("toc-issues").hidden = false;
+        }
       }
+      // run numbers mean nothing to a reader; the Overview line says how old the data is and the footer names the
+      // runs (SK, 19 Nov: "even I can not understand"); the Blogs page keeps its one-line description
+      if (!R._collection) $("meta").hidden = true;
     }
 
     // Fix progress: page-check findings are not counted one by one, so a resolved one only shows here (SK)

@@ -724,6 +724,11 @@ def prepare(args: argparse.Namespace) -> tuple[dict, list[str], str | None, str,
     if report.get("_page_host"):
         report["_history"] = host_history(report["_page_host"], paths.health_history)
         report["_issue_log"] = issue_log_summary(args.tenant, report["_page_host"], paths.health_history)
+    if report["_manager_view"]:  # domain and Blogs rows: "Issues" and "Items" as on the subdomain page (SK, 19 Nov)
+        for card in report.get("_hosts") or []:
+            log = report.get("_issue_log") if card["host"] == report.get("_page_host") else None
+            log = log or issue_log_summary(args.tenant, card["host"], paths.health_history)
+            card["issue_log"] = {k: v for k, v in log.items() if k != "series"}
     run_date = run_date_of(src, "discovery-")
     sources = (f"{src.name}" + (f" and {len(audit_srcs)} crawl-audit runs (newest {audit_src.name})" if audit_src else "")
                + (f" and {perf_src.name}" if perf_src else "") + (f" and {ai_src.name}" if ai_src else "")
