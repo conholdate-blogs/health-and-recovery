@@ -1,16 +1,16 @@
 {
  "windows": {
   "current": [
-   "2026-10-07",
-   "2026-11-03"
+   "2026-10-20",
+   "2026-11-16"
   ],
   "previous": [
-   "2026-09-09",
-   "2026-10-06"
+   "2026-09-22",
+   "2026-10-19"
   ],
   "six_months_ago": [
-   "2026-04-08",
-   "2026-05-05"
+   "2026-04-21",
+   "2026-05-18"
   ]
  },
  "hosts": {},
@@ -18,19 +18,19 @@
   "blog.aspose.cloud": {
    "source": "gsc",
    "current": {
-    "clicks": 659,
-    "impressions": 58659,
-    "pages": 4146
+    "clicks": 626,
+    "impressions": 59079,
+    "pages": 3831
    },
    "previous": {
-    "clicks": 884,
-    "impressions": 58427,
-    "pages": 4165
+    "clicks": 710,
+    "impressions": 58215,
+    "pages": 4358
    },
    "six_months_ago": {
-    "clicks": 1396,
-    "impressions": 80083,
-    "pages": 5418
+    "clicks": 1576,
+    "impressions": 84131,
+    "pages": 5041
    }
   }
  }

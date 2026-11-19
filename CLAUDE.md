@@ -24,6 +24,15 @@ snapshot 2026-11-19-2; log [docs/blogs/blog.groupdocs.com.md](docs/blogs/blog.gr
 canonical) = playbook row 25, open on blog.aspose.cloud, blog.groupdocs.cloud, blog.aspose.com; **SK: we won't fix
 blog.groupdocs.com** (tracked only).
 
+## Start here (2026-11-19, evening: blog.aspose.cloud scanned)
+
+**blog.aspose.cloud full scan done, no fix yet (SK: "scan blog.aspose.cloud"):** health 66 → 49, 44 issue types,
+14,780 open items (almost all from checks added since 7 Nov), snapshot 2026-11-19-2 (live page archived first as
+2026-11-19); numbers, samples and the queue report (1,509 queued translations in 74 posts) in
+[docs/blogs/blog.aspose.cloud.md](docs/blogs/blog.aspose.cloud.md) "Scan 1". Its repo-local commit email was
+missing, now set. Superseded run files not pruned (`prune_runs.py` would remove 197 files across five blogs; ask SK).
+`preflight.py` no longer flags `rescore.py` as missing (rescore = `prioritize --offline`).
+
 ## Start here (2026-11-19, later: blog.groupdocs.cloud scanned)
 
 **blog.groupdocs.cloud full scan done, no fix yet (SK: scan first):** health 75 → 54, 39 issue types (24 new from

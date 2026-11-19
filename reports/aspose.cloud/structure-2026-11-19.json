@@ -1,0 +1,112 @@
+{
+ "tenant": "aspose.cloud",
+ "date": "2026-11-19",
+ "search_window": [
+  "2026-10-20",
+  "2026-11-16"
+ ],
+ "hosts": {
+  "blog.aspose.cloud": {
+   "paginate": 10,
+   "posts": 1253,
+   "posts_all_languages": 13722,
+   "languages": 22,
+   "tags": 3592,
+   "tags_one_post": 2759,
+   "tags_two_or_less": 3238,
+   "tags_per_post": 4.8,
+   "tag_pages_all_languages": 65818,
+   "top_tags": [
+    [
+     "aspose for cloud",
+     156
+    ],
+    [
+     "rest api",
+     122
+    ],
+    [
+     "sdk",
+     97
+    ],
+    [
+     "cloud api",
+     79
+    ],
+    [
+     "news release",
+     54
+    ],
+    [
+     "file format api",
+     40
+    ],
+    [
+     "rest",
+     22
+    ],
+    [
+     "api",
+     21
+    ],
+    [
+     "presentations",
+     21
+    ],
+    [
+     "word to pdf",
+     20
+    ]
+   ],
+   "categories": 16,
+   "listing_pages": 68971,
+   "tag_listing_pages": 66003,
+   "pages_beyond_cap": 286,
+   "cap": 50,
+   "discovery_run": 5,
+   "sitemap_urls": 13637,
+   "sitemap_tag_urls": 0,
+   "search": {
+    "clicks": 626,
+    "tag_clicks": 53,
+    "tag_impressions": 5252,
+    "tag_pages_with_clicks": 36,
+    "paged_clicks": 0,
+    "paged_impressions": 5,
+    "paged_pages_seen": 4,
+    "deep_paged_clicks": 0
+   },
+   "tag_robots": {
+    "pages": [
+     {
+      "url": "https://blog.aspose.cloud/tags/",
+      "status": 200,
+      "blocked": false,
+      "noindex": false
+     },
+     {
+      "url": "https://blog.aspose.cloud/tag/.glb-to-.fbx/",
+      "status": 200,
+      "blocked": false,
+      "noindex": false
+     },
+     {
+      "url": "https://blog.aspose.cloud/tag/.glb-to-.fbx-conversion/",
+      "status": 200,
+      "blocked": false,
+      "noindex": false
+     }
+    ],
+    "all_noindex": false
+   },
+   "section_robots": {
+    "sections": [
+     "Aspose.Cloud"
+    ],
+    "url": "https://blog.aspose.cloud/aspose.cloud/",
+    "status": 200,
+    "noindex": false
+   }
+  }
+ }
+}

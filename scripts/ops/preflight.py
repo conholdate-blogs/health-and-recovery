@@ -43,7 +43,8 @@ def main() -> int:
             print(f"  XX {m}: {type(e).__name__}")
     print("== step scripts ==")
     for s in STEPS:
-        print(f"  {ok((REPO / 'scripts' / f'{s}.py').is_file())}{s}.py")
+        script = "prioritize" if s == "rescore" else s  # rescore = prioritize --offline (run_cycle)
+        print(f"  {ok((REPO / 'scripts' / f'{script}.py').is_file())}{script}.py ({s})")
     free = shutil.disk_usage(REPO).free / 1e9
     print(f"== disk ==\n  {ok(free > 5)}{free:.0f} GB free")
     print("== blogs ==")

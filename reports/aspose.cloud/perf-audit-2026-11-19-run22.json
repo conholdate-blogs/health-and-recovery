@@ -1,0 +1,453 @@
+{
+  "tenant": "aspose.cloud",
+  "auditor": "perf-audit",
+  "run_id": 22,
+  "params": {
+    "hosts": [
+      "blog.aspose.cloud"
+    ],
+    "sections": null,
+    "per_template": 2,
+    "strategy": "mobile",
+    "max_pages": null
+  },
+  "requests": 12,
+  "duration_s": 50.0,
+  "pages_planned": 12,
+  "stopped_early": false,
+  "incomplete": false,
+  "origins": {},
+  "summary": {
+    "blog.aspose.cloud": {
+      "pages": 12,
+      "errors": 0,
+      "not_loaded": 0,
+      "field": 0,
+      "issues": {},
+      "median_score": 83
+    }
+  },
+  "findings": [],
+  "pages": [
+    {
+      "url": "https://blog.aspose.cloud/es/aspose.cloud/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "category",
+      "group_urls": 22,
+      "clicks": 1.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 66,
+      "lab": {
+        "lcp": 7539.772546919764,
+        "tbt": 338.5,
+        "cls": 0.07290400972053462,
+        "fcp": 1551.131038839529,
+        "si": 2787.8035493863663
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1000
+        ],
+        [
+          "Use efficient cache lifetimes",
+          900
+        ],
+        [
+          "Reduce unused JavaScript",
+          900
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/es/aspose.cloud/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.cloud/ar/aspose.cloud/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "category",
+      "group_urls": 22,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 65,
+      "lab": {
+        "lcp": 7281.336704445766,
+        "tbt": 155.00000000000045,
+        "cls": 0.07290400972053462,
+        "fcp": 3476.339758647362,
+        "si": 3689.4084205205445
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          900
+        ],
+        [
+          "Use efficient cache lifetimes",
+          750
+        ],
+        [
+          "Improve image delivery",
+          450
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/ar/aspose.cloud/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.cloud/cells/spreadsheet-cleaning-api/excel-spaces-line-breaks-fix/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "generic:/{section}/*/*",
+      "group_urls": 44,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 64,
+      "lab": {
+        "lcp": 4412.289503402791,
+        "tbt": 298,
+        "cls": 0.07290400972053462,
+        "fcp": 4412.289503402791,
+        "si": 6040.622098199587
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          600
+        ],
+        [
+          "Reduce unused JavaScript",
+          600
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/cells/spreadsheet-cleaning-api/excel-spaces-line-breaks-fix/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.cloud/cells/spreadsheet-text-formatting-api/excel-words-case-fix/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "generic:/{section}/*/*",
+      "group_urls": 44,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 87,
+      "lab": {
+        "lcp": 1999.6038038869247,
+        "tbt": 360.5,
+        "cls": 0.07290400972053462,
+        "fcp": 1999.6038038869247,
+        "si": 3490.596648093852
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1000
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/cells/spreadsheet-text-formatting-api/excel-words-case-fix/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.cloud/2014/08/01/announcing-aspose.imaging-for-cloud-other-news-august-2014/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "generic:/{section}/*/*/*",
+      "group_urls": 4,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 92,
+      "lab": {
+        "lcp": 792.9886604622397,
+        "tbt": 316.99999999999955,
+        "cls": 0.07290400972053462,
+        "fcp": 792.9886604622397,
+        "si": 2028.347257080671
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          100
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/2014/08/01/announcing-aspose.imaging-for-cloud-other-news-august-2014/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.cloud/2015/09/01/aspose.pdf-for-.net-10.7-aspose.email-for-java-5.6-and-more-news-from-aspose-this-september/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "generic:/{section}/*/*/*",
+      "group_urls": 4,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 85,
+      "lab": {
+        "lcp": 792.7288490136461,
+        "tbt": 549,
+        "cls": 0.07290400972053462,
+        "fcp": 792.7288490136461,
+        "si": 1392.151353965105
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          100
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/2015/09/01/aspose.pdf-for-.net-10.7-aspose.email-for-java-5.6-and-more-news-from-aspose-this-september/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.cloud/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "home",
+      "group_urls": 24,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 71,
+      "lab": {
+        "lcp": 7659.5728218802,
+        "tbt": 198,
+        "cls": 0.07290400972053462,
+        "fcp": 1525.0937837604006,
+        "si": 1838.9922475226053
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          1050
+        ],
+        [
+          "Use efficient cache lifetimes",
+          750
+        ],
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.cloud/ka/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "home",
+      "group_urls": 24,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 74,
+      "lab": {
+        "lcp": 7269.471341884186,
+        "tbt": 133,
+        "cls": 0,
+        "fcp": 1525.3582337683717,
+        "si": 2655.9619893355048
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          900
+        ],
+        [
+          "Use efficient cache lifetimes",
+          750
+        ],
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/ka/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.cloud/archives/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "listing",
+      "group_urls": 44,
+      "clicks": 1.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 83,
+      "lab": {
+        "lcp": 1990.0511908927126,
+        "tbt": 546.5,
+        "cls": 0.07290400972053462,
+        "fcp": 1990.0511908927126,
+        "si": 2450.114138642266
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ],
+        [
+          "Minimize main-thread work",
+          550
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/archives/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.cloud/es/archives/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "listing",
+      "group_urls": 44,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 96,
+      "lab": {
+        "lcp": 1670.2690165104548,
+        "tbt": 173,
+        "cls": 0.07290400972053462,
+        "fcp": 1670.2690165104548,
+        "si": 1690.1750306081403
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/es/archives/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.cloud/fa/cells/convert-excel-to-txt-in-csharp/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "post",
+      "group_urls": 13499,
+      "clicks": 62.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 71,
+      "lab": {
+        "lcp": 6687.096036274105,
+        "tbt": 264.4999999999991,
+        "cls": 0,
+        "fcp": 1670.28285821,
+        "si": 2489.0820272936
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          900
+        ],
+        [
+          "Render-blocking requests",
+          750
+        ],
+        [
+          "Use efficient cache lifetimes",
+          450
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/fa/cells/convert-excel-to-txt-in-csharp/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.aspose.cloud/tr/ocr/find-font-from-image-in-csharp/",
+      "host": "blog.aspose.cloud",
+      "section": "",
+      "template": "post",
+      "group_urls": 13499,
+      "clicks": 45.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": null,
+      "lab_score": 90,
+      "lab": {
+        "lcp": 1528.2321359305313,
+        "tbt": 333.5,
+        "cls": 0.08288536950543617,
+        "fcp": 1528.2321359305313,
+        "si": 2217.5152483833226
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.aspose.cloud/tr/ocr/find-font-from-image-in-csharp/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    }
+  ]
+}

@@ -160,5 +160,17 @@
     "date": "2026-11-11",
     "label": "Repo check corrected: double-slash redirects are not malformed",
     "runs": "discovery run 4, crawl audit run 13, speed audit run 15, AI audit run 14, text check run 16, link check run 17, repo file check run 19"
+  },
+  {
+    "file": "2026-11-19.html",
+    "date": "2026-11-19",
+    "label": "Live page before the full scan of 19 Nov (downloaded)",
+    "runs": "discovery run 4, crawl audit run 13, speed audit run 15, AI audit run 14, text check run 16, link check run 17, repo file check run 19"
+  },
+  {
+    "file": "2026-11-19-2.html",
+    "date": "2026-11-19 (2)",
+    "label": "Full scan 19 Nov, all checks (before fixes)",
+    "runs": "discovery run 5, crawl audit run 20, speed audit run 22, AI audit run 21, text check run 23, link check run 25, repo file check run 26"
   }
 ]
