@@ -31,10 +31,12 @@ from core.tenant import load_tenant  # noqa: E402
 
 # audit_structure after prioritize: its search numbers come from the traffic cache that prioritize has just
 # refreshed; rescore (prioritize --offline, no Google calls) then scores the structure findings it adds
+# visibility last: organic keywords, AI-assistant visits, Domain Rating (SK, 2026-11-19; no findings, one entry a day)
 STEPS = ["discover", "audit_crawl", "audit_ai", "audit_perf", "audit_text", "audit_links", "audit_repo", "track_items",
-         "prioritize", "audit_structure", "rescore"]
+         "prioritize", "audit_structure", "rescore", "visibility"]
 # the exact (non-sampled) checks only: weekly and after a translation batch; no LLM, about 35 min for the blogs
-QUICK = ["discover", "audit_links", "audit_repo", "track_items", "prioritize", "audit_structure", "rescore"]
+QUICK = ["discover", "audit_links", "audit_repo", "track_items", "prioritize", "audit_structure", "rescore",
+         "visibility"]
 
 
 def pull_clones(tenant) -> str | None:

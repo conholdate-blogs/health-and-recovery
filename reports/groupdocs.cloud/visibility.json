@@ -1,0 +1,49 @@
+[
+ {
+  "date": "2026-11-19",
+  "windows": {
+   "current": [
+    "2026-10-20",
+    "2026-11-16"
+   ],
+   "six_months_ago": [
+    "2026-04-21",
+    "2026-05-18"
+   ]
+  },
+  "hosts": {
+   "blog.groupdocs.cloud": {
+    "keywords": {
+     "queries": 6542,
+     "top10": 1250,
+     "top3": 72,
+     "with_clicks": 260,
+     "impressions": 66466,
+     "hidden_share": 0.349
+    },
+    "keywords_six_months_ago": {
+     "queries": 8914,
+     "top10": 949,
+     "top3": 82,
+     "with_clicks": 322,
+     "impressions": 103067,
+     "hidden_share": 0.483
+    },
+    "ai": {
+     "sessions": 2,
+     "by_platform": {
+      "ChatGPT": 2
+     }
+    },
+    "ai_six_months_ago": {
+     "sessions": 3,
+     "by_platform": {
+      "Perplexity": 3
+     }
+    },
+    "dr": 30.0,
+    "dr_date": "2026-11-19"
+   }
+  }
+ }
+]

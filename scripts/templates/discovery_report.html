@@ -512,6 +512,10 @@ footer a { color: var(--accent) }
       <p class="lede fold">One row per recorded run, newest first.<span class="rest"> Clicks and impressions: Search Console, the 28 days ending on the date under them. Open issues: kinds of problem still open (as in the Issue log). Open items: pages, links and files still affected. Note: what ran since the row before, so a score change from a new check reads as that.</span></p>
       <div class="tablewrap"><table id="history-rows"></table></div>
     </details>
+    <details class="ref" id="visibility" hidden open><summary>Visibility <small id="visibility-st"></small></summary>
+      <p class="lede fold">Organic keywords, visits from AI assistants and Domain Rating, now and six months ago.<span class="rest"> Keywords: Search Console queries that showed a page of this subdomain at least once in 28 days; top 10 / top 3 by average position. Google hides rare searches, so the count is a floor; "Hidden searches" says how much of the impressions it does not show. Not the same number as a backlink tool's "organic keywords", which is an estimate from its own keyword database. AI-assistant visits: GA4 sessions whose source is ChatGPT, Perplexity, Gemini, Copilot, Claude and others; visits that arrive without a referrer count as direct and are missed. Domain Rating: Ahrefs' backlink score of the whole domain, the same for every subdomain.</span></p>
+      <div class="tablewrap"><table id="visibility-rows"></table></div>
+    </details>
     <details class="ref" id="structure" hidden open><summary>Site structure <small id="structure-st"></small></summary>
       <p class="lede fold">Tags, categories and the listing pages Hugo builds from them, read from the blog's repo.<span class="rest"> Hugo builds a listing page for the home page, each category and each tag, in every language, with as many /page/N/ pages as the posts need (N posts a page). A tag with one post is a page with one link: thin, and multiplied by every language. Search: Search Console clicks and impressions over 28 days. Colours: <span class="bad" style="font-weight:600">red</span> = alert, <span class="ok" style="font-weight:600">green</span> = good, black = in between or a plain count. Tags with one post: red from 50%, green up to 20%; with one or two posts: red from 70%, green up to 35%; tags per post: red above 5, green up to 3; tag share of listing pages: red from 80%, green up to 50%; listing pages beyond page 50: red from 1,000, green at 0; tag URLs in the sitemaps: red if any, green at 0.</span></p>
       <div class="tablewrap"><table id="structure-rows"></table></div>
@@ -1298,6 +1302,7 @@ __METHOD__
     const AREA_COLS = [["crawl", "Crawl &<br>indexing"], ["onpage", "On-page"], ["intl", "Languages"], ["ai", "AI<br>readiness"], ["perf", "Speed"]]
       .filter(([k]) => HIST.some(r => r.areas[k] != null));
     const withItems = HIST.some(r => r.open_issues != null);
+    const withVis = HIST.some(r => r.keywords != null);  // recorded from 19 Nov 2026 (scripts/visibility.py)
     // change since the row below; for issue counts more is worse, so the colours flip (SK, 2026-11-11);
     // on its own line under the value, so the columns stay narrow (SK, 2026-11-13)
     const move = (r, older, get, moreIsWorse) => { const a = get(r), b = older && get(older);
@@ -1309,11 +1314,12 @@ __METHOD__
     let all = false;
     const render = () => {
       const shown = all ? HIST : HIST.slice(0, HIST_SHOWN);
-      table.innerHTML = `<thead><tr><th>Date</th><th class="n">Score</th><th class="n">Clicks<br>28 days</th><th class="n">Impressions</th><th class="n">Open<br>issues</th>${withItems ? `<th class="n">Open<br>items</th>` : ""}${AREA_COLS.map(([, n]) => `<th class="n">${n}</th>`).join("")}<th>Note</th></tr></thead><tbody>`
+      table.innerHTML = `<thead><tr><th>Date</th><th class="n">Score</th><th class="n">Clicks<br>28 days</th><th class="n">Impressions</th><th class="n">Open<br>issues</th>${withItems ? `<th class="n">Open<br>items</th>` : ""}${withVis ? `<th class="n">Organic<br>keywords</th><th class="n">AI<br>visits</th>` : ""}${AREA_COLS.map(([, n]) => `<th class="n">${n}</th>`).join("")}<th>Note</th></tr></thead><tbody>`
         + shown.map((r, i) => { const older = HIST[HIST.indexOf(r) + 1];
           return `<tr><td>${esc(day(r.date))}</td><td class="n">${r.health === 100 ? full(100) : `<b>${r.health}</b>`}${move(r, older, x => x.health)}</td>`
             + `<td class="n">${fmt(r.clicks)}${r.traffic_to ? `<br><small class="dim">to ${esc(day(r.traffic_to))}</small>` : ""}</td><td class="n">${compact(r.impressions)}</td>`
             + `<td class="n">${fmt(r.issue_types)}${move(r, older, x => x.issue_types, true)}</td>${withItems ? `<td class="n">${fmt(r.open_issues)}${move(r, older, x => x.open_issues, true)}</td>` : ""}`
+            + (withVis ? `<td class="n">${fmt(r.keywords)}${move(r, older, x => x.keywords)}</td><td class="n">${fmt(r.ai_sessions)}${move(r, older, x => x.ai_sessions)}</td>` : "")
             + AREA_COLS.map(([k]) => `<td class="n">${r.areas[k] == null ? "–" : r.areas[k] === 100 ? full(100) : r.areas[k]}${move(r, older, x => x.areas[k])}</td>`).join("")
             // the snapshot label says why; the short note what ran; run numbers on hover (SK, 2026-11-11: no sideways scroll)
             + `<td class="note" title="${esc(r.runs || "")}">${r.label ? esc(r.label) : ""}`
@@ -1323,6 +1329,34 @@ __METHOD__
     };
     btn.addEventListener("click", () => { all = !all; render(); });
     render();
+  }
+
+  // visibility (SK, 2026-11-19: values like a backlink tool shows): keywords from Search Console, AI-assistant
+  // visits from GA4, Domain Rating from Ahrefs; reports/<tenant>/visibility.json, scripts/visibility.py
+  const VIS = R._visibility, VH = VIS && R._page_host ? (VIS.hosts || {})[R._page_host] : null;
+  if (VH) {
+    $("visibility").hidden = false;
+    const W = VIS.windows || {}, cw = W.current || [], sw = W.six_months_ago || [];
+    $("visibility-st").textContent = `· recorded ${day(VIS.date)}`;
+    const k = VH.keywords || {}, k6 = VH.keywords_six_months_ago || {}, ai = VH.ai || {}, ai6 = VH.ai_six_months_ago || {};
+    const chg = (a, b, moreIsWorse) => {
+      if (a == null || b == null) return "–";
+      if (b < 20) return a === b ? "±0" : `<span class="${(a > b) !== !!moreIsWorse ? "up" : "down"}">${a > b ? "+" : "−"}${fmt(Math.abs(a - b))}</span>`;
+      const p = Math.round((a - b) / b * 100);
+      return `<span class="${p === 0 ? "" : (p > 0) !== !!moreIsWorse ? "up" : "down"}">${p > 0 ? "+" : p < 0 ? "−" : "±"}${Math.abs(p)}%</span>`;
+    };
+    const share = v => v == null ? "–" : `${Math.round(v * 100)}%`;
+    const plat = a => Object.entries(a.by_platform || {}).map(([n, v]) => `<span style="white-space:nowrap">${esc(n)} ${fmt(v)}</span>`).join(" · ");
+    const row = (name, now, then, change, src) => `<tr><td>${name}</td><td class="n" style="white-space:normal;max-width:16rem">${now}</td><td class="n" style="white-space:normal;max-width:16rem">${then}</td><td class="n">${change}</td><td class="dim">${src}</td></tr>`;
+    $("visibility-rows").innerHTML = `<thead><tr><th>Metric</th><th class="n">28 days to ${esc(day(cw[1] || ""))}</th><th class="n">Six months ago<br><small>to ${esc(day(sw[1] || ""))}</small></th><th class="n">Change</th><th>Source</th></tr></thead><tbody>`
+      + row(`Organic keywords${k.capped ? " <small>(at least)</small>" : ""}`, `<b>${fmt(k.queries)}</b>`, fmt(k6.queries), chg(k.queries, k6.queries), "Search Console")
+      + row("Keywords in the top 10", fmt(k.top10), fmt(k6.top10), chg(k.top10, k6.top10), "Search Console")
+      + row("Keywords in the top 3", fmt(k.top3), fmt(k6.top3), chg(k.top3, k6.top3), "Search Console")
+      + row("Keywords with a click", fmt(k.with_clicks), fmt(k6.with_clicks), chg(k.with_clicks, k6.with_clicks), "Search Console")
+      + row("Hidden searches <small>(share of impressions)</small>", share(k.hidden_share), share(k6.hidden_share), "", "Search Console")
+      + row("AI-assistant visits", `<b>${fmt(ai.sessions)}</b>${plat(ai) ? `<br><small class="dim">${plat(ai)}</small>` : ""}`, `${fmt(ai6.sessions)}${plat(ai6) ? `<br><small class="dim">${plat(ai6)}</small>` : ""}`, chg(ai.sessions, ai6.sessions), "GA4")
+      + row("Domain Rating", VH.dr == null ? "–" : `<b>${fmt(VH.dr)}</b>${VH.dr_date && VH.dr_date !== VIS.date ? `<br><small class="dim">${esc(day(VH.dr_date))}</small>` : ""}`, "–", "", "Ahrefs, whole domain")
+      + `</tbody>`;
   }
 
   // what the crawl covered (12 Nov 2026): every sitemap URL on small hosts, else a fixed + rotating sample
@@ -1549,6 +1583,7 @@ __METHOD__
         $("worm").outerHTML = wormGraph(LOG.series, nw); wireWorm(LOG.series); }, 150); });
     }
     if (!$("history").hidden) body.append($("history"));
+    if (!$("visibility").hidden) $("summary").append($("visibility"));  // Overview numbers, not reference (19 Nov)
     // fewer than 6 issues: the filters and severity chips add nothing
     if (findings.length < 6) {
       document.querySelector("#findings .filters").hidden = true;
@@ -1672,6 +1707,7 @@ __METHOD__
     if (R._page_host) {  // subdomain page: a scoreboard of its own numbers
       const H = HOSTS[0], t = H.traffic || {}, cur = t.current || {}, prev = t.previous || {}, six = t.six_months_ago || {};
       const TR = trendOf(H.host), before = TR.length > 1 ? TR[TR.length - 2] : null;
+      const V = ((R._visibility || {}).hosts || {})[H.host], VK = V && V.keywords, VK6 = (V && V.keywords_six_months_ago) || {};
       $("kpis").innerHTML = [
         `<div class="kpi g-${H.grade}"><span class="kl">Health score ${info("Health score", H)}</span><span class="kv">${H.health} <small>out of 100</small></span>${sbar(H.health, H.grade, "big")}`
           + (before ? `<span class="ks">${signed(H.health - before.health)} ${since(before.date)}</span>` : `<span class="ks">trend from the next run</span>`)+ `</div>`,
@@ -1681,6 +1717,9 @@ __METHOD__
           : t.source === "ga4"
           ? `<div class="kpi"><span class="kl">Organic sessions</span><span class="kv">${fmt(cur.sessions)} <small>28 days, GA4</small></span><span class="ks">${delta(cur.sessions, prev.sessions, "previous 28 days")}</span></div>`
           : `<div class="kpi"><span class="kl">Search traffic</span><span class="kv">–</span><span class="ks">no Search Console or GA4 data</span></div>`,
+        // organic keywords with AI visits and Domain Rating under them (SK, 2026-11-19); the rest in Reference
+        VK ? `<div class="kpi"><span class="kl">Organic keywords</span><span class="kv">${compact(VK.queries)} <small>28 days</small></span><span class="ks">${fmt(VK.top10)} in top 10 · ${delta(VK.queries, VK6.queries, "six months ago")}</span>`
+          + `<span class="ks"><a class="pilllink" href="#visibility">AI visits ${fmt((V.ai || {}).sessions)} · DR ${V.dr == null ? "–" : fmt(V.dr)}</a></span></div>` : "",
         LOG ? `<div class="kpi"><span class="kl">${issuesLabel}</span><span class="kv">${fmt(LOG.open)} <small>open of ${fmt(LOG.total)}</small></span><span class="ks"><span class="${LOG.verified + LOG.pushed ? "up" : ""}">${fmt(LOG.verified + LOG.pushed)} fixed</span> · ${fmt(LOG.resolved)} resolved${LOG.reviewed ? ` · ${fmt(LOG.reviewed)} reviewed` : ""}`
           + ` · <b class="pct${LOG.total - LOG.open ? " ok" : ""}">${share(LOG.total - LOG.open, LOG.total)}</b> closed</span>`
           + `<span class="ks">${GURL ? `<a class="pilllink" href="issues/">Issue log →</a>` : ""}</span></div>` :

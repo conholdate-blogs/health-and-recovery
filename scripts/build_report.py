@@ -427,6 +427,18 @@ def record_health(report: dict, history_path: Path) -> None:
                 if c["host"] in current["hosts"]:
                     current["hosts"][c["host"]]["stats"] = host_stats(report, c)
             history_path.write_text(json.dumps(history, indent=1) + "\n", encoding="utf-8")
+        elif current is history[-1]:
+            # visibility numbers (19 Nov 2026) join the newest entry once, without a new scan
+            changed = False
+            for c in hosts:
+                stats = (current["hosts"].get(c["host"]) or {}).get("stats")
+                if stats is not None and "keywords" not in stats:
+                    new = host_stats(report, c)
+                    if new.get("keywords") is not None:
+                        stats.update({k: new[k] for k in ("keywords", "top10", "ai_sessions", "dr")})
+                        changed = True
+            if changed:
+                history_path.write_text(json.dumps(history, indent=1) + "\n", encoding="utf-8")
         return
     entry: dict = {"date": date.today().isoformat(), "runs": runs, "method": SCORE_METHOD}
     if same:
@@ -449,10 +461,15 @@ def host_stats(report: dict, card: dict) -> dict:
     """The Overview tiles of one host, kept per run for the History table (SK, 2026-11-06): search clicks and
     impressions of the 28 days ending `traffic_to`, issue types (findings), open issues (link and sitemap items)."""
     cur = (card.get("traffic") or {}).get("current") or {}
-    return {"clicks": cur.get("clicks"), "impressions": cur.get("impressions"),
-            "traffic_to": (report.get("_traffic_window") or [None, None])[1],
-            "issue_types": sum(1 for f in report.get("findings") or [] if f["subdomain"] == card["host"] and not f.get("_merged_into")),
-            "open_issues": (card.get("items") or {}).get("open")}
+    vis = ((report.get("_visibility") or {}).get("hosts") or {}).get(card["host"]) or {}
+    out = {"clicks": cur.get("clicks"), "impressions": cur.get("impressions"),
+           "traffic_to": (report.get("_traffic_window") or [None, None])[1],
+           "issue_types": sum(1 for f in report.get("findings") or [] if f["subdomain"] == card["host"] and not f.get("_merged_into")),
+           "open_issues": (card.get("items") or {}).get("open")}
+    if vis:  # from 19 Nov 2026: organic keywords, top 10, AI-assistant visits, Domain Rating (scripts/visibility.py)
+        out.update(keywords=(vis.get("keywords") or {}).get("queries"), top10=(vis.get("keywords") or {}).get("top10"),
+                   ai_sessions=(vis.get("ai") or {}).get("sessions"), dr=vis.get("dr"))
+    return out
 
 
 # short names for the History table's Note (SK, 2026-11-11: the full "new crawl audit (run 16) · …" list scrolled
@@ -664,6 +681,11 @@ def prepare(args: argparse.Namespace) -> tuple[dict, list[str], str | None, str,
         data = json.loads(structure.read_text(encoding="utf-8"))
         report["_structure"] = {"date": data.get("date"), "search_window": data.get("search_window"),
                                 "hosts": data.get("hosts") or {}}
+    # visibility per host (scripts/visibility.py; SK, 2026-11-19): keywords, AI-assistant visits, Domain Rating
+    if (vis := folder / "visibility.json").is_file():
+        entries = json.loads(vis.read_text(encoding="utf-8"))
+        if entries:
+            report["_visibility"] = {k: entries[-1].get(k) for k in ("date", "windows", "hosts")}
     if args.findings:
         rows = json.loads(Path(args.findings).read_text(encoding="utf-8"))
         all_rows = rows

@@ -47,6 +47,13 @@ a blocked page's noindex is never read). Written 12 Nov 2026 so nothing is lost.
    red); "Resolved since the last run"; History (5 rows + Show all; changes on their own line under the value).
 4. **Issues and fixes:** open findings ranked by score with evidence; filters hidden under 6 issues.
 5. Reference is empty on subdomain pages (its tables are in the cards); domain pages keep it.
+6. **Visibility (19 Nov, SK: "values like Ahrefs")**, subdomain pages only: Overview tile "Organic keywords" (Search
+   Console queries with impressions, 28 days; top 10; vs six months ago; link "AI visits · DR"), a Visibility panel at
+   the end of the Overview (keywords, top 10, top 3, with a click, hidden-search share, AI-assistant visits per
+   platform from GA4, Domain Rating from Ahrefs; now, six months ago, change, source) and History columns "Organic
+   keywords" and "AI visits". Data: `reports/<tenant>/visibility.json` (one entry a day), from `scripts/visibility.py`,
+   last step of `run_cycle.py` (full and quick). DR needs `AHREFS_API_KEY`; without it the last value is kept with its
+   date and `--dr host=N` records a value read elsewhere.
 
 Words: an **issue** is a kind of problem (one Issue log row); an **item** is one page, link or file it affects.
 

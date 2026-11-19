@@ -15,6 +15,22 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Start here (2026-11-19, night: visibility numbers)
+
+**Visibility per blog (SK: "values like Ahrefs", then "organic keywords"; step 1 of 3 built):** `scripts/visibility.py`
+(+ `core/visibility.py`, tests) records per host: organic keywords from Search Console (queries with impressions, top
+10, top 3, with a click, hidden-search share; floor, not Ahrefs' estimate), AI-assistant visits from GA4 (sessionSource
+ChatGPT, Perplexity, Gemini, Copilot, Claude, …), Domain Rating (Ahrefs, per registered domain); now and six months
+ago, in `reports/<tenant>/visibility.json`; last step of `run_cycle.py`. Shown on subdomain pages only (tile, panel at
+the end of the Overview, History columns); domain pages unchanged, so no snapshot. First values 19 Nov (keywords /
+top 10 / AI visits / DR): blog.aspose.com 35,859 / 17,554 / 58 / 72; blog.groupdocs.com 18,272 / 8,020 / 9 / 54;
+blog.conholdate.com 12,699 / 2,943 / 4 / 28; blog.groupdocs.cloud 6,542 / 1,250 / 2 / 30; blog.aspose.cloud 4,069 /
+933 / 4 / 57; blog.conholdate.cloud 7 / 3 / 0 / 21. Ahrefs account is Free: only the free DR call works (in the
+Claude connector; the REST endpoint needs `AHREFS_API_KEY`, not in .env, so DR was recorded with `--dr`); AI
+citations, referring domains, AI Overview/Mode, prompts need a paid API plan + Brand Radar. **Open:** step 2 =
+referring domains via Bing Webmaster Tools (SK verifies the six blogs and creates an API key); step 3 = paid Ahrefs
+(SK's budget call); AHREFS_API_KEY for the script; keywords on the Blogs page rows (not done).
+
 ## Start here (2026-11-19, evening: blog.groupdocs.com scanned)
 
 **blog.groupdocs.com (monitor only) full scan:** health 69 → 50, issue types 15 → 39 (all new from the new checks),

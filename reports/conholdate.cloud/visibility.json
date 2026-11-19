@@ -1,0 +1,45 @@
+[
+ {
+  "date": "2026-11-19",
+  "windows": {
+   "current": [
+    "2026-10-20",
+    "2026-11-16"
+   ],
+   "six_months_ago": [
+    "2026-04-21",
+    "2026-05-18"
+   ]
+  },
+  "hosts": {
+   "blog.conholdate.cloud": {
+    "keywords": {
+     "queries": 7,
+     "top10": 3,
+     "top3": 1,
+     "with_clicks": 0,
+     "impressions": 176,
+     "hidden_share": 0.79
+    },
+    "keywords_six_months_ago": {
+     "queries": 4,
+     "top10": 3,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 71,
+     "hidden_share": 0.746
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    },
+    "ai_six_months_ago": {
+     "sessions": 0,
+     "by_platform": {}
+    },
+    "dr": 21.0,
+    "dr_date": "2026-11-19"
+   }
+  }
+ }
+]

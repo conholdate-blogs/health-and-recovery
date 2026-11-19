@@ -1,0 +1,49 @@
+[
+ {
+  "date": "2026-11-19",
+  "windows": {
+   "current": [
+    "2026-10-20",
+    "2026-11-16"
+   ],
+   "six_months_ago": [
+    "2026-04-21",
+    "2026-05-18"
+   ]
+  },
+  "hosts": {
+   "blog.aspose.cloud": {
+    "keywords": {
+     "queries": 4069,
+     "top10": 933,
+     "top3": 97,
+     "with_clicks": 142,
+     "impressions": 52602,
+     "hidden_share": 0.373
+    },
+    "keywords_six_months_ago": {
+     "queries": 4499,
+     "top10": 795,
+     "top3": 72,
+     "with_clicks": 197,
+     "impressions": 77254,
+     "hidden_share": 0.636
+    },
+    "ai": {
+     "sessions": 4,
+     "by_platform": {
+      "ChatGPT": 4
+     }
+    },
+    "ai_six_months_ago": {
+     "sessions": 1,
+     "by_platform": {
+      "ChatGPT": 1
+     }
+    },
+    "dr": 57.0,
+    "dr_date": "2026-11-19"
+   }
+  }
+ }
+]
