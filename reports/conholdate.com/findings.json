@@ -361,14 +361,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "discovery-run1",
     "last_seen_run": "discovery-run8",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "discovery-run9",
+    "resolved_at": "2026-11-19T05:23:20+00:00",
     "check": "dup_in_file",
     "notes": []
   },
@@ -552,22 +552,22 @@
     "affected_pages": 17,
     "impact": {
       "clicks_28d": 5,
-      "impressions_28d": 375,
+      "impressions_28d": 397,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 9,
-      "past_impressions": 381,
+      "past_impressions": 402,
       "lost_clicks": 4,
-      "lost_impressions": 6,
+      "lost_impressions": 5,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "at stake",
       "score": 13,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "M",
@@ -578,7 +578,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run104",
+    "last_seen_run": "link-audit-run109",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -1067,14 +1067,14 @@
       "lost_clicks": 0,
       "lost_impressions": 2,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "S",
@@ -1085,7 +1085,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run103",
+    "last_seen_run": "repo-audit-run110",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -1979,734 +1979,129 @@
     "title": "Posts link to another language although a translation exists",
     "evidence": {
       "urls": [
-        "https://blog.conholdate.com/ar/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/ar/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/ar/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/ar/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/ar/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/ar/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/ar/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/ar/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/ar/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/ar/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/ar/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/ar/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/ar/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/ar/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/ar/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/ar/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/ar/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/ar/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/ar/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/ar/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/ar/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/de/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/de/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/de/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/de/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/de/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/de/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/de/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/de/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/de/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/de/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/de/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/de/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/de/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/de/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/de/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/de/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/de/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/de/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/de/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/de/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/de/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/de/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/es/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/es/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/es/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/es/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/es/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/es/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/es/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/es/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/es/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/es/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/es/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/es/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/es/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/es/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/es/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/es/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/es/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/es/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/es/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/es/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/es/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/es/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/fa/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/fa/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/fa/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/fa/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/fa/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/fa/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/fa/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/fa/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/fa/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/fa/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/fa/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/fa/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/fa/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/fa/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/fa/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/fa/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/fa/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/fa/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/fa/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/fa/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/fa/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/fa/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/fr/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/fr/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/fr/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/fr/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/fr/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/fr/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/fr/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/fr/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/fr/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/fr/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/fr/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/fr/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/fr/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/fr/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/fr/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/fr/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/fr/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/fr/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/fr/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/fr/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/fr/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/fr/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/id/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/id/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/id/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/id/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/id/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/id/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/id/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/id/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/id/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/id/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/id/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/id/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/id/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/id/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/id/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/id/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/id/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/id/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/id/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/id/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/id/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/id/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/it/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/it/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/it/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/it/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/it/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/it/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/it/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/it/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/it/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/it/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/it/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/it/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/it/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/it/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/it/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/it/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/it/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/it/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/it/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/it/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/it/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/it/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/ja/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/ja/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/ja/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/ja/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/ja/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/ja/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/ja/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/ja/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/ja/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/ja/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/ja/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/ja/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/ja/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/ja/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/ja/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/ja/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/ja/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/ja/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/ja/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/ja/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/ja/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/ja/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/ko/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/ko/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/ko/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/ko/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/ko/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/ko/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/ko/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/ko/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/ko/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/ko/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/ko/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/ko/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/ko/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/ko/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/ko/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/ko/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/ko/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/ko/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/ko/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/ko/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/ko/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/ko/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/nl/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/nl/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/nl/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/nl/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/nl/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/nl/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/nl/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/nl/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/nl/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/nl/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/nl/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/nl/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/nl/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/nl/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/nl/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/nl/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/nl/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/nl/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/nl/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/nl/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/nl/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/nl/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/pl/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/pl/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/pl/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/pl/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/pl/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/pl/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/pl/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/pl/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/pl/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/pl/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/pl/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/pl/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/pl/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/pl/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/pl/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/pl/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/pl/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/pl/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/pl/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/pl/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/pl/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/pl/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/pt/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/pt/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/pt/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/pt/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/pt/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/pt/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/pt/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/pt/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/pt/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/pt/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/pt/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/pt/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/pt/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/pt/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/pt/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/pt/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/pt/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/pt/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/pt/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/pt/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/pt/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/pt/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/ru/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/ru/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/ru/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/ru/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/ru/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/ru/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/ru/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/ru/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/ru/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/ru/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/ru/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/ru/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/ru/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/ru/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/ru/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/ru/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/ru/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/ru/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/ru/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/ru/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/ru/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/ru/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/th/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/th/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/th/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/th/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/th/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/th/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/th/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/th/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/th/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/th/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/th/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/th/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/th/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/th/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/th/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/th/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/th/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/th/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/th/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/th/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/th/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/th/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/tr/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/tr/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/tr/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/tr/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/tr/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/tr/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/tr/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/tr/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/tr/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/tr/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/tr/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/tr/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/tr/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/tr/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/tr/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/tr/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/tr/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/tr/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/tr/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/tr/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/tr/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/tr/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/vi/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/vi/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/vi/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/vi/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/vi/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/vi/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/vi/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/vi/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/vi/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/vi/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/vi/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/vi/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/vi/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/vi/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/vi/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/vi/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/vi/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/vi/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/vi/total/flip-image-in-csharp/",
         "https://blog.conholdate.com/vi/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/vi/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/vi/total/text-to-qr-code-generator-in-csharp/",
-        "https://blog.conholdate.com/zh/total/autofit-rows-or-columns-in-excel-using-java/",
-        "https://blog.conholdate.com/zh/total/convert-cad-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/zh/total/convert-csv-to-xml-online/",
-        "https://blog.conholdate.com/zh/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/zh/total/convert-latex-to-pdf-in-java/",
         "https://blog.conholdate.com/zh/total/convert-markdown-to-word-in-csharp/",
-        "https://blog.conholdate.com/zh/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/zh/total/convert-pdf-to-grayscale-in-csharp/",
-        "https://blog.conholdate.com/zh/total/convert-pptx-to-docx-java/",
-        "https://blog.conholdate.com/zh/total/convert-pptx-to-emf-in-java/",
-        "https://blog.conholdate.com/zh/total/convert-psd-to-jpg-in-csharp/",
         "https://blog.conholdate.com/zh/total/convert-pub-to-pptx-in-csharp/",
         "https://blog.conholdate.com/zh/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/zh/total/convert-webp-to-pdf-in-java/",
         "https://blog.conholdate.com/zh/total/convert-xbrl-to-excel-in-csharp/",
         "https://blog.conholdate.com/zh/total/convert-xbrl-to-pdf-online/",
-        "https://blog.conholdate.com/zh/total/convert-xps-to-bmp-in-csharp/",
-        "https://blog.conholdate.com/zh/total/create-visio-diagram-in-csharp/",
-        "https://blog.conholdate.com/zh/total/flip-image-in-csharp/",
-        "https://blog.conholdate.com/zh/total/merge-docx-to-pdf-java/",
-        "https://blog.conholdate.com/zh/total/merge-excel-files-in-csharp/",
-        "https://blog.conholdate.com/zh/total/text-to-qr-code-generator-in-csharp/"
+        "https://blog.conholdate.com/zh/total/merge-docx-to-pdf-java/"
       ],
-      "observed": "731 links on 374 pages (27 distinct targets); by language: ar 43, de 43, es 43, fa 43, fr 43, id 43, it 43, ja 43, ...; 0 written by translation commits",
+      "observed": "238 links on 119 pages (10 distinct targets); by language: ar 14, de 14, es 14, fa 14, fr 14, id 14, it 14, ja 14, ...; 0 written by translation commits",
       "expected": "Internal links point at the post in the page's own language",
       "locations": [
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/create-visio-diagram-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/autofit-rows-or-columns-in-excel-using-java/",
-          "file": "content/Conholdate.Total/total/2025-10-01-autofit-rows-or-columns-in-excel-using-java/index.ar.md",
-          "line": 68,
-          "fix": "https://blog.conholdate.com/ar/total/create-visio-diagram-in-csharp/",
-          "commit": "5fe36086 2025-10-22: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-10-03",
-            "english_commit": "483aa84c 2025-10-03: autofit excel",
-            "translated": "2025-10-22",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-psd-to-jpg-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/autofit-rows-or-columns-in-excel-using-java/",
-          "file": "content/Conholdate.Total/total/2025-10-01-autofit-rows-or-columns-in-excel-using-java/index.ar.md",
-          "line": 69,
-          "fix": "https://blog.conholdate.com/ar/total/convert-psd-to-jpg-in-csharp/",
-          "commit": "5fe36086 2025-10-22: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-10-03",
-            "english_commit": "483aa84c 2025-10-03: autofit excel",
-            "translated": "2025-10-22",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/merge-docx-to-pdf-java/",
-          "page": "https://blog.conholdate.com/ar/total/convert-cad-to-pdf-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-08-11-convert-cad-to-pdf-in-csharp/index.ar.md",
-          "line": 67,
-          "fix": "https://blog.conholdate.com/ar/total/merge-docx-to-pdf-java/",
-          "commit": "e0bd70aa 2025-08-29: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-08-15",
-            "english_commit": "2c7199fc 2025-08-15: cad to pdf",
-            "translated": "2025-08-29",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-pdf-to-grayscale-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/convert-cad-to-pdf-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-08-11-convert-cad-to-pdf-in-csharp/index.ar.md",
-          "line": 68,
-          "fix": "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
-          "commit": "e0bd70aa 2025-08-29: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-08-15",
-            "english_commit": "2c7199fc 2025-08-15: cad to pdf",
-            "translated": "2025-08-29",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-pdf-to-grayscale-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/convert-csv-to-xml-online/",
-          "file": "content/Conholdate.Total/total/2025-08-15-convert-csv-to-xml-online/index.ar.md",
-          "line": 88,
-          "fix": "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
-          "commit": "e0bd70aa 2025-08-29: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-08-19",
-            "english_commit": "15c2a6ca 2025-08-19: csv to xml",
-            "translated": "2025-08-29",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-cad-to-pdf-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/convert-csv-to-xml-online/",
-          "file": "content/Conholdate.Total/total/2025-08-15-convert-csv-to-xml-online/index.ar.md",
-          "line": 89,
-          "fix": "https://blog.conholdate.com/ar/total/convert-cad-to-pdf-in-csharp/",
-          "commit": "e0bd70aa 2025-08-29: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-08-19",
-            "english_commit": "15c2a6ca 2025-08-19: csv to xml",
-            "translated": "2025-08-29",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/delete-blank-pages-in-word-using-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/convert-html-to-bmp-in-java/",
-          "file": "content/Conholdate.Total/total/2025-10-17-convert-html-to-bmp-in-java/index.ar.md",
-          "line": 79,
-          "fix": "https://blog.conholdate.com/ar/total/delete-blank-pages-in-word-using-csharp/",
-          "commit": "82840e71 2025-12-01: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-10-20",
-            "english_commit": "e9654347 2025-10-20: html to bmp",
-            "translated": "2025-12-01",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/convert-html-to-bmp-in-java/",
-          "file": "content/Conholdate.Total/total/2025-10-17-convert-html-to-bmp-in-java/index.ar.md",
-          "line": 80,
-          "fix": "https://blog.conholdate.com/ar/total/convert-mpp-to-mpx-in-csharp/",
-          "commit": "82840e71 2025-12-01: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-10-20",
-            "english_commit": "e9654347 2025-10-20: html to bmp",
-            "translated": "2025-12-01",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/merge-excel-files-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/convert-latex-to-pdf-in-java/",
-          "file": "content/Conholdate.Total/total/2025-09-22-convert-latex-to-pdf-in-java/index.ar.md",
-          "line": 65,
-          "fix": "https://blog.conholdate.com/ar/total/merge-excel-files-in-csharp/",
-          "commit": "d32e64a2 2025-10-15: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-09-26",
-            "english_commit": "49ab955e 2025-09-26: latex to pdf",
-            "translated": "2025-10-15",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-pub-to-pptx-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/convert-latex-to-pdf-in-java/",
-          "file": "content/Conholdate.Total/total/2025-09-22-convert-latex-to-pdf-in-java/index.ar.md",
-          "line": 66,
-          "fix": "https://blog.conholdate.com/ar/total/convert-pub-to-pptx-in-csharp/",
-          "commit": "d32e64a2 2025-10-15: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-09-26",
-            "english_commit": "49ab955e 2025-09-26: latex to pdf",
-            "translated": "2025-10-15",
-            "english_newer": false
-          }
-        },
         {
           "role": "link",
           "url": "https://blog.conholdate.com/total/convert-xbrl-to-excel-in-csharp/",
@@ -2779,76 +2174,6 @@
         },
         {
           "role": "link",
-          "url": "https://blog.conholdate.com/total/delete-blank-pages-in-word-using-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/convert-mpp-to-mpx-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-10-10-convert-mpp-to-mpx-in-csharp/index.ar.md",
-          "line": 72,
-          "fix": "https://blog.conholdate.com/ar/total/delete-blank-pages-in-word-using-csharp/",
-          "commit": "5fe36086 2025-10-22: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-10-13",
-            "english_commit": "9f8786b4 2025-10-13: mpp to mpx",
-            "translated": "2025-10-22",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-pptx-to-emf-in-java/",
-          "page": "https://blog.conholdate.com/ar/total/convert-mpp-to-mpx-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-10-10-convert-mpp-to-mpx-in-csharp/index.ar.md",
-          "line": 73,
-          "fix": "https://blog.conholdate.com/ar/total/convert-pptx-to-emf-in-java/",
-          "commit": "5fe36086 2025-10-22: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-10-13",
-            "english_commit": "9f8786b4 2025-10-13: mpp to mpx",
-            "translated": "2025-10-22",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
           "url": "https://blog.conholdate.com/total/merge-docx-to-pdf-java/",
           "page": "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
           "file": "content/Conholdate.Total/total/2025-08-13-convert-pdf-to-grayscale-in-csharp/index.ar.md",
@@ -2914,181 +2239,6 @@
             "english_line": "2025-08-19",
             "english_commit": "15c2a6ca 2025-08-19: csv to xml",
             "translated": "2025-08-22",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-pptx-to-xlsx-java",
-          "page": "https://blog.conholdate.com/ar/total/convert-pptx-to-docx-java/",
-          "file": "content/Conholdate.Total/total/2023-12-05-convert-pptx-to-docx-java/index.ar.md",
-          "line": 92,
-          "fix": "https://blog.conholdate.com/ar/total/convert-pptx-to-xlsx-java/",
-          "commit": "6246b5fd 2023-12-07: PPTX to DOCX",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2023-12-07",
-            "english_commit": "6246b5fd 2023-12-07: PPTX to DOCX",
-            "translated": "2023-12-07",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/create-organizational-chart-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/convert-pptx-to-emf-in-java/",
-          "file": "content/Conholdate.Total/total/2025-10-07-convert-pptx-to-emf-in-java/index.ar.md",
-          "line": 83,
-          "fix": "https://blog.conholdate.com/ar/total/create-organizational-chart-in-csharp/",
-          "commit": "5fe36086 2025-10-22: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-10-08",
-            "english_commit": "e7240748 2025-10-08: added schema partial for SEO",
-            "translated": "2025-10-22",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/autofit-rows-or-columns-in-excel-using-java/",
-          "page": "https://blog.conholdate.com/ar/total/convert-pptx-to-emf-in-java/",
-          "file": "content/Conholdate.Total/total/2025-10-07-convert-pptx-to-emf-in-java/index.ar.md",
-          "line": 84,
-          "fix": "https://blog.conholdate.com/ar/total/autofit-rows-or-columns-in-excel-using-java/",
-          "commit": "5fe36086 2025-10-22: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-10-08",
-            "english_commit": "e7240748 2025-10-08: added schema partial for SEO",
-            "translated": "2025-10-22",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/compare-csv-files-in-java/",
-          "page": "https://blog.conholdate.com/ar/total/convert-psd-to-jpg-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-09-24-convert-psd-to-jpg-in-csharp/index.ar.md",
-          "line": 61,
-          "fix": "https://blog.conholdate.com/ar/total/compare-csv-files-in-java/",
-          "commit": "0ce48c7e 2025-09-30: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-09-30",
-            "english_commit": "f309f505 2025-09-30: create visio",
-            "translated": "2025-09-30",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-pub-to-docx-in-java/",
-          "page": "https://blog.conholdate.com/ar/total/convert-psd-to-jpg-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-09-24-convert-psd-to-jpg-in-csharp/index.ar.md",
-          "line": 62,
-          "fix": "https://blog.conholdate.com/ar/total/convert-pub-to-docx-in-java/",
-          "commit": "0ce48c7e 2025-09-30: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-09-30",
-            "english_commit": "f309f505 2025-09-30: create visio",
-            "translated": "2025-09-30",
             "english_newer": false
           }
         },
@@ -3234,76 +2384,6 @@
         },
         {
           "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-msg-to-pdf-java/",
-          "page": "https://blog.conholdate.com/ar/total/convert-webp-to-pdf-in-java/",
-          "file": "content/Conholdate.Total/total/2025-08-04-convert-webp-to-pdf-in-java/index.ar.md",
-          "line": 73,
-          "fix": "https://blog.conholdate.com/ar/total/convert-msg-to-pdf-java/",
-          "commit": "7e00da7a 2025-08-22: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-08-08",
-            "english_commit": "4d81c77f 2025-08-08: merge docx to pdf",
-            "translated": "2025-08-22",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/find-and-replace-text-in-pdf-java/",
-          "page": "https://blog.conholdate.com/ar/total/convert-webp-to-pdf-in-java/",
-          "file": "content/Conholdate.Total/total/2025-08-04-convert-webp-to-pdf-in-java/index.ar.md",
-          "line": 74,
-          "fix": "https://blog.conholdate.com/ar/total/find-and-replace-text-in-pdf-java/",
-          "commit": "7e00da7a 2025-08-22: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-08-08",
-            "english_commit": "4d81c77f 2025-08-08: merge docx to pdf",
-            "translated": "2025-08-22",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
           "url": "https://blog.conholdate.com/total/text-to-qr-code-generator-in-csharp/",
           "page": "https://blog.conholdate.com/ar/total/convert-xbrl-to-excel-in-csharp/",
           "file": "content/Conholdate.Total/total/2025-08-29-convert-xbrl-to-excel-in-csharp/index.ar.md",
@@ -3444,216 +2524,6 @@
         },
         {
           "role": "link",
-          "url": "https://blog.conholdate.com/total/delete-blank-pages-in-word-using-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/convert-xps-to-bmp-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-10-15-convert-xps-to-bmp-in-csharp/index.ar.md",
-          "line": 98,
-          "fix": "https://blog.conholdate.com/ar/total/delete-blank-pages-in-word-using-csharp/",
-          "commit": "82840e71 2025-12-01: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-10-17",
-            "english_commit": "521fb6c3 2025-10-17: xps to bmp",
-            "translated": "2025-12-01",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-html-to-bmp-in-java/",
-          "page": "https://blog.conholdate.com/ar/total/convert-xps-to-bmp-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-10-15-convert-xps-to-bmp-in-csharp/index.ar.md",
-          "line": 99,
-          "fix": "https://blog.conholdate.com/ar/total/convert-html-to-bmp-in-java/",
-          "commit": "82840e71 2025-12-01: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-10-17",
-            "english_commit": "521fb6c3 2025-10-17: xps to bmp",
-            "translated": "2025-12-01",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/compare-csv-files-in-java/",
-          "page": "https://blog.conholdate.com/ar/total/create-visio-diagram-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-09-26-create-visio-diagram-in-csharp/index.ar.md",
-          "line": 87,
-          "fix": "https://blog.conholdate.com/ar/total/compare-csv-files-in-java/",
-          "commit": "0ce48c7e 2025-09-30: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-09-30",
-            "english_commit": "f309f505 2025-09-30: create visio",
-            "translated": "2025-09-30",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-psd-to-jpg-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/create-visio-diagram-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-09-26-create-visio-diagram-in-csharp/index.ar.md",
-          "line": 88,
-          "fix": "https://blog.conholdate.com/ar/total/convert-psd-to-jpg-in-csharp/",
-          "commit": "0ce48c7e 2025-09-30: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-09-30",
-            "english_commit": "f309f505 2025-09-30: create visio",
-            "translated": "2025-09-30",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-csv-to-xml-online/",
-          "page": "https://blog.conholdate.com/ar/total/flip-image-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-08-20-flip-image-in-csharp/index.ar.md",
-          "line": 72,
-          "fix": "https://blog.conholdate.com/ar/total/convert-csv-to-xml-online/",
-          "commit": "e0bd70aa 2025-08-29: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-08-26",
-            "english_commit": "238275be 2025-08-26: flip image",
-            "translated": "2025-08-29",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/convert-pdf-to-grayscale-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/flip-image-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-08-20-flip-image-in-csharp/index.ar.md",
-          "line": 73,
-          "fix": "https://blog.conholdate.com/ar/total/convert-pdf-to-grayscale-in-csharp/",
-          "commit": "e0bd70aa 2025-08-29: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-08-26",
-            "english_commit": "238275be 2025-08-26: flip image",
-            "translated": "2025-08-29",
-            "english_newer": false
-          }
-        },
-        {
-          "role": "link",
           "url": "https://blog.conholdate.com/total/convert-msg-to-pdf-java/",
           "page": "https://blog.conholdate.com/ar/total/merge-docx-to-pdf-java/",
           "file": "content/Conholdate.Total/total/2025-08-06-merge-docx-to-pdf-java/index.ar.md",
@@ -3721,63 +2591,28 @@
             "translated": "2025-08-22",
             "english_newer": false
           }
-        },
-        {
-          "role": "link",
-          "url": "https://blog.conholdate.com/total/split-excel-files-in-csharp/",
-          "page": "https://blog.conholdate.com/ar/total/merge-excel-files-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-09-12-merge-excel-files-in-csharp/index.ar.md",
-          "line": 68,
-          "fix": "https://blog.conholdate.com/ar/total/split-excel-files-in-csharp/",
-          "commit": "d32e64a2 2025-10-15: translations",
-          "copies": 16,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "nl",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "vi",
-            "zh"
-          ],
-          "origin": "translations",
-          "history": {
-            "english_line": "2025-09-16",
-            "english_commit": "b8b97f12 2025-09-16: merge excel",
-            "translated": "2025-10-15",
-            "english_newer": false
-          }
         }
       ]
     },
-    "affected_pages": 374,
+    "affected_pages": 119,
     "impact": {
-      "clicks_28d": 17,
-      "impressions_28d": 888,
+      "clicks_28d": 14,
+      "impressions_28d": 716,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 13,
-      "past_impressions": 411,
+      "past_clicks": 8,
+      "past_impressions": 319,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "at stake",
-      "score": 20,
+      "score": 19,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "S",
@@ -3788,7 +2623,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run104",
+    "last_seen_run": "link-audit-run109",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -4118,7 +2953,7 @@
         "https://blog.conholdate.com/nl/total/build-your-own-google-docs-like-app/",
         "https://blog.conholdate.com/pl/total/build-your-own-google-docs-like-app/"
       ],
-      "observed": "3,597 entries or files; English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel': 17, English rewritten 2026-03-24 after the translation (2025-02-11); description: 'Follow this blog post to learn how to achieve Imag' -> 'Learn to convert images (JPEG, PNG, BMP, GIF, TIFF': 17, English rewritten 2026-04-13 after the translation (2025-02-11); description: 'You can add a custom XMP metadata package to your ' -> 'Learn how to programmatically add, read, and remov': 17, English rewritten 2026-03-26 after the translation (2025-02-11); description: 'Easily extract text from Word or PDF documents pro' -> 'Programmatically extract text from Word (DOC/DOCX)': 17",
+      "observed": "3,563 entries or files; English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel': 17, English rewritten 2026-03-24 after the translation (2025-02-11); description: 'Follow this blog post to learn how to achieve Imag' -> 'Learn to convert images (JPEG, PNG, BMP, GIF, TIFF': 17, English rewritten 2026-04-13 after the translation (2025-02-11); description: 'You can add a custom XMP metadata package to your ' -> 'Learn how to programmatically add, read, and remov': 17, English rewritten 2026-03-26 after the translation (2025-02-11); description: 'Easily extract text from Word or PDF documents pro' -> 'Programmatically extract text from Word (DOC/DOCX)': 17",
       "expected": "A translation is updated whenever the English title or description changes",
       "locations": [
         {
@@ -4483,25 +3318,25 @@
         }
       ]
     },
-    "affected_pages": 3597,
+    "affected_pages": 3563,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 18,
+      "impressions_28d": 20,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 52,
+      "past_impressions": 59,
       "lost_clicks": 0,
-      "lost_impressions": 34,
+      "lost_impressions": 39,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "M",
@@ -4512,7 +3347,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run103",
+    "last_seen_run": "repo-audit-run110",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -4530,74 +3365,20 @@
     "title": "Translations that keep the English title or description",
     "evidence": {
       "urls": [
-        "https://blog.conholdate.com/fa/total/create-asp.net-pdf-editor-with-barcode-features/",
-        "https://blog.conholdate.com/fa/total/discount-offer-ends-soon/",
-        "https://blog.conholdate.com/fr/total/sign-documents-with-digital-signatures-using-java/",
-        "https://blog.conholdate.com/fr/total/search-for-a-word-in-pdf-using-java/",
-        "https://blog.conholdate.com/fr/total/export-data-to-excel-in-java/",
-        "https://blog.conholdate.com/fr/total/add-or-remove-custom-xmp-metadata-from-gif-using-java/",
         "https://blog.conholdate.com/zh/total/how-to-convert-excel-to-xml-in-csharp",
-        "https://blog.conholdate.com/fa/total/extract-table-from-pdf-in-java",
         "https://blog.conholdate.com/fa/total/convert-word-to-markdown-using-java",
-        "https://blog.conholdate.com/fa/total/unhide-sheets-in-excel-using-nodejs"
+        "https://blog.conholdate.com/it/total/how-to-add-an-image-stamp-in-pdf-using-csharp",
+        "https://blog.conholdate.com/fa/total/convert-webp-to-jpg",
+        "https://blog.conholdate.com/fa/total/extract-rich-text-as-markdown-syntax-in-csharp",
+        "https://blog.conholdate.com/ar/total/how-to-remove-a-page-from-a-pdf-in-java",
+        "https://blog.conholdate.com/de/total/how-to-remove-a-page-from-a-pdf-in-java",
+        "https://blog.conholdate.com/es/total/how-to-remove-a-page-from-a-pdf-in-java",
+        "https://blog.conholdate.com/fr/total/how-to-remove-a-page-from-a-pdf-in-java",
+        "https://blog.conholdate.com/id/total/how-to-remove-a-page-from-a-pdf-in-java"
       ],
-      "observed": "198 entries or files; title in English: 'How to Remove a Page from a PDF in Java': 11, title in English: 'Strikethrough Text in C#': 8, title in English: 'Convert PUB to Excel in C#': 5, title in English: 'Online LaTeX Viewer': 5",
+      "observed": "71 entries or files; title in English: 'How to Remove a Page from a PDF in Java': 11, title in English: 'Strikethrough Text in C#': 8, title in English: 'Convert PUB to Excel in C#': 5, title in English: 'Online LaTeX Viewer': 5",
       "expected": "A translation's seoTitle, title and description are in its own language",
       "locations": [
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/fa/total/create-asp.net-pdf-editor-with-barcode-features/",
-          "file": "content/Conholdate.Total/total/2020-07-10-create-asp.net-pdf-editor-with-barcode-features/index.fa.md",
-          "line": 1,
-          "note": "title in English: 'Create ASP.NET PDF Editor with Barcode Features'",
-          "fix": "translate title",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/fa/total/discount-offer-ends-soon/",
-          "file": "content/Conholdate.Total/total/2021-01-01-discount-offer-ends-soon/index.fa.md",
-          "line": 1,
-          "note": "title in English: 'Hurry! 25% Off Conholdate.Total Offer Ends Soon'",
-          "fix": "translate title",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/fr/total/sign-documents-with-digital-signatures-using-java/",
-          "file": "content/Conholdate.Total/total/2021-04-23-sign-documents-with-digital-signatures-using-java/index.fr.md",
-          "line": 1,
-          "note": "title in English: 'Sign Documents with Digital Signatures using Java'",
-          "fix": "translate title",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/fr/total/search-for-a-word-in-pdf-using-java/",
-          "file": "content/Conholdate.Total/total/2021-05-11-search-for-a-word-in-pdf-using-java/index.fr.md",
-          "line": 1,
-          "note": "title in English: 'Search for a Word in PDF using Java'",
-          "fix": "translate title",
-          "commit": "24babc50 2026-11-13 French posts back at /fr/<English url>/ (15 files); dated French redirects follow"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/fr/total/export-data-to-excel-in-java/",
-          "file": "content/Conholdate.Total/total/2021-08-27-export-data-to-excel-in-java/index.fr.md",
-          "line": 1,
-          "note": "title in English: 'Export Data to Excel in Java'",
-          "fix": "translate title",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/fr/total/add-or-remove-custom-xmp-metadata-from-gif-using-java/",
-          "file": "content/Conholdate.Total/total/2021-10-21-add-or-remove-custom-xmp-metadata-from-gif-using-java/index.fr.md",
-          "line": 1,
-          "note": "title in English: 'Add or Remove Custom XMP Metadata from GIF using Java'",
-          "fix": "translate title",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
         {
           "role": "file",
           "url": "https://blog.conholdate.com/zh/total/how-to-convert-excel-to-xml-in-csharp",
@@ -4605,15 +3386,6 @@
           "line": 1,
           "note": "title in English: 'How to convert Excel to XML in C#'",
           "fix": "translate title",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/fa/total/extract-table-from-pdf-in-java",
-          "file": "content/Conholdate.Total/total/2022-09-22-extract-table-from-pdf-in-java/index.fa.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Extract Table From PDF in Java | Read Table Data in PDF'; title in English: 'Extract Table From PDF in Java'",
-          "fix": "translate seoTitle, title",
           "commit": "fb943ef0 2025-02-11 Restructured category"
         },
         {
@@ -4627,75 +3399,12 @@
         },
         {
           "role": "file",
-          "url": "https://blog.conholdate.com/fa/total/unhide-sheets-in-excel-using-nodejs",
-          "file": "content/Conholdate.Total/total/2022-11-03-unhide-sheets-in-excel-using-nodejs/index.fa.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Unhide Sheets in Excel using Node.js'",
-          "fix": "translate seoTitle",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
           "url": "https://blog.conholdate.com/it/total/how-to-add-an-image-stamp-in-pdf-using-csharp",
           "file": "content/Conholdate.Total/total/2023-01-31-how-to-add-an-image-stamp-in-pdf-using-csharp/index.it.md",
           "line": 1,
           "note": "title in English: 'How to Add an Image Stamp in PDF using C#'",
           "fix": "translate title",
           "commit": "7251c0ec 2025-02-14 Translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/fa/total/fill-out-a-series-of-cells-in-excel-in-java",
-          "file": "content/Conholdate.Total/total/2023-04-12-fill-out-a-series-of-cells-in-excel-in-java/index.fa.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Java Insert Data in a Range of Cells in Excel(XLSX / XLS) | '",
-          "fix": "translate seoTitle",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/fa/total/uncompress-rar-files",
-          "file": "content/Conholdate.Total/total/2023-05-25-uncompress-rar-files/index.fa.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Unpack RAR Files | Free RAR Unzipper'",
-          "fix": "translate seoTitle",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/it/total/uncompress-rar-files",
-          "file": "content/Conholdate.Total/total/2023-05-25-uncompress-rar-files/index.it.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Unpack RAR Files | Free RAR Unzipper'",
-          "fix": "translate seoTitle",
-          "commit": "7251c0ec 2025-02-14 Translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/fa/total/document-viewing-with-csharp",
-          "file": "content/Conholdate.Total/total/2023-06-01-document-viewing-with-csharp/index.fa.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Create Document Viewer | C# Document Viewing'",
-          "fix": "translate seoTitle",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/ar/total/reduce-png-file-size",
-          "file": "content/Conholdate.Total/total/2023-06-06-reduce-png-file-size/index.ar.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Reduce PNG | Compress PNG Image'",
-          "fix": "translate seoTitle",
-          "commit": "002a0dcd 2026-11-16 One H1 per page: drop the '# Title' line repeating the title in 2 posts (all 18 languages); Arabic 'C# Installation' heading back to ###"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/id/total/annotating-text-in-a-pdf-using-java",
-          "file": "content/Conholdate.Total/total/2023-06-19-annotating-text-in-a-pdf-using-java/index.id.md",
-          "line": 1,
-          "note": "seoTitle in English: 'How to Annotate Text in a PDF in Java | Example of Annotatio'",
-          "fix": "translate seoTitle",
-          "commit": "66eecac3 2025-06-18 translations"
         },
         {
           "role": "file",
@@ -4816,57 +3525,12 @@
         },
         {
           "role": "file",
-          "url": "https://blog.conholdate.com/id/total/convert-word-to-excel-online/",
-          "file": "content/Conholdate.Total/total/2024-01-24-convert-word-to-excel-online/index.id.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Online Free Word to Excel Converter | Convert DOCX to XLS XL'; title in English: 'Convert Word to Excel Online'",
-          "fix": "translate seoTitle, title",
-          "commit": "a3cf13cf 2025-02-24 Translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/id/total/convert-html-to-pptx-java/",
-          "file": "content/Conholdate.Total/total/2024-03-11-convert-html-to-pptx-java/index.id.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Convert HTML to PowerPoint PPTX in Java | Webpage to Present'",
-          "fix": "translate seoTitle",
-          "commit": "a3cf13cf 2025-02-24 Translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/id/total/convert-excel-to-json-csharp",
-          "file": "content/Conholdate.Total/total/2024-03-20-convert-excel-to-json-csharp/index.id.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Convert Excel to JSON in C# | XLS XLSX to JSON Converter'; title in English: 'Convert Excel to JSON in C#'",
-          "fix": "translate seoTitle, title",
-          "commit": "a3cf13cf 2025-02-24 Translations"
-        },
-        {
-          "role": "file",
           "url": "https://blog.conholdate.com/id/total/convert-pdf-to-xml-java",
           "file": "content/Conholdate.Total/total/2024-03-25-convert-pdf-to-xml-java/index.id.md",
           "line": 1,
           "note": "title in English: 'Convert PDF to XML in Java'",
           "fix": "translate title",
           "commit": "a3cf13cf 2025-02-24 Translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/th/total/repair-pdf-files-online/",
-          "file": "content/Conholdate.Total/total/2024-04-01-repair-pdf-online/index.th.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Repair PDF Files Online for Free | Fix PDF Recover Corrupted'",
-          "fix": "translate seoTitle",
-          "commit": "a3cf13cf 2025-02-24 Translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/id/total/convert-visio-to-image-java/",
-          "file": "content/Conholdate.Total/total/2024-11-18-convert-visio-to-image-java/index.id.md",
-          "line": 1,
-          "note": "title in English: 'Convert Visio to Image in Java'",
-          "fix": "translate title",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
         },
         {
           "role": "file",
@@ -4888,43 +3552,214 @@
         },
         {
           "role": "file",
-          "url": "https://blog.conholdate.com/id/total/convert-dwf-to-pdf-java",
-          "file": "content/Conholdate.Total/total/2024-11-22-convert-dwf-to-pdf-java/index.id.md",
-          "line": 1,
-          "note": "seoTitle in English: 'Convert DWF to PDF in Java | DWF to PDF Converter Guide'",
-          "fix": "translate seoTitle",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
           "url": "https://blog.conholdate.com/de/total/convert-cdr-to-psd-in-csharp/",
           "file": "content/Conholdate.Total/total/2024-11-29-convert-cdr-to-psd-in-csharp/index.de.md",
           "line": 1,
           "note": "title in English: 'Convert CDR to PSD in C#'",
           "fix": "translate title",
           "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/convert-cdr-to-psd-in-csharp/",
+          "file": "content/Conholdate.Total/total/2024-11-29-convert-cdr-to-psd-in-csharp/index.fa.md",
+          "line": 1,
+          "note": "title in English: 'Convert CDR to PSD in C#'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/convert-cdr-to-psd-in-csharp/",
+          "file": "content/Conholdate.Total/total/2024-11-29-convert-cdr-to-psd-in-csharp/index.pl.md",
+          "line": 1,
+          "note": "title in English: 'Convert CDR to PSD in C#'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/download-website-or-images-csharp/",
+          "file": "content/Conholdate.Total/total/2024-11-29-download-website-csharp/index.nl.md",
+          "line": 1,
+          "note": "title in English: 'Download Website using C#'",
+          "fix": "translate title",
+          "commit": "7251c0ec 2025-02-14 Translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pt/total/compare-folders-in-csharp/",
+          "file": "content/Conholdate.Total/total/2024-12-09-compare-folders-in-csharp/index.pt.md",
+          "line": 1,
+          "note": "title in English: 'Compare Folders in C#'",
+          "fix": "translate title",
+          "commit": "7251c0ec 2025-02-14 Translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/redact-pdf-documents-using-java/",
+          "file": "content/Conholdate.Total/total/2024-12-30-redact-pdf-documents-using-java/index.es.md",
+          "line": 1,
+          "note": "title in English: 'Redact PDF Documents using Java'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/redact-pdf-documents-using-java/",
+          "file": "content/Conholdate.Total/total/2024-12-30-redact-pdf-documents-using-java/index.id.md",
+          "line": 1,
+          "note": "title in English: 'Redact PDF Documents using Java'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-fbx-to-obj-csharp/",
+          "file": "content/Conholdate.Total/total/2025-01-06-convert-fbx-to-obj-csharp/index.id.md",
+          "line": 1,
+          "note": "title in English: 'Convert FBX to OBJ in C#'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-onenote-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-01-10-convert-onenote-to-pdf-in-java/index.id.md",
+          "line": 1,
+          "note": "title in English: 'Convert OneNote to PDF in Java'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/convert-onenote-to-pdf-java/",
+          "file": "content/Conholdate.Total/total/2025-01-10-convert-onenote-to-pdf-in-java/index.nl.md",
+          "line": 1,
+          "note": "title in English: 'Convert OneNote to PDF in Java'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/convert-txt-to-json-online/",
+          "file": "content/Conholdate.Total/total/2025-01-15-convert-txt-to-json-online/index.de.md",
+          "line": 1,
+          "note": "title in English: 'Convert TXT to JSON Online'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-txt-to-json-online/",
+          "file": "content/Conholdate.Total/total/2025-01-15-convert-txt-to-json-online/index.id.md",
+          "line": 1,
+          "note": "title in English: 'Convert TXT to JSON Online'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/it/total/convert-txt-to-json-online/",
+          "file": "content/Conholdate.Total/total/2025-01-15-convert-txt-to-json-online/index.it.md",
+          "line": 1,
+          "note": "title in English: 'Convert TXT to JSON Online'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/create-flowchart-in-java/",
+          "file": "content/Conholdate.Total/total/2025-01-17-create-flowchart-in-java/index.fa.md",
+          "line": 1,
+          "note": "title in English: 'Create Flowchart in Java'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/de/total/convert-pub-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-01-24-convert-pub-to-excel-in-csharp/index.de.md",
+          "line": 1,
+          "note": "title in English: 'Convert PUB to Excel in C#'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/es/total/convert-pub-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-01-24-convert-pub-to-excel-in-csharp/index.es.md",
+          "line": 1,
+          "note": "title in English: 'Convert PUB to Excel in C#'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fa/total/convert-pub-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-01-24-convert-pub-to-excel-in-csharp/index.fa.md",
+          "line": 1,
+          "note": "title in English: 'Convert PUB to Excel in C#'",
+          "fix": "translate title",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-pub-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-01-24-convert-pub-to-excel-in-csharp/index.id.md",
+          "line": 1,
+          "note": "title in English: 'Convert PUB to Excel in C#'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/pl/total/convert-pub-to-excel-in-csharp/",
+          "file": "content/Conholdate.Total/total/2025-01-24-convert-pub-to-excel-in-csharp/index.pl.md",
+          "line": 1,
+          "note": "title in English: 'Convert PUB to Excel in C#'",
+          "fix": "translate title",
+          "commit": "f1ddd275 2025-02-15 translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/convert-pptx-to-xml-csharp/",
+          "file": "content/Conholdate.Total/total/2025-03-08-convert-pptx-to-xml-csharp/index.id.md",
+          "line": 1,
+          "note": "title in English: 'Convert PPTX to XML in C#'",
+          "fix": "translate title",
+          "commit": "a2c2efe1 2025-03-26 Translations"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/unzip-files-online/",
+          "file": "content/Conholdate.Total/total/2025-03-10-unzip-files-online/index.id.md",
+          "line": 1,
+          "note": "title in English: 'Unzip Files Online'",
+          "fix": "translate title",
+          "commit": "a2c2efe1 2025-03-26 Translations"
         }
       ]
     },
-    "affected_pages": 198,
+    "affected_pages": 71,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 33,
+      "impressions_28d": 2,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 1,
-      "past_impressions": 12,
-      "lost_clicks": 1,
+      "past_clicks": 0,
+      "past_impressions": 2,
+      "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
-      "scored_on": "lost",
-      "score": 2,
+      "scored_on": "at stake",
+      "score": 0,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "M",
@@ -4935,7 +3770,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run103",
+    "last_seen_run": "repo-audit-run110",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -5332,29 +4167,14 @@
     "title": "Translations whose title or description is not a translation",
     "evidence": {
       "urls": [
-        "https://blog.conholdate.com/ko/total/convert-dwf-to-pdf-java",
         "https://blog.conholdate.com/ko/total/convert-cdr-to-psd-in-csharp/",
-        "https://blog.conholdate.com/tr/total/convert-stl-to-pdf-in-csharp/",
-        "https://blog.conholdate.com/pl/total/merge-pdf-in-java/",
         "https://blog.conholdate.com/ko/total/convert-markdown-to-pdf-java/",
         "https://blog.conholdate.com/ko/total/convert-txt-to-json-in-java/",
-        "https://blog.conholdate.com/tr/total/convert-pub-to-pptx-in-csharp/",
-        "https://blog.conholdate.com/tr/total/convert-mpp-to-mpx-in-csharp/",
-        "https://blog.conholdate.com/ko/total/convert-html-to-bmp-in-java/",
-        "https://blog.conholdate.com/nl/total/convert-3mf-to-stl-in-java/"
+        "https://blog.conholdate.com/tr/total/convert-pub-to-pptx-in-csharp/"
       ],
-      "observed": "10 entries or files; title: several lines (an answer, steps or code instead of a translation): 'DWF를 PDF로 변환하기 위해 Java에서 사용할 수 있는 다양한 라이브러리와 방법이 있습니다. 일반적으로': 1, title: several lines (an answer, steps or code instead of a translation): 'CDR를 PSD로 변환하기 위해 C#에서 사용할 수 있는 방법은 다음과 같습니다.\\n```csharp usin': 1, title: several lines (an answer, steps or code instead of a translation): \"STL'yi PDF'ye C#'ta dönüştürmek için aşağıdaki adımları izle\": 1, title: several lines (an answer, steps or code instead of a translation): 'Scalaj is a popular library for handling PDF manipulation in': 1",
+      "observed": "4 entries or files; title: several lines (an answer, steps or code instead of a translation): 'CDR를 PSD로 변환하기 위해 C#에서 사용할 수 있는 방법은 다음과 같습니다.\\n```csharp usin': 1, title: several lines (an answer, steps or code instead of a translation): 'Markdown을 PDF로 변환하기 위해 Java에서 사용할 수 있는 여러 라이브러리가 있습니다. 예를 들어': 1, title: several lines (an answer, steps or code instead of a translation): 'TXT를 JSON으로 변환하기 위해 Java에서 사용할 수 있는 방법은 여러 가지가 있습니다. 일반적인 접근': 1, title: several lines (an answer, steps or code instead of a translation): \"C#'da PUB dosyasını PPTX'ye dönüştürmek için aşağıdaki adıml\": 1",
       "expected": "A translation's title, seoTitle and description are one line about as long as the English value (not an answer, code, steps or repeated characters)",
       "locations": [
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/ko/total/convert-dwf-to-pdf-java",
-          "file": "content/Conholdate.Total/total/2024-11-22-convert-dwf-to-pdf-java/index.ko.md",
-          "line": 1,
-          "note": "title: several lines (an answer, steps or code instead of a translation): 'DWF를 PDF로 변환하기 위해 Java에서 사용할 수 있는 다양한 라이브러리와 방법이 있습니다. 일반적으로'",
-          "fix": "retranslate the post (queue it in the translation sheet)",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
         {
           "role": "file",
           "url": "https://blog.conholdate.com/ko/total/convert-cdr-to-psd-in-csharp/",
@@ -5363,24 +4183,6 @@
           "note": "title: several lines (an answer, steps or code instead of a translation): 'CDR를 PSD로 변환하기 위해 C#에서 사용할 수 있는 방법은 다음과 같습니다.\\n```csharp usin'",
           "fix": "retranslate the post (queue it in the translation sheet)",
           "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/tr/total/convert-stl-to-pdf-in-csharp/",
-          "file": "content/Conholdate.Total/total/2024-12-16-convert-stl-to-pdf-in-csharp/index.tr.md",
-          "line": 1,
-          "note": "title: several lines (an answer, steps or code instead of a translation): \"STL'yi PDF'ye C#'ta dönüştürmek için aşağıdaki adımları izle\"",
-          "fix": "retranslate the post (queue it in the translation sheet)",
-          "commit": "7251c0ec 2025-02-14 Translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/pl/total/merge-pdf-in-java/",
-          "file": "content/Conholdate.Total/total/2025-01-03-merge-pdf-java/index.pl.md",
-          "line": 1,
-          "note": "title: several lines (an answer, steps or code instead of a translation): 'Scalaj is a popular library for handling PDF manipulation in'",
-          "fix": "retranslate the post (queue it in the translation sheet)",
-          "commit": "f1ddd275 2025-02-15 translations"
         },
         {
           "role": "file",
@@ -5408,40 +4210,13 @@
           "note": "title: several lines (an answer, steps or code instead of a translation): \"C#'da PUB dosyasını PPTX'ye dönüştürmek için aşağıdaki adıml\"",
           "fix": "retranslate the post (queue it in the translation sheet)",
           "commit": "0ce48c7e 2025-09-30 translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/tr/total/convert-mpp-to-mpx-in-csharp/",
-          "file": "content/Conholdate.Total/total/2025-10-10-convert-mpp-to-mpx-in-csharp/index.tr.md",
-          "line": 1,
-          "note": "title: 6x as long as the English value: \"MPP'yi MPX'e dönüştürmek için C#'ta, verilerinizi uygun form\"",
-          "fix": "retranslate the post (queue it in the translation sheet)",
-          "commit": "5fe36086 2025-10-22 translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/ko/total/convert-html-to-bmp-in-java/",
-          "file": "content/Conholdate.Total/total/2025-10-17-convert-html-to-bmp-in-java/index.ko.md",
-          "line": 1,
-          "note": "title: several lines (an answer, steps or code instead of a translation): 'HTML을 BMP로 변환하기 위해 Java를 사용할 수 있습니다. 아래는 이 작업을 수행하는 방법에 대한 기'",
-          "fix": "retranslate the post (queue it in the translation sheet)",
-          "commit": "82840e71 2025-12-01 translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/nl/total/convert-3mf-to-stl-in-java/",
-          "file": "content/Conholdate.Total/total/2025-10-28-convert-3mf-to-stl-in-java/index.nl.md",
-          "line": 1,
-          "note": "description: several lines (an answer, steps or code instead of a translation): 'Leer hoe u 3MF naar STL kunt converteren in Java met behulp '",
-          "fix": "retranslate the post (queue it in the translation sheet)",
-          "commit": "37f5b69d 2026-01-06 Daily Blogs Translation: blog.conholdate.com"
         }
       ]
     },
-    "affected_pages": 10,
+    "affected_pages": 4,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 3,
+      "impressions_28d": 2,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
@@ -5449,14 +4224,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "M",
@@ -5467,7 +4242,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-18",
     "first_seen_run": "repo-audit-run103",
-    "last_seen_run": "repo-audit-run103",
+    "last_seen_run": "repo-audit-run110",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_text_garbled",
@@ -5609,18 +4384,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 6,
-      "past_impressions": 615,
+      "past_impressions": 591,
       "lost_clicks": 6,
-      "lost_impressions": 592,
+      "lost_impressions": 568,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "lost",
       "score": 12,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "S",
@@ -5631,7 +4406,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-18",
     "first_seen_run": "link-audit-run104",
-    "last_seen_run": "link-audit-run104",
+    "last_seen_run": "link-audit-run109",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_differs_from_original",
@@ -5651,16 +4426,16 @@
       "urls": [
         "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/es/total/scrub-metadata-online/",
-        "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
+        "https://blog.conholdate.com/th/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ar/search/",
         "https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/archives/",
+        "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/fa/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ja/search/",
-        "https://blog.conholdate.com/ja/total/convert-pptx-to-markdown-in-java/",
-        "https://blog.conholdate.com/ko/search/"
+        "https://blog.conholdate.com/ja/total/convert-pptx-to-markdown-in-java/"
       ],
-      "observed": "3 of 25 sampled pages (by template: post 3/22); 47 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/: width 194: 'Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsof'; https://blog.conholdate.com/es/total/scrub-metadata-online/: width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'; https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/: width 268: 'Erfahren Sie, wie Sie PPTX in Markdown in Java mit dem Conholdate.Total for Java SDK konve'; https://blog.conholdate.com/ar/search/: width 3: 'بحث'; https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/: width 174: 'تعلم كيفية تحويل ملفات PPTX إلى Markdown في Java باستخدام Conholdate.Total for Java SDK. ح'",
+      "observed": "3 of 25 sampled pages (by template: post 3/22); 48 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/: width 194: 'Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsof'; https://blog.conholdate.com/es/total/scrub-metadata-online/: width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'; https://blog.conholdate.com/th/total/convert-pptx-to-markdown-in-java/: width 215: 'เรียนรู้วิธีแปลงไฟล์ PPTX เป็น Markdown ใน Java ด้วย Conholdate.Total for Java SDK. แปลงงา'; https://blog.conholdate.com/ar/search/: width 3: 'بحث'; https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/: width 174: 'تعلم كيفية تحويل ملفات PPTX إلى Markdown في Java باستخدام Conholdate.Total for Java SDK. ح'",
       "expected": "50-170 characters (CJK count double)",
       "locations": [
         {
@@ -5675,8 +4450,8 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
-          "note": "width 268: 'Erfahren Sie, wie Sie PPTX in Markdown in Java mit dem Conholdate.Total for Java SDK konve'"
+          "url": "https://blog.conholdate.com/th/total/convert-pptx-to-markdown-in-java/",
+          "note": "width 215: 'เรียนรู้วิธีแปลงไฟล์ PPTX เป็น Markdown ใน Java ด้วย Conholdate.Total for Java SDK. แปลงงา'"
         },
         {
           "role": "page",
@@ -5702,7 +4477,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/de/sitemap.xml"
+          "url": "https://blog.conholdate.com/th/sitemap.xml"
         },
         {
           "role": "listed in",
@@ -5716,25 +4491,25 @@
         ]
       }
     },
-    "affected_pages": 1372,
+    "affected_pages": 1375,
     "impact": {
-      "clicks_28d": 366,
-      "impressions_28d": 19265,
+      "clicks_28d": 364,
+      "impressions_28d": 19555,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 793,
-      "past_impressions": 21698,
-      "lost_clicks": 427,
-      "lost_impressions": 2433,
+      "past_clicks": 785,
+      "past_impressions": 21755,
+      "lost_clicks": 421,
+      "lost_impressions": 2200,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "at stake",
       "score": 11,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "S",
@@ -5745,7 +4520,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run85",
+    "last_seen_run": "crawl-audit-run105",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -5765,7 +4540,7 @@
       "urls": [
         "https://blog.conholdate.com/",
         "https://blog.conholdate.com/ar/",
-        "https://blog.conholdate.com/zh/",
+        "https://blog.conholdate.com/ru/",
         "https://blog.conholdate.com/es/",
         "https://blog.conholdate.com/fa/",
         "https://blog.conholdate.com/fr/",
@@ -5774,7 +4549,7 @@
         "https://blog.conholdate.com/it/",
         "https://blog.conholdate.com/ja/"
       ],
-      "observed": "3 of 25 sampled pages (by template: home 3/3); 13 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/zh/: no non-empty <h1>; https://blog.conholdate.com/es/: no non-empty <h1>; https://blog.conholdate.com/fa/: no non-empty <h1>",
+      "observed": "3 of 25 sampled pages (by template: home 3/3); 14 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/ru/: no non-empty <h1>; https://blog.conholdate.com/es/: no non-empty <h1>; https://blog.conholdate.com/fa/: no non-empty <h1>",
       "expected": "one H1 that states the page topic",
       "locations": [
         {
@@ -5789,7 +4564,7 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/zh/",
+          "url": "https://blog.conholdate.com/ru/",
           "note": "no non-empty <h1>"
         },
         {
@@ -5816,7 +4591,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/zh/sitemap.xml"
+          "url": "https://blog.conholdate.com/ru/sitemap.xml"
         },
         {
           "role": "listed in",
@@ -5841,18 +4616,18 @@
       "source": "gsc-template",
       "share": null,
       "past_clicks": 1,
-      "past_impressions": 84,
+      "past_impressions": 95,
       "lost_clicks": 1,
-      "lost_impressions": 76,
+      "lost_impressions": 87,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "S",
@@ -5863,7 +4638,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run85",
+    "last_seen_run": "crawl-audit-run105",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -5965,9 +4740,9 @@
     "evidence": {
       "urls": [
         "https://blog.conholdate.com/es/total/scrub-metadata-online/",
-        "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ar/search/",
         "https://blog.conholdate.com/archives/",
+        "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/fa/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ja/search/",
         "https://blog.conholdate.com/ko/search/",
@@ -5975,18 +4750,13 @@
         "https://blog.conholdate.com/pl/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/pt/search/"
       ],
-      "observed": "2 of 25 sampled pages (by template: post 2/22); 17 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/es/total/scrub-metadata-online/: width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'; https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/: width 77: 'PPTX nach Markdown in Java konvertieren | PowerPoint als Markdown exportieren'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/fa/total/convert-pptx-to-markdown-in-java/: width 81: 'PPTX را به Markdown در Java تبدیل کنید | PowerPoint را به صورت Markdown صادر کنید'",
+      "observed": "1 of 25 sampled pages (by template: post 1/22); 18 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/es/total/scrub-metadata-online/: width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'; https://blog.conholdate.com/ar/search/: width 4: 'يبحث'; https://blog.conholdate.com/archives/: width 7: 'Archive'; https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/: width 77: 'PPTX nach Markdown in Java konvertieren | PowerPoint als Markdown exportieren'; https://blog.conholdate.com/fa/total/convert-pptx-to-markdown-in-java/: width 81: 'PPTX را به Markdown در Java تبدیل کنید | PowerPoint را به صورت Markdown صادر کنید'",
       "expected": "10-70 characters (CJK count double)",
       "locations": [
         {
           "role": "page",
           "url": "https://blog.conholdate.com/es/total/scrub-metadata-online/",
           "note": "width 79: 'Eliminar metadatos de archivos en línea | Eliminar metadatos de PDF, DOCX, XLSX'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
-          "note": "width 77: 'PPTX nach Markdown in Java konvertieren | PowerPoint als Markdown exportieren'"
         },
         {
           "role": "page",
@@ -5997,6 +4767,11 @@
           "role": "page",
           "url": "https://blog.conholdate.com/archives/",
           "note": "width 7: 'Archive'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
+          "note": "width 77: 'PPTX nach Markdown in Java konvertieren | PowerPoint als Markdown exportieren'"
         },
         {
           "role": "page",
@@ -6022,30 +4797,30 @@
       ],
       "sample": {
         "post": [
-          2,
+          1,
           22
         ]
       }
     },
-    "affected_pages": 915,
+    "affected_pages": 458,
     "impact": {
-      "clicks_28d": 244,
-      "impressions_28d": 12844,
+      "clicks_28d": 121,
+      "impressions_28d": 6518,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 529,
-      "past_impressions": 14465,
-      "lost_clicks": 285,
-      "lost_impressions": 1621,
+      "past_clicks": 262,
+      "past_impressions": 7252,
+      "lost_clicks": 141,
+      "lost_impressions": 734,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "at stake",
-      "score": 10,
+      "score": 9,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "S",
@@ -6056,7 +4831,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run85",
+    "last_seen_run": "crawl-audit-run105",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -6268,7 +5043,7 @@
         "https://blog.conholdate.com/pl/total/create-asp.net-pdf-editor-with-barcode-features/",
         "https://blog.conholdate.com/tr/total/create-asp.net-pdf-editor-with-barcode-features/"
       ],
-      "observed": "5,044 entries or files; too short (width 0): '': 3, too long (width 177): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie mithilfe einer einfach zu': 2, too long (width 174): 'Śledź ten post na blogu, aby dowiedzieć się, jak tworzyć własne Dokumenty Google': 2, too long (width 182): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie ASP.NET PDF Editor mit Ba': 1",
+      "observed": "5,012 entries or files; too short (width 0): '': 3, too long (width 177): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie mithilfe einer einfach zu': 2, too long (width 174): 'Śledź ten post na blogu, aby dowiedzieć się, jak tworzyć własne Dokumenty Google': 2, too long (width 182): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie ASP.NET PDF Editor mit Ba': 1",
       "expected": "Every post's description (description, else summary) is 50-170 characters wide",
       "locations": [
         {
@@ -6633,25 +5408,25 @@
         }
       ]
     },
-    "affected_pages": 5044,
+    "affected_pages": 5012,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 5,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 41,
+      "past_impressions": 40,
       "lost_clicks": 0,
-      "lost_impressions": 36,
+      "lost_impressions": 35,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "S",
@@ -6662,7 +5437,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run103",
+    "last_seen_run": "repo-audit-run110",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -6691,7 +5466,7 @@
         "https://blog.conholdate.com/nl/total/discount-offer-ends-soon/",
         "https://blog.conholdate.com/pl/total/discount-offer-ends-soon/"
       ],
-      "observed": "1,792 entries or files; too long (width 82): 'Remove PDF Pages | Java PDF Page Remover - Java Library & Free Online Tool (Bonu': 11, too long (width 73): 'Redact Excel Files in Java | Remove Sensitive Data from Spreadsheets XLSX': 4, too long (width 75): 'Strikethrough Text in Documents using C# | Strikethrough PDF DOCX Documents': 3, too long (width 87): 'Java Insert Data in a Range of Cells in Excel(XLSX / XLS) | Brief Step-by-Step T': 2",
+      "observed": "1,779 entries or files; too long (width 82): 'Remove PDF Pages | Java PDF Page Remover - Java Library & Free Online Tool (Bonu': 11, too long (width 75): 'Strikethrough Text in Documents using C# | Strikethrough PDF DOCX Documents': 3, too long (width 95): 'C# Berbagai Cara untuk Mengekspor Data ke Excel (XLSX, XLS) - Panduan Langkah de': 1, too long (width 101): 'C# Meerdere manieren om gegevens naar Excel te exporteren (XLSX, XLS) - Stap voo': 1",
       "expected": "Every post's search title (seoTitle, else title) is 10-70 characters wide (CJK count double)",
       "locations": [
         {
@@ -7056,25 +5831,25 @@
         }
       ]
     },
-    "affected_pages": 1792,
+    "affected_pages": 1779,
     "impact": {
       "clicks_28d": 2,
-      "impressions_28d": 38,
+      "impressions_28d": 39,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 3,
-      "past_impressions": 54,
+      "past_impressions": 48,
       "lost_clicks": 1,
-      "lost_impressions": 16,
+      "lost_impressions": 9,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "at stake",
       "score": 2,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "S",
@@ -7085,7 +5860,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run103",
+    "last_seen_run": "repo-audit-run110",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -7244,7 +6019,7 @@
         "https://blog.conholdate.com/pt/total/conholdate-offers-discount/",
         "https://blog.conholdate.com/ru/total/conholdate-offers-discount/"
       ],
-      "observed": "850 entries or files; description: 'Learn how to remove a page from a PDF in Java using **PDF Page Remover** (free online tool': 11, description: 'قم بتثبيت ** C # XPS conversion API ** لمعالجة ملفات مواصفات ورق XML. بمجرد الانتهاء من ذل': 2, description: 'Installieren Sie diese **C# XPS-Konvertierungs-API**, um XML Paper Specifications-Dateien ': 2, description: 'Instale esta **API de conversión C# XPS** para manipular archivos de especificaciones de p': 2",
+      "observed": "840 entries or files; description: 'Learn how to remove a page from a PDF in Java using **PDF Page Remover** (free online tool': 11, description: 'قم بتثبيت ** C # XPS conversion API ** لمعالجة ملفات مواصفات ورق XML. بمجرد الانتهاء من ذل': 2, description: 'Installieren Sie diese **C# XPS-Konvertierungs-API**, um XML Paper Specifications-Dateien ': 2, description: 'Instale esta **API de conversión C# XPS** para manipular archivos de especificaciones de p': 2",
       "expected": "title, seoTitle, description and summary are plain text: no **, __, ` or [x](url)",
       "locations": [
         {
@@ -7479,7 +6254,7 @@
           "line": 1,
           "note": "summary: 'Signez vos documents PDF ou Word avec des certificats numériques par programmation dans vo'",
           "fix": "remove ** from summary",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "c49b7358 2026-11-18 Translations: 151 titles, seoTitles and descriptions left in English translated in 125 current translations"
         },
         {
           "role": "file",
@@ -7560,7 +6335,7 @@
           "line": 1,
           "note": "summary: \"Recherchez un mot ou n'importe quel texte dans des documents PDF par programmation dans vo\"",
           "fix": "remove ** from summary",
-          "commit": "24babc50 2026-11-13 French posts back at /fr/<English url>/ (15 files); dated French redirects follow"
+          "commit": "c49b7358 2026-11-18 Translations: 151 titles, seoTitles and descriptions left in English translated in 125 current translations"
         },
         {
           "role": "file",
@@ -7609,7 +6384,7 @@
         }
       ]
     },
-    "affected_pages": 850,
+    "affected_pages": 840,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -7620,14 +6395,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-19",
-        "2026-05-16"
+        "2026-04-21",
+        "2026-05-18"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-18",
-        "2026-11-14"
+        "2026-10-20",
+        "2026-11-16"
       ]
     },
     "effort": "S",
@@ -7638,7 +6413,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-18",
     "first_seen_run": "repo-audit-run103",
-    "last_seen_run": "repo-audit-run103",
+    "last_seen_run": "repo-audit-run110",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_markup",

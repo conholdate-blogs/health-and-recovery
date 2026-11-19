@@ -1,21 +1,21 @@
 {
  "tenant": "conholdate.com",
- "date": "2026-11-17",
+ "date": "2026-11-19",
  "search_window": [
-  "2026-10-18",
-  "2026-11-14"
+  "2026-10-20",
+  "2026-11-16"
  ],
  "hosts": {
   "blog.conholdate.com": {
    "paginate": 10,
-   "posts": 561,
-   "posts_all_languages": 10098,
+   "posts": 560,
+   "posts_all_languages": 10080,
    "languages": 18,
    "tags": 2527,
-   "tags_one_post": 2338,
-   "tags_two_or_less": 2499,
+   "tags_one_post": 2343,
+   "tags_two_or_less": 2500,
    "tags_per_post": 5.0,
-   "tag_pages_all_languages": 43620,
+   "tag_pages_all_languages": 43690,
    "top_tags": [
     [
      "file conversion api",
@@ -59,17 +59,17 @@
     ]
    ],
    "categories": 1,
-   "listing_pages": 45762,
-   "tag_listing_pages": 43710,
-   "pages_beyond_cap": 252,
+   "listing_pages": 45796,
+   "tag_listing_pages": 43780,
+   "pages_beyond_cap": 216,
    "cap": 50,
-   "discovery_run": 8,
-   "sitemap_urls": 10080,
+   "discovery_run": 9,
+   "sitemap_urls": 10098,
    "sitemap_tag_urls": 0,
    "search": {
-    "clicks": 2726,
-    "tag_clicks": 39,
-    "tag_impressions": 4745,
+    "clicks": 2711,
+    "tag_clicks": 41,
+    "tag_impressions": 4838,
     "tag_pages_with_clicks": 27
    },
    "tag_robots": {

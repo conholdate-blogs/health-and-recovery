@@ -96,5 +96,17 @@
     "date": "2026-11-16",
     "label": "Small fixes S1-S3 live; duplicate-URL and body-H1 checks",
     "runs": "discovery run 8, crawl audit run 85, speed audit run 87, AI audit run 86, text check run 88, link check run 89, repo file check run 90"
+  },
+  {
+    "file": "2026-11-19.html",
+    "date": "2026-11-19",
+    "label": "Live page before the 19 Nov scan (B5 batches 1-3, shortcodes, new checks; downloaded)",
+    "runs": "as live on 19 Nov"
+  },
+  {
+    "file": "2026-11-19-2.html",
+    "date": "2026-11-19 (2)",
+    "label": "Full scan 19 Nov: batch 3-4, front matter, translated titles, garbled titles live",
+    "runs": "discovery run 9, crawl audit run 105, speed audit run 107, AI audit run 106, text check run 108, link check run 109, repo file check run 110"
   }
 ]
