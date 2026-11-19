@@ -1,0 +1,489 @@
+{
+  "tenant": "groupdocs.com",
+  "auditor": "perf-audit",
+  "run_id": 16,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.com"
+    ],
+    "sections": null,
+    "per_template": 2,
+    "strategy": "mobile",
+    "max_pages": null
+  },
+  "requests": 10,
+  "duration_s": 39.3,
+  "pages_planned": 10,
+  "stopped_early": false,
+  "incomplete": false,
+  "origins": {
+    "blog.groupdocs.com": {
+      "id": "https://blog.groupdocs.com",
+      "metrics": {
+        "lcp": 1965,
+        "inp": 109,
+        "cls": 0.08,
+        "fcp": 1920,
+        "ttfb": 1189
+      }
+    }
+  },
+  "summary": {
+    "blog.groupdocs.com": {
+      "pages": 10,
+      "errors": 0,
+      "not_loaded": 0,
+      "field": 1,
+      "issues": {},
+      "median_score": 88
+    }
+  },
+  "findings": [],
+  "pages": [
+    {
+      "url": "https://blog.groupdocs.com/ar/groupdocs.blog/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "template": "category",
+      "group_urls": 22,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.com",
+        "metrics": {
+          "lcp": 1965,
+          "inp": 109,
+          "cls": 0.08,
+          "fcp": 1920,
+          "ttfb": 1189
+        }
+      },
+      "lab_score": 58,
+      "lab": {
+        "lcp": 8303.199270426052,
+        "tbt": 239.50000000000045,
+        "cls": 0.2385806164926491,
+        "fcp": 1573.733630426051,
+        "si": 2899.5141421442513
+      },
+      "savings": [
+        [
+          "Use efficient cache lifetimes",
+          1350
+        ],
+        [
+          "Improve image delivery",
+          1050
+        ],
+        [
+          "Reduce unused JavaScript",
+          1050
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.com/ar/groupdocs.blog/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.com/fa/groupdocs.blog/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "template": "category",
+      "group_urls": 22,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.com",
+        "metrics": {
+          "lcp": 1965,
+          "inp": 109,
+          "cls": 0.08,
+          "fcp": 1920,
+          "ttfb": 1189
+        }
+      },
+      "lab_score": 53,
+      "lab": {
+        "lcp": 8033.929523909384,
+        "tbt": 333.5,
+        "cls": 0.28554678587811666,
+        "fcp": 1571.1974439093851,
+        "si": 2633.579865580634
+      },
+      "savings": [
+        [
+          "Use efficient cache lifetimes",
+          1500
+        ],
+        [
+          "Improve image delivery",
+          1350
+        ],
+        [
+          "Render-blocking requests",
+          1050
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.com/fa/groupdocs.blog/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.com/ar/watermark/audit-automation/net/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "template": "generic:/{section}/*/*",
+      "group_urls": 22,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.com",
+        "metrics": {
+          "lcp": 1965,
+          "inp": 109,
+          "cls": 0.08,
+          "fcp": 1920,
+          "ttfb": 1189
+        }
+      },
+      "lab_score": 91,
+      "lab": {
+        "lcp": 1691.6779426066323,
+        "tbt": 301.5,
+        "cls": 0,
+        "fcp": 1691.6779426066323,
+        "si": 3234.7075951573156
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1000
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.com/ar/watermark/audit-automation/net/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.com/ja/watermark/audit-automation/net/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "template": "generic:/{section}/*/*",
+      "group_urls": 22,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.com",
+        "metrics": {
+          "lcp": 1965,
+          "inp": 109,
+          "cls": 0.08,
+          "fcp": 1920,
+          "ttfb": 1189
+        }
+      },
+      "lab_score": 91,
+      "lab": {
+        "lcp": 1700.113954398153,
+        "tbt": 152,
+        "cls": 0.13237780839163402,
+        "fcp": 1700.113954398153,
+        "si": 3686.274989761637
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          1050
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.com/ja/watermark/audit-automation/net/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.com/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "template": "home",
+      "group_urls": 22,
+      "clicks": 2.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.com",
+        "metrics": {
+          "lcp": 1965,
+          "inp": 109,
+          "cls": 0.08,
+          "fcp": 1920,
+          "ttfb": 1189
+        }
+      },
+      "lab_score": 52,
+      "lab": {
+        "lcp": 8671.969991897651,
+        "tbt": 218,
+        "cls": 0.3827401383162851,
+        "fcp": 1531.1909468976505,
+        "si": 2839.712991844358
+      },
+      "savings": [
+        [
+          "Use efficient cache lifetimes",
+          1500
+        ],
+        [
+          "Improve image delivery",
+          1350
+        ],
+        [
+          "Reduce unused JavaScript",
+          1200
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.com/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.com/cs/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "template": "home",
+      "group_urls": 22,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.com",
+        "metrics": {
+          "lcp": 1965,
+          "inp": 109,
+          "cls": 0.08,
+          "fcp": 1920,
+          "ttfb": 1189
+        }
+      },
+      "lab_score": 56,
+      "lab": {
+        "lcp": 6365.157437976524,
+        "tbt": 100,
+        "cls": 0.4816002640411357,
+        "fcp": 1532.0886859530483,
+        "si": 2145.08273638637
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          1050
+        ],
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.com/cs/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.com/archives/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "template": "listing",
+      "group_urls": 44,
+      "clicks": 0.0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.com",
+        "metrics": {
+          "lcp": 1965,
+          "inp": 109,
+          "cls": 0.08,
+          "fcp": 1920,
+          "ttfb": 1189
+        }
+      },
+      "lab_score": 89,
+      "lab": {
+        "lcp": 1826.1213673584623,
+        "tbt": 364.99998386765947,
+        "cls": 0.07290400972053462,
+        "fcp": 1826.1213673584623,
+        "si": 2149.47944695707
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.com/archives/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.com/es/archives/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "template": "listing",
+      "group_urls": 44,
+      "clicks": 0,
+      "source": "crawl",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.com",
+        "metrics": {
+          "lcp": 1965,
+          "inp": 109,
+          "cls": 0.08,
+          "fcp": 1920,
+          "ttfb": 1189
+        }
+      },
+      "lab_score": 94,
+      "lab": {
+        "lcp": 1674.4943345920587,
+        "tbt": 217.5,
+        "cls": 0.07290400972053462,
+        "fcp": 1674.4943345920587,
+        "si": 1899.1221518471775
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.com/es/archives/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.com/id/merger/merge-word-files-online/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "template": "post",
+      "group_urls": 13217,
+      "clicks": 2079.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": {
+        "id": "https://blog.groupdocs.com/id/merger/merge-word-files-online/",
+        "metrics": {
+          "lcp": 1590,
+          "inp": 94,
+          "cls": 0.08,
+          "fcp": 1578,
+          "ttfb": 734
+        }
+      },
+      "origin": {
+        "id": "https://blog.groupdocs.com",
+        "metrics": {
+          "lcp": 1965,
+          "inp": 109,
+          "cls": 0.08,
+          "fcp": 1920,
+          "ttfb": 1189
+        }
+      },
+      "lab_score": 88,
+      "lab": {
+        "lcp": 1526.4451809009438,
+        "tbt": 308,
+        "cls": 0.13157879837173675,
+        "fcp": 1526.4451809009438,
+        "si": 2423.7682203572795
+      },
+      "savings": [
+        [
+          "Render-blocking requests",
+          750
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.com/id/merger/merge-word-files-online/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    },
+    {
+      "url": "https://blog.groupdocs.com/es/viewer/xml-viewer-online/",
+      "host": "blog.groupdocs.com",
+      "section": "",
+      "template": "post",
+      "group_urls": 13217,
+      "clicks": 285.0,
+      "source": "search",
+      "strategy": "mobile",
+      "field": null,
+      "origin": {
+        "id": "https://blog.groupdocs.com",
+        "metrics": {
+          "lcp": 1965,
+          "inp": 109,
+          "cls": 0.08,
+          "fcp": 1920,
+          "ttfb": 1189
+        }
+      },
+      "lab_score": 68,
+      "lab": {
+        "lcp": 7033.9868879108235,
+        "tbt": 59.5,
+        "cls": 0.17330994194292892,
+        "fcp": 1527.7572679108232,
+        "si": 2311.6020010969582
+      },
+      "savings": [
+        [
+          "Reduce unused JavaScript",
+          1050
+        ],
+        [
+          "Render-blocking requests",
+          750
+        ],
+        [
+          "Use efficient cache lifetimes",
+          450
+        ]
+      ],
+      "final_url": "https://blog.groupdocs.com/es/viewer/xml-viewer-online/",
+      "lab_error": null,
+      "lighthouse": "13.6.0",
+      "error": null,
+      "issues": []
+    }
+  ]
+}

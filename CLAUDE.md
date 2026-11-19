@@ -15,6 +15,13 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Start here (2026-11-19, evening: blog.groupdocs.com scanned)
+
+**blog.groupdocs.com (monitor only) full scan:** health 69 → 50, issue types 15 → 39 (all new from the new checks),
+snapshot 2026-11-19-2; log [docs/blogs/blog.groupdocs.com.md](docs/blogs/blog.groupdocs.com.md). Audit bug found:
+`/page/N/` classified as `post`, inflating `canonical_elsewhere` (groupdocs.com fixed with a `paginated` template;
+**still open on groupdocs.cloud and aspose.cloud tenants**, and blog.aspose.com `/p/N/`).
+
 ## Start here (2026-11-19, later: blog.groupdocs.cloud scanned)
 
 **blog.groupdocs.cloud full scan done, no fix yet (SK: scan first):** health 75 → 54, 39 issue types (24 new from

@@ -40,5 +40,17 @@
     "date": "2026-11-07 (2)",
     "label": "Site structure panel (tags, listing pages)",
     "runs": "discovery run 2, crawl audit run 8, speed audit run 10, AI audit run 9, text check run 11, link check run 12, repo file check run 13"
+  },
+  {
+    "file": "2026-11-19.html",
+    "date": "2026-11-19",
+    "label": "Live page before the full scan of 19 Nov (downloaded)",
+    "runs": "discovery run 2, crawl audit run 8, speed audit run 10, AI audit run 9, text check run 11, link check run 12, repo file check run 13"
+  },
+  {
+    "file": "2026-11-19-2.html",
+    "date": "2026-11-19 (2)",
+    "label": "Full scan 19 Nov, all checks (monitor only)",
+    "runs": "discovery run 3, crawl audit run 21, speed audit run 16, AI audit run 15, text check run 17, link check run 18, repo file check run 19"
   }
 ]

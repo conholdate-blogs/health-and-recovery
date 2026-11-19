@@ -46,5 +46,30 @@
     }
    }
   }
+ },
+ {
+  "date": "2026-11-19",
+  "runs": "discovery run 3, crawl audit run 21, speed audit run 16, AI audit run 15, text check run 17, link check run 18, repo file check run 19",
+  "method": 3,
+  "hosts": {
+   "blog.groupdocs.com": {
+    "health": 50,
+    "areas": {
+     "crawl": 75,
+     "onpage": 92,
+     "intl": 78,
+     "ai": 95,
+     "perf": 100,
+     "ux": 100
+    },
+    "stats": {
+     "clicks": 8511,
+     "impressions": 515215,
+     "traffic_to": "2026-11-16",
+     "issue_types": 39,
+     "open_issues": 19141
+    }
+   }
+  }
  }
 ]
