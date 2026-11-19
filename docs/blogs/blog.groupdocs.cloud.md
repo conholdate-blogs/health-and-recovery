@@ -17,7 +17,7 @@ scan with all checks. Update in the same session as each step.
 | Languages | 18 supported: ar, de, es, fa, fr, id, it, ja, ko, pl, pt, ru, th, tr, uk, vi, zh, zh-hant |
 | GA4 / GSC | 252358764 / `https://blog.groupdocs.cloud/` |
 | Who edits content (since May 2026) | mustafabutt-dev 58 commits (new posts), shoaibkhan-aspose 42 (translation agent), Blogs Translation Agent 11, Farhan Raza 7 ("Optimized Blog Posts"), igor.zubarev 2 |
-| Health | 75 (7 Nov scan, before the new checks) |
+| Health | 75 (7 Nov scan, before the new checks); **54** (19 Nov, all checks, before fixes) |
 
 ## Known before the scan (docs/identified-issues.md, dry runs 12–13 Nov)
 
@@ -26,6 +26,36 @@ Company menu bar missing on /zh-hant/ (`groupdocscloud-zh-hant`; `-zht` exists),
 `_index.md` English only 18, wrong language names 5, RTL off 2, a redirect target not https, 1 translated URL
 mismatch, no-slash 302. Earlier link check (22 Oct): ~490 links to old WordPress `/category/<x>/`, 129 damaged links
 from 2023 translations.
+
+## Scan 1: full scan with all checks (19 Nov 2026, before any fix)
+
+Runs: discovery 5, crawl audit 19, AI 20, speed 21, text 22, link + repo checks the same day (clone f13d6515);
+8 min. Live page before it archived as 2026-11-19 (downloaded); snapshot 2026-11-19-2 "Full scan 19 Nov, all
+checks (before fixes)". **Health 75 → 54** (crawl 88 → 74, on-page 94 → 92, languages 88 → 83, AI 95, UX 100);
+issue types 15 → 39 (24 new, almost all from checks added since 7 Nov, not new damage); clicks 752 / impressions
+72,476 (28 days to 16 Nov; 7 Nov: 717 / 62,338).
+
+| Severity | Check | Items / pages | Note |
+|---|---|---|---|
+| broken | `link_broken` | 511 links, 509 pages | 42 targets; mostly old WordPress `/category/<x>/`; 476 copied from the English post |
+| broken | `post_url_duplicate` **new** | 76 files | 2 English pairs × 19 files: compare-excel-files-via-rest-in-csharp (2026-09-21 / 2026-10-09), extract-text-from-pdf-in-nodejs (2025-06-18 / 2026-09-21) |
+| broken | `post_body_cut_off` **new** | 4 posts | 3 unclosed code blocks (2026-07-08 json-to-html php, 2026-08-24 csv-to-jpg python, +1), 1 2015 maintenance post |
+| broken | `link_damaged` / `link_missing_translation` | 5 / 2 pages | |
+| incorrect | `canonical_elsewhere` **new** | sample 2/34 | `/page/2/` canonical → home (as blog.conholdate.com before B4); estimate 922 inflated (page 2 classed as post template) |
+| incorrect | `description_untranslated` **new** | sample 4 | translated home pages keep the English description (F13 on blog.conholdate.cloud) |
+| incorrect | `post_front_matter_escaped` **new** | 544 files | `\"…\"` in cover alt/caption |
+| incorrect | `post_cover_lost` **new** | 423 translations | English post has a cover |
+| incorrect | `link_wrong_language` | 72 links, 18 pages | 4 targets |
+| incorrect | `link_differs_from_original` **new** | 36 links | |
+| incorrect | `section_index_untranslated` 18, `language_name_wrong` 5, `translated_url_mismatch` 1, `post_text_untranslated` 110, `menu_id_invalid` 1 (zh-hant), `content_needs_js` (/search/), `text_topic_mismatch` 5 | | all known from the dry runs |
+| not optimized | `social_tags_in_body` **new** | 33/34 sampled | head order bug (fix catalogue row 1) |
+| not optimized | `section_lists_home_posts` **new**, `dup_in_file` 38 | | |
+| improvable | `hreflang_no_xdefault`, `llms_txt_missing`, `h1_missing` (sample), `h1_multiple`, `post_body_h1` 1,308, `title_length`/`description_length` (crawl), `post_title_length` 2,382, `post_description_length` 3,855, `translation_stale` 198, `tag_pages_thin`, `link_redirected` 157, `redirect_key_malformed` 74, `redirect_target_bad` 1, `slash_redirect_temporary`, `rtl_direction_missing` 2, `post_front_matter_markup` 39, `text_typo` 1 | | |
+
+**Queue report** (`reports/groupdocs.cloud/queue-report-2026-11-19.md`): 552 queued translations in 31 posts
+(354 after other English edits, 198 after the optimizer); 21 posts are fix-here candidates (TR-9); English issues
+of fully queued posts 2 (a broken link; the duplicate URL above); optimizer cuts 0; by-hand items: half-translated
+titles 68, extra keys 527, missing cover files 71, tag lists differ 531. English body check not run yet.
 
 ## Plan (same order as blog.conholdate.com; SK's rules apply)
 

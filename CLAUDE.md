@@ -15,6 +15,13 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Start here (2026-11-19, later: blog.groupdocs.cloud scanned)
+
+**blog.groupdocs.cloud full scan done, no fix yet (SK: scan first):** health 75 → 54, 39 issue types (24 new from
+the new checks), snapshot 2026-11-19-2; all numbers and the queue report in
+[docs/blogs/blog.groupdocs.cloud.md](docs/blogs/blog.groupdocs.cloud.md) "Scan 1". Next: English body check, show
+SK findings with samples, fixes per batch.
+
 ## Start here (session handoff, 2026-11-19, end of day)
 
 **Next: blog.groupdocs.cloud** (SK continues in a new tab). Start with
