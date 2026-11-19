@@ -65,6 +65,7 @@ Plan:
 | English posts with `**` in the description | 78 (not queued); `**` in 326 translations (nl, id in all 78), 1,000 without: fixing English + the 326 marks the 1,000 OUTDATED; waits for SK |
 | English body check findings left (uncertain / minor) | 40 of 109 (CSV `review` column); for a later pass |
 | Optimizer cut English posts (TD-5) | 3 restored in adc1337b (waits for push); tell the optimizer's owner |
+| Translation tag lists differ from the English post (62 posts per language, 36 current; tag pages noindex) | low; fix with the tag clean-up (retag later) |
 | Half-translated titles ("Convert LaTeX zu PDF in Java", "Convert PUB ke Word…", pl "Convert LaTeX do PDF") | not counted yet; candidate check, fix here |
 | 26 posts (442 translations) behind small English changes (≤ 5 body lines or front matter) | fix here by translating the changed lines (rule TR-9); after the queue reset |
 | 2 posts with outdated references (extract-text, webp; `link_differs_from_original` 34) | queued by 3f942379; or fix here (translate the missing headings / "See also") |

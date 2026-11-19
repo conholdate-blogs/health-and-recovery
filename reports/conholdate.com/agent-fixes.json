@@ -423,6 +423,8 @@
   "commits": [
    "ef8be14d6ead65de6466a35a5bdef8d4977fbea5"
   ],
-  "issue": "** and Markdown links in the front matter of 365 current translations of the 78 English posts with ** in the description (nl and id in all 78); the English descriptions wait"
+  "issue": "** and Markdown links in the front matter of 365 current translations of the 78 English posts with ** in the description (nl and id in all 78); the English descriptions wait",
+  "verified": "2026-11-19",
+  "result": "Live: de discount post, nl convert-pdf-to-excel-using-csharp, id render-visio descriptions without ** or Markdown links"
  }
 ]

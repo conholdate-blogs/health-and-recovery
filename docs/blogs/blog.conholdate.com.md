@@ -54,6 +54,22 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 19 Nov (night): why the Hugo page count differs per language (SK asked)
+
+- Build summary per language: Pages 5,630 en … 5,357 ja, 5,629 pl; Processed images 362 en, 324 most languages.
+- **Posts are equal**: 560 in every language (no missing translations). The difference is **distinct tags**: en
+  2,527, pl 2,527, fa 2,522, the others 2,392–2,429. Every tag builds a tag page and an alias (`/tag/x/page/1/`),
+  so Pages and Aliases move with the tag count.
+- Why fewer tags: tags stay English in translations, but 62 posts per language (36 current, 26 queued; tr 44, pl 2,
+  fa 1) have a different tag list than the English post: the English tags were changed later (optimizer) and the
+  translations kept the old ones, or the translation rewrote a tag ("Convert PDF to Text in csharp" → "in C#"). ja:
+  168 tags only in English, 33 only in ja. Impact low: tag pages are `noindex, follow` and out of the sitemaps (B4).
+  New check-sheet row F15 (by hand).
+- **Processed images** 362 vs 324: 11 English covers per language are missing in the translations = the queued
+  translations still without cover (`post_cover_lost`, 186 files), rebuilt by retranslation.
+- ef8be14d (`**` in 365 translations) pushed by SK, **verified live** (de discount, nl pdf-to-excel, id visio).
+- Check sheet "Fix" column: "here" → "Health & Recovery Agent" (SK).
+
 ## 19 Nov (evening): English of queued posts made clean first (SK: rule TR-10), check sheet
 
 | Commit (conholdate-blog) | What | State |
