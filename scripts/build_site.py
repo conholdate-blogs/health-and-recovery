@@ -19,6 +19,7 @@ import html
 import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -83,6 +84,7 @@ a { color: var(--accent) }
 .card:hover { border-color: var(--gc); border-top-color: var(--gc) } .card code { font-size: 14px; overflow-wrap: break-word }
 .card .score { display: flex; align-items: baseline; gap: 6px } .card .score b { font-size: 32px; line-height: 1.1; color: var(--gc); font-variant-numeric: tabular-nums }
 .card small, .card .dim { color: var(--muted); font-size: 13px } .card .line { font-size: 14px }
+.card .scan { color: var(--muted); font-size: 12px; margin-top: 2px } .card .scan.old { color: var(--notopt); font-weight: 600 }
 .card .bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden } .card .bar i { display: block; height: 100%; background: var(--good) }
 .card .pct { font-weight: 700; color: var(--good) } .card .pct.zero { color: var(--muted) }
 .card.alerted { border-color: var(--broken); border-top-color: var(--broken) }
@@ -362,6 +364,9 @@ def sub_tile(host: str, scores: dict[str, tuple[int, str]], alerts: dict[str, li
         fx = st.get("items_fixed") or 0
         body += (f'<span class="dim">Items: {st["items_open"]:,} open of {st["items_total"]:,} · '
                  f'<span class="pct{"" if fx else " zero"}">{share(fx, st["items_total"])}</span> fixed</span>')
+    if st.get("full_scan"):  # amber after two weeks, as the report pages' data age
+        old = (date.today() - date.fromisoformat(st["full_scan"])).days > 14
+        body += f'<span class="scan{" old" if old else ""}">Full scan: {day(st["full_scan"])}</span>'
     return (f'<a class="card g-{grade}{" alerted" if lines else ""}" href="{html.escape(host)}/"><code>{host_html(host)}</code>'
             f'<span class="score"><b>{health}</b><small>out of 100</small></span>{body}{lines}</a>')
 
@@ -493,6 +498,8 @@ def build(out: Path, tenants: list[str]) -> None:
         scores.update({c["host"]: (c["health"], c["grade"]) for c in report["_hosts"]})
         items = {c["host"]: c.get("items") for c in report["_hosts"]}
         stats.update({h: host_stats(t, h, items.get(h)) for t, h in mem})
+        for c in report["_hosts"]:  # the home card shows when it was last fully scanned (SK, 19 Nov)
+            stats[c["host"]]["full_scan"] = c.get("full_scan")
         by_check = {c["host"]: (c.get("items") or {}).get("by_check") or {} for c in report["_hosts"]}
         css_m = GUIDE_PAGE.split("<style>", 1)[1].split("</style>", 1)[0]
         (out / slug / "issues").mkdir(parents=True, exist_ok=True)  # issue matrix across the collection (SK, 2026-11-13)

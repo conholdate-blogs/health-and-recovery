@@ -783,8 +783,11 @@ def collection_report(name: str, slug: str, members: list[tuple[str, str]]) -> d
             S["hosts"][host] = report["_structure"]["hosts"][host]
             S["date"] = min(S["date"] or "", report["_structure"]["date"] or "") or S["date"]
         R["_guide"] = report["_guide"]
-        R["_dates"] += [d for d in (run_date, *((report.get(k) or {}).get("date") for k in
-                                                ("_audit", "_perf", "_ai", "_text", "_links", "_repo"))) if d]
+        mine = [d for d in (run_date, *((report.get(k) or {}).get("date") for k in
+                                       ("_audit", "_perf", "_ai", "_text", "_links", "_repo"))) if d]
+        R["_dates"] += mine
+        # last full scan: the oldest of each check's latest run, so every check ran on or after it (SK, 19 Nov)
+        card["full_scan"] = min(str(d)[:10] for d in mine) if mine else None
     return R
 
 
