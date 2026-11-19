@@ -1085,7 +1085,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run117",
+    "last_seen_run": "repo-audit-run123",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -2623,7 +2623,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "link-audit-run5",
-    "last_seen_run": "link-audit-run116",
+    "last_seen_run": "link-audit-run122",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -2953,7 +2953,7 @@
         "https://blog.conholdate.com/nl/total/build-your-own-google-docs-like-app/",
         "https://blog.conholdate.com/pl/total/build-your-own-google-docs-like-app/"
       ],
-      "observed": "3,512 entries or files; English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel': 17, English rewritten 2026-03-24 after the translation (2025-02-11); description: 'Follow this blog post to learn how to achieve Imag' -> 'Learn to convert images (JPEG, PNG, BMP, GIF, TIFF': 17, English rewritten 2026-04-13 after the translation (2025-02-11); description: 'You can add a custom XMP metadata package to your ' -> 'Learn how to programmatically add, read, and remov': 17, English rewritten 2026-03-26 after the translation (2025-02-11); description: 'Easily extract text from Word or PDF documents pro' -> 'Programmatically extract text from Word (DOC/DOCX)': 17",
+      "observed": "3,546 entries or files; English rewritten 2026-08-18 after the translation (2025-02-11); seoTitle: 'Delete Blank Rows and Columns in Excel using C#' -> 'C# Code to Delete Blank Rows & Columns in Excel'; description: 'In this article, I will explain how to delete blan' -> 'C# guide to delete blank rows and columns in Excel': 17, English rewritten 2026-03-24 after the translation (2025-02-11); description: 'Follow this blog post to learn how to achieve Imag' -> 'Learn to convert images (JPEG, PNG, BMP, GIF, TIFF': 17, English rewritten 2026-04-13 after the translation (2025-02-11); description: 'You can add a custom XMP metadata package to your ' -> 'Learn how to programmatically add, read, and remov': 17, English rewritten 2026-03-26 after the translation (2025-02-11); description: 'Easily extract text from Word or PDF documents pro' -> 'Programmatically extract text from Word (DOC/DOCX)': 17",
       "expected": "A translation is updated whenever the English title or description changes",
       "locations": [
         {
@@ -3318,7 +3318,7 @@
         }
       ]
     },
-    "affected_pages": 3512,
+    "affected_pages": 3546,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 20,
@@ -3347,7 +3347,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run117",
+    "last_seen_run": "repo-audit-run123",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -3770,7 +3770,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run117",
+    "last_seen_run": "repo-audit-run123",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -4242,7 +4242,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-18",
     "first_seen_run": "repo-audit-run103",
-    "last_seen_run": "repo-audit-run117",
+    "last_seen_run": "repo-audit-run123",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_text_garbled",
@@ -4406,7 +4406,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-18",
     "first_seen_run": "link-audit-run104",
-    "last_seen_run": "link-audit-run116",
+    "last_seen_run": "link-audit-run122",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_differs_from_original",
@@ -4426,16 +4426,16 @@
       "urls": [
         "https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/",
         "https://blog.conholdate.com/es/total/scrub-metadata-online/",
-        "https://blog.conholdate.com/it/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ar/search/",
         "https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/archives/",
         "https://blog.conholdate.com/de/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/fa/total/convert-pptx-to-markdown-in-java/",
+        "https://blog.conholdate.com/it/total/convert-pptx-to-markdown-in-java/",
         "https://blog.conholdate.com/ja/search/",
         "https://blog.conholdate.com/ja/total/convert-pptx-to-markdown-in-java/"
       ],
-      "observed": "3 of 25 sampled pages (by template: post 3/22); 49 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/: width 194: 'Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsof'; https://blog.conholdate.com/es/total/scrub-metadata-online/: width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'; https://blog.conholdate.com/it/total/convert-pptx-to-markdown-in-java/: width 236: 'Scopri come convertire PPTX in Markdown in Java utilizzando Conholdate.Total for Java SDK.'; https://blog.conholdate.com/ar/search/: width 3: 'بحث'; https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/: width 174: 'تعلم كيفية تحويل ملفات PPTX إلى Markdown في Java باستخدام Conholdate.Total for Java SDK. ح'",
+      "observed": "2 of 25 sampled pages (by template: post 2/22); 49 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/total/convert-mpp-to-mpx-in-csharp/: width 194: 'Learn how to convert MPP to MPX in C# using Conholdate.Total for .NET SDK. Export Microsof'; https://blog.conholdate.com/es/total/scrub-metadata-online/: width 172: 'Elimine los metadatos de PDF, Word, Excel y otros archivos en línea de forma gratuita. Eli'; https://blog.conholdate.com/ar/search/: width 3: 'بحث'; https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/: width 174: 'تعلم كيفية تحويل ملفات PPTX إلى Markdown في Java باستخدام Conholdate.Total for Java SDK. ح'; https://blog.conholdate.com/archives/: width 8: 'archives'",
       "expected": "50-170 characters (CJK count double)",
       "locations": [
         {
@@ -4450,11 +4450,6 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/it/total/convert-pptx-to-markdown-in-java/",
-          "note": "width 236: 'Scopri come convertire PPTX in Markdown in Java utilizzando Conholdate.Total for Java SDK.'"
-        },
-        {
-          "role": "page",
           "url": "https://blog.conholdate.com/ar/search/",
           "note": "width 3: 'بحث'"
         },
@@ -4462,6 +4457,11 @@
           "role": "page",
           "url": "https://blog.conholdate.com/ar/total/convert-pptx-to-markdown-in-java/",
           "note": "width 174: 'تعلم كيفية تحويل ملفات PPTX إلى Markdown في Java باستخدام Conholdate.Total for Java SDK. ح'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.conholdate.com/archives/",
+          "note": "width 8: 'archives'"
         },
         {
           "role": "listed in",
@@ -4477,36 +4477,32 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/it/sitemap.xml"
-        },
-        {
-          "role": "listed in",
           "url": "https://blog.conholdate.com/ar/sitemap.xml"
         }
       ],
       "sample": {
         "post": [
-          3,
+          2,
           22
         ]
       }
     },
-    "affected_pages": 1375,
+    "affected_pages": 916,
     "impact": {
-      "clicks_28d": 364,
-      "impressions_28d": 19555,
+      "clicks_28d": 243,
+      "impressions_28d": 13036,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 785,
-      "past_impressions": 21755,
-      "lost_clicks": 421,
-      "lost_impressions": 2200,
+      "past_clicks": 523,
+      "past_impressions": 14504,
+      "lost_clicks": 280,
+      "lost_impressions": 1468,
       "past_window": [
         "2026-04-21",
         "2026-05-18"
       ],
       "scored_on": "at stake",
-      "score": 11,
+      "score": 10,
       "window": [
         "2026-10-20",
         "2026-11-16"
@@ -4520,7 +4516,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run112",
+    "last_seen_run": "crawl-audit-run118",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -4540,7 +4536,7 @@
       "urls": [
         "https://blog.conholdate.com/",
         "https://blog.conholdate.com/ar/",
-        "https://blog.conholdate.com/th/",
+        "https://blog.conholdate.com/nl/",
         "https://blog.conholdate.com/es/",
         "https://blog.conholdate.com/fa/",
         "https://blog.conholdate.com/fr/",
@@ -4549,7 +4545,7 @@
         "https://blog.conholdate.com/it/",
         "https://blog.conholdate.com/ja/"
       ],
-      "observed": "3 of 25 sampled pages (by template: home 3/3); 15 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/th/: no non-empty <h1>; https://blog.conholdate.com/es/: no non-empty <h1>; https://blog.conholdate.com/fa/: no non-empty <h1>",
+      "observed": "3 of 25 sampled pages (by template: home 3/3); 16 more among pages rechecked because they failed last run. e.g. https://blog.conholdate.com/: no non-empty <h1>; https://blog.conholdate.com/ar/: no non-empty <h1>; https://blog.conholdate.com/nl/: no non-empty <h1>; https://blog.conholdate.com/es/: no non-empty <h1>; https://blog.conholdate.com/fa/: no non-empty <h1>",
       "expected": "one H1 that states the page topic",
       "locations": [
         {
@@ -4564,7 +4560,7 @@
         },
         {
           "role": "page",
-          "url": "https://blog.conholdate.com/th/",
+          "url": "https://blog.conholdate.com/nl/",
           "note": "no non-empty <h1>"
         },
         {
@@ -4591,7 +4587,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.conholdate.com/th/sitemap.xml"
+          "url": "https://blog.conholdate.com/nl/sitemap.xml"
         },
         {
           "role": "listed in",
@@ -4609,7 +4605,7 @@
         ]
       }
     },
-    "affected_pages": 18,
+    "affected_pages": 19,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 8,
@@ -4638,7 +4634,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run112",
+    "last_seen_run": "crawl-audit-run118",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -4831,7 +4827,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-02",
     "first_seen_run": "crawl-audit-run1",
-    "last_seen_run": "crawl-audit-run112",
+    "last_seen_run": "crawl-audit-run118",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -5043,7 +5039,7 @@
         "https://blog.conholdate.com/pl/total/create-asp.net-pdf-editor-with-barcode-features/",
         "https://blog.conholdate.com/tr/total/create-asp.net-pdf-editor-with-barcode-features/"
       ],
-      "observed": "4,985 entries or files; too short (width 0): '': 3, too long (width 177): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie mithilfe einer einfach zu': 2, too long (width 174): 'Śledź ten post na blogu, aby dowiedzieć się, jak tworzyć własne Dokumenty Google': 2, too long (width 182): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie ASP.NET PDF Editor mit Ba': 1",
+      "observed": "4,963 entries or files; too short (width 0): '': 3, too long (width 177): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie mithilfe einer einfach zu': 2, too long (width 174): 'Śledź ten post na blogu, aby dowiedzieć się, jak tworzyć własne Dokumenty Google': 2, too long (width 182): 'Folgen Sie diesem Blogbeitrag, um zu erfahren, wie Sie ASP.NET PDF Editor mit Ba': 1",
       "expected": "Every post's description (description, else summary) is 50-170 characters wide",
       "locations": [
         {
@@ -5159,18 +5155,18 @@
           "url": "https://blog.conholdate.com/de/total/conholdate-offers-discount/",
           "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.de.md",
           "line": 1,
-          "note": "too long (width 570): 'Großartige Neuigkeiten! [Conholdate](https://www.conholdate.com) bietet einen Ra'",
+          "note": "too long (width 449): 'Großartige Neuigkeiten! Conholdate bietet einen Rabatt von 25 % auf den Kauf von'",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
           "url": "https://blog.conholdate.com/es/total/conholdate-offers-discount/",
           "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.es.md",
           "line": 1,
-          "note": "too long (width 542): '¡Una gran noticia! [Conholdate](https://www.conholdate.com) ofrece un descuento '",
+          "note": "too long (width 382): '¡Una gran noticia! Conholdate ofrece un descuento del 25 % en la compra de Conho'",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
@@ -5195,36 +5191,36 @@
           "url": "https://blog.conholdate.com/id/total/conholdate-offers-discount/",
           "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.id.md",
           "line": 1,
-          "note": "too long (width 372): 'Kabar baik! Conholdate menawarkan **diskon 25%** untuk pembelian Conholdate.Tota'",
+          "note": "too long (width 360): 'Kabar baik! Conholdate menawarkan diskon 25% untuk pembelian Conholdate.Total un'",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
           "url": "https://blog.conholdate.com/it/total/conholdate-offers-discount/",
           "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.it.md",
           "line": 1,
-          "note": "too long (width 542): 'Grandi notizie! [Conholdate](https://www.conholdate.com) offre uno sconto del 25'",
+          "note": "too long (width 382): \"Grandi notizie! Conholdate offre uno sconto del 25% sull'acquisto di Conholdate.\"",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
           "url": "https://blog.conholdate.com/ja/total/conholdate-offers-discount/",
           "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.ja.md",
           "line": 1,
-          "note": "too long (width 434): '素晴らしいニュース！ [Conholdate](https://www.conholdate.com)は、[Conholdate.Total for .NET]'",
+          "note": "too long (width 274): '素晴らしいニュース！ Conholdateは、Conholdate.Total for .NETまたはConholdate。 Javaの合計製品。ご注文時に割引'",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
           "url": "https://blog.conholdate.com/ko/total/conholdate-offers-discount/",
           "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.ko.md",
           "line": 1,
-          "note": "too long (width 401): '좋은 소식! [Conholdate](https://www.conholdate.com)에서는 [Conholdate.Total for .NET](h'",
+          "note": "too long (width 241): '좋은 소식! Conholdate에서는 Conholdate.Total for .NET 또는 Conholdate. Java용 합계 제품. 주문 시 '",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
@@ -5240,9 +5236,9 @@
           "url": "https://blog.conholdate.com/nl/total/conholdate-offers-discount/",
           "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.nl.md",
           "line": 1,
-          "note": "too long (width 409): 'Geweldig nieuws! Conholdate biedt een **korting van 25%** op de aankoop van Conh'",
+          "note": "too long (width 397): 'Geweldig nieuws! Conholdate biedt een korting van 25% op de aankoop van Conholda'",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
@@ -5258,18 +5254,18 @@
           "url": "https://blog.conholdate.com/pt/total/conholdate-offers-discount/",
           "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.pt.md",
           "line": 1,
-          "note": "too long (width 510): 'Boas notícias! [Conholdate](https://www.conholdate.com) está oferecendo um desco'",
+          "note": "too long (width 350): 'Boas notícias! Conholdate está oferecendo um desconto de 25% na compra de Conhol'",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
           "url": "https://blog.conholdate.com/ru/total/conholdate-offers-discount/",
           "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.ru.md",
           "line": 1,
-          "note": "too long (width 540): 'Отличные новости! [Conholdate](https://www.conholdate.com) предлагает скидку 25%'",
+          "note": "too long (width 380): 'Отличные новости! Conholdate предлагает скидку 25% при покупке Conholdate.Total '",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
@@ -5303,9 +5299,9 @@
           "url": "https://blog.conholdate.com/zh/total/conholdate-offers-discount/",
           "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.zh.md",
           "line": 1,
-          "note": "too long (width 373): '好消息！ [Conholdate](https://www.conholdate.com) 为购买 [Conholdate.Total for .NET](ht'",
+          "note": "too long (width 213): '好消息！ Conholdate 为购买 Conholdate.Total for .NET 或 Conholdate. Java 的总计 产品。下订单时请输入 '",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
@@ -5408,7 +5404,7 @@
         }
       ]
     },
-    "affected_pages": 4985,
+    "affected_pages": 4963,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 5,
@@ -5437,7 +5433,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run117",
+    "last_seen_run": "repo-audit-run123",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -5466,7 +5462,7 @@
         "https://blog.conholdate.com/nl/total/discount-offer-ends-soon/",
         "https://blog.conholdate.com/pl/total/discount-offer-ends-soon/"
       ],
-      "observed": "1,779 entries or files; too long (width 82): 'Remove PDF Pages | Java PDF Page Remover - Java Library & Free Online Tool (Bonu': 11, too long (width 75): 'Strikethrough Text in Documents using C# | Strikethrough PDF DOCX Documents': 3, too long (width 95): 'C# Berbagai Cara untuk Mengekspor Data ke Excel (XLSX, XLS) - Panduan Langkah de': 1, too long (width 101): 'C# Meerdere manieren om gegevens naar Excel te exporteren (XLSX, XLS) - Stap voo': 1",
+      "observed": "1,777 entries or files; too long (width 82): 'Remove PDF Pages | Java PDF Page Remover - Java Library & Free Online Tool (Bonu': 11, too long (width 75): 'Strikethrough Text in Documents using C# | Strikethrough PDF DOCX Documents': 3, too long (width 95): 'C# Berbagai Cara untuk Mengekspor Data ke Excel (XLSX, XLS) - Panduan Langkah de': 1, too long (width 101): 'C# Meerdere manieren om gegevens naar Excel te exporteren (XLSX, XLS) - Stap voo': 1",
       "expected": "Every post's search title (seoTitle, else title) is 10-70 characters wide (CJK count double)",
       "locations": [
         {
@@ -5593,7 +5589,7 @@
           "line": 1,
           "note": "too long (width 73): \"Rendre des diagrammes Visio au format HTML, PDF et image à l'aide de Java\"",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
@@ -5728,7 +5724,7 @@
           "line": 1,
           "note": "too long (width 71): \"Signer un PDF avec des signatures de champ de formulaire à l'aide de C#\"",
           "fix": null,
-          "commit": "fb943ef0 2025-02-11 Restructured category"
+          "commit": "ef8be14d 2026-11-19 Translations: ** and Markdown links removed from front matter of 365 current translations of the 78 English posts with ** in the description"
         },
         {
           "role": "file",
@@ -5831,7 +5827,7 @@
         }
       ]
     },
-    "affected_pages": 1779,
+    "affected_pages": 1777,
     "impact": {
       "clicks_28d": 2,
       "impressions_28d": 39,
@@ -5860,7 +5856,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-13",
     "first_seen_run": "repo-audit-run27",
-    "last_seen_run": "repo-audit-run117",
+    "last_seen_run": "repo-audit-run123",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -6008,74 +6004,20 @@
     "title": "Markdown in post titles or descriptions",
     "evidence": {
       "urls": [
-        "https://blog.conholdate.com/de/total/conholdate-offers-discount/",
-        "https://blog.conholdate.com/es/total/conholdate-offers-discount/",
-        "https://blog.conholdate.com/id/total/conholdate-offers-discount/",
-        "https://blog.conholdate.com/it/total/conholdate-offers-discount/",
-        "https://blog.conholdate.com/ja/total/conholdate-offers-discount/",
-        "https://blog.conholdate.com/ko/total/conholdate-offers-discount/",
         "https://blog.conholdate.com/total/conholdate-offers-discount/",
-        "https://blog.conholdate.com/nl/total/conholdate-offers-discount/",
-        "https://blog.conholdate.com/pt/total/conholdate-offers-discount/",
-        "https://blog.conholdate.com/ru/total/conholdate-offers-discount/"
+        "https://blog.conholdate.com/fr/total/combine-multiple-excel-files-into-one-using-csharp/",
+        "https://blog.conholdate.com/id/total/combine-multiple-excel-files-into-one-using-csharp/",
+        "https://blog.conholdate.com/nl/total/combine-multiple-excel-files-into-one-using-csharp/",
+        "https://blog.conholdate.com/total/convert-pdf-to-excel-using-csharp/",
+        "https://blog.conholdate.com/total/render-visio-diagrams-in-html-pdf-and-image-using-java/",
+        "https://blog.conholdate.com/fr/total/compare-pdf-files-and-highlight-differences-using-csharp/",
+        "https://blog.conholdate.com/id/total/compare-pdf-files-and-highlight-differences-using-csharp/",
+        "https://blog.conholdate.com/nl/total/compare-pdf-files-and-highlight-differences-using-csharp/",
+        "https://blog.conholdate.com/total/sign-documents-with-digital-signatures-using-java/"
       ],
-      "observed": "835 entries or files; description: 'Learn how to remove a page from a PDF in Java using **PDF Page Remover** (free online tool': 11, description: 'قم بتثبيت ** C # XPS conversion API ** لمعالجة ملفات مواصفات ورق XML. بمجرد الانتهاء من ذل': 2, description: 'Installieren Sie diese **C# XPS-Konvertierungs-API**, um XML Paper Specifications-Dateien ': 2, description: 'Instale esta **API de conversión C# XPS** para manipular archivos de especificaciones de p': 2",
+      "observed": "470 entries or files; description: 'Learn how to remove a page from a PDF in Java using **PDF Page Remover** (free online tool': 11, description: 'قم بتثبيت ** C # XPS conversion API ** لمعالجة ملفات مواصفات ورق XML. بمجرد الانتهاء من ذل': 2, description: 'Installieren Sie diese **C# XPS-Konvertierungs-API**, um XML Paper Specifications-Dateien ': 2, description: 'Instale esta **API de conversión C# XPS** para manipular archivos de especificaciones de p': 2",
       "expected": "title, seoTitle, description and summary are plain text: no **, __, ` or [x](url)",
       "locations": [
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/de/total/conholdate-offers-discount/",
-          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.de.md",
-          "line": 1,
-          "note": "description: 'Großartige Neuigkeiten! [Conholdate](https://www.conholdate.com) bietet einen Rabatt von 2'",
-          "fix": "remove [x](url) from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/es/total/conholdate-offers-discount/",
-          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.es.md",
-          "line": 1,
-          "note": "description: '¡Una gran noticia! [Conholdate](https://www.conholdate.com) ofrece un descuento del 25 % e'",
-          "fix": "remove [x](url) from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/id/total/conholdate-offers-discount/",
-          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.id.md",
-          "line": 1,
-          "note": "description: 'Kabar baik! Conholdate menawarkan **diskon 25%** untuk pembelian Conholdate.Total untuk .N'",
-          "fix": "remove ** from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/it/total/conholdate-offers-discount/",
-          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.it.md",
-          "line": 1,
-          "note": "description: \"Grandi notizie! [Conholdate](https://www.conholdate.com) offre uno sconto del 25% sull'acq\"",
-          "fix": "remove [x](url) from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/ja/total/conholdate-offers-discount/",
-          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.ja.md",
-          "line": 1,
-          "note": "description: '素晴らしいニュース！ [Conholdate](https://www.conholdate.com)は、[Conholdate.Total for .NET](https://p'",
-          "fix": "remove [x](url) from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/ko/total/conholdate-offers-discount/",
-          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.ko.md",
-          "line": 1,
-          "note": "description: '좋은 소식! [Conholdate](https://www.conholdate.com)에서는 [Conholdate.Total for .NET](https://pro'",
-          "fix": "remove [x](url) from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
         {
           "role": "file",
           "url": "https://blog.conholdate.com/total/conholdate-offers-discount/",
@@ -6083,42 +6025,6 @@
           "line": 1,
           "note": "description: 'Great News! Conholdate is offering a **discount of 25%** on purchasing Conholdate.Total fo'",
           "fix": "remove ** from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/nl/total/conholdate-offers-discount/",
-          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.nl.md",
-          "line": 1,
-          "note": "description: 'Geweldig nieuws! Conholdate biedt een **korting van 25%** op de aankoop van Conholdate.Tot'",
-          "fix": "remove ** from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/pt/total/conholdate-offers-discount/",
-          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.pt.md",
-          "line": 1,
-          "note": "description: 'Boas notícias! [Conholdate](https://www.conholdate.com) está oferecendo um desconto de 25%'",
-          "fix": "remove [x](url) from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/ru/total/conholdate-offers-discount/",
-          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.ru.md",
-          "line": 1,
-          "note": "description: 'Отличные новости! [Conholdate](https://www.conholdate.com) предлагает скидку 25% при покуп'",
-          "fix": "remove [x](url) from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/zh/total/conholdate-offers-discount/",
-          "file": "content/Conholdate.Total/total/2020-12-01-conholdate-offers-discount/index.zh.md",
-          "line": 1,
-          "note": "description: '好消息！ [Conholdate](https://www.conholdate.com) 为购买 [Conholdate.Total for .NET](https://prod'",
-          "fix": "remove [x](url) from description",
           "commit": "fb943ef0 2025-02-11 Restructured category"
         },
         {
@@ -6150,24 +6056,6 @@
         },
         {
           "role": "file",
-          "url": "https://blog.conholdate.com/fr/total/convert-pdf-to-excel-using-csharp/",
-          "file": "content/Conholdate.Total/total/2021-03-31-convert-pdf-to-excel-using-csharp/index.fr.md",
-          "line": 1,
-          "note": "summary: 'Exportez facilement des données tabulaires à partir de fichiers PDF vers des feuilles Exce'",
-          "fix": "remove ** from summary",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/id/total/convert-pdf-to-excel-using-csharp/",
-          "file": "content/Conholdate.Total/total/2021-03-31-convert-pdf-to-excel-using-csharp/index.id.md",
-          "line": 1,
-          "note": "description: 'Ekspor data tabel dengan mudah dari file PDF ke lembar Excel (.xlsx atau .xls) secara terp'",
-          "fix": "remove ** from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
           "url": "https://blog.conholdate.com/total/convert-pdf-to-excel-using-csharp/",
           "file": "content/Conholdate.Total/total/2021-03-31-convert-pdf-to-excel-using-csharp/index.md",
           "line": 1,
@@ -6177,46 +6065,10 @@
         },
         {
           "role": "file",
-          "url": "https://blog.conholdate.com/nl/total/convert-pdf-to-excel-using-csharp/",
-          "file": "content/Conholdate.Total/total/2021-03-31-convert-pdf-to-excel-using-csharp/index.nl.md",
-          "line": 1,
-          "note": "description: 'Exporteer eenvoudig tabelgegevens vanuit PDF-bestanden naar Excel-sheets (.xlsx of .xls) p'",
-          "fix": "remove ** from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/fr/total/render-visio-diagrams-in-html-pdf-and-image-using-java/",
-          "file": "content/Conholdate.Total/total/2021-04-07-render-visio-diagrams-in-html-pdf-and-image-using-java/index.fr.md",
-          "line": 1,
-          "note": "summary: 'Affichez par programmation des fichiers de diagrammes Visio (.vsdx, .vssx, .vstx) au forma'",
-          "fix": "remove ** from summary",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/id/total/render-visio-diagrams-in-html-pdf-and-image-using-java/",
-          "file": "content/Conholdate.Total/total/2021-04-07-render-visio-diagrams-in-html-pdf-and-image-using-java/index.id.md",
-          "line": 1,
-          "note": "description: 'Render file diagram Visio (.vsdx, .vssx, .vstx) dalam HTML, PDF, dan format gambar populer'",
-          "fix": "remove ** from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
           "url": "https://blog.conholdate.com/total/render-visio-diagrams-in-html-pdf-and-image-using-java/",
           "file": "content/Conholdate.Total/total/2021-04-07-render-visio-diagrams-in-html-pdf-and-image-using-java/index.md",
           "line": 1,
           "note": "description: 'Render Visio diagram (.vsdx, .vssx, .vstx) files in HTML, PDF, and other popular image for'",
-          "fix": "remove ** from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/nl/total/render-visio-diagrams-in-html-pdf-and-image-using-java/",
-          "file": "content/Conholdate.Total/total/2021-04-07-render-visio-diagrams-in-html-pdf-and-image-using-java/index.nl.md",
-          "line": 1,
-          "note": "description: 'Geef Visio-diagrambestanden (.vsdx, .vssx, .vstx) programmatisch weer in HTML, PDF en ande'",
           "fix": "remove ** from description",
           "commit": "fb943ef0 2025-02-11 Restructured category"
         },
@@ -6249,37 +6101,10 @@
         },
         {
           "role": "file",
-          "url": "https://blog.conholdate.com/fr/total/sign-documents-with-digital-signatures-using-java/",
-          "file": "content/Conholdate.Total/total/2021-04-23-sign-documents-with-digital-signatures-using-java/index.fr.md",
-          "line": 1,
-          "note": "summary: 'Signez vos documents PDF ou Word avec des certificats numériques par programmation dans vo'",
-          "fix": "remove ** from summary",
-          "commit": "c49b7358 2026-11-18 Translations: 151 titles, seoTitles and descriptions left in English translated in 125 current translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/id/total/sign-documents-with-digital-signatures-using-java/",
-          "file": "content/Conholdate.Total/total/2021-04-23-sign-documents-with-digital-signatures-using-java/index.id.md",
-          "line": 1,
-          "note": "description: 'Tandatangani dokumen PDF atau Word Anda dengan sertifikat digital secara terprogram di apl'",
-          "fix": "remove ** from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
           "url": "https://blog.conholdate.com/total/sign-documents-with-digital-signatures-using-java/",
           "file": "content/Conholdate.Total/total/2021-04-23-sign-documents-with-digital-signatures-using-java/index.md",
           "line": 1,
           "note": "description: 'Sign your PDF or Word documents with digital certificates programmatically in your Java ap'",
-          "fix": "remove ** from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/nl/total/sign-documents-with-digital-signatures-using-java/",
-          "file": "content/Conholdate.Total/total/2021-04-23-sign-documents-with-digital-signatures-using-java/index.nl.md",
-          "line": 1,
-          "note": "description: 'Onderteken uw PDF- of Word-documenten met digitale certificaten programmatisch in uw Java-'",
           "fix": "remove ** from description",
           "commit": "fb943ef0 2025-02-11 Restructured category"
         },
@@ -6330,37 +6155,10 @@
         },
         {
           "role": "file",
-          "url": "https://blog.conholdate.com/fr/total/search-for-a-word-in-pdf-using-java/",
-          "file": "content/Conholdate.Total/total/2021-05-11-search-for-a-word-in-pdf-using-java/index.fr.md",
-          "line": 1,
-          "note": "summary: \"Recherchez un mot ou n'importe quel texte dans des documents PDF par programmation dans vo\"",
-          "fix": "remove ** from summary",
-          "commit": "c49b7358 2026-11-18 Translations: 151 titles, seoTitles and descriptions left in English translated in 125 current translations"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/id/total/search-for-a-word-in-pdf-using-java/",
-          "file": "content/Conholdate.Total/total/2021-05-11-search-for-a-word-in-pdf-using-java/index.id.md",
-          "line": 1,
-          "note": "description: 'Cari kata atau teks apa pun dalam dokumen PDF secara terprogram di aplikasi Java Anda. Pad'",
-          "fix": "remove ** from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
           "url": "https://blog.conholdate.com/total/search-for-a-word-in-pdf-using-java/",
           "file": "content/Conholdate.Total/total/2021-05-11-search-for-a-word-in-pdf-using-java/index.md",
           "line": 1,
           "note": "description: 'Search for a word or any text in PDF documents programmatically in your Java applications.'",
-          "fix": "remove ** from description",
-          "commit": "fb943ef0 2025-02-11 Restructured category"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.conholdate.com/nl/total/search-for-a-word-in-pdf-using-java/",
-          "file": "content/Conholdate.Total/total/2021-05-11-search-for-a-word-in-pdf-using-java/index.nl.md",
-          "line": 1,
-          "note": "description: 'Zoek programmatisch naar een woord of tekst in PDF-documenten in uw Java-toepassingen. In '",
           "fix": "remove ** from description",
           "commit": "fb943ef0 2025-02-11 Restructured category"
         },
@@ -6381,17 +6179,215 @@
           "note": "description: 'Ekstrak teks dengan mudah dari dokumen Word atau PDF secara terprogram. Pada artikel ini, '",
           "fix": "remove ** from description",
           "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/extract-text-from-doc-or-docx-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-05-21-extract-text-from-doc-or-docx-using-csharp/index.nl.md",
+          "line": 1,
+          "note": "description: 'Extraheer tekst eenvoudig programmatisch uit Word- of PDF-documenten. In dit artikel leer '",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/remove-watermarks-from-pdf-documents-using-java/",
+          "file": "content/Conholdate.Total/total/2021-05-28-remove-watermarks-from-pdf-documents-using-java/index.md",
+          "line": 1,
+          "note": "description: 'You can easily remove watermarks from documents programmatically. In this article, you wil'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/edit-word-documents-using-java/",
+          "file": "content/Conholdate.Total/total/2021-06-07-edit-word-documents-using-java/index.md",
+          "line": 1,
+          "note": "description: 'You can easily edit Word documents (DOC, DOCX or DOTM) programmatically. In this article, '",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/merge-word-documents-using-java/",
+          "file": "content/Conholdate.Total/total/2021-06-21-merge-word-documents-using-java/index.md",
+          "line": 1,
+          "note": "description: 'As a Java developer, you can easily merge tow or more Word documents or combine pages from'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/redact-pdf-documents-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-06-25-redact-pdf-documents-using-csharp/index.md",
+          "line": 1,
+          "note": "description: 'You can easily redact your PDF documents programmatically using C# in your .NET applicatio'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/classify-pdf-documents-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-07-01-classify-pdf-documents-using-csharp/index.md",
+          "line": 1,
+          "note": "description: 'You can easily classify your PDF documents programmatically in .NET applications. This art'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/render-zip-archives-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-07-06-render-zip-archives-using-csharp/index.md",
+          "line": 1,
+          "note": "description: 'You can easily render your ZIP archives programmatically in .NET applications. In this art'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/annotate-jpg-images-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-07-13-annotate-jpg-images-using-csharp/index.md",
+          "line": 1,
+          "note": "description: '. You can easily annotate your JPG images and add a wide range of graphic, text, and water'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/convert-pdf-to-word-using-java/",
+          "file": "content/Conholdate.Total/total/2021-07-26-convert-pdf-to-word-using-java/index.md",
+          "line": 1,
+          "note": "description: 'As a Java developer, you can easily convert your PDF documents into Word documents (.docx '",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/compare-word-documents-and-highlight-differences-using-java/",
+          "file": "content/Conholdate.Total/total/2021-08-03-compare-word-documents-and-highlight-differences-using-java/index.fr.md",
+          "line": 1,
+          "note": "summary: 'En tant que développeur Java, vous pouvez facilement comparer vos deux documents Word ou p'",
+          "fix": "remove ** from summary",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/compare-word-documents-and-highlight-differences-using-java/",
+          "file": "content/Conholdate.Total/total/2021-08-03-compare-word-documents-and-highlight-differences-using-java/index.id.md",
+          "line": 1,
+          "note": "description: 'Sebagai pengembang Java, Anda dapat dengan mudah membandingkan dua atau lebih dokumen Word'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/compare-word-documents-and-highlight-differences-using-java/",
+          "file": "content/Conholdate.Total/total/2021-08-03-compare-word-documents-and-highlight-differences-using-java/index.nl.md",
+          "line": 1,
+          "note": "description: 'Als Java-ontwikkelaar kunt u eenvoudig uw twee of meer Word-documenten programmatisch verg'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/sign-pdf-with-form-field-signatures-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-08-12-sign-pdf-with-form-field-signatures-using-csharp/index.md",
+          "line": 1,
+          "note": "description: 'As a C# developer, you can easily create PDF documents to be filled and signed by users el'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/generate-reports-from-excel-data-in-java/",
+          "file": "content/Conholdate.Total/total/2021-08-18-generate-reports-from-excel-data-in-java/index.md",
+          "line": 1,
+          "note": "description: 'As a Java developer, you can easily generate customized reports programmatically from Exce'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/combine-multiple-excel-files-into-one-using-java/",
+          "file": "content/Conholdate.Total/total/2021-09-02-combine-multiple-excel-files-into-one-using-java/index.fr.md",
+          "line": 1,
+          "note": "summary: 'En tant que développeur Java, vous pouvez facilement fusionner plusieurs fichiers Excel en'",
+          "fix": "remove ** from summary",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/combine-multiple-excel-files-into-one-using-java/",
+          "file": "content/Conholdate.Total/total/2021-09-02-combine-multiple-excel-files-into-one-using-java/index.id.md",
+          "line": 1,
+          "note": "description: 'Sebagai pengembang Java, Anda dapat dengan mudah menggabungkan beberapa file Excel menjadi'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/combine-multiple-excel-files-into-one-using-java/",
+          "file": "content/Conholdate.Total/total/2021-09-02-combine-multiple-excel-files-into-one-using-java/index.nl.md",
+          "line": 1,
+          "note": "description: 'Als Java-ontwikkelaar kunt u eenvoudig meerdere Excel-bestanden programmatisch samenvoegen'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/convert-html-to-pdf-using-java/",
+          "file": "content/Conholdate.Total/total/2021-09-10-convert-html-to-pdf-using-java/index.md",
+          "line": 1,
+          "note": "description: 'As a Java developer, you can easily convert HTML files or HTML web pages from live URLs in'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/fr/total/create-encrypted-zip-files-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-09-18-create-encrypted-zip-files-using-csharp/index.fr.md",
+          "line": 1,
+          "note": "summary: 'En tant que développeur C#, vous pouvez facilement créer par programmation des archives ZI'",
+          "fix": "remove ** from summary",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/id/total/create-encrypted-zip-files-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-09-18-create-encrypted-zip-files-using-csharp/index.id.md",
+          "line": 1,
+          "note": "description: 'Sebagai pengembang C#, Anda dapat dengan mudah membuat arsip ZIP yang dienkripsi atau dili'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/nl/total/create-encrypted-zip-files-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-09-18-create-encrypted-zip-files-using-csharp/index.nl.md",
+          "line": 1,
+          "note": "description: 'Als C#-ontwikkelaar kunt u eenvoudig programmatisch gecodeerde of met een wachtwoord bevei'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.conholdate.com/total/convert-pdf-to-images-using-csharp/",
+          "file": "content/Conholdate.Total/total/2021-09-23-convert-pdf-to-images-using-csharp/index.md",
+          "line": 1,
+          "note": "description: 'As a C# developer, you can easily convert all the pages of a PDF file to PNG, JPG, TIFF, o'",
+          "fix": "remove ** from description",
+          "commit": "fb943ef0 2025-02-11 Restructured category"
         }
       ]
     },
-    "affected_pages": 835,
+    "affected_pages": 470,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 0,
+      "impressions_28d": 236,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 0,
+      "past_impressions": 92,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
@@ -6399,7 +6395,7 @@
         "2026-05-18"
       ],
       "scored_on": "at stake",
-      "score": 0,
+      "score": 2,
       "window": [
         "2026-10-20",
         "2026-11-16"
@@ -6413,7 +6409,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-18",
     "first_seen_run": "repo-audit-run103",
-    "last_seen_run": "repo-audit-run117",
+    "last_seen_run": "repo-audit-run123",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_markup",
@@ -6836,7 +6832,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run111",
-    "last_seen_run": "repo-audit-run117",
+    "last_seen_run": "repo-audit-run123",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_escaped",
@@ -7259,7 +7255,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run111",
-    "last_seen_run": "repo-audit-run117",
+    "last_seen_run": "repo-audit-run123",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_cover_lost",

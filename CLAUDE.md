@@ -24,9 +24,10 @@ email was missing and is now set (check it each session). Tools and rules: playb
 traps), [docs/check-sheet.md](docs/check-sheet.md) (also `/check-sheet/` on the site), `docs/rules.yaml` (TR-7…TR-10,
 TD-4, TD-5 new this week), `scripts/ops/fm_cover_repair.py`, `fm_markup_fix.py`, `english_body_check.py`.
 
-**blog.conholdate.com, done for now (health 92, no broken item; blog.conholdate.cloud 100):** everything pushed by
-SK, deployed and verified live (agent-fixes rows verified, except 9ee68667 / adc1337b / 752c021d whose live check is
-part of the next rescan: zip post restored sections already seen live). Open, recorded in
+**blog.conholdate.com, done for now (final scan 19 Nov: health 92, no broken item; blog.conholdate.cloud 100):**
+everything pushed by SK, deployed and verified live; every agent-fix row verified; snapshot 2026-11-19-6. New tool
+`scripts/ops/translation_queue_report.py` (fix-here candidates, English issues of queued posts, optimizer cuts,
+check-sheet by-hand items) runs in the blog.groupdocs.cloud plan. Open, recorded in
 [docs/identified-issues.md](docs/identified-issues.md): items in queued translations (wrong-language links 119,
 `\"` 187, lost covers 186, English titles 71, garbled 4, 2 outdated posts) go with retranslation or fixes here after
 SK's queue reset; 78 English `**` descriptions wait until the translation agent ignores our English-only fixes;

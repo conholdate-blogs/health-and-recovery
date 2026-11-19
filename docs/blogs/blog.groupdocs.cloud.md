@@ -34,7 +34,10 @@ from 2023 translations.
    `translation_text_garbled`, `post_cover_lost`, `post_front_matter_escaped`, `post_body_cut_off`,
    `post_raw_html_dropped`, `link_differs_from_original`, shortcodes). Archive the live report page before the
    snapshot. Record every number here.
-2. **English body check** on posts with queued translations (`scripts/ops/english_body_check.py --tenant
+2. **Queue report** (`scripts/ops/translation_queue_report.py --tenant groupdocs.cloud`, 15 s): queued
+   translations by English change size and author, English issues of fully queued posts, optimizer cuts mid-post,
+   check-sheet by-hand items (half-translated titles, translated keys, missing cover files, tag lists).
+   **English body check** on posts with queued translations (`scripts/ops/english_body_check.py --tenant
    groupdocs.cloud`), review every finding in context (CSV `review` column).
 3. Show SK the findings by type with samples; propose fixes per batch, **English first** for queued posts (TR-10),
    current translations only otherwise (TR-9), ISSUE rows where a fix drops a needed retranslation.

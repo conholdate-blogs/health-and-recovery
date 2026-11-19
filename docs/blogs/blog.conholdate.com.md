@@ -54,6 +54,19 @@ Both carry "Fixed by Health and Recovery Agent" and are listed in `reports/conho
 - Snapshot: live page archived first as 2026-11-13, new one 2026-11-13-2.
 - Our audit gap: `slash_redirect_temporary` has no scorecard group (shows its check name as group); fix later.
 
+## 19 Nov (final): final scan, health 92, all agent fixes verified
+
+- 9ee68667, adc1337b, 752c021d, ef8be14d pushed by SK and **verified live** (zip post and python post have their
+  restored sections, google-docs shows `<input>`, webp title shortened, compress-csv sentence fixed, `**` gone).
+  Every agent-fix row of this blog is verified.
+- Final full scan: **health 92** (crawl 100, on-page 98, languages 94, AI 100); snapshot 2026-11-19-6 (live page
+  archived first as 2026-11-19-5). No broken item.
+- `scripts/ops/translation_queue_report.py` (new, read-only, 15 s): 3,682 queued translations, 24 fix-here posts,
+  **0 English issues left in fully queued posts**, 6 optimizer cuts all restored, F11 half-translated titles 103
+  (candidates, English verb first), F8 extra front-matter keys 201 (translated `featuredImage` keys: `wyróżniony
+  obraz`, `hình ảnh nổi bật`; Hugo ignores them), F7 missing cover files 0, F15 tag lists differ 837.
+  Report: `reports/conholdate.com/queue-report-2026-11-19.md`.
+
 ## 19 Nov (night): why the Hugo page count differs per language (SK asked)
 
 - Build summary per language: Pages 5,630 en … 5,357 ja, 5,629 pl; Processed images 362 en, 324 most languages.

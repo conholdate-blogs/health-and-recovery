@@ -387,7 +387,9 @@
   "commits": [
    "9ee686674d7c2205f095ea8df733d5154e1db769"
   ],
-  "issue": "English of 4 fully queued posts: 2 seoTitles and 3 descriptions over search length, fixed before retranslation (TR-10)"
+  "issue": "English of 4 fully queued posts: 2 seoTitles and 3 descriptions over search length, fixed before retranslation (TR-10)",
+  "verified": "2026-11-19",
+  "result": "Live: /total/convert-webp-to-jpg/ <title> 'Convert WebP to JPG | Libraries & Free Online Converter'"
  },
  {
   "host": "blog.conholdate.com",
@@ -399,7 +401,9 @@
   "commits": [
    "adc1337b4ee7ad2ee735aeacff80eea695687629"
   ],
-  "issue": "3 English posts cut off by the optimizer (ended mid-word / inside a code block) restored from the version before the cut, lost link definitions back; bolded HTML tags shown as empty bold"
+  "issue": "3 English posts cut off by the optimizer (ended mid-word / inside a code block) restored from the version before the cut, lost link definitions back; bolded HTML tags shown as empty bold",
+  "verified": "2026-11-19",
+  "result": "Live: create-encrypted-zip-files-using-csharp shows 'Encrypt Folders in ZIP' again, create-and-read-excel-file-in-python its FAQs; google-docs shows <code>&lt;input></code> instead of an empty bold"
  },
  {
   "host": "blog.conholdate.com",
@@ -411,7 +415,9 @@
   "commits": [
    "752c021d28e2cdc5597635c127004ec178aec156"
   ],
-  "issue": "18 text errors in 15 fully queued English posts (sentences copied from other posts, typos, grammar), found by the English body check"
+  "issue": "18 text errors in 15 fully queued English posts (sentences copied from other posts, typos, grammar), found by the English body check",
+  "verified": "2026-11-19",
+  "result": "Live: compress-csv-online says 'how to compress CSV files in C#' (was 'merge Word files')"
  },
  {
   "host": "blog.conholdate.com",

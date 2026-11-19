@@ -120,5 +120,17 @@
     "date": "2026-11-19 (4)",
     "label": "Scan after the 19 Nov deploy: last broken links, cover images, escaped values fixed",
     "runs": "discovery run 10, crawl audit run 112, speed audit run 114, AI audit run 113, text check run 115, link check run 116, repo file check run 117"
+  },
+  {
+    "file": "2026-11-19-5.html",
+    "date": "2026-11-19 (5)",
+    "label": "Live page before the final scan of 19 Nov (downloaded)",
+    "runs": "as live on 19 Nov"
+  },
+  {
+    "file": "2026-11-19-6.html",
+    "date": "2026-11-19 (6)",
+    "label": "Final scan 19 Nov: optimizer-cut posts restored, English of queued posts cleaned, ** in 365 translations",
+    "runs": "discovery run 11, crawl audit run 118, speed audit run 120, AI audit run 119, text check run 121, link check run 122, repo file check run 123"
   }
 ]

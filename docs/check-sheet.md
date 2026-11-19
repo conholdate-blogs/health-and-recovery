@@ -19,15 +19,15 @@ repo, rule TR-9) or *retranslate* (Translation Agent, via an ISSUE row) or *Engl
 | F4 | title / seoTitle 10–70 wide, description 50–170 wide (CJK counts 2) | ✓ | ✓ | `post_title_length`, `post_description_length` | Health & Recovery Agent |
 | F5 | title, seoTitle, description plain text: no `**`, backticks, `[x](url)` (summary only matters without a description) | ✓ | ✓ | `post_front_matter_markup` (TD-4) | Health & Recovery Agent; English + current translations in one commit |
 | F6 | Values quoted `"…"`, never `\"…\"` | ✓ | ✓ | `post_front_matter_escaped` (TR-8) | Health & Recovery Agent (`fm_cover_repair.py`) |
-| F7 | `cover:` block with `image`, `alt`, `caption` indented under it; image file exists | ✓ | ✓ | `post_cover_lost` (TR-8); image file exists: *by hand* | Health & Recovery Agent |
-| F8 | Keys in English (`cover`, `caption`, never `capa`, `légende`, `キャプション`) | – | ✓ | via `post_cover_lost`; other keys: *by hand* (compare with the English key set) | Health & Recovery Agent |
+| F7 | `cover:` block with `image`, `alt`, `caption` indented under it; image file exists | ✓ | ✓ | `post_cover_lost` (TR-8); image file exists: `translation_queue_report.py` | Health & Recovery Agent |
+| F8 | Keys in English (`cover`, `caption`, never `capa`, `légende`, `キャプション`) | – | ✓ | via `post_cover_lost`; other keys: `translation_queue_report.py` (keys the English lacks, e.g. translated `featuredImage`) | Health & Recovery Agent |
 | F9 | title / seoTitle / description translated (not the English words) | – | ✓ | `post_text_untranslated` | Health & Recovery Agent (translate the field) |
 | F10 | Title / description is a translation: one line, about as long as the English (not an LLM answer, steps, code, zero-width characters) | – | ✓ | `translation_text_garbled` (TR-7) | Health & Recovery Agent, own commit |
-| F11 | Title fully translated, not half English ("Convert LaTeX zu PDF in Java", "Convert PUB ke Word") | – | ✓ | *by hand* (candidate check) | Health & Recovery Agent |
+| F11 | Title fully translated, not half English ("Convert LaTeX zu PDF in Java", "Convert PUB ke Word") | – | ✓ | *by hand*; candidates listed by `translation_queue_report.py` | Health & Recovery Agent |
 | F12 | Translation up to date with the English title / description | – | ✓ | `translation_stale` | retranslate, or Health & Recovery Agent when only the field changed |
 | F13 | Post folder under a `mainSections` section; categories used have a page | ✓ | – | `post_outside_main_sections`, `category_page_unused` | Health & Recovery Agent |
 | F14 | Not `draft: true` when it should be live | ✓ | ✓ | *by hand* | Health & Recovery Agent |
-| F15 | Tags identical to the English post (tags stay in English; a changed tag, e.g. "in C#" for "in csharp", builds a separate tag page in that language) | – | ✓ | *by hand* (blog.conholdate.com 19 Nov: 62 posts per language differ, 36 current; tag pages are noindex, so low impact) | Health & Recovery Agent |
+| F15 | Tags identical to the English post (tags stay in English; a changed tag, e.g. "in C#" for "in csharp", builds a separate tag page in that language) | – | ✓ | `translation_queue_report.py` (blog.conholdate.com 19 Nov: 62 posts per language differ, 36 current; tag pages are noindex, so low impact) | Health & Recovery Agent |
 
 ## 2. Body
 
@@ -69,7 +69,8 @@ repo, rule TR-9) or *retranslate* (Translation Agent, via an ISSUE row) or *Engl
 
 1. Its English passes every check above (rows marked E; rule TR-10): fix the English first (free while all its translations are
    queued; otherwise English + current translations in one commit).
-2. Run `scripts/ops/english_body_check.py` on posts with queued translations; the Health & Recovery Agent reviews
+2. Run `scripts/ops/translation_queue_report.py` (what to fix first, fix-here candidates, optimizer cuts, by-hand
+   items F7, F8, F11, F15) and `scripts/ops/english_body_check.py` on posts with queued translations; the Health & Recovery Agent reviews
    and fixes the findings.
 3. Decide per post (rule TR-9): English body rewritten → retranslate (Translation Agent); front matter or a few
    lines → Health & Recovery Agent.
