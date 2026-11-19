@@ -31,5 +31,6 @@ no longer translates its posts. Tenant `groupdocs.com`, repo `/Users/Apple/Work/
   `audit.extra_urls`) were counted as posts and "Sitemap URLs canonicalize to a different URL" was scaled to 1,101
   pages. Real issue: page 2+ canonical → home page (2 pages, in no sitemap). Tenant gained a `paginated` template;
   crawl re-run as run 21 (2 pages). Health unchanged (25% minimum share).
-- **Same miscount open on blog.groupdocs.cloud (922) and blog.aspose.cloud (1,125)**: their tenants need the same
-  template (blog.aspose.com: `/p/N/`). Not changed there (aspose.cloud was being scanned in another session).
+- Same miscount on blog.groupdocs.cloud (922) and blog.aspose.cloud (1,125): the `paginated` template was added to
+  all other tenants the same day (blog.aspose.com `/p/N/`); their counts correct at the next crawl. The blog fix
+  (playbook row 25) is documented for every blog except this one: **SK, 19 Nov: "we won't fix blog.groupdocs.com"**.

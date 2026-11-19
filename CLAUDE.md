@@ -19,8 +19,10 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 
 **blog.groupdocs.com (monitor only) full scan:** health 69 → 50, issue types 15 → 39 (all new from the new checks),
 snapshot 2026-11-19-2; log [docs/blogs/blog.groupdocs.com.md](docs/blogs/blog.groupdocs.com.md). Audit bug found:
-`/page/N/` classified as `post`, inflating `canonical_elsewhere` (groupdocs.com fixed with a `paginated` template;
-**still open on groupdocs.cloud and aspose.cloud tenants**, and blog.aspose.com `/p/N/`).
+`/page/N/` classified as `post`, inflating `canonical_elsewhere`; all six tenants now have a `paginated` template
+(blog.aspose.com `/p/N/`), counts correct from each blog's next crawl. Blog fix for page 2+ (`noindex, follow`, self
+canonical) = playbook row 25, open on blog.aspose.cloud, blog.groupdocs.cloud, blog.aspose.com; **SK: we won't fix
+blog.groupdocs.com** (tracked only).
 
 ## Start here (2026-11-19, later: blog.groupdocs.cloud scanned)
 
@@ -34,7 +36,7 @@ SK findings with samples, fixes per batch.
 **Next: blog.groupdocs.cloud** (SK continues in a new tab). Start with
 [docs/blogs/blog.groupdocs.cloud.md](docs/blogs/blog.groupdocs.cloud.md) "Plan": full scan with all checks, English
 body check on queued posts, findings with samples to SK, fixes per batch. Repo branch is `master`; repo-local commit
-email was missing and is now set (check it each session). Tools and rules: playbook (Fix catalogue rows 1–24,
+email was missing and is now set (check it each session). Tools and rules: playbook (Fix catalogue rows 1–25,
 traps), [docs/check-sheet.md](docs/check-sheet.md) (also `/check-sheet/` on the site), `docs/rules.yaml` (TR-7…TR-10,
 TD-4, TD-5 new this week), `scripts/ops/fm_cover_repair.py`, `fm_markup_fix.py`, `english_body_check.py`.
 

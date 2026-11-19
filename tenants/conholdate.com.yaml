@@ -65,6 +65,7 @@ url_templates:
     - {name: home, pattern: '^/$'}
     - {name: listing, pattern: '^/(?P<listing>archives|search|categories|tags)/?$'}
     - {name: tag, pattern: '^/tag/(?P<tag>[^/]+)/?$'}
+    - {name: paginated, pattern: '^/(?:(?:tag|categories)/[^/]+/)?page/\d+/?$'}   # listing page 2+; matched "post" before 19 Nov
     - {name: post, pattern: '^/(?P<category>[^/]+)/(?P<slug>[^/]+)/?$'}
     - {name: category, pattern: '^/(?P<category>[^/]+)/?$'}
 

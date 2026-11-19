@@ -93,6 +93,7 @@ Also seen on blog.conholdate.com, no check yet: half-translated titles ("Convert
 | RTL off | 3 |
 | Broken front matter | 1 |
 | No-slash 302 | host |
+| Listing page 2+ `index, follow` with canonical → page 1 (playbook row 25; live 19 Nov) | all listings |
 
 ## blog.groupdocs.cloud (next blog, 19 Nov; log: docs/blogs/blog.groupdocs.cloud.md)
 
@@ -109,6 +110,7 @@ Also seen on blog.conholdate.com, no check yet: half-translated titles ("Convert
 | Redirect target not https | 1 |
 | Translated URL mismatch | 1 |
 | No-slash 302 | host |
+| Listing page 2+ `index, follow` with canonical → page 1 (playbook row 25; live 19 Nov; scan 1 showed it as `canonical_elsewhere` est. 922, real: page 2+ only) | all listings |
 
 ## blog.aspose.com
 
@@ -128,11 +130,14 @@ Also seen on blog.conholdate.com, no check yet: half-translated titles ("Convert
 | RTL off | 3 |
 | Redirect targets not https | 2 |
 | No-slash 302 | host |
+| Listing page 2+ (`/p/N/`) `index, follow` with canonical → page 1 (playbook row 25; live 19 Nov) | all listings |
 | Gist footer fix not ported (`{{ revealButtonHref }}` URLs); commit check not deployed | open from 3–10 Nov |
 
 ## blog.groupdocs.com (monitor only)
 
-Not in the 12 Nov dry run (its repo has no `config.yml` at the expected place); covered by its last full scan (7 Nov).
+Not in the 12 Nov dry run (its repo has no `config.yml` at the expected place). Full scan 19 Nov (health 50, 39 issue
+types): log [docs/blogs/blog.groupdocs.com.md](blogs/blog.groupdocs.com.md). **Tracked, never fixed by us** (SK, 19 Nov:
+"we won't fix blog.groupdocs.com"), incl. the listing page 2+ canonical (playbook row 25).
 
 ## Our audit and site
 
@@ -140,4 +145,5 @@ Not in the 12 Nov dry run (its repo has no `config.yml` at the expected place); 
 |---|---|
 | Indexed % via URL Inspection | later plan (SK) |
 | English-H2-in-body check (translated bodies) | idea, not built |
+| `/page/N/` classed as `post`, inflating sampled findings (19 Nov) | fixed in all six tenants (`paginated` template); counts correct from each blog's next crawl (groupdocs.com re-run 19 Nov: 2 pages) |
 | Crawl sample English bias | addressed for small hosts (full crawl); big hosts use the rotating sample from the next scan |

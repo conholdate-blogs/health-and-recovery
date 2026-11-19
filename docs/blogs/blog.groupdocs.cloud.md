@@ -41,7 +41,7 @@ issue types 15 → 39 (24 new, almost all from checks added since 7 Nov, not new
 | broken | `post_url_duplicate` **new** | 76 files | 2 English pairs × 19 files: compare-excel-files-via-rest-in-csharp (2026-09-21 / 2026-10-09), extract-text-from-pdf-in-nodejs (2025-06-18 / 2026-09-21) |
 | broken | `post_body_cut_off` **new** | 4 posts | 3 unclosed code blocks (2026-07-08 json-to-html php, 2026-08-24 csv-to-jpg python, +1), 1 2015 maintenance post |
 | broken | `link_damaged` / `link_missing_translation` | 5 / 2 pages | |
-| incorrect | `canonical_elsewhere` **new** | sample 2/34 | `/page/2/` canonical → home (as blog.conholdate.com before B4); estimate 922 inflated (page 2 classed as post template) |
+| incorrect | `canonical_elsewhere` **new** | sample 2/34 | `/page/2/` canonical → home (as blog.conholdate.com before B4); estimate 922 inflated (page 2 classed as post template; tenant fixed 19 Nov, `paginated` template, correct from the next crawl); fix = playbook row 25 |
 | incorrect | `description_untranslated` **new** | sample 4 | translated home pages keep the English description (F13 on blog.conholdate.cloud) |
 | incorrect | `post_front_matter_escaped` **new** | 544 files | `\"…\"` in cover alt/caption |
 | incorrect | `post_cover_lost` **new** | 423 translations | English post has a cover |
