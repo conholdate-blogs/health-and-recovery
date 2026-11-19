@@ -93,7 +93,7 @@ Also seen on blog.conholdate.com, no check yet: half-translated titles ("Convert
 | Broken front matter | 1 |
 | No-slash 302 | host |
 
-## blog.groupdocs.cloud
+## blog.groupdocs.cloud (next blog, 19 Nov; log: docs/blogs/blog.groupdocs.cloud.md)
 
 | Issue | Count |
 |---|---|

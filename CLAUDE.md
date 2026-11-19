@@ -15,7 +15,27 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
-## Start here (session handoff, 2026-11-19)
+## Start here (session handoff, 2026-11-19, end of day)
+
+**Next: blog.groupdocs.cloud** (SK continues in a new tab). Start with
+[docs/blogs/blog.groupdocs.cloud.md](docs/blogs/blog.groupdocs.cloud.md) "Plan": full scan with all checks, English
+body check on queued posts, findings with samples to SK, fixes per batch. Repo branch is `master`; repo-local commit
+email was missing and is now set (check it each session). Tools and rules: playbook (Fix catalogue rows 1–24,
+traps), [docs/check-sheet.md](docs/check-sheet.md) (also `/check-sheet/` on the site), `docs/rules.yaml` (TR-7…TR-10,
+TD-4, TD-5 new this week), `scripts/ops/fm_cover_repair.py`, `fm_markup_fix.py`, `english_body_check.py`.
+
+**blog.conholdate.com, done for now (health 92, no broken item; blog.conholdate.cloud 100):** everything pushed by
+SK, deployed and verified live (agent-fixes rows verified, except 9ee68667 / adc1337b / 752c021d whose live check is
+part of the next rescan: zip post restored sections already seen live). Open, recorded in
+[docs/identified-issues.md](docs/identified-issues.md): items in queued translations (wrong-language links 119,
+`\"` 187, lost covers 186, English titles 71, garbled 4, 2 outdated posts) go with retranslation or fixes here after
+SK's queue reset; 78 English `**` descriptions wait until the translation agent ignores our English-only fixes;
+half-translated titles (candidate check); 26 posts behind small English changes; translation tag lists differ
+(low); 40 English-body-check findings left (uncertain/minor). SK raises queue priority of the 3 restored posts
+(create-encrypted-zip-files-using-csharp, build-your-own-google-docs-like-app, create-and-read-excel-files-in-python);
+SK adds the view-stl ISSUE row. Tell the optimizer's owner: it cut 5 posts (TD-5) and escaped shortcodes (TD-3).
+
+## Start here (session handoff, 2026-11-19, day)
 
 **Update 19 Nov, evening:** SK's TR-10 (English of queued posts perfect first) + check sheet [docs/check-sheet.md](docs/check-sheet.md); English body check `scripts/ops/english_body_check.py`; conholdate-blog **9ee68667, adc1337b (3 optimizer-cut posts restored), 752c021d** local, wait for SK's push + deploy; new checks `post_body_cut_off`, `post_raw_html_dropped`; 78 English `**` posts wait for SK (326 translations with `**`, 1,000 without). **Update 19 Nov, later:** 3832d94d, 638cf070 and blog.conholdate.cloud 69e4ab9 pushed, deployed, **verified live**; rescan: blog.conholdate.com **health 92, no broken item** (rest in queued translations), blog.conholdate.cloud 100. ISSUE row for view-stl: SK. **State before:** blog.conholdate.com **health 87** (scan 19 Nov after SK's deploy of 82e16439, 777e7263, 1f806a91, c49b7358,
 all verified live, 4 agent-fix rows). **Local, waiting for SK's push + deploy:** conholdate-blog **3832d94d** (cover
