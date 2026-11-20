@@ -43,6 +43,7 @@ from core.report_view import (  # noqa: E402
 from core.scorecard import (SCORE_METHOD, area_scores, family_of, family_scorecards, grade, half_up,  # noqa: E402
                             scorecard)
 from core.tenant import load_tenant  # noqa: E402
+from core.visibility import monthly_dr  # noqa: E402
 
 TEMPLATE = REPO_ROOT / "scripts" / "templates" / "discovery_report.html"
 METHOD = REPO_ROOT / "scripts" / "templates" / "method.html"  # "How this audit works", shared with build_site
@@ -686,6 +687,13 @@ def prepare(args: argparse.Namespace) -> tuple[dict, list[str], str | None, str,
         entries = json.loads(vis.read_text(encoding="utf-8"))
         if entries:
             report["_visibility"] = {k: entries[-1].get(k) for k in ("date", "windows", "hosts")}
+            # one point per complete month for the charts (SK, 2026-11-20); Domain Rating per month from the
+            # daily entries (it is only recorded from 19 Nov 2026 on)
+            monthly = folder / "visibility-monthly.json"
+            mdata = json.loads(monthly.read_text(encoding="utf-8")) if monthly.is_file() else {}
+            report["_visibility"]["monthly"] = {
+                h: {"points": (mdata.get("hosts") or {}).get(h) or {}, "dr": monthly_dr(entries, h)}
+                for h in report["_visibility"]["hosts"] or {}}
     if args.findings:
         rows = json.loads(Path(args.findings).read_text(encoding="utf-8"))
         all_rows = rows
@@ -800,6 +808,10 @@ def collection_report(name: str, slug: str, members: list[tuple[str, str]]) -> d
         R["findings"] += report["findings"]
         R["_hosts"].append(card)
         R["_host_trends"].update(report.get("_host_trends") or {})
+        if (vis := report.get("_visibility")) and host in (vis.get("hosts") or {}):  # Blogs rows: visibility cell
+            V = R.setdefault("_visibility", {"date": vis["date"], "windows": vis["windows"], "hosts": {}, "monthly": {}})
+            V["hosts"][host] = vis["hosts"][host]
+            V["monthly"][host] = (vis.get("monthly") or {}).get(host)
         if host in ((report.get("_structure") or {}).get("hosts") or {}):
             S = R.setdefault("_structure", {"date": report["_structure"]["date"], "hosts": {}})
             S["hosts"][host] = report["_structure"]["hosts"][host]

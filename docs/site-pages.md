@@ -47,7 +47,14 @@ a blocked page's noindex is never read). Written 12 Nov 2026 so nothing is lost.
    red); "Resolved since the last run"; History (5 rows + Show all; changes on their own line under the value).
 4. **Issues and fixes:** open findings ranked by score with evidence; filters hidden under 6 issues.
 5. Reference is empty on subdomain pages (its tables are in the cards); domain pages keep it.
-6. **Visibility (19 Nov, SK: "values like Ahrefs")**, subdomain pages only: Overview tile "Organic keywords" (Search
+6. **Visibility (19–20 Nov, SK: "values like Ahrefs")**: a **Visibility card** in SK's order (DR, keywords, top 3,
+   top 10, AI visits; change vs the same 28 days six months ago) on subdomain pages (a tile beside Health; a click
+   opens the panel) and as a cell in every subdomain row (domain and Blogs pages). The panel (closed by default, end
+   of the Overview): **monthly small multiples**, one square chart per number on its own scale from 0, one dot per
+   complete calendar month, 6 / 12 months switch (remembered per viewer), shared hover across the four monthly charts;
+   Domain Rating has its own months (recorded from 19 Nov 2026); the table behind "Show table". Monthly data:
+   `reports/<tenant>/visibility-monthly.json` (12 months filled in from Search Console and GA4 on 20 Nov; each run adds
+   months that ended at least 4 days ago; older months are kept). Earlier (19 Nov) version: Overview tile "Organic keywords" (Search
    Console queries with impressions, 28 days; top 10; vs six months ago; link "AI visits · DR"), a Visibility panel at
    the end of the Overview (keywords, top 10, top 3, with a click, hidden-search share, AI-assistant visits per
    platform from GA4, Domain Rating from Ahrefs; now, six months ago, change, source) and History columns "Organic

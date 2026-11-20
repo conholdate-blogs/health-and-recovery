@@ -26,7 +26,7 @@ sys.path.insert(0, str(REPO_ROOT))
 from core.gsc import API_MAX_ROWS, default_window  # noqa: E402
 from core.paths import tenant_paths  # noqa: E402
 from core.tenant import load_tenant  # noqa: E402
-from core.visibility import ai_referrals, keyword_counts, upsert_entry  # noqa: E402
+from core.visibility import ai_referrals, complete_months, keyword_counts, upsert_entry  # noqa: E402
 from scripts.prioritize import history_windows  # noqa: E402
 
 MAX_QUERY_ROWS = 200_000  # per host and window; blog.aspose.com is the largest
@@ -87,10 +87,55 @@ def fetch_dr(hosts: list[str], key: str) -> dict[str, float]:
     return out
 
 
+def fill_months(tenant, hosts: list[str], gsc, credentials, n: int, refill: bool, say) -> None:
+    """One point per complete calendar month (SK, 2026-11-20: one dot a month, keep collecting), in
+    reports/<tenant>/visibility-monthly.json: keyword counts per month from Search Console, AI-assistant visits from
+    GA4 (one call for all months). Only missing months are fetched; a month is final 4 days after it ends."""
+    path = tenant_paths(tenant.property).reports / "visibility-monthly.json"
+    data = json.loads(path.read_text(encoding="utf-8")) if path.is_file() else {"hosts": {}}
+    months = complete_months(date.today(), n)
+    errors = {}
+    for h in hosts:
+        have = data["hosts"].setdefault(h, {})
+        for key, s, e in months:
+            if not refill and "keywords" in have.get(key, {}):
+                continue
+            try:
+                have.setdefault(key, {})["keywords"] = fetch_keywords(gsc, gsc_site(tenant, h), s, e)
+                say(f"  {h} {key}: {have[key]['keywords']['queries']:,} queries")
+            except Exception as exc:  # noqa: BLE001
+                errors[f"gsc {h} {key}"] = _err(exc)
+    missing_ai = refill or any("ai" not in data["hosts"][h].get(k, {}) for h in hosts for k, _, _ in months)
+    if tenant.ga4_property_id and missing_ai:
+        from core.ga4 import GA4Client
+
+        try:
+            rows = GA4Client(credentials).run_report(tenant.ga4_property_id, ["hostName", "sessionSource", "yearMonth"],
+                                                     ["sessions"], start=months[0][1], end=months[-1][2], limit=250_000)
+            for h in hosts:
+                for key, _, _ in months:
+                    ym = key.replace("-", "")
+                    data["hosts"][h].setdefault(key, {})["ai"] = ai_referrals(
+                        [r for r in rows if r.get("yearMonth") == ym], h)
+        except Exception as exc:  # noqa: BLE001
+            errors["ga4 months"] = _err(exc)
+    keep = {k for k, _, _ in months}
+    for h in data["hosts"]:  # older months beyond the window stay: the series keeps growing (SK: keep collecting)
+        data["hosts"][h] = dict(sorted(data["hosts"][h].items()))
+    data["updated"] = date.today().isoformat()
+    data["months"] = sorted(keep)
+    for k, v in errors.items():
+        print(f"  error: {k}: {v}", file=sys.stderr)
+    path.write_text(json.dumps(data, indent=1) + "\n", encoding="utf-8")
+    say(f"Monthly: {path}")
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--tenant", default=os.environ.get("TENANT", "aspose.app"))
     ap.add_argument("--dr", action="append", default=[], help="host=value, a Domain Rating read by hand (repeatable)")
+    ap.add_argument("--months", type=int, default=12, help="complete calendar months kept in the monthly file")
+    ap.add_argument("--refill", action="store_true", help="fetch every month again, not only the missing ones")
     ap.add_argument("--quiet", action="store_true")
     args = ap.parse_args(argv)
     say = (lambda *a: None) if args.quiet else print
@@ -151,6 +196,8 @@ def main(argv: list[str] | None = None) -> int:
         del entry["errors"]
     for k, v in (entry.get("errors") or {}).items():
         print(f"  error: {k}: {v}", file=sys.stderr)
+
+    fill_months(tenant, hosts, gsc, credentials, args.months, args.refill, say)
 
     path = tenant_paths(args.tenant).reports / "visibility.json"
     history = json.loads(path.read_text(encoding="utf-8")) if path.is_file() else []

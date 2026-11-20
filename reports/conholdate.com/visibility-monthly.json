@@ -1,0 +1,235 @@
+{
+ "hosts": {
+  "blog.conholdate.com": {
+   "2025-11": {
+    "keywords": {
+     "queries": 11377,
+     "top10": 2635,
+     "top3": 525,
+     "with_clicks": 930,
+     "impressions": 152762,
+     "hidden_share": 0.419
+    },
+    "ai": {
+     "sessions": 31,
+     "by_platform": {
+      "Copilot": 13,
+      "ChatGPT": 10,
+      "Perplexity": 8
+     }
+    }
+   },
+   "2025-12": {
+    "keywords": {
+     "queries": 14290,
+     "top10": 2652,
+     "top3": 374,
+     "with_clicks": 961,
+     "impressions": 179363,
+     "hidden_share": 0.351
+    },
+    "ai": {
+     "sessions": 16,
+     "by_platform": {
+      "Perplexity": 7,
+      "Copilot": 5,
+      "ChatGPT": 3,
+      "Gemini": 1
+     }
+    }
+   },
+   "2026-01": {
+    "keywords": {
+     "queries": 13235,
+     "top10": 2053,
+     "top3": 167,
+     "with_clicks": 931,
+     "impressions": 157131,
+     "hidden_share": 0.336
+    },
+    "ai": {
+     "sessions": 10,
+     "by_platform": {
+      "Copilot": 6,
+      "ChatGPT": 2,
+      "Perplexity": 2
+     }
+    }
+   },
+   "2026-02": {
+    "keywords": {
+     "queries": 10349,
+     "top10": 2127,
+     "top3": 183,
+     "with_clicks": 797,
+     "impressions": 131919,
+     "hidden_share": 0.405
+    },
+    "ai": {
+     "sessions": 10,
+     "by_platform": {
+      "Copilot": 4,
+      "Perplexity": 4,
+      "ChatGPT": 2
+     }
+    }
+   },
+   "2026-03": {
+    "keywords": {
+     "queries": 11003,
+     "top10": 1678,
+     "top3": 136,
+     "with_clicks": 581,
+     "impressions": 99814,
+     "hidden_share": 0.291
+    },
+    "ai": {
+     "sessions": 4,
+     "by_platform": {
+      "Copilot": 3,
+      "ChatGPT": 1
+     }
+    }
+   },
+   "2026-04": {
+    "keywords": {
+     "queries": 13078,
+     "top10": 2513,
+     "top3": 290,
+     "with_clicks": 1056,
+     "impressions": 166280,
+     "hidden_share": 0.384
+    },
+    "ai": {
+     "sessions": 11,
+     "by_platform": {
+      "Perplexity": 6,
+      "ChatGPT": 2,
+      "Copilot": 2,
+      "Gemini": 1
+     }
+    }
+   },
+   "2026-05": {
+    "keywords": {
+     "queries": 13606,
+     "top10": 1805,
+     "top3": 110,
+     "with_clicks": 969,
+     "impressions": 173396,
+     "hidden_share": 0.378
+    },
+    "ai": {
+     "sessions": 9,
+     "by_platform": {
+      "Copilot": 5,
+      "ChatGPT": 3,
+      "Perplexity": 1
+     }
+    }
+   },
+   "2026-06": {
+    "keywords": {
+     "queries": 13355,
+     "top10": 1590,
+     "top3": 89,
+     "with_clicks": 781,
+     "impressions": 141961,
+     "hidden_share": 0.289
+    },
+    "ai": {
+     "sessions": 6,
+     "by_platform": {
+      "Copilot": 3,
+      "Perplexity": 2,
+      "Gemini": 1
+     }
+    }
+   },
+   "2026-07": {
+    "keywords": {
+     "queries": 13310,
+     "top10": 1030,
+     "top3": 64,
+     "with_clicks": 462,
+     "impressions": 124523,
+     "hidden_share": 0.352
+    },
+    "ai": {
+     "sessions": 4,
+     "by_platform": {
+      "Copilot": 2,
+      "Gemini": 1,
+      "Perplexity": 1
+     }
+    }
+   },
+   "2026-08": {
+    "keywords": {
+     "queries": 11922,
+     "top10": 958,
+     "top3": 70,
+     "with_clicks": 432,
+     "impressions": 124132,
+     "hidden_share": 0.331
+    },
+    "ai": {
+     "sessions": 4,
+     "by_platform": {
+      "ChatGPT": 2,
+      "Copilot": 1,
+      "Gemini": 1
+     }
+    }
+   },
+   "2026-09": {
+    "keywords": {
+     "queries": 11922,
+     "top10": 2080,
+     "top3": 156,
+     "with_clicks": 489,
+     "impressions": 115736,
+     "hidden_share": 0.319
+    },
+    "ai": {
+     "sessions": 4,
+     "by_platform": {
+      "Copilot": 2,
+      "Gemini": 2
+     }
+    }
+   },
+   "2026-10": {
+    "keywords": {
+     "queries": 13044,
+     "top10": 3167,
+     "top3": 350,
+     "with_clicks": 649,
+     "impressions": 141263,
+     "hidden_share": 0.357
+    },
+    "ai": {
+     "sessions": 1,
+     "by_platform": {
+      "Copilot": 1
+     }
+    }
+   }
+  }
+ },
+ "updated": "2026-11-20",
+ "months": [
+  "2025-11",
+  "2025-12",
+  "2026-01",
+  "2026-02",
+  "2026-03",
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09",
+  "2026-10"
+ ]
+}

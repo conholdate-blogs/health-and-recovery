@@ -273,6 +273,22 @@ button.acard:focus-visible { outline: 2px solid var(--accent); outline-offset: 2
 #area-data { display: grid; gap: 12px; margin-top: 12px } #area-data:empty { display: none }
 #area-data .ahead { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap }
 #changes, #chg-body, #chg-body > *, #sum-areas, #area-data, #area-data > * { min-width: 0 }  /* wide tables scroll inside */
+/* visibility card and monthly charts (SK, 2026-11-20) */
+button.kpi.vcard { font: inherit; color: inherit; text-align: left; cursor: pointer } button.kpi.vcard:hover { border-color: var(--accent) }
+button.kpi.vcard:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.vcard dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; margin: 2px 0 0; font-size: 13px; font-variant-numeric: tabular-nums }
+.vcard dt { color: var(--muted) } .vcard dd { margin: 0; text-align: right; white-space: nowrap } .vcard dd b { font-size: 15px }
+.vcard dd small { font-size: 11px; margin-left: 4px } .vcard .ks a, .vcard .open { color: var(--accent); font-weight: 600 }
+.vrange { display: flex; gap: 6px; align-items: center; margin: 4px 0 10px; font-size: 13px }
+.vrange button { font: inherit; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 999px; padding: 2px 10px; cursor: pointer }
+.vrange button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff }
+.vcharts { position: relative; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin: 0 0 12px }
+.vchart { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; min-width: 0 }
+.vchart h4 { margin: 0; font: 600 12px var(--body); letter-spacing: .05em; text-transform: uppercase; color: var(--muted) }
+.vchart .vv { font: 600 22px var(--display); font-variant-numeric: tabular-nums } .vchart .vv small { display: block; min-height: 1.3em; font: 500 12px var(--body); color: var(--muted) }
+.vchart .vv .up { color: var(--good) } .vchart .vv .down { color: var(--broken) }
+.vchart svg { display: block; width: 100%; height: auto; overflow: visible } .vchart .vnote { font-size: 12px; color: var(--muted) }
+.vcharts .tip { position: absolute; pointer-events: none; background: var(--fg); color: var(--bg); font-size: 12px; padding: 6px 8px; border-radius: 6px; white-space: nowrap; transform: translate(-50%, -110%); z-index: 2 }
 /* worm-css:start (also used by the Issue log page, scripts/site_pages.py) */
 .worm { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin: 0 0 14px }
 .worms { position: relative; display: grid; grid-template-columns: 1fr; gap: 14px; margin: 0 0 14px } .worms.side { grid-template-columns: 1fr 1fr }
@@ -299,7 +315,10 @@ table.acts a { color: var(--fg); text-decoration-color: var(--line); text-underl
 .shead { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 13px; color: var(--muted) }
 .srows { display: grid; gap: 10px }
 .srow { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--gc); border-radius: 8px; padding: 14px 16px;
-  display: grid; grid-template-columns: minmax(190px, 1.2fr) repeat(5, minmax(110px, 1fr)); gap: 12px 16px; align-items: start; min-width: 0 }
+  display: grid; grid-template-columns: minmax(190px, 1.2fr) repeat(6, minmax(100px, 1fr)); gap: 12px 16px; align-items: start; min-width: 0 }
+.vmini { display: grid; grid-template-columns: auto 1fr; gap: 0 8px; margin: 2px 0 0; font-size: 12px; font-variant-numeric: tabular-nums }
+.sc .vmini b { font: 600 13px var(--body) } .vmini dt { color: var(--muted) } .vmini dd { margin: 0; text-align: right; white-space: nowrap } .vmini dd small { margin-left: 4px; font-size: 11px }
+.vmini .up { color: var(--good); font-weight: 600 } .vmini .down { color: var(--broken); font-weight: 600 }
 .sname { display: grid; gap: 6px; min-width: 0 } .sname code { font-size: 16px; font-weight: 600; overflow-wrap: break-word }
 .sscore { display: flex; align-items: baseline; gap: 6px } .sscore > b { font: 600 32px/1 var(--display); color: var(--gc); font-variant-numeric: tabular-nums }
 .sscore > span { font-size: 12px; color: var(--muted) }
@@ -512,9 +531,15 @@ footer a { color: var(--accent) }
       <p class="lede fold">One row per recorded run, newest first.<span class="rest"> Clicks and impressions: Search Console, the 28 days ending on the date under them. Open issues: kinds of problem still open (as in the Issue log). Open items: pages, links and files still affected. Note: what ran since the row before, so a score change from a new check reads as that.</span></p>
       <div class="tablewrap"><table id="history-rows"></table></div>
     </details>
-    <details class="ref" id="visibility" hidden open><summary>Visibility <small id="visibility-st"></small></summary>
+    <details class="ref" id="visibility" hidden><summary>Visibility <small id="visibility-st"></small></summary>
+      <div class="vrange" id="vis-range" hidden><span class="dim">Charts:</span> <button type="button" data-n="6">6 months</button><button type="button" data-n="12" aria-pressed="true">12 months</button></div>
+      <div id="vis-charts"></div>
+      <p class="lede fold">One dot per calendar month; the table compares the latest 28 days with six months ago.<span class="rest"> A month's dot counts the whole calendar month, so it is a little higher than the 28-day number. Months are added as they end (4 days later, when Search Console has them all); the series keeps growing. Domain Rating is recorded from 19 Nov 2026 on, so its chart starts there.</span></p>
+      <button type="button" class="more" id="vis-table-btn">Show table</button>
+      <div id="vis-table" hidden>
       <p class="lede fold">Organic keywords, visits from AI assistants and Domain Rating, now and six months ago.<span class="rest"> Keywords: Search Console queries that showed a page of this subdomain at least once in 28 days; top 10 / top 3 by average position. Google hides rare searches, so the count is a floor; "Hidden searches" says how much of the impressions it does not show. Not the same number as a backlink tool's "organic keywords", which is an estimate from its own keyword database. AI-assistant visits: GA4 sessions whose source is ChatGPT, Perplexity, Gemini, Copilot, Claude and others; visits that arrive without a referrer count as direct and are missed. Domain Rating: Ahrefs' backlink score of the whole domain, the same for every subdomain.</span></p>
       <div class="tablewrap"><table id="visibility-rows"></table></div>
+      </div>
     </details>
     <details class="ref" id="structure" hidden open><summary>Site structure <small id="structure-st"></small></summary>
       <p class="lede fold">Tags, categories and the listing pages Hugo builds from them, read from the blog's repo.<span class="rest"> Hugo builds a listing page for the home page, each category and each tag, in every language, with as many /page/N/ pages as the posts need (N posts a page). A tag with one post is a page with one link: thin, and multiplied by every language. Search: Search Console clicks and impressions over 28 days. Colours: <span class="bad" style="font-weight:600">red</span> = alert, <span class="ok" style="font-weight:600">green</span> = good, black = in between or a plain count. Tags with one post: red from 50%, green up to 20%; with one or two posts: red from 70%, green up to 35%; tags per post: red above 5, green up to 3; tag share of listing pages: red from 80%, green up to 50%; listing pages beyond page 50: red from 1,000, green at 0; tag URLs in the sitemaps: red if any, green at 0.</span></p>
@@ -1336,7 +1361,7 @@ __METHOD__
   const VIS = R._visibility, VH = VIS && R._page_host ? (VIS.hosts || {})[R._page_host] : null;
   if (VH) {
     $("visibility").hidden = false;
-    const W = VIS.windows || {}, cw = W.current || [], sw = W.six_months_ago || [];
+    const VWIN = VIS.windows || {}, cw = VWIN.current || [], sw = VWIN.six_months_ago || [];
     $("visibility-st").textContent = `· recorded ${day(VIS.date)}`;
     const k = VH.keywords || {}, k6 = VH.keywords_six_months_ago || {}, ai = VH.ai || {}, ai6 = VH.ai_six_months_ago || {};
     const chg = (a, b, moreIsWorse) => {
@@ -1357,6 +1382,77 @@ __METHOD__
       + row("AI-assistant visits", `<b>${fmt(ai.sessions)}</b>${plat(ai) ? `<br><small class="dim">${plat(ai)}</small>` : ""}`, `${fmt(ai6.sessions)}${plat(ai6) ? `<br><small class="dim">${plat(ai6)}</small>` : ""}`, chg(ai.sessions, ai6.sessions), "GA4")
       + row("Domain Rating", VH.dr == null ? "–" : `<b>${fmt(VH.dr)}</b>${VH.dr_date && VH.dr_date !== VIS.date ? `<br><small class="dim">${esc(day(VH.dr_date))}</small>` : ""}`, "–", "", "Ahrefs, whole domain")
       + `</tbody>`;
+    $("vis-table-btn").addEventListener("click", e => { const t = $("vis-table"); t.hidden = !t.hidden; e.target.textContent = t.hidden ? "Show table" : "Hide table"; });
+
+    // monthly small multiples (SK, 2026-11-20, "ahrefs style"): one square chart per number, each on its own scale
+    // from 0 (never two scales on one chart); the four monthly charts share their months and one hover; Domain
+    // Rating has its own months (recorded from 19 Nov 2026)
+    const MO = (VIS.monthly || {})[R._page_host] || { points: {}, dr: {} };
+    const MONTHS = Object.keys(MO.points).filter(m => MO.points[m].keywords).sort();
+    const mlabel = (m, long) => { const d = new Date(`${m}-15T00:00:00Z`);
+      return d.toLocaleDateString("en-GB", long ? { month: "long", year: "numeric", timeZone: "UTC" } : { month: "short", timeZone: "UTC" }) + (long ? "" : ` '${m.slice(2, 4)}`); };
+    const SERIES = [
+      { k: "dr", t: "Domain Rating", own: true, get: m => MO.dr[m] ?? null, months: Object.keys(MO.dr || {}).sort() },
+      { k: "kw", t: "Organic keywords", get: m => ((MO.points[m] || {}).keywords || {}).queries ?? null },
+      { k: "t3", t: "Keywords in top 3", get: m => ((MO.points[m] || {}).keywords || {}).top3 ?? null },
+      { k: "t10", t: "Keywords in top 10", get: m => ((MO.points[m] || {}).keywords || {}).top10 ?? null },
+      { k: "ai", t: "AI-assistant visits", get: m => ((MO.points[m] || {}).ai || {}).sessions ?? null },
+    ];
+    const niceTop = v => { if (v <= 5) return 5; const p = 10 ** Math.floor(Math.log10(v)), f = v / p; return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p; };
+    const W = 200, Hh = 120, L = 34, Rr = 8, T = 8, Bb = 18;
+    const chart = (s, months) => {
+      const vals = months.map(s.get), have = vals.filter(v => v != null);
+      const last = [...vals].reverse().find(v => v != null), first = vals.find(v => v != null);
+      const p = first ? Math.round((last - first) / first * 100) : null;
+      const head = `<h4>${esc(s.t)}</h4><div class="vv">${last == null ? "–" : fmt(last)}${p != null && have.length > 1 && first >= 20 ? `<small><span class="${p > 0 ? "up" : p < 0 ? "down" : ""}">${p > 0 ? "+" : p < 0 ? "−" : "±"}${Math.abs(p)}%</span> in ${have.length} months</small>` : ""}</div>`;
+      if (!have.length) return `<div class="vchart">${head}<p class="vnote">no data yet</p></div>`;
+      const n = months.length, top = niceTop(Math.max(...have)), span = W - L - Rr;
+      const x = i => L + (n === 1 ? span / 2 : i * span / (n - 1)), y = v => T + (Hh - T - Bb) * (1 - v / top);
+      const grid = [0, top / 2, top].map(v => `<line x1="${L}" x2="${W - Rr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L - 5}" y="${y(v) + 3}" text-anchor="end" font-size="10" fill="var(--muted)">${compact(v)}</text>`).join("");
+      const lab = [0, Math.floor((n - 1) / 2), n - 1].filter((v, i, a) => a.indexOf(v) === i)
+        .map(i => `<text x="${x(i)}" y="${Hh - 4}" text-anchor="${n === 1 ? "middle" : i === 0 ? "start" : i === n - 1 ? "end" : "middle"}" font-size="10" fill="var(--muted)">${esc(mlabel(months[i]))}</text>`).join("");
+      const pts = vals.map((v, i) => v == null ? null : [x(i), y(v)]).filter(Boolean);
+      const area = pts.length > 1 ? `<path d="M${pts[0][0]},${y(0)} L${pts.map(q => q.join(",")).join(" L")} L${pts[pts.length - 1][0]},${y(0)} Z" fill="var(--accent)" opacity=".1"/>` : "";
+      const line = pts.length > 1 ? `<polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" points="${pts.map(q => q.join(",")).join(" ")}"/>` : "";
+      const dots = pts.map(([cx, cy]) => `<circle cx="${cx}" cy="${cy}" r="${n > 8 ? 3 : 4}" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`).join("");
+      const step = n === 1 ? span : span / (n - 1);
+      const hits = months.map((m, i) => `<rect class="hit" data-m="${m}" x="${x(i) - step / 2}" y="${T}" width="${step}" height="${Hh - T}" fill="transparent"/>`).join("");
+      const note = s.own && have.length < 3 ? `<p class="vnote">recorded since ${esc(day(VH.dr_date || VIS.date))}; one dot a month from here</p>` : "";
+      return `<div class="vchart" data-k="${s.k}">${head}<svg viewBox="0 0 ${W} ${Hh}" role="img" aria-label="${esc(s.t)} per month; the numbers are in the table">${grid}${area}${line}${dots}${lab}`
+        + `<line class="wx" y1="${T}" y2="${Hh - Bb}" stroke="var(--muted)" visibility="hidden"/>${hits}</svg>${note}</div>`;
+    };
+    const drawCharts = nMonths => {
+      const shown = MONTHS.slice(-nMonths);
+      const box = $("vis-charts");
+      box.innerHTML = `<div class="vcharts" id="vcharts">${SERIES.map(s => chart(s, s.own ? (s.months.length ? s.months.slice(-nMonths) : []) : shown)).join("")}<div class="tip" id="vis-tip" hidden></div></div>`;
+      const wrap = $("vcharts"), tip = $("vis-tip");
+      wrap.querySelectorAll("rect.hit").forEach(r => {
+        const show = () => {
+          const m = r.dataset.m, own = r.closest(".vchart").dataset.k === "dr";
+          wrap.querySelectorAll(".vchart").forEach(c => {  // the same month in every chart that has it
+            const h = c.querySelector(`rect.hit[data-m="${m}"]`), l = c.querySelector(".wx");
+            if (!l) return;
+            if (h && (own === (c.dataset.k === "dr"))) { const b = h.getBBox(), cx = b.x + b.width / 2; l.setAttribute("x1", cx); l.setAttribute("x2", cx); l.setAttribute("visibility", "visible"); }
+            else l.setAttribute("visibility", "hidden");
+          });
+          const list = own ? [SERIES[0]] : SERIES.slice(1);
+          tip.innerHTML = `<b>${esc(mlabel(m, true))}</b><br>` + list.map(s => `${esc(s.t)}: ${fmt(s.get(m))}`).join("<br>"); tip.hidden = false;
+          const br = wrap.getBoundingClientRect(), rr = r.getBoundingClientRect();
+          tip.style.left = `${Math.min(Math.max(rr.left - br.left + rr.width / 2, 90), br.width - 90)}px`; tip.style.top = `${rr.top - br.top}px`;
+        };
+        r.addEventListener("mouseenter", show); r.addEventListener("click", show);
+      });
+      wrap.addEventListener("mouseleave", () => { tip.hidden = true; wrap.querySelectorAll(".wx").forEach(l => l.setAttribute("visibility", "hidden")); });
+    };
+    if (MONTHS.length || Object.keys(MO.dr || {}).length) {
+      let nMonths = 12;
+      try { nMonths = +localStorage.getItem("vis-months") || 12; } catch (e) { /* storage blocked */ }
+      const rng = $("vis-range"); rng.hidden = MONTHS.length <= 6;
+      const setN = n => { nMonths = n; rng.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.n === n))); drawCharts(n);
+        try { localStorage.setItem("vis-months", String(n)); } catch (e) { /* storage blocked */ } };
+      rng.querySelectorAll("button").forEach(b => b.addEventListener("click", () => setN(+b.dataset.n)));
+      setN(nMonths === 6 ? 6 : 12);
+    }
   }
 
   // what the crawl covered (12 Nov 2026): every sitemap URL on small hosts, else a fixed + rotating sample
@@ -1659,6 +1755,17 @@ __METHOD__
       return `<span class="${p < 0 ? "down" : p > 0 ? "up" : ""}">${p > 0 ? "+" : p < 0 ? "−" : "±"}${Math.abs(p)}%</span> vs ${what}`;
     };
     const signed = n => `<span class="${n > 0 ? "up" : n < 0 ? "down" : ""}">${n > 0 ? "+" : n < 0 ? "−" : "±"}${Math.abs(n)}</span>`;
+    // visibility numbers in SK's order (2026-11-20): DR, organic keywords, top 3, top 10, AI-assistant visits;
+    // the change is against the same 28 days six months ago (a small base shows its value instead of a %)
+    const vchg = (a, b) => { if (a == null || b == null) return "";
+      if (b < 20) return `<small class="dim">was ${fmt(b)}</small>`;
+      const p = Math.round((a - b) / b * 100); return `<small class="${p > 0 ? "up" : p < 0 ? "down" : ""}">${p > 0 ? "+" : p < 0 ? "−" : "±"}${Math.abs(p)}%</small>`; };
+    const visRows = (V, K, K6) => [["DR", V.dr == null ? "–" : fmt(V.dr), ""], ["Keywords", fmt(K.queries), vchg(K.queries, K6.queries)],
+      ["Top 3", fmt(K.top3), vchg(K.top3, K6.top3)], ["Top 10", fmt(K.top10), vchg(K.top10, K6.top10)],
+      ["AI visits", fmt((V.ai || {}).sessions), vchg((V.ai || {}).sessions, (V.ai_six_months_ago || {}).sessions)]];
+    const visCard = (V, K, K6) => `<button type="button" class="kpi vcard" id="vcard" aria-controls="visibility" aria-expanded="false"><span class="kl">Visibility</span>`
+      + `<dl>${visRows(V, K, K6).map(([t, v, c]) => `<dt>${t}</dt><dd><b>${v}</b>${c}</dd>`).join("")}</dl>`
+      + `<span class="ks">vs six months ago · <span class="open">Charts ▾</span></span></button>`;
     const trendOf = h => (R._host_trends || {})[h] || [];
     const count = (list, t) => list.filter(f => f.type === t).length;
     const changesOf = h => ({ add: (CH.new || []).filter(id => (byId[id] || {}).subdomain === h).length,
@@ -1717,9 +1824,8 @@ __METHOD__
           : t.source === "ga4"
           ? `<div class="kpi"><span class="kl">Organic sessions</span><span class="kv">${fmt(cur.sessions)} <small>28 days, GA4</small></span><span class="ks">${delta(cur.sessions, prev.sessions, "previous 28 days")}</span></div>`
           : `<div class="kpi"><span class="kl">Search traffic</span><span class="kv">–</span><span class="ks">no Search Console or GA4 data</span></div>`,
-        // organic keywords with AI visits and Domain Rating under them (SK, 2026-11-19); the rest in Reference
-        VK ? `<div class="kpi"><span class="kl">Organic keywords</span><span class="kv">${compact(VK.queries)} <small>28 days</small></span><span class="ks">${fmt(VK.top10)} in top 10 · ${delta(VK.queries, VK6.queries, "six months ago")}</span>`
-          + `<span class="ks"><a class="pilllink" href="#visibility">AI visits ${fmt((V.ai || {}).sessions)} · DR ${V.dr == null ? "–" : fmt(V.dr)}</a></span></div>` : "",
+        // visibility card (SK, 2026-11-20; his order, DR first): opens the monthly charts below the area cards
+        VK ? visCard(V, VK, VK6) : "",
         LOG ? `<div class="kpi"><span class="kl">${issuesLabel}</span><span class="kv">${fmt(LOG.open)} <small>open of ${fmt(LOG.total)}</small></span><span class="ks"><span class="${LOG.verified + LOG.pushed ? "up" : ""}">${fmt(LOG.verified + LOG.pushed)} fixed</span> · ${fmt(LOG.resolved)} resolved${LOG.reviewed ? ` · ${fmt(LOG.reviewed)} reviewed` : ""}`
           + ` · <b class="pct${LOG.total - LOG.open ? " ok" : ""}">${share(LOG.total - LOG.open, LOG.total)}</b> closed</span>`
           + `<span class="ks">${GURL ? `<a class="pilllink" href="issues/">Issue log →</a>` : ""}</span></div>` :
@@ -1729,6 +1835,12 @@ __METHOD__
         H.items ? `<div class="kpi"><span class="kl">${itemsLabel}</span><span class="kv">${itemsNum(H.items)}</span><span class="ks">${itemsSub(H.items)}</span></div>` : "",
       ].join("");
       $("kpis").hidden = false;
+      if ($("vcard")) {  // the card opens and closes the Visibility panel (monthly charts, table behind a button)
+        const vc = $("vcard"), panel = $("visibility"), sync = () => {
+          vc.setAttribute("aria-expanded", String(panel.open)); vc.querySelector(".open").textContent = panel.open ? "Charts ▴" : "Charts ▾"; };
+        vc.addEventListener("click", () => { panel.open = !panel.open; sync(); if (panel.open) panel.scrollIntoView({ behavior: "smooth", block: "nearest" }); });
+        panel.addEventListener("toggle", sync);
+      }
       if (H.items) {  // per check: where the Open issues tile comes from
         const I = H.items, sevCell = k => { const s = GUIDE[k] && GUIDE[k].severity; return s ? `<td class="sev-${esc(s)}" style="color:var(--sev);font-weight:600">${esc(LABEL[s] || s)}</td>` : "<td></td>"; };
         const sevRank = k => { const i = ORDER.indexOf(GUIDE[k] && GUIDE[k].severity); return i < 0 ? ORDER.length : i; };  // severity first, then most open
@@ -1746,6 +1858,7 @@ __METHOD__
         const t = H.traffic || {}, cur = t.current || {}, prev = t.previous || {}, six = t.six_months_ago || {};
         const mine = findings.filter(f => f.subdomain === H.host), b = count(mine, "broken"), inc = count(mine, "incorrect");
         const TR = trendOf(H.host), before = TR.length > 1 ? TR[TR.length - 2] : null, ch = changesOf(H.host), L = H.issue_log;
+        const VV = ((R._visibility || {}).hosts || {})[H.host];
         const traffic = t.source === "gsc"
           ? cell("Search clicks · 28 days", `<b>${fmt(cur.clicks)}</b><small>${delta(cur.clicks, prev.clicks, "previous")}<br>${delta(cur.clicks, six.clicks, "six months ago")}</small>`)
             + cell("Impressions · 28 days", `<b>${compact(cur.impressions)}</b><small>${delta(cur.impressions, prev.impressions, "previous")}<br>${delta(cur.impressions, six.impressions, "six months ago")}</small>`)
@@ -1762,6 +1875,7 @@ __METHOD__
           ${L ? cell(issuesLabel, `<b>${fmt(L.open)} <small>open of ${fmt(L.total)}</small></b><small><span class="${L.verified + L.pushed ? "up" : ""}">${fmt(L.verified + L.pushed)} fixed</span> · <b class="pct${L.total - L.open ? " ok" : ""}">${share(L.total - L.open, L.total)}</b> closed${published && SITE_HOSTS.includes(H.host) ? `<br><a class="pilllink" href="../${esc(H.host)}/issues/">Issue log →</a>` : ""}</small>`)
             : cell(typesLabel, `<b>${mine.length}</b><small>${b ? `<em class="down">${b} broken</em> · ` : ""}${inc} incorrect<br>${changesSub(ch, before)}</small>`)}
           ${!ANY_ITEMS ? "" : cell(L ? `Items ${ask(ITEMS_NOTE)}` : itemsLabel, H.items ? `<b>${fmt(H.items.open)} <small>${L ? "open " : ""}of ${fmt(H.items.issues)}</small></b><small>${itemsSub(H.items)}</small>` : `<b>–</b><small>no link check (no blog repo configured)</small>`)}
+          ${VV && VV.keywords ? cell("Visibility", `<dl class="vmini">${visRows(VV, VV.keywords, VV.keywords_six_months_ago || {}).map(([t, v, c]) => `<dt>${t}</dt><dd><b>${v}</b>${c}</dd>`).join("")}</dl>`) : ""}
           ${areas ? `<div class="sareas">${areas}</div>` : ""}${open}</article>`;
       };
       const SORTS = { name: (a, b) => a.host.localeCompare(b.host), score: (a, b) => a.health - b.health || a.host.localeCompare(b.host),

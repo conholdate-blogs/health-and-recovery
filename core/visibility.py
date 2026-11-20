@@ -70,6 +70,38 @@ def keyword_counts(rows: list[dict], total_impressions: int | None, capped: bool
     return out
 
 
+def complete_months(today, n: int = 12, lag_days: int = 4) -> list[tuple[str, str, str]]:
+    """The last n calendar months whose Search Console data is final (last day at least lag_days back), oldest
+    first: [(\"2026-10\", \"2026-10-01\", \"2026-10-31\"), ...]."""
+    from datetime import date, timedelta
+
+    cutoff = today - timedelta(days=lag_days)
+    y, m = cutoff.year, cutoff.month
+    nxt = date(y + (m == 12), m % 12 + 1, 1)
+    if (nxt - timedelta(days=1)) > cutoff:  # the cutoff's own month is not over yet
+        y, m = (y - 1, 12) if m == 1 else (y, m - 1)
+    out = []
+    for _ in range(n):
+        first = date(y, m, 1)
+        last = date(y + (m == 12), m % 12 + 1, 1) - timedelta(days=1)
+        out.append((f"{y:04d}-{m:02d}", first.isoformat(), last.isoformat()))
+        y, m = (y - 1, 12) if m == 1 else (y, m - 1)
+    return out[::-1]
+
+
+def monthly_dr(history: list[dict], host: str) -> dict[str, float]:
+    """Month -> the newest Domain Rating recorded in that month (from the daily entries' dr_date)."""
+    out: dict[str, tuple[str, float]] = {}
+    for e in history:
+        v = (e.get("hosts") or {}).get(host) or {}
+        if v.get("dr") is None:
+            continue
+        d = v.get("dr_date") or e["date"]
+        if d[:7] not in out or d >= out[d[:7]][0]:
+            out[d[:7]] = (d, v["dr"])
+    return {m: v for m, (_, v) in sorted(out.items())}
+
+
 def upsert_entry(history: list[dict], entry: dict) -> list[dict]:
     """Keep one entry per date (a re-run the same day replaces it), oldest first. Per-host values the new entry
     lacks (e.g. Domain Rating without an API key) are carried over from the newest earlier entry, with their own

@@ -1,0 +1,258 @@
+{
+ "hosts": {
+  "blog.aspose.com": {
+   "2025-11": {
+    "keywords": {
+     "queries": 28992,
+     "top10": 16836,
+     "top3": 3300,
+     "with_clicks": 8171,
+     "impressions": 2226132,
+     "hidden_share": 0.497
+    },
+    "ai": {
+     "sessions": 159,
+     "by_platform": {
+      "ChatGPT": 97,
+      "Perplexity": 51,
+      "Gemini": 7,
+      "Claude": 2,
+      "Copilot": 2
+     }
+    }
+   },
+   "2025-12": {
+    "keywords": {
+     "queries": 30931,
+     "top10": 13911,
+     "top3": 2993,
+     "with_clicks": 7241,
+     "impressions": 2113434,
+     "hidden_share": 0.488
+    },
+    "ai": {
+     "sessions": 149,
+     "by_platform": {
+      "ChatGPT": 97,
+      "Perplexity": 39,
+      "Copilot": 8,
+      "Gemini": 4,
+      "Claude": 1
+     }
+    }
+   },
+   "2026-01": {
+    "keywords": {
+     "queries": 31807,
+     "top10": 11140,
+     "top3": 2117,
+     "with_clicks": 5974,
+     "impressions": 1776342,
+     "hidden_share": 0.448
+    },
+    "ai": {
+     "sessions": 71,
+     "by_platform": {
+      "ChatGPT": 30,
+      "Perplexity": 28,
+      "Copilot": 11,
+      "Mistral": 1,
+      "Gemini": 1
+     }
+    }
+   },
+   "2026-02": {
+    "keywords": {
+     "queries": 30214,
+     "top10": 12998,
+     "top3": 3042,
+     "with_clicks": 5859,
+     "impressions": 1633957,
+     "hidden_share": 0.446
+    },
+    "ai": {
+     "sessions": 59,
+     "by_platform": {
+      "ChatGPT": 29,
+      "Perplexity": 17,
+      "Copilot": 8,
+      "Gemini": 5
+     }
+    }
+   },
+   "2026-03": {
+    "keywords": {
+     "queries": 34007,
+     "top10": 13805,
+     "top3": 3844,
+     "with_clicks": 5491,
+     "impressions": 1601793,
+     "hidden_share": 0.426
+    },
+    "ai": {
+     "sessions": 85,
+     "by_platform": {
+      "ChatGPT": 55,
+      "Perplexity": 19,
+      "Copilot": 8,
+      "Gemini": 2,
+      "Claude": 1
+     }
+    }
+   },
+   "2026-04": {
+    "keywords": {
+     "queries": 32364,
+     "top10": 13156,
+     "top3": 2920,
+     "with_clicks": 6022,
+     "impressions": 1740230,
+     "hidden_share": 0.444
+    },
+    "ai": {
+     "sessions": 82,
+     "by_platform": {
+      "ChatGPT": 41,
+      "Perplexity": 30,
+      "Copilot": 8,
+      "Claude": 2,
+      "Gemini": 1
+     }
+    }
+   },
+   "2026-05": {
+    "keywords": {
+     "queries": 32846,
+     "top10": 10912,
+     "top3": 1593,
+     "with_clicks": 5561,
+     "impressions": 1713791,
+     "hidden_share": 0.442
+    },
+    "ai": {
+     "sessions": 48,
+     "by_platform": {
+      "Perplexity": 17,
+      "Copilot": 15,
+      "ChatGPT": 13,
+      "Gemini": 3
+     }
+    }
+   },
+   "2026-06": {
+    "keywords": {
+     "queries": 32250,
+     "top10": 11305,
+     "top3": 1474,
+     "with_clicks": 5087,
+     "impressions": 1543977,
+     "hidden_share": 0.429
+    },
+    "ai": {
+     "sessions": 39,
+     "by_platform": {
+      "Copilot": 16,
+      "Perplexity": 12,
+      "Gemini": 6,
+      "ChatGPT": 5
+     }
+    }
+   },
+   "2026-07": {
+    "keywords": {
+     "queries": 34114,
+     "top10": 12474,
+     "top3": 2138,
+     "with_clicks": 4155,
+     "impressions": 1475923,
+     "hidden_share": 0.437
+    },
+    "ai": {
+     "sessions": 47,
+     "by_platform": {
+      "ChatGPT": 17,
+      "Perplexity": 14,
+      "Copilot": 9,
+      "Gemini": 5,
+      "Claude": 1,
+      "You.com": 1
+     }
+    }
+   },
+   "2026-08": {
+    "keywords": {
+     "queries": 34288,
+     "top10": 12077,
+     "top3": 1837,
+     "with_clicks": 3486,
+     "impressions": 1401639,
+     "hidden_share": 0.443
+    },
+    "ai": {
+     "sessions": 22,
+     "by_platform": {
+      "Gemini": 9,
+      "ChatGPT": 6,
+      "Copilot": 4,
+      "Perplexity": 2,
+      "Claude": 1
+     }
+    }
+   },
+   "2026-09": {
+    "keywords": {
+     "queries": 36231,
+     "top10": 15322,
+     "top3": 2074,
+     "with_clicks": 3522,
+     "impressions": 1167386,
+     "hidden_share": 0.368
+    },
+    "ai": {
+     "sessions": 24,
+     "by_platform": {
+      "ChatGPT": 11,
+      "Gemini": 7,
+      "Copilot": 4,
+      "Perplexity": 2
+     }
+    }
+   },
+   "2026-10": {
+    "keywords": {
+     "queries": 38273,
+     "top10": 19797,
+     "top3": 2685,
+     "with_clicks": 3145,
+     "impressions": 1076717,
+     "hidden_share": 0.385
+    },
+    "ai": {
+     "sessions": 19,
+     "by_platform": {
+      "ChatGPT": 9,
+      "Copilot": 3,
+      "Gemini": 3,
+      "Claude": 2,
+      "Perplexity": 2
+     }
+    }
+   }
+  }
+ },
+ "updated": "2026-11-20",
+ "months": [
+  "2025-11",
+  "2025-12",
+  "2026-01",
+  "2026-02",
+  "2026-03",
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09",
+  "2026-10"
+ ]
+}

@@ -1,0 +1,217 @@
+{
+ "hosts": {
+  "blog.aspose.cloud": {
+   "2025-11": {
+    "keywords": {
+     "queries": 4589,
+     "top10": 926,
+     "top3": 178,
+     "with_clicks": 142,
+     "impressions": 55828,
+     "hidden_share": 0.597
+    },
+    "ai": {
+     "sessions": 11,
+     "by_platform": {
+      "ChatGPT": 9,
+      "Copilot": 2
+     }
+    }
+   },
+   "2025-12": {
+    "keywords": {
+     "queries": 6281,
+     "top10": 1120,
+     "top3": 211,
+     "with_clicks": 150,
+     "impressions": 77546,
+     "hidden_share": 0.546
+    },
+    "ai": {
+     "sessions": 13,
+     "by_platform": {
+      "ChatGPT": 12,
+      "Perplexity": 1
+     }
+    }
+   },
+   "2026-01": {
+    "keywords": {
+     "queries": 6211,
+     "top10": 1074,
+     "top3": 176,
+     "with_clicks": 225,
+     "impressions": 98566,
+     "hidden_share": 0.595
+    },
+    "ai": {
+     "sessions": 10,
+     "by_platform": {
+      "ChatGPT": 10
+     }
+    }
+   },
+   "2026-02": {
+    "keywords": {
+     "queries": 5324,
+     "top10": 1232,
+     "top3": 165,
+     "with_clicks": 191,
+     "impressions": 98208,
+     "hidden_share": 0.647
+    },
+    "ai": {
+     "sessions": 31,
+     "by_platform": {
+      "Claude": 26,
+      "ChatGPT": 3,
+      "Perplexity": 2
+     }
+    }
+   },
+   "2026-03": {
+    "keywords": {
+     "queries": 6214,
+     "top10": 1414,
+     "top3": 250,
+     "with_clicks": 204,
+     "impressions": 91839,
+     "hidden_share": 0.573
+    },
+    "ai": {
+     "sessions": 36,
+     "by_platform": {
+      "Claude": 32,
+      "ChatGPT": 3,
+      "Gemini": 1
+     }
+    }
+   },
+   "2026-04": {
+    "keywords": {
+     "queries": 5317,
+     "top10": 1139,
+     "top3": 224,
+     "with_clicks": 186,
+     "impressions": 77609,
+     "hidden_share": 0.622
+    },
+    "ai": {
+     "sessions": 13,
+     "by_platform": {
+      "Claude": 12,
+      "ChatGPT": 1
+     }
+    }
+   },
+   "2026-05": {
+    "keywords": {
+     "queries": 4730,
+     "top10": 828,
+     "top3": 93,
+     "with_clicks": 183,
+     "impressions": 82088,
+     "hidden_share": 0.628
+    },
+    "ai": {
+     "sessions": 1,
+     "by_platform": {
+      "ChatGPT": 1
+     }
+    }
+   },
+   "2026-06": {
+    "keywords": {
+     "queries": 4386,
+     "top10": 741,
+     "top3": 79,
+     "with_clicks": 161,
+     "impressions": 59382,
+     "hidden_share": 0.531
+    },
+    "ai": {
+     "sessions": 2,
+     "by_platform": {
+      "ChatGPT": 1,
+      "Perplexity": 1
+     }
+    }
+   },
+   "2026-07": {
+    "keywords": {
+     "queries": 5018,
+     "top10": 657,
+     "top3": 63,
+     "with_clicks": 134,
+     "impressions": 65587,
+     "hidden_share": 0.547
+    },
+    "ai": {
+     "sessions": 1,
+     "by_platform": {
+      "Copilot": 1
+     }
+    }
+   },
+   "2026-08": {
+    "keywords": {
+     "queries": 4611,
+     "top10": 607,
+     "top3": 51,
+     "with_clicks": 135,
+     "impressions": 65274,
+     "hidden_share": 0.5
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-09": {
+    "keywords": {
+     "queries": 4236,
+     "top10": 887,
+     "top3": 64,
+     "with_clicks": 144,
+     "impressions": 58840,
+     "hidden_share": 0.423
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-10": {
+    "keywords": {
+     "queries": 4704,
+     "top10": 1060,
+     "top3": 91,
+     "with_clicks": 96,
+     "impressions": 57896,
+     "hidden_share": 0.4
+    },
+    "ai": {
+     "sessions": 5,
+     "by_platform": {
+      "ChatGPT": 5
+     }
+    }
+   }
+  }
+ },
+ "updated": "2026-11-20",
+ "months": [
+  "2025-11",
+  "2025-12",
+  "2026-01",
+  "2026-02",
+  "2026-03",
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09",
+  "2026-10"
+ ]
+}

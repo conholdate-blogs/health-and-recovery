@@ -1,4 +1,23 @@
-from core.visibility import ai_platform, ai_referrals, keyword_counts, upsert_entry
+from datetime import date
+
+from core.visibility import ai_platform, ai_referrals, complete_months, keyword_counts, monthly_dr, upsert_entry
+
+
+def test_complete_months():
+    m = complete_months(date(2026, 11, 20), 3)
+    assert m == [("2026-08", "2026-08-01", "2026-08-31"), ("2026-09", "2026-09-01", "2026-09-30"),
+                 ("2026-10", "2026-10-01", "2026-10-31")]
+    assert complete_months(date(2026, 11, 3), 1) == [("2026-09", "2026-09-01", "2026-09-30")]  # Oct not final yet
+    assert complete_months(date(2026, 11, 4), 1) == [("2026-10", "2026-10-01", "2026-10-31")]
+    assert complete_months(date(2026, 1, 10), 2)[0][0] == "2025-11"
+
+
+def test_monthly_dr():
+    h = [{"date": "2026-11-19", "hosts": {"b": {"dr": 28, "dr_date": "2026-11-19"}}},
+         {"date": "2026-11-26", "hosts": {"b": {"dr": 29, "dr_date": "2026-11-26"}}},
+         {"date": "2026-12-03", "hosts": {"b": {"dr": 29, "dr_date": "2026-11-26"}}},
+         {"date": "2026-12-10", "hosts": {"b": {}}}]
+    assert monthly_dr(h, "b") == {"2026-11": 29}
 
 
 def test_ai_platform():

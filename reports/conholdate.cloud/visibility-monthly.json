@@ -1,0 +1,189 @@
+{
+ "hosts": {
+  "blog.conholdate.cloud": {
+   "2025-11": {
+    "keywords": {
+     "queries": 4,
+     "top10": 3,
+     "top3": 1,
+     "with_clicks": 0,
+     "impressions": 49,
+     "hidden_share": 0.878
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2025-12": {
+    "keywords": {
+     "queries": 7,
+     "top10": 1,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 115,
+     "hidden_share": 0.704
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-01": {
+    "keywords": {
+     "queries": 9,
+     "top10": 0,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 118,
+     "hidden_share": 0.72
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-02": {
+    "keywords": {
+     "queries": 5,
+     "top10": 1,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 98,
+     "hidden_share": 0.561
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-03": {
+    "keywords": {
+     "queries": 4,
+     "top10": 0,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 56,
+     "hidden_share": 0.821
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-04": {
+    "keywords": {
+     "queries": 3,
+     "top10": 2,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 87,
+     "hidden_share": 0.897
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-05": {
+    "keywords": {
+     "queries": 5,
+     "top10": 3,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 81,
+     "hidden_share": 0.753
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-06": {
+    "keywords": {
+     "queries": 14,
+     "top10": 5,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 94,
+     "hidden_share": 0.67
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-07": {
+    "keywords": {
+     "queries": 9,
+     "top10": 1,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 101,
+     "hidden_share": 0.752
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-08": {
+    "keywords": {
+     "queries": 2,
+     "top10": 1,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 98,
+     "hidden_share": 0.918
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-09": {
+    "keywords": {
+     "queries": 3,
+     "top10": 1,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 107,
+     "hidden_share": 0.589
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2026-10": {
+    "keywords": {
+     "queries": 7,
+     "top10": 2,
+     "top3": 1,
+     "with_clicks": 0,
+     "impressions": 142,
+     "hidden_share": 0.796
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   }
+  }
+ },
+ "updated": "2026-11-20",
+ "months": [
+  "2025-11",
+  "2025-12",
+  "2026-01",
+  "2026-02",
+  "2026-03",
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09",
+  "2026-10"
+ ]
+}

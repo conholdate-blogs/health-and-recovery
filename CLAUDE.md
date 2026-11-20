@@ -15,6 +15,14 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Start here (2026-11-20: visibility card and monthly charts)
+
+**SK, 20 Nov:** Visibility card in his order (DR first, then keywords, top 3, top 10, AI visits) on subdomain pages
+(tile beside Health, click opens the monthly charts) and in every subdomain row (domain and Blogs pages); charts = one
+dot per complete calendar month, 6 / 12 months, keep collecting (older months kept); 12 months filled in from Search
+Console + GA4 (`reports/<tenant>/visibility-monthly.json`); DR chart starts 19 Nov 2026 (no paid history). **SK will
+not buy an Ahrefs plan until necessary.** Details: [docs/site-pages.md](docs/site-pages.md) item 6.
+
 ## Start here (2026-11-19, night: visibility numbers)
 
 **Visibility per blog (SK: "values like Ahrefs", then "organic keywords"; step 1 of 3 built):** `scripts/visibility.py`

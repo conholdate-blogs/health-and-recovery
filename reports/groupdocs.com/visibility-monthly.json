@@ -1,0 +1,235 @@
+{
+ "hosts": {
+  "blog.groupdocs.com": {
+   "2025-11": {
+    "keywords": {
+     "queries": 23314,
+     "top10": 10974,
+     "top3": 2526,
+     "with_clicks": 2739,
+     "impressions": 673783,
+     "hidden_share": 0.44
+    },
+    "ai": {
+     "sessions": 21,
+     "by_platform": {
+      "ChatGPT": 11,
+      "Copilot": 7,
+      "Perplexity": 3
+     }
+    }
+   },
+   "2025-12": {
+    "keywords": {
+     "queries": 25806,
+     "top10": 10871,
+     "top3": 2410,
+     "with_clicks": 2762,
+     "impressions": 764864,
+     "hidden_share": 0.375
+    },
+    "ai": {
+     "sessions": 31,
+     "by_platform": {
+      "ChatGPT": 19,
+      "Perplexity": 10,
+      "Copilot": 2
+     }
+    }
+   },
+   "2026-01": {
+    "keywords": {
+     "queries": 24315,
+     "top10": 9467,
+     "top3": 2175,
+     "with_clicks": 2850,
+     "impressions": 779854,
+     "hidden_share": 0.35
+    },
+    "ai": {
+     "sessions": 19,
+     "by_platform": {
+      "Perplexity": 9,
+      "ChatGPT": 8,
+      "Gemini": 2
+     }
+    }
+   },
+   "2026-02": {
+    "keywords": {
+     "queries": 23683,
+     "top10": 10968,
+     "top3": 2711,
+     "with_clicks": 2824,
+     "impressions": 663930,
+     "hidden_share": 0.395
+    },
+    "ai": {
+     "sessions": 6,
+     "by_platform": {
+      "ChatGPT": 3,
+      "Perplexity": 3
+     }
+    }
+   },
+   "2026-03": {
+    "keywords": {
+     "queries": 24528,
+     "top10": 11497,
+     "top3": 3168,
+     "with_clicks": 2629,
+     "impressions": 737378,
+     "hidden_share": 0.301
+    },
+    "ai": {
+     "sessions": 24,
+     "by_platform": {
+      "Gemini": 9,
+      "ChatGPT": 7,
+      "Perplexity": 5,
+      "Claude": 3
+     }
+    }
+   },
+   "2026-04": {
+    "keywords": {
+     "queries": 23203,
+     "top10": 10543,
+     "top3": 2526,
+     "with_clicks": 2732,
+     "impressions": 746685,
+     "hidden_share": 0.331
+    },
+    "ai": {
+     "sessions": 9,
+     "by_platform": {
+      "ChatGPT": 4,
+      "Perplexity": 3,
+      "Copilot": 1,
+      "Gemini": 1
+     }
+    }
+   },
+   "2026-05": {
+    "keywords": {
+     "queries": 22391,
+     "top10": 7347,
+     "top3": 1015,
+     "with_clicks": 2355,
+     "impressions": 800023,
+     "hidden_share": 0.276
+    },
+    "ai": {
+     "sessions": 10,
+     "by_platform": {
+      "ChatGPT": 4,
+      "Perplexity": 4,
+      "Copilot": 2
+     }
+    }
+   },
+   "2026-06": {
+    "keywords": {
+     "queries": 23732,
+     "top10": 8442,
+     "top3": 1366,
+     "with_clicks": 2248,
+     "impressions": 892305,
+     "hidden_share": 0.239
+    },
+    "ai": {
+     "sessions": 6,
+     "by_platform": {
+      "Perplexity": 5,
+      "Gemini": 1
+     }
+    }
+   },
+   "2026-07": {
+    "keywords": {
+     "queries": 22219,
+     "top10": 6862,
+     "top3": 1055,
+     "with_clicks": 1781,
+     "impressions": 739625,
+     "hidden_share": 0.246
+    },
+    "ai": {
+     "sessions": 6,
+     "by_platform": {
+      "Gemini": 3,
+      "ChatGPT": 2,
+      "Perplexity": 1
+     }
+    }
+   },
+   "2026-08": {
+    "keywords": {
+     "queries": 19172,
+     "top10": 5731,
+     "top3": 728,
+     "with_clicks": 1384,
+     "impressions": 571218,
+     "hidden_share": 0.259
+    },
+    "ai": {
+     "sessions": 3,
+     "by_platform": {
+      "ChatGPT": 1,
+      "Gemini": 1,
+      "Perplexity": 1
+     }
+    }
+   },
+   "2026-09": {
+    "keywords": {
+     "queries": 18932,
+     "top10": 6577,
+     "top3": 450,
+     "with_clicks": 1488,
+     "impressions": 554603,
+     "hidden_share": 0.264
+    },
+    "ai": {
+     "sessions": 5,
+     "by_platform": {
+      "ChatGPT": 3,
+      "Claude": 2
+     }
+    }
+   },
+   "2026-10": {
+    "keywords": {
+     "queries": 19612,
+     "top10": 7762,
+     "top3": 918,
+     "with_clicks": 1522,
+     "impressions": 485853,
+     "hidden_share": 0.305
+    },
+    "ai": {
+     "sessions": 4,
+     "by_platform": {
+      "ChatGPT": 3,
+      "Copilot": 1
+     }
+    }
+   }
+  }
+ },
+ "updated": "2026-11-20",
+ "months": [
+  "2025-11",
+  "2025-12",
+  "2026-01",
+  "2026-02",
+  "2026-03",
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09",
+  "2026-10"
+ ]
+}
