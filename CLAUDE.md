@@ -56,7 +56,8 @@ blog.groupdocs.com** (tracked only).
 14,780 open items (almost all from checks added since 7 Nov), snapshot 2026-11-19-2 (live page archived first as
 2026-11-19); numbers, samples and the queue report (1,509 queued translations in 74 posts) in
 [docs/blogs/blog.aspose.cloud.md](docs/blogs/blog.aspose.cloud.md) "Scan 1". Its repo-local commit email was
-missing, now set. Superseded run files not pruned (`prune_runs.py` would remove 197 files across five blogs; ask SK).
+missing, now set. **Pruned 20 Nov (SK):** 177 superseded run files, 238 MB (ec7a351); `reports/` 520 → 282 MB; built
+site byte-identical before and after; crawl runs are never pruned (the crawl cards merge every crawl run).
 `preflight.py` no longer flags `rescore.py` as missing (rescore = `prioritize --offline`).
 
 ## Start here (2026-11-19, later: blog.groupdocs.cloud scanned)
