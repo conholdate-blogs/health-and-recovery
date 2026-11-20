@@ -1029,6 +1029,16 @@ Context gathered before discovery existed. The issues in it are tracked in `tena
 
 ## Open items
 
+- **aspose.app clean-up, planned, not done (SK, 2026-11-20: "we will delete it later when needed"):** hidden since
+  6 Nov, feeds no page. Sizes on 20 Nov: `data/aspose.app/inventory.sqlite` 1.1 GB (not in git; rebuildable by
+  `discover.py` in ~15 min), `findings.sqlite` + `audit.sqlite` ~10 MB (not in git; finding history, not restorable),
+  caches ~12 MB, `reports/aspose.app/` 36 MB (29 MB archive; in git). Plan when SK asks: (1) delete
+  `inventory.sqlite`; (2) zip the rest of `data/aspose.app/` outside the repo (proposed
+  `/Users/Apple/Work/Aspose/backups/aspose.app-data-<date>.zip`), then delete the folder; (3) `git rm`
+  `reports/aspose.app/`, rebuild the site and check it is byte-identical; (4) keep `tenants/aspose.app.yaml` and
+  the seed file (six test files use them as fixtures); (5) optional: scripts require `--tenant` instead of defaulting
+  to aspose.app (15 scripts; `run_cycle.py` always passes it).
+
 - **Old service account (2026-10-20):** `sk-service-acc@aspose-app-health-and-recovery` and its key file (`aspose-app-health-and-recovery.json` in `keys/service accounts/`) are no longer used anywhere. SK may delete both after restarting Claude Code (the `gsc` MCP server running then still held the old key). Remind SK until done.
 - **Private domain (SK, 2026-10-20: soon):** both reports move off public GitHub Pages; until then they are public (noindex).
 - **LLM key (2026-10-20):** `.env` has `PROFESSIONALIZE_API_KEY` / `_BASE_URL` / `_LLM_MODEL` (internal OpenAI-compatible LLM, same `openai` client pattern as `conholdate/blog-translation-agent`). For now it is the **translation agent's key**; SK is requesting a dedicated one, and production will use a different key. Remind SK until the new key is in place. Sending public aspose.app page text to it is fine (SK).
