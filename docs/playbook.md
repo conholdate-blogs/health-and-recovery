@@ -181,6 +181,10 @@ blog.conholdate.com at deploy); `mainSections`; which pages are translated (the 
   looks odd; the translations made before the cut still hold the full text.
 - **Gist code inline in translations** (5,855 files on blog.conholdate.com): the older pipeline's convention (comments
   translated), not damage; the commit check's code-fence warning on such files is expected.
+- **Translations wait 72 h after the last English commit (translation agent fc15060, 20 Nov):** every commit we
+  make to an English `index.md` (TR-10 fixes, optimizer repairs) restarts its wait, so that post is translated
+  3 days later. Batch English fixes per post; an urgent case gets Priority Urgent (does not wait). Ready After is
+  refreshed only by the scan (00:00 and 12:00 UTC). Plan: [plans/commit-watch-and-site-map.md](plans/commit-watch-and-site-map.md).
 - **The link and repo checks read the local clone:** after local, unpushed commits a scan shows their effect before
   it is live; the crawl checks show the live site.
 

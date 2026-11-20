@@ -15,6 +15,18 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Start here (2026-11-20: commit watch and site map, parked)
+
+**SK, 20 Nov: two ideas documented, to plan after the other domains are fixed:** (1) **commit watch**: check new
+articles, translations and optimizer commits as they land, flag posts with issues (`hold` in the translation sheet);
+(2) **full site map** per blog (every URL from Hugo build, sitemaps, Redirects.json, Search Console; URL Inspection;
+internal link graph; new checks such as orphans and Google canonical differs), pilot blog.conholdate.cloud. Plan,
+measurements and 5 open decisions: [docs/plans/commit-watch-and-site-map.md](docs/plans/commit-watch-and-site-map.md).
+**Already live:** translation agent fc15060 (SK): posts are translated only 72 h after the last English commit
+(Ready After column; Urgent and ISSUE rows don't wait); reviewed, 22 tests pass. Consequence for our fixes:
+an English fix restarts the wait (playbook trap). Measured: blog.conholdate.com 14 of 40 new posts since May were
+edited again within 7 days (`scripts/ops/early_edits.py`).
+
 ## Start here (2026-11-20: visibility card and monthly charts)
 
 **SK, 20 Nov:** Visibility card in his order (DR first, then keywords, top 3, top 10, AI visits) on subdomain pages
