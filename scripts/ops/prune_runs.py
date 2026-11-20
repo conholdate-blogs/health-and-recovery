@@ -1,6 +1,9 @@
 """Usage: .venv/bin/python scripts/ops/prune_runs.py [--go]  (dry run without --go; 2026-11-07 removed 84 files).
 List (and with --go, git rm) run files that newer runs replace: per blog tenant and audit type keep the newest
-run (repo-audit: every run of the newest day); a run's -issues.csv goes with its JSON. aspose.app is not touched."""
+run (repo-audit: every run of the newest day); a run's -issues.csv goes with its JSON. aspose.app is not touched.
+Crawl runs are never pruned (20 Nov 2026): the report merges every crawl run (newest result per page), so the
+rotating sample's older pages still count on the crawl and On-page cards. Checked 20 Nov: with the rest removed the
+built site is byte-identical."""
 import re
 import subprocess
 import sys
@@ -8,7 +11,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 TENANTS = ["conholdate.cloud", "conholdate.com", "aspose.cloud", "groupdocs.cloud", "aspose.com", "groupdocs.com"]
-KINDS = ["discovery", "crawl-audit", "ai-audit", "perf-audit", "text-audit", "link-audit", "repo-audit"]
+KINDS = ["discovery", "ai-audit", "perf-audit", "text-audit", "link-audit", "repo-audit"]  # no crawl-audit: see above
 RX = re.compile(r"^(?P<kind>[a-z-]+?)-(?P<date>\d{4}-\d\d-\d\d)-run(?P<run>\d+)\.json$")
 go = "--go" in sys.argv
 doomed = []
