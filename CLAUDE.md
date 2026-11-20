@@ -29,7 +29,8 @@ any fix). Check `git config --local user.email` in each repo first (it vanished 
    [docs/blogs/blog.groupdocs.cloud.md](docs/blogs/blog.groupdocs.cloud.md),
    [docs/blogs/blog.aspose.cloud.md](docs/blogs/blog.aspose.cloud.md). Then blog.aspose.com.
 2. Remember the translation agent's 72 h wait (fc15060): English fixes restart it (playbook trap).
-3. Visibility open items: Bing Webmaster Tools referring domains (SK verifies the six blogs, creates an API key),
+3. Visibility open items: Bing Webmaster Tools referring domains (SK has the API key, 20 Nov; goes in `.env` as
+   `BING_WEBMASTER_API_KEY`; check the six blogs are verified in Bing, then build step 2),
    `AHREFS_API_KEY` for the script, keywords on the Blogs page rows.
 4. Parked until the domains are fixed: commit watch + site map plan
    ([docs/plans/commit-watch-and-site-map.md](docs/plans/commit-watch-and-site-map.md)); aspose.app clean-up
