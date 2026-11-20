@@ -29,8 +29,12 @@ any fix). Check `git config --local user.email` in each repo first (it vanished 
    [docs/blogs/blog.groupdocs.cloud.md](docs/blogs/blog.groupdocs.cloud.md),
    [docs/blogs/blog.aspose.cloud.md](docs/blogs/blog.aspose.cloud.md). Then blog.aspose.com.
 2. Remember the translation agent's 72 h wait (fc15060): English fixes restart it (playbook trap).
-3. Visibility open items: Bing Webmaster Tools referring domains (SK has the API key, 20 Nov; goes in `.env` as
-   `BING_WEBMASTER_API_KEY`; check the six blogs are verified in Bing, then build step 2),
+3. Visibility open items: Bing Webmaster Tools step 2. **Key in `.env` as `BING_WEBMASTER_API_KEY` (20 Nov),
+   tested:** `GetUserSites` lists all six blogs verified (+ www.groupdocs.cloud); `GetLinkCounts` (inbound links
+   per page) returns data for blog.aspose.com (175 pages with links, home 9) but 0 for blog.conholdate.cloud and
+   blog.conholdate.com (small blogs, or data still building): Bing's link data is thin, a floor, not Ahrefs-like.
+   Note: old dated URLs (`/2019/01/13/...`) still have backlinks: keep their Redirects.json entries. Build step 2
+   (referring domains via `GetUrlLinks`, Bing clicks via `GetQueryStats`/`GetRankAndTrafficStats`),
    `AHREFS_API_KEY` for the script, keywords on the Blogs page rows.
 4. Parked until the domains are fixed: commit watch + site map plan
    ([docs/plans/commit-watch-and-site-map.md](docs/plans/commit-watch-and-site-map.md)); aspose.app clean-up
