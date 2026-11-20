@@ -1,6 +1,79 @@
 {
  "hosts": {
   "blog.conholdate.com": {
+   "2025-07": {
+    "ai": {
+     "sessions": 28,
+     "by_platform": {
+      "Copilot": 15,
+      "ChatGPT": 6,
+      "Perplexity": 4,
+      "DeepSeek": 2,
+      "Gemini": 1
+     }
+    }
+   },
+   "2025-08": {
+    "keywords": {
+     "queries": 25223,
+     "top10": 1917,
+     "top3": 344,
+     "with_clicks": 891,
+     "impressions": 336794,
+     "hidden_share": 0.267,
+     "clicks": 4693
+    },
+    "ai": {
+     "sessions": 42,
+     "by_platform": {
+      "Copilot": 17,
+      "ChatGPT": 13,
+      "DeepSeek": 6,
+      "Gemini": 3,
+      "Perplexity": 3
+     }
+    }
+   },
+   "2025-09": {
+    "keywords": {
+     "queries": 19157,
+     "top10": 3154,
+     "top3": 490,
+     "with_clicks": 1169,
+     "impressions": 285092,
+     "hidden_share": 0.366,
+     "clicks": 6713
+    },
+    "ai": {
+     "sessions": 80,
+     "by_platform": {
+      "Copilot": 56,
+      "ChatGPT": 11,
+      "Perplexity": 11,
+      "Gemini": 2
+     }
+    }
+   },
+   "2025-10": {
+    "keywords": {
+     "queries": 10827,
+     "top10": 3207,
+     "top3": 475,
+     "with_clicks": 1121,
+     "impressions": 177743,
+     "hidden_share": 0.428,
+     "clicks": 6162
+    },
+    "ai": {
+     "sessions": 41,
+     "by_platform": {
+      "Copilot": 25,
+      "ChatGPT": 7,
+      "Perplexity": 6,
+      "Gemini": 3
+     }
+    }
+   },
    "2025-11": {
     "keywords": {
      "queries": 11377,
@@ -8,7 +81,8 @@
      "top3": 525,
      "with_clicks": 930,
      "impressions": 152762,
-     "hidden_share": 0.419
+     "hidden_share": 0.419,
+     "clicks": 5319
     },
     "ai": {
      "sessions": 31,
@@ -26,7 +100,8 @@
      "top3": 374,
      "with_clicks": 961,
      "impressions": 179363,
-     "hidden_share": 0.351
+     "hidden_share": 0.351,
+     "clicks": 5255
     },
     "ai": {
      "sessions": 16,
@@ -45,7 +120,8 @@
      "top3": 167,
      "with_clicks": 931,
      "impressions": 157131,
-     "hidden_share": 0.336
+     "hidden_share": 0.336,
+     "clicks": 4359
     },
     "ai": {
      "sessions": 10,
@@ -63,7 +139,8 @@
      "top3": 183,
      "with_clicks": 797,
      "impressions": 131919,
-     "hidden_share": 0.405
+     "hidden_share": 0.405,
+     "clicks": 3253
     },
     "ai": {
      "sessions": 10,
@@ -81,7 +158,8 @@
      "top3": 136,
      "with_clicks": 581,
      "impressions": 99814,
-     "hidden_share": 0.291
+     "hidden_share": 0.291,
+     "clicks": 2159
     },
     "ai": {
      "sessions": 4,
@@ -98,7 +176,8 @@
      "top3": 290,
      "with_clicks": 1056,
      "impressions": 166280,
-     "hidden_share": 0.384
+     "hidden_share": 0.384,
+     "clicks": 5449
     },
     "ai": {
      "sessions": 11,
@@ -117,7 +196,8 @@
      "top3": 110,
      "with_clicks": 969,
      "impressions": 173396,
-     "hidden_share": 0.378
+     "hidden_share": 0.378,
+     "clicks": 5621
     },
     "ai": {
      "sessions": 9,
@@ -135,7 +215,8 @@
      "top3": 89,
      "with_clicks": 781,
      "impressions": 141961,
-     "hidden_share": 0.289
+     "hidden_share": 0.289,
+     "clicks": 3087
     },
     "ai": {
      "sessions": 6,
@@ -153,7 +234,8 @@
      "top3": 64,
      "with_clicks": 462,
      "impressions": 124523,
-     "hidden_share": 0.352
+     "hidden_share": 0.352,
+     "clicks": 1919
     },
     "ai": {
      "sessions": 4,
@@ -171,7 +253,8 @@
      "top3": 70,
      "with_clicks": 432,
      "impressions": 124132,
-     "hidden_share": 0.331
+     "hidden_share": 0.331,
+     "clicks": 1780
     },
     "ai": {
      "sessions": 4,
@@ -189,7 +272,8 @@
      "top3": 156,
      "with_clicks": 489,
      "impressions": 115736,
-     "hidden_share": 0.319
+     "hidden_share": 0.319,
+     "clicks": 2516
     },
     "ai": {
      "sessions": 4,
@@ -206,7 +290,8 @@
      "top3": 350,
      "with_clicks": 649,
      "impressions": 141263,
-     "hidden_share": 0.357
+     "hidden_share": 0.357,
+     "clicks": 2991
     },
     "ai": {
      "sessions": 1,
@@ -219,6 +304,10 @@
  },
  "updated": "2026-11-20",
  "months": [
+  "2025-07",
+  "2025-08",
+  "2025-09",
+  "2025-10",
   "2025-11",
   "2025-12",
   "2026-01",

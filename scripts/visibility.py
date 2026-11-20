@@ -72,7 +72,14 @@ def fetch_keywords(gsc, site: str, start: str, end: str) -> dict:
             break
     total = retry(lambda: gsc.search_analytics(site, start, end, dimensions=None, row_limit=1))
     impressions = int(total[0].get("impressions", 0)) if total else 0
-    return keyword_counts(rows, impressions, capped)
+    clicks = int(total[0].get("clicks", 0)) if total else 0
+    return keyword_counts(rows, impressions, capped, clicks)
+
+
+def has_first_day(gsc, site: str, first: str) -> bool:
+    """Search Console keeps about 16 months: the oldest month is only partly there. A month counts only when its
+    first day has data (SK, 2026-11-20: collect up to 16 months)."""
+    return bool(retry(lambda: gsc.search_analytics(site, first, first, dimensions=["date"], row_limit=1)))
 
 
 def fetch_dr(hosts: list[str], key: str) -> dict[str, float]:
@@ -101,6 +108,9 @@ def fill_months(tenant, hosts: list[str], gsc, credentials, n: int, refill: bool
             if not refill and "keywords" in have.get(key, {}):
                 continue
             try:
+                if key == months[0][0] and not has_first_day(gsc, gsc_site(tenant, h), s):
+                    say(f"  {h} {key}: Search Console no longer has the whole month; skipped")
+                    continue
                 have.setdefault(key, {})["keywords"] = fetch_keywords(gsc, gsc_site(tenant, h), s, e)
                 say(f"  {h} {key}: {have[key]['keywords']['queries']:,} queries")
             except Exception as exc:  # noqa: BLE001
@@ -134,7 +144,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--tenant", default=os.environ.get("TENANT", "aspose.app"))
     ap.add_argument("--dr", action="append", default=[], help="host=value, a Domain Rating read by hand (repeatable)")
-    ap.add_argument("--months", type=int, default=12, help="complete calendar months kept in the monthly file")
+    ap.add_argument("--months", type=int, default=16, help="complete months fetched (Search Console keeps ~16)")
     ap.add_argument("--refill", action="store_true", help="fetch every month again, not only the missing ones")
     ap.add_argument("--quiet", action="store_true")
     args = ap.parse_args(argv)

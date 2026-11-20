@@ -73,7 +73,8 @@
      "top3": 2507,
      "with_clicks": 3262,
      "impressions": 1004614,
-     "hidden_share": 0.389
+     "hidden_share": 0.389,
+     "clicks": 15924
     },
     "keywords_six_months_ago": {
      "queries": 30822,
@@ -81,7 +82,8 @@
      "top3": 1521,
      "with_clicks": 5564,
      "impressions": 1625064,
-     "hidden_share": 0.445
+     "hidden_share": 0.445,
+     "clicks": 41972
     },
     "ai": {
      "sessions": 59,

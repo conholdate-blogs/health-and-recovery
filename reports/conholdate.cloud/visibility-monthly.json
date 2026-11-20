@@ -1,6 +1,57 @@
 {
  "hosts": {
   "blog.conholdate.cloud": {
+   "2025-07": {
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2025-08": {
+    "keywords": {
+     "queries": 4,
+     "top10": 0,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 24,
+     "hidden_share": 0.542,
+     "clicks": 0
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2025-09": {
+    "keywords": {
+     "queries": 1,
+     "top10": 1,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 19,
+     "hidden_share": 0.895,
+     "clicks": 2
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
+   "2025-10": {
+    "keywords": {
+     "queries": 2,
+     "top10": 1,
+     "top3": 0,
+     "with_clicks": 0,
+     "impressions": 39,
+     "hidden_share": 0.897,
+     "clicks": 0
+    },
+    "ai": {
+     "sessions": 0,
+     "by_platform": {}
+    }
+   },
    "2025-11": {
     "keywords": {
      "queries": 4,
@@ -8,7 +59,8 @@
      "top3": 1,
      "with_clicks": 0,
      "impressions": 49,
-     "hidden_share": 0.878
+     "hidden_share": 0.878,
+     "clicks": 0
     },
     "ai": {
      "sessions": 0,
@@ -22,7 +74,8 @@
      "top3": 0,
      "with_clicks": 0,
      "impressions": 115,
-     "hidden_share": 0.704
+     "hidden_share": 0.704,
+     "clicks": 2
     },
     "ai": {
      "sessions": 0,
@@ -36,7 +89,8 @@
      "top3": 0,
      "with_clicks": 0,
      "impressions": 118,
-     "hidden_share": 0.72
+     "hidden_share": 0.72,
+     "clicks": 0
     },
     "ai": {
      "sessions": 0,
@@ -50,7 +104,8 @@
      "top3": 0,
      "with_clicks": 0,
      "impressions": 98,
-     "hidden_share": 0.561
+     "hidden_share": 0.561,
+     "clicks": 1
     },
     "ai": {
      "sessions": 0,
@@ -64,7 +119,8 @@
      "top3": 0,
      "with_clicks": 0,
      "impressions": 56,
-     "hidden_share": 0.821
+     "hidden_share": 0.821,
+     "clicks": 2
     },
     "ai": {
      "sessions": 0,
@@ -78,7 +134,8 @@
      "top3": 0,
      "with_clicks": 0,
      "impressions": 87,
-     "hidden_share": 0.897
+     "hidden_share": 0.897,
+     "clicks": 1
     },
     "ai": {
      "sessions": 0,
@@ -92,7 +149,8 @@
      "top3": 0,
      "with_clicks": 0,
      "impressions": 81,
-     "hidden_share": 0.753
+     "hidden_share": 0.753,
+     "clicks": 0
     },
     "ai": {
      "sessions": 0,
@@ -106,7 +164,8 @@
      "top3": 0,
      "with_clicks": 0,
      "impressions": 94,
-     "hidden_share": 0.67
+     "hidden_share": 0.67,
+     "clicks": 0
     },
     "ai": {
      "sessions": 0,
@@ -120,7 +179,8 @@
      "top3": 0,
      "with_clicks": 0,
      "impressions": 101,
-     "hidden_share": 0.752
+     "hidden_share": 0.752,
+     "clicks": 1
     },
     "ai": {
      "sessions": 0,
@@ -134,7 +194,8 @@
      "top3": 0,
      "with_clicks": 0,
      "impressions": 98,
-     "hidden_share": 0.918
+     "hidden_share": 0.918,
+     "clicks": 0
     },
     "ai": {
      "sessions": 0,
@@ -148,7 +209,8 @@
      "top3": 0,
      "with_clicks": 0,
      "impressions": 107,
-     "hidden_share": 0.589
+     "hidden_share": 0.589,
+     "clicks": 2
     },
     "ai": {
      "sessions": 0,
@@ -162,7 +224,8 @@
      "top3": 1,
      "with_clicks": 0,
      "impressions": 142,
-     "hidden_share": 0.796
+     "hidden_share": 0.796,
+     "clicks": 1
     },
     "ai": {
      "sessions": 0,
@@ -173,6 +236,10 @@
  },
  "updated": "2026-11-20",
  "months": [
+  "2025-07",
+  "2025-08",
+  "2025-09",
+  "2025-10",
   "2025-11",
   "2025-12",
   "2026-01",

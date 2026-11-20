@@ -20,7 +20,9 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 **SK, 20 Nov:** Visibility card in his order (DR first, then keywords, top 3, top 10, AI visits) on subdomain pages
 (tile beside Health, click opens the monthly charts) and in every subdomain row (domain and Blogs pages); charts = one
 dot per complete calendar month, 6 / 12 months, keep collecting (older months kept); 12 months filled in from Search
-Console + GA4 (`reports/<tenant>/visibility-monthly.json`); DR chart starts 19 Nov 2026 (no paid history). **SK will
+Console + GA4 (`reports/<tenant>/visibility-monthly.json`); DR chart starts 19 Nov 2026 (no paid history).
+Later the same day (SK): two rows of four charts with the table's numbers under each chart (table removed), new
+charts keywords with a click, search clicks, hidden searches; 16 months requested (15 kept: Aug 2025 – Oct 2026). **SK will
 not buy an Ahrefs plan until necessary.** Details: [docs/site-pages.md](docs/site-pages.md) item 6.
 
 ## Start here (2026-11-19, night: visibility numbers)

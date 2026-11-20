@@ -1,6 +1,78 @@
 {
  "hosts": {
   "blog.groupdocs.com": {
+   "2025-07": {
+    "ai": {
+     "sessions": 29,
+     "by_platform": {
+      "ChatGPT": 14,
+      "Copilot": 6,
+      "Perplexity": 5,
+      "DeepSeek": 4
+     }
+    }
+   },
+   "2025-08": {
+    "keywords": {
+     "queries": 27715,
+     "top10": 5568,
+     "top3": 717,
+     "with_clicks": 1951,
+     "impressions": 610287,
+     "hidden_share": 0.351,
+     "clicks": 13363
+    },
+    "ai": {
+     "sessions": 54,
+     "by_platform": {
+      "ChatGPT": 20,
+      "Perplexity": 19,
+      "Copilot": 13,
+      "DeepSeek": 1,
+      "Gemini": 1
+     }
+    }
+   },
+   "2025-09": {
+    "keywords": {
+     "queries": 21148,
+     "top10": 7585,
+     "top3": 1073,
+     "with_clicks": 2450,
+     "impressions": 667158,
+     "hidden_share": 0.414,
+     "clicks": 18248
+    },
+    "ai": {
+     "sessions": 58,
+     "by_platform": {
+      "ChatGPT": 22,
+      "Copilot": 15,
+      "Perplexity": 15,
+      "Gemini": 6
+     }
+    }
+   },
+   "2025-10": {
+    "keywords": {
+     "queries": 20057,
+     "top10": 10047,
+     "top3": 1602,
+     "with_clicks": 2802,
+     "impressions": 712884,
+     "hidden_share": 0.392,
+     "clicks": 21031
+    },
+    "ai": {
+     "sessions": 35,
+     "by_platform": {
+      "ChatGPT": 13,
+      "Perplexity": 11,
+      "Copilot": 7,
+      "Gemini": 4
+     }
+    }
+   },
    "2025-11": {
     "keywords": {
      "queries": 23314,
@@ -8,7 +80,8 @@
      "top3": 2526,
      "with_clicks": 2739,
      "impressions": 673783,
-     "hidden_share": 0.44
+     "hidden_share": 0.44,
+     "clicks": 20440
     },
     "ai": {
      "sessions": 21,
@@ -26,7 +99,8 @@
      "top3": 2410,
      "with_clicks": 2762,
      "impressions": 764864,
-     "hidden_share": 0.375
+     "hidden_share": 0.375,
+     "clicks": 20678
     },
     "ai": {
      "sessions": 31,
@@ -44,7 +118,8 @@
      "top3": 2175,
      "with_clicks": 2850,
      "impressions": 779854,
-     "hidden_share": 0.35
+     "hidden_share": 0.35,
+     "clicks": 21068
     },
     "ai": {
      "sessions": 19,
@@ -62,7 +137,8 @@
      "top3": 2711,
      "with_clicks": 2824,
      "impressions": 663930,
-     "hidden_share": 0.395
+     "hidden_share": 0.395,
+     "clicks": 17232
     },
     "ai": {
      "sessions": 6,
@@ -79,7 +155,8 @@
      "top3": 3168,
      "with_clicks": 2629,
      "impressions": 737378,
-     "hidden_share": 0.301
+     "hidden_share": 0.301,
+     "clicks": 16657
     },
     "ai": {
      "sessions": 24,
@@ -98,7 +175,8 @@
      "top3": 2526,
      "with_clicks": 2732,
      "impressions": 746685,
-     "hidden_share": 0.331
+     "hidden_share": 0.331,
+     "clicks": 18642
     },
     "ai": {
      "sessions": 9,
@@ -117,7 +195,8 @@
      "top3": 1015,
      "with_clicks": 2355,
      "impressions": 800023,
-     "hidden_share": 0.276
+     "hidden_share": 0.276,
+     "clicks": 14917
     },
     "ai": {
      "sessions": 10,
@@ -135,7 +214,8 @@
      "top3": 1366,
      "with_clicks": 2248,
      "impressions": 892305,
-     "hidden_share": 0.239
+     "hidden_share": 0.239,
+     "clicks": 14628
     },
     "ai": {
      "sessions": 6,
@@ -152,7 +232,8 @@
      "top3": 1055,
      "with_clicks": 1781,
      "impressions": 739625,
-     "hidden_share": 0.246
+     "hidden_share": 0.246,
+     "clicks": 10234
     },
     "ai": {
      "sessions": 6,
@@ -170,7 +251,8 @@
      "top3": 728,
      "with_clicks": 1384,
      "impressions": 571218,
-     "hidden_share": 0.259
+     "hidden_share": 0.259,
+     "clicks": 7786
     },
     "ai": {
      "sessions": 3,
@@ -188,7 +270,8 @@
      "top3": 450,
      "with_clicks": 1488,
      "impressions": 554603,
-     "hidden_share": 0.264
+     "hidden_share": 0.264,
+     "clicks": 9443
     },
     "ai": {
      "sessions": 5,
@@ -205,7 +288,8 @@
      "top3": 918,
      "with_clicks": 1522,
      "impressions": 485853,
-     "hidden_share": 0.305
+     "hidden_share": 0.305,
+     "clicks": 9088
     },
     "ai": {
      "sessions": 4,
@@ -219,6 +303,10 @@
  },
  "updated": "2026-11-20",
  "months": [
+  "2025-07",
+  "2025-08",
+  "2025-09",
+  "2025-10",
   "2025-11",
   "2025-12",
   "2026-01",

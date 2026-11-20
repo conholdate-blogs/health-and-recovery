@@ -1,6 +1,76 @@
 {
  "hosts": {
   "blog.groupdocs.cloud": {
+   "2025-07": {
+    "ai": {
+     "sessions": 23,
+     "by_platform": {
+      "ChatGPT": 12,
+      "Copilot": 5,
+      "DeepSeek": 3,
+      "Perplexity": 2,
+      "Claude": 1
+     }
+    }
+   },
+   "2025-08": {
+    "keywords": {
+     "queries": 25185,
+     "top10": 2094,
+     "top3": 388,
+     "with_clicks": 589,
+     "impressions": 330737,
+     "hidden_share": 0.351,
+     "clicks": 3937
+    },
+    "ai": {
+     "sessions": 10,
+     "by_platform": {
+      "Perplexity": 7,
+      "DeepSeek": 2,
+      "ChatGPT": 1
+     }
+    }
+   },
+   "2025-09": {
+    "keywords": {
+     "queries": 16171,
+     "top10": 2260,
+     "top3": 503,
+     "with_clicks": 550,
+     "impressions": 231776,
+     "hidden_share": 0.45,
+     "clicks": 3952
+    },
+    "ai": {
+     "sessions": 29,
+     "by_platform": {
+      "Perplexity": 23,
+      "ChatGPT": 4,
+      "DeepSeek": 1,
+      "Claude": 1
+     }
+    }
+   },
+   "2025-10": {
+    "keywords": {
+     "queries": 9636,
+     "top10": 2665,
+     "top3": 578,
+     "with_clicks": 539,
+     "impressions": 158573,
+     "hidden_share": 0.522,
+     "clicks": 3771
+    },
+    "ai": {
+     "sessions": 16,
+     "by_platform": {
+      "Perplexity": 11,
+      "Copilot": 3,
+      "ChatGPT": 2
+     }
+    }
+   },
    "2025-11": {
     "keywords": {
      "queries": 10438,
@@ -8,7 +78,8 @@
      "top3": 982,
      "with_clicks": 386,
      "impressions": 131841,
-     "hidden_share": 0.517
+     "hidden_share": 0.517,
+     "clicks": 2680
     },
     "ai": {
      "sessions": 7,
@@ -26,7 +97,8 @@
      "top3": 767,
      "with_clicks": 360,
      "impressions": 146254,
-     "hidden_share": 0.462
+     "hidden_share": 0.462,
+     "clicks": 2193
     },
     "ai": {
      "sessions": 6,
@@ -44,7 +116,8 @@
      "top3": 587,
      "with_clicks": 381,
      "impressions": 132442,
-     "hidden_share": 0.481
+     "hidden_share": 0.481,
+     "clicks": 2341
     },
     "ai": {
      "sessions": 5,
@@ -60,7 +133,8 @@
      "top3": 439,
      "with_clicks": 388,
      "impressions": 123031,
-     "hidden_share": 0.559
+     "hidden_share": 0.559,
+     "clicks": 1855
     },
     "ai": {
      "sessions": 2,
@@ -76,7 +150,8 @@
      "top3": 157,
      "with_clicks": 284,
      "impressions": 90469,
-     "hidden_share": 0.442
+     "hidden_share": 0.442,
+     "clicks": 1203
     },
     "ai": {
      "sessions": 7,
@@ -94,7 +169,8 @@
      "top3": 93,
      "with_clicks": 355,
      "impressions": 104119,
-     "hidden_share": 0.493
+     "hidden_share": 0.493,
+     "clicks": 2044
     },
     "ai": {
      "sessions": 4,
@@ -110,7 +186,8 @@
      "top3": 137,
      "with_clicks": 330,
      "impressions": 112617,
-     "hidden_share": 0.488
+     "hidden_share": 0.488,
+     "clicks": 2472
     },
     "ai": {
      "sessions": 2,
@@ -126,7 +203,8 @@
      "top3": 89,
      "with_clicks": 260,
      "impressions": 93105,
-     "hidden_share": 0.414
+     "hidden_share": 0.414,
+     "clicks": 1115
     },
     "ai": {
      "sessions": 0,
@@ -140,7 +218,8 @@
      "top3": 22,
      "with_clicks": 180,
      "impressions": 92648,
-     "hidden_share": 0.463
+     "hidden_share": 0.463,
+     "clicks": 720
     },
     "ai": {
      "sessions": 3,
@@ -157,7 +236,8 @@
      "top3": 12,
      "with_clicks": 146,
      "impressions": 93763,
-     "hidden_share": 0.424
+     "hidden_share": 0.424,
+     "clicks": 594
     },
     "ai": {
      "sessions": 1,
@@ -173,7 +253,8 @@
      "top3": 28,
      "with_clicks": 135,
      "impressions": 67798,
-     "hidden_share": 0.284
+     "hidden_share": 0.284,
+     "clicks": 603
     },
     "ai": {
      "sessions": 0,
@@ -187,7 +268,8 @@
      "top3": 70,
      "with_clicks": 149,
      "impressions": 60798,
-     "hidden_share": 0.372
+     "hidden_share": 0.372,
+     "clicks": 640
     },
     "ai": {
      "sessions": 1,
@@ -200,6 +282,10 @@
  },
  "updated": "2026-11-20",
  "months": [
+  "2025-07",
+  "2025-08",
+  "2025-09",
+  "2025-10",
   "2025-11",
   "2025-12",
   "2026-01",

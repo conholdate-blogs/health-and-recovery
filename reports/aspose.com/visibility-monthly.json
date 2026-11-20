@@ -1,6 +1,87 @@
 {
  "hosts": {
   "blog.aspose.com": {
+   "2025-07": {
+    "ai": {
+     "sessions": 232,
+     "by_platform": {
+      "ChatGPT": 109,
+      "Perplexity": 63,
+      "Gemini": 23,
+      "DeepSeek": 21,
+      "Copilot": 14,
+      "Grok": 1,
+      "Claude": 1
+     }
+    }
+   },
+   "2025-08": {
+    "keywords": {
+     "queries": 30749,
+     "top10": 10750,
+     "top3": 1578,
+     "with_clicks": 8546,
+     "impressions": 3110209,
+     "hidden_share": 0.564,
+     "clicks": 80924
+    },
+    "ai": {
+     "sessions": 284,
+     "by_platform": {
+      "ChatGPT": 148,
+      "Perplexity": 71,
+      "Copilot": 29,
+      "Gemini": 13,
+      "DeepSeek": 11,
+      "Claude": 10,
+      "Grok": 2
+     }
+    }
+   },
+   "2025-09": {
+    "keywords": {
+     "queries": 28338,
+     "top10": 14817,
+     "top3": 2383,
+     "with_clicks": 8377,
+     "impressions": 2723913,
+     "hidden_share": 0.518,
+     "clicks": 82782
+    },
+    "ai": {
+     "sessions": 237,
+     "by_platform": {
+      "ChatGPT": 107,
+      "Perplexity": 101,
+      "Gemini": 14,
+      "Copilot": 9,
+      "DeepSeek": 3,
+      "Claude": 3
+     }
+    }
+   },
+   "2025-10": {
+    "keywords": {
+     "queries": 29647,
+     "top10": 17137,
+     "top3": 2817,
+     "with_clicks": 8661,
+     "impressions": 2279325,
+     "hidden_share": 0.486,
+     "clicks": 83025
+    },
+    "ai": {
+     "sessions": 214,
+     "by_platform": {
+      "ChatGPT": 107,
+      "Perplexity": 82,
+      "Gemini": 14,
+      "Copilot": 7,
+      "Claude": 3,
+      "Poe": 1
+     }
+    }
+   },
    "2025-11": {
     "keywords": {
      "queries": 28992,
@@ -8,7 +89,8 @@
      "top3": 3300,
      "with_clicks": 8171,
      "impressions": 2226132,
-     "hidden_share": 0.497
+     "hidden_share": 0.497,
+     "clicks": 76506
     },
     "ai": {
      "sessions": 159,
@@ -28,7 +110,8 @@
      "top3": 2993,
      "with_clicks": 7241,
      "impressions": 2113434,
-     "hidden_share": 0.488
+     "hidden_share": 0.488,
+     "clicks": 59736
     },
     "ai": {
      "sessions": 149,
@@ -48,7 +131,8 @@
      "top3": 2117,
      "with_clicks": 5974,
      "impressions": 1776342,
-     "hidden_share": 0.448
+     "hidden_share": 0.448,
+     "clicks": 47302
     },
     "ai": {
      "sessions": 71,
@@ -68,7 +152,8 @@
      "top3": 3042,
      "with_clicks": 5859,
      "impressions": 1633957,
-     "hidden_share": 0.446
+     "hidden_share": 0.446,
+     "clicks": 39612
     },
     "ai": {
      "sessions": 59,
@@ -87,7 +172,8 @@
      "top3": 3844,
      "with_clicks": 5491,
      "impressions": 1601793,
-     "hidden_share": 0.426
+     "hidden_share": 0.426,
+     "clicks": 34602
     },
     "ai": {
      "sessions": 85,
@@ -107,7 +193,8 @@
      "top3": 2920,
      "with_clicks": 6022,
      "impressions": 1740230,
-     "hidden_share": 0.444
+     "hidden_share": 0.444,
+     "clicks": 42817
     },
     "ai": {
      "sessions": 82,
@@ -127,7 +214,8 @@
      "top3": 1593,
      "with_clicks": 5561,
      "impressions": 1713791,
-     "hidden_share": 0.442
+     "hidden_share": 0.442,
+     "clicks": 42449
     },
     "ai": {
      "sessions": 48,
@@ -146,7 +234,8 @@
      "top3": 1474,
      "with_clicks": 5087,
      "impressions": 1543977,
-     "hidden_share": 0.429
+     "hidden_share": 0.429,
+     "clicks": 33842
     },
     "ai": {
      "sessions": 39,
@@ -165,7 +254,8 @@
      "top3": 2138,
      "with_clicks": 4155,
      "impressions": 1475923,
-     "hidden_share": 0.437
+     "hidden_share": 0.437,
+     "clicks": 27241
     },
     "ai": {
      "sessions": 47,
@@ -186,7 +276,8 @@
      "top3": 1837,
      "with_clicks": 3486,
      "impressions": 1401639,
-     "hidden_share": 0.443
+     "hidden_share": 0.443,
+     "clicks": 22701
     },
     "ai": {
      "sessions": 22,
@@ -206,7 +297,8 @@
      "top3": 2074,
      "with_clicks": 3522,
      "impressions": 1167386,
-     "hidden_share": 0.368
+     "hidden_share": 0.368,
+     "clicks": 21966
     },
     "ai": {
      "sessions": 24,
@@ -225,7 +317,8 @@
      "top3": 2685,
      "with_clicks": 3145,
      "impressions": 1076717,
-     "hidden_share": 0.385
+     "hidden_share": 0.385,
+     "clicks": 19625
     },
     "ai": {
      "sessions": 19,
@@ -242,6 +335,10 @@
  },
  "updated": "2026-11-20",
  "months": [
+  "2025-07",
+  "2025-08",
+  "2025-09",
+  "2025-10",
   "2025-11",
   "2025-12",
   "2026-01",

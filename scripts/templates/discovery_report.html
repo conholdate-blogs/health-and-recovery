@@ -282,7 +282,12 @@ button.kpi.vcard:focus-visible { outline: 2px solid var(--accent); outline-offse
 .vrange { display: flex; gap: 6px; align-items: center; margin: 4px 0 10px; font-size: 13px }
 .vrange button { font: inherit; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 999px; padding: 2px 10px; cursor: pointer }
 .vrange button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff }
-.vcharts { position: relative; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin: 0 0 12px }
+.vcharts { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 0 0 12px }
+@media (max-width: 900px) { .vcharts { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+@media (max-width: 420px) { .vcharts { grid-template-columns: 1fr } }
+.vfoot { display: grid; grid-template-columns: auto 1fr; gap: 1px 8px; margin: 8px 0 0; padding-top: 6px; border-top: 1px solid var(--line); font-size: 12px; font-variant-numeric: tabular-nums }
+.vfoot dt { color: var(--muted) } .vfoot dd { margin: 0; text-align: right } .vfoot .up { color: var(--good); font-weight: 600 } .vfoot .down { color: var(--broken); font-weight: 600 }
+.vchart .vsrc { margin: 4px 0 0; font-size: 11px; color: var(--muted) } .vchart .vnote { margin: 4px 0 0 }
 .vchart { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; min-width: 0 }
 .vchart h4 { margin: 0; font: 600 12px var(--body); letter-spacing: .05em; text-transform: uppercase; color: var(--muted) }
 .vchart .vv { font: 600 22px var(--display); font-variant-numeric: tabular-nums } .vchart .vv small { display: block; min-height: 1.3em; font: 500 12px var(--body); color: var(--muted) }
@@ -532,14 +537,9 @@ footer a { color: var(--accent) }
       <div class="tablewrap"><table id="history-rows"></table></div>
     </details>
     <details class="ref" id="visibility" hidden><summary>Visibility <small id="visibility-st"></small></summary>
-      <div class="vrange" id="vis-range" hidden><span class="dim">Charts:</span> <button type="button" data-n="6">6 months</button><button type="button" data-n="12" aria-pressed="true">12 months</button></div>
+      <p class="lede fold">One dot per calendar month; under each chart the latest 28 days against the same 28 days six months ago.<span class="rest"> A month's dot counts the whole calendar month, so it is a little higher than the 28-day number. Months are added as they end (4 days later, when Search Console has them all) and the series keeps growing; Search Console keeps about 16 months, so older months exist only from the day this started collecting. Keywords: Search Console queries that showed a page of this subdomain at least once; top 10 / top 3 by average position. Google hides rare searches, so the counts are floors; "Hidden searches" says how much of the impressions it does not show. Not the same number as a backlink tool's "organic keywords", which is an estimate from its own keyword database. AI-assistant visits: GA4 sessions whose source is ChatGPT, Perplexity, Gemini, Copilot, Claude and others; visits that arrive without a referrer count as direct and are missed. Domain Rating: Ahrefs' backlink score of the whole domain, the same for every subdomain, recorded from 19 Nov 2026 on.</span></p>
+      <div class="vrange" id="vis-range" hidden><span class="dim">Charts:</span> <button type="button" data-n="6">6 months</button><button type="button" data-n="12" aria-pressed="true">12 months</button><button type="button" data-n="16">16 months</button></div>
       <div id="vis-charts"></div>
-      <p class="lede fold">One dot per calendar month; the table compares the latest 28 days with six months ago.<span class="rest"> A month's dot counts the whole calendar month, so it is a little higher than the 28-day number. Months are added as they end (4 days later, when Search Console has them all); the series keeps growing. Domain Rating is recorded from 19 Nov 2026 on, so its chart starts there.</span></p>
-      <button type="button" class="more" id="vis-table-btn">Show table</button>
-      <div id="vis-table" hidden>
-      <p class="lede fold">Organic keywords, visits from AI assistants and Domain Rating, now and six months ago.<span class="rest"> Keywords: Search Console queries that showed a page of this subdomain at least once in 28 days; top 10 / top 3 by average position. Google hides rare searches, so the count is a floor; "Hidden searches" says how much of the impressions it does not show. Not the same number as a backlink tool's "organic keywords", which is an estimate from its own keyword database. AI-assistant visits: GA4 sessions whose source is ChatGPT, Perplexity, Gemini, Copilot, Claude and others; visits that arrive without a referrer count as direct and are missed. Domain Rating: Ahrefs' backlink score of the whole domain, the same for every subdomain.</span></p>
-      <div class="tablewrap"><table id="visibility-rows"></table></div>
-      </div>
     </details>
     <details class="ref" id="structure" hidden open><summary>Site structure <small id="structure-st"></small></summary>
       <p class="lede fold">Tags, categories and the listing pages Hugo builds from them, read from the blog's repo.<span class="rest"> Hugo builds a listing page for the home page, each category and each tag, in every language, with as many /page/N/ pages as the posts need (N posts a page). A tag with one post is a page with one link: thin, and multiplied by every language. Search: Search Console clicks and impressions over 28 days. Colours: <span class="bad" style="font-weight:600">red</span> = alert, <span class="ok" style="font-weight:600">green</span> = good, black = in between or a plain count. Tags with one post: red from 50%, green up to 20%; with one or two posts: red from 70%, green up to 35%; tags per post: red above 5, green up to 3; tag share of listing pages: red from 80%, green up to 50%; listing pages beyond page 50: red from 1,000, green at 0; tag URLs in the sitemaps: red if any, green at 0.</span></p>
@@ -1372,17 +1372,10 @@ __METHOD__
     };
     const share = v => v == null ? "–" : `${Math.round(v * 100)}%`;
     const plat = a => Object.entries(a.by_platform || {}).map(([n, v]) => `<span style="white-space:nowrap">${esc(n)} ${fmt(v)}</span>`).join(" · ");
-    const row = (name, now, then, change, src) => `<tr><td>${name}</td><td class="n" style="white-space:normal;max-width:16rem">${now}</td><td class="n" style="white-space:normal;max-width:16rem">${then}</td><td class="n">${change}</td><td class="dim">${src}</td></tr>`;
-    $("visibility-rows").innerHTML = `<thead><tr><th>Metric</th><th class="n">28 days to ${esc(day(cw[1] || ""))}</th><th class="n">Six months ago<br><small>to ${esc(day(sw[1] || ""))}</small></th><th class="n">Change</th><th>Source</th></tr></thead><tbody>`
-      + row(`Organic keywords${k.capped ? " <small>(at least)</small>" : ""}`, `<b>${fmt(k.queries)}</b>`, fmt(k6.queries), chg(k.queries, k6.queries), "Search Console")
-      + row("Keywords in the top 10", fmt(k.top10), fmt(k6.top10), chg(k.top10, k6.top10), "Search Console")
-      + row("Keywords in the top 3", fmt(k.top3), fmt(k6.top3), chg(k.top3, k6.top3), "Search Console")
-      + row("Keywords with a click", fmt(k.with_clicks), fmt(k6.with_clicks), chg(k.with_clicks, k6.with_clicks), "Search Console")
-      + row("Hidden searches <small>(share of impressions)</small>", share(k.hidden_share), share(k6.hidden_share), "", "Search Console")
-      + row("AI-assistant visits", `<b>${fmt(ai.sessions)}</b>${plat(ai) ? `<br><small class="dim">${plat(ai)}</small>` : ""}`, `${fmt(ai6.sessions)}${plat(ai6) ? `<br><small class="dim">${plat(ai6)}</small>` : ""}`, chg(ai.sessions, ai6.sessions), "GA4")
-      + row("Domain Rating", VH.dr == null ? "–" : `<b>${fmt(VH.dr)}</b>${VH.dr_date && VH.dr_date !== VIS.date ? `<br><small class="dim">${esc(day(VH.dr_date))}</small>` : ""}`, "–", "", "Ahrefs, whole domain")
-      + `</tbody>`;
-    $("vis-table-btn").addEventListener("click", e => { const t = $("vis-table"); t.hidden = !t.hidden; e.target.textContent = t.hidden ? "Show table" : "Hide table"; });
+    // what the table held, now under each chart (SK, 2026-11-20: the charts carry the numbers, no separate table)
+    const foot = (now, then, change, src, extra) => `<dl class="vfoot"><dt>28 days to ${esc(day(cw[1] || ""))}</dt><dd><b>${now}</b></dd>`
+      + (then == null ? "" : `<dt>Six months ago</dt><dd>${then}${change && change !== "–" ? ` ${change}` : ""}</dd>`)
+      + `</dl>${extra ? `<p class="vnote">${extra}</p>` : ""}<p class="vsrc">${src}</p>`;
 
     // monthly small multiples (SK, 2026-11-20, "ahrefs style"): one square chart per number, each on its own scale
     // from 0 (never two scales on one chart); the four monthly charts share their months and one hover; Domain
@@ -1391,24 +1384,42 @@ __METHOD__
     const MONTHS = Object.keys(MO.points).filter(m => MO.points[m].keywords).sort();
     const mlabel = (m, long) => { const d = new Date(`${m}-15T00:00:00Z`);
       return d.toLocaleDateString("en-GB", long ? { month: "long", year: "numeric", timeZone: "UTC" } : { month: "short", timeZone: "UTC" }) + (long ? "" : ` '${m.slice(2, 4)}`); };
+    const kwOf = (m, f) => ((MO.points[m] || {}).keywords || {})[f] ?? null;
+    const SC = "Search Console";
+    // two rows (SK, 2026-11-20): rankings (DR, keywords, top 3, top 10), then traffic (keywords with a click,
+    // search clicks, hidden searches, AI-assistant visits)
     const SERIES = [
-      { k: "dr", t: "Domain Rating", own: true, get: m => MO.dr[m] ?? null, months: Object.keys(MO.dr || {}).sort() },
-      { k: "kw", t: "Organic keywords", get: m => ((MO.points[m] || {}).keywords || {}).queries ?? null },
-      { k: "t3", t: "Keywords in top 3", get: m => ((MO.points[m] || {}).keywords || {}).top3 ?? null },
-      { k: "t10", t: "Keywords in top 10", get: m => ((MO.points[m] || {}).keywords || {}).top10 ?? null },
-      { k: "ai", t: "AI-assistant visits", get: m => ((MO.points[m] || {}).ai || {}).sessions ?? null },
+      { k: "dr", t: "Domain Rating", own: true, get: m => MO.dr[m] ?? null, months: Object.keys(MO.dr || {}).sort(),
+        foot: () => foot(VH.dr == null ? "–" : fmt(VH.dr), null, "", "Ahrefs, whole domain") },
+      { k: "kw", t: "Organic keywords", get: m => kwOf(m, "queries"),
+        foot: () => foot(`${fmt(k.queries)}${k.capped ? " (at least)" : ""}`, fmt(k6.queries), chg(k.queries, k6.queries), SC) },
+      { k: "t3", t: "Keywords in top 3", get: m => kwOf(m, "top3"), foot: () => foot(fmt(k.top3), fmt(k6.top3), chg(k.top3, k6.top3), SC) },
+      { k: "t10", t: "Keywords in top 10", get: m => kwOf(m, "top10"), foot: () => foot(fmt(k.top10), fmt(k6.top10), chg(k.top10, k6.top10), SC) },
+      { k: "wc", t: "Keywords with a click", get: m => kwOf(m, "with_clicks"),
+        foot: () => foot(fmt(k.with_clicks), fmt(k6.with_clicks), chg(k.with_clicks, k6.with_clicks), SC) },
+      { k: "cl", t: "Search clicks", get: m => kwOf(m, "clicks"),
+        foot: () => foot(fmt(((H0.traffic || {}).current || {}).clicks), fmt(((H0.traffic || {}).six_months_ago || {}).clicks),
+          chg(((H0.traffic || {}).current || {}).clicks, ((H0.traffic || {}).six_months_ago || {}).clicks), SC) },
+      { k: "hs", t: "Hidden searches", pct: true, get: m => kwOf(m, "hidden_share"),
+        foot: () => foot(share(k.hidden_share), share(k6.hidden_share), "", `${SC}; share of impressions Google does not show by query`) },
+      { k: "ai", t: "AI-assistant visits", get: m => ((MO.points[m] || {}).ai || {}).sessions ?? null,
+        foot: () => foot(fmt(ai.sessions), fmt(ai6.sessions), chg(ai.sessions, ai6.sessions), "GA4", plat(ai)) },
     ];
+    const H0 = (R._hosts || []).find(h => h.host === R._page_host) || {};
+    const vfmt = (s, v) => v == null ? "–" : s.pct ? `${Math.round(v * 100)}%` : fmt(v);
     const niceTop = v => { if (v <= 5) return 5; const p = 10 ** Math.floor(Math.log10(v)), f = v / p; return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p; };
     const W = 200, Hh = 120, L = 34, Rr = 8, T = 8, Bb = 18;
     const chart = (s, months) => {
       const vals = months.map(s.get), have = vals.filter(v => v != null);
       const last = [...vals].reverse().find(v => v != null), first = vals.find(v => v != null);
-      const p = first ? Math.round((last - first) / first * 100) : null;
-      const head = `<h4>${esc(s.t)}</h4><div class="vv">${last == null ? "–" : fmt(last)}${p != null && have.length > 1 && first >= 20 ? `<small><span class="${p > 0 ? "up" : p < 0 ? "down" : ""}">${p > 0 ? "+" : p < 0 ? "−" : "±"}${Math.abs(p)}%</span> in ${have.length} months</small>` : ""}</div>`;
-      if (!have.length) return `<div class="vchart">${head}<p class="vnote">no data yet</p></div>`;
-      const n = months.length, top = niceTop(Math.max(...have)), span = W - L - Rr;
+      // the headline is the latest month; for a share the change is in points, not a % of a %
+      const p = s.pct ? (have.length > 1 ? Math.round((last - first) * 100) : null) : first ? Math.round((last - first) / first * 100) : null;
+      const unit = s.pct ? " pts" : "%";
+      const head = `<h4>${esc(s.t)}</h4><div class="vv">${vfmt(s, last)}<small>${p != null && have.length > 1 && (s.pct || first >= 20) ? `<span class="${s.pct ? "" : p > 0 ? "up" : p < 0 ? "down" : ""}">${p > 0 ? "+" : p < 0 ? "−" : "±"}${Math.abs(p)}${unit}</span> in ${have.length} months` : have.length ? esc(mlabel(months[vals.lastIndexOf(last)], true)) : ""}</small></div>`;
+      if (!have.length) return `<div class="vchart">${head}<p class="vnote">no data yet</p>${s.foot()}</div>`;
+      const n = months.length, top = s.pct ? 1 : niceTop(Math.max(...have)), span = W - L - Rr;
       const x = i => L + (n === 1 ? span / 2 : i * span / (n - 1)), y = v => T + (Hh - T - Bb) * (1 - v / top);
-      const grid = [0, top / 2, top].map(v => `<line x1="${L}" x2="${W - Rr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L - 5}" y="${y(v) + 3}" text-anchor="end" font-size="10" fill="var(--muted)">${compact(v)}</text>`).join("");
+      const grid = [0, top / 2, top].map(v => `<line x1="${L}" x2="${W - Rr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L - 5}" y="${y(v) + 3}" text-anchor="end" font-size="10" fill="var(--muted)">${s.pct ? `${Math.round(v * 100)}%` : compact(v)}</text>`).join("");
       const lab = [0, Math.floor((n - 1) / 2), n - 1].filter((v, i, a) => a.indexOf(v) === i)
         .map(i => `<text x="${x(i)}" y="${Hh - 4}" text-anchor="${n === 1 ? "middle" : i === 0 ? "start" : i === n - 1 ? "end" : "middle"}" font-size="10" fill="var(--muted)">${esc(mlabel(months[i]))}</text>`).join("");
       const pts = vals.map((v, i) => v == null ? null : [x(i), y(v)]).filter(Boolean);
@@ -1418,8 +1429,8 @@ __METHOD__
       const step = n === 1 ? span : span / (n - 1);
       const hits = months.map((m, i) => `<rect class="hit" data-m="${m}" x="${x(i) - step / 2}" y="${T}" width="${step}" height="${Hh - T}" fill="transparent"/>`).join("");
       const note = s.own && have.length < 3 ? `<p class="vnote">recorded since ${esc(day(VH.dr_date || VIS.date))}; one dot a month from here</p>` : "";
-      return `<div class="vchart" data-k="${s.k}">${head}<svg viewBox="0 0 ${W} ${Hh}" role="img" aria-label="${esc(s.t)} per month; the numbers are in the table">${grid}${area}${line}${dots}${lab}`
-        + `<line class="wx" y1="${T}" y2="${Hh - Bb}" stroke="var(--muted)" visibility="hidden"/>${hits}</svg>${note}</div>`;
+      return `<div class="vchart" data-k="${s.k}">${head}<svg viewBox="0 0 ${W} ${Hh}" role="img" aria-label="${esc(s.t)} per month; hover a month for its value">${grid}${area}${line}${dots}${lab}`
+        + `<line class="wx" y1="${T}" y2="${Hh - Bb}" stroke="var(--muted)" visibility="hidden"/>${hits}</svg>${note}${s.foot()}</div>`;
     };
     const drawCharts = nMonths => {
       const shown = MONTHS.slice(-nMonths);
@@ -1436,7 +1447,7 @@ __METHOD__
             else l.setAttribute("visibility", "hidden");
           });
           const list = own ? [SERIES[0]] : SERIES.slice(1);
-          tip.innerHTML = `<b>${esc(mlabel(m, true))}</b><br>` + list.map(s => `${esc(s.t)}: ${fmt(s.get(m))}`).join("<br>"); tip.hidden = false;
+          tip.innerHTML = `<b>${esc(mlabel(m, true))}</b><br>` + list.map(s => `${esc(s.t)}: ${vfmt(s, s.get(m))}`).join("<br>"); tip.hidden = false;
           const br = wrap.getBoundingClientRect(), rr = r.getBoundingClientRect();
           tip.style.left = `${Math.min(Math.max(rr.left - br.left + rr.width / 2, 90), br.width - 90)}px`; tip.style.top = `${rr.top - br.top}px`;
         };
@@ -1451,7 +1462,8 @@ __METHOD__
       const setN = n => { nMonths = n; rng.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.n === n))); drawCharts(n);
         try { localStorage.setItem("vis-months", String(n)); } catch (e) { /* storage blocked */ } };
       rng.querySelectorAll("button").forEach(b => b.addEventListener("click", () => setN(+b.dataset.n)));
-      setN(nMonths === 6 ? 6 : 12);
+      rng.querySelector('[data-n="16"]').hidden = MONTHS.length <= 12;  // only when there is more than a year
+      setN([6, 12, 16].includes(nMonths) && (nMonths <= 12 || MONTHS.length > 12) ? nMonths : 12);
     }
   }
 

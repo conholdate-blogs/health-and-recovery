@@ -48,7 +48,8 @@ def ai_referrals(rows: list[dict], host: str) -> dict:
     return {"sessions": sum(by.values()), "by_platform": by}
 
 
-def keyword_counts(rows: list[dict], total_impressions: int | None, capped: bool = False) -> dict:
+def keyword_counts(rows: list[dict], total_impressions: int | None, capped: bool = False,
+                   total_clicks: int | None = None) -> dict:
     """GSC query rows {keys: [query], impressions, position, clicks} -> counts.
 
     hidden_share: impressions not covered by any query row (Google's anonymized queries) / all impressions.
@@ -65,6 +66,8 @@ def keyword_counts(rows: list[dict], total_impressions: int | None, capped: bool
     }
     if total_impressions:
         out["hidden_share"] = round(max(0.0, 1 - shown / total_impressions), 3)
+    if total_clicks is not None:
+        out["clicks"] = total_clicks
     if capped:
         out["capped"] = True
     return out

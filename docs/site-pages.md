@@ -50,11 +50,14 @@ a blocked page's noindex is never read). Written 12 Nov 2026 so nothing is lost.
 6. **Visibility (19–20 Nov, SK: "values like Ahrefs")**: a **Visibility card** in SK's order (DR, keywords, top 3,
    top 10, AI visits; change vs the same 28 days six months ago) on subdomain pages (a tile beside Health; a click
    opens the panel) and as a cell in every subdomain row (domain and Blogs pages). The panel (closed by default, end
-   of the Overview): **monthly small multiples**, one square chart per number on its own scale from 0, one dot per
-   complete calendar month, 6 / 12 months switch (remembered per viewer), shared hover across the four monthly charts;
-   Domain Rating has its own months (recorded from 19 Nov 2026); the table behind "Show table". Monthly data:
-   `reports/<tenant>/visibility-monthly.json` (12 months filled in from Search Console and GA4 on 20 Nov; each run adds
-   months that ended at least 4 days ago; older months are kept). Earlier (19 Nov) version: Overview tile "Organic keywords" (Search
+   of the Overview): **two rows of four monthly charts** (rankings: DR, organic keywords, top 3, top 10; traffic:
+   keywords with a click, search clicks, hidden searches %, AI-assistant visits), each on its own scale from 0, one
+   dot per complete calendar month, 6 / 12 / 16 months switch (16 only with more than a year; remembered per viewer),
+   shared hover across the seven monthly charts; Domain Rating has its own months (recorded from 19 Nov 2026). Under
+   each chart what the table held (SK, 20 Nov: then no table): latest 28 days, six months ago with the change, source,
+   AI visits per platform; the table is gone. Monthly data: `reports/<tenant>/visibility-monthly.json` (16 months
+   requested from Search Console and GA4 on 20 Nov; the oldest, July 2025, only partly kept by Google, is skipped, so
+   Aug 2025 – Oct 2026; each run adds months that ended at least 4 days ago; older months are kept). Earlier (19 Nov) version: Overview tile "Organic keywords" (Search
    Console queries with impressions, 28 days; top 10; vs six months ago; link "AI visits · DR"), a Visibility panel at
    the end of the Overview (keywords, top 10, top 3, with a click, hidden-search share, AI-assistant visits per
    platform from GA4, Domain Rating from Ahrefs; now, six months ago, change, source) and History columns "Organic

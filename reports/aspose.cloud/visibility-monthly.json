@@ -1,6 +1,72 @@
 {
  "hosts": {
   "blog.aspose.cloud": {
+   "2025-07": {
+    "ai": {
+     "sessions": 14,
+     "by_platform": {
+      "ChatGPT": 11,
+      "Copilot": 2,
+      "DeepSeek": 1
+     }
+    }
+   },
+   "2025-08": {
+    "keywords": {
+     "queries": 14297,
+     "top10": 778,
+     "top3": 131,
+     "with_clicks": 120,
+     "impressions": 129376,
+     "hidden_share": 0.352,
+     "clicks": 804
+    },
+    "ai": {
+     "sessions": 8,
+     "by_platform": {
+      "ChatGPT": 5,
+      "Perplexity": 2,
+      "Copilot": 1
+     }
+    }
+   },
+   "2025-09": {
+    "keywords": {
+     "queries": 6370,
+     "top10": 596,
+     "top3": 106,
+     "with_clicks": 136,
+     "impressions": 78240,
+     "hidden_share": 0.469,
+     "clicks": 940
+    },
+    "ai": {
+     "sessions": 19,
+     "by_platform": {
+      "ChatGPT": 13,
+      "Perplexity": 5,
+      "Copilot": 1
+     }
+    }
+   },
+   "2025-10": {
+    "keywords": {
+     "queries": 3262,
+     "top10": 643,
+     "top3": 99,
+     "with_clicks": 130,
+     "impressions": 46191,
+     "hidden_share": 0.56,
+     "clicks": 821
+    },
+    "ai": {
+     "sessions": 14,
+     "by_platform": {
+      "ChatGPT": 13,
+      "Perplexity": 1
+     }
+    }
+   },
    "2025-11": {
     "keywords": {
      "queries": 4589,
@@ -8,7 +74,8 @@
      "top3": 178,
      "with_clicks": 142,
      "impressions": 55828,
-     "hidden_share": 0.597
+     "hidden_share": 0.597,
+     "clicks": 1027
     },
     "ai": {
      "sessions": 11,
@@ -25,7 +92,8 @@
      "top3": 211,
      "with_clicks": 150,
      "impressions": 77546,
-     "hidden_share": 0.546
+     "hidden_share": 0.546,
+     "clicks": 1184
     },
     "ai": {
      "sessions": 13,
@@ -42,7 +110,8 @@
      "top3": 176,
      "with_clicks": 225,
      "impressions": 98566,
-     "hidden_share": 0.595
+     "hidden_share": 0.595,
+     "clicks": 1551
     },
     "ai": {
      "sessions": 10,
@@ -58,7 +127,8 @@
      "top3": 165,
      "with_clicks": 191,
      "impressions": 98208,
-     "hidden_share": 0.647
+     "hidden_share": 0.647,
+     "clicks": 1280
     },
     "ai": {
      "sessions": 31,
@@ -76,7 +146,8 @@
      "top3": 250,
      "with_clicks": 204,
      "impressions": 91839,
-     "hidden_share": 0.573
+     "hidden_share": 0.573,
+     "clicks": 1052
     },
     "ai": {
      "sessions": 36,
@@ -94,7 +165,8 @@
      "top3": 224,
      "with_clicks": 186,
      "impressions": 77609,
-     "hidden_share": 0.622
+     "hidden_share": 0.622,
+     "clicks": 1301
     },
     "ai": {
      "sessions": 13,
@@ -111,7 +183,8 @@
      "top3": 93,
      "with_clicks": 183,
      "impressions": 82088,
-     "hidden_share": 0.628
+     "hidden_share": 0.628,
+     "clicks": 1417
     },
     "ai": {
      "sessions": 1,
@@ -127,7 +200,8 @@
      "top3": 79,
      "with_clicks": 161,
      "impressions": 59382,
-     "hidden_share": 0.531
+     "hidden_share": 0.531,
+     "clicks": 879
     },
     "ai": {
      "sessions": 2,
@@ -144,7 +218,8 @@
      "top3": 63,
      "with_clicks": 134,
      "impressions": 65587,
-     "hidden_share": 0.547
+     "hidden_share": 0.547,
+     "clicks": 765
     },
     "ai": {
      "sessions": 1,
@@ -160,7 +235,8 @@
      "top3": 51,
      "with_clicks": 135,
      "impressions": 65274,
-     "hidden_share": 0.5
+     "hidden_share": 0.5,
+     "clicks": 721
     },
     "ai": {
      "sessions": 0,
@@ -174,7 +250,8 @@
      "top3": 64,
      "with_clicks": 144,
      "impressions": 58840,
-     "hidden_share": 0.423
+     "hidden_share": 0.423,
+     "clicks": 990
     },
     "ai": {
      "sessions": 0,
@@ -188,7 +265,8 @@
      "top3": 91,
      "with_clicks": 96,
      "impressions": 57896,
-     "hidden_share": 0.4
+     "hidden_share": 0.4,
+     "clicks": 665
     },
     "ai": {
      "sessions": 5,
@@ -201,6 +279,10 @@
  },
  "updated": "2026-11-20",
  "months": [
+  "2025-07",
+  "2025-08",
+  "2025-09",
+  "2025-10",
   "2025-11",
   "2025-12",
   "2026-01",
