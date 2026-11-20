@@ -15,6 +15,26 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Session handoff (Fri 2026-11-20, end of week)
+
+**State at close:** everything committed and pushed (our repo on origin, shoaibkhan, gitlab); no local commits in
+any blog repo or the translation agent. Local clones of blog.conholdate.com (3), blog.aspose.cloud (6) and
+blog.groupdocs.cloud (5) are behind origin (`run_cycle.py` pulls before the link check; `git pull --ff-only` before
+any fix). Check `git config --local user.email` in each repo first (it vanished once, 14 Nov).
+
+**Next session (SK's order: fix the other domains first):**
+1. Fix rounds on the scanned blogs, one at a time (rule: one blog at a time): **blog.groupdocs.cloud** (Scan 1 done
+   19 Nov, health 54) and **blog.aspose.cloud** (Scan 1 done 19 Nov, health 49): English body check on queued
+   posts, findings with samples to SK, fixes per batch (playbook Fix catalogue rows 1–25). Logs:
+   [docs/blogs/blog.groupdocs.cloud.md](docs/blogs/blog.groupdocs.cloud.md),
+   [docs/blogs/blog.aspose.cloud.md](docs/blogs/blog.aspose.cloud.md). Then blog.aspose.com.
+2. Remember the translation agent's 72 h wait (fc15060): English fixes restart it (playbook trap).
+3. Visibility open items: Bing Webmaster Tools referring domains (SK verifies the six blogs, creates an API key),
+   `AHREFS_API_KEY` for the script, keywords on the Blogs page rows.
+4. Parked until the domains are fixed: commit watch + site map plan
+   ([docs/plans/commit-watch-and-site-map.md](docs/plans/commit-watch-and-site-map.md)); aspose.app clean-up
+   (Open items).
+
 ## Start here (2026-11-20: commit watch and site map, parked)
 
 **SK, 20 Nov: two ideas documented, to plan after the other domains are fixed:** (1) **commit watch**: check new
