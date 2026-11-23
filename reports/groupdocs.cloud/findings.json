@@ -50,22 +50,22 @@
     "affected_pages": 19,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 12,
+      "impressions_28d": 14,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 197,
+      "past_impressions": 274,
       "lost_clicks": 0,
-      "lost_impressions": 185,
+      "lost_impressions": 260,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "lost",
       "score": 3,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "M",
@@ -108,23 +108,23 @@
     },
     "affected_pages": 0,
     "impact": {
-      "clicks_28d": 752,
-      "impressions_28d": 72476,
+      "clicks_28d": 794,
+      "impressions_28d": 79794,
       "source": "gsc-host",
       "share": 1.0,
-      "past_clicks": 2355,
-      "past_impressions": 108773,
-      "lost_clicks": 1603,
-      "lost_impressions": 36297,
+      "past_clicks": 2480,
+      "past_impressions": 110465,
+      "lost_clicks": 1686,
+      "lost_impressions": 30671,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 13,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -197,22 +197,22 @@
     "affected_pages": 38,
     "impact": {
       "clicks_28d": 3,
-      "impressions_28d": 247,
+      "impressions_28d": 272,
       "source": "gsc-host",
       "share": 0.003,
       "past_clicks": 8,
-      "past_impressions": 371,
+      "past_impressions": 377,
       "lost_clicks": 5,
-      "lost_impressions": 124,
+      "lost_impressions": 105,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
-      "score": 6,
+      "score": 7,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -223,7 +223,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "discovery-run1",
-    "last_seen_run": "discovery-run5",
+    "last_seen_run": "discovery-run6",
     "resolved_run": null,
     "resolved_at": null,
     "check": "dup_in_file",
@@ -1710,23 +1710,23 @@
     },
     "affected_pages": 509,
     "impact": {
-      "clicks_28d": 20,
-      "impressions_28d": 5305,
+      "clicks_28d": 21,
+      "impressions_28d": 6053,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 77,
-      "past_impressions": 5412,
-      "lost_clicks": 57,
-      "lost_impressions": 107,
+      "past_clicks": 74,
+      "past_impressions": 5650,
+      "lost_clicks": 53,
+      "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
-      "score": 25,
+      "score": 26,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "M",
@@ -1737,7 +1737,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run23",
+    "last_seen_run": "link-audit-run25",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -2142,14 +2142,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -2160,7 +2160,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",
@@ -2197,22 +2197,22 @@
     "affected_pages": 1,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 4,
+      "impressions_28d": 5,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 103,
+      "past_impressions": 119,
       "lost_clicks": 0,
-      "lost_impressions": 99,
+      "lost_impressions": 114,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -2223,7 +2223,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_target_bad",
@@ -3022,23 +3022,23 @@
     },
     "affected_pages": 157,
     "impact": {
-      "clicks_28d": 7,
-      "impressions_28d": 1406,
+      "clicks_28d": 6,
+      "impressions_28d": 1476,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 32,
-      "past_impressions": 2809,
-      "lost_clicks": 25,
-      "lost_impressions": 1403,
+      "past_clicks": 29,
+      "past_impressions": 2970,
+      "lost_clicks": 23,
+      "lost_impressions": 1494,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 5,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -3049,7 +3049,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-06",
     "first_seen_run": "link-audit-run16",
-    "last_seen_run": "link-audit-run23",
+    "last_seen_run": "link-audit-run25",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_redirected",
@@ -3103,23 +3103,23 @@
     },
     "affected_pages": 922,
     "impact": {
-      "clicks_28d": 61,
-      "impressions_28d": 5840,
+      "clicks_28d": 64,
+      "impressions_28d": 6442,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 190,
-      "past_impressions": 8646,
-      "lost_clicks": 129,
-      "lost_impressions": 2806,
+      "past_clicks": 200,
+      "past_impressions": 8750,
+      "lost_clicks": 136,
+      "lost_impressions": 2308,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
-      "score": 29,
+      "score": 30,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -3225,23 +3225,23 @@
     },
     "affected_pages": 11128,
     "impact": {
-      "clicks_28d": 728,
-      "impressions_28d": 70128,
+      "clicks_28d": 770,
+      "impressions_28d": 77345,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 2275,
-      "past_impressions": 104293,
-      "lost_clicks": 1547,
-      "lost_impressions": 34165,
+      "past_clicks": 2405,
+      "past_impressions": 105712,
+      "lost_clicks": 1635,
+      "lost_impressions": 28367,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
-      "score": 25,
+      "score": 26,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -3309,7 +3309,7 @@
           "line": 1,
           "note": "same URL as 2026-09-21-extract-text-from-pdf-in-nodejs",
           "fix": "keep one post (delete or give the other its own url)",
-          "commit": "937312ea 2025-06-29 fixed translations for extract text from pdf"
+          "commit": "912527ab 2026-11-21 Retranslate articles for: \"Extract Text from PDF in Node.js | Text Extraction API with REST\" - (6 files)"
         },
         {
           "role": "file",
@@ -3363,7 +3363,7 @@
           "line": 1,
           "note": "same URL as 2026-09-21-extract-text-from-pdf-in-nodejs",
           "fix": "keep one post (delete or give the other its own url)",
-          "commit": "937312ea 2025-06-29 fixed translations for extract text from pdf"
+          "commit": "912527ab 2026-11-21 Retranslate articles for: \"Extract Text from PDF in Node.js | Text Extraction API with REST\" - (6 files)"
         },
         {
           "role": "file",
@@ -3399,7 +3399,7 @@
           "line": 1,
           "note": "same URL as 2026-09-21-extract-text-from-pdf-in-nodejs",
           "fix": "keep one post (delete or give the other its own url)",
-          "commit": "937312ea 2025-06-29 fixed translations for extract text from pdf"
+          "commit": "912527ab 2026-11-21 Retranslate articles for: \"Extract Text from PDF in Node.js | Text Extraction API with REST\" - (6 files)"
         },
         {
           "role": "file",
@@ -3435,7 +3435,7 @@
           "line": 1,
           "note": "same URL as 2026-09-21-extract-text-from-pdf-in-nodejs",
           "fix": "keep one post (delete or give the other its own url)",
-          "commit": "937312ea 2025-06-29 fixed translations for extract text from pdf"
+          "commit": "912527ab 2026-11-21 Retranslate articles for: \"Extract Text from PDF in Node.js | Text Extraction API with REST\" - (6 files)"
         },
         {
           "role": "file",
@@ -3471,7 +3471,7 @@
           "line": 1,
           "note": "same URL as 2026-09-21-extract-text-from-pdf-in-nodejs",
           "fix": "keep one post (delete or give the other its own url)",
-          "commit": "937312ea 2025-06-29 fixed translations for extract text from pdf"
+          "commit": "912527ab 2026-11-21 Retranslate articles for: \"Extract Text from PDF in Node.js | Text Extraction API with REST\" - (6 files)"
         },
         {
           "role": "file",
@@ -3507,7 +3507,7 @@
           "line": 1,
           "note": "same URL as 2026-09-21-extract-text-from-pdf-in-nodejs",
           "fix": "keep one post (delete or give the other its own url)",
-          "commit": "937312ea 2025-06-29 fixed translations for extract text from pdf"
+          "commit": "912527ab 2026-11-21 Retranslate articles for: \"Extract Text from PDF in Node.js | Text Extraction API with REST\" - (6 files)"
         },
         {
           "role": "file",
@@ -3543,7 +3543,7 @@
           "line": 1,
           "note": "same URL as 2026-09-21-extract-text-from-pdf-in-nodejs",
           "fix": "keep one post (delete or give the other its own url)",
-          "commit": "937312ea 2025-06-29 fixed translations for extract text from pdf"
+          "commit": "6bbc8b4e 2026-11-22 Retranslate articles for: \"Extract Text from PDF in Node.js | Text Extraction API with REST\" - (12 files)"
         },
         {
           "role": "file",
@@ -3579,7 +3579,7 @@
           "line": 1,
           "note": "same URL as 2026-09-21-extract-text-from-pdf-in-nodejs",
           "fix": "keep one post (delete or give the other its own url)",
-          "commit": "937312ea 2025-06-29 fixed translations for extract text from pdf"
+          "commit": "6bbc8b4e 2026-11-22 Retranslate articles for: \"Extract Text from PDF in Node.js | Text Extraction API with REST\" - (12 files)"
         },
         {
           "role": "file",
@@ -3615,7 +3615,7 @@
           "line": 1,
           "note": "same URL as 2026-09-21-extract-text-from-pdf-in-nodejs",
           "fix": "keep one post (delete or give the other its own url)",
-          "commit": "937312ea 2025-06-29 fixed translations for extract text from pdf"
+          "commit": "6bbc8b4e 2026-11-22 Retranslate articles for: \"Extract Text from PDF in Node.js | Text Extraction API with REST\" - (12 files)"
         },
         {
           "role": "file",
@@ -3657,14 +3657,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 1,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -3675,7 +3675,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_url_duplicate",
@@ -3716,22 +3716,22 @@
     "affected_pages": 2,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 12,
+      "impressions_28d": 14,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 173,
+      "past_impressions": 226,
       "lost_clicks": 0,
-      "lost_impressions": 161,
+      "lost_impressions": 212,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -3742,7 +3742,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -3762,32 +3762,32 @@
       "urls": [
         "https://blog.groupdocs.cloud/tags/"
       ],
-      "observed": "1,965 of 2,260 tags (87%) have one post; 42,559 tag pages in 19 languages; 4.7 tags per post; tag pages earned 24 of 752 clicks (28 days)",
+      "observed": "1,969 of 2,265 tags (87%) have one post; 42,558 tag pages in 19 languages; 4.7 tags per post; tag pages earned 24 of 794 clicks (28 days)",
       "expected": "Tags group several posts (at most 20% with one post); weak tag pages are noindex, follow and stay out of the sitemap",
       "traffic": {
         "clicks": 24,
-        "impressions": 2341
+        "impressions": 2418
       }
     },
-    "affected_pages": 37004,
+    "affected_pages": 36996,
     "impact": {
       "clicks_28d": 24,
-      "impressions_28d": 2341,
+      "impressions_28d": 2418,
       "source": "gsc-tag-pages",
       "share": null,
       "past_clicks": 24,
-      "past_impressions": 2341,
+      "past_impressions": 2418,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
-      "score": 4,
+      "score": 5,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "M",
@@ -3798,7 +3798,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "structure-audit-2026-11-19",
-    "last_seen_run": "structure-audit-2026-11-19",
+    "last_seen_run": "structure-audit-2026-11-23",
     "resolved_run": null,
     "resolved_at": null,
     "check": "tag_pages_thin",
@@ -3822,28 +3822,28 @@
       "expected": "With one main section, its section page is noindex, follow and out of the sitemap",
       "traffic": {
         "clicks": 24,
-        "impressions": 2341
+        "impressions": 2418
       }
     },
     "affected_pages": 19,
     "impact": {
       "clicks_28d": 24,
-      "impressions_28d": 2341,
+      "impressions_28d": 2418,
       "source": "gsc-tag-pages",
       "share": null,
       "past_clicks": 24,
-      "past_impressions": 2341,
+      "past_impressions": 2418,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
-      "score": 13,
+      "score": 14,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -3854,7 +3854,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "structure-audit-2026-11-19",
-    "last_seen_run": "structure-audit-2026-11-19",
+    "last_seen_run": "structure-audit-2026-11-23",
     "resolved_run": null,
     "resolved_at": null,
     "check": "section_lists_home_posts",
@@ -3969,14 +3969,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -3987,7 +3987,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run23",
+    "last_seen_run": "link-audit-run25",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -4078,22 +4078,22 @@
     "affected_pages": 5,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 4,
+      "impressions_28d": 6,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
       "past_impressions": 8,
       "lost_clicks": 0,
-      "lost_impressions": 4,
+      "lost_impressions": 2,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
-      "score": 0,
+      "score": 1,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -4104,7 +4104,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run23",
+    "last_seen_run": "link-audit-run25",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -4293,22 +4293,22 @@
     "affected_pages": 18,
     "impact": {
       "clicks_28d": 1,
-      "impressions_28d": 54,
+      "impressions_28d": 48,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 137,
+      "past_impressions": 152,
       "lost_clicks": 0,
-      "lost_impressions": 83,
+      "lost_impressions": 104,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 6,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -4319,7 +4319,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run23",
+    "last_seen_run": "link-audit-run25",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -4410,23 +4410,23 @@
     },
     "affected_pages": 11134,
     "impact": {
-      "clicks_28d": 728,
-      "impressions_28d": 70128,
+      "clicks_28d": 770,
+      "impressions_28d": 77345,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 2275,
-      "past_impressions": 104293,
-      "lost_clicks": 1547,
-      "lost_impressions": 34165,
+      "past_clicks": 2405,
+      "past_impressions": 105712,
+      "lost_clicks": 1635,
+      "lost_impressions": 28367,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 13,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -4513,23 +4513,23 @@
     },
     "affected_pages": 474,
     "impact": {
-      "clicks_28d": 30,
-      "impressions_28d": 2935,
+      "clicks_28d": 32,
+      "impressions_28d": 3231,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 95,
-      "past_impressions": 4418,
-      "lost_clicks": 65,
-      "lost_impressions": 1483,
+      "past_clicks": 100,
+      "past_impressions": 4487,
+      "lost_clicks": 68,
+      "lost_impressions": 1256,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 25,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -4558,102 +4558,28 @@
     "title": "Translations link another page than the English post",
     "evidence": {
       "urls": [
-        "https://blog.groupdocs.cloud/ar/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/ar/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/de/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/de/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/es/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/es/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/fa/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/fa/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/fr/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/fr/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/id/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/id/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/it/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/it/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/ja/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/ja/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/ko/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/ko/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/pl/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/pl/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/pt/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/pt/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/ru/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/ru/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/th/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/th/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/tr/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/tr/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/uk/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/uk/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/vi/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/vi/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/zh-hant/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/zh-hant/watermark/add-watermark-to-word-in-java-watermark-creator/",
-        "https://blog.groupdocs.cloud/zh/conversion/convert-pdf-to-doc-with-nodejs/",
         "https://blog.groupdocs.cloud/zh/watermark/add-watermark-to-word-in-java-watermark-creator/"
       ],
-      "observed": "36 links on 36 pages (36 distinct targets); by language: ar 2, de 2, es 2, fa 2, fr 2, id 2, it 2, ja 2, ...; 0 written by translation commits",
+      "observed": "18 links on 18 pages (18 distinct targets); by language: ar 1, de 1, es 1, fa 1, fr 1, id 1, it 1, ja 1, ...; 0 written by translation commits",
       "expected": "Each reference link of a translation points at the same page as in the English post, in the translation's language when that exists",
       "locations": [
-        {
-          "role": "link",
-          "url": "https://blog.groupdocs.cloud/ar/",
-          "page": "https://blog.groupdocs.cloud/ar/conversion/convert-pdf-to-doc-with-nodejs/",
-          "file": "content/GroupDocs.Cloud/conversion/2025-05-30-convert-pdf-to-doc-with-nodejs/index.ar.md",
-          "line": 221,
-          "fix": "https://blog.groupdocs.cloud/categories/groupdocs.conversion-cloud-product-family/",
-          "commit": "c342c155 2025-06-05: Translations for PDF to DOC added",
-          "copies": 17,
-          "copy_langs": [
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "uk",
-            "vi",
-            "zh",
-            "zh-hant"
-          ],
-          "origin": "translations",
-          "no_translation": [
-            "ar",
-            "de",
-            "es",
-            "fa",
-            "fr",
-            "id",
-            "it",
-            "ja",
-            "ko",
-            "pl",
-            "pt",
-            "ru",
-            "th",
-            "tr",
-            "uk",
-            "vi",
-            "zh",
-            "zh-hant"
-          ],
-          "history": {
-            "english_line": "2025-06-05",
-            "english_commit": "c342c155 2025-06-05: Translations for PDF to DOC added",
-            "translated": "2025-06-05",
-            "english_newer": false
-          }
-        },
         {
           "role": "link",
           "url": "https://blog.groupdocs.cloud/ar/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
@@ -4692,25 +4618,25 @@
         }
       ]
     },
-    "affected_pages": 36,
+    "affected_pages": 18,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 18,
+      "impressions_28d": 14,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 44,
+      "past_impressions": 16,
       "lost_clicks": 0,
-      "lost_impressions": 26,
+      "lost_impressions": 2,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 1,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -4721,7 +4647,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "link-audit-run23",
-    "last_seen_run": "link-audit-run23",
+    "last_seen_run": "link-audit-run25",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_differs_from_original",
@@ -4766,14 +4692,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "M",
@@ -4784,7 +4710,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translated_url_mismatch",
@@ -4813,7 +4739,7 @@
         "https://blog.groupdocs.cloud/ko/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
         "https://blog.groupdocs.cloud/pl/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/"
       ],
-      "observed": "198 entries or files; English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to ': 18, English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using ': 18, English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using': 18, English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi': 18",
+      "observed": "216 entries or files; English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to ': 18, English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using ': 18, English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using': 18, English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi': 18",
       "expected": "A translation is updated whenever the English title or description changes",
       "locations": [
         {
@@ -5178,25 +5104,25 @@
         }
       ]
     },
-    "affected_pages": 198,
+    "affected_pages": 216,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 9,
+      "past_impressions": 11,
       "lost_clicks": 0,
-      "lost_impressions": 9,
+      "lost_impressions": 11,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "M",
@@ -5207,7 +5133,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -5236,7 +5162,7 @@
         "https://blog.groupdocs.cloud/pt/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/",
         "https://blog.groupdocs.cloud/uk/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/"
       ],
-      "observed": "110 entries or files; seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release': 18, seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js': 12, seoTitle in English: 'annoucing-groupdcs.viewer-cloud-API-pre-release': 5, seoTitle in English: 'HTML to PDF Node.js API | Convert Web Page to PDF Online': 4",
+      "observed": "94 entries or files; seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release': 18, seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js': 12, seoTitle in English: 'annoucing-groupdcs.viewer-cloud-API-pre-release': 5, seoTitle in English: 'HTML to PDF Node.js API | Convert Web Page to PDF Online': 4",
       "expected": "A translation's seoTitle, title and description are in its own language",
       "locations": [
         {
@@ -5601,25 +5527,25 @@
         }
       ]
     },
-    "affected_pages": 110,
+    "affected_pages": 94,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 3,
+      "past_impressions": 4,
       "lost_clicks": 0,
-      "lost_impressions": 3,
+      "lost_impressions": 4,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "M",
@@ -5630,7 +5556,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -5820,22 +5746,22 @@
     "affected_pages": 18,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 4,
+      "impressions_28d": 5,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 103,
+      "past_impressions": 119,
       "lost_clicks": 0,
-      "lost_impressions": 99,
+      "lost_impressions": 114,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "lost",
-      "score": 2,
+      "score": 3,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -5846,7 +5772,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "section_index_untranslated",
@@ -5919,22 +5845,22 @@
     "affected_pages": 5,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 4,
+      "impressions_28d": 5,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 103,
+      "past_impressions": 119,
       "lost_clicks": 0,
-      "lost_impressions": 99,
+      "lost_impressions": 114,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "lost",
-      "score": 2,
+      "score": 3,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -5945,7 +5871,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "language_name_wrong",
@@ -6000,14 +5926,14 @@
       "lost_clicks": 0,
       "lost_impressions": 3,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -6018,7 +5944,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "rtl_direction_missing",
@@ -6109,23 +6035,23 @@
     },
     "affected_pages": 979,
     "impact": {
-      "clicks_28d": 61,
-      "impressions_28d": 5887,
+      "clicks_28d": 64,
+      "impressions_28d": 6485,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 190,
-      "past_impressions": 9182,
-      "lost_clicks": 129,
-      "lost_impressions": 3295,
+      "past_clicks": 200,
+      "past_impressions": 9466,
+      "lost_clicks": 136,
+      "lost_impressions": 2981,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 8,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -6223,23 +6149,23 @@
     },
     "affected_pages": 941,
     "impact": {
-      "clicks_28d": 61,
-      "impressions_28d": 5863,
+      "clicks_28d": 64,
+      "impressions_28d": 6457,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 190,
-      "past_impressions": 8788,
-      "lost_clicks": 129,
-      "lost_impressions": 2925,
+      "past_clicks": 200,
+      "past_impressions": 8918,
+      "lost_clicks": 136,
+      "lost_impressions": 2461,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 8,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -6334,23 +6260,23 @@
     },
     "affected_pages": 960,
     "impact": {
-      "clicks_28d": 61,
-      "impressions_28d": 5864,
+      "clicks_28d": 64,
+      "impressions_28d": 6470,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 190,
-      "past_impressions": 9040,
-      "lost_clicks": 129,
-      "lost_impressions": 3176,
+      "past_clicks": 200,
+      "past_impressions": 9298,
+      "lost_clicks": 136,
+      "lost_impressions": 2828,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 8,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -6418,7 +6344,7 @@
     "affected_pages": 5,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 39,
+      "impressions_28d": 41,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
@@ -6426,14 +6352,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 2,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -6490,23 +6416,23 @@
     },
     "affected_pages": 461,
     "impact": {
-      "clicks_28d": 30,
-      "impressions_28d": 2920,
+      "clicks_28d": 32,
+      "impressions_28d": 3221,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 95,
-      "past_impressions": 4323,
-      "lost_clicks": 65,
-      "lost_impressions": 1403,
+      "past_clicks": 100,
+      "past_impressions": 4375,
+      "lost_clicks": 68,
+      "lost_impressions": 1154,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 7,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -6563,14 +6489,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -6610,7 +6536,7 @@
         "https://blog.groupdocs.cloud/ru/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/",
         "https://blog.groupdocs.cloud/th/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/"
       ],
-      "observed": "2,382 entries or files; too long (width 79): 'Erweitern Sie Ihre C#-/ASP.NET-App mit der Funktion zur elektronischen Signatur': 5, too long (width 83): 'Améliorez votre application C# / ASP.NET avec la capacité de signature électroni': 5, too long (width 78): 'Tingkatkan Aplikasi C# / ASP.NET Anda dengan Kemampuan Tanda Tangan Elektronik': 5, too long (width 71): 'Migliora la tua app C#/ASP.NET con la funzionalità di firma elettronica': 5",
+      "observed": "2,346 entries or files; too long (width 79): 'Erweitern Sie Ihre C#-/ASP.NET-App mit der Funktion zur elektronischen Signatur': 5, too long (width 83): 'Améliorez votre application C# / ASP.NET avec la capacité de signature électroni': 5, too long (width 78): 'Tingkatkan Aplikasi C# / ASP.NET Anda dengan Kemampuan Tanda Tangan Elektronik': 5, too long (width 71): 'Migliora la tua app C#/ASP.NET con la funzionalità di firma elettronica': 5",
       "expected": "Every post's search title (seoTitle, else title) is 10-70 characters wide (CJK count double)",
       "locations": [
         {
@@ -6975,7 +6901,7 @@
         }
       ]
     },
-    "affected_pages": 2382,
+    "affected_pages": 2346,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -6986,14 +6912,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -7004,7 +6930,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -7033,7 +6959,7 @@
         "https://blog.groupdocs.cloud/fr/annotation/integrate-groupdocs-annotation-for-net-into-your-getsimple-website/",
         "https://blog.groupdocs.cloud/it/annotation/integrate-groupdocs-annotation-for-net-into-your-getsimple-website/"
       ],
-      "observed": "3,855 entries or files; too long (width 175): 'GroupDocs bietet eine .NET-Bibliothek mit flexibler API, die zum Erstellen recht': 5, too long (width 182): 'GroupDocs ofrece una biblioteca .NET con API flexible que se puede usar para cre': 5, too long (width 220): 'GroupDocs propose une bibliothèque .NET avec une API flexible qui peut être util': 5, too long (width 201): 'GroupDocs menawarkan pustaka .NET dengan API fleksibel yang dapat digunakan untu': 5",
+      "observed": "3,733 entries or files; too long (width 175): 'GroupDocs bietet eine .NET-Bibliothek mit flexibler API, die zum Erstellen recht': 5, too long (width 182): 'GroupDocs ofrece una biblioteca .NET con API flexible que se puede usar para cre': 5, too long (width 220): 'GroupDocs propose une bibliothèque .NET avec une API flexible qui peut être util': 5, too long (width 201): 'GroupDocs menawarkan pustaka .NET dengan API fleksibel yang dapat digunakan untu': 5",
       "expected": "Every post's description (description, else summary) is 50-170 characters wide",
       "locations": [
         {
@@ -7398,7 +7324,7 @@
         }
       ]
     },
-    "affected_pages": 3855,
+    "affected_pages": 3733,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -7409,14 +7335,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -7427,7 +7353,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -7832,14 +7758,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -7850,7 +7776,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_h1",
@@ -7879,7 +7805,7 @@
         "https://blog.groupdocs.cloud/ko/comparison/compare-word-documents-using-csharp/",
         "https://blog.groupdocs.cloud/pl/comparison/compare-word-documents-using-csharp/"
       ],
-      "observed": "544 entries or files; cover.alt, cover.caption: '': 149, cover.alt: '': 48, cover.image, cover.alt, cover.caption: '': 37, cover.image, cover.alt: '': 22",
+      "observed": "480 entries or files; cover.alt, cover.caption: '': 129, cover.alt: '': 41, cover.image, cover.alt, cover.caption: '': 37, cover.image, cover.alt: '': 22",
       "expected": "Front-matter strings are quoted \"…\" (or plain), never \\\"…\\\"",
       "locations": [
         {
@@ -8244,25 +8170,25 @@
         }
       ]
     },
-    "affected_pages": 544,
+    "affected_pages": 480,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 189,
+      "impressions_28d": 182,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 11,
+      "past_impressions": 12,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 6,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -8273,7 +8199,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_escaped",
@@ -8302,7 +8228,7 @@
         "https://blog.groupdocs.cloud/ja/merger/password-protect-word-files-using-rest-api-in-nodejs/",
         "https://blog.groupdocs.cloud/ko/merger/password-protect-word-files-using-rest-api-in-nodejs/"
       ],
-      "observed": "39 entries or files; description: 'MPP`yi PDF`ye Java REST API kullanarak dönüştürmeyi öğrenin. Proje paylaşımını basitleştir': 1, description: 'استكشف إمكانيات REST API لحماية كلمة مرور DOCX واستفد من Node.js SDK لتوضيح **كيفية حماية ': 1, description: 'Entdecken Sie die Funktionen einer DOCX-Passwortschutz-REST-API und nutzen Sie das Node.js': 1, description: 'Explore las capacidades de una API REST protectora de contraseña DOCX y aproveche el SDK d': 1",
+      "observed": "38 entries or files; description: 'MPP`yi PDF`ye Java REST API kullanarak dönüştürmeyi öğrenin. Proje paylaşımını basitleştir': 1, description: 'استكشف إمكانيات REST API لحماية كلمة مرور DOCX واستفد من Node.js SDK لتوضيح **كيفية حماية ': 1, description: 'Entdecken Sie die Funktionen einer DOCX-Passwortschutz-REST-API und nutzen Sie das Node.js': 1, description: 'Explore las capacidades de una API REST protectora de contraseña DOCX y aproveche el SDK d': 1",
       "expected": "title, seoTitle, description and summary are plain text: no **, __, ` or [x](url)",
       "locations": [
         {
@@ -8496,15 +8422,6 @@
         },
         {
           "role": "file",
-          "url": "https://blog.groupdocs.cloud/tr/parser/extract-images-from-zip-using-csharp",
-          "file": "content/GroupDocs.Cloud/parser/2025-11-11-extract-images-from-zip-using-csharp/index.tr.md",
-          "line": 1,
-          "note": "seoTitle: \"ZIP'ten Görselleri Çıkar | C# .NET`de ZIP Görsellerini İndir\"",
-          "fix": "remove ` from seoTitle",
-          "commit": "fd660ac8 2025-11-16 Language updates"
-        },
-        {
-          "role": "file",
           "url": "https://blog.groupdocs.cloud/ar/watermark/how-to-add-watermark-in-excel-file-using-java/",
           "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.ar.md",
           "line": 1,
@@ -8658,25 +8575,25 @@
         }
       ]
     },
-    "affected_pages": 39,
+    "affected_pages": 38,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 0,
+      "past_impressions": 1,
       "lost_clicks": 0,
-      "lost_impressions": 0,
+      "lost_impressions": 1,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
-      "scored_on": "at stake",
+      "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -8687,7 +8604,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_markup",
@@ -8754,7 +8671,7 @@
     "affected_pages": 4,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 4,
+      "impressions_28d": 3,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
@@ -8762,14 +8679,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -8780,7 +8697,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_cut_off",
@@ -8809,7 +8726,7 @@
         "https://blog.groupdocs.cloud/ko/comparison/compare-word-documents-using-csharp/",
         "https://blog.groupdocs.cloud/pl/comparison/compare-word-documents-using-csharp/"
       ],
-      "observed": "423 entries or files; no cover image; the English post has one: 423",
+      "observed": "224 entries or files; no cover image; the English post has one: 224",
       "expected": "A translation keeps the English cover block: cover: with image, alt, caption indented under it, keys in English",
       "locations": [
         {
@@ -9174,25 +9091,25 @@
         }
       ]
     },
-    "affected_pages": 423,
+    "affected_pages": 224,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 189,
+      "impressions_28d": 182,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 11,
+      "past_impressions": 12,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "at stake",
       "score": 6,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -9203,7 +9120,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_cover_lost",
@@ -9248,14 +9165,14 @@
       "lost_clicks": 0,
       "lost_impressions": 3,
       "past_window": [
-        "2026-04-21",
-        "2026-05-18"
+        "2026-04-25",
+        "2026-05-22"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-20",
-        "2026-11-16"
+        "2026-10-24",
+        "2026-11-20"
       ]
     },
     "effort": "S",
@@ -9266,7 +9183,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run24",
+    "last_seen_run": "repo-audit-run26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "menu_id_invalid",

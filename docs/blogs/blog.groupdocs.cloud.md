@@ -57,6 +57,42 @@ issue types 15 → 39 (24 new, almost all from checks added since 7 Nov, not new
 of fully queued posts 2 (a broken link; the duplicate URL above); optimizer cuts 0; by-hand items: half-translated
 titles 68, extra keys 527, missing cover files 71, tag lists differ 531. English body check not run yet.
 
+## Scan 2: quick scan after the retranslation batch (23 Nov 2026)
+
+Clone f13d6515 → 580e4ba7: 30 commits (23 translation agent "Retranslate articles", 288 files in 17 posts; 2 new
+viewer posts; 1 optimizer commit on 2023-08-28-zip-to-jpg-online). Quick cycle (links + repo, 8 min): link run 25,
+repo run 26. **Open items 9,512; fixed since 19 Nov 456, all in retranslated posts; new 18** (all
+`translation_stale` of zip-to-jpg after the optimizer edit).
+
+| Check | Fixed by the retranslation |
+|---|---|
+| `post_cover_lost` | 199 (424 → 224 open) |
+| `post_description_length` / `post_title_length` | 122 / 36 |
+| `post_front_matter_escaped` | 64 |
+| `link_differs_from_original` | 18 (36 → 18) |
+| `post_text_untranslated` | 16 |
+| `post_front_matter_markup` | 1 |
+
+- **Retranslated files compared with their English post** (scratch script, code fences, code lines, headings,
+  links, images, shortcodes, front matter keys, url, title/description = English): **288 of 288 match, no new item
+  in any retranslated file**; YAML valid. The old versions had extra code blocks (e.g. pdf-to-jpg de: 12 fences / 58
+  code lines vs English 10 / 29). Items still open in those posts are in files not retranslated yet.
+- Not fixed by retranslation (English-side): `post_url_duplicate` extract-text-from-pdf-in-nodejs (19 files).
+- **Optimizer 580e4ba7:** new `seoTitle` "Online Converter – Fast, Free, Secure" drops the topic (ZIP to JPG) from
+  `<title>` (theme `head.html` uses seoTitle); writes U+2011 non-breaking hyphens ("picture‑perfect"): in 85 English
+  posts and 1,148 translations repo-wide.
+- **Queue report** (`queue-report-2026-11-23.md`): 282 queued translations in 16 posts (was 552 in 31); 216 after the
+  optimizer; 8 fix-here candidates; 1 English issue in fully queued posts (`/category/conversion/` 404 in
+  2022-11-05-convert-csv-to-json…); by-hand: half-translated titles 65, extra keys 493, missing cover files 71, tag
+  lists differ 485.
+- **English body check** (16 queued posts, `english-body-check-2026-11-23.csv`): 18 findings, reviewed in context:
+  **11 real** (typos "Cloud EST API", "wildly used", "supper-efficient", "where as"; sentence copied from a PDF post
+  in mpp-to-excel-in-csharp 2024 ("export MS Project file to PDF format" in an Excel post); "editable DOC document" in
+  html-to-word; broken "Swagger UI lets you…" in zip-to-jpg; 4 anchor ids from other posts: msg-to-pdf-in-ruby
+  `#…-in-python`, csv-json 2× `#PDF-to-HTML-Online-Conversion-Tool` (also a duplicate id), word-in-php
+  `#Excel-to-HTML-Viewer-…-Node-js-SDK`), **7 false** ("CSharp" in anchor ids, `[][6]` figure link, colon before a
+  code block, `npm install MODULE_NAME` generic phrase, "instructions at [link]").
+
 ## Plan (same order as blog.conholdate.com; SK's rules apply)
 
 1. **Full scan with all checks** (`caffeinate -i .venv/bin/python scripts/run_cycle.py groupdocs.cloud`, ~8 min; it
