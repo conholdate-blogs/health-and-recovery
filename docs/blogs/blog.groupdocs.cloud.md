@@ -95,7 +95,7 @@ repo run 26. **Open items 9,512; fixed since 19 Nov 456, all in retranslated pos
 
 ## Fix batch 1: English fixes in queued posts (TR-10), 23 Nov
 
-- **1b509e71** (local, waits for SK's push + deploy): the 11 real English-body-check findings + the `/category/conversion/`
+- **1b509e71** (pushed to `master` 23 Nov with SK's approval; live after the next deploy, cron 01:00/03:00 UTC Mon–Fri): the 11 real English-body-check findings + the `/category/conversion/`
   404 in 8 posts, 12 lines (commit message lists each). All 8 posts have queued translations, so nothing extra is
   retranslated; the 72 h wait restarts for these 8 (trap).
 - Build check (Hugo 0.101, `build_pair.sh` + `build_diff.py`): exactly the 8 English pages, their feeds/tag feeds and

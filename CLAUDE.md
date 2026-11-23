@@ -15,6 +15,25 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Session handoff (Mon 2026-11-23, evening)
+
+**blog.groupdocs.cloud fix round started** (log: [docs/blogs/blog.groupdocs.cloud.md](docs/blogs/blog.groupdocs.cloud.md),
+"Scan 2" and "Fix batch 1"). Quick scan after SK's pull: the translation agent's retranslation batch (288 files, 17
+posts) fixed 456 items and added none; snapshot 2026-11-23-2 live (health 54, open items 9,950 → 9,512). Batch 1
+(**1b509e71**, 11 English fixes + 1 broken link in 8 queued posts) **pushed 23 Nov**.
+
+**Tomorrow morning (SK):**
+1. Verify batch 1 live (after the 01:00/03:00 UTC cron or SK's manual deploy): the 8 English pages show the fixes
+   (e.g. "Cloud REST API" on /conversion/convert-excel-spreadsheets-to-pdf-using-ruby/); add the
+   `reports/groupdocs.cloud/agent-fixes.json` row.
+2. **Batch 2, template fixes** (playbook Fix catalogue): head order (OG/Twitter in `<body>` on 56,079 pages), x-default
+   (missing on all 100,364), page 2+ `noindex, follow` + self canonical (row 25), llms.txt at build, zh-hant menu id,
+   5 language names, RTL ar/fa, 18 section `_index` pages, translated home description. Build-diff with Hugo 0.101
+   (`scripts/ops/build_pair.sh`; ~100k pages per build, the file diff takes minutes).
+3. Open for SK: duplicate URLs (asked the blog developer; builds flip compare-excel translations at random); literal
+   client_id/secret in 2 English posts + 36 translations (rotate, then replace: batch 3 or sooner); message to the
+   optimizer's owner (seoTitle without topic, U+2011 hyphens) drafted in chat 23 Nov.
+
 ## Session handoff (Fri 2026-11-20, end of week)
 
 **State at close:** everything committed and pushed (our repo on origin, shoaibkhan, gitlab); no local commits in
