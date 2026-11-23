@@ -32,7 +32,7 @@ posts) fixed 456 items and added none; snapshot 2026-11-23-2 live (health 54, op
    (`scripts/ops/build_pair.sh`; ~100k pages per build, the file diff takes minutes).
 3. Open for SK: duplicate URLs (asked the blog developer; builds flip compare-excel translations at random); literal
    client_id/secret in 2 English posts + 36 translations (rotate, then replace: batch 3 or sooner); message to the
-   optimizer's owner (seoTitle without topic, U+2011 hyphens) drafted in chat 23 Nov.
+   optimizer's owner (U+2011 hyphens; the seoTitle point was my misreading, dropped) drafted in chat 23 Nov.
 
 ## Session handoff (Fri 2026-11-20, end of week)
 

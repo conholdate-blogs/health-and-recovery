@@ -78,8 +78,9 @@ repo run 26. **Open items 9,512; fixed since 19 Nov 456, all in retranslated pos
   in any retranslated file**; YAML valid. The old versions had extra code blocks (e.g. pdf-to-jpg de: 12 fences / 58
   code lines vs English 10 / 29). Items still open in those posts are in files not retranslated yet.
 - Not fixed by retranslation (English-side): `post_url_duplicate` extract-text-from-pdf-in-nodejs (19 files).
-- **Optimizer 580e4ba7:** new `seoTitle` "Online Converter – Fast, Free, Secure" drops the topic (ZIP to JPG) from
-  `<title>` (theme `head.html` uses seoTitle); writes U+2011 non-breaking hyphens ("picture‑perfect"): in 85 English
+- **Optimizer 580e4ba7:** `seoTitle` "ZIP to JPG | Transform ZIP files to JPEG Images" → "ZIP to JPG Online Converter
+  – Fast, Free, Secure" (fine; first read of the word-diff wrongly said the topic was dropped, SK corrected it 23
+  Nov: read the full before/after line, never only the word-diff); writes U+2011 non-breaking hyphens ("picture‑perfect"): in 85 English
   posts and 1,148 translations repo-wide.
 - **Queue report** (`queue-report-2026-11-23.md`): 282 queued translations in 16 posts (was 552 in 31); 216 after the
   optimizer; 8 fix-here candidates; 1 English issue in fully queued posts (`/category/conversion/` 404 in
