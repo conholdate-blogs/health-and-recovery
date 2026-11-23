@@ -93,6 +93,21 @@ repo run 26. **Open items 9,512; fixed since 19 Nov 456, all in retranslated pos
   `#Excel-to-HTML-Viewer-…-Node-js-SDK`), **7 false** ("CSharp" in anchor ids, `[][6]` figure link, colon before a
   code block, `npm install MODULE_NAME` generic phrase, "instructions at [link]").
 
+## Fix batch 1: English fixes in queued posts (TR-10), 23 Nov
+
+- **1b509e71** (local, waits for SK's push + deploy): the 11 real English-body-check findings + the `/category/conversion/`
+  404 in 8 posts, 12 lines (commit message lists each). All 8 posts have queued translations, so nothing extra is
+  retranslated; the 72 h wait restarts for these 8 (trap).
+- Build check (Hugo 0.101, `build_pair.sh` + `build_diff.py`): exactly the 8 English pages, their feeds/tag feeds and
+  `index.json` changed. Also 9 translations of comparison/compare-excel-files-via-rest-in-csharp differ between
+  two builds of the **same content**: the duplicate URL (`post_url_duplicate`) makes Hugo pick either post at random
+  per build. Evidence for the blog developer (SK asked him 23 Nov which post keeps each URL).
+- **Found by hand, not fixed (SK to decide):** one GroupDocs Cloud client_id + client_secret written out in a cURL
+  example in 2 English posts (merger/2024-06-14-combine-pdf-files-using-pdf-file-merger,
+  merger/2025-08-19-merge-pdf-files-using-csharp) and 36 translations. Proposed: rotate the key in the dashboard,
+  replace with `{CLIENT_ID}` / `{CLIENT_SECRET}`; candidate check `post_secret_literal`.
+- After deploy: live check of the 8 pages, agent-fixes row, rescan.
+
 ## Plan (same order as blog.conholdate.com; SK's rules apply)
 
 1. **Full scan with all checks** (`caffeinate -i .venv/bin/python scripts/run_cycle.py groupdocs.cloud`, ~8 min; it
