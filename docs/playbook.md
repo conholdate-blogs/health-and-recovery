@@ -140,6 +140,12 @@ blog.conholdate.com at deploy); `mainSections`; which pages are translated (the 
 
 ## Traps
 
+- **Renaming a heading anchor `{#id}` (SK, 23 Nov):** before changing an id, search the whole blog repo (English and
+  every translation, page-relative `](#id)` links and full-URL `<post url>/#id` links) for uses of the old id; update
+  every link that targets *this* post's heading. Links with the same id inside another post point to that post's
+  own heading and stay. Done for blog.groupdocs.cloud batch 1 (1b509e71): 3 renamed ids, no link into the edited
+  posts used them.
+
 - "Last changed" (git blame) is the last commit on a line, not where a link came from: bulk prefix commits and
   optimizers that re-write identical lines take the blame. To date a link, use `git log --follow -S <url> -- <file>`.
 - Two full Hugo builds of blog.conholdate.com need ~9 GB (4.6 GB each, 1.5 GB of it tag pages); the disk filled on
