@@ -109,6 +109,27 @@ repo run 26. **Open items 9,512; fixed since 19 Nov 456, all in retranslated pos
   replace with `{CLIENT_ID}` / `{CLIENT_SECRET}`; candidate check `post_secret_literal`.
 - After deploy: live check of the 8 pages, agent-fixes row, rescan.
 
+## Post generator review (24 Nov 2026, SK: suggestions for the generator's developer)
+
+63 English posts added by the post generator in 2026 (58 still present at 58f52465; 5 removed: 3 copies in a
+`barcode/` folder, and the 2 duplicate-URL copies, removed 24 Nov by 3568e0a3 "removed duplicate posts"). Most
+are "Auto-merge" commits (no human review). Scratch scripts: `gen_items.py`, `gen_content.py`, `overlap.py`.
+
+| Finding | Posts |
+|---|---|
+| Unclosed code block cuts the post off (`post_body_cut_off`) | 2 (2026-07-08 json-to-html php, 2026-08-24 csv-to-jpg python; the second also has an H1 in the body) |
+| Same topic and language as an older post (cannibalization) | word/docx-to-html python ×3 (2022, 2026-07-15, 2026-10-30); compare-excel C# (2025-09-19 / 2026-09-21); extract-images-from-pdf C# (2025-09-24 / 2026-10-12) and Java (2023 / 2026-10-02) |
+| `seoTitle` = `title` (no separate search title) | 58 of 58 |
+| One-post tags (thin tag pages ×19 languages) | 122 of 172 tags |
+| U+2011 hyphens | 57 of 58 posts, 558 chars (70 in front matter, 19 in code comments): the generator writes them too, not only the optimizer |
+| Template fill bug "learn how to perform how to convert…" | 1 (2026-11-23 powerpoint-to-images) |
+| "pricing page" link goes to the temporary-license page | 4 |
+| Squashed slug words (`stepbystep`, `groupdocsrewriter`, `groupdocseditor`, `aspnet`); titles 65/72 chars | 2 (2026-11-11 posts) |
+| Boilerplate note paragraph identical in 56 posts | 56 |
+| `faqs` / `steps` front matter not used by the theme (no FAQPage/HowTo JSON-LD; FAQs render as body text) | all |
+
+Fine: descriptions 120–160 in all, cover files present, 600–1,200 words, URL = `/<section>/<slug>/`, no literal keys.
+
 ## Plan (same order as blog.conholdate.com; SK's rules apply)
 
 1. **Full scan with all checks** (`caffeinate -i .venv/bin/python scripts/run_cycle.py groupdocs.cloud`, ~8 min; it
