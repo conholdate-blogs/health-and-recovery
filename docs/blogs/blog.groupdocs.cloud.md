@@ -130,6 +130,21 @@ are "Auto-merge" commits (no human review). Scratch scripts: `gen_items.py`, `ge
 
 Fine: descriptions 120–160 in all, cover files present, 600–1,200 words, URL = `/<section>/<slug>/`, no literal keys.
 
+## Traffic decline analysis (24 Nov 2026, SK: "check the June drop first", "check bulk changes")
+
+Search Console, both .cloud blogs (blog.aspose.cloud in brackets):
+
+| Question | Answer |
+|---|---|
+| When was the June drop? | **27 May 2026**, the same day on both blogs: daily clicks ~85 → ~30 (≈50 → ~22), impressions about flat. blog.groupdocs.com did not drop (holiday dip, back on 1 June) |
+| Cause | **Iran**: 838 of 1,285 clicks (65%) in 13–26 May came from Iran (aspose.cloud 367 of 647, 57%), mostly Persian "free online" posts. Iran clicks 1,501 (May) → 352 (June) → ~100/month since; also 2 clicks in March 2026. External (likely Iranian internet restrictions), not a site change |
+| Repo changes 15–30 May | groupdocs.cloud: **none**; aspose.cloud: only generated posts added/removed |
+| Long decline (Sep 2025 → Jan 2026) | non-Iran clicks 3,378 → 1,306 (−61%), all countries. English pages Sep 2025 819 clicks / 73,036 impr → Oct 2026 84 / 16,916. Top page `/conversion/zip-to-jpg-online/` 486 → 45 clicks (Sep → Jan), position 4.9 → 8.8, CTR halved at the same position: gradual, no single event |
+| Bulk changes since Jul 2025 | hi + cs removed from config (72ef0aea, 10 Oct 2025): 7 clicks in Sep 2025, not the cause; aspose.cloud `env: staging` in config.yml (d3ab50758b, 13 Feb 2026) reverted next commit, live robots `index, follow`; Redirects.json invalid 31 Oct 2025 – 6 Jan 2026 (85091a17 fixed): overlaps the decline, **unproven** (whether this blog reads Redirects.json live is still to confirm); no bulk English edits (max 31 files/month, Nayyer link fixes, Farhan optimizer Oct–Nov 2026) |
+| Generated posts | 58 posts × ~19 languages: **31 clicks, 2,803 impressions** (1 Aug – 20 Nov 2026) |
+
+Strategy given to SK for the generator's developer: slow generation, refresh what earned traffic (online-tool intent, translated pages), check indexing of generated posts, measure per batch.
+
 ## Plan (same order as blog.conholdate.com; SK's rules apply)
 
 1. **Full scan with all checks** (`caffeinate -i .venv/bin/python scripts/run_cycle.py groupdocs.cloud`, ~8 min; it
