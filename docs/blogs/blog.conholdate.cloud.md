@@ -178,7 +178,8 @@ Production (AWS) reads `Redirects.json`; QA on Ceph (blog-qa.conholdate.cloud, n
 | Missing pages (`/no-such-page-xyz/`, `/fr/tag/`) | **403** (production: 404): raise with the redirector/bucket owner before the move |
 | robots.txt | `Sitemap:` names the production host (harmless on QA, `noindex`) |
 
-Fix: blog commit **c7c743c** (local, waits for SK's push): `/feed/` → `/index.xml` in the `.txt`; `Redirects.md`
+Fix: blog commit **c7c743c** (pushed by SK 25 Nov, **verified on QA** minutes later without a deploy: `/feed/` and
+`/feed` → 301 `/index.xml` (200); other rules unchanged): `/feed/` → `/index.xml` in the `.txt`; `Redirects.md`
 says to change both files in the same commit. No `Redirects.json` change: old `/category/<slug>/`, `/tags/<slug>/`,
 `/feed/` URLs had 0 clicks, 0 impressions in Search Console (Jul 2025 – Nov 2026), and exact keys cannot express the
 pattern rules. Verify after the push: `/feed/` on QA → 301 `/index.xml` (no deploy needed if the redirector reads the
