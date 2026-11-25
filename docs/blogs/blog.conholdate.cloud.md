@@ -164,3 +164,22 @@ already-fixed blogs). `post_front_matter_markup` here: 0 after the summary rule 
 | CB5 | `Redirects.md` beside Redirects.json | added | **78d9209**: added |
 | — | Listing page 2+, llms.txt cap | needed there | not needed: 5 posts fit on one page; llms.txt lists all 5 |
 
+
+## QA redirects on Ceph (25 Nov)
+
+Production (AWS) reads `Redirects.json`; QA on Ceph (blog-qa.conholdate.cloud, nginx-redirector) reads
+`blog-qa.conholdate.cloud.redirects.txt` (regex rules, written July 2026).
+
+| Check on QA (curl, no follow) | Result |
+|---|---|
+| `/tag`, `/tag/`, `/tags` → `/tags/`; `/tags/<slug>/` → `/tag/<slug>/`; `/category[/<slug>]/` → `/categories/...` | 301, targets 200 ✅ |
+| Missing trailing slash (`/tag/convert-pdf`, `/fr`) | **301** (production: 302) ✅, so F16 (no-slash 302) is solved by the Ceph move |
+| `/feed/` | 301 → home page ❌ (the `.txt` missed the 13 Nov change, 78d9209) |
+| Missing pages (`/no-such-page-xyz/`, `/fr/tag/`) | **403** (production: 404): raise with the redirector/bucket owner before the move |
+| robots.txt | `Sitemap:` names the production host (harmless on QA, `noindex`) |
+
+Fix: blog commit **c7c743c** (local, waits for SK's push): `/feed/` → `/index.xml` in the `.txt`; `Redirects.md`
+says to change both files in the same commit. No `Redirects.json` change: old `/category/<slug>/`, `/tags/<slug>/`,
+`/feed/` URLs had 0 clicks, 0 impressions in Search Console (Jul 2025 – Nov 2026), and exact keys cannot express the
+pattern rules. Verify after the push: `/feed/` on QA → 301 `/index.xml` (no deploy needed if the redirector reads the
+file from the repo; else after the QA deploy).
