@@ -130,7 +130,7 @@ crawl-261119-3 and crawl-0001 resolved), `post_cover_lost` 18, `post_front_matte
 
 ## Fix batch 2: template and config fixes, one commit per fix (SK, 26 Nov)
 
-SK: one commit per fix type, easier to review (and to revert, and one agent-fixes row each). First built as one
+**Pushed 26 Nov (01fe452d..8fc184e4), waits for deploy.** SK: one commit per fix type, easier to review (and to revert, and one agent-fixes row each). First built as one
 commit 7d317afe (local), split into 12 by a script; final tree byte-identical to 7d317afe; each commit builds alone
 with Hugo 0.101 (100,281 pages each).
 
