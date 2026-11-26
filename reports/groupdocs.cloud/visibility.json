@@ -143,5 +143,54 @@
     "dr_date": "2026-11-19"
    }
   }
+ },
+ {
+  "date": "2026-11-26",
+  "windows": {
+   "current": [
+    "2026-10-27",
+    "2026-11-23"
+   ],
+   "six_months_ago": [
+    "2026-04-28",
+    "2026-05-25"
+   ]
+  },
+  "hosts": {
+   "blog.groupdocs.cloud": {
+    "keywords": {
+     "queries": 6973,
+     "top10": 1458,
+     "top3": 109,
+     "with_clicks": 285,
+     "impressions": 75943,
+     "hidden_share": 0.335,
+     "clicks": 828
+    },
+    "keywords_six_months_ago": {
+     "queries": 9097,
+     "top10": 953,
+     "top3": 104,
+     "with_clicks": 323,
+     "impressions": 105169,
+     "hidden_share": 0.494,
+     "clicks": 2462
+    },
+    "ai": {
+     "sessions": 1,
+     "by_platform": {
+      "ChatGPT": 1
+     }
+    },
+    "ai_six_months_ago": {
+     "sessions": 3,
+     "by_platform": {
+      "Perplexity": 3
+     }
+    },
+    "dr": 30.0,
+    "dr_date": "2026-11-19"
+   }
+  }
  }
 ]

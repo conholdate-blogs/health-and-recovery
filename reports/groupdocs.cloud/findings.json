@@ -14,7 +14,7 @@
         "https://blog.groupdocs.cloud/search/",
         "https://blog.groupdocs.cloud/ko/search/"
       ],
-      "observed": "2 of 34 sampled pages (by template: listing 2/4). e.g. https://blog.groupdocs.cloud/search/: 119 characters of main text in the HTML; https://blog.groupdocs.cloud/ko/search/: 119 characters of main text in the HTML",
+      "observed": "1 of 32 sampled pages (by template: listing 1/4); 1 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/search/: 119 characters of main text in the HTML; https://blog.groupdocs.cloud/ko/search/: 119 characters of main text in the HTML",
       "expected": "the main text in the HTML itself (at least 250 characters); AI crawlers do not run JavaScript",
       "locations": [
         {
@@ -42,30 +42,30 @@
       ],
       "sample": {
         "listing": [
-          2,
+          1,
           4
         ]
       }
     },
-    "affected_pages": 19,
+    "affected_pages": 10,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 14,
+      "impressions_28d": 7,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 274,
+      "past_impressions": 158,
       "lost_clicks": 0,
-      "lost_impressions": 260,
+      "lost_impressions": 151,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "lost",
-      "score": 3,
+      "score": 2,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "M",
@@ -76,7 +76,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run19",
+    "last_seen_run": "crawl-audit-run27",
     "resolved_run": null,
     "resolved_at": null,
     "check": "content_needs_js",
@@ -108,23 +108,23 @@
     },
     "affected_pages": 0,
     "impact": {
-      "clicks_28d": 794,
-      "impressions_28d": 79794,
+      "clicks_28d": 834,
+      "impressions_28d": 83487,
       "source": "gsc-host",
       "share": 1.0,
-      "past_clicks": 2480,
-      "past_impressions": 110465,
-      "lost_clicks": 1686,
-      "lost_impressions": 30671,
+      "past_clicks": 2479,
+      "past_impressions": 111748,
+      "lost_clicks": 1645,
+      "lost_impressions": 28261,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 13,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -135,7 +135,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "ai-audit-run3",
-    "last_seen_run": "ai-audit-run20",
+    "last_seen_run": "ai-audit-run28",
     "resolved_run": null,
     "resolved_at": null,
     "check": "llms_txt_missing",
@@ -218,14 +218,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "discovery-run1",
     "last_seen_run": "discovery-run6",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "discovery-run7",
+    "resolved_at": "2026-11-26T07:10:13+00:00",
     "check": "dup_in_file",
     "notes": []
   },
@@ -270,7 +270,6 @@
         "https://blog.groupdocs.cloud/ar/conversion/how-to-convert-powerpoint-to-jpg-and-jpg-to-powerpoint-in-node.js/",
         "https://blog.groupdocs.cloud/ar/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/",
         "https://blog.groupdocs.cloud/conversion/convert-csv-to-json-and-json-to-csv-in-java/",
-        "https://blog.groupdocs.cloud/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
         "https://blog.groupdocs.cloud/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/",
         "https://blog.groupdocs.cloud/conversion/convert-html-to-markdown-with-java-using-rest-api/",
         "https://blog.groupdocs.cloud/conversion/convert-html-to-pdf-in-csharp-using-rest-api/",
@@ -751,20 +750,19 @@
         "https://blog.groupdocs.cloud/zh/conversion/how-to-convert-powerpoint-to-jpg-and-jpg-to-powerpoint-in-node.js/",
         "https://blog.groupdocs.cloud/zh/conversion/how-to-convert-text-file-to-pdf-online-in-node.js/"
       ],
-      "observed": "511 links on 509 pages (42 distinct targets); by language: pl 32, vi 30, ko 29, ar 28, de 28, fa 28, fr 28, id 28, ...; 0 written by translation commits; 476 copied from the original post",
+      "observed": "510 links on 508 pages (42 distinct targets); by language: pl 32, vi 30, ko 29, ar 28, de 28, fa 28, fr 28, id 28, ...; 0 written by translation commits; 459 copied from the original post",
       "expected": "Every internal link points at a live page",
       "locations": [
         {
           "role": "link",
-          "url": "https://blog.groupdocs.cloud/category/conversion/",
-          "page": "https://blog.groupdocs.cloud/conversion/convert-csv-to-json-and-json-to-csv-in-java/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-21-convert-csv-to-json-and-json-to-csv-in-java/index.md",
-          "line": 230,
+          "url": "https://blog.groupdocs.cloud/ar/category/conversion/",
+          "page": "https://blog.groupdocs.cloud/ar/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ar.md",
+          "line": 331,
           "fix": null,
-          "commit": "4cce9d5a 2022-12-10: Added Hugo Blog",
-          "copies": 17,
+          "commit": "90a4f407 2023-06-12: Added translations.",
+          "copies": 16,
           "copy_langs": [
-            "ar",
             "de",
             "es",
             "fa",
@@ -782,14 +780,14 @@
             "zh",
             "zh-hant"
           ],
-          "origin": "english"
+          "origin": "translations"
         },
         {
           "role": "link",
           "url": "https://blog.groupdocs.cloud/category/conversion/",
-          "page": "https://blog.groupdocs.cloud/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
-          "line": 163,
+          "page": "https://blog.groupdocs.cloud/conversion/convert-csv-to-json-and-json-to-csv-in-java/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-21-convert-csv-to-json-and-json-to-csv-in-java/index.md",
+          "line": 230,
           "fix": null,
           "commit": "4cce9d5a 2022-12-10: Added Hugo Blog",
           "copies": 17,
@@ -1708,25 +1706,25 @@
         }
       ]
     },
-    "affected_pages": 509,
+    "affected_pages": 508,
     "impact": {
-      "clicks_28d": 21,
-      "impressions_28d": 6053,
+      "clicks_28d": 25,
+      "impressions_28d": 6444,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 74,
-      "past_impressions": 5650,
-      "lost_clicks": 53,
+      "past_clicks": 71,
+      "past_impressions": 5814,
+      "lost_clicks": 46,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 26,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "M",
@@ -1737,7 +1735,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run25",
+    "last_seen_run": "link-audit-run31",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -2142,14 +2140,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -2160,7 +2158,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",
@@ -2201,18 +2199,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 119,
+      "past_impressions": 131,
       "lost_clicks": 0,
-      "lost_impressions": 114,
+      "lost_impressions": 126,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -2223,7 +2221,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_target_bad",
@@ -2636,7 +2634,13 @@
           "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ja.md",
           "line": 331,
           "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
-          "commit": "90a4f407 2023-06-12: Added translations."
+          "commit": "90a4f407 2023-06-12: Added translations.",
+          "history": {
+            "english_line": "2026-11-23",
+            "english_commit": "1b509e71 2026-11-23: English fixes in 8 posts queued for translation: typos, a sentence copied from a PDF post, anchor ids from other posts, broken category link",
+            "translated": "2023-06-12",
+            "english_newer": true
+          }
         },
         {
           "role": "link",
@@ -3023,22 +3027,22 @@
     "affected_pages": 157,
     "impact": {
       "clicks_28d": 6,
-      "impressions_28d": 1476,
+      "impressions_28d": 1550,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 29,
-      "past_impressions": 2970,
-      "lost_clicks": 23,
-      "lost_impressions": 1494,
+      "past_clicks": 34,
+      "past_impressions": 3088,
+      "lost_clicks": 28,
+      "lost_impressions": 1538,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
-      "scored_on": "at stake",
+      "scored_on": "lost",
       "score": 5,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -3049,7 +3053,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-06",
     "first_seen_run": "link-audit-run16",
-    "last_seen_run": "link-audit-run25",
+    "last_seen_run": "link-audit-run31",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_redirected",
@@ -3067,59 +3071,54 @@
     "title": "Sitemap URLs canonicalize to a different URL",
     "evidence": {
       "urls": [
-        "https://blog.groupdocs.cloud/page/2/",
-        "https://blog.groupdocs.cloud/fr/page/2/"
+        "https://blog.groupdocs.cloud/fr/page/2/",
+        "https://blog.groupdocs.cloud/page/2/"
       ],
-      "observed": "2 of 34 sampled pages (by template: post 2/24). e.g. https://blog.groupdocs.cloud/page/2/: canonical https://blog.groupdocs.cloud/ (HTTP 200); https://blog.groupdocs.cloud/fr/page/2/: canonical https://blog.groupdocs.cloud/fr/ (HTTP 200)",
+      "observed": "0 of 32 sampled pages (by template: -); 2 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/fr/page/2/: canonical https://blog.groupdocs.cloud/fr/ (HTTP 200); https://blog.groupdocs.cloud/page/2/: canonical https://blog.groupdocs.cloud/ (HTTP 200)",
       "expected": "sitemaps list the canonical URL; canonical points to the page itself",
       "locations": [
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/page/2/",
-          "note": "canonical https://blog.groupdocs.cloud/ (HTTP 200)"
-        },
         {
           "role": "page",
           "url": "https://blog.groupdocs.cloud/fr/page/2/",
           "note": "canonical https://blog.groupdocs.cloud/fr/ (HTTP 200)"
         },
         {
-          "role": "canonical target",
-          "url": "https://blog.groupdocs.cloud/",
-          "note": "HTTP 200"
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/page/2/",
+          "note": "canonical https://blog.groupdocs.cloud/ (HTTP 200)"
         },
         {
           "role": "canonical target",
           "url": "https://blog.groupdocs.cloud/fr/",
           "note": "HTTP 200"
+        },
+        {
+          "role": "canonical target",
+          "url": "https://blog.groupdocs.cloud/",
+          "note": "HTTP 200"
         }
       ],
-      "sample": {
-        "post": [
-          2,
-          24
-        ]
-      }
+      "sample": {}
     },
-    "affected_pages": 922,
+    "affected_pages": 2,
     "impact": {
-      "clicks_28d": 64,
-      "impressions_28d": 6442,
-      "source": "gsc-template",
-      "share": null,
-      "past_clicks": 200,
-      "past_impressions": 8750,
-      "lost_clicks": 136,
-      "lost_impressions": 2308,
+      "clicks_28d": 0,
+      "impressions_28d": 15,
+      "source": "gsc-host",
+      "share": 0.0,
+      "past_clicks": 0,
+      "past_impressions": 20,
+      "lost_clicks": 0,
+      "lost_impressions": 5,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
-      "score": 30,
+      "score": 1,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -3130,7 +3129,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "crawl-audit-run19",
-    "last_seen_run": "crawl-audit-run19",
+    "last_seen_run": "crawl-audit-run27",
     "resolved_run": null,
     "resolved_at": null,
     "check": "canonical_elsewhere",
@@ -3155,11 +3154,11 @@
         "https://blog.groupdocs.cloud/pt/",
         "https://blog.groupdocs.cloud/archives/",
         "https://blog.groupdocs.cloud/viewer/render-excel-data-to-html-using-python/",
-        "https://blog.groupdocs.cloud/fa/groupdocs.cloud/",
-        "https://blog.groupdocs.cloud/vi/",
+        "https://blog.groupdocs.cloud/zh-hant/groupdocs.cloud/",
+        "https://blog.groupdocs.cloud/fa/",
         "https://blog.groupdocs.cloud/fa/archives/"
       ],
-      "observed": "33 of 34 sampled pages (by template: category 2/3, home 3/3, listing 4/4, post 24/24); 14 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.groupdocs.cloud/search/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.groupdocs.cloud/parser/extract-images-from-word-in-nodejs-image-extractor/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.groupdocs.cloud/de/groupdocs.cloud/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.groupdocs.cloud/pt/: in <body>: Open Graph, Twitter card, JSON-LD",
+      "observed": "31 of 32 sampled pages (by template: category 2/3, home 3/3, listing 4/4, post 22/22); 30 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.groupdocs.cloud/search/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.groupdocs.cloud/parser/extract-images-from-word-in-nodejs-image-extractor/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.groupdocs.cloud/de/groupdocs.cloud/: in <body>: Open Graph, Twitter card, JSON-LD; https://blog.groupdocs.cloud/pt/: in <body>: Open Graph, Twitter card, JSON-LD",
       "expected": "every head tag inside <head>; a <div> (e.g. language switcher) only after them",
       "locations": [
         {
@@ -3218,30 +3217,30 @@
           4
         ],
         "post": [
-          24,
-          24
+          22,
+          22
         ]
       }
     },
-    "affected_pages": 11128,
+    "affected_pages": 11148,
     "impact": {
-      "clicks_28d": 770,
-      "impressions_28d": 77345,
+      "clicks_28d": 811,
+      "impressions_28d": 80982,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 2405,
-      "past_impressions": 105712,
-      "lost_clicks": 1635,
-      "lost_impressions": 28367,
+      "past_clicks": 2409,
+      "past_impressions": 106848,
+      "lost_clicks": 1598,
+      "lost_impressions": 25866,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 26,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -3252,7 +3251,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "crawl-audit-run19",
-    "last_seen_run": "crawl-audit-run19",
+    "last_seen_run": "crawl-audit-run27",
     "resolved_run": null,
     "resolved_at": null,
     "check": "social_tags_in_body",
@@ -3670,14 +3669,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
     "last_seen_run": "repo-audit-run26",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run32",
+    "resolved_at": "2026-11-26T07:21:36+00:00",
     "check": "post_url_duplicate",
     "notes": []
   },
@@ -3716,22 +3715,22 @@
     "affected_pages": 2,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 14,
+      "impressions_28d": 12,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 226,
+      "past_impressions": 273,
       "lost_clicks": 0,
-      "lost_impressions": 212,
+      "lost_impressions": 261,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -3742,7 +3741,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -3762,32 +3761,32 @@
       "urls": [
         "https://blog.groupdocs.cloud/tags/"
       ],
-      "observed": "1,969 of 2,265 tags (87%) have one post; 42,558 tag pages in 19 languages; 4.7 tags per post; tag pages earned 24 of 794 clicks (28 days)",
+      "observed": "1,965 of 2,260 tags (87%) have one post; 42,517 tag pages in 19 languages; 4.7 tags per post; tag pages earned 23 of 834 clicks (28 days)",
       "expected": "Tags group several posts (at most 20% with one post); weak tag pages are noindex, follow and stay out of the sitemap",
       "traffic": {
-        "clicks": 24,
-        "impressions": 2418
+        "clicks": 23,
+        "impressions": 2459
       }
     },
-    "affected_pages": 36996,
+    "affected_pages": 36967,
     "impact": {
-      "clicks_28d": 24,
-      "impressions_28d": 2418,
+      "clicks_28d": 23,
+      "impressions_28d": 2459,
       "source": "gsc-tag-pages",
       "share": null,
-      "past_clicks": 24,
-      "past_impressions": 2418,
+      "past_clicks": 23,
+      "past_impressions": 2459,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
-      "score": 5,
+      "score": 4,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "M",
@@ -3798,7 +3797,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "structure-audit-2026-11-19",
-    "last_seen_run": "structure-audit-2026-11-23",
+    "last_seen_run": "structure-audit-2026-11-26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "tag_pages_thin",
@@ -3821,29 +3820,29 @@
       "observed": "one main section (GroupDocs.Cloud): https://blog.groupdocs.cloud/groupdocs.cloud/ lists the same posts as the home page and is indexable, in 19 languages",
       "expected": "With one main section, its section page is noindex, follow and out of the sitemap",
       "traffic": {
-        "clicks": 24,
-        "impressions": 2418
+        "clicks": 23,
+        "impressions": 2459
       }
     },
     "affected_pages": 19,
     "impact": {
-      "clicks_28d": 24,
-      "impressions_28d": 2418,
+      "clicks_28d": 23,
+      "impressions_28d": 2459,
       "source": "gsc-tag-pages",
       "share": null,
-      "past_clicks": 24,
-      "past_impressions": 2418,
+      "past_clicks": 23,
+      "past_impressions": 2459,
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
-      "score": 14,
+      "score": 13,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -3854,7 +3853,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "structure-audit-2026-11-19",
-    "last_seen_run": "structure-audit-2026-11-23",
+    "last_seen_run": "structure-audit-2026-11-26",
     "resolved_run": null,
     "resolved_at": null,
     "check": "section_lists_home_posts",
@@ -3969,14 +3968,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -3987,7 +3986,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run25",
+    "last_seen_run": "link-audit-run31",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -4078,22 +4077,22 @@
     "affected_pages": 5,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 6,
+      "impressions_28d": 9,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 8,
+      "past_impressions": 6,
       "lost_clicks": 0,
-      "lost_impressions": 2,
+      "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 1,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -4104,7 +4103,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run25",
+    "last_seen_run": "link-audit-run31",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -4292,23 +4291,23 @@
     },
     "affected_pages": 18,
     "impact": {
-      "clicks_28d": 1,
-      "impressions_28d": 48,
+      "clicks_28d": 0,
+      "impressions_28d": 43,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 152,
+      "past_impressions": 147,
       "lost_clicks": 0,
       "lost_impressions": 104,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
-      "scored_on": "at stake",
-      "score": 6,
+      "scored_on": "lost",
+      "score": 3,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -4319,7 +4318,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run25",
+    "last_seen_run": "link-audit-run31",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -4345,10 +4344,10 @@
         "https://blog.groupdocs.cloud/pt/",
         "https://blog.groupdocs.cloud/archives/",
         "https://blog.groupdocs.cloud/viewer/render-excel-data-to-html-using-python/",
-        "https://blog.groupdocs.cloud/fa/groupdocs.cloud/",
-        "https://blog.groupdocs.cloud/vi/"
+        "https://blog.groupdocs.cloud/zh-hant/groupdocs.cloud/",
+        "https://blog.groupdocs.cloud/fa/"
       ],
-      "observed": "34 of 34 sampled pages (by template: category 3/3, home 3/3, listing 4/4, post 24/24); 14 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/groupdocs.cloud/: 1 entries: en; https://blog.groupdocs.cloud/: 19 entries: en, ja, ko, es, de, ru; https://blog.groupdocs.cloud/search/: 19 entries: en, ja, ko, es, de, ru; https://blog.groupdocs.cloud/parser/extract-images-from-word-in-nodejs-image-extractor/: 19 entries: en, ja, ko, es, de, ru; https://blog.groupdocs.cloud/de/groupdocs.cloud/: 18 entries: ja, ko, es, de, ru, fr",
+      "observed": "32 of 32 sampled pages (by template: category 3/3, home 3/3, listing 4/4, post 22/22); 30 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/groupdocs.cloud/: 1 entries: en; https://blog.groupdocs.cloud/: 19 entries: en, ja, ko, es, de, ru; https://blog.groupdocs.cloud/search/: 19 entries: en, ja, ko, es, de, ru; https://blog.groupdocs.cloud/parser/extract-images-from-word-in-nodejs-image-extractor/: 19 entries: en, ja, ko, es, de, ru; https://blog.groupdocs.cloud/de/groupdocs.cloud/: 18 entries: ja, ko, es, de, ru, fr",
       "expected": "an x-default entry",
       "locations": [
         {
@@ -4403,30 +4402,30 @@
           4
         ],
         "post": [
-          24,
-          24
+          22,
+          22
         ]
       }
     },
-    "affected_pages": 11134,
+    "affected_pages": 11154,
     "impact": {
-      "clicks_28d": 770,
-      "impressions_28d": 77345,
+      "clicks_28d": 811,
+      "impressions_28d": 80982,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 2405,
-      "past_impressions": 105712,
-      "lost_clicks": 1635,
-      "lost_impressions": 28367,
+      "past_clicks": 2409,
+      "past_impressions": 106848,
+      "lost_clicks": 1598,
+      "lost_impressions": 25866,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 13,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -4437,7 +4436,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run19",
+    "last_seen_run": "crawl-audit-run27",
     "resolved_run": null,
     "resolved_at": null,
     "check": "hreflang_no_xdefault",
@@ -4456,11 +4455,12 @@
     "evidence": {
       "urls": [
         "https://blog.groupdocs.cloud/pt/",
-        "https://blog.groupdocs.cloud/vi/",
+        "https://blog.groupdocs.cloud/fa/",
+        "https://blog.groupdocs.cloud/fr/page/2/",
         "https://blog.groupdocs.cloud/it/",
-        "https://blog.groupdocs.cloud/fr/page/2/"
+        "https://blog.groupdocs.cloud/vi/"
       ],
-      "observed": "3 of 34 sampled pages (by template: home 2/3, post 1/24); 1 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/pt/: same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '; https://blog.groupdocs.cloud/vi/: same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '; https://blog.groupdocs.cloud/it/: same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '; https://blog.groupdocs.cloud/fr/page/2/: same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '",
+      "observed": "2 of 32 sampled pages (by template: home 2/3); 3 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/pt/: same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '; https://blog.groupdocs.cloud/fa/: same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '; https://blog.groupdocs.cloud/fr/page/2/: same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '; https://blog.groupdocs.cloud/it/: same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '; https://blog.groupdocs.cloud/vi/: same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '",
       "expected": "the meta description in the page's language",
       "locations": [
         {
@@ -4470,7 +4470,12 @@
         },
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/vi/",
+          "url": "https://blog.groupdocs.cloud/fa/",
+          "note": "same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/fr/page/2/",
           "note": "same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '"
         },
         {
@@ -4480,7 +4485,7 @@
         },
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/fr/page/2/",
+          "url": "https://blog.groupdocs.cloud/vi/",
           "note": "same as https://blog.groupdocs.cloud/: 'Document Automation APIs along with open-source SDKs to enhance Java, '"
         },
         {
@@ -4493,43 +4498,43 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/vi/sitemap.xml"
+          "url": "https://blog.groupdocs.cloud/fa/sitemap.xml"
         },
         {
           "role": "listed in",
           "url": "https://blog.groupdocs.cloud/it/sitemap.xml"
+        },
+        {
+          "role": "listed in",
+          "url": "https://blog.groupdocs.cloud/vi/sitemap.xml"
         }
       ],
       "sample": {
         "home": [
           2,
           3
-        ],
-        "post": [
-          1,
-          24
         ]
       }
     },
-    "affected_pages": 474,
+    "affected_pages": 13,
     "impact": {
-      "clicks_28d": 32,
-      "impressions_28d": 3231,
+      "clicks_28d": 0,
+      "impressions_28d": 11,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 100,
-      "past_impressions": 4487,
-      "lost_clicks": 68,
-      "lost_impressions": 1256,
+      "past_clicks": 0,
+      "past_impressions": 117,
+      "lost_clicks": 0,
+      "lost_impressions": 106,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
-      "scored_on": "at stake",
-      "score": 25,
+      "scored_on": "lost",
+      "score": 3,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -4540,7 +4545,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "crawl-audit-run19",
-    "last_seen_run": "crawl-audit-run19",
+    "last_seen_run": "crawl-audit-run27",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_untranslated",
@@ -4629,14 +4634,14 @@
       "lost_clicks": 0,
       "lost_impressions": 2,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 1,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -4647,7 +4652,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "link-audit-run23",
-    "last_seen_run": "link-audit-run25",
+    "last_seen_run": "link-audit-run31",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_differs_from_original",
@@ -4692,14 +4697,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "M",
@@ -4710,7 +4715,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translated_url_mismatch",
@@ -4728,344 +4733,20 @@
     "title": "Translations older than the English title or description",
     "evidence": {
       "urls": [
-        "https://blog.groupdocs.cloud/ar/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-        "https://blog.groupdocs.cloud/de/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-        "https://blog.groupdocs.cloud/es/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-        "https://blog.groupdocs.cloud/fa/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-        "https://blog.groupdocs.cloud/fr/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-        "https://blog.groupdocs.cloud/id/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-        "https://blog.groupdocs.cloud/it/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-        "https://blog.groupdocs.cloud/ja/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-        "https://blog.groupdocs.cloud/ko/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-        "https://blog.groupdocs.cloud/pl/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/"
+        "https://blog.groupdocs.cloud/ar/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+        "https://blog.groupdocs.cloud/de/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+        "https://blog.groupdocs.cloud/es/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+        "https://blog.groupdocs.cloud/fa/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+        "https://blog.groupdocs.cloud/fr/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+        "https://blog.groupdocs.cloud/id/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+        "https://blog.groupdocs.cloud/it/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+        "https://blog.groupdocs.cloud/ja/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+        "https://blog.groupdocs.cloud/ko/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+        "https://blog.groupdocs.cloud/pl/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/"
       ],
-      "observed": "216 entries or files; English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to ': 18, English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using ': 18, English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using': 18, English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi': 18",
+      "observed": "90 entries or files; English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using': 18, English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi': 18, English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p': 18, English rewritten 2026-11-23 after the translation (2024-06-28); seoTitle: 'ZIP to JPG | Transform ZIP files to JPEG Images' -> 'ZIP to JPG Online Converter – Fast, Free, Secure'; description: 'Convert ZIP to JPG online quickly for flawless, pi' -> 'Convert ZIP to JPG online instantly for flawless, ': 18",
       "expected": "A translation is updated whenever the English title or description changes",
       "locations": [
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ar/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.ar.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/de/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.de.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/es/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.es.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/fa/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.fa.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/fr/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.fr.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/id/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.id.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/it/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.it.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ja/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.ja.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ko/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.ko.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/pl/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.pl.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/pt/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.pt.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ru/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.ru.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/th/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.th.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/tr/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.tr.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/uk/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.uk.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/vi/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.vi.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/zh-hant/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.zh-hant.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/zh/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.zh.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'GroupDocs.Annotation Cloud | Annotate PDF Document' -> 'Annotate PDF with Node.js REST API | GroupDocs Clo'; description: 'Programmatically Annotate PDF documents using a RE' -> 'Use GroupDocs Annotation Cloud SDK for Node.js to '",
-          "fix": "re-translate from content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ar/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.ar.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/de/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.de.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/es/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.es.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/fa/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.fa.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/fr/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.fr.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/id/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.id.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/it/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.it.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ja/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.ja.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ko/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.ko.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/pl/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.pl.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/pt/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.pt.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ru/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.ru.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/th/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.th.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/tr/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.tr.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/uk/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.uk.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/vi/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.vi.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/zh-hant/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.zh-hant.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/zh/assembly/display-xml-data-in-html-with-python-using-rest-api/",
-          "file": "content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.zh.md",
-          "line": 1,
-          "note": "English rewritten 2026-11-03 after the translation (2024-06-28); seoTitle: 'Python Generate HTML Report from XML | HTML Report' -> 'Python: Generate HTML Report from XML via REST API'; description: 'Use the GroupDocs.Assembly Cloud API to generate d' -> 'Generate dynamic HTML reports from XML data using '",
-          "fix": "re-translate from content/GroupDocs.Cloud/assembly/2023-08-04-display-xml-data-in-html-with-python-using-rest-api/index.md",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/ar/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
@@ -5101,28 +4782,352 @@
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
           "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/fr/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.fr.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/id/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.id.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/it/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.it.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ja/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.ja.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ko/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.ko.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pl/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.pl.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pt/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.pt.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ru/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.ru.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/th/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.th.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/tr/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.tr.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/uk/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.uk.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/vi/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.vi.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/zh-hant/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.zh-hant.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/zh/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.zh.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ar/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.ar.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/de/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.de.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/es/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.es.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/fa/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.fa.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/fr/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.fr.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/id/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.id.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/it/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.it.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ja/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.ja.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ko/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.ko.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pl/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.pl.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pt/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.pt.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ru/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.ru.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/th/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.th.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/tr/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.tr.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/uk/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.uk.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/vi/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.vi.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/zh-hant/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.zh-hant.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/zh/conversion/how-to-convert-msg-files-to-pdf-in-ruby/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.zh.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ar/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ar.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/de/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.de.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/es/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.es.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/fa/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
+          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.fa.md",
+          "line": 1,
+          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         }
       ]
     },
-    "affected_pages": 216,
+    "affected_pages": 90,
     "impact": {
-      "clicks_28d": 0,
-      "impressions_28d": 0,
+      "clicks_28d": 1,
+      "impressions_28d": 3,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 11,
+      "past_impressions": 5,
       "lost_clicks": 0,
-      "lost_impressions": 11,
+      "lost_impressions": 2,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
-      "scored_on": "lost",
-      "score": 0,
+      "scored_on": "at stake",
+      "score": 1,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "M",
@@ -5133,7 +5138,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -5152,7 +5157,6 @@
     "evidence": {
       "urls": [
         "https://blog.groupdocs.cloud/ar/annotation/extract-or-remove-annotations-from-pdf-using-rest-api-in-node-js/",
-        "https://blog.groupdocs.cloud/ar/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
         "https://blog.groupdocs.cloud/es/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/",
         "https://blog.groupdocs.cloud/fa/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/",
         "https://blog.groupdocs.cloud/it/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/",
@@ -5160,9 +5164,10 @@
         "https://blog.groupdocs.cloud/ko/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/",
         "https://blog.groupdocs.cloud/pl/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/",
         "https://blog.groupdocs.cloud/pt/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/",
-        "https://blog.groupdocs.cloud/uk/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/"
+        "https://blog.groupdocs.cloud/uk/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/",
+        "https://blog.groupdocs.cloud/vi/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/"
       ],
-      "observed": "94 entries or files; seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release': 18, seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js': 12, seoTitle in English: 'annoucing-groupdcs.viewer-cloud-API-pre-release': 5, seoTitle in English: 'HTML to PDF Node.js API | Convert Web Page to PDF Online': 4",
+      "observed": "93 entries or files; seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release': 18, seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js': 12, seoTitle in English: 'annoucing-groupdcs.viewer-cloud-API-pre-release': 5, seoTitle in English: 'HTML to PDF Node.js API | Convert Web Page to PDF Online': 4",
       "expected": "A translation's seoTitle, title and description are in its own language",
       "locations": [
         {
@@ -5172,15 +5177,6 @@
           "line": 1,
           "note": "seoTitle in English: 'Extract or Remove Annotations from PDF using REST API in Nod'; title in English: 'Extract or Remove Annotations from PDF using REST API in Nod'; description in English: 'Programmatically Extract or Remove Annotations from PDF usin'",
           "fix": "translate seoTitle, title, description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ar/annotation/annotate-pdf-documents-using-a-rest-api-in-node-js/",
-          "file": "content/GroupDocs.Cloud/annotation/2021-08-21-annotate-pdf-documents-using-a-rest-api-in-node-js/index.ar.md",
-          "line": 1,
-          "note": "title in English: 'Annotate PDF Documents using a REST API in Node.js'",
-          "fix": "translate title",
           "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
@@ -5524,28 +5520,37 @@
           "note": "seoTitle in English: 'HTML to PDF Node.js API | Convert Web Page to PDF Online'",
           "fix": "translate seoTitle",
           "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/uk/conversion/html-to-pdf-online-nodejs/",
+          "file": "content/GroupDocs.Cloud/conversion/2025-04-30-convert-html-to-pdf-in-nodejs/index.uk.md",
+          "line": 1,
+          "note": "seoTitle in English: 'HTML to PDF Node.js API | Convert Web Page to PDF Online'",
+          "fix": "translate seoTitle",
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         }
       ]
     },
-    "affected_pages": 94,
+    "affected_pages": 93,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 4,
+      "past_impressions": 1,
       "lost_clicks": 0,
-      "lost_impressions": 4,
+      "lost_impressions": 1,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "M",
@@ -5556,7 +5561,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -5750,18 +5755,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 119,
+      "past_impressions": 131,
       "lost_clicks": 0,
-      "lost_impressions": 114,
+      "lost_impressions": 126,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "lost",
       "score": 3,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -5772,7 +5777,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "section_index_untranslated",
@@ -5849,18 +5854,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 119,
+      "past_impressions": 131,
       "lost_clicks": 0,
-      "lost_impressions": 114,
+      "lost_impressions": 126,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "lost",
       "score": 3,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -5871,7 +5876,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "language_name_wrong",
@@ -5922,18 +5927,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 3,
+      "past_impressions": 2,
       "lost_clicks": 0,
-      "lost_impressions": 3,
+      "lost_impressions": 2,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -5944,7 +5949,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "rtl_direction_missing",
@@ -5966,14 +5971,14 @@
         "https://blog.groupdocs.cloud/search/",
         "https://blog.groupdocs.cloud/pt/",
         "https://blog.groupdocs.cloud/archives/",
-        "https://blog.groupdocs.cloud/vi/",
+        "https://blog.groupdocs.cloud/fa/",
         "https://blog.groupdocs.cloud/fa/archives/",
-        "https://blog.groupdocs.cloud/ko/search/",
+        "https://blog.groupdocs.cloud/fr/archives/",
+        "https://blog.groupdocs.cloud/conversion/convert-xml-to-excel-and-excel-to-xml-in-python/",
         "https://blog.groupdocs.cloud/ar/archives/",
-        "https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/",
-        "https://blog.groupdocs.cloud/it/"
+        "https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/"
       ],
-      "observed": "9 of 34 sampled pages (by template: home 3/3, listing 4/4, post 2/24); 3 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '; https://blog.groupdocs.cloud/search/: width 6: 'search'; https://blog.groupdocs.cloud/pt/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '; https://blog.groupdocs.cloud/archives/: width 8: 'archives'; https://blog.groupdocs.cloud/vi/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '",
+      "observed": "8 of 32 sampled pages (by template: home 3/3, listing 4/4, post 1/22); 7 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '; https://blog.groupdocs.cloud/search/: width 6: 'search'; https://blog.groupdocs.cloud/pt/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '; https://blog.groupdocs.cloud/archives/: width 8: 'archives'; https://blog.groupdocs.cloud/fa/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '",
       "expected": "50-170 characters (CJK count double)",
       "locations": [
         {
@@ -5998,7 +6003,7 @@
         },
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/vi/",
+          "url": "https://blog.groupdocs.cloud/fa/",
           "note": "width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '"
         },
         {
@@ -6015,7 +6020,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/vi/sitemap.xml"
+          "url": "https://blog.groupdocs.cloud/fa/sitemap.xml"
         }
       ],
       "sample": {
@@ -6028,30 +6033,30 @@
           4
         ],
         "post": [
-          2,
-          24
+          1,
+          22
         ]
       }
     },
-    "affected_pages": 979,
+    "affected_pages": 561,
     "impact": {
-      "clicks_28d": 64,
-      "impressions_28d": 6485,
+      "clicks_28d": 37,
+      "impressions_28d": 3722,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 200,
-      "past_impressions": 9466,
-      "lost_clicks": 136,
-      "lost_impressions": 2981,
+      "past_clicks": 110,
+      "past_impressions": 5627,
+      "lost_clicks": 73,
+      "lost_impressions": 1905,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 8,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -6062,7 +6067,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run19",
+    "last_seen_run": "crawl-audit-run27",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -6082,12 +6087,13 @@
       "urls": [
         "https://blog.groupdocs.cloud/",
         "https://blog.groupdocs.cloud/pt/",
-        "https://blog.groupdocs.cloud/vi/",
+        "https://blog.groupdocs.cloud/fa/",
+        "https://blog.groupdocs.cloud/fr/page/2/",
         "https://blog.groupdocs.cloud/it/",
         "https://blog.groupdocs.cloud/page/2/",
-        "https://blog.groupdocs.cloud/fr/page/2/"
+        "https://blog.groupdocs.cloud/vi/"
       ],
-      "observed": "5 of 34 sampled pages (by template: home 3/3, post 2/24); 1 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/: no non-empty <h1>; https://blog.groupdocs.cloud/pt/: no non-empty <h1>; https://blog.groupdocs.cloud/vi/: no non-empty <h1>; https://blog.groupdocs.cloud/it/: no non-empty <h1>; https://blog.groupdocs.cloud/page/2/: no non-empty <h1>",
+      "observed": "3 of 32 sampled pages (by template: home 3/3); 4 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/: no non-empty <h1>; https://blog.groupdocs.cloud/pt/: no non-empty <h1>; https://blog.groupdocs.cloud/fa/: no non-empty <h1>; https://blog.groupdocs.cloud/fr/page/2/: no non-empty <h1>; https://blog.groupdocs.cloud/it/: no non-empty <h1>",
       "expected": "one H1 that states the page topic",
       "locations": [
         {
@@ -6102,17 +6108,17 @@
         },
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/vi/",
+          "url": "https://blog.groupdocs.cloud/fa/",
+          "note": "no non-empty <h1>"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/fr/page/2/",
           "note": "no non-empty <h1>"
         },
         {
           "role": "page",
           "url": "https://blog.groupdocs.cloud/it/",
-          "note": "no non-empty <h1>"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/page/2/",
           "note": "no non-empty <h1>"
         },
         {
@@ -6129,7 +6135,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/vi/sitemap.xml"
+          "url": "https://blog.groupdocs.cloud/fa/sitemap.xml"
         },
         {
           "role": "listed in",
@@ -6140,32 +6146,28 @@
         "home": [
           3,
           3
-        ],
-        "post": [
-          2,
-          24
         ]
       }
     },
-    "affected_pages": 941,
+    "affected_pages": 19,
     "impact": {
-      "clicks_28d": 64,
-      "impressions_28d": 6457,
+      "clicks_28d": 0,
+      "impressions_28d": 16,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 200,
-      "past_impressions": 8918,
-      "lost_clicks": 136,
-      "lost_impressions": 2461,
+      "past_clicks": 0,
+      "past_impressions": 176,
+      "lost_clicks": 0,
+      "lost_impressions": 160,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
-      "scored_on": "at stake",
-      "score": 8,
+      "scored_on": "lost",
+      "score": 1,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -6176,7 +6178,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run19",
+    "last_seen_run": "crawl-audit-run27",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -6197,12 +6199,14 @@
         "https://blog.groupdocs.cloud/search/",
         "https://blog.groupdocs.cloud/archives/",
         "https://blog.groupdocs.cloud/fa/archives/",
-        "https://blog.groupdocs.cloud/ko/search/",
+        "https://blog.groupdocs.cloud/fr/archives/",
         "https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/",
+        "https://blog.groupdocs.cloud/pl/merger/merge-documents-of-different-types-using-rest-api-in-python/",
+        "https://blog.groupdocs.cloud/ar/archives/",
         "https://blog.groupdocs.cloud/es/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-        "https://blog.groupdocs.cloud/ar/archives/"
+        "https://blog.groupdocs.cloud/ko/search/"
       ],
-      "observed": "6 of 34 sampled pages (by template: listing 4/4, post 2/24); 1 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/search/: width 6: 'Search'; https://blog.groupdocs.cloud/archives/: width 7: 'Archive'; https://blog.groupdocs.cloud/fa/archives/: width 7: 'آرشیوها'; https://blog.groupdocs.cloud/ko/search/: width 4: '검색'; https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/: width 76: 'Python Password Protect an Excel File | XLS/XLSX Password Protector REST API'",
+      "observed": "6 of 32 sampled pages (by template: listing 4/4, post 2/22); 3 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/search/: width 6: 'Search'; https://blog.groupdocs.cloud/archives/: width 7: 'Archive'; https://blog.groupdocs.cloud/fa/archives/: width 7: 'آرشیوها'; https://blog.groupdocs.cloud/fr/archives/: width 8: 'Archiver'; https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/: width 76: 'Python Password Protect an Excel File | XLS/XLSX Password Protector REST API'",
       "expected": "10-70 characters (CJK count double)",
       "locations": [
         {
@@ -6222,8 +6226,8 @@
         },
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/ko/search/",
-          "note": "width 4: '검색'"
+          "url": "https://blog.groupdocs.cloud/fr/archives/",
+          "note": "width 8: 'Archiver'"
         },
         {
           "role": "page",
@@ -6244,7 +6248,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/ko/sitemap.xml"
+          "url": "https://blog.groupdocs.cloud/fr/sitemap.xml"
         }
       ],
       "sample": {
@@ -6254,29 +6258,29 @@
         ],
         "post": [
           2,
-          24
+          22
         ]
       }
     },
-    "affected_pages": 960,
+    "affected_pages": 1045,
     "impact": {
-      "clicks_28d": 64,
-      "impressions_28d": 6470,
+      "clicks_28d": 74,
+      "impressions_28d": 7385,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 200,
-      "past_impressions": 9298,
-      "lost_clicks": 136,
-      "lost_impressions": 2828,
+      "past_clicks": 219,
+      "past_impressions": 10271,
+      "lost_clicks": 145,
+      "lost_impressions": 2886,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
-      "score": 8,
+      "score": 9,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -6287,7 +6291,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run19",
+    "last_seen_run": "crawl-audit-run27",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -6309,9 +6313,10 @@
         "https://blog.groupdocs.cloud/conversion/september-newsletter/",
         "https://blog.groupdocs.cloud/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/",
         "https://blog.groupdocs.cloud/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-        "https://blog.groupdocs.cloud/es/merger/merge-documents-of-different-types-using-rest-api-in-python/"
+        "https://blog.groupdocs.cloud/es/merger/merge-documents-of-different-types-using-rest-api-in-python/",
+        "https://blog.groupdocs.cloud/pl/merger/merge-documents-of-different-types-using-rest-api-in-python/"
       ],
-      "observed": "5 of 48 checked pages: /merger/rearrange-pdf-pages-using-rest-api-in-node-js/ title: 'Edit Documents using REST API in PHP | Edit DOCX or XLSX Files in PHP' → 'Rearrange PDF Pages using REST API in Node.js'; /conversion/september-newsletter/ title: 'Get Documents Completed and Signed through Online Forms | GroupDocs' → 'Spotlight on GroupDocs.Conversion for .NET – September 2014 Newsletter'; /viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/ title: 'Display PDF and Microsoft Office Documents on Your Concrete5 Website' → 'GroupDocs Scheduled Maintenance – 2nd August, 2015'; /merger/merge-documents-of-different-types-using-rest-api-in-python/ title: 'Sign PDF with Stamp using REST API in Node.js | eSign PDF in Node.js' → 'Merge Documents of Different Types using REST API in Python'; /es/merger/merge-documents-of-different-types-using-rest-api-in-python/ title: 'Firme PDF con Stamp usando REST API en Node.js | Firma electrónica de PDF en Node.js' → 'Combinar documentos de diferentes tipos usando REST API en Python'",
+      "observed": "6 of 62 checked pages: /merger/rearrange-pdf-pages-using-rest-api-in-node-js/ title: 'Edit Documents using REST API in PHP | Edit DOCX or XLSX Files in PHP' → 'Rearrange PDF Pages using REST API in Node.js'; /conversion/september-newsletter/ title: 'Get Documents Completed and Signed through Online Forms | GroupDocs' → 'Spotlight on GroupDocs.Conversion for .NET – September 2014 Newsletter'; /viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/ title: 'Display PDF and Microsoft Office Documents on Your Concrete5 Website' → 'GroupDocs Scheduled Maintenance – 2nd August, 2015'; /merger/merge-documents-of-different-types-using-rest-api-in-python/ title: 'Sign PDF with Stamp using REST API in Node.js | eSign PDF in Node.js' → 'Merge Documents of Different Types using REST API in Python'; /es/merger/merge-documents-of-different-types-using-rest-api-in-python/ title: 'Firme PDF con Stamp usando REST API en Node.js | Firma electrónica de PDF en Node.js' → 'Combinar documentos de diferentes tipos usando REST API en Python'; and 1 more",
       "expected": "Title and meta description describe the page's own product, like its H1",
       "locations": [
         {
@@ -6338,13 +6343,18 @@
           "role": "page",
           "url": "https://blog.groupdocs.cloud/es/merger/merge-documents-of-different-types-using-rest-api-in-python/",
           "note": "title: 'Firme PDF con Stamp usando REST API en Node.js | Firma electrónica de PDF en Node.js' → 'Combinar documentos de diferentes tipos usando REST API en Python'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/pl/merger/merge-documents-of-different-types-using-rest-api-in-python/",
+          "note": "title: 'Podpisz plik PDF za pomocą stempla przy użyciu interfejsu API REST w Node.js | ePodpisz PDF w Node.js' → 'Scal dokumenty różnych typów za pomocą REST API w Python'"
         }
       ]
     },
-    "affected_pages": 5,
+    "affected_pages": 6,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 41,
+      "impressions_28d": 42,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
@@ -6352,14 +6362,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 2,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -6370,7 +6380,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "text-audit-run6",
-    "last_seen_run": "text-audit-run22",
+    "last_seen_run": "text-audit-run30",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_topic_mismatch",
@@ -6390,7 +6400,7 @@
       "urls": [
         "https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/"
       ],
-      "observed": "1 of 34 sampled pages (by template: post 1/24). e.g. https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/: 4 H1s: Next Generation GroupDocs.Viewer Cloud i | What is GroupDocs.Viewer Cloud# | GroupDocs.Viewer Cloud Features#",
+      "observed": "0 of 32 sampled pages (by template: -); 1 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/: 4 H1s: Next Generation GroupDocs.Viewer Cloud i | What is GroupDocs.Viewer Cloud# | GroupDocs.Viewer Cloud Features#",
       "expected": "one H1 per page",
       "locations": [
         {
@@ -6407,32 +6417,27 @@
           "url": "https://blog.groupdocs.cloud/sitemap.xml"
         }
       ],
-      "sample": {
-        "post": [
-          1,
-          24
-        ]
-      }
+      "sample": {}
     },
-    "affected_pages": 461,
+    "affected_pages": 1,
     "impact": {
-      "clicks_28d": 32,
-      "impressions_28d": 3221,
-      "source": "gsc-template",
-      "share": null,
-      "past_clicks": 100,
-      "past_impressions": 4375,
-      "lost_clicks": 68,
-      "lost_impressions": 1154,
+      "clicks_28d": 0,
+      "impressions_28d": 7,
+      "source": "gsc-host",
+      "share": 0.0,
+      "past_clicks": 0,
+      "past_impressions": 10,
+      "lost_clicks": 0,
+      "lost_impressions": 3,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
-      "score": 7,
+      "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -6443,7 +6448,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "crawl-audit-run19",
-    "last_seen_run": "crawl-audit-run19",
+    "last_seen_run": "crawl-audit-run27",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_multiple",
@@ -6463,7 +6468,7 @@
       "urls": [
         "https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/"
       ],
-      "observed": "1 of 48 checked pages: /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'annoucing' → 'announcing'; /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'groupdcs' → 'groupdocs'",
+      "observed": "1 of 62 checked pages: /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'annoucing' → 'announcing'; /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'groupdcs' → 'groupdocs'",
       "expected": "Correctly spelled titles, H1s and meta descriptions",
       "locations": [
         {
@@ -6489,14 +6494,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -6507,7 +6512,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "text-audit-run22",
-    "last_seen_run": "text-audit-run22",
+    "last_seen_run": "text-audit-run30",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_typo",
@@ -6536,7 +6541,7 @@
         "https://blog.groupdocs.cloud/ru/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/",
         "https://blog.groupdocs.cloud/th/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/"
       ],
-      "observed": "2,346 entries or files; too long (width 79): 'Erweitern Sie Ihre C#-/ASP.NET-App mit der Funktion zur elektronischen Signatur': 5, too long (width 83): 'Améliorez votre application C# / ASP.NET avec la capacité de signature électroni': 5, too long (width 78): 'Tingkatkan Aplikasi C# / ASP.NET Anda dengan Kemampuan Tanda Tangan Elektronik': 5, too long (width 71): 'Migliora la tua app C#/ASP.NET con la funzionalità di firma elettronica': 5",
+      "observed": "2,285 entries or files; too long (width 79): 'Erweitern Sie Ihre C#-/ASP.NET-App mit der Funktion zur elektronischen Signatur': 5, too long (width 83): 'Améliorez votre application C# / ASP.NET avec la capacité de signature électroni': 5, too long (width 78): 'Tingkatkan Aplikasi C# / ASP.NET Anda dengan Kemampuan Tanda Tangan Elektronik': 5, too long (width 71): 'Migliora la tua app C#/ASP.NET con la funzionalità di firma elettronica': 5",
       "expected": "Every post's search title (seoTitle, else title) is 10-70 characters wide (CJK count double)",
       "locations": [
         {
@@ -6901,7 +6906,7 @@
         }
       ]
     },
-    "affected_pages": 2346,
+    "affected_pages": 2285,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -6912,14 +6917,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -6930,7 +6935,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -6959,7 +6964,7 @@
         "https://blog.groupdocs.cloud/fr/annotation/integrate-groupdocs-annotation-for-net-into-your-getsimple-website/",
         "https://blog.groupdocs.cloud/it/annotation/integrate-groupdocs-annotation-for-net-into-your-getsimple-website/"
       ],
-      "observed": "3,733 entries or files; too long (width 175): 'GroupDocs bietet eine .NET-Bibliothek mit flexibler API, die zum Erstellen recht': 5, too long (width 182): 'GroupDocs ofrece una biblioteca .NET con API flexible que se puede usar para cre': 5, too long (width 220): 'GroupDocs propose une bibliothèque .NET avec une API flexible qui peut être util': 5, too long (width 201): 'GroupDocs menawarkan pustaka .NET dengan API fleksibel yang dapat digunakan untu': 5",
+      "observed": "3,675 entries or files; too long (width 175): 'GroupDocs bietet eine .NET-Bibliothek mit flexibler API, die zum Erstellen recht': 5, too long (width 182): 'GroupDocs ofrece una biblioteca .NET con API flexible que se puede usar para cre': 5, too long (width 220): 'GroupDocs propose une bibliothèque .NET avec une API flexible qui peut être util': 5, too long (width 201): 'GroupDocs menawarkan pustaka .NET dengan API fleksibel yang dapat digunakan untu': 5",
       "expected": "Every post's description (description, else summary) is 50-170 characters wide",
       "locations": [
         {
@@ -7324,7 +7329,7 @@
         }
       ]
     },
-    "affected_pages": 3733,
+    "affected_pages": 3675,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -7335,14 +7340,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -7353,7 +7358,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -7758,14 +7763,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -7776,7 +7781,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_h1",
@@ -8173,7 +8178,7 @@
     "affected_pages": 480,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 182,
+      "impressions_28d": 169,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
@@ -8181,14 +8186,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 6,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -8199,7 +8204,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_escaped",
@@ -8228,7 +8233,7 @@
         "https://blog.groupdocs.cloud/ja/merger/password-protect-word-files-using-rest-api-in-nodejs/",
         "https://blog.groupdocs.cloud/ko/merger/password-protect-word-files-using-rest-api-in-nodejs/"
       ],
-      "observed": "38 entries or files; description: 'MPP`yi PDF`ye Java REST API kullanarak dönüştürmeyi öğrenin. Proje paylaşımını basitleştir': 1, description: 'استكشف إمكانيات REST API لحماية كلمة مرور DOCX واستفد من Node.js SDK لتوضيح **كيفية حماية ': 1, description: 'Entdecken Sie die Funktionen einer DOCX-Passwortschutz-REST-API und nutzen Sie das Node.js': 1, description: 'Explore las capacidades de una API REST protectora de contraseña DOCX y aproveche el SDK d': 1",
+      "observed": "21 entries or files; description: 'MPP`yi PDF`ye Java REST API kullanarak dönüştürmeyi öğrenin. Proje paylaşımını basitleştir': 1, description: 'استكشف إمكانيات REST API لحماية كلمة مرور DOCX واستفد من Node.js SDK لتوضيح **كيفية حماية ': 1, description: 'Entdecken Sie die Funktionen einer DOCX-Passwortschutz-REST-API und nutzen Sie das Node.js': 1, description: 'Explore las capacidades de una API REST protectora de contraseña DOCX y aproveche el SDK d': 1",
       "expected": "title, seoTitle, description and summary are plain text: no **, __, ` or [x](url)",
       "locations": [
         {
@@ -8419,163 +8424,10 @@
           "note": "title: 'Об`єднання документів Word в C# .NET – об`єднання файлів DOC/DOCX програмно'",
           "fix": "remove ` from title",
           "commit": "beda0bdb 2025-08-22 Missing translations for Merge Word docs"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ar/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.ar.md",
-          "line": 1,
-          "note": "description: 'تعرف على **كيفية إضافة علامة مائية في ملفات Excel** باستخدام REST API وJava SDK للعلامة ال'",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/es/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.es.md",
-          "line": 1,
-          "note": "description: 'Aprenda **cómo agregar una marca de agua en archivos de Excel** utilizando la API REST de '",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/fa/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.fa.md",
-          "line": 1,
-          "note": "description: 'یاد بگیرید **چگونگی افزودن واترمارک در فایل های Excel** با استفاده از واترمارکر اکسل REST '",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/fr/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.fr.md",
-          "line": 1,
-          "note": "description: \"Découvrez **comment ajouter un filigrane dans des fichiers Excel** à l'aide de l'API REST \"",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/id/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.id.md",
-          "line": 1,
-          "note": "description: 'Pelajari **cara menambahkan tanda air di file Excel** menggunakan REST API tanda air Excel'",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/it/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.it.md",
-          "line": 1,
-          "note": "description: \"Scopri **come aggiungere una filigrana nei file Excel** utilizzando l'API REST watermarker\"",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ja/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.ja.md",
-          "line": 1,
-          "note": "description: 'Excel ウォーターマーカー REST API と Java SDK を使用して **Excel ファイルにウォーターマークを追加する方法**を学習します。このガイドでは、セット'",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ko/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.ko.md",
-          "line": 1,
-          "note": "description: 'Excel 워터마커 REST API 및 Java SDK를 사용하여 **Excel 워터마크** 파일에 워터마크를 추가하는 방법을 알아보세요. 우리 가이드에서는 워터'",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/pl/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.pl.md",
-          "line": 1,
-          "note": "description: 'Dowiedz się **jak dodać znak wodny w plikach programu Excel** przy użyciu interfejsu API R'",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/pt/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.pt.md",
-          "line": 1,
-          "note": "description: \"Aprenda **como adicionar uma marca d'água em arquivos do Excel** usando a API REST de marc\"",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ru/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.ru.md",
-          "line": 1,
-          "note": "description: 'Узнайте, **как добавить водяной знак в файлы Excel** с помощью API REST водяных знаков Exc'",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/th/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.th.md",
-          "line": 1,
-          "note": "description: 'เรียนรู้ **วิธีเพิ่มลายน้ำในไฟล์ Excel** โดยใช้ REST API ลายน้ำของ Excel และ Java SDK คำแน'",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/tr/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.tr.md",
-          "line": 1,
-          "note": "description: \"Excel filigran REST API'sini ve Java SDK'yı kullanarak **Excel'e nasıl filigran ekleyeceği\"",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/uk/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.uk.md",
-          "line": 1,
-          "note": "description: 'Дізнайтеся, **як додати водяний знак у файли Excel** за допомогою REST API для водяних зна'",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/vi/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.vi.md",
-          "line": 1,
-          "note": "description: 'Tìm hiểu **cách thêm hình mờ trong tệp Excel** bằng cách sử dụng REST API hình mờ của Exce'",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/zh-hant/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.zh-hant.md",
-          "line": 1,
-          "note": "description: '了解**如何使用 Excel 水印器 REST API 和 Java SDK 在 Excel** 文件中添加水印。我們的指南涵蓋設置、上傳、創建水印和下載結果。輕鬆增強文檔安全性和'",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/zh/watermark/how-to-add-watermark-in-excel-file-using-java/",
-          "file": "content/GroupDocs.Cloud/watermark/2023-08-23-how-to-add-watermark-in-excel-file-using-java/index.zh.md",
-          "line": 1,
-          "note": "description: '了解**如何使用 Excel 水印器 REST API 和 Java SDK 在 Excel** 文件中添加水印。我们的指南涵盖设置、上传、创建水印和下载结果。轻松增强文档安全性和'",
-          "fix": "remove ** from description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         }
       ]
     },
-    "affected_pages": 38,
+    "affected_pages": 21,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -8586,14 +8438,14 @@
       "lost_clicks": 0,
       "lost_impressions": 1,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -8604,7 +8456,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_markup",
@@ -8679,14 +8531,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -8697,7 +8549,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_cut_off",
@@ -8726,7 +8578,7 @@
         "https://blog.groupdocs.cloud/ko/comparison/compare-word-documents-using-csharp/",
         "https://blog.groupdocs.cloud/pl/comparison/compare-word-documents-using-csharp/"
       ],
-      "observed": "224 entries or files; no cover image; the English post has one: 224",
+      "observed": "206 entries or files; no cover image; the English post has one: 206",
       "expected": "A translation keeps the English cover block: cover: with image, alt, caption indented under it, keys in English",
       "locations": [
         {
@@ -9091,10 +8943,10 @@
         }
       ]
     },
-    "affected_pages": 224,
+    "affected_pages": 206,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 182,
+      "impressions_28d": 169,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
@@ -9102,14 +8954,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "at stake",
       "score": 6,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -9120,7 +8972,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_cover_lost",
@@ -9165,14 +9017,14 @@
       "lost_clicks": 0,
       "lost_impressions": 3,
       "past_window": [
-        "2026-04-25",
-        "2026-05-22"
+        "2026-04-28",
+        "2026-05-25"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-24",
-        "2026-11-20"
+        "2026-10-27",
+        "2026-11-23"
       ]
     },
     "effort": "S",
@@ -9183,7 +9035,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run26",
+    "last_seen_run": "repo-audit-run32",
     "resolved_run": null,
     "resolved_at": null,
     "check": "menu_id_invalid",

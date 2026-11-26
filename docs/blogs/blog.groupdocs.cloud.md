@@ -109,6 +109,53 @@ repo run 26. **Open items 9,512; fixed since 19 Nov 456, all in retranslated pos
   replace with `{CLIENT_ID}` / `{CLIENT_SECRET}`; candidate check `post_secret_literal`.
 - After deploy: live check of the 8 pages, agent-fixes row, rescan.
 
+## Scan 3: full scan before batch 2 (26 Nov 2026, SK: "better to perform before fixes")
+
+Clone 01fe452d (= live: batch 1 deployed and verified, 9 more retranslation commits, 3568e0a3 removed the duplicate
+posts); batch 2 parked on branch `batch2-split` so the repo checks see only what is live. Runs: discovery 7, crawl 27,
+AI 28, speed 29, text 30, links 31, repo 32. Snapshot **2026-11-26** "Full scan 26 Nov, before batch 2 (template
+fixes)" (live page = 2026-11-23-2, already archived).
+
+| | 19 Nov | 23 Nov | 26 Nov |
+|---|---|---|---|
+| Health | 54 | 54 | **55** (crawl 74 → 75) |
+| Issue types | 39 | 39 | **37** |
+| Open items | 9,950 | 9,512 | **9,116** |
+| Clicks / impressions (28 days) | 752 / 72,476 | 794 / 79,794 | 834 / 83,487 |
+
+Fixed since 23 Nov: 341 items, 0 new: `translation_stale` 126, `post_title_length` 61, `post_description_length` 41
+(retranslations), `post_url_duplicate` 38 + `dup_in_file` 38 (duplicate posts removed by the blog developer; findings
+crawl-261119-3 and crawl-0001 resolved), `post_cover_lost` 18, `post_front_matter_markup` 17, `link_broken` 1 (batch
+1), `post_text_untranslated` 1.
+
+## Fix batch 2: template and config fixes, one commit per fix (SK, 26 Nov)
+
+SK: one commit per fix type, easier to review (and to revert, and one agent-fixes row each). First built as one
+commit 7d317afe (local), split into 12 by a script; final tree byte-identical to 7d317afe; each commit builds alone
+with Hugo 0.101 (100,281 pages each).
+
+| Commit | Fix (catalogue row) |
+|---|---|
+| f8990763 | head order: language switcher last, OG/Twitter/JSON-LD in `<head>` (1) |
+| fd626511 | x-default in head and sitemaps (2) |
+| 934d5bf5 | tag pages `noindex, follow` (3) |
+| b7e81cac | /search/, /archives/ `noindex, follow`, out of sitemaps (4) |
+| cf61fe76 | /GroupDocs.Cloud/ section page `noindex, follow`, out of sitemaps (16) |
+| be79bc86 | 18 section `_index.<lang>.md` |
+| acebd752 | listing pages 2+ `noindex, follow` + self canonical (25) |
+| cc974a5d | llms.txt at build (7) |
+| cc9ca113 | language names ja, ko, zh-hant, id, th (11) |
+| f042fb05 | RTL ar, fa (14) |
+| fce32e65 | zh-hant menu id `groupdocscloud-zht` (15) |
+| 8fc184e4 | home description per language, English 353 → 148 characters (12) |
+
+Build diff (whole batch vs 01fe452d): only robots of tag pages, /tags/, /search/, /archives/, the section page and
+page 2+ (5,915 rows, all expected kinds); 19 llms.txt files added; sitemaps change by x-default lines and the dropped
+utility/section URLs; **SEO tags in `<body>` 56,079 → none**; x-default on 55,955 pages (the 44,345 without have no
+hreflang at all, except 765 tag/category pages whose term exists only in translations: no English page to point to).
+Seen in passing: tag slugs with backslashes (`/tag/\add-image-to-word\/`, from `\"…\"` in tag lists) on 1 language
+each: candidate check.
+
 ## Post generator review (24 Nov 2026, SK: suggestions for the generator's developer)
 
 63 English posts added by the post generator in 2026 (58 still present at 58f52465; 5 removed: 3 copies in a

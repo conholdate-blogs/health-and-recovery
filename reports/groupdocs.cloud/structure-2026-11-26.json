@@ -1,21 +1,21 @@
 {
  "tenant": "groupdocs.cloud",
- "date": "2026-11-23",
+ "date": "2026-11-26",
  "search_window": [
-  "2026-10-24",
-  "2026-11-20"
+  "2026-10-27",
+  "2026-11-23"
  ],
  "hosts": {
   "blog.groupdocs.cloud": {
    "paginate": 10,
-   "posts": 586,
-   "posts_all_languages": 11098,
+   "posts": 584,
+   "posts_all_languages": 11078,
    "languages": 19,
-   "tags": 2265,
-   "tags_one_post": 1969,
-   "tags_two_or_less": 2186,
+   "tags": 2260,
+   "tags_one_post": 1965,
+   "tags_two_or_less": 2181,
    "tags_per_post": 4.7,
-   "tag_pages_all_languages": 42558,
+   "tag_pages_all_languages": 42517,
    "top_tags": [
     [
      "customer newsletters",
@@ -59,21 +59,21 @@
     ]
    ],
    "categories": 15,
-   "listing_pages": 45123,
-   "tag_listing_pages": 42691,
+   "listing_pages": 45082,
+   "tag_listing_pages": 42650,
    "pages_beyond_cap": 171,
    "cap": 50,
-   "discovery_run": 6,
-   "sitemap_urls": 11136,
+   "discovery_run": 7,
+   "sitemap_urls": 11154,
    "sitemap_tag_urls": 0,
    "search": {
-    "clicks": 794,
-    "tag_clicks": 24,
-    "tag_impressions": 2418,
-    "tag_pages_with_clicks": 17,
+    "clicks": 834,
+    "tag_clicks": 23,
+    "tag_impressions": 2459,
+    "tag_pages_with_clicks": 18,
     "paged_clicks": 0,
-    "paged_impressions": 28,
-    "paged_pages_seen": 6,
+    "paged_impressions": 43,
+    "paged_pages_seen": 5,
     "deep_paged_clicks": 0
    },
    "tag_robots": {

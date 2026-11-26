@@ -1,0 +1,16 @@
+[
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-23",
+  "found": "2026-11-23",
+  "found_by": "Agent",
+  "check": "english_body_check",
+  "commits": [
+   "1b509e71"
+  ],
+  "issue": "English errors in 8 posts queued for translation (TR-10): typos, a sentence copied from a PDF post, anchor ids from other posts, a broken /category/conversion/ link",
+  "verified": "2026-11-26",
+  "result": "Live: 'Cloud REST API' on convert-excel-spreadsheets-to-pdf-using-ruby, 'super-efficient' on combine-pdf, Excel (XLSX) step on convert-mpp-to-excel-in-csharp, category link on csv-json, Word/PHP anchor on display-word-document-in-html-page-using-php"
+ }
+]
