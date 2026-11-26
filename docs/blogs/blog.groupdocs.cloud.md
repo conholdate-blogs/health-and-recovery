@@ -187,7 +187,7 @@ build answer 404 (`/tag/.net-html-to-xps-conversion/` has a Redirects.json entry
 them. Likely cause: the deploy upload skips folders whose name starts with a dot (to confirm on the bucket). Also
 confirms **Redirects.json applies live on this blog** (Facts table "to confirm" settled).
 
-## Fix batch 3a: tags, categories, small fixes (26 Nov 2026; local, waits for push)
+## Fix batch 3a: tags, categories, small fixes (26 Nov 2026; pushed 8fc184e4..bb1da4d8, waits for deploy)
 
 Shoaib Khan: merge dot tags into existing tags where possible ("dotnet" otherwise); then found `c#` tags
 (`/tag/c#-ai-summarization/` cut at `#`) and asked to check other characters; tags are never translated (confirmed:
@@ -220,6 +220,8 @@ translated key names); structure step fixed to skip tag pages that 404 or redire
 after the commits; blog.conholdate.cloud 0; **blog.conholdate.com 3,691** (2,821 `#` tags, 837 tag lists, 33 escaped;
 register, not fixed now). The waiting blogs get them at their scans. Check sheet F15 updated, F16 added; playbook
 rows 26, 27.
+
+Build check before the push (Hugo 0.101, 8fc184e4 vs bb1da4d8): each of the 10 commits builds; post pages 11,155 before and after; removed only tag (3,732) and category (108) pages with broken or translated slugs; added 4,392 tag pages (each language's version of the English tags, noindex); no tag slug with a leading dot, # or backslash. Pushed with Shoaib Khan's approval 26 Nov. After deploy: live check (dot/# tag links gone, /tag/document-rewriting/, llms.txt charset, Home label), agent-fixes rows, rescan.
 
 ## Post generator review (24 Nov 2026, SK: suggestions for the generator's developer)
 
