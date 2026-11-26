@@ -71,14 +71,14 @@
     "effort": "M",
     "fix_tier": 2,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
     "last_seen_run": "crawl-audit-run27",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run33",
+    "resolved_at": "2026-11-26T09:38:25+00:00",
     "check": "content_needs_js",
     "notes": []
   },
@@ -130,15 +130,78 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "ai-audit-run3",
     "last_seen_run": "ai-audit-run28",
+    "resolved_run": "ai-audit-run34",
+    "resolved_at": "2026-11-26T09:38:47+00:00",
+    "check": "llms_txt_missing",
+    "notes": []
+  },
+  {
+    "id": "ai-261126-1",
+    "key": "ai/llms_txt_charset/blog.groupdocs.cloud/host",
+    "source": "repo-audit",
+    "tenant": "groupdocs.cloud",
+    "subdomain": "blog.groupdocs.cloud",
+    "template": "host",
+    "dimension": "ai",
+    "type": "improvable",
+    "title": "llms.txt served without charset=utf-8",
+    "evidence": {
+      "urls": [
+        "https://blog.groupdocs.cloud/llms.txt"
+      ],
+      "observed": "1 entries or files; content-type text/plain for a file with non-ASCII text: 1",
+      "expected": "llms.txt is served as text/plain; charset=utf-8 when it holds non-ASCII text",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/llms.txt",
+          "file": "llms.txt",
+          "line": 0,
+          "note": "content-type text/plain for a file with non-ASCII text",
+          "fix": "serve .txt as text/plain; charset=utf-8",
+          "commit": null
+        }
+      ]
+    },
+    "affected_pages": 1,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 0,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 0,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-28",
+        "2026-05-25"
+      ],
+      "scored_on": "at stake",
+      "score": 0,
+      "window": [
+        "2026-10-27",
+        "2026-11-23"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-26",
+    "first_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
-    "check": "llms_txt_missing",
+    "check": "llms_txt_charset",
     "notes": []
   },
   {
@@ -1735,7 +1798,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run31",
+    "last_seen_run": "link-audit-run37",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -2158,7 +2221,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",
@@ -2221,7 +2284,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_target_bad",
@@ -3053,7 +3116,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-06",
     "first_seen_run": "link-audit-run16",
-    "last_seen_run": "link-audit-run31",
+    "last_seen_run": "link-audit-run37",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_redirected",
@@ -3124,14 +3187,14 @@
     "effort": "S",
     "fix_tier": 2,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "crawl-audit-run19",
     "last_seen_run": "crawl-audit-run27",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run33",
+    "resolved_at": "2026-11-26T09:38:25+00:00",
     "check": "canonical_elsewhere",
     "notes": []
   },
@@ -3246,14 +3309,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "crawl-audit-run19",
     "last_seen_run": "crawl-audit-run27",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run33",
+    "resolved_at": "2026-11-26T09:38:25+00:00",
     "check": "social_tags_in_body",
     "notes": []
   },
@@ -3741,7 +3804,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -3792,14 +3855,14 @@
     "effort": "M",
     "fix_tier": 3,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "structure-audit-2026-11-19",
     "last_seen_run": "structure-audit-2026-11-26",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "structure-audit-2026-11-26",
+    "resolved_at": "2026-11-26T09:55:29+00:00",
     "check": "tag_pages_thin",
     "notes": []
   },
@@ -3848,14 +3911,14 @@
     "effort": "S",
     "fix_tier": 3,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "structure-audit-2026-11-19",
     "last_seen_run": "structure-audit-2026-11-26",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "structure-audit-2026-11-26",
+    "resolved_at": "2026-11-26T09:46:49+00:00",
     "check": "section_lists_home_posts",
     "notes": []
   },
@@ -3986,7 +4049,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run31",
+    "last_seen_run": "link-audit-run37",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -4103,7 +4166,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run31",
+    "last_seen_run": "link-audit-run37",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -4318,7 +4381,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run31",
+    "last_seen_run": "link-audit-run37",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -4431,14 +4494,14 @@
     "effort": "S",
     "fix_tier": 2,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
     "last_seen_run": "crawl-audit-run27",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run33",
+    "resolved_at": "2026-11-26T09:38:25+00:00",
     "check": "hreflang_no_xdefault",
     "notes": []
   },
@@ -4540,14 +4603,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "crawl-audit-run19",
     "last_seen_run": "crawl-audit-run27",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "crawl-audit-run33",
+    "resolved_at": "2026-11-26T09:38:25+00:00",
     "check": "description_untranslated",
     "notes": []
   },
@@ -4652,7 +4715,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "link-audit-run23",
-    "last_seen_run": "link-audit-run31",
+    "last_seen_run": "link-audit-run37",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_differs_from_original",
@@ -4715,7 +4778,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translated_url_mismatch",
@@ -5138,7 +5201,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -5561,7 +5624,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -5772,14 +5835,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
     "last_seen_run": "repo-audit-run32",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run38",
+    "resolved_at": "2026-11-26T09:46:42+00:00",
     "check": "section_index_untranslated",
     "notes": []
   },
@@ -5871,14 +5934,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
     "last_seen_run": "repo-audit-run32",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run38",
+    "resolved_at": "2026-11-26T09:46:42+00:00",
     "check": "language_name_wrong",
     "notes": []
   },
@@ -5944,14 +6007,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
     "last_seen_run": "repo-audit-run32",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run38",
+    "resolved_at": "2026-11-26T09:46:42+00:00",
     "check": "rtl_direction_missing",
     "notes": []
   },
@@ -5967,34 +6030,28 @@
     "title": "Meta descriptions are too long or too short",
     "evidence": {
       "urls": [
-        "https://blog.groupdocs.cloud/",
-        "https://blog.groupdocs.cloud/search/",
-        "https://blog.groupdocs.cloud/pt/",
+        "https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/",
+        "https://blog.groupdocs.cloud/ar/archives/",
         "https://blog.groupdocs.cloud/archives/",
-        "https://blog.groupdocs.cloud/fa/",
+        "https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/",
+        "https://blog.groupdocs.cloud/conversion/convert-xml-to-excel-and-excel-to-xml-in-python/",
         "https://blog.groupdocs.cloud/fa/archives/",
         "https://blog.groupdocs.cloud/fr/archives/",
-        "https://blog.groupdocs.cloud/conversion/convert-xml-to-excel-and-excel-to-xml-in-python/",
-        "https://blog.groupdocs.cloud/ar/archives/",
-        "https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/"
+        "https://blog.groupdocs.cloud/ko/search/",
+        "https://blog.groupdocs.cloud/search/"
       ],
-      "observed": "8 of 32 sampled pages (by template: home 3/3, listing 4/4, post 1/22); 7 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '; https://blog.groupdocs.cloud/search/: width 6: 'search'; https://blog.groupdocs.cloud/pt/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '; https://blog.groupdocs.cloud/archives/: width 8: 'archives'; https://blog.groupdocs.cloud/fa/: width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '",
+      "observed": "1 of 25 sampled pages (by template: post 1/22); 8 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/: width 190: 'Learn how to add image watermark to Word documents online using GroupDocs.Watermark Cloud '; https://blog.groupdocs.cloud/ar/archives/: width 5: 'أرشيف'; https://blog.groupdocs.cloud/archives/: width 8: 'archives'; https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/: width 246: 'Learn how to convert LaTeX documents to HTML using Python and the LaTeX Converter REST API'; https://blog.groupdocs.cloud/conversion/convert-xml-to-excel-and-excel-to-xml-in-python/: width 223: 'Transforming extensive XML data into Excel can be accomplished online or by employing an o'",
       "expected": "50-170 characters (CJK count double)",
       "locations": [
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/",
-          "note": "width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '"
+          "url": "https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/",
+          "note": "width 190: 'Learn how to add image watermark to Word documents online using GroupDocs.Watermark Cloud '"
         },
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/search/",
-          "note": "width 6: 'search'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/pt/",
-          "note": "width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '"
+          "url": "https://blog.groupdocs.cloud/ar/archives/",
+          "note": "width 5: 'أرشيف'"
         },
         {
           "role": "page",
@@ -6003,8 +6060,13 @@
         },
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/fa/",
-          "note": "width 331: 'Document Automation APIs along with open-source SDKs to enhance Java, Python, Node.js, C# '"
+          "url": "https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/",
+          "note": "width 246: 'Learn how to convert LaTeX documents to HTML using Python and the LaTeX Converter REST API'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/conversion/convert-xml-to-excel-and-excel-to-xml-in-python/",
+          "note": "width 223: 'Transforming extensive XML data into Excel can be accomplished online or by employing an o'"
         },
         {
           "role": "listed in",
@@ -6013,47 +6075,31 @@
         {
           "role": "sitemap index",
           "url": "https://blog.groupdocs.cloud/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/pt/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/fa/sitemap.xml"
         }
       ],
       "sample": {
-        "home": [
-          3,
-          3
-        ],
-        "listing": [
-          4,
-          4
-        ],
         "post": [
           1,
           22
         ]
       }
     },
-    "affected_pages": 561,
+    "affected_pages": 504,
     "impact": {
       "clicks_28d": 37,
-      "impressions_28d": 3722,
+      "impressions_28d": 3679,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 110,
-      "past_impressions": 5627,
+      "past_impressions": 4820,
       "lost_clicks": 73,
-      "lost_impressions": 1905,
+      "lost_impressions": 1141,
       "past_window": [
         "2026-04-28",
         "2026-05-25"
       ],
       "scored_on": "at stake",
-      "score": 8,
+      "score": 7,
       "window": [
         "2026-10-27",
         "2026-11-23"
@@ -6067,7 +6113,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run27",
+    "last_seen_run": "crawl-audit-run33",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -6087,13 +6133,14 @@
       "urls": [
         "https://blog.groupdocs.cloud/",
         "https://blog.groupdocs.cloud/pt/",
+        "https://blog.groupdocs.cloud/tr/",
         "https://blog.groupdocs.cloud/fa/",
         "https://blog.groupdocs.cloud/fr/page/2/",
         "https://blog.groupdocs.cloud/it/",
         "https://blog.groupdocs.cloud/page/2/",
         "https://blog.groupdocs.cloud/vi/"
       ],
-      "observed": "3 of 32 sampled pages (by template: home 3/3); 4 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/: no non-empty <h1>; https://blog.groupdocs.cloud/pt/: no non-empty <h1>; https://blog.groupdocs.cloud/fa/: no non-empty <h1>; https://blog.groupdocs.cloud/fr/page/2/: no non-empty <h1>; https://blog.groupdocs.cloud/it/: no non-empty <h1>",
+      "observed": "3 of 25 sampled pages (by template: home 3/3); 5 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/: no non-empty <h1>; https://blog.groupdocs.cloud/pt/: no non-empty <h1>; https://blog.groupdocs.cloud/tr/: no non-empty <h1>; https://blog.groupdocs.cloud/fa/: no non-empty <h1>; https://blog.groupdocs.cloud/fr/page/2/: no non-empty <h1>",
       "expected": "one H1 that states the page topic",
       "locations": [
         {
@@ -6108,17 +6155,17 @@
         },
         {
           "role": "page",
+          "url": "https://blog.groupdocs.cloud/tr/",
+          "note": "no non-empty <h1>"
+        },
+        {
+          "role": "page",
           "url": "https://blog.groupdocs.cloud/fa/",
           "note": "no non-empty <h1>"
         },
         {
           "role": "page",
           "url": "https://blog.groupdocs.cloud/fr/page/2/",
-          "note": "no non-empty <h1>"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/it/",
           "note": "no non-empty <h1>"
         },
         {
@@ -6135,11 +6182,11 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/fa/sitemap.xml"
+          "url": "https://blog.groupdocs.cloud/tr/sitemap.xml"
         },
         {
           "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/it/sitemap.xml"
+          "url": "https://blog.groupdocs.cloud/fa/sitemap.xml"
         }
       ],
       "sample": {
@@ -6178,7 +6225,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run27",
+    "last_seen_run": "crawl-audit-run33",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -6196,43 +6243,44 @@
     "title": "Titles are too long or too short",
     "evidence": {
       "urls": [
-        "https://blog.groupdocs.cloud/search/",
-        "https://blog.groupdocs.cloud/archives/",
-        "https://blog.groupdocs.cloud/fa/archives/",
-        "https://blog.groupdocs.cloud/fr/archives/",
         "https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/",
-        "https://blog.groupdocs.cloud/pl/merger/merge-documents-of-different-types-using-rest-api-in-python/",
+        "https://blog.groupdocs.cloud/viewer/render-documents-to-html5-with-cloud-java-sdk/",
+        "https://blog.groupdocs.cloud/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
+        "https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/",
+        "https://blog.groupdocs.cloud/ja/merger/merge-documents-of-different-types-using-rest-api-in-python/",
         "https://blog.groupdocs.cloud/ar/archives/",
+        "https://blog.groupdocs.cloud/archives/",
         "https://blog.groupdocs.cloud/es/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-        "https://blog.groupdocs.cloud/ko/search/"
+        "https://blog.groupdocs.cloud/fa/archives/",
+        "https://blog.groupdocs.cloud/fr/archives/"
       ],
-      "observed": "6 of 32 sampled pages (by template: listing 4/4, post 2/22); 3 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/search/: width 6: 'Search'; https://blog.groupdocs.cloud/archives/: width 7: 'Archive'; https://blog.groupdocs.cloud/fa/archives/: width 7: 'آرشیوها'; https://blog.groupdocs.cloud/fr/archives/: width 8: 'Archiver'; https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/: width 76: 'Python Password Protect an Excel File | XLS/XLSX Password Protector REST API'",
+      "observed": "5 of 25 sampled pages (by template: post 5/22); 8 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/: width 76: 'Python Password Protect an Excel File | XLS/XLSX Password Protector REST API'; https://blog.groupdocs.cloud/viewer/render-documents-to-html5-with-cloud-java-sdk/: width 85: 'Render Documents to HTML5 with REST API in Java | GroupDocs.Viewer Cloud SDK for Java'; https://blog.groupdocs.cloud/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/: width 71: 'Annotate Over 50 Common Document and Image Types on Your Concrete5 Site'; https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/: width 94: 'Add Image Watermark to Word in C# | Watermark DOCX Online Free Using GroupDocs.Watermark C'; https://blog.groupdocs.cloud/ja/merger/merge-documents-of-different-types-using-rest-api-in-python/: width 87: 'Node.js の REST API を使用して PDF にスタンプで署名する | Node.js で PDF に電子署名する'",
       "expected": "10-70 characters (CJK count double)",
       "locations": [
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/search/",
-          "note": "width 6: 'Search'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/archives/",
-          "note": "width 7: 'Archive'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/fa/archives/",
-          "note": "width 7: 'آرشیوها'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/fr/archives/",
-          "note": "width 8: 'Archiver'"
-        },
-        {
-          "role": "page",
           "url": "https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/",
           "note": "width 76: 'Python Password Protect an Excel File | XLS/XLSX Password Protector REST API'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/viewer/render-documents-to-html5-with-cloud-java-sdk/",
+          "note": "width 85: 'Render Documents to HTML5 with REST API in Java | GroupDocs.Viewer Cloud SDK for Java'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
+          "note": "width 71: 'Annotate Over 50 Common Document and Image Types on Your Concrete5 Site'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/",
+          "note": "width 94: 'Add Image Watermark to Word in C# | Watermark DOCX Online Free Using GroupDocs.Watermark C'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/ja/merger/merge-documents-of-different-types-using-rest-api-in-python/",
+          "note": "width 87: 'Node.js の REST API を使用して PDF にスタンプで署名する | Node.js で PDF に電子署名する'"
         },
         {
           "role": "listed in",
@@ -6244,40 +6292,32 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/fa/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/fr/sitemap.xml"
+          "url": "https://blog.groupdocs.cloud/ja/sitemap.xml"
         }
       ],
       "sample": {
-        "listing": [
-          4,
-          4
-        ],
         "post": [
-          2,
+          5,
           22
         ]
       }
     },
-    "affected_pages": 1045,
+    "affected_pages": 2518,
     "impact": {
-      "clicks_28d": 74,
-      "impressions_28d": 7385,
+      "clicks_28d": 184,
+      "impressions_28d": 18395,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 219,
-      "past_impressions": 10271,
-      "lost_clicks": 145,
-      "lost_impressions": 2886,
+      "past_clicks": 548,
+      "past_impressions": 24100,
+      "lost_clicks": 364,
+      "lost_impressions": 5705,
       "past_window": [
         "2026-04-28",
         "2026-05-25"
       ],
       "scored_on": "at stake",
-      "score": 9,
+      "score": 10,
       "window": [
         "2026-10-27",
         "2026-11-23"
@@ -6291,7 +6331,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run27",
+    "last_seen_run": "crawl-audit-run33",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -6314,9 +6354,11 @@
         "https://blog.groupdocs.cloud/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/",
         "https://blog.groupdocs.cloud/merger/merge-documents-of-different-types-using-rest-api-in-python/",
         "https://blog.groupdocs.cloud/es/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-        "https://blog.groupdocs.cloud/pl/merger/merge-documents-of-different-types-using-rest-api-in-python/"
+        "https://blog.groupdocs.cloud/pl/merger/merge-documents-of-different-types-using-rest-api-in-python/",
+        "https://blog.groupdocs.cloud/conversion/convert-word-to-pdf-online-for-free/",
+        "https://blog.groupdocs.cloud/ja/merger/merge-documents-of-different-types-using-rest-api-in-python/"
       ],
-      "observed": "6 of 62 checked pages: /merger/rearrange-pdf-pages-using-rest-api-in-node-js/ title: 'Edit Documents using REST API in PHP | Edit DOCX or XLSX Files in PHP' → 'Rearrange PDF Pages using REST API in Node.js'; /conversion/september-newsletter/ title: 'Get Documents Completed and Signed through Online Forms | GroupDocs' → 'Spotlight on GroupDocs.Conversion for .NET – September 2014 Newsletter'; /viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/ title: 'Display PDF and Microsoft Office Documents on Your Concrete5 Website' → 'GroupDocs Scheduled Maintenance – 2nd August, 2015'; /merger/merge-documents-of-different-types-using-rest-api-in-python/ title: 'Sign PDF with Stamp using REST API in Node.js | eSign PDF in Node.js' → 'Merge Documents of Different Types using REST API in Python'; /es/merger/merge-documents-of-different-types-using-rest-api-in-python/ title: 'Firme PDF con Stamp usando REST API en Node.js | Firma electrónica de PDF en Node.js' → 'Combinar documentos de diferentes tipos usando REST API en Python'; and 1 more",
+      "observed": "8 of 74 checked pages: /merger/rearrange-pdf-pages-using-rest-api-in-node-js/ title: 'Edit Documents using REST API in PHP | Edit DOCX or XLSX Files in PHP' → 'Rearrange PDF Pages using REST API in Node.js'; /conversion/september-newsletter/ title: 'Get Documents Completed and Signed through Online Forms | GroupDocs' → 'Spotlight on GroupDocs.Conversion for .NET – September 2014 Newsletter'; /viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/ title: 'Display PDF and Microsoft Office Documents on Your Concrete5 Website' → 'GroupDocs Scheduled Maintenance – 2nd August, 2015'; /merger/merge-documents-of-different-types-using-rest-api-in-python/ title: 'Sign PDF with Stamp using REST API in Node.js | eSign PDF in Node.js' → 'Merge Documents of Different Types using REST API in Python'; /es/merger/merge-documents-of-different-types-using-rest-api-in-python/ title: 'Firme PDF con Stamp usando REST API en Node.js | Firma electrónica de PDF en Node.js' → 'Combinar documentos de diferentes tipos usando REST API en Python'; and 3 more",
       "expected": "Title and meta description describe the page's own product, like its H1",
       "locations": [
         {
@@ -6348,25 +6390,35 @@
           "role": "page",
           "url": "https://blog.groupdocs.cloud/pl/merger/merge-documents-of-different-types-using-rest-api-in-python/",
           "note": "title: 'Podpisz plik PDF za pomocą stempla przy użyciu interfejsu API REST w Node.js | ePodpisz PDF w Node.js' → 'Scal dokumenty różnych typów za pomocą REST API w Python'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/conversion/convert-word-to-pdf-online-for-free/",
+          "note": "title: 'DOC' → 'Word'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/ja/merger/merge-documents-of-different-types-using-rest-api-in-python/",
+          "note": "title: 'Node.js の REST API を使用して PDF にスタンプで署名する | Node.js で PDF に電子署名する' → 'Python で REST API を使用して異なるタイプのドキュメントを結合する'"
         }
       ]
     },
-    "affected_pages": 6,
+    "affected_pages": 8,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 42,
+      "impressions_28d": 170,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 2,
+      "past_impressions": 651,
       "lost_clicks": 0,
-      "lost_impressions": 0,
+      "lost_impressions": 481,
       "past_window": [
         "2026-04-28",
         "2026-05-25"
       ],
-      "scored_on": "at stake",
-      "score": 2,
+      "scored_on": "lost",
+      "score": 7,
       "window": [
         "2026-10-27",
         "2026-11-23"
@@ -6380,7 +6432,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "text-audit-run6",
-    "last_seen_run": "text-audit-run30",
+    "last_seen_run": "text-audit-run36",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_topic_mismatch",
@@ -6400,7 +6452,7 @@
       "urls": [
         "https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/"
       ],
-      "observed": "0 of 32 sampled pages (by template: -); 1 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/: 4 H1s: Next Generation GroupDocs.Viewer Cloud i | What is GroupDocs.Viewer Cloud# | GroupDocs.Viewer Cloud Features#",
+      "observed": "0 of 25 sampled pages (by template: -); 1 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/: 4 H1s: Next Generation GroupDocs.Viewer Cloud i | What is GroupDocs.Viewer Cloud# | GroupDocs.Viewer Cloud Features#",
       "expected": "one H1 per page",
       "locations": [
         {
@@ -6422,13 +6474,13 @@
     "affected_pages": 1,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 7,
+      "impressions_28d": 8,
       "source": "gsc-host",
       "share": 0.0,
       "past_clicks": 0,
       "past_impressions": 10,
       "lost_clicks": 0,
-      "lost_impressions": 3,
+      "lost_impressions": 2,
       "past_window": [
         "2026-04-28",
         "2026-05-25"
@@ -6448,7 +6500,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "crawl-audit-run19",
-    "last_seen_run": "crawl-audit-run27",
+    "last_seen_run": "crawl-audit-run33",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_multiple",
@@ -6468,7 +6520,7 @@
       "urls": [
         "https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/"
       ],
-      "observed": "1 of 62 checked pages: /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'annoucing' → 'announcing'; /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'groupdcs' → 'groupdocs'",
+      "observed": "1 of 74 checked pages: /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'annoucing' → 'announcing'; /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'groupdcs' → 'groupdocs'",
       "expected": "Correctly spelled titles, H1s and meta descriptions",
       "locations": [
         {
@@ -6512,7 +6564,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "text-audit-run22",
-    "last_seen_run": "text-audit-run30",
+    "last_seen_run": "text-audit-run36",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_typo",
@@ -6935,7 +6987,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -7358,7 +7410,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -7781,7 +7833,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_h1",
@@ -8204,7 +8256,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_escaped",
@@ -8456,7 +8508,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_markup",
@@ -8549,7 +8601,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_cut_off",
@@ -8972,7 +9024,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run32",
+    "last_seen_run": "repo-audit-run38",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_cover_lost",
@@ -9030,14 +9082,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
     "last_seen_run": "repo-audit-run32",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run38",
+    "resolved_at": "2026-11-26T09:46:42+00:00",
     "check": "menu_id_invalid",
     "notes": []
   }

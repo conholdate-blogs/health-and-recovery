@@ -82,6 +82,22 @@ def test_tag_robots_blocked_page_is_not_noindex_and_header_counts():
     assert tag_robots(fake_get(robots="index", header="noindex")[0], "blog.example.com")["all_noindex"]
 
 
+def test_tag_robots_skips_tag_pages_that_do_not_answer_200():
+    # blog.groupdocs.cloud 26 Nov: /tag/.net-…/ slugs 404 live; they must not decide whether tag pages are noindex
+    from core.audit.structure import tag_robots
+
+    base, seen = fake_get()
+
+    def get(url):
+        if url.endswith("/tag/a/"):
+            seen.append(url)
+            return 404, {}, '<html><head><meta name="robots" content="index, follow"></head></html>', False
+        return base(url)
+    tr = tag_robots(get, "blog.example.com")
+    assert seen[-1] == "https://blog.example.com/tag/c/"  # read on to get two pages that answer 200
+    assert tr["all_noindex"]
+
+
 def test_single_main_section_page_must_be_noindex(tmp_path):
     # 13 Nov 2026: with one main section the section page repeats the home page's list
     from core.audit.structure import findings, section_robots

@@ -63,8 +63,8 @@
    "tag_listing_pages": 42650,
    "pages_beyond_cap": 171,
    "cap": 50,
-   "discovery_run": 7,
-   "sitemap_urls": 11154,
+   "discovery_run": 8,
+   "sitemap_urls": 11097,
    "sitemap_tag_urls": 0,
    "search": {
     "clicks": 834,
@@ -82,7 +82,7 @@
       "url": "https://blog.groupdocs.cloud/tags/",
       "status": 200,
       "blocked": false,
-      "noindex": false
+      "noindex": true
      },
      {
       "url": "https://blog.groupdocs.cloud/tag/.net-html-to-pdf-converter/",
@@ -92,12 +92,30 @@
      },
      {
       "url": "https://blog.groupdocs.cloud/tag/.net-html-to-xps-conversion/",
-      "status": 200,
+      "status": 301,
       "blocked": false,
       "noindex": false
+     },
+     {
+      "url": "https://blog.groupdocs.cloud/tag/.net-rewriter-sdk/",
+      "status": 404,
+      "blocked": false,
+      "noindex": false
+     },
+     {
+      "url": "https://blog.groupdocs.cloud/tag/accept-revisions-using-python/",
+      "status": 200,
+      "blocked": false,
+      "noindex": true
+     },
+     {
+      "url": "https://blog.groupdocs.cloud/tag/accept-tracked-changes/",
+      "status": 200,
+      "blocked": false,
+      "noindex": true
      }
     ],
-    "all_noindex": false
+    "all_noindex": true
    },
    "section_robots": {
     "sections": [
@@ -105,7 +123,7 @@
     ],
     "url": "https://blog.groupdocs.cloud/groupdocs.cloud/",
     "status": 200,
-    "noindex": false
+    "noindex": true
    }
   }
  }

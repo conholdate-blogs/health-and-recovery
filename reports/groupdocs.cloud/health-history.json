@@ -225,5 +225,32 @@
     }
    }
   }
+ },
+ {
+  "date": "2026-11-26",
+  "runs": "discovery run 8, crawl audit run 33, speed audit run 35, AI audit run 34, text check run 36, link check run 37, repo file check run 38",
+  "method": 3,
+  "hosts": {
+   "blog.groupdocs.cloud": {
+    "health": 82,
+    "areas": {
+     "crawl": 90,
+     "onpage": 92,
+     "intl": 90,
+     "ai": 100
+    },
+    "stats": {
+     "clicks": 834,
+     "impressions": 83487,
+     "traffic_to": "2026-11-23",
+     "issue_types": 26,
+     "open_issues": 9091,
+     "keywords": 6973,
+     "top10": 1458,
+     "ai_sessions": 1,
+     "dr": 30.0
+    }
+   }
+  }
  }
 ]

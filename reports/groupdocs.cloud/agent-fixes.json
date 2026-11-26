@@ -12,5 +12,173 @@
   "issue": "English errors in 8 posts queued for translation (TR-10): typos, a sentence copied from a PDF post, anchor ids from other posts, a broken /category/conversion/ link",
   "verified": "2026-11-26",
   "result": "Live: 'Cloud REST API' on convert-excel-spreadsheets-to-pdf-using-ruby, 'super-efficient' on combine-pdf, Excel (XLSX) step on convert-mpp-to-excel-in-csharp, category link on csv-json, Word/PHP anchor on display-word-document-in-html-page-using-php"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "social_tags_in_body",
+  "commits": [
+   "f8990763"
+  ],
+  "issue": "<head> ended at the language switcher div: Open Graph, Twitter and JSON-LD in <body> on 56,079 of 100,364 pages; extend_head is now the last include",
+  "result": "Live: English post, French post and home: 5 og tags in <head>, no SEO tag in <body>"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "hreflang_no_xdefault",
+  "commits": [
+   "fd626511"
+  ],
+  "issue": "No x-default hreflang on any page or sitemap",
+  "result": "Live: x-default -> English page on English, French post and home; 584 x-default lines in /fr/sitemap.xml"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "tag_pages_thin",
+  "commits": [
+   "934d5bf5"
+  ],
+  "issue": "Tag pages (most with one post) indexable",
+  "result": "Live: /tag/convert-pdf-to-jpg/ and /tags/ noindex, follow"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "content_needs_js",
+  "commits": [
+   "b7e81cac"
+  ],
+  "issue": "/search/ and /archives/ indexable and in the sitemaps",
+  "result": "Live: /search/, /fr/archives/ noindex, follow; not in the sitemaps"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "section_lists_home_posts",
+  "commits": [
+   "cf61fe76"
+  ],
+  "issue": "/groupdocs.cloud/ section page repeats the home list and was indexable",
+  "result": "Live: /groupdocs.cloud/ noindex, follow; not in the sitemaps"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "section_index_untranslated",
+  "commits": [
+   "be79bc86"
+  ],
+  "issue": "Section _index.md in English only: Hugo built untranslated section pages in 18 languages",
+  "result": "Live: /fr/groupdocs.cloud/ title 'Blog GroupDocs Cloud'"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "canonical_elsewhere",
+  "commits": [
+   "acebd752"
+  ],
+  "issue": "Listing pages 2+ index, follow with canonical to page 1",
+  "result": "Live: /page/2/, /fr/page/3/ noindex, follow with a self canonical"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "llms_txt_missing",
+  "commits": [
+   "cc974a5d"
+  ],
+  "issue": "No llms.txt",
+  "result": "Live: /llms.txt (135 links) and /de/llms.txt, text/plain, generated at build"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "language_name_wrong",
+  "commits": [
+   "cc9ca113"
+  ],
+  "issue": "Language menu names 日本, 한국인, 中國傳統的, Indonesian, Thai",
+  "result": "Live: switcher shows 日本語, 한국어, 繁體中文, Bahasa Indonesia, ไทย"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "rtl_direction_missing",
+  "commits": [
+   "f042fb05"
+  ],
+  "issue": "Arabic and Persian pages left to right",
+  "result": "Live: <html dir=rtl> on /ar/ and a Persian post; screenshot of /ar/ right to left"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "menu_id_invalid",
+  "commits": [
+   "fce32e65"
+  ],
+  "issue": "zh-hant company menu id groupdocscloud-zh-hant (3 parts): no menu bar on /zh-hant/",
+  "result": "Live: groupdocscloud-zht; screenshot shows the bar in Traditional Chinese"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "verified": "2026-11-26",
+  "check": "description_untranslated",
+  "commits": [
+   "8fc184e4"
+  ],
+  "issue": "Translated home pages kept the English description; English one 353 characters",
+  "result": "Live: /, /de/, /ja/ home descriptions in their language, English 148 characters"
  }
 ]

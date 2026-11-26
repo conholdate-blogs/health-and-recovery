@@ -166,5 +166,11 @@
     "date": "2026-11-26",
     "label": "Full scan 26 Nov, before batch 2 (template fixes)",
     "runs": "discovery run 7, crawl audit run 27, speed audit run 29, AI audit run 28, text check run 30, link check run 31, repo file check run 32"
+  },
+  {
+    "file": "2026-11-26-2.html",
+    "date": "2026-11-26 (2)",
+    "label": "After batch 2 (template fixes, 12 commits, verified live)",
+    "runs": "discovery run 8, crawl audit run 33, speed audit run 35, AI audit run 34, text check run 36, link check run 37, repo file check run 38"
   }
 ]

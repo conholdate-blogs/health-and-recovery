@@ -165,11 +165,18 @@ def tag_robots(get, host: str) -> dict:
             parts = [p for p in path.split("/") if p]
             if urlsplit(u).netloc == host and len(parts) == 2 and parts[0] in ("tag", "tags") and u not in terms:
                 terms.append(u)
-    for u in terms[:TAG_SAMPLE]:
+    # A tag page that does not answer 200 (blog.groupdocs.cloud 26 Nov: slugs starting with a dot, `/tag/.net-…/`,
+    # 404 or 301 live) says nothing about the robots of the others: read on until TAG_SAMPLE pages answer 200.
+    read = 0
+    for u in terms[:TAG_SAMPLE * 5]:
         status, headers, html, blocked = get(u)
         pages.append({"url": u, "status": status, "blocked": blocked,
                       "noindex": bool(status == 200 and not blocked and _robots_noindex(headers, html))})
-    return {"pages": pages, "all_noindex": len(pages) > 1 and all(p["noindex"] for p in pages)}
+        read += status == 200 or blocked
+        if read >= TAG_SAMPLE:
+            break
+    answered = [p for p in pages if p["status"] == 200 or p["blocked"]]  # blocked: its noindex is never read
+    return {"pages": pages, "all_noindex": len(answered) > 1 and all(p["noindex"] for p in answered)}
 
 
 def main_sections(repo: Path) -> list[str]:

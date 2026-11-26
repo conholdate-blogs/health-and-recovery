@@ -62,7 +62,10 @@ def main(argv: list[str] | None = None) -> int:
 
     def get(url):
         r = fetcher.get(url)
-        return r.status, r.headers, r.body.decode("utf-8", "replace"), r.blocked_by_robots
+        # a redirected URL is not the page asked for (blog.groupdocs.cloud 26 Nov: a Redirects.json entry sends
+        # /tag/.net-html-to-xps-conversion/ to a post, whose 'index, follow' is not the tag page's robots)
+        status = 301 if r.redirects else r.status
+        return status, r.headers, r.body.decode("utf-8", "replace"), r.blocked_by_robots
 
     hosts = {}
     for h in tenant.raw.get("hosts") or []:

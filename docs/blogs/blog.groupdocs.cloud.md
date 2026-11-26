@@ -12,7 +12,7 @@ scan with all checks. Update in the same session as each step.
 | Commit identity | repo-local `Shoaib Khan <shoaib.khan@aspose.com>` set 19 Nov (it was missing); check `git config --local user.email` each session |
 | Hugo | 0.101.0 (deploy workflow); binary `/Users/Apple/Downloads/Softwares/Hugo/hugo_extended_0.101.0_darwin-amd64/hugo` |
 | Deploy | `.github/workflows/deploy-production-aws.yml` (`aws s3 sync ./public/ s3://blog-groupdocs-cloud/`), cron 01:00 and 03:00 UTC Mon–Fri; Ceph production + staging workflows too. SK runs deploys by hand when needed |
-| Redirects.json | 506 lines; live or applied at deploy: **to confirm** (blog.conholdate.com: at deploy; blog.aspose.com: live via Lambda@Edge) |
+| Redirects.json | **applies live** (confirmed 26 Nov: `/tag/.net-html-to-xps-conversion/` answers its entry's 301) |
 | llms.txt | none (no `static/llms.txt`, no `layouts/index.llms.txt`): fix catalogue row 7 (generate at build) |
 | Languages | 18 supported: ar, de, es, fa, fr, id, it, ja, ko, pl, pt, ru, th, tr, uk, vi, zh, zh-hant |
 | GA4 / GSC | 252358764 / `https://blog.groupdocs.cloud/` |
@@ -155,6 +155,38 @@ utility/section URLs; **SEO tags in `<body>` 56,079 → none**; x-default on 55,
 hreflang at all, except 765 tag/category pages whose term exists only in translations: no English page to point to).
 Seen in passing: tag slugs with backslashes (`/tag/\add-image-to-word\/`, from `\"…\"` in tag lists) on 1 language
 each: candidate check.
+
+### Batch 2 live (26 Nov): verified, rescan
+
+SK deployed 26 Nov. Live check (scratch `live_b2.py`): **28 of 28 pass** (head order, x-default in pages and
+sitemaps, robots of tag/search/archives/section/page 2+, self canonical on page 2+, home/posts still `index, follow`,
+fr section title, llms.txt en/de text/plain, language names, `dir=rtl` ar/fa, zh-hant `-zht`, home descriptions);
+screenshots of /zh-hant/ (company bar in Traditional Chinese) and /ar/ (right to left). 12 agent-fixes rows.
+
+Rescan (runs: crawl, AI, speed, text, links, repo, structure on 8fc184e4), snapshot **2026-11-26-2** "After batch 2":
+
+| | Before (26 Nov) | After (26 Nov) |
+|---|---|---|
+| Health | 55 | **82** (crawl 75 → 90, languages 83 → 90, AI 95 → 100) |
+| Issue types | 37 | **26** |
+| Open items | 9,116 | 9,091 |
+
+Resolved: social tags in body, x-default, canonical to page 1, section page list, section `_index` English only,
+language names, RTL, company menu, description untranslated, text needs JavaScript (/search/), llms.txt missing,
+tag pages thin. New: `llms_txt_charset` (llms.txt served as `text/plain` without `charset=utf-8`: same as F22 on
+blog.conholdate.cloud; `hugo deploy` matcher `*.txt` → `text/plain; charset=utf-8` in `deployment.matchers`).
+
+**Our audit corrected (26 Nov):** the structure step read the first tag pages alphabetically: `/tag/.net-…/` (404, and
+a Redirects.json 301 to a post) and kept `tag_pages_thin` open. Now it reads on until two tag pages answer 200 and
+treats a redirected URL as not the page (`core/audit/structure.py tag_robots`, `scripts/audit_structure.py get`,
+test added). The first snapshot of this rescan carried the false finding; dropped before publishing, redone.
+
+**Found by SK and the agent (26 Nov): tag URLs starting with a dot 404 live.** 3 tags (`.NET rewriter SDK`,
+`.NET HTML to XPS conversion`, `.NET HTML to PDF converter`, 1 post × 19 files each) → 57 tag pages in the Hugo
+build answer 404 (`/tag/.net-html-to-xps-conversion/` has a Redirects.json entry to the post); 64 post pages link to
+them. Likely cause: the deploy upload skips folders whose name starts with a dot (to confirm on the bucket). Also
+confirms **Redirects.json applies live on this blog** (Facts table "to confirm" settled). Proposed fix: rename the 3
+tags so the slug does not start with a dot (SK to choose wording); candidate check `url_starts_with_dot`.
 
 ## Post generator review (24 Nov 2026, SK: suggestions for the generator's developer)
 
