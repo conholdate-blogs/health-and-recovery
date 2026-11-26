@@ -176,6 +176,46 @@ def test_translated_url_mismatch(tmp_path):
                    "id": ("same URL as the English post (no language prefix)", "/id/pdf/b/")}
 
 
+def test_tag_category_and_url_parts_that_cannot_be_opened(tmp_path):
+    # blog.groupdocs.cloud, 26 Nov 2026 (found by Shoaib Khan): '.NET …' tags 404 live, 'c# …' tags are cut at '#',
+    # escaped \"x\" tags get backslash slugs
+    repo = make_repo(tmp_path)
+    post = repo / "content/Blog/pdf/2026-01-03-d"
+    post.mkdir(parents=True)
+    (post / "index.md").write_text("---\ntitle: d\nurl: /pdf/d/\ntags: ['.NET rewriter SDK', 'c# ai summary', 'pdf', "
+                                   "'C# .NET']\ncategories: ['Pdf Family']\n---\n", encoding="utf-8")
+    (post / "index.de.md").write_text('---\ntitle: d\nurl: /de/.net/d/\ntags:\n- \\"pdf\\"\n'
+                                      'categories:\n- \\"Pdf Family\\"\n---\n', encoding="utf-8")
+    audit = RepoAudit(make_tenant(repo), FakeFetcher(), AuditStore(":memory:"), sample=0, log=None)
+    got = sorted((i["file"].rsplit("/", 1)[-1], i["note"]) for i in audit.check_posts(HOST)[0]
+                 if i["check"] == "url_part_unsafe")
+    assert got == [("index.de.md", "category '\\\\\"Pdf Family\\\\\"': holds a backslash or quotes"),
+                   ("index.de.md", "post url: starts with a dot"),
+                   ("index.de.md", "tag '\\\\\"pdf\\\\\"': holds a backslash or quotes"),
+                   ("index.md", "tag '.NET rewriter SDK': starts with a dot"),
+                   ("index.md", "tag 'C# .NET': holds #"),
+                   ("index.md", "tag 'c# ai summary': holds #")]
+
+
+def test_translation_tags_and_category_must_be_the_english_ones(tmp_path):
+    # blog.groupdocs.cloud, 26 Nov 2026: tags and categories are never translated; some translations had them
+    # translated, missing, or under a translated key ('теги:') that Hugo ignores
+    repo = make_repo(tmp_path)
+    post = repo / "content/Blog/pdf/2026-01-04-e"
+    post.mkdir(parents=True)
+    (post / "index.md").write_text("---\ntitle: e\nurl: /pdf/e/\ntags: [pdf, merge]\ncategories: [Pdf Family]\n---\n",
+                                   encoding="utf-8")
+    for lang, fm in {"de": "tags: [pdf, merge]\ncategories: [Pdf Family]",  # fine
+                     "fr": "tags: [pdf, fusionner]\ncategories: [Famille Pdf]",
+                     "ru": "теги: [pdf, merge]\ncategories: [Pdf Family]"}.items():
+        (post / f"index.{lang}.md").write_text(f"---\ntitle: e\nurl: /{lang}/pdf/e/\n{fm}\n---\n", encoding="utf-8")
+    audit = RepoAudit(make_tenant(repo), FakeFetcher(), AuditStore(":memory:"), sample=0, log=None)
+    got = sorted((i["file"].rsplit("/", 1)[-1], i["note"]) for i in audit.check_posts(HOST)[0]
+                 if i["check"] == "translation_taxonomy_differs")
+    assert got == [("index.fr.md", "tags differ; category 'Famille Pdf'"),
+                   ("index.ru.md", "translated key теги (Hugo ignores it); tags missing")]
+
+
 def test_two_posts_on_one_url_and_body_h1(tmp_path):
     # blog.conholdate.com, 16 Nov 2026: two folders with the same url (one never published); '# Title' in the body
     repo = make_repo(tmp_path)

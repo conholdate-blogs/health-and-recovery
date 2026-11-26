@@ -542,6 +542,22 @@ _ROWS = [
      "The expected URL returns 404, so links to the post break, and the page lives at a wrong address.",
      "Add the leading / to the url, and redirect the doubled path to the correct one.",
      "The post is live at the expected URL; next repo check has no finding."),
+    ("url_part_unsafe", "Repo files", "Tag, category or post URL that cannot be opened",
+     "Hugo keeps '.', '#' and '\\' in slugs: '.NET rewriter SDK' makes /tag/.net-rewriter-sdk/ (the deploy upload "
+     "skips dot folders), 'c# ai summarization' makes /tag/c#-ai-summarization/ (the browser cuts at '#'), an escaped "
+     "\\\"x\\\" makes /tag/\\x\\/ (browsers turn '\\' into '/').",
+     "The tag or category page cannot be opened in any language, and every post listing it links to a 404.",
+     "Fix the value in the English post and all its translations in one commit: drop the leading dot or merge into an "
+     "existing tag, 'c#' -> 'csharp', remove escaped quotes (scripts/ops/taxonomy_fix.py).",
+     "The tag page answers 200 live; next repo check has no finding."),
+    ("translation_taxonomy_differs", "Links and translations", "Translation with other tags or category",
+     "Tags and categories are never translated, but some translations have translated, partly translated or missing "
+     "tags or category, or the key itself translated ('теги:'), which Hugo ignores.",
+     "The translation is missing from its category and tag pages, and creates one-post tag and category pages per "
+     "language with translated slugs.",
+     "Give each translation the English post's tags and categories under the English keys "
+     "(scripts/ops/taxonomy_fix.py --keys, --tags, --categories; queued translations are left to retranslation).",
+     "Next repo check has no finding."),
     ("translated_url_mismatch", "Links and translations", "Translation under its own URL",
      "A translated post is published at a different URL than the English post plus its language prefix: a "
      "translated slug (/fr/total/créez-…/), another language's prefix (zh-tw/ on a zh-hant post, fa/ on a French "

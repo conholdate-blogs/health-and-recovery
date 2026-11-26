@@ -27,7 +27,8 @@ repo, rule TR-9) or *retranslate* (Translation Agent, via an ISSUE row) or *Engl
 | F12 | Translation up to date with the English title / description | – | ✓ | `translation_stale` | retranslate, or Health & Recovery Agent when only the field changed |
 | F13 | Post folder under a `mainSections` section; categories used have a page | ✓ | – | `post_outside_main_sections`, `category_page_unused` | Health & Recovery Agent |
 | F14 | Not `draft: true` when it should be live | ✓ | ✓ | *by hand* | Health & Recovery Agent |
-| F15 | Tags identical to the English post (tags stay in English; a changed tag, e.g. "in C#" for "in csharp", builds a separate tag page in that language) | – | ✓ | `translation_queue_report.py` (blog.conholdate.com 19 Nov: 62 posts per language differ, 36 current; tag pages are noindex, so low impact) | Health & Recovery Agent |
+| F15 | Tags and categories identical to the English post, under the keys `tags` and `categories` (never translated: the translation agent's `translatable_fields`; a translated tag builds a one-post tag page per language, a translated key such as `теги:` or `catégories :` is ignored by Hugo, so the page has no tags or category) | – | ✓ | `translation_taxonomy_differs` (26 Nov; before: by hand in `translation_queue_report.py`) | Health & Recovery Agent (`taxonomy_fix.py --keys`, `--tags`, `--categories`) |
+| F16 | Tag, category and post url values give URLs that open: no leading dot (`.NET x` → `/tag/.net-x/`, not uploaded, 404), no `#` (`c# x` → cut at `#`), no backslash or quotes (`\"x\"` → `/tag/\x\/`) | ✓ | ✓ | `url_part_unsafe` (26 Nov, found by Shoaib Khan on blog.groupdocs.cloud) | Health & Recovery Agent (`taxonomy_fix.py --escaped`, `--hash`; dot tags by hand: merge into an existing tag) |
 
 ## 2. Body
 

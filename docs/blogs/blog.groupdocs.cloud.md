@@ -181,12 +181,45 @@ a Redirects.json 301 to a post) and kept `tag_pages_thin` open. Now it reads on 
 treats a redirected URL as not the page (`core/audit/structure.py tag_robots`, `scripts/audit_structure.py get`,
 test added). The first snapshot of this rescan carried the false finding; dropped before publishing, redone.
 
-**Found by SK and the agent (26 Nov): tag URLs starting with a dot 404 live.** 3 tags (`.NET rewriter SDK`,
+**Found by Shoaib Khan and the agent (26 Nov): tag URLs starting with a dot 404 live.** 3 tags (`.NET rewriter SDK`,
 `.NET HTML to XPS conversion`, `.NET HTML to PDF converter`, 1 post × 19 files each) → 57 tag pages in the Hugo
 build answer 404 (`/tag/.net-html-to-xps-conversion/` has a Redirects.json entry to the post); 64 post pages link to
 them. Likely cause: the deploy upload skips folders whose name starts with a dot (to confirm on the bucket). Also
-confirms **Redirects.json applies live on this blog** (Facts table "to confirm" settled). Proposed fix: rename the 3
-tags so the slug does not start with a dot (SK to choose wording); candidate check `url_starts_with_dot`.
+confirms **Redirects.json applies live on this blog** (Facts table "to confirm" settled).
+
+## Fix batch 3a: tags, categories, small fixes (26 Nov 2026; local, waits for push)
+
+Shoaib Khan: merge dot tags into existing tags where possible ("dotnet" otherwise); then found `c#` tags
+(`/tag/c#-ai-summarization/` cut at `#`) and asked to check other characters; tags are never translated (confirmed:
+translation agent `translatable_fields`). One commit per fix type; each English change ships with all its
+translations (checked per commit: no English file changed without all its translations, so nothing is queued).
+
+| Commit | Fix | Files |
+|---|---|---|
+| 4fca7cac | `.NET rewriter SDK` → existing `document rewriting` (shared with the other rewriter post) | 19 |
+| 2ce59c6d | `.NET HTML to XPS conversion` removed (the post already has `html to xps conversion`) | 19 |
+| 8864154b | `.NET html to pdf converter` → existing `html to pdf converter` | 19 |
+| bef704c7 | llms.txt / robots.txt served `text/plain; charset=utf-8` (`deployment.matchers`, as F22 on blog.conholdate.cloud) | config |
+| bd47f594 | "Home" label in each language (`params.label.text`, words as blog.conholdate.com + uk, zh-hant) | config |
+| 385873d2 | translated keys → `tags` / `categories` (`теги`, `категории`, `etiketler`, `برچسب‌ها`, `دسته‌ها`, `catégories :`, `categorias`) | 25 |
+| f8649f45 | escaped `\"…\"` in tags and categories (also mismatched `\"x"`, curly `\"x\”`, run-together `x\" - \"y` split) | 162 |
+| 8b0ec070 | `c#` → `csharp` in tags (59 tags, 17 posts; no existing `csharp`/`c-sharp` tag to merge into) | 323 |
+| 93ea772d | translation tags = English tags (29 posts: translated or partly translated by the 2025 pipeline) | 485 |
+| bb1da4d8 | translation categories = English (translated or missing) | 93 |
+
+Tool: `scripts/ops/taxonomy_fix.py` (modes `--keys`, `--escaped`, `--hash`, `--tags`, `--categories`; dry run by
+default; only the tags/categories lines change, each file re-parsed and compared; queued translations skipped and
+listed). Its first runs had three bugs, all caught by its own re-parse checks or by Shoaib Khan before any push:
+block-list detection ran into the next key (refused 58 files), mismatched/curly escapes left `"\"word to html
+csharp\""` (seen by Shoaib Khan), a translated-only `categorias:` got a second `categories:` key (now renamed first;
+French `catégories :` has a space before the colon). Commits rebuilt from bd47f594 each time (all local).
+
+**New checks (AUD-3), so every blog is scanned for these:** `url_part_unsafe` (tag, category or post url with a leading
+dot, `#`, backslash or quotes) and `translation_taxonomy_differs` (translation tags/categories not the English ones,
+translated key names); structure step fixed to skip tag pages that 404 or redirect. Dry run: blog.groupdocs.cloud 0
+after the commits; blog.conholdate.cloud 0; **blog.conholdate.com 3,691** (2,821 `#` tags, 837 tag lists, 33 escaped;
+register, not fixed now). The waiting blogs get them at their scans. Check sheet F15 updated, F16 added; playbook
+rows 26, 27.
 
 ## Post generator review (24 Nov 2026, SK: suggestions for the generator's developer)
 

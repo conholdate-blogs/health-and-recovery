@@ -67,10 +67,11 @@ GROUPS = {
     **dict.fromkeys(("link_missing_translation", "link_damaged", "link_wrong_language", "link_broken",
                      "link_redirected", "link_differs_from_original"), "internal links"),
     **dict.fromkeys(("translation_partial", "language_unsupported", "translated_url_mismatch", "translation_stale",
-                     "section_index_untranslated"), "translations"),
+                     "section_index_untranslated", "translation_taxonomy_differs"), "translations"),
     **dict.fromkeys(("redirect_file_invalid", "redirect_not_working", "redirect_key_malformed", "redirect_self_loop",
                      "redirect_target_bad"), "redirect file"),
-    **dict.fromkeys(("post_front_matter_broken", "post_url_relative", "post_url_duplicate"), "post files"),
+    **dict.fromkeys(("post_front_matter_broken", "post_url_relative", "post_url_duplicate", "url_part_unsafe"),
+                    "post files"),
     **dict.fromkeys(("tag_pages_thin", "sitemap_lists_tag_pages"), "tag pages"),
     "section_lists_home_posts": "listing pages",
 }

@@ -120,6 +120,18 @@ CHECKS = {
     # same day: '**<input>** element' renders as an empty bold, Hugo drops raw HTML outside code (goldmark default)
     "post_raw_html_dropped": ("onpage", "improvable", "HTML tags in the text that the page does not show",
                               "An HTML tag meant as text is written in backticks: **`<input>`**", 1, "S"),
+    # found by Shoaib Khan on blog.groupdocs.cloud, 26 Nov 2026: tags '.NET rewriter SDK' build /tag/.net-…/ pages that
+    # 404 live (the deploy upload skips dot folders); 'c# ai summarization' links /tag/c#-…/, cut at '#' by the
+    # browser; escaped tags \"x\" give /tag/\x\/ (backslashes become '/'). Hugo keeps . # \ in slugs.
+    "url_part_unsafe": ("crawl", "broken", "Tag, category or post URLs that cannot be opened",
+                        "No tag, category or post url starts a path part with a dot or holds #, a backslash or "
+                        "quotes ('.NET x' -> drop the dot, 'c# x' -> 'csharp x', \\\"x\\\" -> x)", 1, "S"),
+    # same day: tags and categories are never translated (the translation agent's translatable_fields; Shoaib Khan);
+    # the 2025 pipeline translated them in 29 posts, or wrote the key itself translated ('теги:'), which Hugo ignores
+    "translation_taxonomy_differs": ("intl", "incorrect",
+                                     "Translations whose tags or category differ from the English post",
+                                     "A translation has exactly the English post's tags and categories, under the "
+                                     "keys 'tags' and 'categories'", 1, "S"),
     "translated_url_mismatch": ("intl", "incorrect",
                                 "Translations published under a different URL than the English post",
                                 "A translation's URL is the English post's URL with only its language prefix added",
@@ -282,6 +294,29 @@ def escaped_values(data: dict) -> list[str]:
     if isinstance(cover, dict):
         out += [f"cover.{k}" for k, v in cover.items() if isinstance(v, str) and v.startswith('\\"')]
     return out
+
+
+# translated key names for tags / categories seen in translations (blog.groupdocs.cloud, 26 Nov 2026)
+TRANSLATED_TAXONOMY_KEYS = {"теги", "категории", "etiketler", "kategoriler", "برچسب‌ها", "دسته‌ها",
+                            "étiquettes", "catégories", "etiquetas", "categorías", "categorias", "タグ", "カテゴリー",
+                            "태그", "카테고리", "标签", "分类", "標籤", "分類"}
+UNSAFE_FIX = {"starts with a dot": "drop the leading dot ('.NET x' -> 'NET x', or merge into an existing tag)",
+              "holds #": "write it without '#' ('c# x' -> 'csharp x')",
+              "holds a backslash or quotes": "remove the escaped quotes (\\\"x\\\" -> x)"}
+
+
+def unsafe_part(value: str, url: bool = False) -> str | None:
+    """Why a tag/category value (or a post url) gives a URL that cannot be opened, or None. Hugo keeps '.', '#' and
+    '\\' in slugs: a leading-dot folder is not uploaded (404), the browser cuts at '#', backslashes become '/'."""
+    s = value.strip()
+    parts = [p for p in s.split("/") if p] if url else [s]
+    if any(p.startswith(".") for p in parts):
+        return "starts with a dot"
+    if "#" in s:
+        return "holds #"
+    if re.search(r'[\\"“”]', s):
+        return "holds a backslash or quotes"
+    return None
 
 
 def cover_image(data: dict) -> str | None:
@@ -526,6 +561,7 @@ class RepoAudit:
         cats_used: set[str] = set()
         sc_names = shortcode_names(repo)
         covers: dict[str, dict[str, tuple]] = {}  # folder -> language -> (cover image, file, page)
+        taxonomy: dict[str, dict[str, tuple]] = {}  # folder -> language -> (tags, categories, translated keys, ...)
         for f in sorted(repo.glob("content/**/index*.md")):
             if not _NAME.match(f.name):
                 continue
@@ -552,6 +588,24 @@ class RepoAudit:
                 issues.append({"check": "post_url_relative", "file": rel, "line": 1, "link": str(url), "fix": f"/{url}",
                                "page": None, "note": "published under a doubled language", "commit": commit(rel)})
             page = f"https://{host}{url}" if url and str(url).startswith("/") else None
+            if url and (unsafe_part(str(url), url=True)):
+                issues.append({"check": "url_part_unsafe", "file": rel, "line": 1, "link": str(url), "page": page,
+                               "fix": "remove the leading dot, # or backslash from the url",
+                               "note": f"post url: {unsafe_part(str(url), url=True)}", "commit": commit(rel)})
+            for key, base in (("tags", "tag"), ("categories", "categories")):
+                for value in data.get(key) or []:
+                    why = unsafe_part(str(value))
+                    if why:
+                        slug = "-".join(str(value).strip().lower().split())
+                        issues.append({"check": "url_part_unsafe", "file": rel, "line": 1,
+                                       "link": f"/{lang + '/' if lang else ''}{base}/{slug}/", "page": page,
+                                       "fix": UNSAFE_FIX[why], "note": f"{key[:-1] if key == 'tags' else 'category'} "
+                                                                      f"{str(value).strip()!r}: {why}",
+                                       "commit": commit(rel)})
+            taxonomy.setdefault(str(f.parent.relative_to(repo)), {})[lang] = (
+                [str(t).strip() for t in data.get("tags") or []],
+                [str(c).strip() for c in data.get("categories") or []],
+                [k for k in data if k in TRANSLATED_TAXONOMY_KEYS], rel, page)
             fm_lines = m.group(0).count("\n")
             for n, head in body_h1(text[m.end():]):
                 issues.append({"check": "post_body_h1", "file": rel, "line": fm_lines + n, "link": None, "page": page,
@@ -614,6 +668,24 @@ class RepoAudit:
                     issues.append({"check": "post_cover_lost", "file": rel, "line": 1, "link": None, "page": page,
                                    "fix": f"cover: with image: {en_img} (and alt, caption) indented under it",
                                    "note": "no cover image; the English post has one", "commit": commit(rel)})
+        for _folder, by in sorted(taxonomy.items()):
+            if "" not in by:
+                continue
+            en_tags, en_cats = by[""][0], by[""][1]
+            for lang, (tags, cats, tkeys, rel, page) in sorted(by.items()):
+                if not lang:
+                    continue
+                parts = []
+                if tkeys:
+                    parts.append(f"translated key {', '.join(tkeys)} (Hugo ignores it)")
+                if en_tags and tags != en_tags:
+                    parts.append("tags missing" if not tags else "tags differ")
+                if en_cats and cats != en_cats:
+                    parts.append("category missing" if not cats else f"category {', '.join(cats)!r}")
+                if parts:
+                    issues.append({"check": "translation_taxonomy_differs", "file": rel, "line": 1, "link": None,
+                                   "page": page, "fix": "use the English post's tags and categories (keys in English)",
+                                   "note": "; ".join(parts), "commit": commit(rel)})
         issues += self.check_translated_urls(host, urls, commit)
         issues += self.check_duplicate_urls(host, urls, commit)
         issues += self.check_stale(host, stale_candidates, commits, commit)
