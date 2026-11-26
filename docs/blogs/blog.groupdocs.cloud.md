@@ -227,7 +227,7 @@ Build check before the push (Hugo 0.101, 8fc184e4 vs bb1da4d8): each of the 10 c
 
 ## llms.txt: most read first (26 Nov 2026, suggested by Shoaib Khan)
 
-Search Console: the 30 most-clicked pages earn 52% of clicks and none was among the newest 100 that llms.txt listed. 3 months (25 Aug - 23 Nov, 2,129 clicks): blog-wide post #10 34 clicks, #30 9, #50 5, #100 3; posts with >= 3 clicks per language fa 29, ru 20, en 13, others 0-11. Shoaib Khan chose **30 most read + 70 newest** (50/50 considered: slots 31-50 would be 1-2 click posts). Blog commit 7a311dc1 (pushed 26 Nov, waits for deploy): `data/llms_popular.json` (scripts/ops/llms_popular.py --top 30) + template. Build check: 30 + 70 in every language, no URL twice, fallback to 100 newest without the data file, no other file changes. **Monthly refresh as an approved commit (Shoaib Khan).** Next refresh: around 26 Dec 2026.
+Search Console: the 30 most-clicked pages earn 52% of clicks and none was among the newest 100 that llms.txt listed. 3 months (25 Aug - 23 Nov, 2,129 clicks): blog-wide post #10 34 clicks, #30 9, #50 5, #100 3; posts with >= 3 clicks per language fa 29, ru 20, en 13, others 0-11. Shoaib Khan chose **30 most read + 70 newest** (50/50 considered: slots 31-50 would be 1-2 click posts). Blog commit 7a311dc1 (deployed and verified live 26 Nov: 30 + 70 on en, ru, fa; llms.txt now `text/plain; charset=utf-8`): `data/llms_popular.json` (scripts/ops/llms_popular.py --top 30) + template. Build check: 30 + 70 in every language, no URL twice, fallback to 100 newest without the data file, no other file changes. **Monthly refresh as an approved commit (Shoaib Khan).** Next refresh: around 26 Dec 2026.
 
 ## Post generator review (24 Nov 2026, SK: suggestions for the generator's developer)
 

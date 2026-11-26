@@ -208,7 +208,8 @@
    "bef704c7"
   ],
   "issue": "llms.txt served as text/plain without charset=utf-8",
-  "result": "Committed and deployed; S3 keeps the old header until llms.txt content changes (next post); not yet verified live"
+  "result": "Live: /llms.txt, /ru/llms.txt, /fa/llms.txt served text/plain; charset=utf-8 (re-uploaded with the most-read change, 7a311dc1)",
+  "verified": "2026-11-26"
  },
  {
   "host": "blog.groupdocs.cloud",
@@ -293,5 +294,19 @@
   ],
   "issue": "Translated or missing category in 93 translations (10 posts)",
   "result": "Live: /zh-hant/categories/groupdocs.parser-cloud-product-family/ lists the posts"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-26",
+  "found_by": "Shoaib Khan",
+  "check": "llms_txt_missing",
+  "commits": [
+   "7a311dc1"
+  ],
+  "issue": "llms.txt listed only the 100 newest posts; none of the 30 most-clicked pages (52% of search clicks) was in it",
+  "verified": "2026-11-26",
+  "result": "Live: every language's llms.txt lists 30 most-read posts (3 months of search clicks) first, then 70 newest"
  }
 ]
