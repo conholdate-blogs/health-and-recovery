@@ -117,6 +117,7 @@ def main() -> int:
         meta = {"_about": f"Most-read posts per language for layouts/index.llms.txt: Search Console clicks "
                           f"{start}..{end}, top {a.top}; written by the Health and Recovery Agent "
                           f"(scripts/ops/llms_popular.py), refreshed monthly"}
+        meta["_updated"] = date.today().isoformat()  # llms.txt "Last updated" when later than the newest post
         p.write_text(json.dumps({**meta, **out}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         print("written", p)
     return 0

@@ -1,6 +1,7 @@
 """Proven on blog.conholdate.com (3832d94d, 306 files) and blog.conholdate.cloud (69e4ab9, 62 files), 19 Nov 2026.
 Repair front matter of current translations: cover block flattened (image/alt/caption/hidden not indented under
 cover:, caption key sometimes translated) and values wrapped in \\" ... \\". Usage: scripts/ops/fm_cover_repair.py <repo> [--write]
+[--only cover|escaped] (26 Nov 2026, Shoaib Khan: one commit per fix type; run cover first, then escaped)
 """
 import json
 import pathlib
@@ -16,6 +17,8 @@ COVER_KEYS = {"image", "alt", "caption", "hidden"}
 CAPTION_ALIASES = {"キャプション", "légende", "التسمية التوضيحية", "التسمية التوضيحيه", "คำบรรยาย", "заголовок", "chú thích", "כיתוב"}
 repo = pathlib.Path(sys.argv[1])
 write = "--write" in sys.argv
+ONLY = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None  # cover | escaped | None (both)
+DO_COVER, DO_ESC = ONLY in (None, "cover"), ONLY in (None, "escaped")
 
 out = subprocess.run(["git", "-C", str(repo), "log", "--format=@%ct", "--name-only", "--no-renames", "--", "content"],
                      capture_output=True, text=True).stdout
@@ -53,17 +56,19 @@ def fix(raw: str) -> str:
             continue
         indent, key, val = k.groups()
         key = key.strip()
-        if not indent and key in ("cover", "capa", "cobrir") and not val.strip():
+        if DO_COVER and not indent and key in ("cover", "capa", "cobrir") and not val.strip():
             in_cover = True
             out_lines.append("cover:")
             continue
         touched = False
-        if in_cover and not indent and (key in COVER_KEYS or key in CAPTION_ALIASES):
+        if not DO_COVER and not indent and key == "cover" and not val.strip():
+            in_cover = True  # cover already a block: still unescape inside it
+        elif DO_COVER and in_cover and not indent and (key in COVER_KEYS or key in CAPTION_ALIASES):
             indent, key, touched = "    ", ("caption" if key in CAPTION_ALIASES else key), True
         elif not indent:
             in_cover = False
         v = val.strip()
-        if (not indent or in_cover) and v.startswith('\\"') and v.endswith('\\"') and len(v) >= 4:
+        if DO_ESC and (not indent or in_cover) and v.startswith('\\"') and v.endswith('\\"') and len(v) >= 4:
             val, touched = json.dumps(unesc(v), ensure_ascii=False), True
         if not touched:
             out_lines.append(ln)
@@ -101,11 +106,12 @@ for en in sorted(repo.glob("content/**/index.md")):
             problems.append(rel)
             continue
         moved = COVER_KEYS | CAPTION_ALIASES | {"capa", "cobrir"}
-        same_rest = all(d.get(k) == (unesc(v) if isinstance(v, str) else v)
+        same_rest = all(d.get(k) == (unesc(v) if isinstance(v, str) and DO_ESC else v)
                         for k, v in old.items() if k not in moved and k != "cover")
         cov_ok = (not ecover) or (isinstance(d.get("cover"), dict) and d["cover"].get("image") == ecover.get("image"))
-        if not d or walk_esc(d.get('cover') or {}) or any(isinstance(d.get(k), str) and d[k].startswith('\\"') for k in d) or not same_rest or not cov_ok or FM.sub("", raw, 1) != FM.sub("", new, 1) \
-                or any(k in d for k in CAPTION_ALIASES) or (ecover and any(k in d for k in ("image", "alt", "caption"))):
+        esc_left = walk_esc(d.get('cover') or {}) or any(isinstance(d.get(k), str) and d[k].startswith('\\"') for k in d)
+        cover_left = any(k in d for k in CAPTION_ALIASES) or (ecover and any(k in d for k in ("image", "alt", "caption")))
+        if not d or (DO_ESC and esc_left) or not same_rest or (DO_COVER and (not cov_ok or cover_left)) or FM.sub("", raw, 1) != FM.sub("", new, 1):
             problems.append(rel)
             continue
         changed.append(rel)
