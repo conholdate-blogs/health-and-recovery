@@ -67,6 +67,7 @@ Plan:
 | English body check findings left (uncertain / minor) | 40 of 109 (CSV `review` column); for a later pass |
 | Optimizer cut English posts (TD-5) | 3 restored in adc1337b (waits for push); tell the optimizer's owner |
 | Translation tag lists differ from the English post (62 posts per language, 36 current; tag pages noindex) | low; fix with the tag clean-up (retag later) |
+| **Dry run of the 26 Nov body checks:** `code_fence_misplaced` 23 (22 translations with an unclosed code block, 1 generator stray fence) | not fixed (one blog at a time); playbook row 28 |
 | **Dry run of the 26 Nov checks (found on blog.groupdocs.cloud):** `url_part_unsafe` 2,821 tags with `#` (`c# …`: link cut at `#`, 404) + 33 with escaped quotes; `translation_taxonomy_differs` 837 translations (tags differ) | not fixed (one blog at a time); fix with `scripts/ops/taxonomy_fix.py` (`--escaped`, `--hash`, `--tags`, `--categories`) in a later round |
 | Half-translated titles ("Convert LaTeX zu PDF in Java", "Convert PUB ke Word…", pl "Convert LaTeX do PDF") | not counted yet; candidate check, fix here |
 | 26 posts (442 translations) behind small English changes (≤ 5 body lines or front matter) | fix here by translating the changed lines (rule TR-9); after the queue reset |

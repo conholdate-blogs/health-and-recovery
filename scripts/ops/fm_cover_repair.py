@@ -1,7 +1,7 @@
 """Proven on blog.conholdate.com (3832d94d, 306 files) and blog.conholdate.cloud (69e4ab9, 62 files), 19 Nov 2026.
 Repair front matter of current translations: cover block flattened (image/alt/caption/hidden not indented under
 cover:, caption key sometimes translated) and values wrapped in \\" ... \\". Usage: scripts/ops/fm_cover_repair.py <repo> [--write]
-[--only cover|escaped] (26 Nov 2026, Shoaib Khan: one commit per fix type; run cover first, then escaped)
+[--only cover|escaped] (26 Nov 2026, Shoaib Khan: one commit per fix type; run escaped first: an escaped image path blocks the cover check)
 """
 import json
 import pathlib
@@ -14,7 +14,7 @@ import yaml
 FM = re.compile(r"^(---\s*\n)(.*?)(\n---\s*\n)", re.S)
 KEY = re.compile(r"^(\s*)([^\s:#][^:]*):\s?(.*)$")
 COVER_KEYS = {"image", "alt", "caption", "hidden"}
-CAPTION_ALIASES = {"キャプション", "légende", "التسمية التوضيحية", "التسمية التوضيحيه", "คำบรรยาย", "заголовок", "chú thích", "כיתוב"}
+CAPTION_ALIASES = {"キャプション", "légende", "legenda", "التسمية التوضيحية", "التسمية التوضيحيه", "คำบรรยาย", "заголовок", "chú thích", "כיתוב"}
 repo = pathlib.Path(sys.argv[1])
 write = "--write" in sys.argv
 ONLY = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None  # cover | escaped | None (both)
@@ -61,10 +61,12 @@ def fix(raw: str) -> str:
             out_lines.append("cover:")
             continue
         touched = False
-        if not DO_COVER and not indent and key == "cover" and not val.strip():
+        if not DO_COVER and not indent and key in ("cover", "capa", "cobrir") and not val.strip():
             in_cover = True  # cover already a block: still unescape inside it
         elif DO_COVER and in_cover and not indent and (key in COVER_KEYS or key in CAPTION_ALIASES):
             indent, key, touched = "    ", ("caption" if key in CAPTION_ALIASES else key), True
+        elif DO_COVER and in_cover and indent and key in CAPTION_ALIASES:
+            key, touched = "caption", True  # cover block already indented, caption key translated
         elif not indent:
             in_cover = False
         v = val.strip()
@@ -106,7 +108,7 @@ for en in sorted(repo.glob("content/**/index.md")):
             problems.append(rel)
             continue
         moved = COVER_KEYS | CAPTION_ALIASES | {"capa", "cobrir"}
-        same_rest = all(d.get(k) == (unesc(v) if isinstance(v, str) and DO_ESC else v)
+        same_rest = all(d.get(k) == (unesc(v) if isinstance(v, str) and DO_ESC and v.strip().startswith('\\"') else v)
                         for k, v in old.items() if k not in moved and k != "cover")
         cov_ok = (not ecover) or (isinstance(d.get("cover"), dict) and d["cover"].get("image") == ecover.get("image"))
         esc_left = walk_esc(d.get('cover') or {}) or any(isinstance(d.get(k), str) and d[k].startswith('\\"') for k in d)

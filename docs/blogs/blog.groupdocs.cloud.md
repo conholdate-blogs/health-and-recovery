@@ -229,6 +229,50 @@ Build check before the push (Hugo 0.101, 8fc184e4 vs bb1da4d8): each of the 10 c
 
 Search Console: the 30 most-clicked pages earn 52% of clicks and none was among the newest 100 that llms.txt listed. 3 months (25 Aug - 23 Nov, 2,129 clicks): blog-wide post #10 34 clicks, #30 9, #50 5, #100 3; posts with >= 3 clicks per language fa 29, ru 20, en 13, others 0-11. Shoaib Khan chose **30 most read + 70 newest** (50/50 considered: slots 31-50 would be 1-2 click posts). Blog commit 7a311dc1 (deployed and verified live 26 Nov: 30 + 70 on en, ru, fa; llms.txt now `text/plain; charset=utf-8`): `data/llms_popular.json` (scripts/ops/llms_popular.py --top 30) + template. Build check: 30 + 70 in every language, no URL twice, fallback to 100 newest without the data file, no other file changes. **Monthly refresh as an approved commit (Shoaib Khan).** Next refresh: around 26 Dec 2026.
 
+## Fix batch 3: content in current translations (26 Nov 2026; local, waits for approval)
+
+One commit per fix type; queued translations skipped (they get the fix with their retranslation); every English change
+ships with all its current translations.
+
+| Commit | Fix | Files |
+|---|---|---|
+| 56f7f115 | llms.txt "Last updated" = later of newest post and most-read list (`_updated` in the data file; asked by Shoaib Khan) | 2 |
+| adf8ba24 | `\"…\"` values unwrapped (title, seoTitle, description, summary, cover alt/caption; `capa:` blocks too) | 488 |
+| ece18216 | cover image restored (flat cover block indented; `capa:` → `cover:`; キャプション, légende, legenda → caption) | 220 |
+| 2fec2a06 | `/category/conversion/` (404; /ja/ via a Redirects.json entry) → `/categories/groupdocs.conversion-cloud-product-family/` | 494 links |
+| b5d1269a | dated `/2023/02/10/convert-html-to-markdown-…` → current URL | 19 links |
+| 26bf6994 | damaged, mistyped (`-in-Java-`, `-USE-rest-api-`), doubled-language (`/ar/ar/`) links | 16 links |
+| dbad1988 | wrong-language links in extract-images-from-word-using-csharp translations | 72 links |
+| 57e7080f | broken-off URL remainders after links (` -API/)`, ` -파이썬/)`, `/)`; found by Shoaib Khan in review of 26bf6994) | 13 lines |
+| 42747fa4 | generator's stray fence before `<!--[CODE_SNIPPET_END]-->` (json-to-html-php, csv-to-jpg-python, ods-to-xlsx translations) | 32 |
+| 0ffba0cb | 2018 Viewer Cloud release post: closing fence glued to a caption + a stray fence | 19 |
+| 720532a3 | closing fences that swallowed the next sentence (``` Bitte befolgen…) | 20 |
+| 1f27615d | empty extra code block in convert-excel-to-csv-in-csharp translations | 18 |
+
+Findings while fixing (all now checks or rules):
+- **Snippet markers** `<!--[CODE_SNIPPET_START/END]-->` (post generator; another generator writes `COMPLETE_CODE_SNIPPET`)
+  are HTML comments, invisible on the page; they stay. The generator also writes a bare ``` before the END marker, which
+  opened a new block: live, the marker and the explanation after every snippet showed inside a code block (csv-to-jpg:
+  5 times). Report to the generator's developer. The translation agent knows the markers and keeps fence counts on purpose
+  (`_code_fence_count_mismatched`), so it copies the stray fence into every language.
+- **Old translation pipeline damage:** fences added or merged in translations: closing fence joined to the next sentence (78),
+  empty extra blocks (18), extra fences that put a real ```` ```python ```` in closing position. Gist embeds inlined as code
+  are a separate, harmless convention (6,424 translations with more fences than English for that reason only).
+- **Split URLs:** an older translation run split links; the tail landed after the sentence (some tails translated: -파이썬, -piton).
+- **Our mistakes, caught:** the damaged-link fix left the remainders (Shoaib Khan); the first remainder clean-up swallowed
+  sentence endings (caught before commit); `fm_cover_repair.py` false alarms (leading spaces, `legenda`, `capa:` in escaped
+  mode) fixed in the tool; the cut-off check flagged a 2015 letter ending "Kind regards, The GroupDocs Team" (sign-offs now ok).
+- **Not fixed here:** French link to convert-jpg-to-pdf (waits for that post's own-slug URL, `translated_url_mismatch`);
+  Turkish caption `C#"da` (should be an apostrophe, minor); the API secret (waits for key rotation).
+
+**Retranslation (Shoaib Khan offered):** `reports/groupdocs.cloud/retranslate-candidates.csv`: 32 current translations in 6 posts
+need an ISSUE row (code blocks damaged: csv-to-pdf-java 11, csv-to-jpg-python 14, ods-to-xlsx-php 4, three Korean files);
+7 more (json-to-html-php fa/id/zh-hant, csv-to-jpg-python fa/it/ja/ru) are queued by the 42747fa4 English change.
+
+**New checks:** `code_fence_misplaced` (stray / glued / empty-block fences, unclosed block in a translation),
+`link_split_remainder`; `post_body_cut_off` accepts sign-offs. Dry run: blog.groupdocs.cloud 0 left except the 39 translations
+for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translations with an unclosed block, 1 stray).
+
 ## Post generator review (24 Nov 2026, SK: suggestions for the generator's developer)
 
 63 English posts added by the post generator in 2026 (58 still present at 58f52465; 5 removed: 3 copies in a

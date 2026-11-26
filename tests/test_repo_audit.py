@@ -437,3 +437,21 @@ def test_shortcode_shown_as_text(tmp_path):
     audit = RepoAudit(make_tenant(repo), FakeFetcher(), AuditStore(":memory:"), sample=0, log=None)
     found = [(i["file"], i["line"]) for i in audit.check_posts(HOST)[0] if i["check"] == "post_shortcode_as_text"]
     assert found == [("content/Blog/pdf/2025-01-01-s/index.md", 6)]
+
+
+def test_fences_that_shift_code_blocks_and_split_link_remainders():
+    # blog.groupdocs.cloud, 26 Nov 2026: generator's stray ``` before <!--[CODE_SNIPPET_END]-->, a closing fence glued
+    # to its caption, and a translator's split URL ('... -API/)'); a letter's sign-off is a proper ending
+    from core.audit.repo import body_cut_off, fence_problems, split_link_remainders
+
+    stray = "Intro\n```bash\npip x\n```\n```\n<!--[CODE_SNIPPET_END]-->\n\nText\n"
+    assert [n for n, _ in fence_problems(stray)] == [5]
+    glued = "Text\n\n```\ncurl x\n```.NET SDK example\n```\ncode\n```\n"
+    assert [n for n, _ in fence_problems(glued)] == [5]
+    assert fence_problems("```py\nx\n```\n\n```\ny\n```\n") == []
+    assert fence_problems("```\n<repository/>\n```\n```\n<dependency/>\n```\n") == []  # two blocks in a row
+    assert [n for n, _ in fence_problems("```\nx\n```\n```\n\n```\n")] == [4]  # stray empty block
+    line = "See [the guide](https://b.example/ja/conversion/x-using-rest-api/) を参照してください。 -API/)"
+    assert [n for n, _ in split_link_remainders(f"a\n{line}\n")] == [2]
+    assert split_link_remainders("See [x](https://b.example/a/) and (/docs/).\n") == []
+    assert body_cut_off("We apologize. Kind regards, The GroupDocs Team\n") is None

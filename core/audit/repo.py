@@ -114,6 +114,16 @@ CHECKS = {
                                   "Front-matter strings are quoted \"…\" (or plain), never \\\"…\\\"", 1, "S"),
     # found on blog.conholdate.com, 19 Nov 2026: the Blog Optimization Agent cut 3 English posts mid-word (154 -> 70
     # lines, ...); their queued retranslation would have copied the cut text into every language
+    # found on blog.groupdocs.cloud, 26 Nov 2026 (Shoaib Khan + agent): the post generator writes a bare ``` after each
+    # closing fence (text after every snippet showed inside a code block); a 2018 post had a closing fence glued to
+    # its caption (```.NET SDK example), shifting every block after it
+    "code_fence_misplaced": ("onpage", "broken", "Code fences that shift the code blocks after them",
+                             "Every code block opens and closes once: no bare ``` right after a closing fence, no text "
+                             "after a closing ```", 1, "S"),
+    # same day (found by Shoaib Khan in review): an older translation run split URLs; the link kept the start and the
+    # rest landed after the sentence as text (' -API/)', ' -python/)', '/)')
+    "link_split_remainder": ("onpage", "incorrect", "Text after a link that is the rest of a split URL",
+                             "A link's URL is complete inside the link; no '…/)' remainder later on the line", 1, "S"),
     "post_body_cut_off": ("onpage", "broken", "Posts that end mid-sentence (text cut off)",
                           "A post ends with a finished sentence, list item, link definition or shortcode, and every "
                           "code block is closed", 1, "S"),
@@ -271,7 +281,49 @@ def body_cut_off(body: str) -> str | None:
     if sum(1 for ln in body.split("\n") if _FENCE.match(ln)) % 2:
         return "a code block is never closed"
     last = lines[-1].strip()
+    if re.search(r"(?i)\b(regards|team|thanks|cheers)\W*$", last):  # a letter's sign-off (2015 newsletter, 26 Nov)
+        return None
     return None if _END_OK.search(last) else f"ends with {last[-60:]!r}"
+
+
+def fence_problems(body: str) -> list[tuple[int, str]]:
+    """(line, why) for fences that shift the code blocks after them: a bare ``` directly after a closing fence, or
+    text glued to a closing fence (Markdown then keeps the block open)."""
+    lines = body.split("\n")
+    out, inside, last_close = [], False, -2
+    for n, ln in enumerate(lines, 1):
+        m = re.match(r"^\s*```(.*)$", ln)
+        if not m:
+            continue
+        rest = m.group(1).strip()
+        if inside:
+            if rest:
+                out.append((n, f"closing fence with text after it: {ln.strip()[:40]!r}"))
+                continue  # Markdown does not close the block here
+            inside, last_close = False, n
+            continue
+        inside = True
+        if not rest and last_close == n - 1:
+            # two blocks in a row are fine; a stray shows as an empty block or one holding a marker comment / prose
+            j = n
+            while j < len(lines) and not re.match(r"^\s*```", lines[j]):
+                j += 1
+            block = [x for x in lines[n:j] if x.strip()]
+            if not block or any("<!--" in x for x in block):
+                out.append((n, "bare ``` right after a closing fence opens a stray block"))
+    return out
+
+
+def fence_count(body: str) -> int:
+    return sum(1 for ln in body.split("\n") if re.match(r"^\s*```", ln))
+
+
+_SPLIT_LINK = re.compile(r"\]\([^)\s]+\)[^\[\]()]*?\S/\)\s*$")
+
+
+def split_link_remainders(body: str) -> list[tuple[int, str]]:
+    """(line, text) where a link is followed later on the line by a '…/)' that is the rest of a split URL."""
+    return [(n, ln.strip()[-60:]) for n, ln in enumerate(body.split("\n"), 1) if _SPLIT_LINK.search(ln)]
 
 
 def raw_html_dropped(body: str) -> list[tuple[int, str]]:
@@ -619,6 +671,18 @@ class RepoAudit:
                 issues.append({"check": "post_body_cut_off", "file": rel, "line": text.count("\n") + 1, "link": None,
                                "page": page, "fix": "restore the rest from the last version before the cut (git log)",
                                "note": why, "commit": commit(rel)})
+            if lang and fence_count(body) % 2:  # English posts: post_body_cut_off
+                issues.append({"check": "code_fence_misplaced", "file": rel, "line": 1, "link": None, "page": page,
+                               "fix": "retranslate, or close the block as in the English post",
+                               "note": "a code block is never closed", "commit": commit(rel)})
+            for n, why in fence_problems(body):
+                issues.append({"check": "code_fence_misplaced", "file": rel, "line": fm_lines + n, "link": None,
+                               "page": page, "fix": "remove the stray ``` / put the text on its own line",
+                               "note": why, "commit": commit(rel)})
+            for n, line in split_link_remainders(body):
+                issues.append({"check": "link_split_remainder", "file": rel, "line": fm_lines + n, "link": None,
+                               "page": page, "fix": "complete the link's URL, remove the remainder text",
+                               "note": line, "commit": commit(rel)})
             for n, line in raw_html_dropped(body):
                 issues.append({"check": "post_raw_html_dropped", "file": rel, "line": fm_lines + n, "link": None,
                                "page": page, "fix": "write the tag in backticks: **`<tag>`**", "note": line,

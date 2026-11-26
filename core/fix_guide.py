@@ -625,6 +625,20 @@ _ROWS = [
      "Queue the post for retranslation in the translation sheet; a hand patch of one field leaves the rest of that "
      "output unchecked.",
      "Next repo check has no item for the file."),
+    ("code_fence_misplaced", "Repo files", "Code fence that shifts the code blocks",
+     "A bare ``` right after a closing fence (the post generator writes one before <!--[CODE_SNIPPET_END]-->), or text "
+     "glued to a closing fence (```.NET SDK example), which Markdown does not accept as a closing fence.",
+     "Every code block after it shifts: explanations show inside code blocks (with the snippet marker as visible "
+     "text) and code shows as text; the translator copies the fences exactly into every language.",
+     "Remove the stray fence / put the text on its own line, in the English post and all current translations in one "
+     "commit; translations whose code blocks differ otherwise go to retranslation. Report the generator bug.",
+     "Fences balance and the page shows text as text; next repo check has no item."),
+    ("link_split_remainder", "Links and translations", "Rest of a split URL after a link",
+     "An older translation run split a URL: the link kept the start (…-using-rest) and the rest landed after the "
+     "sentence as text (' -API/)', ' -python/)', sometimes translated: ' -파이썬/)').",
+     "The link 404s (link_damaged) and readers see stray characters after the sentence.",
+     "Complete the link's URL (link check 'fix'), then remove the remainder text; check the whole line.",
+     "Next repo check has no item."),
     ("post_body_cut_off", "Repo files", "Post text cut off",
      "The English post ends mid-sentence or inside an unclosed code block: an edit (seen: the Blog Optimization "
      "Agent) cut the rest of the file, often sections, the conclusion and link definitions.",

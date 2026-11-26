@@ -1,0 +1,9 @@
+post,langs,reason,queued_now,found
+conversion/2025-03-21-convert-pdf-to-html-in-java,ko,Code blocks damaged by the old translation pipeline (extra or merged ``` fences: text shown as code); code_fence_misplaced,needs an ISSUE row,2026-11-26
+conversion/2025-05-28-convert-doc-to-pdf-with-nodejs,ko,Code blocks damaged by the old translation pipeline (extra or merged ``` fences: text shown as code); code_fence_misplaced,needs an ISSUE row,2026-11-26
+conversion/2025-08-08-convert-pdf-to-html-in-csharp,ko,Code blocks damaged by the old translation pipeline (extra or merged ``` fences: text shown as code); code_fence_misplaced,needs an ISSUE row,2026-11-26
+conversion/2026-06-05-csv-to-pdf-conversion-in-java-programmatically,"ar,fa,fr,ko,pt,ru,th,tr,uk,vi,zh-hant",Code blocks damaged by the old translation pipeline (extra or merged ``` fences: text shown as code); code_fence_misplaced,needs an ISSUE row,2026-11-26
+conversion/2026-06-15-ods-to-xlsx-conversion-example-in-php,"es,it,vi,zh-hant",Code blocks damaged by the old translation pipeline (extra or merged ``` fences: text shown as code); code_fence_misplaced,needs an ISSUE row,2026-11-26
+conversion/2026-07-08-comprehensive-json-to-html-conversion-tutorial-in-php,"fa,id,zh-hant",Code blocks damaged (code_fence_misplaced),"OUTDATED row (English changed 2026-11-26, 42747fa4)",2026-11-26
+conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers,"ar,de,es,fr,id,ko,pl,pt,th,tr,uk,vi,zh,zh-hant",Code blocks damaged by the old translation pipeline (extra or merged ``` fences: text shown as code); code_fence_misplaced,needs an ISSUE row,2026-11-26
+conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers,"fa,it,ja,ru",Code blocks damaged (code_fence_misplaced),"OUTDATED row (English changed 2026-11-26, 42747fa4)",2026-11-26
