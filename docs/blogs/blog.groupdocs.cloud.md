@@ -223,6 +223,8 @@ rows 26, 27.
 
 Build check before the push (Hugo 0.101, 8fc184e4 vs bb1da4d8): each of the 10 commits builds; post pages 11,155 before and after; removed only tag (3,732) and category (108) pages with broken or translated slugs; added 4,392 tag pages (each language's version of the English tags, noindex); no tag slug with a leading dot, # or backslash. Pushed with Shoaib Khan's approval 26 Nov. After deploy: live check (dot/# tag links gone, /tag/document-rewriting/, llms.txt charset, Home label), agent-fixes rows, rescan.
 
+**Deployed and verified live 26 Nov:** 15 of 16 checks pass (scratch `live_b3.py`): no `.net-` tag link on the posts (en, fr, ja), /tag/document-rewriting/ lists both rewriter posts, /tag/csharp-ai-summarization/ 200 and no tag link with `#`, no tag/category link with a backslash or quote on ru/id/fr/zh-hant translations, zh-hant Parser category page lists its posts, Home label ホーム/Accueil/Головна/首頁. **Open:** llms.txt still `text/plain` without charset: `hugo deploy` re-uploads only changed files and llms.txt did not change; it takes the header with the next post (or one `hugo deploy --force`). 8 agent-fixes rows. Quick rescan (links, repo, structure): new checks 0, health 82, 26 issue types; snapshot 2026-11-26-3.
+
 ## Post generator review (24 Nov 2026, SK: suggestions for the generator's developer)
 
 63 English posts added by the post generator in 2026 (58 still present at 58f52465; 5 removed: 3 copies in a

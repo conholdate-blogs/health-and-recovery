@@ -113,7 +113,7 @@ Also seen on blog.conholdate.com, no check yet: half-translated titles ("Convert
 | No-slash 302 | host |
 | Listing page 2+ `index, follow` with canonical → page 1 (playbook row 25; live 19 Nov; scan 1 showed it as `canonical_elsewhere` est. 922, real: page 2+ only) | all listings |
 | **State 26 Nov:** the rows above (menu, section `_index`, language names, RTL, page 2+) fixed in batch 2 (✓ verified live 26 Nov, health 55 → 82) | done |
-| **Found 26 Nov (Shoaib Khan + agent), pushed 26 Nov, wait for deploy:** tag slugs starting with a dot (3 tags × 19 languages, 404 live), tags with `#` (`c# …`, 59 tags, 17 posts), escaped `\"…\"` tags and categories (10 posts), translated tags (29 posts) / categories (10 posts) / translated keys (`теги:`, `catégories :`, 25 files), llms.txt without `charset=utf-8`, "Home" label in English | 10 commits 4fca7cac … bb1da4d8; new checks `url_part_unsafe`, `translation_taxonomy_differs` |
+| **Found 26 Nov (Shoaib Khan + agent), deployed and verified live 26 Nov (llms.txt charset waits for the next upload):** tag slugs starting with a dot (3 tags × 19 languages, 404 live), tags with `#` (`c# …`, 59 tags, 17 posts), escaped `\"…\"` tags and categories (10 posts), translated tags (29 posts) / categories (10 posts) / translated keys (`теги:`, `catégories :`, 25 files), llms.txt without `charset=utf-8`, "Home" label in English | 10 commits 4fca7cac … bb1da4d8; new checks `url_part_unsafe`, `translation_taxonomy_differs` |
 | Seen in passing, not fixed: `cover` sub-keys translated in some translations (`légende :`), part of `post_cover_lost` / batch 3 (`fm_cover_repair.py`) | batch 3 |
 
 ## blog.aspose.com

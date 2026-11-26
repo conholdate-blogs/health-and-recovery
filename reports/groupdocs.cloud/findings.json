@@ -198,7 +198,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-26",
     "first_seen_run": "repo-audit-run38",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "llms_txt_charset",
@@ -1798,7 +1798,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run37",
+    "last_seen_run": "link-audit-run39",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -2221,7 +2221,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_key_malformed",
@@ -2284,7 +2284,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "redirect_target_bad",
@@ -3116,7 +3116,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-06",
     "first_seen_run": "link-audit-run16",
-    "last_seen_run": "link-audit-run37",
+    "last_seen_run": "link-audit-run39",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_redirected",
@@ -3804,7 +3804,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -4049,7 +4049,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run37",
+    "last_seen_run": "link-audit-run39",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_missing_translation",
@@ -4166,7 +4166,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run37",
+    "last_seen_run": "link-audit-run39",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_damaged",
@@ -4381,7 +4381,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run37",
+    "last_seen_run": "link-audit-run39",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_wrong_language",
@@ -4715,7 +4715,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "link-audit-run23",
-    "last_seen_run": "link-audit-run37",
+    "last_seen_run": "link-audit-run39",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_differs_from_original",
@@ -4778,7 +4778,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translated_url_mismatch",
@@ -5201,7 +5201,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -5330,7 +5330,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Compare Excel Files using C# .NET REST API'",
           "fix": "translate seoTitle",
-          "commit": "fe4fa81b 2025-10-01 Translations added for Excel comparison"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -5624,7 +5624,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -6987,7 +6987,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -7410,7 +7410,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -7833,7 +7833,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_h1",
@@ -8034,7 +8034,7 @@
           "line": 1,
           "note": "alt: '\\\\\"قارن بين عروض PowerPoint التقديمية\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8043,7 +8043,7 @@
           "line": 1,
           "note": "alt: '\\\\\"PowerPoint-Präsentationen vergleichen\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8052,7 +8052,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"comparar presentaciones de PowerPoint\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8061,7 +8061,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"مقایسه پرزنتیشن\\u200cهای پاورپوینت\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8070,7 +8070,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"comparer les présentations PowerPoint\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8079,7 +8079,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"bandingkan presentasi PowerPoint\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8088,7 +8088,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"confronta presentazioni PowerPoint\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8097,7 +8097,7 @@
           "line": 1,
           "note": "alt, キャプション: '\\\\\"パワーポイントプレゼンテーションを比較する\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8106,7 +8106,7 @@
           "line": 1,
           "note": "alt: '\\\\\"PowerPoint 프레젠테이션 비교하기\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8115,7 +8115,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"porównaj prezentacje PowerPoint\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8124,7 +8124,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"comparar apresentações do PowerPoint\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8133,7 +8133,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"сравнить презентации PowerPoint\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8142,7 +8142,7 @@
           "line": 1,
           "note": "alt: '\\\\\"เปรียบเทียบการนำเสนอ PowerPoint\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8151,7 +8151,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"PowerPoint sunumlarını karşılaştır\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8160,7 +8160,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"порівняти презентації PowerPoint\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8169,7 +8169,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"so sánh các bài thuyết trình PowerPoint\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8178,7 +8178,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"比較 PowerPoint 簡報\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8187,7 +8187,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"比较 PowerPoint 演示文稿\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8196,7 +8196,7 @@
           "line": 1,
           "note": "alt: '\\\\\"قارن دفاتر العمل في Excel\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "fe4fa81b 2025-10-01 Translations added for Excel comparison"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8205,7 +8205,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"Excel-Arbeitsmappen vergleichen\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "fe4fa81b 2025-10-01 Translations added for Excel comparison"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8214,7 +8214,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"comparar libros de trabajo de Excel\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "fe4fa81b 2025-10-01 Translations added for Excel comparison"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8223,7 +8223,7 @@
           "line": 1,
           "note": "alt, caption: '\\\\\"مقایسه کتاب\\u200cهای کار اکسل\\\\\"'",
           "fix": "write the value as \"…\"",
-          "commit": "fe4fa81b 2025-10-01 Translations added for Excel comparison"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         }
       ]
     },
@@ -8256,7 +8256,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_escaped",
@@ -8475,7 +8475,7 @@
           "line": 1,
           "note": "title: 'Об`єднання документів Word в C# .NET – об`єднання файлів DOC/DOCX програмно'",
           "fix": "remove ` from title",
-          "commit": "beda0bdb 2025-08-22 Missing translations for Merge Word docs"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         }
       ]
     },
@@ -8508,7 +8508,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_markup",
@@ -8601,7 +8601,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_cut_off",
@@ -8802,7 +8802,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8811,7 +8811,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8820,7 +8820,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8829,7 +8829,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8838,7 +8838,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8847,7 +8847,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8856,7 +8856,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8865,7 +8865,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8874,7 +8874,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8883,7 +8883,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8892,7 +8892,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8901,7 +8901,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8910,7 +8910,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8919,7 +8919,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8928,7 +8928,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8937,7 +8937,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8946,7 +8946,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8955,7 +8955,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-ppt.jpg (and alt, caption) indented under it",
-          "commit": "9cb9955d 2025-09-29 Translations for Compare Powerpoint"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8964,7 +8964,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-excel-banner.jpeg (and alt, caption) indented under it",
-          "commit": "fe4fa81b 2025-10-01 Translations added for Excel comparison"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8973,7 +8973,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-excel-banner.jpeg (and alt, caption) indented under it",
-          "commit": "fe4fa81b 2025-10-01 Translations added for Excel comparison"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8982,7 +8982,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-excel-banner.jpeg (and alt, caption) indented under it",
-          "commit": "fe4fa81b 2025-10-01 Translations added for Excel comparison"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         },
         {
           "role": "file",
@@ -8991,7 +8991,7 @@
           "line": 1,
           "note": "no cover image; the English post has one",
           "fix": "cover: with image: images/compare-excel-banner.jpeg (and alt, caption) indented under it",
-          "commit": "fe4fa81b 2025-10-01 Translations added for Excel comparison"
+          "commit": "8b0ec070 2026-11-26 Tags with 'c#' -> 'csharp' (323 files, 17 posts)"
         }
       ]
     },
@@ -9024,7 +9024,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run38",
+    "last_seen_run": "repo-audit-run40",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_cover_lost",

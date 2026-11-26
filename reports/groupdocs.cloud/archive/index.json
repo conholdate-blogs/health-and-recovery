@@ -172,5 +172,11 @@
     "date": "2026-11-26 (2)",
     "label": "After batch 2 (template fixes, 12 commits, verified live)",
     "runs": "discovery run 8, crawl audit run 33, speed audit run 35, AI audit run 34, text check run 36, link check run 37, repo file check run 38"
+  },
+  {
+    "file": "2026-11-26-3.html",
+    "date": "2026-11-26 (3)",
+    "label": "After batch 3a (tags and categories, 10 commits, verified live)",
+    "runs": "discovery run 9, crawl audit run 33, speed audit run 35, AI audit run 34, text check run 36, link check run 39, repo file check run 40"
   }
 ]

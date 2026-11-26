@@ -180,5 +180,118 @@
   ],
   "issue": "Translated home pages kept the English description; English one 353 characters",
   "result": "Live: /, /de/, /ja/ home descriptions in their language, English 148 characters"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-26",
+  "verified": "2026-11-26",
+  "found_by": "Shoaib Khan",
+  "check": "url_part_unsafe",
+  "commits": [
+   "4fca7cac",
+   "2ce59c6d",
+   "8864154b"
+  ],
+  "issue": "3 tags starting with '.NET' built /tag/.net-…/ pages that answered 404 live in all 19 languages; merged into existing tags (document rewriting, html to pdf converter) or removed (duplicate of html to xps conversion)",
+  "result": "Live: no .net- tag link on the posts (en, fr, ja); /tag/document-rewriting/ lists both rewriter posts"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-26",
+  "found_by": "Agent",
+  "check": "llms_txt_charset",
+  "commits": [
+   "bef704c7"
+  ],
+  "issue": "llms.txt served as text/plain without charset=utf-8",
+  "result": "Committed and deployed; S3 keeps the old header until llms.txt content changes (next post); not yet verified live"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-26",
+  "verified": "2026-11-26",
+  "found_by": "Agent",
+  "check": "menu_label_untranslated",
+  "commits": [
+   "bd47f594"
+  ],
+  "issue": "'Home' label at the top left in English on all 19 languages",
+  "result": "Live: ホーム (ja), Accueil (fr), Головна (uk), 首頁 (zh-hant)"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-26",
+  "verified": "2026-11-26",
+  "found_by": "Agent",
+  "check": "translation_taxonomy_differs",
+  "commits": [
+   "385873d2"
+  ],
+  "issue": "Translated front-matter keys (теги, категории, catégories, categorias, ...) ignored by Hugo: 25 translations had no tags or category",
+  "result": "Live: ru, fr, id translations list their tags"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-26",
+  "verified": "2026-11-26",
+  "found_by": "Agent",
+  "check": "url_part_unsafe",
+  "commits": [
+   "f8649f45"
+  ],
+  "issue": "Escaped \\\"…\\\" tags and categories gave backslash slugs (/tag/\\x\\/) in 10 posts",
+  "result": "Live: no tag or category link with a backslash or quote on the checked translations"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-26",
+  "verified": "2026-11-26",
+  "found_by": "Shoaib Khan",
+  "check": "url_part_unsafe",
+  "commits": [
+   "8b0ec070"
+  ],
+  "issue": "Tags with 'c#' linked /tag/c#-…/, cut at '#' by the browser (59 tags, 17 posts)",
+  "result": "Live: /tag/csharp-ai-summarization/ 200; no tag link with #"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-26",
+  "verified": "2026-11-26",
+  "found_by": "Agent",
+  "check": "translation_taxonomy_differs",
+  "commits": [
+   "93ea772d"
+  ],
+  "issue": "Translated tags in 485 translations (29 posts): one-post tag pages per language",
+  "result": "Live: translations link the shared English tag pages"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-26",
+  "found": "2026-11-26",
+  "verified": "2026-11-26",
+  "found_by": "Agent",
+  "check": "translation_taxonomy_differs",
+  "commits": [
+   "bb1da4d8"
+  ],
+  "issue": "Translated or missing category in 93 translations (10 posts)",
+  "result": "Live: /zh-hant/categories/groupdocs.parser-cloud-product-family/ lists the posts"
  }
 ]
