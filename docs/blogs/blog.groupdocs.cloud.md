@@ -266,7 +266,7 @@ Findings while fixing (all now checks or rules):
   Turkish caption `C#"da` (should be an apostrophe, minor); the API secret (waits for key rotation).
 
 **Retranslation (Shoaib Khan offered):** `reports/groupdocs.cloud/retranslate-candidates.csv`: 32 current translations in 6 posts
-need an ISSUE row (code blocks damaged: csv-to-pdf-java 11, csv-to-jpg-python 14, ods-to-xlsx-php 4, three Korean files);
+ISSUE rows added by Shoaib Khan 26 Nov (code blocks damaged: csv-to-pdf-java 11, csv-to-jpg-python 14, ods-to-xlsx-php 4, three Korean files);
 7 more (json-to-html-php fa/id/zh-hant, csv-to-jpg-python fa/it/ja/ru) are queued by the 42747fa4 English change.
 
 **New checks:** `code_fence_misplaced` (stray / glued / empty-block fences, unclosed block in a translation),
