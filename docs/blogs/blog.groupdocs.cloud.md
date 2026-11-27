@@ -318,6 +318,13 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
 - **Translation agent:** home-link fix verified (4886783, tests pass); handoff for the code-block bug:
   `docs/handoffs/translation-agent-code-blocks.md`.
 
+## Fix batch 5: conflict markers and the last key copies (27 Nov 2026; pushed, waits for deploy)
+
+- **18b29302:** the translation agent's retranslation ec990f7b committed unresolved stash conflicts into 4 csv-to-jpg translations (de, id, tr, uk), shown as text on the live pages; each hunk resolved to the side matching the English. New check `post_merge_conflict`; second agent bug in `docs/handoffs/translation-agent-code-blocks.md`.
+- **cef75257:** API key replaced in the last 36 queued translation files (display-word-document-in-php, combine-pdf); no file in the repo holds it. 2 ISSUE rows for Shoaib Khan (clipboard) keep their retranslation queued.
+- csv-to-jpg (18 translations) and json-to-html (3) keep agent-split code blocks (and translated code comments) until the agent fix and a retranslation; a rebuild from the English is not safe because the comments were translated.
+- Score after these: ~87 (both fixes in the 0.4-point "post files" group); 10 points left = 17 broken links in the queued csv-json translations (→ ~97 after its retranslation).
+
 ## Health 83: what is left (27 Nov 2026, Shoaib Khan asked)
 
 Points lost (scorecard on the open findings): `link_broken` 10.0 (only 17 links, all in the queued csv-json translations,
