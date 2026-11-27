@@ -300,6 +300,16 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
 - **Notes sent material:** generator stray fence (3 URLs + fix commit dee72c63); U+2011 from both the optimizer (zip-to-jpg,
   excel-to-pdf-ruby, jpg-to-svg-java, gif-to-pdf-java) and the post generator (rewriter ASP.NET Core 26, modify-txt-java 23).
 
+## Health 83: what is left (27 Nov 2026, Shoaib Khan asked)
+
+Points lost (scorecard on the open findings): `link_broken` 10.0 (only 17 links, all in the queued csv-json translations,
+but link findings weigh at least 25% of the site), `text_topic_mismatch` 5.0 (seoTitles copied from other posts, e.g.
+rearrange-pdf-pages-node-js titled "Edit Documents using REST API in PHP", merge-documents-of-different-types-python titled
+"Sign PDF with Stamp … Node.js" in every language: real, fix next), description/title length and missing H1 on sampled pages
+1.7 together (improvable, capped), code fences 0.4, untranslated title 0.2. Queue tab: 7 open rows, all OUTDATED Low (the
+batch 1 posts and zip-to-jpg); the 6 ISSUE rows are done. **Translation agent bug found:** the csv-to-jpg retranslation
+(ec990f7b) split code blocks at blank lines (register).
+
 ## Post generator review (24 Nov 2026, SK: suggestions for the generator's developer)
 
 63 English posts added by the post generator in 2026 (58 still present at 58f52465; 5 removed: 3 copies in a
