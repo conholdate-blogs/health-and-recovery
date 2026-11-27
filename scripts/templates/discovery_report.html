@@ -800,6 +800,11 @@ __METHOD__
     return EXPLAIN.length - 1;
   };
   // score bars (SK, 2026-10-27): always 0 to 100, filled in the score's colour band, ticks at the band cut-offs
+  // subdomain order (SK, 2026-11-27): .com before .cloud, each in brand order aspose, groupdocs, conholdate; others A to Z
+  const BRANDS = ["aspose", "groupdocs", "conholdate"], TLDS = ["com", "cloud"];
+  const rankIn = (list, x) => { const i = list.indexOf(x); return i < 0 ? list.length : i; };
+  const brandKey = h => { const p = h.split("."); return [rankIn(TLDS, p[p.length - 1]), rankIn(BRANDS, p[p.length - 2])]; };
+  const byBrand = (a, b) => { const x = brandKey(a), y = brandKey(b); return x[0] - y[0] || x[1] - y[1] || a.localeCompare(b); };
   // progress bar (share closed or fixed): a sliver while anything is done, so it never reads as 0
   const kbar = (done, all) => all ? `<span class="kbar" aria-hidden="true"><i style="width:${done ? Math.max(1.5, Math.min(100, 100 * done / all)) : 0}%"></i></span>` : "";
   const sbar = (v, g, cls = "") => v == null
@@ -1090,7 +1095,7 @@ __METHOD__
   const opts = (id, values, all) => { $(id).innerHTML = `<option value="">${all}</option>` + values.map(v => `<option value="${esc(v)}">${esc(LABEL[v] || v)}</option>`).join(""); };
   opts("f-src", [...new Set(findings.map(f => f.source || "discovery"))].sort(), "All sources");
   opts("f-type", ORDER.filter(t => byType[t]), "All severities");
-  const SUBS = [...new Set(findings.map(f => f.subdomain))].sort();
+  const SUBS = [...new Set(findings.map(f => f.subdomain))].sort(byBrand);
   opts("f-host", SUBS, "All subdomains");
   if (SUBS.length < 2) $("f-host").hidden = document.querySelector('label[for="f-host"]').hidden = true;  // one choice filters nothing (SK)
   opts("f-dim", [...new Set(findings.map(f => f.dimension))].sort(), "All dimensions");
@@ -1895,12 +1900,13 @@ __METHOD__
           ${VV && VV.keywords ? cell("Visibility", `<dl class="vmini">${visRows(VV, VV.keywords, VV.keywords_six_months_ago || {}).map(([t, v, c]) => `<dt>${t}</dt><dd><b>${v}</b>${c}</dd>`).join("")}</dl>`) : ""}
           ${areas ? `<div class="sareas">${areas}</div>` : ""}${open}</article>`;
       };
-      const SORTS = { name: (a, b) => a.host.localeCompare(b.host), score: (a, b) => a.health - b.health || a.host.localeCompare(b.host),
+      const SORTS = { brand: (a, b) => byBrand(a.host, b.host),
+                      name: (a, b) => a.host.localeCompare(b.host), score: (a, b) => a.health - b.health || a.host.localeCompare(b.host),
                       clicks: (a, b) => (((b.traffic || {}).current || {}).clicks || 0) - (((a.traffic || {}).current || {}).clicks || 0) };
       const render = by => { $("srows").innerHTML = HOSTS.slice().sort(SORTS[by]).map(row).join(""); };
       $("hcards").innerHTML = `<div class="shead"><span>${HOSTS.length} subdomain${HOSTS.length === 1 ? "" : "s"}</span>${HOSTS.length > 1
-        ? `<label class="dim">Sort <select id="s-sort"><option value="name">A to Z</option><option value="score">Lowest score first</option><option value="clicks">Most clicks first</option></select></label>` : ""}</div><div class="srows" id="srows"></div>`;
-      render("name");
+        ? `<label class="dim">Sort <select id="s-sort"><option value="brand">.com, then .cloud</option><option value="name">A to Z</option><option value="score">Lowest score first</option><option value="clicks">Most clicks first</option></select></label>` : ""}</div><div class="srows" id="srows"></div>`;
+      render("brand");
       if ($("s-sort")) $("s-sort").addEventListener("change", e => render(e.target.value));
       $("hcards").hidden = false;
       $("hcards").addEventListener("click", e => {
