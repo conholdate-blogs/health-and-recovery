@@ -120,13 +120,17 @@ CHECKS = {
     "code_fence_misplaced": ("onpage", "broken", "Code fences that shift the code blocks after them",
                              "Every code block opens and closes once: no bare ``` right after a closing fence, no text "
                              "after a closing ```", 1, "S"),
-    # same day (found by Shoaib Khan in review): an older translation run split URLs; the link kept the start and the
-    # rest landed after the sentence as text (' -API/)', ' -python/)', '/)')
+    # found on blog.groupdocs.cloud, 27 Nov 2026: 49 English posts carried another post's seoTitle (the search result
+    # showed "Sign PDF with Stamp … Node.js" for a Python merge post); first seen 22 Oct on another blog (632 posts)
+    "post_seo_title_copied": ("onpage", "incorrect", "Posts whose search title belongs to another post",
+                              "Every post has its own seoTitle (or none: the theme then uses the title)", 1, "S"),
     # found on blog.groupdocs.cloud, 26-27 Nov 2026 (Shoaib Khan): an API client id/secret in a cURL example and in gist
     # code inlined by translations (clientSecret1, client_secret, ClientSecret ...): 1,500 files
     "post_secret_literal": ("onpage", "broken", "API keys or secrets written out in posts",
                             "Code samples use placeholders (YOUR_CLIENT_ID, YOUR_CLIENT_SECRET), never a real id or "
                             "secret", 1, "S"),
+    # same day (found by Shoaib Khan in review): an older translation run split URLs; the link kept the start and the
+    # rest landed after the sentence as text (' -API/)', ' -python/)', '/)')
     "link_split_remainder": ("onpage", "incorrect", "Text after a link that is the rest of a split URL",
                              "A link's URL is complete inside the link; no '…/)' remainder later on the line", 1, "S"),
     "post_body_cut_off": ("onpage", "broken", "Posts that end mid-sentence (text cut off)",
@@ -770,6 +774,7 @@ class RepoAudit:
                     issues.append({"check": "translation_taxonomy_differs", "file": rel, "line": 1, "link": None,
                                    "page": page, "fix": "use the English post's tags and categories (keys in English)",
                                    "note": "; ".join(parts), "commit": commit(rel)})
+        issues += self.check_seo_titles_copied(host, texts, commit)
         issues += self.check_translated_urls(host, urls, commit)
         issues += self.check_duplicate_urls(host, urls, commit)
         issues += self.check_stale(host, stale_candidates, commits, commit)
@@ -942,6 +947,28 @@ class RepoAudit:
                 out.append({"check": "menu_id_wrong_script", "file": "config.yml", "line": 0, "link": str(code),
                             "page": page, "fix": f"{parts[0]}-zht",
                             "note": f"{code}: menu id {mid!r} is the Simplified Chinese menu", "commit": None})
+        return out
+
+    def check_seo_titles_copied(self, host: str, texts: dict, commit) -> list[dict]:
+        """English posts sharing one seoTitle: the post whose own title is closest keeps it, the others copied it."""
+        import difflib
+
+        groups: dict = {}
+        for by in texts.values():
+            if "" in by and by[""][0].get("seoTitle"):
+                vals, rel, page = by[""]
+                groups.setdefault(vals["seoTitle"].strip().lower(), []).append((vals, rel, page))
+        out = []
+        for posts in groups.values():
+            if len(posts) < 2:
+                continue
+            posts.sort(key=lambda p: -difflib.SequenceMatcher(None, p[0]["title"].lower(),
+                                                              p[0]["seoTitle"].lower()).ratio())
+            for vals, rel, page in posts[1:]:
+                out.append({"check": "post_seo_title_copied", "file": rel, "line": 1, "link": None, "page": page,
+                            "fix": "remove the seoTitle (English and translations) or write one for this post",
+                            "note": f"seoTitle {vals['seoTitle'][:60]!r} is also on {posts[0][1].split('/')[-2]}",
+                            "commit": commit(rel)})
         return out
 
     def check_llms(self, host: str, posts: list) -> list[dict]:

@@ -471,3 +471,18 @@ def test_secret_literals():
             'configuration.ClientId = "YOUR_CLIENT_ID";\n'
             '{{< gist groupdocs-cloud-gists 0123456789abcdef0123456789abcdef "x.cs" >}}\n')
     assert [n for n, _ in secret_literals(body)] == [1, 2]
+
+
+def test_seo_title_copied_from_another_post(tmp_path):
+    # blog.groupdocs.cloud, 27 Nov 2026: a Python merge post carried the seoTitle of a Node.js signature post
+    repo = make_repo(tmp_path)
+    for folder, title, seo in (("2026-01-05-sign", "Sign PDF with Stamp in Node.js", "Sign PDF with Stamp in Node.js | eSign"),
+                               ("2026-01-06-merge", "Merge Documents of Different Types in Python",
+                                "Sign PDF with Stamp in Node.js | eSign")):
+        post = repo / "content/Blog/pdf" / folder
+        post.mkdir(parents=True)
+        (post / "index.md").write_text(f"---\ntitle: {title}\nseoTitle: \"{seo}\"\nurl: /pdf/{folder}/\n---\n",
+                                       encoding="utf-8")
+    audit = RepoAudit(make_tenant(repo), FakeFetcher(), AuditStore(":memory:"), sample=0, log=None)
+    got = [i["file"].split("/")[-2] for i in audit.check_posts(HOST)[0] if i["check"] == "post_seo_title_copied"]
+    assert got == ["2026-01-06-merge"]

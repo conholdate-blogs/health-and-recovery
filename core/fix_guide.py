@@ -633,6 +633,13 @@ _ROWS = [
      "Remove the stray fence / put the text on its own line, in the English post and all current translations in one "
      "commit; translations whose code blocks differ otherwise go to retranslation. Report the generator bug.",
      "Fences balance and the page shows text as text; next repo check has no item."),
+    ("post_seo_title_copied", "Spelling & wording", "Search title copied from another post",
+     "Several posts carry the same seoTitle: the post it was written for, and copies (newsletters titled as an SDK "
+     "release, a Python merge post titled 'Sign PDF with Stamp … Node.js').",
+     "The search result shows another article's title: wrong clicks, and the pages compete for one query.",
+     "Remove the copied seoTitle in the English post and all its current translations (one commit); the theme then "
+     "uses the page's own title. Or write a seoTitle for the post.",
+     "Next repo check has no item; live <title> matches the post."),
     ("post_secret_literal", "Repo files", "API key or secret in a post",
      "A real client id or secret is written out: in a cURL example, or in gist code that older translations inlined "
      "into the page (variable names vary: client_secret, ClientSecret, clientSecret1 ...).",

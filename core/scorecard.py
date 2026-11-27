@@ -66,6 +66,7 @@ GROUPS = {
     **dict.fromkeys(("text_typo", "text_leftover", "text_topic_mismatch"), "wording"),
     "code_fence_misplaced": "post files",  # same family as post_body_cut_off
     "post_secret_literal": "post files",
+    "post_seo_title_copied": "titles",
     "link_split_remainder": "internal links",
     **dict.fromkeys(("link_missing_translation", "link_damaged", "link_wrong_language", "link_broken",
                      "link_redirected", "link_differs_from_original"), "internal links"),

@@ -17,6 +17,7 @@ repo, rule TR-9) or *retranslate* (Translation Agent, via an ISSUE row) or *Engl
 | F2 | `url` starts with `/`; a translation's url = `/<lang>` + the English url | ✓ | ✓ | `post_url_relative`, `translated_url_mismatch` | Health & Recovery Agent |
 | F3 | No two posts on one URL | ✓ | ✓ | `post_url_duplicate` | Health & Recovery Agent (blog developer decides which stays) |
 | F4 | title / seoTitle 10–70 wide, description 50–170 wide (CJK counts 2) | ✓ | ✓ | `post_title_length`, `post_description_length` | Health & Recovery Agent |
+| F4b | seoTitle belongs to this post, not copied from another (24 groups / 49 posts on blog.groupdocs.cloud, 27 Nov) | ✓ | ✓ | `post_seo_title_copied`; live: `text_topic_mismatch` (text check) | Health & Recovery Agent: remove the copy in English + translations |
 | F5 | title, seoTitle, description plain text: no `**`, backticks, `[x](url)` (summary only matters without a description) | ✓ | ✓ | `post_front_matter_markup` (TD-4) | Health & Recovery Agent; English + current translations in one commit |
 | F6 | Values quoted `"…"`, never `\"…\"` | ✓ | ✓ | `post_front_matter_escaped` (TR-8) | Health & Recovery Agent (`fm_cover_repair.py`) |
 | F7 | `cover:` block with `image`, `alt`, `caption` indented under it; image file exists | ✓ | ✓ | `post_cover_lost` (TR-8); image file exists: `translation_queue_report.py` | Health & Recovery Agent |

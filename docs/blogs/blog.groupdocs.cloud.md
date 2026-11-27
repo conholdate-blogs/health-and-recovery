@@ -300,6 +300,20 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
 - **Notes sent material:** generator stray fence (3 URLs + fix commit dee72c63); U+2011 from both the optimizer (zip-to-jpg,
   excel-to-pdf-ruby, jpg-to-svg-java, gif-to-pdf-java) and the post generator (rewriter ASP.NET Core 26, modify-txt-java 23).
 
+## Fix batch 4: copied search titles (27 Nov 2026; local, waits for approval)
+
+- **6eb6ea7e:** 49 English posts carried another post's seoTitle (24 duplicate groups; the post whose own title is closest
+  kept it). Removed in English and all 18 translations each (931 files, one commit, nothing queued); the theme's <title>
+  falls back to the page's own title (already translated). Examples: merge-documents-of-different-types-python as "Sign PDF
+  with Stamp … Node.js", rearrange-pdf-pages as "Edit Documents using REST API in PHP", 2014-15 newsletters as "Enhance Your
+  C# / ASP.NET App with the Electronic Signature…", Node.js SDK posts as "…for Ruby", May/June 2017 newsletters as "March
+  2017". 12 of the 49 own titles are longer than 70 characters (minor). Resolves `text_topic_mismatch` (5 points) at the next
+  crawl and text check.
+- **New check `post_seo_title_copied`:** 49 on the commit before the fix, 0 after; blog.conholdate.cloud and
+  blog.conholdate.com 0.
+- **Translation agent:** home-link fix verified (4886783, tests pass); handoff for the code-block bug:
+  `docs/handoffs/translation-agent-code-blocks.md`.
+
 ## Health 83: what is left (27 Nov 2026, Shoaib Khan asked)
 
 Points lost (scorecard on the open findings): `link_broken` 10.0 (only 17 links, all in the queued csv-json translations,
