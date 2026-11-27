@@ -34,6 +34,50 @@ posts) fixed 456 items and added none; snapshot 2026-11-23-2 live (health 54, op
    client_id/secret in 2 English posts + 36 translations (rotate, then replace: batch 3 or sooner); message to the
    optimizer's owner (U+2011 hyphens; the seoTitle point was my misreading, dropped) drafted in chat 23 Nov.
 
+## Session handoff (Thu 2026-11-27, end of week; next session Mon 30 Nov)
+
+**blog.groupdocs.cloud round done for now: health 54 (19 Nov) → 87 (27 Nov), issue types 39 → 16, open items 9,950 →
+7,550.** Every batch pushed, deployed by Shoaib Khan and verified live; 43 agent-fixes rows. Full detail per batch in
+[docs/blogs/blog.groupdocs.cloud.md](docs/blogs/blog.groupdocs.cloud.md) (batches 1, 2, 3a, 3, 3b, 4, 5, llms.txt most read).
+
+| Batch | What (one commit per fix type, Shoaib Khan 26 Nov) |
+|---|---|
+| 1 | 11 English fixes in queued posts (TR-10) |
+| 2 | 12 template/config commits: head order, x-default, noindex tags/search/archives/section/page 2+, llms.txt at build, language names, RTL, zh-hant menu, home descriptions, section `_index` |
+| 3a | dot tags merged, `c#` → csharp, escaped/translated tags and categories, translated keys, llms.txt charset, Home label |
+| llms | llms.txt 30 most read (Search Console, 3 months, `data/llms_popular.json`, `scripts/ops/llms_popular.py --top 30`) + 70 newest; "Last updated" uses `_updated`; **monthly refresh as an approved commit, next ~26 Dec** |
+| 3 | `\"` 488 files, covers 220, 494 category links, dated/damaged/wrong-language links, split-URL remainders, code fences (generator stray, glued, empty, 2018 post) |
+| 3b | API key → placeholders (1,766 files), French slug + redirect, Redirects.json 507 → 447 (60 junk removed, feeds → /index.xml, 12 newsletter keys kept), tr caption, ko home link |
+| 4 | 49 copied seoTitles removed; 6 tutorials got written seoTitles in 19 languages |
+| 5 | git conflict markers (committed by the translation agent) removed; last 36 key copies replaced |
+
+**New checks this week (all tested, dry-run on fixed blogs only):** `url_part_unsafe`, `translation_taxonomy_differs`,
+`code_fence_misplaced`, `link_split_remainder`, `post_secret_literal`, `post_seo_title_copied`, `post_merge_conflict`;
+`post_body_cut_off` accepts sign-offs; structure step skips tag pages that 404/redirect; `llms_txt_outdated` reads only
+"## Newest". Tools: `scripts/ops/taxonomy_fix.py`, `link_fix.py`, `fm_cover_repair.py --only`, `llms_popular.py`.
+Dry-run counts on blog.conholdate.com (not fixed, register): `#` tags 2,821, tag lists 837, escaped 33, code fences 23.
+
+**Open, with Shoaib Khan:**
+1. Translation agent: two bugs, handoff [docs/handoffs/translation-agent-code-blocks.md](docs/handoffs/translation-agent-code-blocks.md)
+   (code blocks split at blank lines + code comments translated; `--autostash` conflicts committed in all six workflows).
+   Home-link bug already fixed (4886783, verified).
+2. API key still in the public gists (`groupdocs-cloud-gists`): rotation + gist edit by the key owner; history rewrite
+   not recommended (private repo, key public in gists anyway).
+3. 2 ISSUE rows (display-word-document-in-php, combine-pdf, 18 languages each) to paste if not done
+   (scratchpad TSV was on the clipboard).
+4. Notes sent? Generator: stray ``` before `<!--[CODE_SNIPPET_END]-->` (fix commit dee72c63); optimizer + generator:
+   U+2011 hyphens (URLs in the blog log, batch 3b).
+5. GitLab token expired: health-and-recovery `gitlab` remote is several commits behind (GitHub remotes complete).
+
+**Left on blog.groupdocs.cloud:** 17 broken links in the queued csv-json translations (10 points; health ~97 after its
+retranslation); csv-to-jpg (18) and json-to-html (3) translations with broken code blocks (after the agent fix:
+retranslate); lengths/body H1 (low value, decided: English-only when touched); queue tab 7 OUTDATED rows.
+
+**Monday 30 Nov: blog.aspose.cloud** (Shoaib Khan: start Monday, not before). Steps: `git pull --ff-only`, check
+`git config --local user.email`, full scan (`caffeinate -i .venv/bin/python scripts/run_cycle.py aspose.cloud`, ~21 min),
+archive the live report first, queue report + English body check, then batches in the groupdocs.cloud order (playbook rows
+1–29). Before editing translations, check the queue tab for posts being translated (playbook trap, 27 Nov).
+
 ## Session handoff (Fri 2026-11-20, end of week)
 
 **State at close:** everything committed and pushed (our repo on origin, shoaibkhan, gitlab); no local commits in
@@ -41,7 +85,7 @@ any blog repo or the translation agent. Local clones of blog.conholdate.com (3),
 blog.groupdocs.cloud (5) are behind origin (`run_cycle.py` pulls before the link check; `git pull --ff-only` before
 any fix). Check `git config --local user.email` in each repo first (it vanished once, 14 Nov).
 
-**Next session (SK's order: fix the other domains first):**
+**Next session (superseded by the 27 Nov handoff above):**
 1. Fix rounds on the scanned blogs, one at a time (rule: one blog at a time): **blog.groupdocs.cloud** (Scan 1 done
    19 Nov, health 54) and **blog.aspose.cloud** (Scan 1 done 19 Nov, health 49): English body check on queued
    posts, findings with samples to SK, fixes per batch (playbook Fix catalogue rows 1–25). Logs:
