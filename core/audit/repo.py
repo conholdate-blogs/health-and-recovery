@@ -940,7 +940,11 @@ class RepoAudit:
                         "page": f"https://{host}/llms.txt", "fix": "serve .txt as text/plain; charset=utf-8",
                         "note": f"content-type {ctype or 'missing'} for a file with non-ASCII text", "commit": None})
         listed = {u.rstrip("/") + "/" for u in re.findall(r"\]\((https?://[^)\s]+)\)", body)}
-        n = sum(1 for _, page, _ in posts if page.rstrip("/") + "/" in listed)
+        # a file with "## Most read" first (26 Nov 2026) lists the newest posts only under "## Newest": count those
+        section = re.search(r"^## Newest\n(.*?)(?=^## |\Z)", body, re.M | re.S)
+        in_newest = ({u.rstrip("/") + "/" for u in re.findall(r"\]\((https?://[^)\s]+)\)", section.group(1))}
+                     if section else listed)
+        n = sum(1 for _, page, _ in posts if page.rstrip("/") + "/" in in_newest)
         newest = sorted(posts, reverse=True)[:max(n, 1)]
         return out + [{"check": "llms_txt_outdated", "file": "llms.txt", "line": 0, "link": page, "page": page,
                        "fix": "list it (generate llms.txt from the content at build)",

@@ -308,5 +308,169 @@
   "issue": "llms.txt listed only the 100 newest posts; none of the 30 most-clicked pages (52% of search clicks) was in it",
   "verified": "2026-11-26",
   "result": "Live: every language's llms.txt lists 30 most-read posts (3 months of search clicks) first, then 70 newest"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-26",
+  "found_by": "Shoaib Khan",
+  "check": "llms_txt_outdated",
+  "commits": [
+   "56f7f115"
+  ],
+  "issue": "llms.txt 'Last updated' ignored the most-read list (en 23 Nov, others 20 Nov)",
+  "result": "Live: /llms.txt Last updated 2026-11-26"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "check": "post_front_matter_escaped",
+  "commits": [
+   "adf8ba24"
+  ],
+  "issue": "\\\"…\\\" values in 488 current translations (titles, descriptions, cover alt/caption)",
+  "result": "Live: ja convert-word-to-html title without backslashes"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "check": "post_cover_lost",
+  "commits": [
+   "ece18216"
+  ],
+  "issue": "Cover image missing in 220 current translations (flat cover block, translated caption keys)",
+  "result": "Live: ar compare-word-documents shows its cover"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "check": "link_broken",
+  "commits": [
+   "2fec2a06"
+  ],
+  "issue": "494 links to the old /category/conversion/ page (404) in 26 English posts and their translations",
+  "result": "Live: csv-json and fr pdf-to-jpg link the Conversion category page"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "check": "link_broken",
+  "commits": [
+   "b5d1269a"
+  ],
+  "issue": "19 links to the dated URL /2023/02/10/convert-html-to-markdown-…",
+  "result": "Committed and deployed; rescan checks the links"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "check": "link_damaged",
+  "commits": [
+   "26bf6994"
+  ],
+  "issue": "16 damaged, mistyped and doubled-language links in translations",
+  "result": "Committed and deployed; rescan checks the links"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-26",
+  "found_by": "Shoaib Khan",
+  "check": "link_split_remainder",
+  "commits": [
+   "57e7080f"
+  ],
+  "issue": "Rest of split URLs left after 13 links in translations (' -API/)', '/)')",
+  "result": "Live: ja free-online-html-to-pdf sentence ends without the remainder"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "check": "link_wrong_language",
+  "commits": [
+   "dbad1988"
+  ],
+  "issue": "72 English links in the translations of extract-images-from-word-using-csharp",
+  "result": "Committed and deployed; rescan checks the links"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-26",
+  "found_by": "Shoaib Khan",
+  "check": "code_fence_misplaced",
+  "commits": [
+   "42747fa4"
+  ],
+  "issue": "Generator's stray fence before <!--[CODE_SNIPPET_END]--> put explanations inside code blocks (3 posts, 32 files)",
+  "result": "Live: csv-to-jpg text no longer inside code blocks, marker invisible"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "check": "post_body_cut_off",
+  "commits": [
+   "0ffba0cb"
+  ],
+  "issue": "2018 Viewer Cloud release post: glued closing fence and a stray fence shifted every code block (19 files)",
+  "result": "Live: caption outside code, .NET sample inside"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-26",
+  "found_by": "Agent",
+  "check": "code_fence_misplaced",
+  "commits": [
+   "720532a3"
+  ],
+  "issue": "Closing fences joined to the next sentence in 20 translations (text shown as code)",
+  "result": "Live: de convert-word-to-pdf sentence outside code"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "found": "2026-11-26",
+  "found_by": "Agent",
+  "check": "code_fence_misplaced",
+  "commits": [
+   "1f27615d"
+  ],
+  "issue": "Empty extra code block in the 18 translations of convert-excel-to-csv-in-csharp",
+  "result": "Committed and deployed; rescan checks the fences"
  }
 ]

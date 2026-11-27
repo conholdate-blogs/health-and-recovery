@@ -178,5 +178,11 @@
     "date": "2026-11-26 (3)",
     "label": "After batch 3a (tags and categories, 10 commits, verified live)",
     "runs": "discovery run 9, crawl audit run 33, speed audit run 35, AI audit run 34, text check run 36, link check run 39, repo file check run 40"
+  },
+  {
+    "file": "2026-11-27.html",
+    "date": "2026-11-27",
+    "label": "After batch 3 (content in current translations, 12 commits, verified live)",
+    "runs": "discovery run 10, crawl audit run 33, speed audit run 35, AI audit run 34, text check run 36, link check run 41, repo file check run 43"
   }
 ]

@@ -1,16 +1,16 @@
 {
  "windows": {
   "current": [
-   "2026-10-27",
-   "2026-11-23"
+   "2026-10-28",
+   "2026-11-24"
   ],
   "previous": [
-   "2026-09-29",
-   "2026-10-26"
+   "2026-09-30",
+   "2026-10-27"
   ],
   "six_months_ago": [
-   "2026-04-28",
-   "2026-05-25"
+   "2026-04-29",
+   "2026-05-26"
   ]
  },
  "hosts": {},
@@ -18,19 +18,19 @@
   "blog.groupdocs.cloud": {
    "source": "gsc",
    "current": {
-    "clicks": 834,
-    "impressions": 83487,
-    "pages": 2927
+    "clicks": 856,
+    "impressions": 84529,
+    "pages": 2913
    },
    "previous": {
-    "clicks": 584,
-    "impressions": 57589,
-    "pages": 3416
+    "clicks": 585,
+    "impressions": 58268,
+    "pages": 3397
    },
    "six_months_ago": {
-    "clicks": 2479,
-    "impressions": 111748,
-    "pages": 4095
+    "clicks": 2451,
+    "impressions": 111463,
+    "pages": 4063
    }
   }
  }

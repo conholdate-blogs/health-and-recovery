@@ -233,6 +233,8 @@ Search Console: the 30 most-clicked pages earn 52% of clicks and none was among 
 
 Before the push the translation agent had already retranslated 5 of the 6 ISSUE rows (ods-to-xlsx, csv-to-pdf, three Korean files; 98469792..aa380e42) plus the new PowerPoint post: our 12 commits were rebased on them (one conflict, pdf-to-html-in-csharp ko: kept the retranslation). The 36 new translation files pass all our checks (fences, escapes, covers, tags, categories). Rebased HEAD builds (100,923 pages). Commit ids below are before the rebase.
 
+**Deployed and verified live 27 Nov:** 9 of 9 (scratch `live_b3c.py`): llms.txt Last updated 2026-11-26, ar cover shown, ja title without `\"`, category links, ja html-to-pdf sentence ends without the remainder, csv-to-jpg text no longer in code blocks, 2018 post caption outside / sample inside code, de word-to-pdf sentence outside code. 12 agent-fixes rows. Quick rescan, snapshot **2026-11-27**: health 82 → **83**, issue types 26 → **22**, open items 9,091 → **7,729** (1,423 fixed). Left: `code_fence_misplaced` 61 (translations waiting for retranslation: csv-to-jpg, json-to-html), `link_broken` 17 (queued csv-json translations). **Our audit corrected:** `llms_txt_outdated` counted all links; with "Most read" first it now checks only the "## Newest" section (29 false items, dropped before publishing). **Translation agent bug (for Shoaib Khan):** the new ko retranslation of convert-doc-to-pdf-with-nodejs links the home page `https://blog.groupdocs.cloud/` unlocalized (should be `/ko/`); the agent localizes post links but not the home URL.
+
 One commit per fix type; queued translations skipped (they get the fix with their retranslation); every English change
 ships with all its current translations.
 

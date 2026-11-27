@@ -337,6 +337,11 @@ def test_llms_txt_missing_the_newest_posts(tmp_path):
     assert [i["link"] for i in items] == [f"https://{HOST}/p2/"]  # lists 2, the newest 2 are p2 and p1
     issues = run(repo, Llms())["hosts"][HOST]["issues"]
     assert [i["check"] for i in issues if i["check"] == "llms_txt_charset"] == ["llms_txt_charset"]
+    # 26 Nov 2026: "## Most read" first, then "## Newest": only the Newest section must hold the newest posts
+    llms = (f"# Blog\n\n## Most read\n\n- [Old](https://{HOST}/p0/): x\n\n## Newest\n\n"
+            f"- [Three](https://{HOST}/p2/): z\n- [Two](https://{HOST}/p1/): y\n").encode()
+    items = [i for i in run(repo, Llms())["hosts"][HOST]["issues"] if i["check"] == "llms_txt_outdated"]
+    assert items == []
 
 
 def test_reviewed_old_urls_are_not_junk(tmp_path):
