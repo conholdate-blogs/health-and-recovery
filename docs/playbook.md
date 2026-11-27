@@ -144,6 +144,8 @@ blog.conholdate.com at deploy); `mainSections`; which pages are translated (the 
 
 ## Traps
 
+- **Don't edit translations the agent may be translating right now (27 Nov):** the translation workflow translates for 10-30 min, then `git merge --ff-only --autostash`; our commit 4b6eda6a touched the csv-to-jpg translations during a run, the autostash conflicted and the agent committed the conflict markers (ec990f7b). Before a fix that touches translations, check the queue tab for rows of those posts with a recent Scan Date / Ready After, or push between runs.
+
 - **A fix that edits text must be read back as a whole line (26 Nov):** completing a damaged link left the old remainder after the sentence (Shoaib Khan found it in review), and the first remainder clean-up swallowed sentence endings (caught before the commit). After any regex edit, print every changed line in full and read it.
 - **`fm_cover_repair.py --only escaped` before `--only cover`:** an escaped cover image path (`\"images/x.jpg\"`) blocks the cover check; `capa:` blocks need the escaped pass to know them.
 
