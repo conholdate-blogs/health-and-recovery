@@ -460,3 +460,14 @@ def test_fences_that_shift_code_blocks_and_split_link_remainders():
     assert [n for n, _ in split_link_remainders(f"a\n{line}\n")] == [2]
     assert split_link_remainders("See [x](https://b.example/a/) and (/docs/).\n") == []
     assert body_cut_off("We apologize. Kind regards, The GroupDocs Team\n") is None
+
+
+def test_secret_literals():
+    # blog.groupdocs.cloud, 26-27 Nov 2026 (Shoaib Khan): a client secret under several variable names
+    from core.audit.repo import secret_literals
+
+    body = ('curl -d "client_id=12345678-1234-1234-1234-123456789abc&client_secret=0123456789abcdef0123456789abcdef"\n'
+            'string clientSecret1 = "0123456789abcdef0123456789abcdef";\n'
+            'configuration.ClientId = "YOUR_CLIENT_ID";\n'
+            '{{< gist groupdocs-cloud-gists 0123456789abcdef0123456789abcdef "x.cs" >}}\n')
+    assert [n for n, _ in secret_literals(body)] == [1, 2]

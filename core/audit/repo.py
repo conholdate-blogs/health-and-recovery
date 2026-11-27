@@ -122,6 +122,11 @@ CHECKS = {
                              "after a closing ```", 1, "S"),
     # same day (found by Shoaib Khan in review): an older translation run split URLs; the link kept the start and the
     # rest landed after the sentence as text (' -API/)', ' -python/)', '/)')
+    # found on blog.groupdocs.cloud, 26-27 Nov 2026 (Shoaib Khan): an API client id/secret in a cURL example and in gist
+    # code inlined by translations (clientSecret1, client_secret, ClientSecret ...): 1,500 files
+    "post_secret_literal": ("onpage", "broken", "API keys or secrets written out in posts",
+                            "Code samples use placeholders (YOUR_CLIENT_ID, YOUR_CLIENT_SECRET), never a real id or "
+                            "secret", 1, "S"),
     "link_split_remainder": ("onpage", "incorrect", "Text after a link that is the rest of a split URL",
                              "A link's URL is complete inside the link; no '…/)' remainder later on the line", 1, "S"),
     "post_body_cut_off": ("onpage", "broken", "Posts that end mid-sentence (text cut off)",
@@ -324,6 +329,17 @@ _SPLIT_LINK = re.compile(r"\]\([^)\s]+\)[^\[\]()]*?\S/\)\s*$")
 def split_link_remainders(body: str) -> list[tuple[int, str]]:
     """(line, text) where a link is followed later on the line by a '…/)' that is the rest of a split URL."""
     return [(n, ln.strip()[-60:]) for n, ln in enumerate(body.split("\n"), 1) if _SPLIT_LINK.search(ln)]
+
+
+_SECRET = re.compile(r"""(?i)\b\w*(?:secret|client_?id|app_?sid|app_?key|api_?key|access_?token)\w*"""
+                     r"""\s*["'\]]?\s*(?:=>|=|:)\s*["']?"""
+                     r"([0-9a-f]{32}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\b")
+
+
+def secret_literals(body: str) -> list[tuple[int, str]]:
+    """(line, name) where a credential-like name is given a real-looking id or secret (32 hex or a UUID)."""
+    return [(n, m.group(0).split("=")[0].split(":")[0].strip()[:40]) for n, ln in enumerate(body.split("\n"), 1)
+            for m in [_SECRET.search(ln)] if m]
 
 
 def raw_html_dropped(body: str) -> list[tuple[int, str]]:
@@ -679,6 +695,10 @@ class RepoAudit:
                 issues.append({"check": "code_fence_misplaced", "file": rel, "line": fm_lines + n, "link": None,
                                "page": page, "fix": "remove the stray ``` / put the text on its own line",
                                "note": why, "commit": commit(rel)})
+            for n, name in secret_literals(body):
+                issues.append({"check": "post_secret_literal", "file": rel, "line": fm_lines + n, "link": None,
+                               "page": page, "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+                               "note": f"{name} = <value>", "commit": commit(rel)})
             for n, line in split_link_remainders(body):
                 issues.append({"check": "link_split_remainder", "file": rel, "line": fm_lines + n, "link": None,
                                "page": page, "fix": "complete the link's URL, remove the remainder text",

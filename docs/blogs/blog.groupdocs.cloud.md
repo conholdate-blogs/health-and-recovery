@@ -277,6 +277,27 @@ ISSUE rows added by Shoaib Khan 26 Nov (code blocks damaged: csv-to-pdf-java 11,
 `link_split_remainder`; `post_body_cut_off` accepts sign-offs. Dry run: blog.groupdocs.cloud 0 left except the 39 translations
 for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translations with an unclosed block, 1 stray).
 
+## Fix batch 3b: small fixes and the API key (27 Nov 2026; local, waits for approval)
+
+| Commit | Fix |
+|---|---|
+| b9868988 | API client id/secret → `YOUR_CLIENT_ID` / `YOUR_CLIENT_SECRET` (Shoaib Khan: "replace it everywhere"): 2 English cURL examples + their translations, 1,494 translation files with inlined gist code (1,496 files, 84 posts) |
+| 6ec2ca43 | the same secret under `clientSecret1` (found by Shoaib Khan; my first pattern needed the name to end right before the value): 270 translation files, 16 posts |
+| d1248dcf | French convert-jpg-to-pdf-csharp moved to the English slug; Redirects.json 301 from the old French URL (with and without slash) |
+| 5e9fd1d1 | Turkish caption `C#"da` → `C#'da` |
+| 37e50596 | Korean doc-to-pdf-nodejs: home link → `/ko/` (translation agent localizes post links but not the home URL) |
+
+- **The key is also in the public gists** the English posts embed (account `groupdocs-cloud-gists`): only rotating the key and
+  editing the gists (their owner) removes it. One client id, 4 secret values. 36 queued translations of
+  display-word-document-in-html-page-using-php and combine-pdf-files-using-pdf-file-merger still hold it until their retranslation.
+- **New check `post_secret_literal`** (credential-like name + 32-hex or UUID): blog.groupdocs.cloud 90 items in the 36 queued files;
+  blog.conholdate.cloud and blog.conholdate.com 0.
+- **Redirects.json junk (list for Shoaib Khan, `reports/groupdocs.cloud/redirects-junk-2026-11-27.csv`):** remove 45 keys with
+  the host (never match), 9 home-page soft 404s, 6 double-slash/spam; retarget `/feed`, `/feed/` → `/index.xml`; keep 12 real 2017
+  newsletter URLs (en dash in the slug, targets 200) and add them to the tenant keep-list. Waiting for approval.
+- **Notes sent material:** generator stray fence (3 URLs + fix commit dee72c63); U+2011 from both the optimizer (zip-to-jpg,
+  excel-to-pdf-ruby, jpg-to-svg-java, gif-to-pdf-java) and the post generator (rewriter ASP.NET Core 26, modify-txt-java 23).
+
 ## Post generator review (24 Nov 2026, SK: suggestions for the generator's developer)
 
 63 English posts added by the post generator in 2026 (58 still present at 58f52465; 5 removed: 3 copies in a

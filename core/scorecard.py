@@ -65,6 +65,7 @@ GROUPS = {
                      "llms_txt_outdated", "llms_txt_charset", "ai_bot_blocked", "ai_bot_firewalled"), "ai"),
     **dict.fromkeys(("text_typo", "text_leftover", "text_topic_mismatch"), "wording"),
     "code_fence_misplaced": "post files",  # same family as post_body_cut_off
+    "post_secret_literal": "post files",
     "link_split_remainder": "internal links",
     **dict.fromkeys(("link_missing_translation", "link_damaged", "link_wrong_language", "link_broken",
                      "link_redirected", "link_differs_from_original"), "internal links"),

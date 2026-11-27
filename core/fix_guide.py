@@ -633,6 +633,13 @@ _ROWS = [
      "Remove the stray fence / put the text on its own line, in the English post and all current translations in one "
      "commit; translations whose code blocks differ otherwise go to retranslation. Report the generator bug.",
      "Fences balance and the page shows text as text; next repo check has no item."),
+    ("post_secret_literal", "Repo files", "API key or secret in a post",
+     "A real client id or secret is written out: in a cURL example, or in gist code that older translations inlined "
+     "into the page (variable names vary: client_secret, ClientSecret, clientSecret1 ...).",
+     "Anyone can use the account's API quota; search engines index the value.",
+     "Replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET in the English post and all current translations; have the key "
+     "rotated, and the embedded gists edited by their owner (the blog repo cannot change them).",
+     "Next repo check has no item; the old key no longer works."),
     ("link_split_remainder", "Links and translations", "Rest of a split URL after a link",
      "An older translation run split a URL: the link kept the start (…-using-rest) and the rest landed after the "
      "sentence as text (' -API/)', ' -python/)', sometimes translated: ' -파이썬/)').",
