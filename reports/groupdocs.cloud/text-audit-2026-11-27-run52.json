@@ -1,0 +1,112 @@
+{
+  "tenant": "groupdocs.cloud",
+  "auditor": "text-audit",
+  "run_id": 52,
+  "params": {
+    "hosts": [
+      "blog.groupdocs.cloud"
+    ],
+    "crawl_runs": [
+      12,
+      19,
+      27,
+      33,
+      46
+    ],
+    "model": "gpt-oss",
+    "prompt_version": 2
+  },
+  "duration_s": 0.0,
+  "stopped_early": false,
+  "pages_checked": 86,
+  "unchecked": [],
+  "incomplete": false,
+  "llm": {
+    "calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cache_hits": 86
+  },
+  "ignored": 1,
+  "summary": {
+    "blog.groupdocs.cloud": {
+      "checked": 86,
+      "pages_with_issues": 1,
+      "issues": {
+        "text_typo": 2
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "onpage-0001",
+      "tenant": "groupdocs.cloud",
+      "subdomain": "blog.groupdocs.cloud",
+      "template": "page",
+      "dimension": "onpage",
+      "check": "text_typo",
+      "type": "improvable",
+      "title": "Typos in titles, headings or descriptions",
+      "evidence": {
+        "urls": [
+          "https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/"
+        ],
+        "observed": "1 of 86 checked pages: /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'annoucing' → 'announcing'; /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'groupdcs' → 'groupdocs'",
+        "expected": "Correctly spelled titles, H1s and meta descriptions",
+        "locations": [
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/",
+            "note": "title: 'annoucing' → 'announcing'"
+          },
+          {
+            "role": "page",
+            "url": "https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/",
+            "note": "title: 'groupdcs' → 'groupdocs'"
+          }
+        ]
+      },
+      "affected_pages": 1,
+      "impact": {
+        "clicks_28d": 0,
+        "impressions_28d": 0,
+        "score": 0
+      },
+      "effort": "S",
+      "fix_tier": 1,
+      "fix_channel": "git-pr",
+      "status": "open",
+      "detected_at": "2026-11-27"
+    }
+  ],
+  "flagged": [
+    {
+      "url": "https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/",
+      "host": "blog.groupdocs.cloud"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/",
+      "host": "blog.groupdocs.cloud",
+      "section": "",
+      "lang": null,
+      "issues": [
+        {
+          "field": "title",
+          "kind": "misspelling",
+          "wrong": "annoucing",
+          "fix": "announcing",
+          "why": "misspelled word"
+        },
+        {
+          "field": "title",
+          "kind": "misspelling",
+          "wrong": "groupdcs",
+          "fix": "groupdocs",
+          "why": "misspelled brand name"
+        }
+      ]
+    }
+  ]
+}

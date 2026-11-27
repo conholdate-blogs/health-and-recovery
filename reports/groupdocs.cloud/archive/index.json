@@ -190,5 +190,11 @@
     "date": "2026-11-27 (2)",
     "label": "After batch 3b (API key placeholders, Redirects.json clean-up, verified live)",
     "runs": "discovery run 11, crawl audit run 33, speed audit run 35, AI audit run 34, text check run 36, link check run 44, repo file check run 45"
+  },
+  {
+    "file": "2026-11-27-3.html",
+    "date": "2026-11-27 (3)",
+    "label": "After batch 4 (copied search titles fixed, verified live)",
+    "runs": "discovery run 12, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 52, link check run 53, repo file check run 54"
   }
 ]

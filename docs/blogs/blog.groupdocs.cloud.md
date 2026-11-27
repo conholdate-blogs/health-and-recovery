@@ -300,7 +300,9 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
 - **Notes sent material:** generator stray fence (3 URLs + fix commit dee72c63); U+2011 from both the optimizer (zip-to-jpg,
   excel-to-pdf-ruby, jpg-to-svg-java, gif-to-pdf-java) and the post generator (rewriter ASP.NET Core 26, modify-txt-java 23).
 
-## Fix batch 4: copied search titles (27 Nov 2026; 6eb6ea7e and 12d5c853 pushed, wait for deploy)
+## Fix batch 4: copied search titles (27 Nov 2026; 6eb6ea7e and 12d5c853 deployed and verified live)
+
+**Live 27 Nov:** 10 of 10 titles right (6 tutorials in en/fr/de/ja/zh-hant, December 2014 and Nov 2018 newsletters with their own titles, merge-pdf-files-using-csharp kept its own). 2 agent-fixes rows (41). Full rescan, snapshot 2026-11-27-3: `text_topic_mismatch` (onpage-0004) **resolved**: the copied-title pages are gone from it; the one page left, convert-word-to-pdf-online-for-free ("DOC" in the title, "Word" in the H1: DOC is the Word format), is a reviewed false positive now in the tenant `audit.text.ignore`. **Health 83 → 87** (on-page 93 → 97), issue types 17, open items 7,660. Left: `link_broken` 10 points (17 links in the queued csv-json translations, weighted at the 25% floor).
 
 - **12d5c853 (Shoaib Khan: "you just removed seo title, no fixes"):** the 49 posts had 0 clicks / 293 impressions in 3 months; ~43 are 2013-2019 newsletters and announcements (own title kept), 6 tutorials with impressions got a written seoTitle in English and all 18 languages (114 files, keyword first, ≤ 70 wide, each language using its own title's terms): sign-documents-node.js, rearrange-pdf-pages-node.js, parse-word-node.js, merge-different-types-python, edit-word-excel-ppt, parse-documents-extract-data. Build checked; rendered <title> confirmed in en/de/ja/ar.
 

@@ -543,5 +543,33 @@
   ],
   "issue": "60 junk Redirects.json entries (host in the key, soft 404s to home, double slash/spam); feeds redirected to home",
   "result": "Live: /wp-admin/post.php and /profile 404; /feed and /feed/ 301 to /index.xml; kept newsletter key 301 to its post"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-10-22",
+  "found_by": "Agent",
+  "check": "post_seo_title_copied",
+  "commits": [
+   "6eb6ea7e"
+  ],
+  "issue": "49 posts showed another post's search title (seoTitle copied: a Python merge post as 'Sign PDF with Stamp … Node.js', Node.js SDK posts as '…for Ruby')",
+  "result": "Live: merge-documents-of-different-types, rearrange-pdf-pages, December 2014 newsletter, Node.js SDK newsletter show their own titles; merge-pdf-files-using-csharp keeps its title"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-10-22",
+  "found_by": "Shoaib Khan",
+  "check": "post_seo_title_copied",
+  "commits": [
+   "12d5c853"
+  ],
+  "issue": "6 tutorials left without a search title after the copies were removed",
+  "result": "Live: written seoTitle in en, fr, de, ja, zh-hant (e.g. 'Merge Different Document Types in Python | REST API')"
  }
 ]

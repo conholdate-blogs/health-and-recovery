@@ -709,7 +709,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run44",
+    "last_seen_run": "link-audit-run53",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -1759,7 +1759,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-06",
     "first_seen_run": "link-audit-run16",
-    "last_seen_run": "link-audit-run44",
+    "last_seen_run": "link-audit-run53",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_redirected",
@@ -2447,7 +2447,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run54",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -3206,7 +3206,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "link-audit-run23",
-    "last_seen_run": "link-audit-run44",
+    "last_seen_run": "link-audit-run53",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_differs_from_original",
@@ -3692,7 +3692,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run54",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -3721,7 +3721,7 @@
         "https://blog.groupdocs.cloud/uk/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/",
         "https://blog.groupdocs.cloud/vi/comparison/next-generation-groupdocs.comparison-for-cloud-is-coming-soon/"
       ],
-      "observed": "93 entries or files; seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release': 18, seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js': 12, seoTitle in English: 'annoucing-groupdcs.viewer-cloud-API-pre-release': 5, seoTitle in English: 'HTML to PDF Node.js API | Convert Web Page to PDF Online': 4",
+      "observed": "84 entries or files; seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js': 12, seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release': 9, seoTitle in English: 'annoucing-groupdcs.viewer-cloud-API-pre-release': 5, seoTitle in English: 'HTML to PDF Node.js API | Convert Web Page to PDF Online': 4",
       "expected": "A translation's seoTitle, title and description are in its own language",
       "locations": [
         {
@@ -4086,7 +4086,7 @@
         }
       ]
     },
-    "affected_pages": 93,
+    "affected_pages": 84,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -4115,7 +4115,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run54",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -4521,7 +4521,6 @@
     "title": "Meta descriptions are too long or too short",
     "evidence": {
       "urls": [
-        "https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/",
         "https://blog.groupdocs.cloud/ar/archives/",
         "https://blog.groupdocs.cloud/archives/",
         "https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/",
@@ -4529,16 +4528,12 @@
         "https://blog.groupdocs.cloud/fa/archives/",
         "https://blog.groupdocs.cloud/fr/archives/",
         "https://blog.groupdocs.cloud/ko/search/",
-        "https://blog.groupdocs.cloud/search/"
+        "https://blog.groupdocs.cloud/search/",
+        "https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/"
       ],
-      "observed": "1 of 25 sampled pages (by template: post 1/22); 8 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/: width 190: 'Learn how to add image watermark to Word documents online using GroupDocs.Watermark Cloud '; https://blog.groupdocs.cloud/ar/archives/: width 5: 'أرشيف'; https://blog.groupdocs.cloud/archives/: width 8: 'archives'; https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/: width 246: 'Learn how to convert LaTeX documents to HTML using Python and the LaTeX Converter REST API'; https://blog.groupdocs.cloud/conversion/convert-xml-to-excel-and-excel-to-xml-in-python/: width 223: 'Transforming extensive XML data into Excel can be accomplished online or by employing an o'",
+      "observed": "0 of 25 sampled pages (by template: -); 9 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/ar/archives/: width 5: 'أرشيف'; https://blog.groupdocs.cloud/archives/: width 8: 'archives'; https://blog.groupdocs.cloud/conversion/convert-latex-to-html-in-python-using-rest-api/: width 246: 'Learn how to convert LaTeX documents to HTML using Python and the LaTeX Converter REST API'; https://blog.groupdocs.cloud/conversion/convert-xml-to-excel-and-excel-to-xml-in-python/: width 223: 'Transforming extensive XML data into Excel can be accomplished online or by employing an o'; https://blog.groupdocs.cloud/fa/archives/: width 7: 'آرشیوها'",
       "expected": "50-170 characters (CJK count double)",
       "locations": [
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/",
-          "note": "width 190: 'Learn how to add image watermark to Word documents online using GroupDocs.Watermark Cloud '"
-        },
         {
           "role": "page",
           "url": "https://blog.groupdocs.cloud/ar/archives/",
@@ -4560,6 +4555,11 @@
           "note": "width 223: 'Transforming extensive XML data into Excel can be accomplished online or by employing an o'"
         },
         {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/fa/archives/",
+          "note": "width 7: 'آرشیوها'"
+        },
+        {
           "role": "listed in",
           "url": "https://blog.groupdocs.cloud/en/sitemap.xml"
         },
@@ -4568,29 +4568,24 @@
           "url": "https://blog.groupdocs.cloud/sitemap.xml"
         }
       ],
-      "sample": {
-        "post": [
-          1,
-          22
-        ]
-      }
+      "sample": {}
     },
-    "affected_pages": 504,
+    "affected_pages": 9,
     "impact": {
-      "clicks_28d": 38,
-      "impressions_28d": 3725,
-      "source": "gsc-template",
-      "share": null,
-      "past_clicks": 108,
-      "past_impressions": 4808,
-      "lost_clicks": 70,
-      "lost_impressions": 1083,
+      "clicks_28d": 1,
+      "impressions_28d": 68,
+      "source": "gsc-host",
+      "share": 0.001,
+      "past_clicks": 2,
+      "past_impressions": 90,
+      "lost_clicks": 1,
+      "lost_impressions": 22,
       "past_window": [
         "2026-04-29",
         "2026-05-26"
       ],
       "scored_on": "at stake",
-      "score": 8,
+      "score": 2,
       "window": [
         "2026-10-28",
         "2026-11-24"
@@ -4604,7 +4599,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run33",
+    "last_seen_run": "crawl-audit-run46",
     "resolved_run": null,
     "resolved_at": null,
     "check": "description_length",
@@ -4624,14 +4619,15 @@
       "urls": [
         "https://blog.groupdocs.cloud/",
         "https://blog.groupdocs.cloud/pt/",
-        "https://blog.groupdocs.cloud/tr/",
+        "https://blog.groupdocs.cloud/zh-hant/",
         "https://blog.groupdocs.cloud/fa/",
         "https://blog.groupdocs.cloud/fr/page/2/",
         "https://blog.groupdocs.cloud/it/",
         "https://blog.groupdocs.cloud/page/2/",
+        "https://blog.groupdocs.cloud/tr/",
         "https://blog.groupdocs.cloud/vi/"
       ],
-      "observed": "3 of 25 sampled pages (by template: home 3/3); 5 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/: no non-empty <h1>; https://blog.groupdocs.cloud/pt/: no non-empty <h1>; https://blog.groupdocs.cloud/tr/: no non-empty <h1>; https://blog.groupdocs.cloud/fa/: no non-empty <h1>; https://blog.groupdocs.cloud/fr/page/2/: no non-empty <h1>",
+      "observed": "3 of 25 sampled pages (by template: home 3/3); 6 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/: no non-empty <h1>; https://blog.groupdocs.cloud/pt/: no non-empty <h1>; https://blog.groupdocs.cloud/zh-hant/: no non-empty <h1>; https://blog.groupdocs.cloud/fa/: no non-empty <h1>; https://blog.groupdocs.cloud/fr/page/2/: no non-empty <h1>",
       "expected": "one H1 that states the page topic",
       "locations": [
         {
@@ -4646,7 +4642,7 @@
         },
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/tr/",
+          "url": "https://blog.groupdocs.cloud/zh-hant/",
           "note": "no non-empty <h1>"
         },
         {
@@ -4673,7 +4669,7 @@
         },
         {
           "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/tr/sitemap.xml"
+          "url": "https://blog.groupdocs.cloud/zh-hant/sitemap.xml"
         },
         {
           "role": "listed in",
@@ -4716,7 +4712,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run33",
+    "last_seen_run": "crawl-audit-run46",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_missing",
@@ -4735,17 +4731,17 @@
     "evidence": {
       "urls": [
         "https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/",
-        "https://blog.groupdocs.cloud/viewer/render-documents-to-html5-with-cloud-java-sdk/",
+        "https://blog.groupdocs.cloud/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/",
+        "https://blog.groupdocs.cloud/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
+        "https://blog.groupdocs.cloud/annotation/enhance-ez-publish-site-comprehensive-document-annotation-capabilities/",
         "https://blog.groupdocs.cloud/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-        "https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/",
-        "https://blog.groupdocs.cloud/ja/merger/merge-documents-of-different-types-using-rest-api-in-python/",
         "https://blog.groupdocs.cloud/ar/archives/",
         "https://blog.groupdocs.cloud/archives/",
-        "https://blog.groupdocs.cloud/es/merger/merge-documents-of-different-types-using-rest-api-in-python/",
         "https://blog.groupdocs.cloud/fa/archives/",
-        "https://blog.groupdocs.cloud/fr/archives/"
+        "https://blog.groupdocs.cloud/fr/archives/",
+        "https://blog.groupdocs.cloud/ko/search/"
       ],
-      "observed": "5 of 25 sampled pages (by template: post 5/22); 8 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/: width 76: 'Python Password Protect an Excel File | XLS/XLSX Password Protector REST API'; https://blog.groupdocs.cloud/viewer/render-documents-to-html5-with-cloud-java-sdk/: width 85: 'Render Documents to HTML5 with REST API in Java | GroupDocs.Viewer Cloud SDK for Java'; https://blog.groupdocs.cloud/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/: width 71: 'Annotate Over 50 Common Document and Image Types on Your Concrete5 Site'; https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/: width 94: 'Add Image Watermark to Word in C# | Watermark DOCX Online Free Using GroupDocs.Watermark C'; https://blog.groupdocs.cloud/ja/merger/merge-documents-of-different-types-using-rest-api-in-python/: width 87: 'Node.js の REST API を使用して PDF にスタンプで署名する | Node.js で PDF に電子署名する'",
+      "observed": "4 of 25 sampled pages (by template: post 4/22); 9 more among pages rechecked because they failed last run. e.g. https://blog.groupdocs.cloud/merger/password-protect-excel-files-using-rest-api-in-python/: width 76: 'Python Password Protect an Excel File | XLS/XLSX Password Protector REST API'; https://blog.groupdocs.cloud/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/: width 80: 'Seamlessly Integrate the GroupDocs.Viewer for Java Library into Your DNN Website'; https://blog.groupdocs.cloud/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/: width 79: 'Adding Watermark in Word | Document Watermarking using CURL | Watermark in Word'; https://blog.groupdocs.cloud/annotation/enhance-ez-publish-site-comprehensive-document-annotation-capabilities/: width 72: 'Add HTML5-Based Document Annotation Functionality to Your eZPublish Site'; https://blog.groupdocs.cloud/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/: width 71: 'Annotate Over 50 Common Document and Image Types on Your Concrete5 Site'",
       "expected": "10-70 characters (CJK count double)",
       "locations": [
         {
@@ -4755,23 +4751,23 @@
         },
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/viewer/render-documents-to-html5-with-cloud-java-sdk/",
-          "note": "width 85: 'Render Documents to HTML5 with REST API in Java | GroupDocs.Viewer Cloud SDK for Java'"
+          "url": "https://blog.groupdocs.cloud/viewer/seamlessly-integrate-groupdocs-viewer-java-library-dnn-website/",
+          "note": "width 80: 'Seamlessly Integrate the GroupDocs.Viewer for Java Library into Your DNN Website'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
+          "note": "width 79: 'Adding Watermark in Word | Document Watermarking using CURL | Watermark in Word'"
+        },
+        {
+          "role": "page",
+          "url": "https://blog.groupdocs.cloud/annotation/enhance-ez-publish-site-comprehensive-document-annotation-capabilities/",
+          "note": "width 72: 'Add HTML5-Based Document Annotation Functionality to Your eZPublish Site'"
         },
         {
           "role": "page",
           "url": "https://blog.groupdocs.cloud/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
           "note": "width 71: 'Annotate Over 50 Common Document and Image Types on Your Concrete5 Site'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/watermark/add-image-watermark-to-word-using-csharp/",
-          "note": "width 94: 'Add Image Watermark to Word in C# | Watermark DOCX Online Free Using GroupDocs.Watermark C'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/ja/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-          "note": "width 87: 'Node.js の REST API を使用して PDF にスタンプで署名する | Node.js で PDF に電子署名する'"
         },
         {
           "role": "listed in",
@@ -4780,29 +4776,25 @@
         {
           "role": "sitemap index",
           "url": "https://blog.groupdocs.cloud/sitemap.xml"
-        },
-        {
-          "role": "listed in",
-          "url": "https://blog.groupdocs.cloud/ja/sitemap.xml"
         }
       ],
       "sample": {
         "post": [
-          5,
+          4,
           22
         ]
       }
     },
-    "affected_pages": 2518,
+    "affected_pages": 2017,
     "impact": {
-      "clicks_28d": 189,
-      "impressions_28d": 18627,
+      "clicks_28d": 151,
+      "impressions_28d": 14901,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 542,
-      "past_impressions": 24040,
-      "lost_clicks": 353,
-      "lost_impressions": 5413,
+      "past_clicks": 433,
+      "past_impressions": 19232,
+      "lost_clicks": 282,
+      "lost_impressions": 4331,
       "past_window": [
         "2026-04-29",
         "2026-05-26"
@@ -4822,7 +4814,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "crawl-audit-run2",
-    "last_seen_run": "crawl-audit-run33",
+    "last_seen_run": "crawl-audit-run46",
     "resolved_run": null,
     "resolved_at": null,
     "check": "title_length",
@@ -4840,76 +4832,34 @@
     "title": "Title or description is about a different product",
     "evidence": {
       "urls": [
-        "https://blog.groupdocs.cloud/merger/rearrange-pdf-pages-using-rest-api-in-node-js/",
-        "https://blog.groupdocs.cloud/conversion/september-newsletter/",
-        "https://blog.groupdocs.cloud/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/",
-        "https://blog.groupdocs.cloud/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-        "https://blog.groupdocs.cloud/es/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-        "https://blog.groupdocs.cloud/pl/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-        "https://blog.groupdocs.cloud/conversion/convert-word-to-pdf-online-for-free/",
-        "https://blog.groupdocs.cloud/ja/merger/merge-documents-of-different-types-using-rest-api-in-python/"
+        "https://blog.groupdocs.cloud/conversion/convert-word-to-pdf-online-for-free/"
       ],
-      "observed": "8 of 74 checked pages: /merger/rearrange-pdf-pages-using-rest-api-in-node-js/ title: 'Edit Documents using REST API in PHP | Edit DOCX or XLSX Files in PHP' → 'Rearrange PDF Pages using REST API in Node.js'; /conversion/september-newsletter/ title: 'Get Documents Completed and Signed through Online Forms | GroupDocs' → 'Spotlight on GroupDocs.Conversion for .NET – September 2014 Newsletter'; /viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/ title: 'Display PDF and Microsoft Office Documents on Your Concrete5 Website' → 'GroupDocs Scheduled Maintenance – 2nd August, 2015'; /merger/merge-documents-of-different-types-using-rest-api-in-python/ title: 'Sign PDF with Stamp using REST API in Node.js | eSign PDF in Node.js' → 'Merge Documents of Different Types using REST API in Python'; /es/merger/merge-documents-of-different-types-using-rest-api-in-python/ title: 'Firme PDF con Stamp usando REST API en Node.js | Firma electrónica de PDF en Node.js' → 'Combinar documentos de diferentes tipos usando REST API en Python'; and 3 more",
+      "observed": "1 of 86 checked pages: /conversion/convert-word-to-pdf-online-for-free/ title: 'DOC' → 'Word'",
       "expected": "Title and meta description describe the page's own product, like its H1",
       "locations": [
         {
           "role": "page",
-          "url": "https://blog.groupdocs.cloud/merger/rearrange-pdf-pages-using-rest-api-in-node-js/",
-          "note": "title: 'Edit Documents using REST API in PHP | Edit DOCX or XLSX Files in PHP' → 'Rearrange PDF Pages using REST API in Node.js'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/conversion/september-newsletter/",
-          "note": "title: 'Get Documents Completed and Signed through Online Forms | GroupDocs' → 'Spotlight on GroupDocs.Conversion for .NET – September 2014 Newsletter'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/viewer/groupdocs-scheduled-maintenance-2nd-august-2015-sunday/",
-          "note": "title: 'Display PDF and Microsoft Office Documents on Your Concrete5 Website' → 'GroupDocs Scheduled Maintenance – 2nd August, 2015'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-          "note": "title: 'Sign PDF with Stamp using REST API in Node.js | eSign PDF in Node.js' → 'Merge Documents of Different Types using REST API in Python'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/es/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-          "note": "title: 'Firme PDF con Stamp usando REST API en Node.js | Firma electrónica de PDF en Node.js' → 'Combinar documentos de diferentes tipos usando REST API en Python'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/pl/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-          "note": "title: 'Podpisz plik PDF za pomocą stempla przy użyciu interfejsu API REST w Node.js | ePodpisz PDF w Node.js' → 'Scal dokumenty różnych typów za pomocą REST API w Python'"
-        },
-        {
-          "role": "page",
           "url": "https://blog.groupdocs.cloud/conversion/convert-word-to-pdf-online-for-free/",
           "note": "title: 'DOC' → 'Word'"
-        },
-        {
-          "role": "page",
-          "url": "https://blog.groupdocs.cloud/ja/merger/merge-documents-of-different-types-using-rest-api-in-python/",
-          "note": "title: 'Node.js の REST API を使用して PDF にスタンプで署名する | Node.js で PDF に電子署名する' → 'Python で REST API を使用して異なるタイプのドキュメントを結合する'"
         }
       ]
     },
-    "affected_pages": 8,
+    "affected_pages": 1,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 171,
+      "impressions_28d": 124,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 654,
+      "past_impressions": 652,
       "lost_clicks": 0,
-      "lost_impressions": 483,
+      "lost_impressions": 528,
       "past_window": [
         "2026-04-29",
         "2026-05-26"
       ],
       "scored_on": "lost",
-      "score": 7,
+      "score": 8,
       "window": [
         "2026-10-28",
         "2026-11-24"
@@ -4918,14 +4868,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "text-audit-run6",
-    "last_seen_run": "text-audit-run36",
-    "resolved_run": null,
-    "resolved_at": null,
+    "last_seen_run": "text-audit-run49",
+    "resolved_run": "text-audit-run52",
+    "resolved_at": "2026-11-27T15:42:02+00:00",
     "check": "text_topic_mismatch",
     "notes": []
   },
@@ -4991,7 +4941,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "crawl-audit-run19",
-    "last_seen_run": "crawl-audit-run33",
+    "last_seen_run": "crawl-audit-run46",
     "resolved_run": null,
     "resolved_at": null,
     "check": "h1_multiple",
@@ -5011,7 +4961,7 @@
       "urls": [
         "https://blog.groupdocs.cloud/viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/"
       ],
-      "observed": "1 of 74 checked pages: /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'annoucing' → 'announcing'; /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'groupdcs' → 'groupdocs'",
+      "observed": "1 of 86 checked pages: /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'annoucing' → 'announcing'; /viewer/next-generation-groupdocs.viewer-for-cloud-is-coming-soon/ title: 'groupdcs' → 'groupdocs'",
       "expected": "Correctly spelled titles, H1s and meta descriptions",
       "locations": [
         {
@@ -5055,7 +5005,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "text-audit-run22",
-    "last_seen_run": "text-audit-run36",
+    "last_seen_run": "text-audit-run52",
     "resolved_run": null,
     "resolved_at": null,
     "check": "text_typo",
@@ -5084,7 +5034,7 @@
         "https://blog.groupdocs.cloud/ru/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/",
         "https://blog.groupdocs.cloud/th/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/"
       ],
-      "observed": "2,278 entries or files; too long (width 79): 'Erweitern Sie Ihre C#-/ASP.NET-App mit der Funktion zur elektronischen Signatur': 5, too long (width 83): 'Améliorez votre application C# / ASP.NET avec la capacité de signature électroni': 5, too long (width 78): 'Tingkatkan Aplikasi C# / ASP.NET Anda dengan Kemampuan Tanda Tangan Elektronik': 5, too long (width 71): 'Migliora la tua app C#/ASP.NET con la funzionalità di firma elettronica': 5",
+      "observed": "2,200 entries or files; too long (width 81): 'Vergleichen Sie PDF Dateien mithilfe der REST-API in Node.js | PDF-Vergleichs-SD': 2, too long (width 76): 'Comparar archivos PDF usando REST API en Node.js | SDK de comparación de PDF': 2, too long (width 86): \"Comparez les fichiers PDF à l'aide de l'API REST dans Node.js | SDK de comparais\": 2, too long (width 74): 'Bandingkan File PDF menggunakan REST API di Node.js | SDK Perbandingan PDF': 2",
       "expected": "Every post's search title (seoTitle, else title) is 10-70 characters wide (CJK count double)",
       "locations": [
         {
@@ -5188,48 +5138,165 @@
         },
         {
           "role": "file",
+          "url": "https://blog.groupdocs.cloud/ar/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.ar.md",
+          "line": 1,
+          "note": "too long (width 76): 'التركيز على GroupDocs.Annotation for Java والأخبار من GroupDocs ، أغسطس 2014'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/de/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.de.md",
+          "line": 1,
+          "note": "too long (width 99): 'Konzentrieren Sie sich auf GroupDocs.Annotation für Java und Neuigkeiten von Gro'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/es/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.es.md",
+          "line": 1,
+          "note": "too long (width 83): 'Centrarse en GroupDocs.Annotation para Java y noticias de GroupDocs, agosto de 2'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/fa/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.fa.md",
+          "line": 1,
+          "note": "too long (width 72): 'تمرکز بر GroupDocs.Annotation برای جاوا و اخبار از GroupDocs، آگوست 2014'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
           "url": "https://blog.groupdocs.cloud/fr/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
           "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.fr.md",
           "line": 1,
-          "note": "too long (width 76): 'Module de visualisation de documents PDF et Office Java pour DNN | GroupDocs'",
+          "note": "too long (width 79): 'Focus sur GroupDocs. Annotation pour Java et actualités de GroupDocs, août 2014'",
           "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/id/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.id.md",
+          "line": 1,
+          "note": "too long (width 80): 'Fokus pada GroupDocs.Annotation untuk Java & berita dari GroupDocs, Agustus 2014'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/it/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
           "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.it.md",
           "line": 1,
-          "note": "too long (width 72): 'Modulo visualizzatore di documenti PDF e Office Java per DNN | GroupDocs'",
+          "note": "too long (width 74): 'Focus su GroupDocs.Annotation per Java e notizie da GroupDocs, agosto 2014'",
           "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/ja/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
           "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.ja.md",
           "line": 1,
-          "note": "too long (width 84): 'DNN 用 PDF および Office Java ドキュメント ビューア モジュール |グループドキュメント'",
+          "note": "too long (width 87): 'Java 用の GroupDocs.Annotation と GroupDocs からのニュースに焦点を当てる (2014 年 8 月)'",
           "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.md",
+          "line": 1,
+          "note": "too long (width 73): 'Focus on GroupDocs.Annotation for Java & news from GroupDocs, August 2014'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pl/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.pl.md",
+          "line": 1,
+          "note": "too long (width 94): 'Skoncentruj się na GroupDocs.Annotation for Java i aktualnościach z GroupDocs, s'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pt/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.pt.md",
+          "line": 1,
+          "note": "too long (width 75): 'Foco no GroupDocs.Annotation for Java & news from GroupDocs, agosto de 2014'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/ru/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
           "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.ru.md",
           "line": 1,
-          "note": "too long (width 75): 'Модуль просмотра документов PDF и Office Java для DNN | Групповые документы'",
+          "note": "too long (width 86): 'В центре внимания GroupDocs.Annotation для Java и новости от GroupDocs, август 2'",
           "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/th/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.th.md",
+          "line": 1,
+          "note": "too long (width 86): 'มุ่งเน้นไปที่ GroupDocs คำอธิบายประกอบสำหรับ Java และข่าวสารจาก GroupDocs สิงหาค'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/tr/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
           "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.tr.md",
           "line": 1,
-          "note": "too long (width 71): 'DNN için PDF ve Office Java Belge Görüntüleyici Modülü | Grup Belgeleri'",
+          "note": "too long (width 83): \"GroupDocs'a odaklanın. Java için Annotation ve GroupDocs'tan haberler, Ağustos 2\"",
           "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/uk/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.uk.md",
+          "line": 1,
+          "note": "too long (width 83): 'Зосередьтеся на GroupDocs. Анотація для Java та новини з GroupDocs, серпень 2014'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/vi/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.vi.md",
+          "line": 1,
+          "note": "too long (width 84): 'Tập trung vào GroupDocs.Annotation cho Java & tin tức từ GroupDocs, tháng 8 năm '",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/zh-hant/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.zh-hant.md",
+          "line": 1,
+          "note": "too long (width 74): '關注 GroupDocs.Annotation for Java 以及來自 GroupDocs 的新聞，2014 年 8 月'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/zh/annotation/focus-groupdocs-annotation-java-news-groupdocs-august-2014/",
+          "file": "content/GroupDocs.Cloud/annotation/2014-08-01-focus-groupdocs-annotation-java-news-groupdocs-august-2014/index.zh.md",
+          "line": 1,
+          "note": "too long (width 74): '关注 GroupDocs.Annotation for Java 以及来自 GroupDocs 的新闻，2014 年 8 月'",
+          "fix": null,
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5329,127 +5396,10 @@
           "note": "too long (width 79): 'Anote más de 50 tipos comunes de documentos e imágenes en su sitio de Concrete5'",
           "fix": null,
           "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/fa/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.fa.md",
-          "line": 1,
-          "note": "too long (width 72): 'بیش از 50 نوع سند و تصویر رایج را در سایت Concrete5 خود حاشیه نویسی کنید'",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/fr/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.fr.md",
-          "line": 1,
-          "note": "too long (width 83): \"Annotez plus de 50 types de documents et d'images courants sur votre site Concre\"",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/id/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.id.md",
-          "line": 1,
-          "note": "too long (width 75): 'Anotasi Lebih dari 50 Jenis Dokumen dan Gambar Umum di Situs Concrete5 Anda'",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/it/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.it.md",
-          "line": 1,
-          "note": "too long (width 74): 'Annota oltre 50 tipi di documenti e immagini comuni sul tuo sito Concrete5'",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ja/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.ja.md",
-          "line": 1,
-          "note": "too long (width 82): 'Concrete5 サイト上の 50 を超える一般的なドキュメントおよび画像タイプに注釈を付ける'",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.md",
-          "line": 1,
-          "note": "too long (width 71): 'Annotate Over 50 Common Document and Image Types on Your Concrete5 Site'",
-          "fix": null,
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/pl/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.pl.md",
-          "line": 1,
-          "note": "too long (width 93): 'Dodawaj adnotacje do ponad 50 typowych typów dokumentów i obrazów w swojej witry'",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/pt/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.pt.md",
-          "line": 1,
-          "note": "too long (width 75): 'Anote mais de 50 tipos comuns de documentos e imagens em seu site Concrete5'",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ru/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.ru.md",
-          "line": 1,
-          "note": "too long (width 93): 'Аннотируйте более 50 распространенных типов документов и изображений на вашем са'",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/th/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.th.md",
-          "line": 1,
-          "note": "too long (width 81): 'ใส่คำอธิบายประกอบในเอกสารและรูปภาพทั่วไปกว่า 50 ประเภทบนเว็บไซต์ Concrete5 ของคุ'",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/tr/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.tr.md",
-          "line": 1,
-          "note": "too long (width 77): \"Beton5 Sitenizde 50'den Fazla Yaygın Belge ve Görüntü Türüne Açıklama Ekleyin\"",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/uk/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.uk.md",
-          "line": 1,
-          "note": "too long (width 93): 'Додайте анотації до понад 50 поширених типів документів і зображень на своєму са'",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/vi/annotation/groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/",
-          "file": "content/GroupDocs.Cloud/annotation/2015-04-24-groupdocs-annotation-for-java-add-on-for-concrete5-is-now-available-for-download/index.vi.md",
-          "line": 1,
-          "note": "too long (width 84): 'Chú thích hơn 50 loại tài liệu và hình ảnh phổ biến trên trang web Concrete5 của'",
-          "fix": null,
-          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         }
       ]
     },
-    "affected_pages": 2278,
+    "affected_pages": 2200,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -5478,7 +5428,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run54",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -5901,7 +5851,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run54",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -6324,7 +6274,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run54",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_h1",
@@ -6999,7 +6949,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run54",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_markup",
@@ -7938,7 +7888,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-27",
     "first_seen_run": "repo-audit-run42",
-    "last_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run54",
     "resolved_run": null,
     "resolved_at": null,
     "check": "code_fence_misplaced",
@@ -8361,7 +8311,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-27",
     "first_seen_run": "repo-audit-run45",
-    "last_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run54",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_secret_literal",
