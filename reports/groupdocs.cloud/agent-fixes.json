@@ -571,5 +571,33 @@
   ],
   "issue": "6 tutorials left without a search title after the copies were removed",
   "result": "Live: written seoTitle in en, fr, de, ja, zh-hant (e.g. 'Merge Different Document Types in Python | REST API')"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-27",
+  "found_by": "Agent",
+  "check": "post_merge_conflict",
+  "commits": [
+   "18b29302"
+  ],
+  "issue": "Translation run ec990f7b committed unresolved autostash conflicts into 4 csv-to-jpg translations (de, id, tr, uk), shown as text",
+  "result": "Live: no conflict markers on the de, id, tr, uk pages"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-27",
+  "found_by": "Shoaib Khan",
+  "check": "post_secret_literal",
+  "commits": [
+   "cef75257"
+  ],
+  "issue": "API key still in 36 queued translations of display-word-document-in-php and combine-pdf",
+  "result": "Live: placeholders, no key on en/fr combine-pdf, ja display-word, de excel-to-pdf; no file in the repo holds the key"
  }
 ]

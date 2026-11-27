@@ -318,7 +318,9 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
 - **Translation agent:** home-link fix verified (4886783, tests pass); handoff for the code-block bug:
   `docs/handoffs/translation-agent-code-blocks.md`.
 
-## Fix batch 5: conflict markers and the last key copies (27 Nov 2026; pushed, waits for deploy)
+## Fix batch 5: conflict markers and the last key copies (27 Nov 2026; deployed and verified live)
+
+**Live 27 Nov:** no conflict markers on the de, id, tr, uk csv-to-jpg pages; placeholders and no key on en/fr combine-pdf, ja display-word-in-php, de excel-to-pdf. 2 agent-fixes rows (43). Quick rescan, snapshot 2026-11-27-4: health 87, issue types 16, open items 7,550; `post_secret_literal` resolved.
 
 - **18b29302:** the translation agent's retranslation ec990f7b committed unresolved stash conflicts into 4 csv-to-jpg translations (de, id, tr, uk), shown as text on the live pages; each hunk resolved to the side matching the English. New check `post_merge_conflict`; second agent bug in `docs/handoffs/translation-agent-code-blocks.md`.
 - **cef75257:** API key replaced in the last 36 queued translation files (display-word-document-in-php, combine-pdf); no file in the repo holds it. 2 ISSUE rows for Shoaib Khan (clipboard) keep their retranslation queued.

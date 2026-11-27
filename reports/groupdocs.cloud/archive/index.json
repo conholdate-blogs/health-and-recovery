@@ -196,5 +196,11 @@
     "date": "2026-11-27 (3)",
     "label": "After batch 4 (copied search titles fixed, verified live)",
     "runs": "discovery run 12, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 52, link check run 53, repo file check run 54"
+  },
+  {
+    "file": "2026-11-27-4.html",
+    "date": "2026-11-27 (4)",
+    "label": "After batch 5 (conflict markers removed, API key gone, verified live)",
+    "runs": "discovery run 13, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 52, link check run 55, repo file check run 56"
   }
 ]
