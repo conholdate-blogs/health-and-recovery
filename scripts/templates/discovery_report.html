@@ -306,6 +306,9 @@ button.kpi.vcard:focus-visible { outline: 2px solid var(--accent); outline-offse
 /* Fixed % as a bar (SK, 2026-11-11); the number stays beside it */
 .pbar { display: inline-block; width: 64px; height: 6px; border-radius: 3px; background: var(--line); vertical-align: middle; overflow: hidden }
 .pbar i { display: block; height: 100%; background: var(--good); border-radius: 3px }
+/* share closed / fixed on the Issues and Items cards (SK, 2026-11-27): plain progress, not a score band */
+.kbar { display: block; height: 10px; margin-top: 4px; border-radius: 4px; background: var(--tint); overflow: hidden; min-width: 60px }
+.kbar i { display: block; height: 100%; background: var(--good); border-radius: 4px }
 #fixes .up { color: var(--good); font-weight: 600 } #fixes .down { color: var(--broken); font-weight: 600 }
 #history-rows th { vertical-align: bottom } #history-rows th, #history-rows td { padding: 8px 9px } #history-rows td.note { white-space: normal; min-width: 10rem; max-width: 22rem; font-size: 13px } #history-rows td.note small { display: block; color: var(--muted) }
 .kpi.g-A, .kpi.g-B, .kpi.g-C, .kpi.g-D, .kpi.g-F { border-top: 4px solid var(--gc) } .kpi.g-A .kv, .kpi.g-B .kv, .kpi.g-C .kv, .kpi.g-D .kv, .kpi.g-F .kv { color: var(--gc) }
@@ -797,6 +800,8 @@ __METHOD__
     return EXPLAIN.length - 1;
   };
   // score bars (SK, 2026-10-27): always 0 to 100, filled in the score's colour band, ticks at the band cut-offs
+  // progress bar (share closed or fixed): a sliver while anything is done, so it never reads as 0
+  const kbar = (done, all) => all ? `<span class="kbar" aria-hidden="true"><i style="width:${done ? Math.max(1.5, Math.min(100, 100 * done / all)) : 0}%"></i></span>` : "";
   const sbar = (v, g, cls = "") => v == null
     ? `<span class="sbar none ${cls}" aria-hidden="true"></span>`
     : `<span class="sbar g-${g} ${cls}" style="--v:${v}%" aria-hidden="true"><i></i>${[40, 60, 75, 90].map(x => `<s style="left:${x}%"></s>`).join("")}</span>`;
@@ -1838,13 +1843,13 @@ __METHOD__
           : `<div class="kpi"><span class="kl">Search traffic</span><span class="kv">–</span><span class="ks">no Search Console or GA4 data</span></div>`,
         // visibility card (SK, 2026-11-20; his order, DR first): opens the monthly charts below the area cards
         VK ? visCard(V, VK, VK6) : "",
-        LOG ? `<div class="kpi"><span class="kl">${issuesLabel}</span><span class="kv">${fmt(LOG.open)} <small>open of ${fmt(LOG.total)}</small></span><span class="ks"><span class="${LOG.verified + LOG.pushed ? "up" : ""}">${fmt(LOG.verified + LOG.pushed)} fixed</span> · ${fmt(LOG.resolved)} resolved${LOG.reviewed ? ` · ${fmt(LOG.reviewed)} reviewed` : ""}`
+        LOG ? `<div class="kpi"><span class="kl">${issuesLabel}</span><span class="kv">${fmt(LOG.open)} <small>open of ${fmt(LOG.total)}</small></span>${kbar(LOG.total - LOG.open, LOG.total)}<span class="ks"><span class="${LOG.verified + LOG.pushed ? "up" : ""}">${fmt(LOG.verified + LOG.pushed)} fixed</span> · ${fmt(LOG.resolved)} resolved${LOG.reviewed ? ` · ${fmt(LOG.reviewed)} reviewed` : ""}`
           + ` · <b class="pct${LOG.total - LOG.open ? " ok" : ""}">${share(LOG.total - LOG.open, LOG.total)}</b> closed</span>`
           + `<span class="ks">${GURL ? `<a class="pilllink" href="issues/">Issue log →</a>` : ""}</span></div>` :
         `<div class="kpi"><span class="kl">${typesLabel}</span><span class="kv">${findings.length}</span><span class="ks"><span class="down">${byType.broken} broken</span> · ${byType.incorrect} incorrect · ${byType.not_optimized + byType.improvable} minor</span>`
           + `<span class="ks">${!before ? "no earlier run to compare" : (CH.resolved || []).length  // resolved ones are named in Fix progress; new ones are tagged in the list
             ? `<a href="#changes">${changesSub({ add: (CH.new || []).length, gone: CH.resolved.length }, before)}</a>` : changesSub({ add: (CH.new || []).length, gone: 0 }, before)}</span></div>`,
-        H.items ? `<div class="kpi"><span class="kl">${itemsLabel}</span><span class="kv">${itemsNum(H.items)}</span><span class="ks">${itemsSub(H.items)}</span></div>` : "",
+        H.items ? `<div class="kpi"><span class="kl">${itemsLabel}</span><span class="kv">${itemsNum(H.items)}</span>${kbar(H.items.fixed, H.items.fixed + H.items.open)}<span class="ks">${itemsSub(H.items)}</span></div>` : "",
       ].join("");
       $("kpis").hidden = false;
       if ($("vcard")) {  // the card opens and closes the Visibility panel (monthly charts, table behind a button)
