@@ -39,6 +39,20 @@ audit:
     blog.groupdocs.cloud: 20
   links:                     # link audit (scripts/audit_links.py): commits that count as translation work
     translation_commits: '^(Translate articles for|Daily Blogs Translation)'   # SK's translation agent
+  repo:                      # repo file check: reviewed redirect keys that look like junk but really existed
+    redirect_keep:           # Shoaib Khan, 2026-11-27: old 2017-2019 newsletter URLs (en dash in the slug), targets 200
+      - {key: "/2017/03/01/groupdocs-newsletter-march-2017%e2%80%93-apis-updates-code-examples/", reason: old newsletter URL, redirects to its post}
+      - {key: "/2017/04/01/groupdocs-developer-apis-%e2%80%93-free-email-newsletter-april-2017/", reason: old newsletter URL, redirects to its post}
+      - {key: "/2017/05/01/groupdocs-newsletter-may-2017%e2%80%93-apis-updates-code-examples/", reason: old newsletter URL, redirects to its post}
+      - {key: "/2017/06/01/groupdocs-newsletter-june-2017%E2%80%93-document-manipulation-api-updates-code-examples/", reason: old newsletter URL, redirects to its post}
+      - {key: "/2017/06/01/groupdocs-newsletter-june-2017%e2%80%93-document-manipulation-api-updates-code-examples/", reason: old newsletter URL, redirects to its post}
+      - {key: "/2017/06/01/groupdocs-newsletter-june-2017–-document-manipulation-api-updates-code-examples/", reason: old newsletter URL, redirects to its post}
+      - {key: "/2017/07/01/groupdocs-newsletter-july-2017%e2%80%93-document-manipulation-api-updates-code-examples/", reason: old newsletter URL, redirects to its post}
+      - {key: "/2017/09/01/groupdocs-newsletter-september-2017%E2%80%93-document-manipulation-apis-updates-and-code-examples/", reason: old newsletter URL, redirects to its post}
+      - {key: "/2017/09/01/groupdocs-newsletter-september-2017%E2%80%93document-manipulation-apis-updates-and-code-examples/", reason: old newsletter URL, redirects to its post}
+      - {key: "/2017/09/01/groupdocs-newsletter-september-2017%e2%80%93-document-manipulation-apis-updates-and-code-examples/", reason: old newsletter URL, redirects to its post}
+      - {key: "/2017/09/01/groupdocs-newsletter-september-2017–-document-manipulation-apis-updates-and-code-examples/", reason: old newsletter URL, redirects to its post}
+      - {key: "/2019/01/07/groupdocs.cloud-january-2019-%e2%80%93-25-off-groupdocs.total-cloud-apis-12-months/", reason: old newsletter URL, redirects to its post}
 
 # URL templates per host, matched in order against the path with the language segment removed.
 # Tag pages are /tag/<name>/ (config.yml permalinks); they must match before post.
