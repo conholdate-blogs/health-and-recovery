@@ -300,7 +300,9 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
 - **Notes sent material:** generator stray fence (3 URLs + fix commit dee72c63); U+2011 from both the optimizer (zip-to-jpg,
   excel-to-pdf-ruby, jpg-to-svg-java, gif-to-pdf-java) and the post generator (rewriter ASP.NET Core 26, modify-txt-java 23).
 
-## Fix batch 4: copied search titles (27 Nov 2026; local, waits for approval)
+## Fix batch 4: copied search titles (27 Nov 2026; 6eb6ea7e and 12d5c853 pushed, wait for deploy)
+
+- **12d5c853 (Shoaib Khan: "you just removed seo title, no fixes"):** the 49 posts had 0 clicks / 293 impressions in 3 months; ~43 are 2013-2019 newsletters and announcements (own title kept), 6 tutorials with impressions got a written seoTitle in English and all 18 languages (114 files, keyword first, ≤ 70 wide, each language using its own title's terms): sign-documents-node.js, rearrange-pdf-pages-node.js, parse-word-node.js, merge-different-types-python, edit-word-excel-ppt, parse-documents-extract-data. Build checked; rendered <title> confirmed in en/de/ja/ar.
 
 - **6eb6ea7e:** 49 English posts carried another post's seoTitle (24 duplicate groups; the post whose own title is closest
   kept it). Removed in English and all 18 translations each (931 files, one commit, nothing queued); the theme's <title>
