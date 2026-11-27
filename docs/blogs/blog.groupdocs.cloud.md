@@ -277,7 +277,7 @@ ISSUE rows added by Shoaib Khan 26 Nov (code blocks damaged: csv-to-pdf-java 11,
 `link_split_remainder`; `post_body_cut_off` accepts sign-offs. Dry run: blog.groupdocs.cloud 0 left except the 39 translations
 for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translations with an unclosed block, 1 stray).
 
-## Fix batch 3b: small fixes and the API key (27 Nov 2026; local, waits for approval)
+## Fix batch 3b: small fixes and the API key (27 Nov 2026; pushed ec990f7b..0ab25512, waits for deploy)
 
 | Commit | Fix |
 |---|---|
@@ -294,7 +294,7 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
   blog.conholdate.cloud and blog.conholdate.com 0.
 - **Redirects.json junk (list for Shoaib Khan, `reports/groupdocs.cloud/redirects-junk-2026-11-27.csv`):** remove 45 keys with
   the host (never match), 9 home-page soft 404s, 6 double-slash/spam; retarget `/feed`, `/feed/` → `/index.xml`; keep 12 real 2017
-  newsletter URLs (en dash in the slug, targets 200) and add them to the tenant keep-list. Waiting for approval.
+  newsletter URLs (en dash in the slug, targets 200), added to the tenant keep-list. Approved by Shoaib Khan, commit 0ab25512 (507 -> 447 entries). Build check: all 6 commits build; only the French page moved.
 - **Notes sent material:** generator stray fence (3 URLs + fix commit dee72c63); U+2011 from both the optimizer (zip-to-jpg,
   excel-to-pdf-ruby, jpg-to-svg-java, gif-to-pdf-java) and the post generator (rewriter ASP.NET Core 26, modify-txt-java 23).
 
