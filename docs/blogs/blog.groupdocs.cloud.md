@@ -277,7 +277,9 @@ ISSUE rows added by Shoaib Khan 26 Nov (code blocks damaged: csv-to-pdf-java 11,
 `link_split_remainder`; `post_body_cut_off` accepts sign-offs. Dry run: blog.groupdocs.cloud 0 left except the 39 translations
 for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translations with an unclosed block, 1 stray).
 
-## Fix batch 3b: small fixes and the API key (27 Nov 2026; pushed ec990f7b..0ab25512, waits for deploy)
+## Fix batch 3b: small fixes and the API key (27 Nov 2026; pushed ec990f7b..0ab25512, deployed and verified live)
+
+**Live 27 Nov:** old French URL (with and without slash) 301 → new French URL 200, French watermark post links it; /feed and /feed/ 301 → /index.xml; removed junk keys 404 (/wp-admin/post.php, /profile); kept newsletter key 301 → its post; combine-pdf shows YOUR_CLIENT_SECRET, no literal; de excel-to-pdf without clientSecret1 value; ko home link /ko/; tr caption C#'da. 5 agent-fixes rows (39). Quick rescan, snapshot 2026-11-27-2: health 83, issue types 22 → **18** (redirect junk, URL mismatch, wrong-language, missing-translation links closed), open items 7,747 (new check post_secret_literal counts the 90 lines in the 36 queued translations; code_fence_misplaced 65 waits for retranslation).
 
 | Commit | Fix |
 |---|---|

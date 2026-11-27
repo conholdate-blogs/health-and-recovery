@@ -1,0 +1,75 @@
+action,why,key,target
+"keep (real old URL, target 200)",non-English slug,/2017/03/01/groupdocs-newsletter-march-2017%e2%80%93-apis-updates-code-examples/,https://blog.groupdocs.cloud/total/groupdocs-newsletter-march-2017%e2%80%93-apis-updates-code-examples/
+"keep (real old URL, target 200)",non-English slug,/2017/04/01/groupdocs-developer-apis-%e2%80%93-free-email-newsletter-april-2017/,https://blog.groupdocs.cloud/total/groupdocs-developer-apis-%e2%80%93-free-email-newsletter-april-2017/
+"keep (real old URL, target 200)",non-English slug,/2017/05/01/groupdocs-newsletter-may-2017%e2%80%93-apis-updates-code-examples/,https://blog.groupdocs.cloud/total/groupdocs-newsletter-may-2017%e2%80%93-apis-updates-code-examples/
+"keep (real old URL, target 200)",non-English slug,/2017/06/01/groupdocs-newsletter-june-2017%E2%80%93-document-manipulation-api-updates-code-examples/,https://blog.groupdocs.cloud/total/groupdocs-newsletter-june-2017%E2%80%93-document-manipulation-api-updates-code-examples/
+"keep (real old URL, target 200)",non-English slug,/2017/06/01/groupdocs-newsletter-june-2017%e2%80%93-document-manipulation-api-updates-code-examples/,https://blog.groupdocs.cloud/total/groupdocs-newsletter-june-2017%e2%80%93-document-manipulation-api-updates-code-examples/
+"keep (real old URL, target 200)",non-English slug,/2017/06/01/groupdocs-newsletter-june-2017–-document-manipulation-api-updates-code-examples/,https://blog.groupdocs.cloud/total/groupdocs-newsletter-june-2017%E2%80%93-document-manipulation-api-updates-code-examples/
+"keep (real old URL, target 200)",non-English slug,/2017/07/01/groupdocs-newsletter-july-2017%e2%80%93-document-manipulation-api-updates-code-examples/,https://blog.groupdocs.cloud/total/groupdocs-newsletter-july-2017%e2%80%93-document-manipulation-api-updates-code-examples/
+"keep (real old URL, target 200)",non-English slug,/2017/09/01/groupdocs-newsletter-september-2017%E2%80%93-document-manipulation-apis-updates-and-code-examples/,https://blog.groupdocs.cloud/total/groupdocs-newsletter-september-2017%E2%80%93-document-manipulation-apis-updates-and-code-examples/
+"keep (real old URL, target 200)",non-English slug,/2017/09/01/groupdocs-newsletter-september-2017%E2%80%93document-manipulation-apis-updates-and-code-examples/,https://blog.groupdocs.cloud/total/groupdocs-newsletter-september-2017%E2%80%93-document-manipulation-apis-updates-and-code-examples/
+"keep (real old URL, target 200)",non-English slug,/2017/09/01/groupdocs-newsletter-september-2017%e2%80%93-document-manipulation-apis-updates-and-code-examples/,https://blog.groupdocs.cloud/total/groupdocs-newsletter-september-2017%e2%80%93-document-manipulation-apis-updates-and-code-examples/
+"keep (real old URL, target 200)",non-English slug,/2017/09/01/groupdocs-newsletter-september-2017–-document-manipulation-apis-updates-and-code-examples/,https://blog.groupdocs.cloud/total/groupdocs-newsletter-september-2017%E2%80%93-document-manipulation-apis-updates-and-code-examples/
+"keep (real old URL, target 200)",non-English slug,/2019/01/07/groupdocs.cloud-january-2019-%e2%80%93-25-off-groupdocs.total-cloud-apis-12-months/,https://blog.groupdocs.cloud/total/groupdocs.cloud-january-2019-%e2%80%93-25-off-groupdocs.total-cloud-apis-12-months/
+remove,double slash,//merger/password-protect-excel-using-password-protection-service/,https://blog.groupdocs.cloud/merger/password-protect-excel-using-password-protection-service/
+remove,double slash,//web792/,https://blog.groupdocs.cloud/
+remove,double slash,/categoryhttps://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family,https://blog.groupdocs.cloud/categories/groupdocs.comparison-cloud-product-family/
+remove,double slash,/conversion/convert-rar-files-to-png-in-nodejs-rar-file-converter/https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/,https://blog.groupdocs.cloud/conversion/convert-markdown-to-html-in-csharp-markdown-conversion-api/
+remove,double slash,/http://daveandethan.life/exp.html,https://blog.groupdocs.cloud/
+remove,double slash,/ru//render-excel-data-to-html-using-python/images/Render-Excel-To-HTML.jpg,https://blog.groupdocs.cloud/ru/viewer/render-excel-data-to-html-using-python/images/Excel-to-HTML-Python.jpg
+remove,host or scheme in the key,blog.groupdocs.cloud/2022/09/10/how-to-convert-powerpoint-to-jpg-online-in-node.js/,https://blog.groupdocs.cloud/conversion/how-to-convert-powerpoint-to-jpg-and-jpg-to-powerpoint-in-node.js/
+remove,host or scheme in the key,blog.groupdocs.cloud/ar/tag/c,https://blog.groupdocs.cloud/categories/groupdocs.signature-cloud-product-family/
+remove,host or scheme in the key,blog.groupdocs.cloud/es/tag/csharp,https://blog.groupdocs.cloud/es/tags/
+remove,host or scheme in the key,blog.groupdocs.cloud/es/tags/C,https://blog.groupdocs.cloud/tags/
+remove,host or scheme in the key,blog.groupdocs.cloud/feed,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/feed/web792/,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/merger/,https://blog.groupdocs.cloud/categories/groupdocs.merger-cloud-product-family/
+remove,host or scheme in the key,blog.groupdocs.cloud/omr/gpa-calculator,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/omr/gpa-calculator/,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/01,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/02,https://blog.groupdocs.cloud/page/2/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/03,https://blog.groupdocs.cloud/page/3/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/03/,https://blog.groupdocs.cloud/page/3/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/100,https://blog.groupdocs.cloud/page/2/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/100-,https://blog.groupdocs.cloud/page/43/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/100/,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/110,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/119,https://blog.groupdocs.cloud/page/2/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/120,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/121,https://blog.groupdocs.cloud/page/2/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/122,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/150,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/170,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/180,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/190,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/198,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/199,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/200,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/200/,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/340,blog.groupdocs.cloud/page/34
+remove,host or scheme in the key,blog.groupdocs.cloud/page/44,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/44/,https://blog.groupdocs.cloud/page/43/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/50,https://blog.groupdocs.cloud/page/43/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/50/,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/60,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/70,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/70/,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/80,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/page/99,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/pages/1,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/pages/1/,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/pages/100,https://blog.groupdocs.cloud/page/1/
+remove,host or scheme in the key,blog.groupdocs.cloud/wp-admin/,https://blog.groupdocs.cloud/
+remove,host or scheme in the key,blog.groupdocs.cloud/wp-admin/edit.php,https://blog.groupdocs.cloud/
+remove,redirects to the home page (soft 404),/2022/02/08/,https://blog.groupdocs.cloud/
+remove,redirects to the home page (soft 404),/accounting/books/expenses,https://blog.groupdocs.cloud/
+remove,redirects to the home page (soft 404),/entertainment/66410570657/link-nonton-download-drakor-doona-sub-indo-full-episode-1-9-end-kisah-cinta-bae-suzy-dan-yang-se-jong,https://blog.groupdocs.cloud/
+remove,redirects to the home page (soft 404),/feed,https://blog.groupdocs.cloud/
+remove,redirects to the home page (soft 404),/feed/,https://blog.groupdocs.cloud/
+remove,redirects to the home page (soft 404),/feed/f,https://blog.groupdocs.cloud/
+remove,redirects to the home page (soft 404),/fset-fast-stream/online-tests/psi/phase1/complete/50943ad8-4180-41e7-aab5-234e461d39c0,https://blog.groupdocs.cloud/
+remove,redirects to the home page (soft 404),/fset-fast-stream/online-tests/psi/phase1/complete/cf9853e6-07b4-4069-a852-8d02c42f626a,https://blog.groupdocs.cloud/
+remove,redirects to the home page (soft 404),/page/45,https://blog.groupdocs.cloud/
+remove,redirects to the home page (soft 404),/profile,https://blog.groupdocs.cloud/
+remove,redirects to the home page (soft 404),/wp-admin/post.php,https://blog.groupdocs.cloud/

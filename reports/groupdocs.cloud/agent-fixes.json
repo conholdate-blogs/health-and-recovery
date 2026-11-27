@@ -472,5 +472,76 @@
   ],
   "issue": "Empty extra code block in the 18 translations of convert-excel-to-csv-in-csharp",
   "result": "Committed and deployed; rescan checks the fences"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-23",
+  "found_by": "Shoaib Khan",
+  "check": "post_secret_literal",
+  "commits": [
+   "b9868988",
+   "6ec2ca43"
+  ],
+  "issue": "API client id/secret written out in 2 English cURL examples and in gist code inlined by 1,764 translation files (84 posts; clientSecret1 found by Shoaib Khan)",
+  "result": "Live: combine-pdf shows YOUR_CLIENT_SECRET, no literal secret; de excel-to-pdf without clientSecret1 value. Key still in the public gists: rotation by the key owner"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "check": "translated_url_mismatch",
+  "commits": [
+   "d1248dcf"
+  ],
+  "issue": "French convert-jpg-to-pdf-csharp published under its own slug (in-csharp)",
+  "result": "Live: new French URL 200; old URL (with and without slash) 301 to it; French watermark post links it"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-26",
+  "found_by": "Agent",
+  "check": "post_front_matter_escaped",
+  "commits": [
+   "5e9fd1d1"
+  ],
+  "issue": "Turkish cover caption with quotes instead of apostrophes (C#\"da)",
+  "result": "Live: C#'da"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-27",
+  "found_by": "Agent",
+  "check": "link_wrong_language",
+  "commits": [
+   "37e50596"
+  ],
+  "issue": "Korean retranslation linked the English home page",
+  "result": "Live: /ko/ home link"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-27",
+  "verified": "2026-11-27",
+  "found": "2026-11-19",
+  "found_by": "Agent",
+  "check": "redirect_key_malformed",
+  "commits": [
+   "0ab25512"
+  ],
+  "issue": "60 junk Redirects.json entries (host in the key, soft 404s to home, double slash/spam); feeds redirected to home",
+  "result": "Live: /wp-admin/post.php and /profile 404; /feed and /feed/ 301 to /index.xml; kept newsletter key 301 to its post"
  }
 ]

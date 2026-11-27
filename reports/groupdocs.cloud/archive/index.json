@@ -184,5 +184,11 @@
     "date": "2026-11-27",
     "label": "After batch 3 (content in current translations, 12 commits, verified live)",
     "runs": "discovery run 10, crawl audit run 33, speed audit run 35, AI audit run 34, text check run 36, link check run 41, repo file check run 43"
+  },
+  {
+    "file": "2026-11-27-2.html",
+    "date": "2026-11-27 (2)",
+    "label": "After batch 3b (API key placeholders, Redirects.json clean-up, verified live)",
+    "runs": "discovery run 11, crawl audit run 33, speed audit run 35, AI audit run 34, text check run 36, link check run 44, repo file check run 45"
   }
 ]

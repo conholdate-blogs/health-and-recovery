@@ -709,7 +709,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run41",
+    "last_seen_run": "link-audit-run44",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -1127,14 +1127,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
     "last_seen_run": "repo-audit-run43",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run45",
+    "resolved_at": "2026-11-27T13:55:04+00:00",
     "check": "redirect_key_malformed",
     "notes": []
   },
@@ -1190,14 +1190,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-03",
     "first_seen_run": "repo-audit-run11",
     "last_seen_run": "repo-audit-run43",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run45",
+    "resolved_at": "2026-11-27T13:55:04+00:00",
     "check": "redirect_target_bad",
     "notes": []
   },
@@ -1759,7 +1759,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-06",
     "first_seen_run": "link-audit-run16",
-    "last_seen_run": "link-audit-run41",
+    "last_seen_run": "link-audit-run44",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_redirected",
@@ -2447,7 +2447,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run43",
+    "last_seen_run": "repo-audit-run45",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -2687,14 +2687,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
     "last_seen_run": "link-audit-run41",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "link-audit-run44",
+    "resolved_at": "2026-11-27T13:54:01+00:00",
     "check": "link_missing_translation",
     "notes": []
   },
@@ -2867,14 +2867,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
     "last_seen_run": "link-audit-run41",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "link-audit-run44",
+    "resolved_at": "2026-11-27T13:54:01+00:00",
     "check": "link_wrong_language",
     "notes": []
   },
@@ -3206,7 +3206,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "link-audit-run23",
-    "last_seen_run": "link-audit-run41",
+    "last_seen_run": "link-audit-run44",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_differs_from_original",
@@ -3264,14 +3264,14 @@
     "effort": "M",
     "fix_tier": 3,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
     "last_seen_run": "repo-audit-run43",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run45",
+    "resolved_at": "2026-11-27T13:55:04+00:00",
     "check": "translated_url_mismatch",
     "notes": []
   },
@@ -3692,7 +3692,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run43",
+    "last_seen_run": "repo-audit-run45",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -3731,7 +3731,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Extract or Remove Annotations from PDF using REST API in Nod'; title in English: 'Extract or Remove Annotations from PDF using REST API in Nod'; description in English: 'Programmatically Extract or Remove Annotations from PDF usin'",
           "fix": "translate seoTitle, title, description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+          "commit": "b9868988 2026-11-27 API client id and secret replaced with placeholders (1,496 files, 84 posts)"
         },
         {
           "role": "file",
@@ -3830,7 +3830,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Convert Excel Spreadsheets to PDF in Node.js | XLS, XLSX to '; title in English: 'Convert Excel Spreadsheets to PDF using Node.js'; description in English: 'Programmatically Convert Excel Spreadsheets to PDF files usi'",
           "fix": "translate seoTitle, title, description",
-          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+          "commit": "b9868988 2026-11-27 API client id and secret replaced with placeholders (1,496 files, 84 posts)"
         },
         {
           "role": "file",
@@ -4115,7 +4115,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run43",
+    "last_seen_run": "repo-audit-run45",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -5084,7 +5084,7 @@
         "https://blog.groupdocs.cloud/ru/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/",
         "https://blog.groupdocs.cloud/th/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/"
       ],
-      "observed": "2,281 entries or files; too long (width 79): 'Erweitern Sie Ihre C#-/ASP.NET-App mit der Funktion zur elektronischen Signatur': 5, too long (width 83): 'Améliorez votre application C# / ASP.NET avec la capacité de signature électroni': 5, too long (width 78): 'Tingkatkan Aplikasi C# / ASP.NET Anda dengan Kemampuan Tanda Tangan Elektronik': 5, too long (width 71): 'Migliora la tua app C#/ASP.NET con la funzionalità di firma elettronica': 5",
+      "observed": "2,278 entries or files; too long (width 79): 'Erweitern Sie Ihre C#-/ASP.NET-App mit der Funktion zur elektronischen Signatur': 5, too long (width 83): 'Améliorez votre application C# / ASP.NET avec la capacité de signature électroni': 5, too long (width 78): 'Tingkatkan Aplikasi C# / ASP.NET Anda dengan Kemampuan Tanda Tangan Elektronik': 5, too long (width 71): 'Migliora la tua app C#/ASP.NET con la funzionalità di firma elettronica': 5",
       "expected": "Every post's search title (seoTitle, else title) is 10-70 characters wide (CJK count double)",
       "locations": [
         {
@@ -5449,7 +5449,7 @@
         }
       ]
     },
-    "affected_pages": 2281,
+    "affected_pages": 2278,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -5478,7 +5478,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run43",
+    "last_seen_run": "repo-audit-run45",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -5507,7 +5507,7 @@
         "https://blog.groupdocs.cloud/fr/annotation/integrate-groupdocs-annotation-for-net-into-your-getsimple-website/",
         "https://blog.groupdocs.cloud/it/annotation/integrate-groupdocs-annotation-for-net-into-your-getsimple-website/"
       ],
-      "observed": "3,667 entries or files; too long (width 175): 'GroupDocs bietet eine .NET-Bibliothek mit flexibler API, die zum Erstellen recht': 5, too long (width 182): 'GroupDocs ofrece una biblioteca .NET con API flexible que se puede usar para cre': 5, too long (width 220): 'GroupDocs propose une bibliothèque .NET avec une API flexible qui peut être util': 5, too long (width 201): 'GroupDocs menawarkan pustaka .NET dengan API fleksibel yang dapat digunakan untu': 5",
+      "observed": "3,652 entries or files; too long (width 175): 'GroupDocs bietet eine .NET-Bibliothek mit flexibler API, die zum Erstellen recht': 5, too long (width 182): 'GroupDocs ofrece una biblioteca .NET con API flexible que se puede usar para cre': 5, too long (width 220): 'GroupDocs propose une bibliothèque .NET avec une API flexible qui peut être util': 5, too long (width 201): 'GroupDocs menawarkan pustaka .NET dengan API fleksibel yang dapat digunakan untu': 5",
       "expected": "Every post's description (description, else summary) is 50-170 characters wide",
       "locations": [
         {
@@ -5872,7 +5872,7 @@
         }
       ]
     },
-    "affected_pages": 3667,
+    "affected_pages": 3652,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -5901,7 +5901,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run43",
+    "last_seen_run": "repo-audit-run45",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -5930,7 +5930,7 @@
         "https://blog.groupdocs.cloud/es/annotation/groupdocs.annotation-cloud-19.5/",
         "https://blog.groupdocs.cloud/fa/annotation/groupdocs.annotation-cloud-19.5/"
       ],
-      "observed": "1,188 entries or files; # ![](https://gallery.mailchimp.com/4bca4d1c05445e7a5c58d0065/images/BlogspotIco: 16, # GroupDocs.Comparison Cloud - PHP SDK: 11, # 功能 - GroupDocs.Comparison Cloud: 4, # 새로운 기능: 4",
+      "observed": "1,212 entries or files; # ![](https://gallery.mailchimp.com/4bca4d1c05445e7a5c58d0065/images/BlogspotIco: 16, # GroupDocs.Comparison Cloud - PHP SDK: 11, # 功能 - GroupDocs.Comparison Cloud: 4, # 새로운 기능: 4",
       "expected": "A post body starts its headings at ## (the theme renders the title as the only H1)",
       "locations": [
         {
@@ -6295,7 +6295,7 @@
         }
       ]
     },
-    "affected_pages": 1188,
+    "affected_pages": 1212,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -6324,7 +6324,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run43",
+    "last_seen_run": "repo-audit-run45",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_h1",
@@ -6999,7 +6999,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run43",
+    "last_seen_run": "repo-audit-run45",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_markup",
@@ -7544,7 +7544,7 @@
         "https://blog.groupdocs.cloud/de/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
         "https://blog.groupdocs.cloud/de/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/"
       ],
-      "observed": "61 entries or files; closing fence with text after it: '```python': 27, closing fence with text after it: '```bash': 16, bare ``` right after a closing fence opens a stray block: 11, a code block is never closed: 7",
+      "observed": "65 entries or files; closing fence with text after it: '```python': 29, closing fence with text after it: '```bash': 13, bare ``` right after a closing fence opens a stray block: 13, a code block is never closed: 10",
       "expected": "Every code block opens and closes once: no bare ``` right after a closing fence, no text after a closing ```",
       "locations": [
         {
@@ -7605,55 +7605,82 @@
           "role": "file",
           "url": "https://blog.groupdocs.cloud/ar/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
           "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.ar.md",
-          "line": 105,
+          "line": 106,
           "note": "closing fence with text after it: '```python'",
           "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/ar/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
           "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.ar.md",
-          "line": 223,
+          "line": 225,
           "note": "closing fence with text after it: '```bash'",
           "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/de/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
           "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.de.md",
-          "line": 110,
+          "line": 111,
           "note": "closing fence with text after it: '```python'",
           "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/de/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
           "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.de.md",
-          "line": 230,
-          "note": "closing fence with text after it: '```bash'",
-          "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/es/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
-          "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.es.md",
-          "line": 109,
+          "line": 145,
           "note": "closing fence with text after it: '```python'",
           "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/de/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
+          "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.de.md",
+          "line": 161,
+          "note": "closing fence with text after it: '```python'",
+          "fix": "remove the stray ``` / put the text on its own line",
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/de/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
+          "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.de.md",
+          "line": 173,
+          "note": "closing fence with text after it: '```python'",
+          "fix": "remove the stray ``` / put the text on its own line",
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/es/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
           "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.es.md",
-          "line": 227,
-          "note": "closing fence with text after it: '```bash'",
+          "line": 111,
+          "note": "closing fence with text after it: '```python'",
           "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/es/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
+          "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.es.md",
+          "line": 159,
+          "note": "bare ``` right after a closing fence opens a stray block",
+          "fix": "remove the stray ``` / put the text on its own line",
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/es/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
+          "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.es.md",
+          "line": 168,
+          "note": "closing fence with text after it: '```python'",
+          "fix": "remove the stray ``` / put the text on its own line",
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
         },
         {
           "role": "file",
@@ -7716,34 +7743,34 @@
           "line": 110,
           "note": "closing fence with text after it: '```python'",
           "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/fr/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
           "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.fr.md",
-          "line": 228,
+          "line": 229,
           "note": "closing fence with text after it: '```bash'",
           "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/id/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
           "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.id.md",
-          "line": 112,
-          "note": "closing fence with text after it: '```python'",
-          "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
+          "line": 1,
+          "note": "a code block is never closed",
+          "fix": "retranslate, or close the block as in the English post",
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/id/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
           "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.id.md",
-          "line": 230,
+          "line": 234,
           "note": "closing fence with text after it: '```bash'",
           "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
         },
         {
           "role": "file",
@@ -7866,50 +7893,23 @@
           "role": "file",
           "url": "https://blog.groupdocs.cloud/ko/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
           "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.ko.md",
-          "line": 78,
-          "note": "bare ``` right after a closing fence opens a stray block",
+          "line": 103,
+          "note": "closing fence with text after it: '```python'",
           "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
         },
         {
           "role": "file",
           "url": "https://blog.groupdocs.cloud/ko/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
           "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.ko.md",
-          "line": 86,
+          "line": 158,
           "note": "closing fence with text after it: '```python'",
           "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/ko/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
-          "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.ko.md",
-          "line": 223,
-          "note": "closing fence with text after it: '```bash'",
-          "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/pl/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
-          "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.pl.md",
-          "line": 108,
-          "note": "closing fence with text after it: '```python'",
-          "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
-        },
-        {
-          "role": "file",
-          "url": "https://blog.groupdocs.cloud/pl/conversion/csv-to-jpg-conversion-in-python-quick-guide-for-developers/",
-          "file": "content/GroupDocs.Cloud/conversion/2026-08-24-csv-to-jpg-conversion-in-python-quick-guide-for-developers/index.pl.md",
-          "line": 229,
-          "note": "closing fence with text after it: '```bash'",
-          "fix": "remove the stray ``` / put the text on its own line",
-          "commit": "dee72c63 2026-11-27 Stray code fence before <!--[CODE_SNIPPET_END]--> removed (64 lines, 32 files, 3 posts)"
+          "commit": "ec990f7b 2026-11-27 Retranslate articles for: \"CSV to JPG Conversion in Python: Quick Guide for Developers\" - (14 files)"
         }
       ]
     },
-    "affected_pages": 61,
+    "affected_pages": 65,
     "impact": {
       "clicks_28d": 2,
       "impressions_28d": 8,
@@ -7938,10 +7938,433 @@
     "superseded_by": null,
     "detected_at": "2026-11-27",
     "first_seen_run": "repo-audit-run42",
-    "last_seen_run": "repo-audit-run43",
+    "last_seen_run": "repo-audit-run45",
     "resolved_run": null,
     "resolved_at": null,
     "check": "code_fence_misplaced",
+    "notes": []
+  },
+  {
+    "id": "onpage-261127-2",
+    "key": "onpage/post_secret_literal/blog.groupdocs.cloud/post",
+    "source": "repo-audit",
+    "tenant": "groupdocs.cloud",
+    "subdomain": "blog.groupdocs.cloud",
+    "template": "post",
+    "dimension": "onpage",
+    "type": "broken",
+    "title": "API keys or secrets written out in posts",
+    "evidence": {
+      "urls": [
+        "https://blog.groupdocs.cloud/ar/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+        "https://blog.groupdocs.cloud/ar/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+        "https://blog.groupdocs.cloud/ar/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+        "https://blog.groupdocs.cloud/de/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+        "https://blog.groupdocs.cloud/de/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+        "https://blog.groupdocs.cloud/de/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+        "https://blog.groupdocs.cloud/es/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+        "https://blog.groupdocs.cloud/es/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+        "https://blog.groupdocs.cloud/es/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+        "https://blog.groupdocs.cloud/fa/merger/combine-pdf-files-with-pdf-merger-in-csharp"
+      ],
+      "observed": "90 entries or files; clientId = <value>: 18, clientSecret1 = <value>: 18, client_id = <value>: 18, ClientId = <value>: 18",
+      "expected": "Code samples use placeholders (YOUR_CLIENT_ID, YOUR_CLIENT_SECRET), never a real id or secret",
+      "locations": [
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ar/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ar.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ar/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ar.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ar/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ar.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/de/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.de.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/de/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.de.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/de/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.de.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/es/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.es.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/es/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.es.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/es/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.es.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/fa/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.fa.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/fa/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.fa.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/fa/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.fa.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/fr/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.fr.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/fr/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.fr.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/fr/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.fr.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/id/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.id.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/id/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.id.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/id/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.id.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/it/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.it.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/it/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.it.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/it/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.it.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ja/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ja.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ja/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ja.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ja/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ja.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ko/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ko.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ko/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ko.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ko/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ko.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pl/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.pl.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pl/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.pl.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pl/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.pl.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pt/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.pt.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pt/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.pt.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/pt/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.pt.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ru/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ru.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ru/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ru.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/ru/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.ru.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/th/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.th.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/th/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.th.md",
+          "line": 70,
+          "note": "clientSecret1 = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/th/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.th.md",
+          "line": 130,
+          "note": "client_id = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        },
+        {
+          "role": "file",
+          "url": "https://blog.groupdocs.cloud/tr/merger/combine-pdf-files-with-pdf-merger-in-csharp",
+          "file": "content/GroupDocs.Cloud/merger/2024-06-14-combine-pdf-files-using-pdf-file-merger/index.tr.md",
+          "line": 69,
+          "note": "clientId = <value>",
+          "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
+        }
+      ]
+    },
+    "affected_pages": 90,
+    "impact": {
+      "clicks_28d": 0,
+      "impressions_28d": 94,
+      "source": "gsc-pages",
+      "share": null,
+      "past_clicks": 0,
+      "past_impressions": 7,
+      "lost_clicks": 0,
+      "lost_impressions": 0,
+      "past_window": [
+        "2026-04-29",
+        "2026-05-26"
+      ],
+      "scored_on": "at stake",
+      "score": 6,
+      "window": [
+        "2026-10-28",
+        "2026-11-24"
+      ]
+    },
+    "effort": "S",
+    "fix_tier": 1,
+    "fix_channel": "git-pr",
+    "status": "open",
+    "verification": null,
+    "superseded_by": null,
+    "detected_at": "2026-11-27",
+    "first_seen_run": "repo-audit-run45",
+    "last_seen_run": "repo-audit-run45",
+    "resolved_run": null,
+    "resolved_at": null,
+    "check": "post_secret_literal",
     "notes": []
   },
   {
