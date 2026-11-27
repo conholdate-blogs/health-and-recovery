@@ -120,6 +120,9 @@ CHECKS = {
     "code_fence_misplaced": ("onpage", "broken", "Code fences that shift the code blocks after them",
                              "Every code block opens and closes once: no bare ``` right after a closing fence, no text "
                              "after a closing ```", 1, "S"),
+    # found on blog.groupdocs.cloud, 27 Nov 2026: a translation run committed unresolved stash conflicts into 4 files
+    "post_merge_conflict": ("onpage", "broken", "Git conflict markers committed in posts",
+                            "No <<<<<<< / >>>>>>> conflict markers in any post file", 1, "S"),
     # found on blog.groupdocs.cloud, 27 Nov 2026: 49 English posts carried another post's seoTitle (the search result
     # showed "Sign PDF with Stamp … Node.js" for a Python merge post); first seen 22 Oct on another blog (632 posts)
     "post_seo_title_copied": ("onpage", "incorrect", "Posts whose search title belongs to another post",
@@ -699,6 +702,11 @@ class RepoAudit:
                 issues.append({"check": "code_fence_misplaced", "file": rel, "line": fm_lines + n, "link": None,
                                "page": page, "fix": "remove the stray ``` / put the text on its own line",
                                "note": why, "commit": commit(rel)})
+            for n, line in enumerate(text.split("\n"), 1):
+                if line.startswith(("<<<<<<< ", ">>>>>>> ")):
+                    issues.append({"check": "post_merge_conflict", "file": rel, "line": n, "link": None, "page": page,
+                                   "fix": "resolve the conflict (keep the side that matches the English post)",
+                                   "note": line[:60], "commit": commit(rel)})
             for n, name in secret_literals(body):
                 issues.append({"check": "post_secret_literal", "file": rel, "line": fm_lines + n, "link": None,
                                "page": page, "fix": "replace with YOUR_CLIENT_ID / YOUR_CLIENT_SECRET; rotate the key",

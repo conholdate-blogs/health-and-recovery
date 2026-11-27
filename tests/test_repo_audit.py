@@ -486,3 +486,16 @@ def test_seo_title_copied_from_another_post(tmp_path):
     audit = RepoAudit(make_tenant(repo), FakeFetcher(), AuditStore(":memory:"), sample=0, log=None)
     got = [i["file"].split("/")[-2] for i in audit.check_posts(HOST)[0] if i["check"] == "post_seo_title_copied"]
     assert got == ["2026-01-06-merge"]
+
+
+def test_merge_conflict_markers(tmp_path):
+    # blog.groupdocs.cloud, 27 Nov 2026: a translation run committed unresolved stash conflicts
+    repo = make_repo(tmp_path)
+    post = repo / "content/Blog/pdf/2026-01-07-f"
+    post.mkdir(parents=True)
+    (post / "index.md").write_text("---\ntitle: f\nurl: /pdf/f/\n---\nText\n\nHeading\n=======\n", encoding="utf-8")
+    (post / "index.de.md").write_text("---\ntitle: f\nurl: /de/pdf/f/\n---\n<<<<<<< Updated upstream\n=======\nx\n"
+                                      ">>>>>>> Stashed changes\n", encoding="utf-8")
+    audit = RepoAudit(make_tenant(repo), FakeFetcher(), AuditStore(":memory:"), sample=0, log=None)
+    got = [(i["file"].split("/")[-1], i["line"]) for i in audit.check_posts(HOST)[0] if i["check"] == "post_merge_conflict"]
+    assert got == [("index.de.md", 5), ("index.de.md", 8)]

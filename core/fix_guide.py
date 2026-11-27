@@ -633,6 +633,12 @@ _ROWS = [
      "Remove the stray fence / put the text on its own line, in the English post and all current translations in one "
      "commit; translations whose code blocks differ otherwise go to retranslation. Report the generator bug.",
      "Fences balance and the page shows text as text; next repo check has no item."),
+    ("post_merge_conflict", "Repo files", "Git conflict markers in a post",
+     "A commit left an unresolved merge or stash conflict (<<<<<<< Updated upstream … ======= … >>>>>>> Stashed changes).",
+     "The markers show as text on the page, and one side of the conflict is usually missing (a code line, a fence).",
+     "Resolve each conflict, keeping the side that matches the English post; find the tool or person that commits "
+     "without resolving.",
+     "Next repo check has no item."),
     ("post_seo_title_copied", "Spelling & wording", "Search title copied from another post",
      "Several posts carry the same seoTitle: the post it was written for, and copies (newsletters titled as an SDK "
      "release, a Python merge post titled 'Sign PDF with Stamp … Node.js').",

@@ -64,6 +64,15 @@ English 28 fence lines, German 32; the same in ar, es, fa, fr, id, it and others
    - a code block holding text that looks like Markdown (`# comment`, `- item`, a line with ``` inside a string);
    - a model output that moves a fence but keeps the count: must be rejected.
 
+## Second bug: unresolved stash conflicts committed (27 Nov 2026)
+
+The same run (`ec990f7b`) committed git conflict markers into 4 translations of the csv-to-jpg post (de, id, tr, uk):
+`<<<<<<< Updated upstream` … `=======` … `>>>>>>> Stashed changes`, shown as text on the live pages, with the missing
+side holding a code line and a closing fence. The agent apparently stashes local changes, pulls, and pops the stash;
+when the pop conflicts it commits the files anyway. Requested: after `git stash pop` (or any merge), stop if
+`git diff --name-only --diff-filter=U` lists files or any staged file contains `<<<<<<< `; never commit such files.
+Fixed in the blog by the Health and Recovery Agent (18b29302); its check `post_merge_conflict` now reports them.
+
 ## Already fixed, verified
 
 - Home-page link not localized (`https://blog.<domain>/` kept English in translations): fixed in `4886783`
