@@ -6,6 +6,8 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 
 **Owner:** SK. This file is the master brief. A copy lives in the claude.ai Project "aspose.app Health Recovery Agents"; Claude Code in VS Code cannot write to it, so when this file changes meaningfully, tell SK so he can refresh the Project copy.
 
+**Impact record:** [docs/impact.md](docs/impact.md) holds the figures for announcing the agent (before → after per blog, headline figures with commits, dated search baseline); add to it in the same session as each verified fix round and each monthly search reading (Shoaib Khan, 28 Nov).
+
 **Keep this file current:** when a decision is made, a fact is confirmed or a build step finishes, update the relevant section (Status, Seed findings, Open items) in the same session. New issues found by hand go into `tenants/<tenant>.seed-findings.yaml` (or become a check, so fixes count), never only into prose.
 
 ## Notes structure (SK, 2026-11-11: "we should keep noting things")
