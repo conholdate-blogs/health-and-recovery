@@ -46,7 +46,7 @@ Plan:
 | Issue | Count |
 |---|---|
 | Junk URLs Google knows still answer 200 (`url_junk_served`, dry run 28 Nov): translated tag names in ru/vi/zh (e.g. `/ru/tag/обрезка-png-онлайн/`, 525 impressions, 0 clicks); 3 more redirect, 1 escaped 404 | 22 |
-| Tag and category pages build RSS feeds (`taxonomy_feeds_built`, dry run 28 Nov; playbook row 30) | 43,783 feeds; fix 437f4dd5 local 28 Nov |
+| Tag and category pages build RSS feeds (`taxonomy_feeds_built`, dry run 28 Nov; playbook row 30) | 43,783 tag/category + 18 section feeds; fix b4e1cf38 pushed 28 Nov, waits for deploy |
 | Stale translations: English rewritten by the Blog Optimization Agent (Mar 2026), translations kept old titles (`translation_stale`) | 3,638 |
 | Post descriptions / titles out of range | 5,070 / 1,802 |
 | Translations keeping English text (`post_text_untranslated`) | 198 |
