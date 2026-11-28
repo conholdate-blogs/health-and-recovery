@@ -786,6 +786,21 @@ _ROWS = [
      "or marks noindex sends Google a mixed signal.",
      "Leave tag pages out of the sitemaps (Hugo: a sitemap template or a taxonomy setting that skips them).",
      "The sitemaps list no /tag/ URL; the next structure step has no finding."),
+    ("taxonomy_feeds_built", "Site structure", "Tag feeds built",
+     "Hugo builds an RSS feed (index.xml, with full post text) for every tag and category in every language and "
+     "links it from each tag page: tens of thousands of feeds nobody subscribes to.",
+     "Crawlers fetch duplicate feeds instead of posts, and old feed URLs (translated or escaped tag names) keep "
+     "being requested long after the tags are gone.",
+     "config.yml outputs: taxonomy: [HTML] and term: [HTML]; keep the home and section feeds. Check that the deploy "
+     "deletes the old files (hugo deploy --maxDeletes -1).",
+     "A tag's /index.xml answers 404; the next structure step has no finding."),
+    ("url_junk_served", "Site structure", "Junk URL answers 200",
+     "Search Console knows URLs that should not exist (translated or escaped tag names from old translations, "
+     "template placeholders, double slashes, dropped tag feeds), and they still answer 200.",
+     "Junk pages get crawled and indexed beside the real ones, split signals and show broken titles in results.",
+     "Remove what builds them (the tag value, the template, the output format) so they answer 404; no redirect "
+     "entries for junk URLs (rule RED-1) unless one earned real links.",
+     "Each listed URL answers 404 (or 301 to the right page); the next structure step has no finding."),
 ]
 
 # Severity per check, as the auditors assign it (checks only discovery's run.py names inline are listed here).

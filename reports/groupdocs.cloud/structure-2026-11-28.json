@@ -106,6 +106,38 @@
     "url": "https://blog.groupdocs.cloud/groupdocs.cloud/",
     "status": 200,
     "noindex": true
+   },
+   "taxonomy_feeds": {
+    "config": "config.yml",
+    "taxonomy": false,
+    "term": false
+   },
+   "known_junk": {
+    "urls": 398,
+    "checked": 398,
+    "by_kind": {
+     "non_english": {
+      "urls": 179,
+      "clicks": 38,
+      "impressions": 3643,
+      "live": {
+       "404": 179
+      }
+     },
+     "escaped": {
+      "urls": 219,
+      "clicks": 75,
+      "impressions": 2444,
+      "live": {
+       "404": 219
+      }
+     }
+    },
+    "served": [],
+    "window": [
+     "2025-08-02",
+     "2026-11-25"
+    ]
    }
   }
  }

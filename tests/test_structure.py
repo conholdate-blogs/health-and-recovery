@@ -118,3 +118,58 @@ def test_single_main_section_page_must_be_noindex(tmp_path):
     assert findings("t", "blog.example.com", {"section_robots": sec}) == []
     (tmp_path / "config.yml").write_text("params:\n  mainSections: [a, b]\n", encoding="utf-8")
     assert "url" not in section_robots(get("index, follow"), "blog.example.com", tmp_path)  # two sections: no read
+
+
+def test_taxonomy_feeds_from_config_outputs(tmp_path):
+    from core.audit.structure import taxonomy_feeds
+
+    (tmp_path / "config.yml").write_text("outputs:\n  home: [HTML, RSS]\n", encoding="utf-8")
+    assert taxonomy_feeds(tmp_path) == {"config": "config.yml", "taxonomy": True, "term": True}  # Hugo default
+    (tmp_path / "config.yml").write_text("outputs:\n  home: [HTML, RSS]\n  taxonomy: [HTML]\n  term: [HTML]\n",
+                                         encoding="utf-8")
+    assert taxonomy_feeds(tmp_path)["term"] is False and taxonomy_feeds(tmp_path)["taxonomy"] is False
+    (tmp_path / "config-production.yml").write_text("outputs:\n  term: [HTML, RSS]\n", encoding="utf-8")
+    assert taxonomy_feeds(tmp_path) == {"config": "config-production.yml", "taxonomy": True, "term": True}
+
+
+def test_junk_kind():
+    from core.audit.structure import junk_kind
+
+    h = "https://blog.example.com"
+    assert junk_kind(f"{h}/fa/tag/%5C%D8%AD%D8%B0%D9%81%5C/") == "escaped"
+    assert junk_kind(f"{h}/ar/tag/%D8%A7%D8%B3%D8%AA%D8%AE%D8%B1%D8%A7%D8%AC-xml/index.xml") == "non_english"
+    assert junk_kind(f"{h}/x/%7B%7B%20revealButtonHref%20%7D%7D") == "placeholder"
+    assert junk_kind(f"{h}//total/post/") == "double_slash"
+    assert junk_kind(f"{h}/tag/merge-pdf/index.xml") is None  # feeds still built: taxonomy_feeds_built covers them
+    assert junk_kind(f"{h}/tag/merge-pdf/index.xml", feeds_built=False) == "taxonomy_feed"
+    assert junk_kind(f"{h}/index.xml", feeds_built=False) is None
+    assert junk_kind(f"{h}/conversion/merge-pdf/") is None
+    assert junk_kind(f"{h}/category/a%20b/") is None  # an encoded space is not non-English
+
+
+def test_junk_live_and_findings():
+    from core.audit.structure import findings, junk_live
+
+    h = "https://blog.example.com"
+    rows = [{"page": f"{h}/fa/tag/%5Cx%5C/", "clicks": 5, "impressions": 50},
+            {"page": f"{h}/ar/tag/%D8%A7/", "clicks": 1, "impressions": 90},
+            {"page": f"{h}/conversion/ok/", "clicks": 9, "impressions": 900}]
+    status = {rows[0]["page"]: 404, rows[1]["page"]: 200}
+    junk = junk_live(lambda u: (status[u], {}, "", False), rows)
+    assert junk["urls"] == 2 and junk["checked"] == 2
+    assert junk["served"] == [{"page": rows[1]["page"], "kind": "non_english", "clicks": 1, "impressions": 90}]
+    assert junk["by_kind"]["escaped"]["live"] == {"404": 1}
+    s = {"languages": 19, "tag_pages_all_languages": 1000, "categories": 10,
+         "taxonomy_feeds": {"config": "config.yml", "term": True, "taxonomy": False},
+         "known_junk": {**junk, "window": ["2025-08-01", "2026-11-25"]}}
+    got = {f["check"]: f for f in findings("t", "blog.example.com", s)}
+    assert got["taxonomy_feeds_built"]["affected_pages"] == 1000 + 10 * 19
+    assert got["url_junk_served"]["affected_pages"] == 1
+    assert got["url_junk_served"]["evidence"]["traffic"] == {"clicks": 1, "impressions": 90}
+    s["taxonomy_feeds"] = {"term": False, "taxonomy": False}
+    s["known_junk"]["served"] = []
+    assert not findings("t", "blog.example.com", s)
+    # a URL the sitemaps list is a real page (en dash in a 2017 slug), never junk
+    real = junk_live(lambda u: (200, {}, "", False), [{"page": f"{h}/total/news-%E2%80%93-2017/", "clicks": 1,
+                                                      "impressions": 9}], sitemap_urls={f"{h}/total/news-–-2017/"})
+    assert real["urls"] == 0 and not real["served"]

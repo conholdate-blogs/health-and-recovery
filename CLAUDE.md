@@ -60,6 +60,9 @@ Dry-run counts on blog.conholdate.com (not fixed, register): `#` tags 2,821, tag
 **Update Sat 28 Nov:** both translation-agent bugs fixed (a22f921 code blocks, 6a9002c conflicts); the urgent
 retranslations (csv-to-jpg 18, json-to-html 3, combine-pdf 15) are clean; quick rescan: health **88**, 15 issue types,
 open items 7,410, snapshot 2026-11-28. Left: 17 broken links = the queued csv-json translations (→ ~98).
+Same day: tag/category RSS feeds off (blog commit **9ba456d8, local, waits for push approval**; −43,222 feed files,
+0 pages added); new checks `taxonomy_feeds_built`, `url_junk_served` (playbook rows 30–31); all 398 junk URLs Google
+knows answer 404; dry run: blog.conholdate.com 22 translated tag pages still 200 (register).
 
 **Open, with Shoaib Khan:**
 1. ~~Translation agent: two bugs~~ **fixed and verified 28 Nov** (handoff

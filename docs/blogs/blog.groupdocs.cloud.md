@@ -342,6 +342,26 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
   ~98). 61 superseded run files pruned (page unchanged apart from the new history entry). Not deployed yet: the 36
   files go live with the next deploy (repo checks read the repo).
 
+## Tag feeds and junk URLs (28 Nov 2026; Shoaib Khan: "cover such dumb urls … from earlier translations")
+
+- **Shoaib Khan's example** `/ar/tag/استخراج-النص-من-ملف-xml/index.xml`: a real URL once, built by Hugo's default
+  (every tag page gets an RSS feed) from a tag the 2023 translations translated into Arabic. Batch 3a removed the
+  translated tags, so the tag page and its feed answer 404 now. Not in Search Console (no impressions).
+- **Search Console, 16 months:** 398 junk URLs (219 tag names with `\`/`"`, 179 translated tag names; 113 clicks,
+  6,087 impressions): **all 404** live. No redirects (RED-1; tag pages are noindex anyway). 18 more matches were real
+  2017 newsletter posts with an en dash (`–`) in the slug: listed in the sitemap, not junk (the check skips them).
+- **Fix, local commit 9ba456d8 (waits for push approval):** `config.yml` outputs `section: [HTML, RSS]`,
+  `taxonomy: [HTML]`, `term: [HTML]`. Build diff (Hugo 0.101): 172,523 → 129,301 files, `index.xml` 43,260 → 38
+  (home + section feeds), **0 pages added**, HTML changes only the removed `<link rel=alternate … rss>` on tag pages
+  (2 post pages differ only in the minified form of an SVG icon path, same drawing). Deploy has
+  `--maxDeletes -1`, so S3 drops the old feeds. Live check after deploy: `/tag/merge-pdf/index.xml` 404,
+  `/index.xml` and `/conversion/index.xml` 200, no rss `<link>` on a tag page.
+- **New checks (structure step):** `taxonomy_feeds_built` (config outputs) and `url_junk_served` (Search Console junk
+  URLs, minus sitemap URLs, fetched live; 200 = finding). First run here: 0 / 0 (repo already has the fix; all junk
+  404). A first version flagged the 18 newsletter posts: deleted from the store unpublished, check fixed.
+  Dry run on fixed blogs: blog.conholdate.com 22 translated tag pages answer 200 + feeds built; blog.conholdate.cloud
+  feeds built (register).
+
 ## Health 83: what is left (27 Nov 2026, Shoaib Khan asked)
 
 Points lost (scorecard on the open findings): `link_broken` 10.0 (only 17 links, all in the queued csv-json translations,

@@ -131,7 +131,102 @@ CHECKS = {
     "section_lists_home_posts": ("crawl", "not_optimized", "Section page repeats the home page's post list",
                                  "With one main section, its section page is noindex, follow and out of the sitemap",
                                  3, "S"),
+    "taxonomy_feeds_built": ("crawl", "improvable", "Tag and category pages build RSS feeds",
+                             "Tag and category pages are HTML only (config outputs: taxonomy and term [HTML]); the "
+                             "home and section feeds stay", 3, "S"),
+    "url_junk_served": ("crawl", "not_optimized", "Junk URLs Google knows still answer 200",
+                        "URLs left by old translations and broken generators (translated or escaped tag names, "
+                        "placeholders, double slashes, dropped feeds) answer 404, or 301 to the right page", 3, "M"),
 }
+
+
+# ---- feeds of taxonomy pages (Shoaib Khan, 28 Nov 2026: a feed per tag and language is junk) ----
+
+FEED_KINDS = ("taxonomy", "term")  # taxonomy = /tags/, /categories/; term = /tag/<name>/, /categories/<name>/
+
+
+def taxonomy_feeds(repo: Path) -> dict:
+    """Which taxonomy page kinds build an RSS feed, from `outputs` in config.yml (a config-production.yml, when it
+    sets outputs, wins). Hugo's default for both kinds is HTML + RSS, so a kind missing from `outputs` builds one."""
+    import yaml
+
+    outputs, source = None, None
+    for name in ("config-production.yml", "config.yml"):
+        try:
+            cfg = yaml.safe_load((repo / name).read_text(encoding="utf-8")) or {}
+        except (OSError, yaml.YAMLError):
+            continue
+        if isinstance(cfg.get("outputs"), dict):
+            outputs, source = {str(k).lower(): v for k, v in cfg["outputs"].items()}, name
+            break
+    out = {"config": source or "config.yml"}
+    for kind in FEED_KINDS:
+        value = (outputs or {}).get(kind)
+        formats = [str(v).lower() for v in value] if isinstance(value, list) else None
+        out[kind] = formats is None or "rss" in formats
+    return out
+
+
+# ---- junk URLs Google knows (Shoaib Khan, 28 Nov 2026: "cover such dumb urls from earlier translations") ----
+
+# Search Console regex (RE2) for candidates; junk_kind() decides. Encoded as Search Console reports them.
+JUNK_GSC_REGEX = r"%5[Cc]|%22|%[89A-Fa-f][0-9A-Fa-f]|%7[Bb]%7[Bb]|[^:]//|/(tags?|categor(y|ies))/[^/]+/index\.xml"
+_NON_ASCII = re.compile(r"%[89A-Fa-f][0-9A-Fa-f]")
+_TAX_FEED = re.compile(r"/(tags?|categor(?:y|ies))/[^/]+/index\.xml$")
+JUNK_LIVE_CAP = 400  # URLs fetched per run, most impressions first
+JUNK_KINDS = {"escaped": "escaped name (\\ or \")", "non_english": "non-English characters",
+              "placeholder": "template placeholder", "double_slash": "double slash", "taxonomy_feed": "tag feed"}
+
+
+def junk_kind(url: str, feeds_built: bool = True) -> str | None:
+    """Why a URL is junk, or None. Every post, tag and category URL is English (rule URL-1), so any non-ASCII
+    character is junk; a tag or category feed counts only once the blog stopped building them."""
+    from urllib.parse import urlsplit
+
+    path = urlsplit(url).path
+    up = path.upper()
+    if "%5C" in up or "%22" in up or "\\" in path or '"' in path:
+        return "escaped"
+    if "%7B%7B" in up or "{{" in path:
+        return "placeholder"
+    if _NON_ASCII.search(path) or any(ord(c) > 127 for c in path):
+        return "non_english"
+    if "//" in path:
+        return "double_slash"
+    if not feeds_built and _TAX_FEED.search(path):
+        return "taxonomy_feed"
+    return None
+
+
+def _norm(url: str) -> str:
+    from urllib.parse import unquote
+
+    return unquote(url).rstrip("/").lower()
+
+
+def junk_live(get, rows: list[dict], feeds_built: bool = True, cap: int = JUNK_LIVE_CAP,
+              sitemap_urls: set[str] | None = None) -> dict:
+    """Fetch the junk URLs among Search Console page rows ({page, clicks, impressions}), most impressions first.
+    `get(url)` returns (status, headers, html, blocked); a redirect counts as 301. A URL the sitemaps list is a real
+    page, not junk (blog.groupdocs.cloud 28 Nov: 2017 newsletter posts with an en dash in the slug)."""
+    real = {_norm(u) for u in sitemap_urls or ()}
+    junk = [dict(r, kind=k) for r in rows if (k := junk_kind(r["page"], feeds_built)) and _norm(r["page"]) not in real]
+    junk.sort(key=lambda r: (-r.get("impressions", 0), r["page"]))
+    by_kind: dict = {}
+    served = []
+    for i, r in enumerate(junk):
+        k = by_kind.setdefault(r["kind"], {"urls": 0, "clicks": 0, "impressions": 0, "live": {}})
+        k["urls"] += 1
+        k["clicks"] += r.get("clicks", 0)
+        k["impressions"] += r.get("impressions", 0)
+        if i >= cap:
+            continue
+        status = get(r["page"])[0]
+        k["live"][str(status)] = k["live"].get(str(status), 0) + 1
+        if status == 200:
+            served.append({"page": r["page"], "kind": r["kind"], "clicks": r.get("clicks", 0),
+                           "impressions": r.get("impressions", 0)})
+    return {"urls": len(junk), "checked": min(len(junk), cap), "by_kind": by_kind, "served": served}
 
 
 TAG_SAMPLE = 2  # tag term pages read live besides the tags list
@@ -212,9 +307,9 @@ def findings(tenant: str, host: str, s: dict, fix_channel: str | None = None) ->
     clicks = f"tag pages earned {search.get('tag_clicks', 0):,} of {search.get('clicks', 0):,} clicks (28 days)"
     traffic = {"clicks": search.get("tag_clicks", 0), "impressions": search.get("tag_impressions", 0)}
 
-    def add(check, urls, observed, affected):
+    def add(check, urls, observed, affected, template="tag", traffic=traffic):
         dimension, ftype, title, expected, tier, effort = CHECKS[check]
-        f = make_finding(ids=ids, tenant=tenant, subdomain=host, template="tag", dimension=dimension, type=ftype,
+        f = make_finding(ids=ids, tenant=tenant, subdomain=host, template=template, dimension=dimension, type=ftype,
                          check=check, title=title, urls=urls, observed=observed, expected=expected,
                          affected_pages=affected, effort=effort, fix_tier=tier, fix_channel=fix_channel)
         f["evidence"]["traffic"] = traffic
@@ -239,4 +334,24 @@ def findings(tenant: str, host: str, s: dict, fix_channel: str | None = None) ->
         add("section_lists_home_posts", [sec["url"]],
             f"one main section ({sec['sections'][0]}): {sec['url']} lists the same posts as the home page and is "
             f"indexable, in {s.get('languages', 1)} languages", s.get("languages", 1))
+    feeds = s.get("taxonomy_feeds") or {}
+    if feeds.get("term") or feeds.get("taxonomy"):
+        langs = s.get("languages", 1)
+        files = ((s.get("tag_pages_all_languages") or 0) + (s.get("categories") or 0) * langs) if feeds.get("term") \
+            else 0
+        files += 2 * langs if feeds.get("taxonomy") else 0
+        kinds = " and ".join(k for k in ("term", "taxonomy") if feeds.get(k))
+        add("taxonomy_feeds_built", [f"https://{host}/tags/index.xml"],
+            f"{feeds.get('config')} outputs build an RSS feed for {kinds} pages: about {files:,} feed files "
+            f"(each tag and category in {langs} languages), linked from every tag page", files, template="feed")
+    junk = s.get("known_junk") or {}
+    served = junk.get("served") or []
+    if served:
+        kinds = ", ".join(f"{JUNK_KINDS.get(k, k)} {sum(1 for x in served if x['kind'] == k)}"
+                          for k in sorted({x["kind"] for x in served}))
+        add("url_junk_served", [x["page"] for x in served[:20]],
+            f"{len(served):,} of {junk.get('checked', 0):,} junk URLs Search Console knows ({junk.get('window')}) "
+            f"answer 200: {kinds}", len(served), template="junk",
+            traffic={"clicks": sum(x["clicks"] for x in served),
+                     "impressions": sum(x["impressions"] for x in served)})
     return out
