@@ -599,5 +599,33 @@
   ],
   "issue": "API key still in 36 queued translations of display-word-document-in-php and combine-pdf",
   "result": "Live: placeholders, no key on en/fr combine-pdf, ja display-word, de excel-to-pdf; no file in the repo holds the key"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-28",
+  "verified": "2026-11-28",
+  "found": "2026-11-28",
+  "found_by": "Shoaib Khan",
+  "check": "taxonomy_feeds_built",
+  "commits": [
+   "9ba456d8"
+  ],
+  "issue": "An RSS feed with full post text for every tag and category in 19 languages (43,222 feeds), linked from each tag page; old translated tag feeds still requested",
+  "result": "Live: tag pages 200 with no RSS <link>, their /index.xml 404 (en and fr); /tags/, /categories/ and section feeds 404; home /index.xml 200 in every language checked"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-28",
+  "verified": "2026-11-28",
+  "found": "2026-11-28",
+  "found_by": "Shoaib Khan",
+  "check": "taxonomy_feeds_built",
+  "commits": [
+   "0f95b95d"
+  ],
+  "issue": "Section feed /groupdocs.cloud/index.xml (19 languages) copied the home feed: one main section",
+  "result": "Live: /groupdocs.cloud/index.xml and /de/groupdocs.cloud/index.xml 404, /index.xml 200"
  }
 ]

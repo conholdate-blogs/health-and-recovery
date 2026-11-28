@@ -350,7 +350,7 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
 - **Search Console, 16 months:** 398 junk URLs (219 tag names with `\`/`"`, 179 translated tag names; 113 clicks,
   6,087 impressions): **all 404** live. No redirects (RED-1; tag pages are noindex anyway). 18 more matches were real
   2017 newsletter posts with an en dash (`–`) in the slug: listed in the sitemap, not junk (the check skips them).
-- **Fix 9ba456d8 + 0f95b95d (section feed, a copy of the home feed), pushed 28 Nov, wait for deploy:** `config.yml` outputs `section: [HTML, RSS]`,
+- **Fix 9ba456d8 + 0f95b95d (section feed, a copy of the home feed), deployed and verified live 28 Nov:** `config.yml` outputs `section: [HTML, RSS]`,
   `taxonomy: [HTML]`, `term: [HTML]` (`section` was written as `[HTML, RSS]`, the default). Build diff (Hugo 0.101): 172,523 → 129,301 files, `index.xml` 43,260 → 38
   (home + section feeds), **0 pages added**, HTML changes only the removed `<link rel=alternate … rss>` on tag pages
   (2 post pages differ only in the minified form of an SVG icon path, same drawing). Deploy has
@@ -359,7 +359,7 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
 - **New checks (structure step):** `taxonomy_feeds_built` (config outputs) and `url_junk_served` (Search Console junk
   URLs, minus sitemap URLs, fetched live; 200 = finding). First run here: 0 / 0 (repo already has the fix; all junk
   404). A first version flagged the 18 newsletter posts: deleted from the store unpublished, check fixed.
-  Dry run on fixed blogs: blog.conholdate.com 22 translated tag pages answer 200 + feeds built (fix b4e1cf38, pushed 28 Nov);
+  Dry run on fixed blogs: blog.conholdate.com 22 translated tag pages answer 200 + feeds built (fix b4e1cf38, verified live 28 Nov);
   blog.conholdate.cloud flagged wrongly (its pre-0.73 `taxonomyTerm` config already had no tag feeds; check fixed).
 
 ## Health 83: what is left (27 Nov 2026, Shoaib Khan asked)

@@ -432,5 +432,19 @@
   "issue": "** and Markdown links in the front matter of 365 current translations of the 78 English posts with ** in the description (nl and id in all 78); the English descriptions wait",
   "verified": "2026-11-19",
   "result": "Live: de discount post, nl convert-pdf-to-excel-using-csharp, id render-visio descriptions without ** or Markdown links"
+ },
+ {
+  "host": "blog.conholdate.com",
+  "repo": "conholdate/conholdate-blog",
+  "fixed": "2026-11-28",
+  "verified": "2026-11-28",
+  "found": "2026-11-28",
+  "found_by": "Shoaib Khan",
+  "check": "taxonomy_feeds_built",
+  "commits": [
+   "b4e1cf38"
+  ],
+  "issue": "An RSS feed for every tag and category in 18 languages (43,783) and a section feed copying the home feed (18), all linked from their pages",
+  "result": "Live: tag pages 200 with no RSS <link>, their /index.xml 404 (en and fr); /tags/, /categories/ and section feeds 404; home /index.xml 200 in every language checked"
  }
 ]
