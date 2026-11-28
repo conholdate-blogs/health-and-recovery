@@ -39,7 +39,6 @@ Plan:
 | Header label "Home" in English on every language | site-wide | small config change (`params.label.text` per language) |
 | llms.txt without charset=utf-8 (garbled in browsers) | header | F22: ✓ verified live 12 Nov (32f3330 + f83b80c) |
 | llms.txt maintained by hand (goes stale as posts and translations land daily) | file | F20: ✓ verified live 12 Nov (generated at build); next: the other blogs |
-| Tag pages build RSS feeds (`taxonomy_feeds_built`, dry run 28 Nov) | 27 tags × 23 languages | playbook row 30 at its next round (small) |
 | Translations without cover image / `\"…\"` values (`post_cover_lost`, `post_front_matter_escaped`) | 62 + 7 files | F23 fix 69e4ab9: ✓ verified live 19 Nov |
 
 ## blog.conholdate.com (next blog; plan B1–B6 in its log)
@@ -47,7 +46,7 @@ Plan:
 | Issue | Count |
 |---|---|
 | Junk URLs Google knows still answer 200 (`url_junk_served`, dry run 28 Nov): translated tag names in ru/vi/zh (e.g. `/ru/tag/обрезка-png-онлайн/`, 525 impressions, 0 clicks); 3 more redirect, 1 escaped 404 | 22 |
-| Tag and category pages build RSS feeds (`taxonomy_feeds_built`, dry run 28 Nov; playbook row 30) | ~45,700 feeds |
+| Tag and category pages build RSS feeds (`taxonomy_feeds_built`, dry run 28 Nov; playbook row 30) | 43,783 feeds; fix 437f4dd5 local 28 Nov |
 | Stale translations: English rewritten by the Blog Optimization Agent (Mar 2026), translations kept old titles (`translation_stale`) | 3,638 |
 | Post descriptions / titles out of range | 5,070 / 1,802 |
 | Translations keeping English text (`post_text_untranslated`) | 198 |

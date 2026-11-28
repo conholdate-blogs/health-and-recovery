@@ -351,16 +351,16 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
   6,087 impressions): **all 404** live. No redirects (RED-1; tag pages are noindex anyway). 18 more matches were real
   2017 newsletter posts with an en dash (`–`) in the slug: listed in the sitemap, not junk (the check skips them).
 - **Fix, local commit 9ba456d8 (waits for push approval):** `config.yml` outputs `section: [HTML, RSS]`,
-  `taxonomy: [HTML]`, `term: [HTML]`. Build diff (Hugo 0.101): 172,523 → 129,301 files, `index.xml` 43,260 → 38
+  `taxonomy: [HTML]`, `term: [HTML]` (`section` was written as `[HTML, RSS]`, the default). Build diff (Hugo 0.101): 172,523 → 129,301 files, `index.xml` 43,260 → 38
   (home + section feeds), **0 pages added**, HTML changes only the removed `<link rel=alternate … rss>` on tag pages
   (2 post pages differ only in the minified form of an SVG icon path, same drawing). Deploy has
   `--maxDeletes -1`, so S3 drops the old feeds. Live check after deploy: `/tag/merge-pdf/index.xml` 404,
-  `/index.xml` and `/conversion/index.xml` 200, no rss `<link>` on a tag page.
+  `/index.xml` 200, no rss `<link>` on a tag page. Correction 28 Nov: there are no per-product feeds (`/conversion/index.xml` is 404); the only section feed `/groupdocs.cloud/index.xml` copies the home feed.
 - **New checks (structure step):** `taxonomy_feeds_built` (config outputs) and `url_junk_served` (Search Console junk
   URLs, minus sitemap URLs, fetched live; 200 = finding). First run here: 0 / 0 (repo already has the fix; all junk
   404). A first version flagged the 18 newsletter posts: deleted from the store unpublished, check fixed.
-  Dry run on fixed blogs: blog.conholdate.com 22 translated tag pages answer 200 + feeds built; blog.conholdate.cloud
-  feeds built (register).
+  Dry run on fixed blogs: blog.conholdate.com 22 translated tag pages answer 200 + feeds built (fix 437f4dd5);
+  blog.conholdate.cloud flagged wrongly (its pre-0.73 `taxonomyTerm` config already had no tag feeds; check fixed).
 
 ## Health 83: what is left (27 Nov 2026, Shoaib Khan asked)
 

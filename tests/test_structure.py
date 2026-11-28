@@ -130,6 +130,12 @@ def test_taxonomy_feeds_from_config_outputs(tmp_path):
     assert taxonomy_feeds(tmp_path)["term"] is False and taxonomy_feeds(tmp_path)["taxonomy"] is False
     (tmp_path / "config-production.yml").write_text("outputs:\n  term: [HTML, RSS]\n", encoding="utf-8")
     assert taxonomy_feeds(tmp_path) == {"config": "config-production.yml", "taxonomy": True, "term": True}
+    (tmp_path / "config-production.yml").unlink()
+    # pre-0.73 names (blog.conholdate.cloud, build-checked): taxonomy = term pages, taxonomyTerm = the /tags/ list
+    (tmp_path / "config.yml").write_text("outputs:\n  taxonomy: [HTML]\n  taxonomyTerm: [HTML]\n", encoding="utf-8")
+    assert taxonomy_feeds(tmp_path) == {"config": "config.yml", "taxonomy": False, "term": False}
+    (tmp_path / "config.yml").write_text("outputs:\n  taxonomyTerm: [HTML]\n", encoding="utf-8")
+    assert taxonomy_feeds(tmp_path) == {"config": "config.yml", "taxonomy": False, "term": True}
 
 
 def test_junk_kind():

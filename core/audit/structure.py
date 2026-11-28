@@ -160,8 +160,15 @@ def taxonomy_feeds(repo: Path) -> dict:
             outputs, source = {str(k).lower(): v for k, v in cfg["outputs"].items()}, name
             break
     out = {"config": source or "config.yml"}
+    outputs = dict(outputs or {})
+    if "taxonomyterm" in outputs:  # pre-0.73 names: Hugo reads the whole block the old way (blog.conholdate.cloud
+        # 28 Nov, build-checked): "taxonomy" = term pages, "taxonomyTerm" = the /tags/ list
+        legacy_term = outputs.pop("taxonomy", None)
+        outputs["taxonomy"] = outputs.pop("taxonomyterm")
+        if legacy_term is not None:
+            outputs.setdefault("term", legacy_term)
     for kind in FEED_KINDS:
-        value = (outputs or {}).get(kind)
+        value = outputs.get(kind)
         formats = [str(v).lower() for v in value] if isinstance(value, list) else None
         out[kind] = formats is None or "rss" in formats
     return out
