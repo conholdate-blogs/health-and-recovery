@@ -18,7 +18,7 @@ have improved our blogs"). Every figure has a date and a source; fixes have comm
 |---|---|---|---|---|---|---|
 | blog.conholdate.cloud | 11–19 Nov | 81 (27 Oct) → **100** | → 1 | → 2 | 11 | 23 |
 | blog.conholdate.com | 11–19 Nov (+ feeds 28 Nov) | 58 (13 Nov) → **92** (19 Nov) | 31 → 14 | 11,697 → 11,478 ¹ | 1,531 | 33 |
-| blog.groupdocs.cloud | 19–28 Nov | 54 (19 Nov) → **88** (28 Nov) | 39 → 15 | 9,950 → 7,410 | 2,857 | 45 |
+| blog.groupdocs.cloud | 19–28 Nov | 54 (19 Nov) → **93** (28 Nov) | 39 → 14 | 9,950 → 7,353 | 2,914 | 45 |
 | blog.aspose.com | 3 + 7 Nov (2 outage fixes) | 50 → 69 (11 Nov) | 24 → 23 | — | 47 | 2 |
 | blog.aspose.cloud | next (scan 19 Nov) | 49 | 44 | 14,780 | — | — |
 | blog.groupdocs.com | monitor only | 50 | 39 | 19,141 | — | — |

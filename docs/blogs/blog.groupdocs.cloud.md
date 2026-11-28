@@ -342,6 +342,18 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
   ~98). 61 superseded run files pruned (page unchanged apart from the new history entry). Not deployed yet: the 36
   files go live with the next deploy (repo checks read the repo).
 
+## csv-json retranslated: broken links gone (28 Nov 2026, afternoon)
+
+- Translation agent 08:36 (pushed after the morning scan pulled): 17cd3cf0 csv-json (18), 12de5e7a combine-pdf (3),
+  2d9c2719 display-word-in-php (15): all 36 clean (code identical to the English, no markers, no key); live with
+  the feed deploy.
+- Quick rescan (link run 59, repo run 60), snapshot 2026-11-28-3 (live page archived first as 2026-11-28-2):
+  health **88 → 93**, issue types 15 → 14 (`link_broken` resolved), open items 7,410 → 7,353.
+- Left: 5.0 points = `link_differs_from_original`, one line: the related-article list of
+  add-watermark-to-word-in-java in all 18 translations still names the C# watermark post (English changed it to
+  "Convert Text to Image in Java" later). Valid links, low value; the 25% minimum share of link findings makes it
+  weigh 5. Rest ~2.4 = lengths, H1, typo (improvable).
+
 ## Tag feeds and junk URLs (28 Nov 2026; Shoaib Khan: "cover such dumb urls … from earlier translations")
 
 - **Shoaib Khan's example** `/ar/tag/استخراج-النص-من-ملف-xml/index.xml`: a real URL once, built by Hugo's default

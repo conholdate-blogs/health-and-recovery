@@ -208,5 +208,17 @@
     "date": "2026-11-28",
     "label": "Re-run: retranslations on the fixed translation agent (code blocks clean)",
     "runs": "discovery run 14, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 52, link check run 57, repo file check run 58"
+  },
+  {
+    "file": "2026-11-28-2.html",
+    "date": "2026-11-28",
+    "label": "Live page before the csv-json re-run (agent-fixes: feeds off)",
+    "runs": "discovery run 14, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 52, link check run 57, repo file check run 58"
+  },
+  {
+    "file": "2026-11-28-3.html",
+    "date": "2026-11-28 (3)",
+    "label": "Re-run: csv-json retranslated (broken links gone)",
+    "runs": "discovery run 15, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 52, link check run 59, repo file check run 60"
   }
 ]

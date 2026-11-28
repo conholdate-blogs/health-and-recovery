@@ -704,14 +704,14 @@
     "effort": "M",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
     "last_seen_run": "link-audit-run57",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "link-audit-run59",
+    "resolved_at": "2026-11-28T12:10:25+00:00",
     "check": "link_broken",
     "notes": []
   },
@@ -1267,7 +1267,6 @@
         "https://blog.groupdocs.cloud/it/conversion/convert-word-to-tiff-file-in-python/",
         "https://blog.groupdocs.cloud/it/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
         "https://blog.groupdocs.cloud/ja/annotation/extract-or-remove-annotations-from-word-files-using-python/",
-        "https://blog.groupdocs.cloud/ja/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
         "https://blog.groupdocs.cloud/ja/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/",
         "https://blog.groupdocs.cloud/ja/conversion/convert-html-to-pdf-in-csharp-using-rest-api/",
         "https://blog.groupdocs.cloud/ja/conversion/convert-svg-to-jpg-and-jpg-to-svg-in-python/",
@@ -1346,7 +1345,7 @@
         "https://blog.groupdocs.cloud/zh/conversion/convert-word-to-tiff-file-in-python/",
         "https://blog.groupdocs.cloud/zh/parser/java-dom-parser-extract-text-from-xml-documents-using-java/"
       ],
-      "observed": "209 links on 132 pages (154 distinct targets); by language: es 13, ja 12, de 11, fa 11, fr 11, id 11, it 11, ko 11, ...; 0 written by translation commits",
+      "observed": "208 links on 131 pages (153 distinct targets); by language: es 13, de 11, fa 11, fr 11, id 11, it 11, ja 11, ko 11, ...; 0 written by translation commits",
       "expected": "Every internal link points at the page's current URL, not one that redirects",
       "locations": [
         {
@@ -1560,21 +1559,6 @@
         },
         {
           "role": "link",
-          "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
-          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ja.md",
-          "line": 331,
-          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "history": {
-            "english_line": "2026-11-23",
-            "english_commit": "1b509e71d 2026-11-23: English fixes in 8 posts queued for translation: typos, a sentence copied from a PDF post, anchor ids from other posts, broken category link",
-            "translated": "2023-06-12",
-            "english_newer": true
-          }
-        },
-        {
-          "role": "link",
           "url": "https://blog.groupdocs.cloud/2021/12/21/extract-data-from-pdf-using-rest-api-in-node-js/",
           "page": "https://blog.groupdocs.cloud/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
           "file": "content/GroupDocs.Cloud/parser/2023-06-17-java-dom-parser-extract-text-from-xml-documents-using-java/index.md",
@@ -1730,16 +1714,16 @@
         }
       ]
     },
-    "affected_pages": 132,
+    "affected_pages": 131,
     "impact": {
       "clicks_28d": 5,
-      "impressions_28d": 1201,
+      "impressions_28d": 1199,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 21,
       "past_impressions": 2044,
       "lost_clicks": 16,
-      "lost_impressions": 843,
+      "lost_impressions": 845,
       "past_window": [
         "2026-04-30",
         "2026-05-27"
@@ -1759,7 +1743,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-06",
     "first_seen_run": "link-audit-run16",
-    "last_seen_run": "link-audit-run57",
+    "last_seen_run": "link-audit-run59",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_redirected",
@@ -2447,7 +2431,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run60",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -3206,7 +3190,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "link-audit-run23",
-    "last_seen_run": "link-audit-run57",
+    "last_seen_run": "link-audit-run59",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_differs_from_original",
@@ -3298,7 +3282,7 @@
         "https://blog.groupdocs.cloud/ko/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/",
         "https://blog.groupdocs.cloud/pl/conversion/convert-excel-spreadsheets-to-pdf-using-ruby/"
       ],
-      "observed": "72 entries or files; English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using': 18, English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi': 18, English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p': 18, English rewritten 2026-11-23 after the translation (2024-06-28); seoTitle: 'ZIP to JPG | Transform ZIP files to JPEG Images' -> 'ZIP to JPG Online Converter – Fast, Free, Secure'; description: 'Convert ZIP to JPG online quickly for flawless, pi' -> 'Convert ZIP to JPG online instantly for flawless, ': 18",
+      "observed": "54 entries or files; English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using': 18, English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi': 18, English rewritten 2026-11-23 after the translation (2024-06-28); seoTitle: 'ZIP to JPG | Transform ZIP files to JPEG Images' -> 'ZIP to JPG Online Converter – Fast, Free, Secure'; description: 'Convert ZIP to JPG online quickly for flawless, pi' -> 'Convert ZIP to JPG online instantly for flawless, ': 18",
       "expected": "A translation is updated whenever the English title or description changes",
       "locations": [
         {
@@ -3627,43 +3611,43 @@
         },
         {
           "role": "file",
-          "url": "https://blog.groupdocs.cloud/ar/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ar.md",
+          "url": "https://blog.groupdocs.cloud/ar/conversion/zip-to-jpg-online/",
+          "file": "content/GroupDocs.Cloud/conversion/2023-08-28-zip-to-jpg-online/index.ar.md",
           "line": 1,
-          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
-          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
+          "note": "English rewritten 2026-11-23 after the translation (2024-06-28); seoTitle: 'ZIP to JPG | Transform ZIP files to JPEG Images' -> 'ZIP to JPG Online Converter – Fast, Free, Secure'; description: 'Convert ZIP to JPG online quickly for flawless, pi' -> 'Convert ZIP to JPG online instantly for flawless, '",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2023-08-28-zip-to-jpg-online/index.md",
           "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
-          "url": "https://blog.groupdocs.cloud/de/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.de.md",
+          "url": "https://blog.groupdocs.cloud/de/conversion/zip-to-jpg-online/",
+          "file": "content/GroupDocs.Cloud/conversion/2023-08-28-zip-to-jpg-online/index.de.md",
           "line": 1,
-          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
-          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
+          "note": "English rewritten 2026-11-23 after the translation (2024-06-28); seoTitle: 'ZIP to JPG | Transform ZIP files to JPEG Images' -> 'ZIP to JPG Online Converter – Fast, Free, Secure'; description: 'Convert ZIP to JPG online quickly for flawless, pi' -> 'Convert ZIP to JPG online instantly for flawless, '",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2023-08-28-zip-to-jpg-online/index.md",
           "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
-          "url": "https://blog.groupdocs.cloud/es/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.es.md",
+          "url": "https://blog.groupdocs.cloud/es/conversion/zip-to-jpg-online/",
+          "file": "content/GroupDocs.Cloud/conversion/2023-08-28-zip-to-jpg-online/index.es.md",
           "line": 1,
-          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
-          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
+          "note": "English rewritten 2026-11-23 after the translation (2024-06-28); seoTitle: 'ZIP to JPG | Transform ZIP files to JPEG Images' -> 'ZIP to JPG Online Converter – Fast, Free, Secure'; description: 'Convert ZIP to JPG online quickly for flawless, pi' -> 'Convert ZIP to JPG online instantly for flawless, '",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2023-08-28-zip-to-jpg-online/index.md",
           "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
-          "url": "https://blog.groupdocs.cloud/fa/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.fa.md",
+          "url": "https://blog.groupdocs.cloud/fa/conversion/zip-to-jpg-online/",
+          "file": "content/GroupDocs.Cloud/conversion/2023-08-28-zip-to-jpg-online/index.fa.md",
           "line": 1,
-          "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
-          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
+          "note": "English rewritten 2026-11-23 after the translation (2024-06-28); seoTitle: 'ZIP to JPG | Transform ZIP files to JPEG Images' -> 'ZIP to JPG Online Converter – Fast, Free, Secure'; description: 'Convert ZIP to JPG online quickly for flawless, pi' -> 'Convert ZIP to JPG online instantly for flawless, '",
+          "fix": "re-translate from content/GroupDocs.Cloud/conversion/2023-08-28-zip-to-jpg-online/index.md",
           "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         }
       ]
     },
-    "affected_pages": 72,
+    "affected_pages": 54,
     "impact": {
       "clicks_28d": 1,
       "impressions_28d": 3,
@@ -3692,7 +3676,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run60",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -4115,7 +4099,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run60",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -5034,7 +5018,7 @@
         "https://blog.groupdocs.cloud/ru/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/",
         "https://blog.groupdocs.cloud/th/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/"
       ],
-      "observed": "2,194 entries or files; too long (width 81): 'Vergleichen Sie PDF Dateien mithilfe der REST-API in Node.js | PDF-Vergleichs-SD': 2, too long (width 76): 'Comparar archivos PDF usando REST API en Node.js | SDK de comparación de PDF': 2, too long (width 86): \"Comparez les fichiers PDF à l'aide de l'API REST dans Node.js | SDK de comparais\": 2, too long (width 74): 'Bandingkan File PDF menggunakan REST API di Node.js | SDK Perbandingan PDF': 2",
+      "observed": "2,183 entries or files; too long (width 81): 'Vergleichen Sie PDF Dateien mithilfe der REST-API in Node.js | PDF-Vergleichs-SD': 2, too long (width 76): 'Comparar archivos PDF usando REST API en Node.js | SDK de comparación de PDF': 2, too long (width 86): \"Comparez les fichiers PDF à l'aide de l'API REST dans Node.js | SDK de comparais\": 2, too long (width 74): 'Bandingkan File PDF menggunakan REST API di Node.js | SDK Perbandingan PDF': 2",
       "expected": "Every post's search title (seoTitle, else title) is 10-70 characters wide (CJK count double)",
       "locations": [
         {
@@ -5399,7 +5383,7 @@
         }
       ]
     },
-    "affected_pages": 2194,
+    "affected_pages": 2183,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -5428,7 +5412,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run60",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -5457,7 +5441,7 @@
         "https://blog.groupdocs.cloud/fr/annotation/integrate-groupdocs-annotation-for-net-into-your-getsimple-website/",
         "https://blog.groupdocs.cloud/it/annotation/integrate-groupdocs-annotation-for-net-into-your-getsimple-website/"
       ],
-      "observed": "3,637 entries or files; too long (width 175): 'GroupDocs bietet eine .NET-Bibliothek mit flexibler API, die zum Erstellen recht': 5, too long (width 182): 'GroupDocs ofrece una biblioteca .NET con API flexible que se puede usar para cre': 5, too long (width 220): 'GroupDocs propose une bibliothèque .NET avec une API flexible qui peut être util': 5, too long (width 201): 'GroupDocs menawarkan pustaka .NET dengan API fleksibel yang dapat digunakan untu': 5",
+      "observed": "3,627 entries or files; too long (width 175): 'GroupDocs bietet eine .NET-Bibliothek mit flexibler API, die zum Erstellen recht': 5, too long (width 182): 'GroupDocs ofrece una biblioteca .NET con API flexible que se puede usar para cre': 5, too long (width 220): 'GroupDocs propose une bibliothèque .NET avec une API flexible qui peut être util': 5, too long (width 201): 'GroupDocs menawarkan pustaka .NET dengan API fleksibel yang dapat digunakan untu': 5",
       "expected": "Every post's description (description, else summary) is 50-170 characters wide",
       "locations": [
         {
@@ -5822,7 +5806,7 @@
         }
       ]
     },
-    "affected_pages": 3637,
+    "affected_pages": 3627,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -5851,7 +5835,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run60",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -6274,7 +6258,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run60",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_h1",
@@ -6949,7 +6933,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run58",
+    "last_seen_run": "repo-audit-run60",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_markup",

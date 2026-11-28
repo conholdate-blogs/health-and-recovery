@@ -1,7 +1,7 @@
 {
   "tenant": "groupdocs.cloud",
   "auditor": "link-audit",
-  "run_id": 57,
+  "run_id": 59,
   "params": {
     "hosts": [
       "blog.groupdocs.cloud"
@@ -9,23 +9,22 @@
     "max_live": 5000,
     "blame": true
   },
-  "requests": 230,
-  "duration_s": 279.2,
+  "requests": 211,
+  "duration_s": 254.2,
   "stopped_early": false,
   "summary": {
     "blog.groupdocs.cloud": {
       "repo": {
-        "commit": "fbaec3b8",
-        "date": "2026-11-27",
+        "commit": "2d9c2719",
+        "date": "2026-11-28",
         "stale": false
       },
       "posts": 11058,
       "links": 43803,
-      "live_checked": 229,
+      "live_checked": 210,
       "not_checked": 0,
       "by_check": {
-        "link_redirected": 209,
-        "link_broken": 17,
+        "link_redirected": 208,
         "link_differs_from_original": 18
       },
       "by_translation_commit": 0,
@@ -37,81 +36,6 @@
   "findings": [
     {
       "id": "crawl-0001",
-      "tenant": "groupdocs.cloud",
-      "subdomain": "blog.groupdocs.cloud",
-      "template": "post",
-      "dimension": "crawl",
-      "check": "link_broken",
-      "type": "broken",
-      "title": "Posts link to blog pages that do not exist",
-      "evidence": {
-        "urls": [
-          "https://blog.groupdocs.cloud/ar/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/de/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/es/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/fa/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/fr/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/id/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/it/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/ko/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/pl/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/pt/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/ru/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/th/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/tr/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/uk/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/vi/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/zh-hant/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "https://blog.groupdocs.cloud/zh/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/"
-        ],
-        "observed": "17 links on 17 pages (17 distinct targets); by language: ar 1, de 1, es 1, fa 1, fr 1, id 1, it 1, ko 1, ...; 0 written by translation commits",
-        "expected": "Every internal link points at a live page",
-        "locations": [
-          {
-            "role": "link",
-            "url": "https://blog.groupdocs.cloud/ar/category/conversion/",
-            "page": "https://blog.groupdocs.cloud/ar/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-            "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ar.md",
-            "line": 331,
-            "fix": null,
-            "commit": "90a4f407 2023-06-12: Added translations.",
-            "copies": 16,
-            "copy_langs": [
-              "de",
-              "es",
-              "fa",
-              "fr",
-              "id",
-              "it",
-              "ko",
-              "pl",
-              "pt",
-              "ru",
-              "th",
-              "tr",
-              "uk",
-              "vi",
-              "zh",
-              "zh-hant"
-            ],
-            "origin": "translations"
-          }
-        ]
-      },
-      "affected_pages": 17,
-      "impact": {
-        "clicks_28d": 0,
-        "impressions_28d": 0,
-        "score": 0
-      },
-      "effort": "M",
-      "fix_tier": 1,
-      "fix_channel": "git-pr",
-      "status": "open",
-      "detected_at": "2026-11-28"
-    },
-    {
-      "id": "crawl-0002",
       "tenant": "groupdocs.cloud",
       "subdomain": "blog.groupdocs.cloud",
       "template": "post",
@@ -175,7 +99,6 @@
           "https://blog.groupdocs.cloud/it/conversion/convert-word-to-tiff-file-in-python/",
           "https://blog.groupdocs.cloud/it/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
           "https://blog.groupdocs.cloud/ja/annotation/extract-or-remove-annotations-from-word-files-using-python/",
-          "https://blog.groupdocs.cloud/ja/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
           "https://blog.groupdocs.cloud/ja/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/",
           "https://blog.groupdocs.cloud/ja/conversion/convert-html-to-pdf-in-csharp-using-rest-api/",
           "https://blog.groupdocs.cloud/ja/conversion/convert-svg-to-jpg-and-jpg-to-svg-in-python/",
@@ -254,7 +177,7 @@
           "https://blog.groupdocs.cloud/zh/conversion/convert-word-to-tiff-file-in-python/",
           "https://blog.groupdocs.cloud/zh/parser/java-dom-parser-extract-text-from-xml-documents-using-java/"
         ],
-        "observed": "209 links on 132 pages (154 distinct targets); by language: es 13, ja 12, de 11, fa 11, fr 11, id 11, it 11, ko 11, ...; 0 written by translation commits",
+        "observed": "208 links on 131 pages (153 distinct targets); by language: es 13, de 11, fa 11, fr 11, id 11, it 11, ja 11, ko 11, ...; 0 written by translation commits",
         "expected": "Every internal link points at the page's current URL, not one that redirects",
         "locations": [
           {
@@ -468,21 +391,6 @@
           },
           {
             "role": "link",
-            "url": "https://blog.groupdocs.cloud/ja/category/conversion/",
-            "page": "https://blog.groupdocs.cloud/ja/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-            "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ja.md",
-            "line": 331,
-            "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
-            "commit": "90a4f407 2023-06-12: Added translations.",
-            "history": {
-              "english_line": "2026-11-23",
-              "english_commit": "1b509e71d 2026-11-23: English fixes in 8 posts queued for translation: typos, a sentence copied from a PDF post, anchor ids from other posts, broken category link",
-              "translated": "2023-06-12",
-              "english_newer": true
-            }
-          },
-          {
-            "role": "link",
             "url": "https://blog.groupdocs.cloud/2021/12/21/extract-data-from-pdf-using-rest-api-in-node-js/",
             "page": "https://blog.groupdocs.cloud/parser/java-dom-parser-extract-text-from-xml-documents-using-java/",
             "file": "content/GroupDocs.Cloud/parser/2023-06-17-java-dom-parser-extract-text-from-xml-documents-using-java/index.md",
@@ -638,7 +546,7 @@
           }
         ]
       },
-      "affected_pages": 132,
+      "affected_pages": 131,
       "impact": {
         "clicks_28d": 0,
         "impressions_28d": 0,
@@ -738,13 +646,13 @@
     "blog.groupdocs.cloud": {
       "repo": {
         "path": "/Users/Apple/Work/Aspose/GitHub/blog.groupdocs.cloud-PROD/groupdocs-cloud-blog",
-        "commit": "fbaec3b8",
-        "date": "2026-11-27",
-        "subject": "Retranslate articles for: \"Combine PDF Files with PDF Merger | Merge PDFs Efficiently in C# .NET \" - (15 files)",
-        "age_days": 0.2,
+        "commit": "2d9c2719",
+        "date": "2026-11-28",
+        "subject": "Retranslate articles for: \"Display Word Document in HTML Page using PHP\" - (15 files)",
+        "age_days": 0.1,
         "stale": false
       },
-      "discovery_run": 14,
+      "discovery_run": 15,
       "sitemap_paths": 11115,
       "posts": 11058,
       "posts_without_url": [
@@ -788,7 +696,7 @@
         "content/GroupDocs.Cloud/signature/2018-01-22-releasing-next-generation-groupdocs.signature-for-cloud-api/index.zh.md"
       ],
       "links": 43803,
-      "live_checked": 229,
+      "live_checked": 210,
       "not_checked": 0,
       "issues": [
         {
@@ -1916,228 +1824,6 @@
           "link": "https://blog.groupdocs.cloud/zh/conversion/convert-excel-xlsx-or-xls-to-json-file-in-java-using-rest-api/",
           "fix": "https://blog.groupdocs.cloud/zh/conversion/convert-excel-file-to-json-file-in-java-using-rest-api/",
           "note": "old URL; /conversion/convert-excel-xlsx-or-xls-to-json-file-in-java-using-rest-api/ redirects to /conversion/convert-excel-file-to-json-file-in-java-using-rest-api/",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "ar",
-          "page": "https://blog.groupdocs.cloud/ar/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ar.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/ar/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "de",
-          "page": "https://blog.groupdocs.cloud/de/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.de.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/de/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "es",
-          "page": "https://blog.groupdocs.cloud/es/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.es.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/es/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "fa",
-          "page": "https://blog.groupdocs.cloud/fa/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.fa.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/fa/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "fr",
-          "page": "https://blog.groupdocs.cloud/fr/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.fr.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/fr/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "id",
-          "page": "https://blog.groupdocs.cloud/id/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.id.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/id/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "it",
-          "page": "https://blog.groupdocs.cloud/it/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.it.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/it/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_redirected",
-          "lang": "ja",
-          "page": "https://blog.groupdocs.cloud/ja/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ja.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/ja/category/conversion/",
-          "fix": "https://blog.groupdocs.cloud/ja/categories/groupdocs.conversion-cloud-product-family/",
-          "note": "redirects to /ja/categories/groupdocs.conversion-cloud-product-family/",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2026-11-23",
-            "english_commit": "1b509e71d 2026-11-23: English fixes in 8 posts queued for translation: typos, a sentence copied from a PDF post, anchor ids from other posts, broken category link",
-            "translated": "2023-06-12",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_broken",
-          "lang": "ko",
-          "page": "https://blog.groupdocs.cloud/ko/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ko.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/ko/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "pl",
-          "page": "https://blog.groupdocs.cloud/pl/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.pl.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/pl/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "pt",
-          "page": "https://blog.groupdocs.cloud/pt/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.pt.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/pt/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "ru",
-          "page": "https://blog.groupdocs.cloud/ru/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.ru.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/ru/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "th",
-          "page": "https://blog.groupdocs.cloud/th/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.th.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/th/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "tr",
-          "page": "https://blog.groupdocs.cloud/tr/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.tr.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/tr/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "uk",
-          "page": "https://blog.groupdocs.cloud/uk/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.uk.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/uk/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "vi",
-          "page": "https://blog.groupdocs.cloud/vi/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.vi.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/vi/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "zh-hant",
-          "page": "https://blog.groupdocs.cloud/zh-hant/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.zh-hant.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/zh-hant/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
-          "commit": "90a4f407 2023-06-12: Added translations.",
-          "by_translation_commit": false
-        },
-        {
-          "check": "link_broken",
-          "lang": "zh",
-          "page": "https://blog.groupdocs.cloud/zh/conversion/convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/",
-          "file": "content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.zh.md",
-          "line": 331,
-          "link": "https://blog.groupdocs.cloud/zh/category/conversion/",
-          "fix": null,
-          "note": "page does not exist",
           "commit": "90a4f407 2023-06-12: Added translations.",
           "by_translation_commit": false
         },
