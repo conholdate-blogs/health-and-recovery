@@ -1,5 +1,9 @@
 # Translation agent: two bugs found on blog.groupdocs.cloud (27 Nov 2026)
 
+> **Status 28 Nov 2026: both fixed and verified.** Bug 1: a22f921, bug 2: 6a9002c. The retranslations cb0be8db
+> (csv-to-jpg, 18), 08b4d91f (json-to-html, 3) and fbaec3b8 (combine-pdf, 15) match the English code byte for byte,
+> with no conflict markers; the Health and Recovery Agent's rescan resolved `code_fence_misplaced`.
+
 For: the developer of `conholdate/blog-translation-agent`.
 Found by the Health and Recovery Agent while fixing blog.groupdocs.cloud. Both showed up in the same run, commit
 `ec990f7b` "Retranslate articles for: CSV to JPG Conversion in Python: Quick Guide for Developers" (27 Nov 2026, 09:16).

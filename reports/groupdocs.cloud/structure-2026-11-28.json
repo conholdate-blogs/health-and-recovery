@@ -1,9 +1,9 @@
 {
  "tenant": "groupdocs.cloud",
- "date": "2026-11-27",
+ "date": "2026-11-28",
  "search_window": [
-  "2026-10-28",
-  "2026-11-24"
+  "2026-10-29",
+  "2026-11-25"
  ],
  "hosts": {
   "blog.groupdocs.cloud": {
@@ -63,17 +63,17 @@
    "tag_listing_pages": 43016,
    "pages_beyond_cap": 171,
    "cap": 50,
-   "discovery_run": 13,
+   "discovery_run": 14,
    "sitemap_urls": 11115,
    "sitemap_tag_urls": 0,
    "search": {
-    "clicks": 856,
+    "clicks": 861,
     "tag_clicks": 25,
-    "tag_impressions": 2475,
-    "tag_pages_with_clicks": 18,
+    "tag_impressions": 2493,
+    "tag_pages_with_clicks": 17,
     "paged_clicks": 0,
-    "paged_impressions": 52,
-    "paged_pages_seen": 6,
+    "paged_impressions": 51,
+    "paged_pages_seen": 4,
     "deep_paged_clicks": 0
    },
    "tag_robots": {

@@ -327,6 +327,21 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
 - csv-to-jpg (18 translations) and json-to-html (3) keep agent-split code blocks (and translated code comments) until the agent fix and a retranslation; a rebuild from the English is not safe because the comments were translated.
 - Score after these: ~87 (both fixes in the 0.4-point "post files" group); 10 points left = 17 broken links in the queued csv-json translations (→ ~97 after its retranslation).
 
+## Retranslation on the fixed agent (28 Nov 2026; Shoaib Khan: "urgent ones are translated")
+
+- **Translation agent fixed (27 Nov):** a22f921 "Keep code blocks out of the LLM and check them before writing" (bug 1)
+  and 6a9002c "Sync translations with reset and write-back; never commit conflict markers" (bug 2); then ad8c191
+  (queue_add lists all languages, queue_edit.py), a2578f1 (open items note).
+- **Retranslations (27 Nov 22:59, run on the fixed agent):** cb0be8db csv-to-jpg (18 files), 08b4d91f json-to-html
+  (fa, id, zh-hant), fbaec3b8 combine-pdf (15). Checked file by file against the English: identical fence lines and
+  identical code in every block, no conflict markers, no key (the 2 ISSUE rows were done).
+- **Quick rescan 28 Nov (link run 57, repo run 58), snapshot 2026-11-28:** health **87 → 88**, issue types 16 → 15
+  (`code_fence_misplaced` resolved), open items 7,550 → 7,410.
+- **Left:** `link_broken` 17 = convert-csv-to-json-or-json-to-csv-programmatically-in-csharp, one link in each of 17
+  translations (still queued, not among the urgent ones); its retranslation closes the finding (~10 points, health
+  ~98). 61 superseded run files pruned (page unchanged apart from the new history entry). Not deployed yet: the 36
+  files go live with the next deploy (repo checks read the repo).
+
 ## Health 83: what is left (27 Nov 2026, Shoaib Khan asked)
 
 Points lost (scorecard on the open findings): `link_broken` 10.0 (only 17 links, all in the queued csv-json translations,

@@ -687,18 +687,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 2,
-      "past_impressions": 37,
+      "past_impressions": 41,
       "lost_clicks": 2,
-      "lost_impressions": 28,
+      "lost_impressions": 32,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "lost",
       "score": 4,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "M",
@@ -709,7 +709,7 @@
     "superseded_by": null,
     "detected_at": "2026-10-22",
     "first_seen_run": "link-audit-run1",
-    "last_seen_run": "link-audit-run55",
+    "last_seen_run": "link-audit-run57",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_broken",
@@ -1733,22 +1733,22 @@
     "affected_pages": 132,
     "impact": {
       "clicks_28d": 5,
-      "impressions_28d": 1227,
+      "impressions_28d": 1201,
       "source": "gsc-pages",
       "share": null,
-      "past_clicks": 22,
-      "past_impressions": 2010,
-      "lost_clicks": 17,
-      "lost_impressions": 783,
+      "past_clicks": 21,
+      "past_impressions": 2044,
+      "lost_clicks": 16,
+      "lost_impressions": 843,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "at stake",
       "score": 5,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -1759,7 +1759,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-06",
     "first_seen_run": "link-audit-run16",
-    "last_seen_run": "link-audit-run55",
+    "last_seen_run": "link-audit-run57",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_redirected",
@@ -2425,18 +2425,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 274,
+      "past_impressions": 284,
       "lost_clicks": 0,
-      "lost_impressions": 264,
+      "lost_impressions": 274,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -2447,7 +2447,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run56",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "slash_redirect_temporary",
@@ -3180,22 +3180,22 @@
     "affected_pages": 18,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 14,
+      "impressions_28d": 13,
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 17,
+      "past_impressions": 16,
       "lost_clicks": 0,
       "lost_impressions": 3,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "at stake",
       "score": 1,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -3206,7 +3206,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "link-audit-run23",
-    "last_seen_run": "link-audit-run55",
+    "last_seen_run": "link-audit-run57",
     "resolved_run": null,
     "resolved_at": null,
     "check": "link_differs_from_original",
@@ -3308,7 +3308,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3317,7 +3317,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3326,7 +3326,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3335,7 +3335,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3344,7 +3344,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3353,7 +3353,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3362,7 +3362,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3371,7 +3371,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3380,7 +3380,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3389,7 +3389,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3398,7 +3398,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3407,7 +3407,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3416,7 +3416,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3425,7 +3425,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3434,7 +3434,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3443,7 +3443,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3452,7 +3452,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3461,7 +3461,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-02 after the translation (2024-06-28); seoTitle: 'Convert Excel Spreadsheets to PDF using Ruby' -> 'Convert Excel to PDF with Ruby and GroupDocs API'; description: 'You can easily convert Excel XLSX files to PDF wit' -> 'Learn how to convert Excel XLSX files to PDF using'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-05-24-convert-excel-spreadsheets-to-pdf-using-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3470,7 +3470,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3479,7 +3479,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3488,7 +3488,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3497,7 +3497,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3506,7 +3506,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3515,7 +3515,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3524,7 +3524,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3533,7 +3533,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3542,7 +3542,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3551,7 +3551,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3560,7 +3560,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3569,7 +3569,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3578,7 +3578,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3587,7 +3587,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3596,7 +3596,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3605,7 +3605,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3614,7 +3614,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3623,7 +3623,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); seoTitle: 'How to Convert MSG files to PDF in Ruby' -> 'Convert MSG Files to PDF in Ruby – Step-by-Step Gu'; description: 'Convert Outlook emails and OfficeLogic Groupware M' -> 'Learn how to convert Outlook MSG emails to PDF usi'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-06-29-how-to-convert-msg-files-to-pdf-in-ruby/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3632,7 +3632,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3641,7 +3641,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3650,7 +3650,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3659,7 +3659,7 @@
           "line": 1,
           "note": "English rewritten 2026-11-05 after the translation (2024-06-28); description: 'Convert JSON array to CSV table using C# REST API.' -> 'Learn how to convert CSV to JSON and JSON to CSV p'",
           "fix": "re-translate from content/GroupDocs.Cloud/conversion/2022-11-05-convert-csv-to-json-or-json-to-csv-programmatically-in-csharp/index.md",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         }
       ]
     },
@@ -3674,14 +3674,14 @@
       "lost_clicks": 0,
       "lost_impressions": 1,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "at stake",
       "score": 1,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "M",
@@ -3692,7 +3692,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run56",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "translation_stale",
@@ -3731,7 +3731,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Extract or Remove Annotations from PDF using REST API in Nod'; title in English: 'Extract or Remove Annotations from PDF using REST API in Nod'; description in English: 'Programmatically Extract or Remove Annotations from PDF usin'",
           "fix": "translate seoTitle, title, description",
-          "commit": "b9868988c 2026-11-27 API client id and secret replaced with placeholders (1,496 files, 84 posts)"
+          "commit": "b9868988 2026-11-27 API client id and secret replaced with placeholders (1,496 files, 84 posts)"
         },
         {
           "role": "file",
@@ -3740,7 +3740,7 @@
           "line": 1,
           "note": "seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release'",
           "fix": "translate seoTitle",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3749,7 +3749,7 @@
           "line": 1,
           "note": "seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release'",
           "fix": "translate seoTitle",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3758,7 +3758,7 @@
           "line": 1,
           "note": "seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release'",
           "fix": "translate seoTitle",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3767,7 +3767,7 @@
           "line": 1,
           "note": "seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release'",
           "fix": "translate seoTitle",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3776,7 +3776,7 @@
           "line": 1,
           "note": "seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release'",
           "fix": "translate seoTitle",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3785,7 +3785,7 @@
           "line": 1,
           "note": "seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release'",
           "fix": "translate seoTitle",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3794,7 +3794,7 @@
           "line": 1,
           "note": "seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release'",
           "fix": "translate seoTitle",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3803,7 +3803,7 @@
           "line": 1,
           "note": "seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release'",
           "fix": "translate seoTitle",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3812,7 +3812,7 @@
           "line": 1,
           "note": "seoTitle in English: 'annoucing-groupdcs.comparison-cloud-API-first-release'",
           "fix": "translate seoTitle",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -3821,7 +3821,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Compare Excel Files using C# .NET REST API'",
           "fix": "translate seoTitle",
-          "commit": "e581ca808 2026-11-27 Cover image restored in current translations (220 files)"
+          "commit": "e581ca80 2026-11-27 Cover image restored in current translations (220 files)"
         },
         {
           "role": "file",
@@ -3830,7 +3830,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Convert Excel Spreadsheets to PDF in Node.js | XLS, XLSX to '; title in English: 'Convert Excel Spreadsheets to PDF using Node.js'; description in English: 'Programmatically Convert Excel Spreadsheets to PDF files usi'",
           "fix": "translate seoTitle, title, description",
-          "commit": "b9868988c 2026-11-27 API client id and secret replaced with placeholders (1,496 files, 84 posts)"
+          "commit": "b9868988 2026-11-27 API client id and secret replaced with placeholders (1,496 files, 84 posts)"
         },
         {
           "role": "file",
@@ -3839,7 +3839,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Java: Convert MPP to HTML | Develop MPP to HTML to Converter'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3848,7 +3848,7 @@
           "line": 1,
           "note": "title in English: 'Convert MPP to HTML Online using Java – MPP to HTML Converte'",
           "fix": "translate title",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3857,7 +3857,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Convert PDF to HTML | PDF to Web Page | PDF to HTML in Java'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3866,7 +3866,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Convert PDF to HTML | PDF to Web Page | PDF to HTML in Java'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3875,7 +3875,7 @@
           "line": 1,
           "note": "title in English: 'Convert HTML to PowerPoint in Java - Embed Webpage into PPT'",
           "fix": "translate title",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3884,7 +3884,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Online HTML to Word Document | Convert HTML to DOC online'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3893,7 +3893,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Online HTML to Word Document | Convert HTML to DOC online'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3902,7 +3902,7 @@
           "line": 1,
           "note": "title in English: 'Convert HTML to Word in Java using REST API'",
           "fix": "translate title",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3911,7 +3911,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3920,7 +3920,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3929,7 +3929,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3938,7 +3938,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3947,7 +3947,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3956,7 +3956,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3965,7 +3965,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3974,7 +3974,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3983,7 +3983,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -3992,7 +3992,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -4001,7 +4001,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -4010,7 +4010,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Word to HTML | DOC to HTML Online | DOCX to HTML in Node.js'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -4019,7 +4019,7 @@
           "line": 1,
           "note": "seoTitle in English: 'Convert JSON to HTML in Node.js | JSON to Web Format Online'; title in English: 'Convert JSON to HTML in Node.js | JSON to Webpage Conversion'",
           "fix": "translate seoTitle, title",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -4028,7 +4028,7 @@
           "line": 1,
           "note": "description in English: 'Easily convert JSON to HTML using GroupDocs.Conversion Cloud'",
           "fix": "translate description",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -4037,7 +4037,7 @@
           "line": 1,
           "note": "seoTitle in English: 'PDF to HTML Conversion in Node.js | PDF to Web API Online'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -4046,7 +4046,7 @@
           "line": 1,
           "note": "description in English: 'Easily convert HTML files or webpages to PDF using GroupDocs'",
           "fix": "translate description",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -4055,7 +4055,7 @@
           "line": 1,
           "note": "seoTitle in English: 'HTML to PDF Node.js API | Convert Web Page to PDF Online'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -4064,7 +4064,7 @@
           "line": 1,
           "note": "description in English: 'Easily convert HTML files or webpages to PDF using GroupDocs'",
           "fix": "translate description",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -4073,7 +4073,7 @@
           "line": 1,
           "note": "seoTitle in English: 'HTML to PDF Node.js API | Convert Web Page to PDF Online'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -4082,7 +4082,7 @@
           "line": 1,
           "note": "seoTitle in English: 'HTML to PDF Node.js API | Convert Web Page to PDF Online'",
           "fix": "translate seoTitle",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         }
       ]
     },
@@ -4097,14 +4097,14 @@
       "lost_clicks": 0,
       "lost_impressions": 2,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "M",
@@ -4115,7 +4115,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run56",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_text_untranslated",
@@ -4573,22 +4573,22 @@
     "affected_pages": 9,
     "impact": {
       "clicks_28d": 1,
-      "impressions_28d": 68,
+      "impressions_28d": 69,
       "source": "gsc-host",
       "share": 0.001,
       "past_clicks": 2,
       "past_impressions": 90,
       "lost_clicks": 1,
-      "lost_impressions": 22,
+      "lost_impressions": 21,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "at stake",
       "score": 2,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -4686,22 +4686,22 @@
     "affected_pages": 19,
     "impact": {
       "clicks_28d": 0,
-      "impressions_28d": 16,
+      "impressions_28d": 15,
       "source": "gsc-template",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 173,
+      "past_impressions": 175,
       "lost_clicks": 0,
-      "lost_impressions": 157,
+      "lost_impressions": 160,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "lost",
       "score": 1,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -4787,23 +4787,23 @@
     },
     "affected_pages": 2017,
     "impact": {
-      "clicks_28d": 151,
-      "impressions_28d": 14901,
+      "clicks_28d": 152,
+      "impressions_28d": 15014,
       "source": "gsc-template",
       "share": null,
-      "past_clicks": 433,
-      "past_impressions": 19232,
-      "lost_clicks": 282,
-      "lost_impressions": 4331,
+      "past_clicks": 422,
+      "past_impressions": 19177,
+      "lost_clicks": 270,
+      "lost_impressions": 4163,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "at stake",
       "score": 10,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -4923,14 +4923,14 @@
       "lost_clicks": 0,
       "lost_impressions": 2,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -4987,14 +4987,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -5034,7 +5034,7 @@
         "https://blog.groupdocs.cloud/ru/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/",
         "https://blog.groupdocs.cloud/th/annotation/annotate-pdf-word-and-other-files-easily-from-within-your-concrete5-sites/"
       ],
-      "observed": "2,200 entries or files; too long (width 81): 'Vergleichen Sie PDF Dateien mithilfe der REST-API in Node.js | PDF-Vergleichs-SD': 2, too long (width 76): 'Comparar archivos PDF usando REST API en Node.js | SDK de comparación de PDF': 2, too long (width 86): \"Comparez les fichiers PDF à l'aide de l'API REST dans Node.js | SDK de comparais\": 2, too long (width 74): 'Bandingkan File PDF menggunakan REST API di Node.js | SDK Perbandingan PDF': 2",
+      "observed": "2,194 entries or files; too long (width 81): 'Vergleichen Sie PDF Dateien mithilfe der REST-API in Node.js | PDF-Vergleichs-SD': 2, too long (width 76): 'Comparar archivos PDF usando REST API en Node.js | SDK de comparación de PDF': 2, too long (width 86): \"Comparez les fichiers PDF à l'aide de l'API REST dans Node.js | SDK de comparais\": 2, too long (width 74): 'Bandingkan File PDF menggunakan REST API di Node.js | SDK Perbandingan PDF': 2",
       "expected": "Every post's search title (seoTitle, else title) is 10-70 characters wide (CJK count double)",
       "locations": [
         {
@@ -5044,7 +5044,7 @@
           "line": 1,
           "note": "too long (width 95): 'واجهة برمجة تطبيقات التعليقات التوضيحية لملفات PDF والمكتب والصور على الإنترنت ل'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5053,7 +5053,7 @@
           "line": 1,
           "note": "too long (width 72): 'Online-Anmerkungs-API für PDF-, Office und Bilddateien für Concrete5 CMS'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5062,7 +5062,7 @@
           "line": 1,
           "note": "too long (width 83): 'API de anotación de archivos PDF, de Office y de imagen en línea para Concrete5 '",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5071,7 +5071,7 @@
           "line": 1,
           "note": "too long (width 74): 'API آنلاین پی دی اف، آفیس و فایل های تصویری حاشیه نویسی برای Concrete5 CMS'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5080,7 +5080,7 @@
           "line": 1,
           "note": "too long (width 77): \"API d'annotation de fichiers PDF, Office et image en ligne pour Concrete5 CMS\"",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5089,7 +5089,7 @@
           "line": 1,
           "note": "too long (width 74): 'API online di annotazione di file PDF, Office e immagine per Concrete5 CMS'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5098,7 +5098,7 @@
           "line": 1,
           "note": "too long (width 105): 'Internetowy interfejs API adnotacji w plikach PDF, plikach biurowych i obrazach '",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5107,7 +5107,7 @@
           "line": 1,
           "note": "too long (width 75): 'API de anotação de arquivos PDF, Office e imagem on-line para Concrete5 CMS'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5116,7 +5116,7 @@
           "line": 1,
           "note": "too long (width 71): 'Онлайн API аннотаций файлов PDF, Office и изображений для Concrete5 CMS'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5125,7 +5125,7 @@
           "line": 1,
           "note": "too long (width 71): 'API คำอธิบายประกอบไฟล์ PDF, Office และรูปภาพออนไลน์สำหรับ Concrete5 CMS'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5134,7 +5134,7 @@
           "line": 1,
           "note": "too long (width 80): \"Concrete5 CMS için Çevrimiçi PDF, Office ve Görüntü Dosyaları Ek Açıklama API'sı\"",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5143,7 +5143,7 @@
           "line": 1,
           "note": "too long (width 76): 'التركيز على GroupDocs.Annotation for Java والأخبار من GroupDocs ، أغسطس 2014'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5152,7 +5152,7 @@
           "line": 1,
           "note": "too long (width 99): 'Konzentrieren Sie sich auf GroupDocs.Annotation für Java und Neuigkeiten von Gro'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5161,7 +5161,7 @@
           "line": 1,
           "note": "too long (width 83): 'Centrarse en GroupDocs.Annotation para Java y noticias de GroupDocs, agosto de 2'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5170,7 +5170,7 @@
           "line": 1,
           "note": "too long (width 72): 'تمرکز بر GroupDocs.Annotation برای جاوا و اخبار از GroupDocs، آگوست 2014'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5179,7 +5179,7 @@
           "line": 1,
           "note": "too long (width 79): 'Focus sur GroupDocs. Annotation pour Java et actualités de GroupDocs, août 2014'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5188,7 +5188,7 @@
           "line": 1,
           "note": "too long (width 80): 'Fokus pada GroupDocs.Annotation untuk Java & berita dari GroupDocs, Agustus 2014'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5197,7 +5197,7 @@
           "line": 1,
           "note": "too long (width 74): 'Focus su GroupDocs.Annotation per Java e notizie da GroupDocs, agosto 2014'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5206,7 +5206,7 @@
           "line": 1,
           "note": "too long (width 87): 'Java 用の GroupDocs.Annotation と GroupDocs からのニュースに焦点を当てる (2014 年 8 月)'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5215,7 +5215,7 @@
           "line": 1,
           "note": "too long (width 73): 'Focus on GroupDocs.Annotation for Java & news from GroupDocs, August 2014'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5224,7 +5224,7 @@
           "line": 1,
           "note": "too long (width 94): 'Skoncentruj się na GroupDocs.Annotation for Java i aktualnościach z GroupDocs, s'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5233,7 +5233,7 @@
           "line": 1,
           "note": "too long (width 75): 'Foco no GroupDocs.Annotation for Java & news from GroupDocs, agosto de 2014'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5242,7 +5242,7 @@
           "line": 1,
           "note": "too long (width 86): 'В центре внимания GroupDocs.Annotation для Java и новости от GroupDocs, август 2'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5251,7 +5251,7 @@
           "line": 1,
           "note": "too long (width 86): 'มุ่งเน้นไปที่ GroupDocs คำอธิบายประกอบสำหรับ Java และข่าวสารจาก GroupDocs สิงหาค'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5260,7 +5260,7 @@
           "line": 1,
           "note": "too long (width 83): \"GroupDocs'a odaklanın. Java için Annotation ve GroupDocs'tan haberler, Ağustos 2\"",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5269,7 +5269,7 @@
           "line": 1,
           "note": "too long (width 83): 'Зосередьтеся на GroupDocs. Анотація для Java та новини з GroupDocs, серпень 2014'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5278,7 +5278,7 @@
           "line": 1,
           "note": "too long (width 84): 'Tập trung vào GroupDocs.Annotation cho Java & tin tức từ GroupDocs, tháng 8 năm '",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5287,7 +5287,7 @@
           "line": 1,
           "note": "too long (width 74): '關注 GroupDocs.Annotation for Java 以及來自 GroupDocs 的新聞，2014 年 8 月'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5296,7 +5296,7 @@
           "line": 1,
           "note": "too long (width 74): '关注 GroupDocs.Annotation for Java 以及来自 GroupDocs 的新闻，2014 年 8 月'",
           "fix": null,
-          "commit": "6eb6ea7ed 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
+          "commit": "6eb6ea7e 2026-11-27 Copied search titles removed: 49 posts had another post's seoTitle (931 files)"
         },
         {
           "role": "file",
@@ -5305,7 +5305,7 @@
           "line": 1,
           "note": "too long (width 73): 'Kommentieren Sie PDF-, Office und Bilddateien auf Ihrer GetSimple-Website'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5314,7 +5314,7 @@
           "line": 1,
           "note": "too long (width 71): 'Anotar archivos PDF, de Office y de imagen en su sitio web de GetSimple'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5323,7 +5323,7 @@
           "line": 1,
           "note": "too long (width 73): 'فایل های PDF، Office و Image را در وب سایت GetSimple خود حاشیه نویسی کنید'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5332,7 +5332,7 @@
           "line": 1,
           "note": "too long (width 80): 'Dodawaj adnotacje do plików PDF, plików biurowych i obrazów w witrynie GetSimple'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5341,7 +5341,7 @@
           "line": 1,
           "note": "too long (width 85): 'Добавляйте аннотации к файлам PDF, Office и изображениям на своем веб-сайте GetS'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5350,7 +5350,7 @@
           "line": 1,
           "note": "too long (width 75): 'GetSimple Web Sitenizde PDF, Office ve Görüntü Dosyalarına Açıklama Ekleyin'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5359,7 +5359,7 @@
           "line": 1,
           "note": "too long (width 80): 'Додайте анотації до файлів PDF, Office і зображень на своєму веб-сайті GetSimple'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5368,7 +5368,7 @@
           "line": 1,
           "note": "too long (width 73): 'Chú thích các tệp PDF, Office & Hình ảnh trên trang web GetSimple của bạn'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5377,7 +5377,7 @@
           "line": 1,
           "note": "too long (width 82): 'علق أكثر من 50 نوعًا من أنواع المستندات والصور الشائعة على موقع Concrete5 الخاص '",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5386,7 +5386,7 @@
           "line": 1,
           "note": "too long (width 80): 'Kommentieren Sie über 50 gängige Dokument und Bildtypen auf Ihrer Concrete5-Site'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5395,11 +5395,11 @@
           "line": 1,
           "note": "too long (width 79): 'Anote más de 50 tipos comunes de documentos e imágenes en su sitio de Concrete5'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         }
       ]
     },
-    "affected_pages": 2200,
+    "affected_pages": 2194,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -5410,14 +5410,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -5428,7 +5428,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run56",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_title_length",
@@ -5457,7 +5457,7 @@
         "https://blog.groupdocs.cloud/fr/annotation/integrate-groupdocs-annotation-for-net-into-your-getsimple-website/",
         "https://blog.groupdocs.cloud/it/annotation/integrate-groupdocs-annotation-for-net-into-your-getsimple-website/"
       ],
-      "observed": "3,652 entries or files; too long (width 175): 'GroupDocs bietet eine .NET-Bibliothek mit flexibler API, die zum Erstellen recht': 5, too long (width 182): 'GroupDocs ofrece una biblioteca .NET con API flexible que se puede usar para cre': 5, too long (width 220): 'GroupDocs propose une bibliothèque .NET avec une API flexible qui peut être util': 5, too long (width 201): 'GroupDocs menawarkan pustaka .NET dengan API fleksibel yang dapat digunakan untu': 5",
+      "observed": "3,637 entries or files; too long (width 175): 'GroupDocs bietet eine .NET-Bibliothek mit flexibler API, die zum Erstellen recht': 5, too long (width 182): 'GroupDocs ofrece una biblioteca .NET con API flexible que se puede usar para cre': 5, too long (width 220): 'GroupDocs propose une bibliothèque .NET avec une API flexible qui peut être util': 5, too long (width 201): 'GroupDocs menawarkan pustaka .NET dengan API fleksibel yang dapat digunakan untu': 5",
       "expected": "Every post's description (description, else summary) is 50-170 characters wide",
       "locations": [
         {
@@ -5467,7 +5467,7 @@
           "line": 1,
           "note": "too long (width 173): 'Fügen Sie Ihrer Concrete5-Website Dokumentanmerkungsfunktionen hinzu: Sehen, kom'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5476,7 +5476,7 @@
           "line": 1,
           "note": "too long (width 183): \"Ajoutez la fonctionnalité d'annotation de documents à votre site Web Concrete5\\xa0:\"",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5485,7 +5485,7 @@
           "line": 1,
           "note": "too long (width 177): 'Aggiungi la funzionalità di annotazione dei documenti al tuo sito Web Concrete5:'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5494,7 +5494,7 @@
           "line": 1,
           "note": "too long (width 198): 'Dodaj funkcję adnotacji do dokumentów na swojej stronie internetowej Concrete5: '",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5503,7 +5503,7 @@
           "line": 1,
           "note": "too long (width 176): 'Добавьте функции аннотирования документов на свой веб-сайт Concrete5: просматрив'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5512,7 +5512,7 @@
           "line": 1,
           "note": "too long (width 179): 'أضف وظيفة التعليقات التوضيحية للمستند إلى موقع GetSimple على الويب: دعم أكثر من '",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5521,7 +5521,7 @@
           "line": 1,
           "note": "too long (width 190): 'Fügen Sie Ihrer GetSimple-Website Dokumentanmerkungsfunktionen hinzu: Unterstütz'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5530,7 +5530,7 @@
           "line": 1,
           "note": "too long (width 198): 'Agregue la funcionalidad de anotación de documentos a su sitio web GetSimple: so'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5539,7 +5539,7 @@
           "line": 1,
           "note": "too long (width 216): \"Ajoutez une fonctionnalité d'annotation de documents à votre site Web GetSimple\\xa0\"",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5548,7 +5548,7 @@
           "line": 1,
           "note": "too long (width 201): 'Aggiungi la funzionalità di annotazione dei documenti al tuo sito Web GetSimple:'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5557,7 +5557,7 @@
           "line": 1,
           "note": "too long (width 182): 'Dodaj funkcję adnotacji dokumentów do swojej witryny GetSimple: obsługa ponad 50'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5566,7 +5566,7 @@
           "line": 1,
           "note": "too long (width 201): 'Adicione a funcionalidade de anotação de documento ao seu site GetSimple: suport'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5575,7 +5575,7 @@
           "line": 1,
           "note": "too long (width 216): 'Добавьте функциональные возможности аннотирования документов на свой веб-сайт Ge'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5584,7 +5584,7 @@
           "line": 1,
           "note": "too long (width 180): 'เพิ่มฟังก์ชันคำอธิบายประกอบเอกสารในเว็บไซต์ GetSimple ของคุณ: รองรับรูปแบบไฟล์มา'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5593,7 +5593,7 @@
           "line": 1,
           "note": "too long (width 172): \"GetSimple web sitenize belge açıklama işlevi ekleyin: 50'den fazla dosya biçimi \"",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5602,7 +5602,7 @@
           "line": 1,
           "note": "too long (width 177): 'GroupDocs a publié un module complémentaire qui permet aux développeurs de Concr'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5611,7 +5611,7 @@
           "line": 1,
           "note": "too long (width 175): 'GroupDocs ha rilasciato un componente aggiuntivo che consente agli sviluppatori '",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5620,7 +5620,7 @@
           "line": 1,
           "note": "too long (width 179): 'النشرة الشهرية لشهر مايو ، 2015 عرض أكثر من 50 نوعًا من أنواع المستندات الشائعة '",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5629,7 +5629,7 @@
           "line": 1,
           "note": "too long (width 203): 'Monatlicher Newsletter Mai 2015 Zeigen Sie mehr als 50 gängige Dokumenttypen auf'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5638,7 +5638,7 @@
           "line": 1,
           "note": "too long (width 176): 'Boletín mensual Mayo de 2015 Muestre más de 50 tipos de documentos comunes en su'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5647,7 +5647,7 @@
           "line": 1,
           "note": "too long (width 172): 'Newsletter mensuelle mai 2015 Affichez plus de 50 types de documents courants su'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5656,7 +5656,7 @@
           "line": 1,
           "note": "too long (width 179): 'Newsletter mensile Maggio, 2015 Visualizza oltre 50 tipi di documenti comuni sul'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5665,7 +5665,7 @@
           "line": 1,
           "note": "too long (width 190): 'Biuletyn miesięczny Maj, 2015 Wyświetl ponad 50 typowych typów dokumentów w Twoj'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5674,7 +5674,7 @@
           "line": 1,
           "note": "too long (width 207): 'Ежемесячный информационный бюллетень, май 2015 г. Отображение более 50 распростр'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5683,7 +5683,7 @@
           "line": 1,
           "note": "too long (width 201): 'Щомісячний інформаційний бюлетень, травень 2015 р. Відображення 50+ поширених ти'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5692,7 +5692,7 @@
           "line": 1,
           "note": "too long (width 173): 'Bản tin hàng tháng Tháng 5 năm 2015 Hiển thị hơn 50 loại tài liệu phổ biến trên '",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5701,7 +5701,7 @@
           "line": 1,
           "note": "too long (width 172): 'Das GroupDocs.Annotation-Add-on ermöglicht Benutzern die gemeinsame Überprüfung '",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5710,7 +5710,7 @@
           "line": 1,
           "note": "too long (width 173): 'El complemento GroupDocs.Annotation permite a los usuarios revisar y anotar docu'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5719,7 +5719,7 @@
           "line": 1,
           "note": "too long (width 195): 'Le module complémentaire GroupDocs.Annotation permet aux utilisateurs de réviser'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5728,7 +5728,7 @@
           "line": 1,
           "note": "too long (width 184): 'Il componente aggiuntivo GroupDocs.Annotation consente agli utenti di rivedere e'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5737,7 +5737,7 @@
           "line": 1,
           "note": "too long (width 175): 'O complemento GroupDocs.Annotation permite que os usuários revisem e façam anota'",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5746,7 +5746,7 @@
           "line": 1,
           "note": "too long (width 172): \"GroupDocs.Annotation eklentisi, kullanıcıların eZ Publish sitenizde 50'den fazla\"",
           "fix": null,
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -5755,7 +5755,7 @@
           "line": 1,
           "note": "too long (width 178): 'GroupDocs.Comparison für .NET ist eine Multiformat Dokumentvergleichsbibliothek,'",
           "fix": null,
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5764,7 +5764,7 @@
           "line": 1,
           "note": "too long (width 183): 'GroupDocs.Comparison para .NET es una biblioteca de comparación de documentos mu'",
           "fix": null,
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5773,7 +5773,7 @@
           "line": 1,
           "note": "too long (width 180): 'GroupDocs.Comparison pour .NET est une bibliothèque de comparaison de documents '",
           "fix": null,
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5782,7 +5782,7 @@
           "line": 1,
           "note": "too long (width 179): 'GroupDocs.Comparison untuk .NET adalah pustaka perbandingan dokumen multiformat '",
           "fix": null,
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5791,7 +5791,7 @@
           "line": 1,
           "note": "too long (width 172): 'GroupDocs.Comparison per .NET è una libreria di confronto di documenti multiform'",
           "fix": null,
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5800,7 +5800,7 @@
           "line": 1,
           "note": "too long (width 174): 'GroupDocs.Comparison for .NET は、2 つの Word、PDF、Excel、PowerPoint, プレーン テキスト、または HT'",
           "fix": null,
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5809,7 +5809,7 @@
           "line": 1,
           "note": "too long (width 189): 'GroupDocs.Comparison for .NET to wieloformatowa biblioteka do porównywania dokum'",
           "fix": null,
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5818,11 +5818,11 @@
           "line": 1,
           "note": "too long (width 181): 'GroupDocs.Comparison for .NET é uma biblioteca de comparação de documentos em vá'",
           "fix": null,
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         }
       ]
     },
-    "affected_pages": 3652,
+    "affected_pages": 3637,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -5833,14 +5833,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -5851,7 +5851,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run56",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_description_length",
@@ -5880,7 +5880,7 @@
         "https://blog.groupdocs.cloud/es/annotation/groupdocs.annotation-cloud-19.5/",
         "https://blog.groupdocs.cloud/fa/annotation/groupdocs.annotation-cloud-19.5/"
       ],
-      "observed": "1,212 entries or files; # ![](https://gallery.mailchimp.com/4bca4d1c05445e7a5c58d0065/images/BlogspotIco: 16, # GroupDocs.Comparison Cloud - PHP SDK: 11, # 功能 - GroupDocs.Comparison Cloud: 4, # 새로운 기능: 4",
+      "observed": "1,156 entries or files; # ![](https://gallery.mailchimp.com/4bca4d1c05445e7a5c58d0065/images/BlogspotIco: 16, # GroupDocs.Comparison Cloud - PHP SDK: 11, # 功能 - GroupDocs.Comparison Cloud: 4, # 새로운 기능: 4",
       "expected": "A post body starts its headings at ## (the theme renders the title as the only H1)",
       "locations": [
         {
@@ -5890,7 +5890,7 @@
           "line": 18,
           "note": "# كسر التغييرات",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5899,7 +5899,7 @@
           "line": 40,
           "note": "# إضافة التعليقات التوضيحية إلى المستند",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5908,7 +5908,7 @@
           "line": 194,
           "note": "# شارك ملاحظاتك",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5917,7 +5917,7 @@
           "line": 18,
           "note": "# Breaking Changes",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5926,7 +5926,7 @@
           "line": 40,
           "note": "# Anmerkungen zum Dokument hinzufügen",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5935,7 +5935,7 @@
           "line": 194,
           "note": "# Teilen Sie Ihr Feedback",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5944,7 +5944,7 @@
           "line": 18,
           "note": "# Cambios importantes",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5953,7 +5953,7 @@
           "line": 40,
           "note": "# Agregar anotaciones al documento",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5962,7 +5962,7 @@
           "line": 194,
           "note": "# Comparta sus comentarios",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5971,7 +5971,7 @@
           "line": 18,
           "note": "# شکستن تغییرات",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5980,7 +5980,7 @@
           "line": 40,
           "note": "# اضافه کردن حاشیه نویسی به سند",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5989,7 +5989,7 @@
           "line": 194,
           "note": "# بازخورد خود را به اشتراک بگذارید",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -5998,7 +5998,7 @@
           "line": 18,
           "note": "# Modifications avec rupture",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6007,7 +6007,7 @@
           "line": 40,
           "note": "# Ajouter des annotations au document",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6016,7 +6016,7 @@
           "line": 194,
           "note": "# Partagez vos commentaires",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6025,7 +6025,7 @@
           "line": 18,
           "note": "# Melanggar Perubahan",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6034,7 +6034,7 @@
           "line": 40,
           "note": "# Tambahkan Anotasi ke Dokumen",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6043,7 +6043,7 @@
           "line": 194,
           "note": "# Bagikan Umpan Balik Anda",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6052,7 +6052,7 @@
           "line": 18,
           "note": "# Rompere le modifiche",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6061,7 +6061,7 @@
           "line": 40,
           "note": "# Aggiungi annotazioni al documento",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6070,7 +6070,7 @@
           "line": 194,
           "note": "# Condividi il tuo feedback",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6079,7 +6079,7 @@
           "line": 18,
           "note": "# 重大な変更",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6088,7 +6088,7 @@
           "line": 40,
           "note": "# ドキュメントに注釈を追加する",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6097,7 +6097,7 @@
           "line": 194,
           "note": "# フィードバックを共有する",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6106,7 +6106,7 @@
           "line": 18,
           "note": "# 브레이킹 체인지",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6115,7 +6115,7 @@
           "line": 40,
           "note": "# 문서에 주석 추가",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6124,7 +6124,7 @@
           "line": 194,
           "note": "# 피드백 공유",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6133,7 +6133,7 @@
           "line": 18,
           "note": "# Breaking Changes",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6142,7 +6142,7 @@
           "line": 40,
           "note": "# Add Annotations to Document",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6151,7 +6151,7 @@
           "line": 61,
           "note": "# Share Your Feedback",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6160,7 +6160,7 @@
           "line": 18,
           "note": "# Przełomowe zmiany",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6169,7 +6169,7 @@
           "line": 40,
           "note": "# Dodaj adnotacje do dokumentu",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6178,7 +6178,7 @@
           "line": 194,
           "note": "# Podziel się swoją opinią",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6187,7 +6187,7 @@
           "line": 18,
           "note": "# Mudanças de última hora",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6196,7 +6196,7 @@
           "line": 40,
           "note": "# Adicionar anotações ao documento",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6205,7 +6205,7 @@
           "line": 194,
           "note": "# Compartilhe seu feedback",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6214,7 +6214,7 @@
           "line": 18,
           "note": "# Критические изменения",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6223,7 +6223,7 @@
           "line": 40,
           "note": "# Добавляем аннотации к документу",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6232,7 +6232,7 @@
           "line": 194,
           "note": "# Поделитесь своим отзывом",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6241,11 +6241,11 @@
           "line": 40,
           "note": "# เพิ่มคำอธิบายประกอบในเอกสาร",
           "fix": "make it ## or remove it when it repeats the title",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         }
       ]
     },
-    "affected_pages": 1212,
+    "affected_pages": 1156,
     "impact": {
       "clicks_28d": 0,
       "impressions_28d": 0,
@@ -6256,14 +6256,14 @@
       "lost_clicks": 0,
       "lost_impressions": 0,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "at stake",
       "score": 0,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -6274,7 +6274,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run56",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_body_h1",
@@ -6736,7 +6736,7 @@
           "line": 1,
           "note": "description: 'MPP`yi PDF`ye Java REST API kullanarak dönüştürmeyi öğrenin. Proje paylaşımını basitleştir'",
           "fix": "remove ` from description",
-          "commit": "05f3feca6 2025-05-13 Language prefix added to all blog categories"
+          "commit": "05f3feca 2025-05-13 Language prefix added to all blog categories"
         },
         {
           "role": "file",
@@ -6745,7 +6745,7 @@
           "line": 1,
           "note": "description: 'استكشف إمكانيات REST API لحماية كلمة مرور DOCX واستفد من Node.js SDK لتوضيح **كيفية حماية '",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6754,7 +6754,7 @@
           "line": 1,
           "note": "description: 'Entdecken Sie die Funktionen einer DOCX-Passwortschutz-REST-API und nutzen Sie das Node.js'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6763,7 +6763,7 @@
           "line": 1,
           "note": "description: 'Explore las capacidades de una API REST protectora de contraseña DOCX y aproveche el SDK d'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6772,7 +6772,7 @@
           "line": 1,
           "note": "description: 'قابلیت\\u200cهای REST API محافظ رمز عبور DOCX را بررسی کنید و از Node.js SDK استفاده کنید تا **چ'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6781,7 +6781,7 @@
           "line": 1,
           "note": "description: \"Explorez les capacités d'une API REST de protection de mot de passe DOCX et exploitez le S\"",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6790,7 +6790,7 @@
           "line": 1,
           "note": "description: 'Jelajahi kemampuan REST API pelindung kata sandi DOCX dan manfaatkan SDK Node.js untuk men'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6799,7 +6799,7 @@
           "line": 1,
           "note": "description: \"Esplora le funzionalità di un'API REST di protezione password DOCX e sfrutta l'SDK Node.js\"",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6808,7 +6808,7 @@
           "line": 1,
           "note": "description: 'DOCX パスワード プロテクター REST API の機能を調べ、Node.js SDK を活用して **Word ドキュメントを簡単にパスワード保護する方法**を示します。'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6817,7 +6817,7 @@
           "line": 1,
           "note": "description: 'DOCX 비밀번호 보호기 REST API의 기능을 살펴보고 Node.js SDK를 활용하여 손쉽게 **Word 문서를 비밀번호로 보호하는 방법**을 보여줍니다.'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6826,7 +6826,7 @@
           "line": 1,
           "note": "description: 'Explore the capabilities of a DOCX password protector REST API and leverage the Node.js SD'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6835,7 +6835,7 @@
           "line": 1,
           "note": "description: 'Poznaj możliwości interfejsu API REST chroniącego hasła DOCX i wykorzystaj pakiet SDK Node'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6844,7 +6844,7 @@
           "line": 1,
           "note": "description: 'Explore os recursos de uma API REST protetora de senha DOCX e aproveite o SDK do Node.js p'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6853,7 +6853,7 @@
           "line": 1,
           "note": "description: 'Изучите возможности REST API защиты паролей DOCX и используйте Node.js SDK, чтобы продемон'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6862,7 +6862,7 @@
           "line": 1,
           "note": "description: 'สำรวจความสามารถของ REST API ตัวป้องกันรหัสผ่าน DOCX และใช้ประโยชน์จาก Node.js SDK เพื่อสาธ'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6871,7 +6871,7 @@
           "line": 1,
           "note": "description: \"DOCX şifre koruyucu REST API'sinin yeteneklerini keşfedin ve **Word belgelerinin şifreyle \"",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6880,7 +6880,7 @@
           "line": 1,
           "note": "description: 'Ознайомтеся з можливостями REST API захисту паролем DOCX і скористайтеся пакетом SDK для N'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6889,7 +6889,7 @@
           "line": 1,
           "note": "description: 'Khám phá các khả năng của API REST bảo vệ mật khẩu DOCX và tận dụng SDK Node.js để trình b'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6898,7 +6898,7 @@
           "line": 1,
           "note": "description: '探索 DOCX 密碼保護器 REST API 的功能，並利用 Node.js SDK 輕鬆演示**如何使用密碼保護 Word 文檔**。'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6907,7 +6907,7 @@
           "line": 1,
           "note": "description: '探索 DOCX 密码保护器 REST API 的功能，并利用 Node.js SDK 轻松演示**如何使用密码保护 Word 文档**。'",
           "fix": "remove ** from description",
-          "commit": "9feb983d6 2024-06-28 Added Product wise subfolders"
+          "commit": "9feb983d 2024-06-28 Added Product wise subfolders"
         },
         {
           "role": "file",
@@ -6916,7 +6916,7 @@
           "line": 1,
           "note": "title: 'Об`єднання документів Word в C# .NET – об`єднання файлів DOC/DOCX програмно'",
           "fix": "remove ` from title",
-          "commit": "e581ca808 2026-11-27 Cover image restored in current translations (220 files)"
+          "commit": "e581ca80 2026-11-27 Cover image restored in current translations (220 files)"
         }
       ]
     },
@@ -6927,18 +6927,18 @@
       "source": "gsc-pages",
       "share": null,
       "past_clicks": 0,
-      "past_impressions": 1,
+      "past_impressions": 3,
       "lost_clicks": 0,
-      "lost_impressions": 1,
+      "lost_impressions": 3,
       "past_window": [
-        "2026-04-29",
-        "2026-05-26"
+        "2026-04-30",
+        "2026-05-27"
       ],
       "scored_on": "lost",
       "score": 0,
       "window": [
-        "2026-10-28",
-        "2026-11-24"
+        "2026-10-29",
+        "2026-11-25"
       ]
     },
     "effort": "S",
@@ -6949,7 +6949,7 @@
     "superseded_by": null,
     "detected_at": "2026-11-19",
     "first_seen_run": "repo-audit-run24",
-    "last_seen_run": "repo-audit-run56",
+    "last_seen_run": "repo-audit-run58",
     "resolved_run": null,
     "resolved_at": null,
     "check": "post_front_matter_markup",
@@ -7883,14 +7883,14 @@
     "effort": "S",
     "fix_tier": 1,
     "fix_channel": "git-pr",
-    "status": "open",
+    "status": "resolved",
     "verification": null,
     "superseded_by": null,
     "detected_at": "2026-11-27",
     "first_seen_run": "repo-audit-run42",
     "last_seen_run": "repo-audit-run56",
-    "resolved_run": null,
-    "resolved_at": null,
+    "resolved_run": "repo-audit-run58",
+    "resolved_at": "2026-11-28T03:55:05+00:00",
     "check": "code_fence_misplaced",
     "notes": []
   },

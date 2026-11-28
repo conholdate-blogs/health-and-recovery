@@ -1,7 +1,7 @@
 {
   "tenant": "groupdocs.cloud",
   "auditor": "link-audit",
-  "run_id": 50,
+  "run_id": 57,
   "params": {
     "hosts": [
       "blog.groupdocs.cloud"
@@ -10,17 +10,17 @@
     "blame": true
   },
   "requests": 230,
-  "duration_s": 271.4,
+  "duration_s": 279.2,
   "stopped_early": false,
   "summary": {
     "blog.groupdocs.cloud": {
       "repo": {
-        "commit": "12d5c853",
+        "commit": "fbaec3b8",
         "date": "2026-11-27",
         "stale": false
       },
       "posts": 11058,
-      "links": 43797,
+      "links": 43803,
       "live_checked": 229,
       "not_checked": 0,
       "by_check": {
@@ -108,7 +108,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-27"
+      "detected_at": "2026-11-28"
     },
     {
       "id": "crawl-0002",
@@ -441,7 +441,7 @@
             "origin": "translations",
             "history": {
               "english_line": "2023-01-10",
-              "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+              "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
               "translated": "2023-06-12",
               "english_newer": false
             }
@@ -461,7 +461,7 @@
             "origin": "translations",
             "history": {
               "english_line": "2022-12-10",
-              "english_commit": "b6eced4a 2022-12-10: Replace date with category",
+              "english_commit": "b6eced4ad 2022-12-10: Replace date with category",
               "translated": "2023-06-27",
               "english_newer": false
             }
@@ -476,7 +476,7 @@
             "commit": "90a4f407 2023-06-12: Added translations.",
             "history": {
               "english_line": "2026-11-23",
-              "english_commit": "1b509e71 2026-11-23: English fixes in 8 posts queued for translation: typos, a sentence copied from a PDF post, anchor ids from other posts, broken category link",
+              "english_commit": "1b509e71d 2026-11-23: English fixes in 8 posts queued for translation: typos, a sentence copied from a PDF post, anchor ids from other posts, broken category link",
               "translated": "2023-06-12",
               "english_newer": true
             }
@@ -648,7 +648,7 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-27"
+      "detected_at": "2026-11-28"
     },
     {
       "id": "intl-0001",
@@ -714,7 +714,7 @@
             "origin": "translations",
             "history": {
               "english_line": "2024-02-19",
-              "english_commit": "71953a2c 2024-02-19: Update index.md",
+              "english_commit": "71953a2cc 2024-02-19: Update index.md",
               "translated": "2024-01-02",
               "english_newer": true
             }
@@ -731,20 +731,20 @@
       "fix_tier": 1,
       "fix_channel": "git-pr",
       "status": "open",
-      "detected_at": "2026-11-27"
+      "detected_at": "2026-11-28"
     }
   ],
   "hosts": {
     "blog.groupdocs.cloud": {
       "repo": {
         "path": "/Users/Apple/Work/Aspose/GitHub/blog.groupdocs.cloud-PROD/groupdocs-cloud-blog",
-        "commit": "12d5c853",
+        "commit": "fbaec3b8",
         "date": "2026-11-27",
-        "subject": "Search titles written for 6 tutorials, in English and all 18 languages (114 files)",
-        "age_days": 0.0,
+        "subject": "Retranslate articles for: \"Combine PDF Files with PDF Merger | Merge PDFs Efficiently in C# .NET \" - (15 files)",
+        "age_days": 0.2,
         "stale": false
       },
-      "discovery_run": 12,
+      "discovery_run": 14,
       "sitemap_paths": 11115,
       "posts": 11058,
       "posts_without_url": [
@@ -787,7 +787,7 @@
         "content/GroupDocs.Cloud/signature/2018-01-22-releasing-next-generation-groupdocs.signature-for-cloud-api/index.zh-hant.md",
         "content/GroupDocs.Cloud/signature/2018-01-22-releasing-next-generation-groupdocs.signature-for-cloud-api/index.zh.md"
       ],
-      "links": 43797,
+      "links": 43803,
       "live_checked": 229,
       "not_checked": 0,
       "issues": [
@@ -2016,7 +2016,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2026-11-23",
-            "english_commit": "1b509e71 2026-11-23: English fixes in 8 posts queued for translation: typos, a sentence copied from a PDF post, anchor ids from other posts, broken category link",
+            "english_commit": "1b509e71d 2026-11-23: English fixes in 8 posts queued for translation: typos, a sentence copied from a PDF post, anchor ids from other posts, broken category link",
             "translated": "2023-06-12",
             "english_newer": true
           }
@@ -2154,7 +2154,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2172,7 +2172,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2190,7 +2190,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2208,7 +2208,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2226,7 +2226,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2244,7 +2244,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2262,7 +2262,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2280,7 +2280,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2298,7 +2298,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2316,7 +2316,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2334,7 +2334,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2352,7 +2352,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2370,7 +2370,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2388,7 +2388,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2406,7 +2406,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2424,7 +2424,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -2442,7 +2442,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2023-01-10",
-            "english_commit": "850012ec 2023-01-10: optimization-v1 changes deployed",
+            "english_commit": "850012ec9 2023-01-10: optimization-v1 changes deployed",
             "translated": "2023-06-12",
             "english_newer": false
           }
@@ -3600,7 +3600,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2022-12-10",
-            "english_commit": "b6eced4a 2022-12-10: Replace date with category",
+            "english_commit": "b6eced4ad 2022-12-10: Replace date with category",
             "translated": "2023-06-27",
             "english_newer": false
           }
@@ -3618,7 +3618,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2022-12-10",
-            "english_commit": "b6eced4a 2022-12-10: Replace date with category",
+            "english_commit": "b6eced4ad 2022-12-10: Replace date with category",
             "translated": "2023-06-27",
             "english_newer": false
           }
@@ -3636,7 +3636,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3654,7 +3654,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3672,7 +3672,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3690,7 +3690,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3708,7 +3708,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3726,7 +3726,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3744,7 +3744,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3762,7 +3762,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3780,7 +3780,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3798,7 +3798,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3816,7 +3816,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3834,7 +3834,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3852,7 +3852,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3870,7 +3870,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3888,7 +3888,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3906,7 +3906,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3924,7 +3924,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }
@@ -3942,7 +3942,7 @@
           "by_translation_commit": false,
           "history": {
             "english_line": "2024-02-19",
-            "english_commit": "71953a2c 2024-02-19: Update index.md",
+            "english_commit": "71953a2cc 2024-02-19: Update index.md",
             "translated": "2024-01-02",
             "english_newer": true
           }

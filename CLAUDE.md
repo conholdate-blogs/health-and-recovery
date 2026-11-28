@@ -57,9 +57,13 @@ posts) fixed 456 items and added none; snapshot 2026-11-23-2 live (health 54, op
 "## Newest". Tools: `scripts/ops/taxonomy_fix.py`, `link_fix.py`, `fm_cover_repair.py --only`, `llms_popular.py`.
 Dry-run counts on blog.conholdate.com (not fixed, register): `#` tags 2,821, tag lists 837, escaped 33, code fences 23.
 
+**Update Sat 28 Nov:** both translation-agent bugs fixed (a22f921 code blocks, 6a9002c conflicts); the urgent
+retranslations (csv-to-jpg 18, json-to-html 3, combine-pdf 15) are clean; quick rescan: health **88**, 15 issue types,
+open items 7,410, snapshot 2026-11-28. Left: 17 broken links = the queued csv-json translations (→ ~98).
+
 **Open, with Shoaib Khan:**
-1. Translation agent: two bugs, handoff [docs/handoffs/translation-agent-code-blocks.md](docs/handoffs/translation-agent-code-blocks.md)
-   (code blocks split at blank lines + code comments translated; `--autostash` conflicts committed in all six workflows).
+1. ~~Translation agent: two bugs~~ **fixed and verified 28 Nov** (handoff
+   [docs/handoffs/translation-agent-code-blocks.md](docs/handoffs/translation-agent-code-blocks.md)).
    Home-link bug already fixed (4886783, verified).
 2. API key still in the public gists (`groupdocs-cloud-gists`): rotation + gist edit by the key owner; history rewrite
    not recommended (private repo, key public in gists anyway).
