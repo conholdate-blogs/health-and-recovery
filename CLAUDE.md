@@ -17,6 +17,57 @@ Domain-agnostic agents that audit a web property, report what is broken, not opt
 - **This file:** brief, current state and decisions; dated history below moves out over time.
 - **Current program (SK, 2026-11-11):** scan and fix blog.conholdate.com first (plan A1–A6 scan improvements, B1–B6 fixes, C verify; state in its log), then the other blogs the same way.
 
+## Session handoff (Sat 2026-11-28; next session Mon 30 Nov)
+
+**blog.groupdocs.cloud: health 54 (19 Nov) → 97 (28 Nov)**, issue types 39 → 13, open items 9,950 → 7,335, items
+fixed 2,932, 46 agent-fixes rows; snapshot 2026-11-28-5. Log: [docs/blogs/blog.groupdocs.cloud.md](docs/blogs/blog.groupdocs.cloud.md)
+(sections "Retranslation on the fixed agent", "csv-json retranslated", "Tag feeds and junk URLs").
+**Impact record for announcing the agent:** [docs/impact.md](docs/impact.md) (before → after per blog, headline
+figures with commits, dated search baseline); keep it current (memory `record-impact-figures`).
+
+| Done 28 Nov | Commit | State |
+|---|---|---|
+| Translation agent bugs (code blocks split, conflict markers committed) fixed by Shoaib Khan | agent a22f921, 6a9002c | verified: 72 retranslated files clean (csv-to-jpg, json-to-html, combine-pdf, csv-json, display-word) |
+| csv-json retranslated → 17 broken links gone | agent 17cd3cf0 | health 88 → 93 |
+| Related article in 18 translations of add-watermark-to-word-in-java | c7ed9524 | verified live, health 97 |
+| Tag/category/section RSS feeds off (only the home feed per language stays) | blog.groupdocs.cloud 9ba456d8, 0f95b95d; blog.conholdate.com b4e1cf38 | verified live; −43,241 / −43,801 files, 0 pages added |
+| blog.conholdate.cloud feeds | none needed | its pre-0.73 `taxonomyTerm` config already had no tag feeds (build-checked) |
+| New checks `taxonomy_feeds_built`, `url_junk_served` (structure step; playbook rows 30–31) | e71cbf1, 4d6d090 | blog.groupdocs.cloud: 0 / 0 (398 junk URLs Google knows, all 404) |
+| Impact record | 5fc04dd | figures as of 28 Nov |
+
+**Left on blog.groupdocs.cloud (~3 points, low value):** title/description lengths, missing H1 on sampled pages, one
+typo, 84 translations with English titles (`post_text_untranslated`), 72 stale translations, body H1 in 1,156 posts.
+Decided: fix only when a post is touched. Queue tab: 7 OUTDATED Low rows (batch 1 posts, zip-to-jpg).
+
+**Open on blog.conholdate.com (fixed blog; last full scan 19 Nov, health 92; next round when Shoaib Khan says):**
+22 translated tag pages answer 200 (`url_junk_served`, dry run; ru/vi/zh, e.g. `/ru/tag/обрезка-png-онлайн/` 525
+impressions) = the batch 3a tag clean-up there (also `#` tags 2,821, tag lists 837, escaped 33, code fences 23).
+A rescan would show these as new findings (real dip). Translation agent commits landed since 19 Nov.
+
+**Open, with Shoaib Khan:**
+1. API key still in the public gists (`groupdocs-cloud-gists`): rotation + gist edit by the key owner.
+2. Notes to the generator's and optimizer's owners (stray ``` before `<!--[CODE_SNIPPET_END]-->`; U+2011 hyphens):
+   sent or not.
+3. GitLab token expired: our `gitlab` remote stops at b1540f9 (GitHub remotes complete).
+4. Shareable impact page (artifact with charts): when he announces the agent ("sure", 28 Nov).
+
+**Dates:** llms.txt most-read refresh on blog.groupdocs.cloud ~26 Dec (approved commit, `scripts/ops/llms_popular.py
+--top 30`); impact record search readings end of December and end of January (first fair comparison).
+
+**Monday 30 Nov: blog.aspose.cloud** (full steps in the 27 Nov handoff below), with playbook rows 1–31: also check
+its `outputs` (feeds) and junk URLs; the new checks run in its first full scan (it is the blog in the round, so they
+count). Never on blog.aspose.com / blog.groupdocs.com before their rounds.
+
+**Operating notes learned 28 Nov:**
+- `scripts/audit_structure.py` run alone needs `.env` loaded (`set -a; source .env; set +a`); `run_cycle.py` loads it.
+- Build diffs of ~100k-page blogs need ~10 GB each; the disk had 4 GB free and a build was cut short silently
+  (whole languages missing): check `df -h`, delete builds right after the diff (21 GB free at close).
+- blog.groupdocs.cloud builds with `config.yml` only (`scripts/ops/build_pair.sh` assumes `config-production.yml`:
+  build by hand there); the conholdate blogs use `config.yml,config-production.yml`.
+- The translation agent can push while a scan runs: pull again before saying "not translated yet".
+- `ruff check .` shows ~100 findings from older code under newer ruff rules (baseline); check only changed files.
+- Before a rescan's snapshot, archive the live page if it changed since the last snapshot (agent-fixes rows do).
+
 ## Session handoff (Mon 2026-11-23, evening)
 
 **blog.groupdocs.cloud fix round started** (log: [docs/blogs/blog.groupdocs.cloud.md](docs/blogs/blog.groupdocs.cloud.md),
@@ -59,34 +110,23 @@ posts) fixed 456 items and added none; snapshot 2026-11-23-2 live (health 54, op
 "## Newest". Tools: `scripts/ops/taxonomy_fix.py`, `link_fix.py`, `fm_cover_repair.py --only`, `llms_popular.py`.
 Dry-run counts on blog.conholdate.com (not fixed, register): `#` tags 2,821, tag lists 837, escaped 33, code fences 23.
 
-**Update Sat 28 Nov:** both translation-agent bugs fixed (a22f921 code blocks, 6a9002c conflicts); the urgent
-retranslations (csv-to-jpg, json-to-html, combine-pdf, then csv-json, display-word) are clean; rescan after csv-json:
-health 93; then related-article fix c7ed9524 (18 translations, verified live): **health 97**, 13 issue types, open items
-7,335, snapshot 2026-11-28-5. Left ~3 points: lengths, H1, typo, untranslated titles (low value).
-Same day: tag/category RSS feeds off (blog.groupdocs.cloud 9ba456d8 + 0f95b95d, blog.conholdate.com b4e1cf38: **deployed and verified live**, 3 agent-fixes rows;
-−43,241 / −43,801 feed files, 0 pages added; only the home feed stays); new checks `taxonomy_feeds_built`, `url_junk_served` (playbook rows 30–31); all 398 junk URLs Google
-knows answer 404; dry run: blog.conholdate.com 22 translated tag pages still 200 (register).
-
 **Open, with Shoaib Khan:**
 1. ~~Translation agent: two bugs~~ **fixed and verified 28 Nov** (handoff
    [docs/handoffs/translation-agent-code-blocks.md](docs/handoffs/translation-agent-code-blocks.md)).
    Home-link bug already fixed (4886783, verified).
 2. API key still in the public gists (`groupdocs-cloud-gists`): rotation + gist edit by the key owner; history rewrite
    not recommended (private repo, key public in gists anyway).
-3. 2 ISSUE rows (display-word-document-in-php, combine-pdf, 18 languages each) to paste if not done
-   (scratchpad TSV was on the clipboard).
+3. ~~2 ISSUE rows (display-word-document-in-php, combine-pdf)~~ done: both retranslated 27–28 Nov, checked clean.
 4. Notes sent? Generator: stray ``` before `<!--[CODE_SNIPPET_END]-->` (fix commit dee72c63); optimizer + generator:
    U+2011 hyphens (URLs in the blog log, batch 3b).
 5. GitLab token expired: health-and-recovery `gitlab` remote is several commits behind (GitHub remotes complete).
 
-**Left on blog.groupdocs.cloud:** 17 broken links in the queued csv-json translations (10 points; health ~97 after its
-retranslation); csv-to-jpg (18) and json-to-html (3) translations with broken code blocks (after the agent fix:
-retranslate); lengths/body H1 (low value, decided: English-only when touched); queue tab 7 OUTDATED rows.
+**Left on blog.groupdocs.cloud:** superseded by the 28 Nov handoff above (health 97).
 
 **Monday 30 Nov: blog.aspose.cloud** (Shoaib Khan: start Monday, not before). Steps: `git pull --ff-only`, check
 `git config --local user.email`, full scan (`caffeinate -i .venv/bin/python scripts/run_cycle.py aspose.cloud`, ~21 min),
 archive the live report first, queue report + English body check, then batches in the groupdocs.cloud order (playbook rows
-1–29). Before editing translations, check the queue tab for posts being translated (playbook trap, 27 Nov).
+1–31). Before editing translations, check the queue tab for posts being translated (playbook trap, 27 Nov).
 
 ## Session handoff (Fri 2026-11-20, end of week)
 
