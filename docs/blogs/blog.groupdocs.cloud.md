@@ -353,6 +353,9 @@ for retranslation; blog.conholdate.cloud 0; blog.conholdate.com 23 (22 translati
   add-watermark-to-word-in-java in all 18 translations still names the C# watermark post (English changed it to
   "Convert Text to Image in Java" later). Valid links, low value; the 25% minimum share of link findings makes it
   weigh 5. Rest ~2.4 = lengths, H1, typo (improvable).
+- **Fix c7ed9524 (pushed 28 Nov, waits for deploy):** the list line and its reference in the 18 translations now use
+  the target post's own translated title and localized link (all 18 answer 200); 2 lines per file, English unchanged
+  (no retranslation queued). After deploy: live check of /de/ and /ja/, rescan (expected ~98).
 
 ## Tag feeds and junk URLs (28 Nov 2026; Shoaib Khan: "cover such dumb urls … from earlier translations")
 
