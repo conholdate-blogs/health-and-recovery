@@ -61,8 +61,8 @@ Dry-run counts on blog.conholdate.com (not fixed, register): `#` tags 2,821, tag
 
 **Update Sat 28 Nov:** both translation-agent bugs fixed (a22f921 code blocks, 6a9002c conflicts); the urgent
 retranslations (csv-to-jpg, json-to-html, combine-pdf, then csv-json, display-word) are clean; rescan after csv-json:
-health **93**, 14 issue types, open items 7,353, snapshot 2026-11-28-3. Left: 5 points = one related-article line in
-18 translations of add-watermark-to-word-in-java (`link_differs_from_original`), ~2 lengths/H1.
+health 93; then related-article fix c7ed9524 (18 translations, verified live): **health 97**, 13 issue types, open items
+7,335, snapshot 2026-11-28-5. Left ~3 points: lengths, H1, typo, untranslated titles (low value).
 Same day: tag/category RSS feeds off (blog.groupdocs.cloud 9ba456d8 + 0f95b95d, blog.conholdate.com b4e1cf38: **deployed and verified live**, 3 agent-fixes rows;
 −43,241 / −43,801 feed files, 0 pages added; only the home feed stays); new checks `taxonomy_feeds_built`, `url_junk_served` (playbook rows 30–31); all 398 junk URLs Google
 knows answer 404; dry run: blog.conholdate.com 22 translated tag pages still 200 (register).

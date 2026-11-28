@@ -627,5 +627,19 @@
   ],
   "issue": "Section feed /groupdocs.cloud/index.xml (19 languages) copied the home feed: one main section",
   "result": "Live: /groupdocs.cloud/index.xml and /de/groupdocs.cloud/index.xml 404, /index.xml 200"
+ },
+ {
+  "host": "blog.groupdocs.cloud",
+  "repo": "groupdocs-cloud/groupdocs-cloud-blog",
+  "fixed": "2026-11-28",
+  "verified": "2026-11-28",
+  "found": "2026-11-19",
+  "found_by": "Health and Recovery Agent",
+  "check": "link_differs_from_original",
+  "commits": [
+   "c7ed9524"
+  ],
+  "issue": "18 translations of add-watermark-to-word-in-java linked the C# watermark post in their related-article list; the English links Convert Text to Image in Java",
+  "result": "Live: de, ja, ar, zh-hant link /<lang>/conversion/convert-text-to-image-in-java-text-to-png-converter/ with its translated title; old link gone"
  }
 ]

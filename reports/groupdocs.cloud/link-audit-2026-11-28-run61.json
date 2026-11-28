@@ -1,7 +1,7 @@
 {
   "tenant": "groupdocs.cloud",
   "auditor": "link-audit",
-  "run_id": 59,
+  "run_id": 61,
   "params": {
     "hosts": [
       "blog.groupdocs.cloud"
@@ -10,12 +10,12 @@
     "blame": true
   },
   "requests": 211,
-  "duration_s": 254.2,
+  "duration_s": 243.7,
   "stopped_early": false,
   "summary": {
     "blog.groupdocs.cloud": {
       "repo": {
-        "commit": "2d9c2719",
+        "commit": "c7ed9524",
         "date": "2026-11-28",
         "stale": false
       },
@@ -24,8 +24,7 @@
       "live_checked": 210,
       "not_checked": 0,
       "by_check": {
-        "link_redirected": 208,
-        "link_differs_from_original": 18
+        "link_redirected": 208
       },
       "by_translation_commit": 0,
       "partial": 0,
@@ -557,102 +556,19 @@
       "fix_channel": "git-pr",
       "status": "open",
       "detected_at": "2026-11-28"
-    },
-    {
-      "id": "intl-0001",
-      "tenant": "groupdocs.cloud",
-      "subdomain": "blog.groupdocs.cloud",
-      "template": "post",
-      "dimension": "intl",
-      "check": "link_differs_from_original",
-      "type": "incorrect",
-      "title": "Translations link another page than the English post",
-      "evidence": {
-        "urls": [
-          "https://blog.groupdocs.cloud/ar/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/de/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/es/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/fa/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/fr/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/id/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/it/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/ja/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/ko/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/pl/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/pt/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/ru/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/th/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/tr/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/uk/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/vi/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/zh-hant/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "https://blog.groupdocs.cloud/zh/watermark/add-watermark-to-word-in-java-watermark-creator/"
-        ],
-        "observed": "18 links on 18 pages (18 distinct targets); by language: ar 1, de 1, es 1, fa 1, fr 1, id 1, it 1, ja 1, ...; 0 written by translation commits",
-        "expected": "Each reference link of a translation points at the same page as in the English post, in the translation's language when that exists",
-        "locations": [
-          {
-            "role": "link",
-            "url": "https://blog.groupdocs.cloud/ar/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-            "page": "https://blog.groupdocs.cloud/ar/watermark/add-watermark-to-word-in-java-watermark-creator/",
-            "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.ar.md",
-            "line": 186,
-            "fix": "https://blog.groupdocs.cloud/ar/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-            "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-            "copies": 17,
-            "copy_langs": [
-              "de",
-              "es",
-              "fa",
-              "fr",
-              "id",
-              "it",
-              "ja",
-              "ko",
-              "pl",
-              "pt",
-              "ru",
-              "th",
-              "tr",
-              "uk",
-              "vi",
-              "zh",
-              "zh-hant"
-            ],
-            "origin": "translations",
-            "history": {
-              "english_line": "2024-02-19",
-              "english_commit": "71953a2cc 2024-02-19: Update index.md",
-              "translated": "2024-01-02",
-              "english_newer": true
-            }
-          }
-        ]
-      },
-      "affected_pages": 18,
-      "impact": {
-        "clicks_28d": 0,
-        "impressions_28d": 0,
-        "score": 0
-      },
-      "effort": "S",
-      "fix_tier": 1,
-      "fix_channel": "git-pr",
-      "status": "open",
-      "detected_at": "2026-11-28"
     }
   ],
   "hosts": {
     "blog.groupdocs.cloud": {
       "repo": {
         "path": "/Users/Apple/Work/Aspose/GitHub/blog.groupdocs.cloud-PROD/groupdocs-cloud-blog",
-        "commit": "2d9c2719",
+        "commit": "c7ed9524",
         "date": "2026-11-28",
-        "subject": "Retranslate articles for: \"Display Word Document in HTML Page using PHP\" - (15 files)",
-        "age_days": 0.1,
+        "subject": "Related article in 18 translations of add-watermark-to-word-in-java matches the English post again",
+        "age_days": 0.0,
         "stale": false
       },
-      "discovery_run": 15,
+      "discovery_run": 16,
       "sitemap_paths": 11115,
       "posts": 11058,
       "posts_without_url": [
@@ -3307,330 +3223,6 @@
             "english_commit": "b6eced4ad 2022-12-10: Replace date with category",
             "translated": "2023-06-27",
             "english_newer": false
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "ar",
-          "page": "https://blog.groupdocs.cloud/ar/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.ar.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/ar/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/ar/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "de",
-          "page": "https://blog.groupdocs.cloud/de/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.de.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/de/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/de/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "es",
-          "page": "https://blog.groupdocs.cloud/es/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.es.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/es/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/es/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "fa",
-          "page": "https://blog.groupdocs.cloud/fa/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.fa.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/fa/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/fa/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "fr",
-          "page": "https://blog.groupdocs.cloud/fr/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.fr.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/fr/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/fr/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "id",
-          "page": "https://blog.groupdocs.cloud/id/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.id.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/id/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/id/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "it",
-          "page": "https://blog.groupdocs.cloud/it/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.it.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/it/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/it/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "ja",
-          "page": "https://blog.groupdocs.cloud/ja/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.ja.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/ja/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/ja/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "ko",
-          "page": "https://blog.groupdocs.cloud/ko/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.ko.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/ko/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/ko/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "pl",
-          "page": "https://blog.groupdocs.cloud/pl/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.pl.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/pl/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/pl/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "pt",
-          "page": "https://blog.groupdocs.cloud/pt/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.pt.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/pt/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/pt/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "ru",
-          "page": "https://blog.groupdocs.cloud/ru/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.ru.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/ru/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/ru/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "th",
-          "page": "https://blog.groupdocs.cloud/th/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.th.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/th/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/th/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "tr",
-          "page": "https://blog.groupdocs.cloud/tr/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.tr.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/tr/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/tr/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "uk",
-          "page": "https://blog.groupdocs.cloud/uk/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.uk.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/uk/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/uk/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "vi",
-          "page": "https://blog.groupdocs.cloud/vi/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.vi.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/vi/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/vi/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "zh-hant",
-          "page": "https://blog.groupdocs.cloud/zh-hant/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.zh-hant.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/zh-hant/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/zh-hant/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
-          }
-        },
-        {
-          "check": "link_differs_from_original",
-          "lang": "zh",
-          "page": "https://blog.groupdocs.cloud/zh/watermark/add-watermark-to-word-in-java-watermark-creator/",
-          "file": "content/GroupDocs.Cloud/watermark/2024-01-02-add-watermark-to-word-in-java-watermark-creator/index.zh.md",
-          "line": 186,
-          "link": "https://blog.groupdocs.cloud/zh/watermark/add-watermark-to-word-documents-using-rest-api-in-csharp/",
-          "fix": "https://blog.groupdocs.cloud/zh/conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "note": "[23] in the English post links /conversion/convert-text-to-image-in-java-text-to-png-converter/",
-          "commit": "05f3feca 2025-05-13: Language prefix added to all blog categories",
-          "by_translation_commit": false,
-          "history": {
-            "english_line": "2024-02-19",
-            "english_commit": "71953a2cc 2024-02-19: Update index.md",
-            "translated": "2024-01-02",
-            "english_newer": true
           }
         }
       ],

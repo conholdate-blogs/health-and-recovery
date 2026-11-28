@@ -1,6 +1,6 @@
 {
   "tenant": "groupdocs.cloud",
-  "run_id": 15,
+  "run_id": 16,
   "hosts": {
     "blog.groupdocs.cloud": {
       "robots": {
@@ -738,7 +738,7 @@
     "max_sitemaps": null
   },
   "requests": 21,
-  "duration_s": 20.8,
+  "duration_s": 20.7,
   "not_fetched": [],
   "findings": [],
   "items": {

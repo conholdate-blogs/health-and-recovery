@@ -220,5 +220,17 @@
     "date": "2026-11-28 (3)",
     "label": "Re-run: csv-json retranslated (broken links gone)",
     "runs": "discovery run 15, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 52, link check run 59, repo file check run 60"
+  },
+  {
+    "file": "2026-11-28-4.html",
+    "date": "2026-11-28",
+    "label": "Live page before the related-article re-run",
+    "runs": "discovery run 15, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 52, link check run 59, repo file check run 60"
+  },
+  {
+    "file": "2026-11-28-5.html",
+    "date": "2026-11-28 (5)",
+    "label": "Re-run: related-article links fixed (agent fix)",
+    "runs": "discovery run 16, crawl audit run 46, speed audit run 48, AI audit run 47, text check run 52, link check run 61, repo file check run 62"
   }
 ]
